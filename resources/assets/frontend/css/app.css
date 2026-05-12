@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Replace with this */
+@import "tailwindcss";
+@import "./custom.css";
+
+@theme {
+    /* ===== COLORS ===== */
+    --color-std:     #256F96;
+    --color-std-100: #3090C0;
+    --color-std-200: #0D4E70;
+    --color-std-300: #03354D;
+    --color-std-400: #05293A;
+    --color-fine:    #131A31;
+    --color-std-opt: rgba(6, 65, 94, 0.50);
+
+    --font-heading:  'Montserrat', sans-serif;
+    --font-body:     'Montserrat', sans-serif;
+}
+@layer base {
+    body {
+        @apply font-body;
+    }
+}

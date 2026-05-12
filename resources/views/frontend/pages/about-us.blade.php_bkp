@@ -1,0 +1,46 @@
+@extends('frontend.layouts.master')
+@section('content')
+
+    <div class="container mx-auto py-10">
+        @if($pageData)
+            {{-- Page loaded successfully from API --}}
+
+            {{-- Display page title if enabled --}}
+            @if(isset($pageData['page_title']) && !empty($pageData['page_title']) && $pageData['show_title'] == 1)
+                <h1 class="text-4xl font-bold text-gray-800 mb-4">
+                    {{ $pageData['page_title'] }}
+                </h1>
+            @endif
+
+            {{-- Display subtitle if exists --}}
+            @if(!empty($pageData['sub_title']))
+                <h2 class="text-2xl text-gray-600 mb-6">
+                    {{ $pageData['sub_title'] }}
+                </h2>
+            @endif
+
+            {{-- Display featured image if exists --}}
+            @if(!empty($pageData['image_url']))
+                <div class="mb-8">
+                    <img src="{{ $pageData['image_url'] }}"
+                         alt="{{ $pageData['page_title'] }}"
+                         class="w-full max-w-4xl mx-auto rounded-lg shadow-lg">
+                </div>
+            @endif
+
+            {{-- Display page content --}}
+            <div class="prose max-w-none text-gray-700 leading-relaxed">
+                {!! $pageData['description'] !!}
+            </div>
+
+        @else
+            {{-- Fallback content if API fails --}}
+            <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 mb-6" role="alert">
+                <p class="font-bold">⚠️ API Data Not Available</p>
+                <p>The page content could not be loaded from the API. Displaying fallback content below.</p>
+            </div>
+        @endif
+
+    </div>
+
+@endsection

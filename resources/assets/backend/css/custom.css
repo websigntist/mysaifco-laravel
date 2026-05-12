@@ -1,0 +1,43 @@
+li.menu-item.user-management a,
+li.menu-item.cms-management a,
+li.menu-item.blog-post a,
+li.menu-item.others a,
+li.menu-item.setting-support a,
+li.menu-item.ecommerce-store a,
+li.menu-item.invoices-quotations a,
+li.menu-item.tours-pricing a {
+    color:          #76778E;
+    text-transform: uppercase;
+    pointer-events: none;
+}
+li.menu-item.user-management i,
+li.menu-item.cms-management i,
+li.menu-item.blog-post i,
+li.menu-item.others i,
+li.menu-item.setting-support i,
+li.menu-item.ecommerce-store i,
+li.menu-item.invoices-quotations i,
+li.menu-item.tours-pricing i {
+    display: none;
+}
+.dt-bootstrap5 .tabler-edit,
+.dt-bootstrap5 .tabler-drag-drop {
+    margin-top: 5px !important;
+}
+
+/* jQuery DataTables + Bootstrap 5: Tabler icons inside pagination links */
+.dataTables_wrapper .dataTables_paginate ul.pagination .page-link {
+    display:         inline-flex;
+    align-items:     center;
+    justify-content: center;
+    gap:             0.35rem;
+}
+.productForm .tab-content:not(.doc-example-content) {
+    padding: 1.5rem 0 0 0 !important;
+}
+.lg-backdrop {
+    z-index: 20000 !important;
+}
+.lg-outer {
+    z-index: 20010 !important;
+}

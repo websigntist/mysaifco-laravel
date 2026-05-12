@@ -1,0 +1,8 @@
+li.menu-item.user-management a {
+    color:          #76778E;
+    text-transform: uppercase;
+    pointer-events: none;
+}
+li.menu-item.user-management i {
+    display: none;
+}

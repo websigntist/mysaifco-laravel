@@ -1,0 +1,38 @@
+{
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build"
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.4.20",
+        "axios": "^1.7.4",
+        "concurrently": "^9.0.1",
+        "laravel-vite-plugin": "^2.1.0",
+        "postcss": "^8.5.1",
+        "tailwindcss": "^4.2.4",
+        "vite": "^7.3.1"
+    },
+    "dependencies": {
+        "@popperjs/core": "^2.11.8",
+        "@tailwindcss/forms": "^0.5.10",
+        "@tailwindcss/postcss": "^4.0.0",
+        "@tailwindcss/vite": "^4.2.4",
+        "@tiptap/core": "^2.11.5",
+        "@tiptap/pm": "^2.11.5",
+        "@tiptap/starter-kit": "^2.11.5",
+        "datatables.net": "^2.3.7",
+        "datatables.net-bs5": "^2.3.7",
+        "flowbite": "^3.1.2",
+        "flowbite-typography": "^1.0.5",
+        "jquery": "^3.7.1",
+        "jstree": "^3.3.17",
+        "jszip": "^3.10.1",
+        "lightgallery": "^2.9.0",
+        "notiflix": "^3.2.8",
+        "pdfmake": "^0.2.20",
+        "sweetalert2": "^11.19.1",
+        "swiper": "^12.1.4"
+    }
+}

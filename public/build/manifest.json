@@ -1,0 +1,70 @@
+{
+  "resources/assets/backend/css/app.css": {
+    "file": "assets/app-C1L69alO.css",
+    "src": "resources/assets/backend/css/app.css"
+  },
+  "resources/assets/backend/fonts/flags/au.svg": {
+    "file": "assets/au-kL8f0uMB.svg",
+    "src": "resources/assets/backend/fonts/flags/au.svg"
+  },
+  "resources/assets/backend/fonts/flags/br.svg": {
+    "file": "assets/br-Dr5rMAMb.svg",
+    "src": "resources/assets/backend/fonts/flags/br.svg"
+  },
+  "resources/assets/backend/fonts/flags/cn.svg": {
+    "file": "assets/cn-sZmOitVP.svg",
+    "src": "resources/assets/backend/fonts/flags/cn.svg"
+  },
+  "resources/assets/backend/fonts/flags/fr.svg": {
+    "file": "assets/fr-C1eGzDWr.svg",
+    "src": "resources/assets/backend/fonts/flags/fr.svg"
+  },
+  "resources/assets/backend/fonts/flags/in.svg": {
+    "file": "assets/in-BrINBvML.svg",
+    "src": "resources/assets/backend/fonts/flags/in.svg"
+  },
+  "resources/assets/backend/fonts/flags/us.svg": {
+    "file": "assets/us-DAM9Utrf.svg",
+    "src": "resources/assets/backend/fonts/flags/us.svg"
+  },
+  "resources/assets/backend/fonts/lg.svg": {
+    "file": "assets/lg-B0dIV2BS.svg",
+    "src": "resources/assets/backend/fonts/lg.svg"
+  },
+  "resources/assets/backend/fonts/lg.ttf": {
+    "file": "assets/lg-oyjwlqP2.ttf",
+    "src": "resources/assets/backend/fonts/lg.ttf"
+  },
+  "resources/assets/backend/fonts/lg.woff": {
+    "file": "assets/lg-CosQH4Cu.woff",
+    "src": "resources/assets/backend/fonts/lg.woff"
+  },
+  "resources/assets/backend/fonts/lg.woff2": {
+    "file": "assets/lg-C7ze34MH.woff2",
+    "src": "resources/assets/backend/fonts/lg.woff2"
+  },
+  "resources/assets/backend/js/app.js": {
+    "file": "assets/app-BUarIUhS.js",
+    "name": "app",
+    "src": "resources/assets/backend/js/app.js",
+    "isEntry": true
+  },
+  "resources/assets/frontend/css/app.css": {
+    "file": "assets/app-h3d20WVV.css",
+    "src": "resources/assets/frontend/css/app.css",
+    "isEntry": true,
+    "name": "app",
+    "names": [
+      "app.css"
+    ]
+  },
+  "resources/assets/frontend/js/app.js": {
+    "file": "assets/app-Bg8fW1Yw.js",
+    "name": "app",
+    "src": "resources/assets/frontend/js/app.js",
+    "isEntry": true,
+    "css": [
+      "assets/app-BVYAVZZL.css"
+    ]
+  }
+}

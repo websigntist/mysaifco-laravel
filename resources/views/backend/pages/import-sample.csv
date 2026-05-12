@@ -1,0 +1,3 @@
+menu_title,page_title,show_title,sub_title,friendly_url,description,status,image,parent_id,container_layout,show_in_menu,ordering,created_by,meta_title,meta_keywords,meta_description
+Marian Books,Marian Book,0,Book Writing Service,marian,"Lorem ipsum dolor sit amet, consectetur adipisicing elit.",published,1760564361_image.webp,0,Default,Yes,11,1,Books,books,books
+Pete,Pete,0,About Author,pete,"Lorem ipsum dolor sit amet, consectetur adipisicing elit.",published,1761085913_image.webp,0,Default,No,12,1,Authors,authors,authors

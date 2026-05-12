@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import "../css/core.css";
+@import "../css/main.css";
+@import "../fonts/iconify-icons.css";
+@import "../css/cards-advance.css";
+@import "../css/perfect-scrollbar.css";
+@import "../css/node-waves.css";
+@import "../css/pickr-themes.css";
+@import "../css/flatpickr.css";
+@import "../css/select2.css";
+@import "../css/custom.css";
+
+@import "../css/apex-charts.css";
+@import "../css/swiper.css";
+@import "../fonts/flag-icons.css";
+@import "../css/notiflix-3.2.8.min.css";
+@import "../css/sweetalert2.min.css";
+@import "../css/dataTables.bootstrap5.min.css";
+@import "../css/dropzone.css";
+@import "../css/maxLength.css";
+
+/*@import 'jstree/dist/themes/default/style.min.css';*/
+
+/* lightgallery */
+@import '../css/lightgallery.css';
+@import '../css/lg-zoom.css';
+@import '../css/justifiedGallery.css';
+@import '../css/lg-thumbnail.css';
+
+/* Custom DataTables Button Styling */

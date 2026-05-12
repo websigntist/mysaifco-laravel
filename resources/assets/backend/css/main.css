@@ -1,0 +1,338 @@
+/*
+* main.css
+* File include item demo only specific css only
+******************************************************************************/
+:root {
+    --poppinFont:     "Poppins", sans-serif !important;
+    --montserratFont: "Montserrat", sans-serif !important;
+}
+h1, h2, h3, h4, h5, h6, p, a, small, span, label, input, button, table, th, td, tr {
+    font-family: var(--poppinFont);
+}
+aside#layout-menu {
+    border:        3px solid #FFFFFF;
+    border-radius: 0 20px 0 0;
+}
+.menu-vertical .menu-item .menu-link {
+    font-size:      .85rem;
+    min-block-size: 33px !important;
+}
+.menu-vertical .menu-item .menu-link, .menu-vertical .menu-block {
+    padding-block: 0;
+}
+.menu-vertical .menu-icon {
+    width: 20px;
+}
+a.menu-link div {
+    margin-top: 3px;
+}
+.text-body {
+    font-size:   0.8125rem;
+    font-family: var(--poppinFont);
+}
+.form-control,
+.input-group .input-group-text {
+    font-size:   0.9rem;
+    color:       #111111 !important;
+    padding:     .49rem .9375rem !important;
+    border:      var(--bs-border-width) solid color-mix(in sRGB, var(--bs-base-color) 30%, var(--bs-paper-bg));
+    font-family: var(--poppinFont);
+}
+.menu-vertical .menu-inner > .menu-item {
+    margin-block: 0;
+}
+.menu .app-brand.demo {
+    height: 64px;
+}
+
+.app-brand-logo.demo svg {
+    width:  34px;
+    height: 24px;
+}
+
+.app-brand-text.demo {
+    font-size:  1rem;
+}
+.app-brand img{
+    margin-top: -3px;
+}
+/* ! For .layout-navbar-fixed added fix padding top to .layout-page */
+/* Default navbar */
+.layout-navbar-fixed .layout-wrapper:not(.layout-without-menu) .layout-page {
+    padding-top: 54px !important;
+}
+.layout-navbar-fixed .layout-wrapper:not(.layout-horizontal):not(.layout-without-menu) .layout-page {
+    -padding-top: 72px !important;
+}
+/* Navbar page z-index issue solution */
+.content-wrapper .navbar {
+    z-index: auto;
+}
+
+/*
+* Content
+******************************************************************************/
+
+.demo-blocks > * {
+    display: block !important;
+}
+
+.demo-inline-spacing > * {
+    margin: 1rem 0.375rem 0 0 !important;
+}
+
+/* ? .demo-vertical-spacing class is used to have vertical margins between elements. To remove margin-top from the first-child, use .demo-only-element class with .demo-vertical-spacing class. For example, we have used this class in forms-input-groups.html file. */
+.demo-vertical-spacing > * {
+    margin-top:    1rem !important;
+    margin-bottom: 0 !important;
+}
+.demo-vertical-spacing.demo-only-element > :first-child {
+    margin-top: 0 !important;
+}
+
+.demo-vertical-spacing-lg > * {
+    margin-top:    1.875rem !important;
+    margin-bottom: 0 !important;
+}
+.demo-vertical-spacing-lg.demo-only-element > :first-child {
+    margin-top: 0 !important;
+}
+
+.demo-vertical-spacing-xl > * {
+    margin-top:    5rem !important;
+    margin-bottom: 0 !important;
+}
+.demo-vertical-spacing-xl.demo-only-element > :first-child {
+    margin-top: 0 !important;
+}
+
+/* Dropdown buttons going out of small screens */
+@media (max-width: 576px) {
+    #dropdown-variation-demo .btn-group .text-truncate {
+        width:    254px;
+        position: relative;
+    }
+
+    #dropdown-variation-demo .btn-group .text-truncate::after {
+        position: absolute;
+        top:      45%;
+        right:    0.65rem;
+    }
+}
+
+/*
+* Layout demo
+******************************************************************************/
+
+.layout-demo-wrapper {
+    display:               -webkit-box;
+    display:               -ms-flexbox;
+    display:               flex;
+    -webkit-box-align:     center;
+    -ms-flex-align:        center;
+    align-items:           center;
+    -webkit-box-orient:    vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction:    column;
+    flex-direction:        column;
+    margin-top:            1rem;
+}
+.layout-demo-placeholder img {
+    width: 900px;
+}
+.layout-demo-info {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* customer styleing start */
+li.breadcrumb-item {
+    font-size: 12px !important;
+}
+.breadcrumb-item + .breadcrumb-item {
+    padding-left: 0;
+}
+.btn-group:not(.btn-group-vertical) > .btn:not(:last-child):not(.dropdown-toggle),
+.btn-group:not(.btn-group-vertical) > .btn.dropdown-toggle-split:first-child,
+.btn-group:not(.btn-group-vertical) > .btn-group:not(:last-child) > .btn, .btn-group:not(.btn-group-vertical) > .btn:nth-child(n+3),
+.btn-group:not(.btn-group-vertical) > :not(.btn-check) + .btn, .btn-group:not(.btn-group-vertical) > .btn-group:not(:first-child) > .btn, .btn, .input-group-text,
+.select2-container--default .select2-search--dropdown .select2-search__field {
+    border-radius: 3px !important;
+}
+.border-top-bottom {
+    border-top:    2px solid #7367F0;
+    border-bottom: 1px solid #7367F0;
+}
+.table thead tr th {
+    font-weight: 600;
+}
+.table thead tr th .form-check-input {
+    width:  1.3em;
+    height: 1.3em;
+}
+div.dt-container div.dt-length, div.dt-container div.dt-search {
+    margin-block: 1.0rem !important;
+}
+input#dt-search-0, select#dt-length-0, div#jsdatatable_list_info {
+    border-radius: 3px;
+    font-family:   "Poppins", sans-serif !important;
+}
+.dataTable tr td {
+    font-size:   14px !important;
+    font-family: "Poppins", sans-serif !important;
+}
+
+.layout-navbar-fixed .sticky-element {
+    inset-block-start: 4.5rem;
+}
+.card {
+    box-shadow: 0 0.1875rem 0.75rem 0 rgb(47 43 61 / 24%);
+}
+.card-header.cardStyling {
+    background-color: #FFFFFF;
+    border-radius:    6px 6px 0 0;
+}
+.card-header {
+    background-color: #FBFBFB;
+}
+.sticky-element {
+    margin-inline-end: 0;
+}
+i.breadcrumb-icon.icon-base.ti.tabler-chevron-right.align-middle.icon-xs {
+    width:      14px;
+    margin-top: -2px;
+}
+a.btn.btn-icon.btn-dark.waves-effect {
+    border-radius: 4px;
+}
+a.btn.btn-dark.waves-effect.waves-light {
+    border-radius: 3px;
+}
+.iconmrgn {
+    margin-top: -2px;
+}
+input.form-control {
+    border-radius: 3px;
+}
+.select2-container--default .select2-selection {
+    border-radius: 3px !important;
+    height:        41px !important;
+    padding:       .10rem 0 !important;
+}
+.separator {
+    border-bottom: 1px dashed #DDDDDD;
+    margin:        20px 0 -10px 0;
+}
+label {
+    position: relative;
+}
+label span:after {
+    content:   '*';
+    font-size: 16px;
+    position:  absolute;
+    top:       0;
+    right:     -9px;
+    color:     #FF0000;
+}
+.footer .footer-link {
+    font-size: 0.8125rem;
+}
+.ck-editor__editable_inline {
+    min-height: 300px;
+}
+.card-header h6 {
+    font-size: 0.85rem;
+}
+.breadcrumb .text-gray {
+    margin-top: -5px;
+}
+.breadcrumb li {
+    font-family: var(--poppinFont);
+}
+.formcard h5 {
+    font-size: 0.95rem;
+}
+.sitesettings button {
+    font-size: 14px;
+}
+.sitesettings .nav-link {
+    padding: 0.8435rem 1.25rem;
+}
+.sitesettings .tab-content:not(.doc-example-content) {
+    padding: 1.5rem 1.5rem;
+}
+.sitesettings .nav-align-left .nav-tabs .nav-link.active {
+    background-color: #F2F2F2;
+}
+.invalid-feedback {
+    font-size:   0.80rem;
+    font-family: var(--poppinFont);
+}
+.table th {
+    font-size:       .80rem;
+    letter-spacing:  0;
+    -text-transform: capitalize;
+}
+i.icon-base.ti.tabler-eye.icon-22px {
+    margin-top: 9px;
+}
+body:not(.modal-open) .layout-content-navbar .layout-navbar {
+    z-index: 1042 !important;
+}
+.layout-navbar-fixed body:not(.modal-open) .layout-content-navbar .layout-menu,
+.layout-menu-fixed body:not(.modal-open) .layout-content-navbar .layout-menu,
+.layout-menu-fixed-offcanvas body:not(.modal-open) .layout-content-navbar .layout-menu {
+    z-index: 1040 !important;
+}
+button.actionBtns, a.actionBtns {
+    display: inline-flex !important;
+}
+.notiflix-confirm-content {
+    border-radius: 5px !important;
+}
+.font10{
+    font-size: 10px !important;
+}
+.modal-body .table th {
+    text-transform: capitalize;
+}
+.topicon{
+    margin-top: -3px !important;
+}
+/* custome styleing end */
+#tree-module ul {
+  list-style: none;
+  margin-left: 15px;
+}
+
+#tree-module li {
+  margin: 3px 0;
+}
+
+.module-title {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.action-list li {
+  margin-left: 25px;
+  font-size: 13px;
+  color: #444;
+}
+table.dataTable th.dt-type-numeric div.dt-column-header {
+    flex-direction: row !important;
+}
+table.dataTable th.dt-type-numeric,
+table.dataTable td.dt-type-numeric{
+    text-align: left !important;
+}
+.menu-link .tabler-circle{
+    display: none;
+}
+.menu-vertical .menu-inner > .menu-item {
+    -border-bottom: 1px solid #41455D;
+    -padding: 2px 0 5px 0;
+}
+.menu-toggle::after{
+    block-size: 1rem;
+}
