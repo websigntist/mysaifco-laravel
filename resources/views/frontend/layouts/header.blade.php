@@ -1,23 +1,24 @@
-<header class="sticky top-0 z-50 flex items-center overflow-visible py-3 px-3 bg-fine">
+<header class="sticky top-0 z-50 flex items-center overflow-visible py-3 px-3 bg-white">
     <div class="container mx-auto overflow-visible">
         <div class="flex items-center justify-between gap-3 overflow-visible">
             <div class="brand_logo">
                 <a href="{{url('/')}}">
-                    <img src="{{asset('assets/images/logo.webp')}}" class="w-36 md:w-52" alt="brand_logo" title="standard patches">
+                    <img src="{{asset('assets/images/logo.svg')}}" class="w-14" alt="brand_logo"
+                         title="standard patches">
                 </a>
             </div>
             {{-- menu start --}}
-            <div class="relative z-20 flex min-w-0 flex-1 items-center gap-2 md:gap-6">
+            <div class="flex items-center">
                 @include('frontend.components.navbar')
             </div>
             {{-- menu end --}}
-            <div class="flex justify-end items-center shrink-0">
+            {{--<div class="flex justify-end items-center shrink-0">
                 <ul class="flex items-center gap-2 md:gap-4">
-                    <li class="hidden md:flex text-white text-xs">
+                    <li class="hidden md:flex text-body text-xs">
                         <div class="uppercase font-semibold just">
                             <a href="" class="bg-white text-fine rounded-full uppercase font-bold
                                                                           text-xs text-center block ps-2 pe-1 py-2 ">
-                                Get <span class="bg-fine px-2 py-1 rounded-full text-xs text-center text-white ">Started</span> </a>
+                                Get <span class="bg-fine px-2 py-1 rounded-full text-xs text-center text-body ">Started</span> </a>
                         </div>
                     </li>
                     <li class="text-xs flex">
@@ -33,7 +34,7 @@
                         </svg>
                     </li>
                 </ul>
-            </div>
+            </div>--}}
         </div>
     </div>
 </header>
