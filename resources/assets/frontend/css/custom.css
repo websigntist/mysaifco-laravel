@@ -1,0 +1,37 @@
+/* Navbar dropdowns: desktop = hover / focus-within; mobile = .is-open (JS) */
+@media (hover: hover) and (min-width: 768px) {
+    li.nav-dropdown:hover > .nav-dropdown-panel,
+    li.nav-dropdown:focus-within > .nav-dropdown-panel {
+        display: block;
+    }
+
+    li.nav-submenu:hover > .nav-submenu-panel,
+    li.nav-submenu:focus-within > .nav-submenu-panel {
+        display: block;
+    }
+}
+
+@media (max-width: 767.98px) {
+    li.nav-dropdown.is-open > .nav-dropdown-panel {
+        display: block;
+    }
+
+    li.nav-submenu.is-open > .nav-submenu-panel {
+        display: block;
+    }
+
+    .nav-submenu-panel {
+        position: static;
+        margin-inline-start: 0.75rem;
+        margin-top: 0.25rem;
+        box-shadow: none;
+    }
+}
+
+/* Large touch devices (e.g. tablet): no hover; same open state as mobile tap */
+@media (hover: none) and (pointer: coarse) and (min-width: 768px) {
+    li.nav-dropdown.is-open > .nav-dropdown-panel,
+    li.nav-submenu.is-open > .nav-submenu-panel {
+        display: block;
+    }
+}

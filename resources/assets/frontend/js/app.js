@@ -208,6 +208,86 @@ function initWhyChooseLogosSwiper() {
 }
 
 /**
+ * Navbar mega-items: Flowbite used duplicate IDs so only one dropdown worked.
+ * Desktop (md+): hover / focus-within via resources/assets/frontend/css/custom.css.
+ * Narrow / touch-primary viewports: tap toggles .is-open on the parent li.
+ */
+function initNavbarDropdowns() {
+    const mqMobile = window.matchMedia('(max-width: 767.98px)');
+    const mqCoarseTouch = window.matchMedia('(hover: none) and (pointer: coarse)');
+
+    /** Narrow viewports or touch-primary devices (tablets) where hover menus do not work. */
+    function useClickForNavDropdowns() {
+        return mqMobile.matches || mqCoarseTouch.matches;
+    }
+
+    function closeAllNavDropdowns() {
+        document.querySelectorAll('.nav-dropdown.is-open, .nav-submenu.is-open').forEach((el) => {
+            el.classList.remove('is-open');
+        });
+    }
+
+    document.querySelectorAll('.nav-dropdown').forEach((rootLi) => {
+        const trigger = rootLi.querySelector('.nav-dropdown-trigger');
+        if (!trigger || trigger.dataset.navDropdownBound === '1') {
+            return;
+        }
+        trigger.dataset.navDropdownBound = '1';
+
+        trigger.addEventListener('click', (e) => {
+            if (!useClickForNavDropdowns()) {
+                return;
+            }
+            e.preventDefault();
+            const willOpen = !rootLi.classList.contains('is-open');
+            document.querySelectorAll('.nav-dropdown.is-open').forEach((other) => {
+                if (other !== rootLi) {
+                    other.classList.remove('is-open');
+                    other.querySelectorAll('.nav-submenu.is-open').forEach((s) => s.classList.remove('is-open'));
+                }
+            });
+            rootLi.classList.toggle('is-open', willOpen);
+            if (!willOpen) {
+                rootLi.querySelectorAll('.nav-submenu.is-open').forEach((s) => s.classList.remove('is-open'));
+            }
+        });
+    });
+
+    document.querySelectorAll('.nav-submenu').forEach((subLi) => {
+        const trigger = subLi.querySelector('.nav-submenu-trigger');
+        if (!trigger || trigger.dataset.navSubmenuBound === '1') {
+            return;
+        }
+        trigger.dataset.navSubmenuBound = '1';
+
+        trigger.addEventListener('click', (e) => {
+            if (!useClickForNavDropdowns()) {
+                return;
+            }
+            e.preventDefault();
+            e.stopPropagation();
+            subLi.classList.toggle('is-open');
+        });
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!useClickForNavDropdowns()) {
+            return;
+        }
+        if (!e.target.closest('.nav-dropdown')) {
+            closeAllNavDropdowns();
+        }
+    });
+
+    mqMobile.addEventListener('change', () => {
+        closeAllNavDropdowns();
+    });
+    mqCoarseTouch.addEventListener('change', () => {
+        closeAllNavDropdowns();
+    });
+}
+
+/**
  * Category strip: vertical wheel scrolls horizontally; next button advances one item.
  */
 function initScrollMenus() {
@@ -261,6 +341,7 @@ function initFrontend() {
     initWhyChooseLogosSwiper();
     initImageLogosSwiper();
     initScrollMenus();
+    initNavbarDropdowns();
 }
 
 if (document.readyState === 'loading') {
