@@ -1,4 +1,4 @@
-<header class="sticky top-0 z-50 flex items-center overflow-visible py-3 px-3 bg-white">
+<header class="sticky top-0 z-50 flex items-center overflow-visible py-1 px-3 bg-white">
     <div class="container mx-auto overflow-visible">
         <div class="flex items-center justify-between gap-3 overflow-visible">
             <div class="brand_logo">
