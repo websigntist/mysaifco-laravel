@@ -1,4 +1,4 @@
-<footer class="pt-12 px-3 border-t-2 border-t-mst-gray">
+<footer class="py-12 px-3 border-t-2 border-t-mst-gray">
     <div class="container mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-6 gap-5">
 

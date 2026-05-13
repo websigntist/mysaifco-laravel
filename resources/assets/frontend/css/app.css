@@ -4,6 +4,7 @@
 /* Replace with this */
 @import "tailwindcss";
 @import "./custom.css";
+@import "./swiper.min.css";
 
 @theme {
     /* ===== COLORS ===== */

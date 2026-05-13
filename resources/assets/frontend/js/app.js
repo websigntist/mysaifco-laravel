@@ -180,6 +180,57 @@ function initImageLogosSwiper() {
     });
 }
 
+function initBestSellerSwiper() {
+    const el = document.querySelector('#best-seller-swiper');
+    if (!el || el.dataset.swiperInit === '1') {
+        return;
+    }
+    el.dataset.swiperInit = '1';
+
+    const wrap = el.closest('.best-seller-swiper-wrap');
+    const prevEl = wrap?.querySelector('.best-seller-swiper-prev') ?? null;
+    const nextEl = wrap?.querySelector('.best-seller-swiper-next') ?? null;
+
+    new Swiper(el, {
+        modules: [Autoplay, Navigation],
+        slidesPerView: 1.2,
+        slidesPerGroup: 1,
+        spaceBetween: 16,
+        speed: 600,
+        loop: false,
+        rewind: true,
+        watchOverflow: true,
+        grabCursor: true,
+        navigation: {
+            prevEl,
+            nextEl,
+        },
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+        },
+        breakpoints: {
+            480: {
+                slidesPerView: 1.35,
+                spaceBetween: 18,
+            },
+            640: {
+                slidesPerView: 2.2,
+                spaceBetween: 18,
+            },
+            768: {
+                slidesPerView: 2.35,
+                spaceBetween: 20,
+            },
+            1024: {
+                slidesPerView: 3.5,
+                spaceBetween: 20,
+            },
+        },
+    });
+}
+
 function initWhyChooseLogosSwiper() {
     const el = document.querySelector('#why-choose-logos-swiper');
     if (!el || el.dataset.swiperInit === '1') {
@@ -338,6 +389,7 @@ function initScrollMenus() {
 
 function initFrontend() {
     initQuoteFormCustomSelects();
+    initBestSellerSwiper();
     initWhyChooseLogosSwiper();
     initImageLogosSwiper();
     initScrollMenus();

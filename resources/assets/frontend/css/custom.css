@@ -1,37 +1,71 @@
-/* Navbar dropdowns: desktop = hover / focus-within; mobile = .is-open (JS) */
-@media (hover: hover) and (min-width: 768px) {
-    li.nav-dropdown:hover > .nav-dropdown-panel,
-    li.nav-dropdown:focus-within > .nav-dropdown-panel {
-        display: block;
-    }
-
-    li.nav-submenu:hover > .nav-submenu-panel,
-    li.nav-submenu:focus-within > .nav-submenu-panel {
-        display: block;
-    }
+/* Best seller: fractional slidesPerView peek on the right; Swiper slide height follows tallest card */
+.best-seller-swiper .swiper-slide {
+    height: auto;
+    box-sizing: border-box;
 }
 
-@media (max-width: 767.98px) {
-    li.nav-dropdown.is-open > .nav-dropdown-panel {
-        display: block;
-    }
-
-    li.nav-submenu.is-open > .nav-submenu-panel {
-        display: block;
-    }
-
-    .nav-submenu-panel {
-        position: static;
-        margin-inline-start: 0.75rem;
-        margin-top: 0.25rem;
-        box-shadow: none;
-    }
+.best-seller-swiper .swiper-wrapper {
+    align-items: stretch;
 }
 
-/* Large touch devices (e.g. tablet): no hover; same open state as mobile tap */
-@media (hover: none) and (pointer: coarse) and (min-width: 768px) {
-    li.nav-dropdown.is-open > .nav-dropdown-panel,
-    li.nav-submenu.is-open > .nav-submenu-panel {
-        display: block;
-    }
+/* Best seller header: circular nav (reference — thin outline prev, solid gold next, thin stroke icons) */
+.best-seller-nav-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    flex-shrink: 0;
+    border-radius: 9999px;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.best-seller-nav-btn:focus-visible {
+    outline: 2px solid var(--color-mst, #ba9b31);
+    outline-offset: 2px;
+}
+
+.best-seller-nav-btn--prev {
+    border: 1px solid #e5e5e5;
+    background-color: #fff;
+    color: #171717;
+    box-shadow: none;
+}
+
+.best-seller-nav-btn--prev:hover:not(:disabled) {
+    border-color: #d4d4d4;
+    background-color: #fafafa;
+}
+
+.best-seller-nav-btn--next {
+    border: none;
+    background-color: var(--color-mst, #ba9b31);
+    color: #fff;
+    box-shadow: none;
+}
+
+.best-seller-nav-btn--next:hover:not(:disabled) {
+    background-color: var(--color-mst-dark, #74611e);
+}
+
+.best-seller-nav-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+/* Header nav: Swiper adds swiper-button-disabled */
+.best-seller-swiper-wrap .best-seller-swiper-prev.swiper-button-disabled,
+.best-seller-swiper-wrap .best-seller-swiper-next.swiper-button-disabled {
+    opacity: 0.35;
+    cursor: default;
+    pointer-events: none;
+}
+
+.best-seller-swiper-wrap .best-seller-swiper-prev.swiper-button-lock,
+.best-seller-swiper-wrap .best-seller-swiper-next.swiper-button-lock {
+    display: none;
 }
