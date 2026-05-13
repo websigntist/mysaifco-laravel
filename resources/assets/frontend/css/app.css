@@ -17,10 +17,13 @@
 }
 @layer base {
     body {
-        @apply font-body text-mst-text;
+        @apply font-body text-mst-gray;
     }
 
     h1, h2, h3, h4, h5, h6 {
-        @apply font-heading text-mst-text;
+        @apply font-heading text-mst-gray;
     }
+}
+.container {
+    width: 1366px;
 }
