@@ -13,7 +13,7 @@
                 </li>
 
                 {{-- single dropdown --}}
-                <li class="nav-dropdown relative block py-2 px-2 text-mst-gray hover:text-black transition duration-300">
+                {{--<li class="nav-dropdown relative block py-2 px-2 text-mst-gray hover:text-black transition duration-300">
                     <button type="button" id="umrah-nav-trigger" class="nav-dropdown-trigger flex items-center justify-between w-full py-2 px-2 font-medium text-heading md:w-auto md:p-0">
                         UAE Tour
                         <svg class="w-4 h-4 ms-1.5 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -52,10 +52,10 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li>--}}
 
                 {{-- 2 level dropdown --}}
-                <li class="nav-dropdown relative block py-2 px-2 hover:text-black">
+                {{--<li class="nav-dropdown relative block py-2 px-2 hover:text-black">
                     <button type="button" id="uae-tours-nav-trigger" class="nav-dropdown-trigger flex items-center justify-between w-full py-2 px-2 font-medium text-heading md:w-auto md:p-0">
                         Umrah
                         <svg class="w-4 h-4 ms-1.5 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -138,9 +138,15 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li>--}}
 
                 {{-- parent menu --}}
+                <li class="block py-2 px-2 hover:rounded-full hover:text-white hover:bg-gradient-to-r hover:from-[#BA9B31] hover:to-[#74611E] transition duration-300">
+                    <a href="#" class="py-2 px-2">UAE Tour</a>
+                </li>
+                <li class="block py-2 px-2 hover:rounded-full hover:text-white hover:bg-gradient-to-r hover:from-[#BA9B31] hover:to-[#74611E] transition duration-300">
+                    <a href="#" class="py-2 px-2">Umrah</a>
+                </li>
                 <li class="block py-2 px-2 hover:rounded-full hover:text-white hover:bg-gradient-to-r hover:from-[#BA9B31] hover:to-[#74611E] transition duration-300">
                     <a href="#" class="py-2 px-2">Holiday Packages</a>
                 </li>

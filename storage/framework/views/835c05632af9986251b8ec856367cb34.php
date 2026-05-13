@@ -3,7 +3,7 @@
     justify-center
     overflow-hidden">
         <div class="absolute inset-0 scale-105 bg-cover bg-center bg-no-repeat"
-             style="background-image: url('{{ asset('assets/images/sliders/hero-banner.webp') }}')"
+             style="background-image: url('<?php echo e(asset('assets/images/sliders/hero-banner.webp')); ?>')"
              aria-hidden="true"></div>
         <div class="absolute inset-0 bg-gray-950/0" aria-hidden="true"></div>
         <div class="relative z-10 w-full py-10 md:py-14">
@@ -20,16 +20,16 @@
                             trusted local experts. Best yacht prices in Dubai with instant <br class="hidden md:block">
                             booking & confirmation.
                         </p>
-                        {{-- button start --}}
+                        
                         <div class="mt-8 mb-4">
                             <a href="" class="flex items-center justify-center w-44 text-white text-lg px-6 py-3 rounded-full
                             bg-gradient-to-r from-[#BA9B31] to-[#74611E]
                              hover:bg-gradient-to-r hover:from-[#74611E] hover:to-[#BA9B31]
                              transition duration-300 font-heading italic"> Book Now
-                                <img src="{{asset('assets/images/icons/btn-arrow.svg')}}"
+                                <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
                                      class="w-6 ms-1"
                                      alt="arrow"> </a>
-                            {{-- button end --}}
+                            
                         </div>
                     </div>
                     <div class="flex flex-col items-end space-y-5">
@@ -47,3 +47,4 @@
         </div>
     </div>
 </div>
+<?php /**PATH D:\laragon\www\mysaifco-laravel\resources\views/frontend/components/hero_section.blade.php ENDPATH**/ ?>

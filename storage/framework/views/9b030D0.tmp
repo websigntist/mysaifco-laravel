@@ -1,0 +1,15 @@
+<section class="flex justify-center items-center py-20 px-4 bg-gray-50">
+    <div class="container mx-auto text-center">
+        <div class="grid grid-cols-1 md:grid-cols-[6fr,4fr] gap-6 mt-10">
+            <div class="">
+                <h1 class="capitalize font-bold text-3xl md:text-4xl text-gray-900">our unique product category</h1>
+                <h6 class="font-semibold text-sm my-2 text-gray-900 leading-6">
+                    Buy Top-Quality Custom Patches in USA 2026 <br class="hidden md:block"> Custom Patch Types
+                    Embroidered, PVC, Chenille, Leather & More
+                </h6>
+            </div>
+            <div class=""></div>
+        </div>
+    </div>
+</section>
+<?php /**PATH D:\laragon\www\mysaifco-laravel\resources\views/frontend/components/explore_uae.blade.php ENDPATH**/ ?>

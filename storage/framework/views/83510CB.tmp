@@ -3,7 +3,7 @@
     justify-center
     overflow-hidden">
         <div class="absolute inset-0 scale-105 bg-cover bg-center bg-no-repeat"
-             style="background-image: url('{{ asset('assets/images/sliders/hero-banner.webp') }}')"
+             style="background-image: url('<?php echo e(asset('assets/images/sliders/hero-banner.webp')); ?>')"
              aria-hidden="true"></div>
         <div class="absolute inset-0 bg-gray-950/0" aria-hidden="true"></div>
         <div class="relative z-10 w-full py-10 md:py-14">
@@ -12,34 +12,35 @@
                     <div class="flex flex-col justify-center">
                         <h1 class="text-4xl text-center md:text-left md:text-5xl font-bold text-mst capitalize
                         italic leading-14 tracking-wide">
-                            Best Dubai Tours, <br class="hidden md:block"> Desert Safari & <br class="hidden md:block">
+                            Best Dubai Tours, <br class="hidden md:block">
+                            Desert Safari & <br class="hidden md:block">
                             Yacht Experience
                         </h1>
-                        <p class="text-lg text-white text-center md:text-left mt-6 leading-7">
-                            Explore Desert Safari, luxury yacht tours & city experiences with <br class="hidden md:block">
-                            trusted local experts. Best yacht prices in Dubai with instant <br class="hidden md:block">
-                            booking & confirmation.
+                        <p class="text-lg text-white text-center md:text-left mt-6">
+                            Explore Desert Safari, luxury yacht tours & city experiences with trusted local experts.
+                            Best yacht prices in Dubai with instant booking & confirmation.
                         </p>
-                        {{-- button start --}}
+                        
                         <div class="mt-8 mb-4">
                             <a href="" class="flex items-center justify-center w-44 text-white text-lg px-6 py-3 rounded-full
                             bg-gradient-to-r from-[#BA9B31] to-[#74611E]
                              hover:bg-gradient-to-r hover:from-[#74611E] hover:to-[#BA9B31]
-                             transition duration-300 font-heading italic"> Book Now
-                                <img src="{{asset('assets/images/icons/btn-arrow.svg')}}"
-                                     class="w-6 ms-1"
-                                     alt="arrow"> </a>
-                            {{-- button end --}}
+                             transition duration-300 font-heading italic">
+                                Book Now <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
+                                              class="w-6 ms-1"
+                                              alt="arrow">
+                            </a>
+                            
                         </div>
                     </div>
-                    <div class="flex flex-col items-end space-y-5">
+                    <div class="justify-end gap-5">
                         <div class="bg-mst p-4 w-80 rounded-lg">
-                            <div class="text-white text-xl font-medium text-center italic font-heading">50K + Customers</div>
-                            <div class="text-white text-sm text-center mt-1">World Wide Travelers</div>
+                            <div class="text-white text-xl font-bold text-center italic font-heading">50K + Customers</div>
+                            <div class="text-white text-sm text-center">World Wide Travelers</div>
                         </div>
                         <div class="bg-mst p-4 w-80 rounded-lg">
-                            <div class="text-white text-xl font-medium text-center italic font-heading">Licensed Operator</div>
-                            <div class="text-white text-sm text-center mt-1">Dubai Approved</div>
+                            <div class="text-white text-xl font-bold text-center italic font-heading">Licensed Operator</div>
+                            <div class="text-white text-sm text-center">Dubai Approved</div>
                         </div>
                     </div>
                 </div>
@@ -47,3 +48,4 @@
         </div>
     </div>
 </div>
+<?php /**PATH D:\laragon\www\mysaifco-laravel\resources\views/frontend/components/hero_section.blade.php ENDPATH**/ ?>

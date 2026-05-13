@@ -4,8 +4,8 @@
 
             <!-- Logo & Description — 2 cols -->
             <div class="md:col-span-2">
-                <a href="{{url('/')}}" class="text-2xl font-bold text-mst-gray py-3">
-                    <img src="{{asset('assets/images/footer-logo.svg')}}" alt="logo" title="brand logo">
+                <a href="<?php echo e(url('/')); ?>" class="text-2xl font-bold text-mst-gray py-3">
+                    <img src="<?php echo e(asset('assets/images/footer-logo.svg')); ?>" alt="logo" title="brand logo">
                 </a>
                 <p class="text-sm my-3 text-mst-gray leading-6 pe-6">
                     Saifco Travel & Tourism is a leading Dubai-based travel company offering Dubai tours, desert safari,
@@ -42,7 +42,7 @@
                     <li><a href="" class="hover:text-black transition-all duration-300">Privacy Policy</a></li>
                     <li><a href="" class="hover:text-black transition-all duration-300">Terms & Conditions</a></li>
                 </ul>
-                <img src="{{asset('assets/images/payment-icons.png')}}" class="w-64 mt-6" alt="payment-icons">
+                <img src="<?php echo e(asset('assets/images/payment-icons.png')); ?>" class="w-64 mt-6" alt="payment-icons">
             </div>
 
             <!-- Need Help — 1 col -->
@@ -54,7 +54,7 @@
                 </ul>
             </div>
 
-            @include('frontend.components.footer_menu')
+            <?php echo $__env->make('frontend.components.footer_menu', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
         </div>
     </div>
     <div class="container mx-auto">
@@ -62,35 +62,35 @@
             <div>
                 <ul class="flex gap-5 mt-5 items-center">
                     <li>
-                        <a href=""><img src="{{asset('assets/images/fb.svg')}}" class="w-10" alt="facebook"></a>
+                        <a href=""><img src="<?php echo e(asset('assets/images/fb.svg')); ?>" class="w-10" alt="facebook"></a>
                     </li>
                     <li>
-                        <a href=""><img src="{{asset('assets/images/insta.svg')}}" class="w-10" alt="instagram"></a>
+                        <a href=""><img src="<?php echo e(asset('assets/images/insta.svg')); ?>" class="w-10" alt="instagram"></a>
                     </li>
                     <li>
-                        <a href=""><img src="{{asset('assets/images/yt.svg')}}" class="w-10" alt="youtube"></a>
+                        <a href=""><img src="<?php echo e(asset('assets/images/yt.svg')); ?>" class="w-10" alt="youtube"></a>
                     </li>
                     <li>
-                        <a href=""><img src="{{asset('assets/images/tt.svg')}}" class="w-10" alt="tiktok"></a>
+                        <a href=""><img src="<?php echo e(asset('assets/images/tt.svg')); ?>" class="w-10" alt="tiktok"></a>
                     </li>
                     <li>
-                        <a href=""><img src="{{asset('assets/images/lk.svg')}}" class="w-10" alt="linkedin"></a>
+                        <a href=""><img src="<?php echo e(asset('assets/images/lk.svg')); ?>" class="w-10" alt="linkedin"></a>
                     </li>
                 </ul>
                 <p class="text-xs text-body mt-3">Copyright © 2025 Mysaifco.com. All Rights Reserved.</p>
             </div>
             <!-- Email -->
             <div class="flex items-center text-xs text-body md:mt-10 gap-3">
-                <img src="{{asset('assets/images/email.svg')}}" class="w-10 shrink-0" alt="email"> <span>info@mysaifco.com</span>
+                <img src="<?php echo e(asset('assets/images/email.svg')); ?>" class="w-10 shrink-0" alt="email"> <span>info@mysaifco.com</span>
             </div>
             <!-- Address -->
             <div class="flex items-start text-xs text-body  md:mt-12 gap-3">
-                <img src="{{asset('assets/images/location.svg')}}" class="w-10 shrink-0 mt-0.5" alt="address">
+                <img src="<?php echo e(asset('assets/images/location.svg')); ?>" class="w-10 shrink-0 mt-0.5" alt="address">
                 <span class="mt-1">16th Street Shop # 5, Bohra Masjid <br> Road, Ayal Nasir, Deira, Dubai, UAE</span>
             </div>
             <!-- Phone -->
             <div class="flex items-start text-xs text-body md:mt-10 gap-3">
-                <img src="{{asset('assets/images/phone.svg')}}" class="w-10 shrink-0 mt-1" alt="phone"> <span>
+                <img src="<?php echo e(asset('assets/images/phone.svg')); ?>" class="w-10 shrink-0 mt-1" alt="phone"> <span>
                     Office: +971 4 2733868 <br>
                     Tours: +971 50 5593840 <br>
                     Umrah: +971 55 6337710
@@ -99,3 +99,4 @@
         </div>
     </div>
 </footer>
+<?php /**PATH D:\laragon\www\mysaifco-laravel\resources\views/frontend/layouts/footer.blade.php ENDPATH**/ ?>

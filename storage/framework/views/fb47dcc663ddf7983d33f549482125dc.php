@@ -1,0 +1,123 @@
+<section class="product_categories flex justify-center items-center py-20 px-4 bg-gray-50">
+    <div class="container mx-auto text-center">
+        <h6 class="font-semibold text-sm bg-gray-100 inline-block px-2 py3 rounded-full text-gray-900 uppercase
+                       shadow-sm shadow-gray-300 mb-3">high demanded categories</h6>
+        <h1 class="capitalize font-bold text-3xl md:text-4xl text-gray-900">our unique product category</h1>
+        <h6 class="font-semibold text-sm my-2 text-gray-900 leading-6">
+            Buy Top-Quality Custom Patches in USA 2026 <br class="hidden md:block">
+            Custom Patch Types Embroidered, PVC, Chenille, Leather & More
+        </h6>
+
+        <div class="w-32 bg-std-400 h-1 rounded-full my-4 mx-auto"></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mt-10">
+            <div class="bg-[linear-gradient(to_bottom_left,#f3f4f6_60%,#eeeeee_50%)] p-10 rounded shadow-md hover:shadow-lg transition duration-300 ease-in-out shadow-gray-300
+                                                outline-gray-400 outline-dashed outline-1 outline-offset-[-20px]">
+                <a href="">
+                    <img src="<?php echo e(asset('assets/images/product-category/01.webp')); ?>" class="mx-auto transition-transform duration-500 hover:scale-101" alt="01">
+                    <h2 class="text-xl font-semibold capitalize my-2">Embroidered patches</h2>
+                    <p>Custom embroidered patches are the most common process in embroidery we can easily create the
+                       style and style you want.</p>
+                </a>
+            </div>
+            <div class="bg-[linear-gradient(to_bottom_left,#f3f4f6_60%,#eeeeee_50%)] p-10 rounded shadow-md hover:shadow-lg transition duration-300 ease-in-out shadow-gray-300
+                                    outline-gray-400 outline-dashed outline-1 outline-offset-[-20px]">
+                <a href="">
+                    <img src="<?php echo e(asset('assets/images/product-category/02.webp')); ?>" class="mx-auto  transition-transform duration-500 hover:scale-101" alt="01">
+                    <h2 class="text-xl font-semibold capitalize my-2">Leather Patches</h2>
+                    <p>Using our custom leather patches to promote your brand! Choose from genuine or faux leather to
+                       impress. Ideal for clothing, bags and hats.</p>
+                </a>
+            </div>
+            <div class="bg-[linear-gradient(to_bottom_left,#f3f4f6_60%,#eeeeee_50%)] p-10 rounded shadow-md hover:shadow-lg transition duration-300 ease-in-out shadow-gray-300
+                                    outline-gray-400 outline-dashed outline-1 outline-offset-[-20px]">
+                <a href="">
+                    <img src="<?php echo e(asset('assets/images/product-category/03.webp')); ?>" class="mx-auto  transition-transform duration-500 hover:scale-101" alt="01">
+                    <h2 class="text-xl font-semibold capitalize my-2">Custom Adhesive Patches</h2>
+                    <p>Custom adhesive patches use durable materials and a strong peel and stick backing ideal for
+                       quick, no sew application on various surfaces.</p>
+                </a>
+            </div>
+            <div class="bg-[linear-gradient(to_bottom_left,#f3f4f6_60%,#eeeeee_50%)] p-10 rounded shadow-md hover:shadow-lg transition duration-300 ease-in-out shadow-gray-300
+                                    outline-gray-400 outline-dashed outline-1 outline-offset-[-20px]">
+                <a href="">
+                    <img src="<?php echo e(asset('assets/images/product-category/04.webp')); ?>" class="mx-auto  transition-transform duration-500 hover:scale-101" alt="01">
+                    <h2 class="text-xl font-semibold capitalize my-2">Printed Patches</h2>
+                    <p>There is no color limit for the printed patches, the surface is flat and smooth it can be washed
+                       and dry cleaned, it is durable and does not fade.</p>
+                </a>
+            </div>
+            <div class="bg-[linear-gradient(to_bottom_left,#f3f4f6_60%,#eeeeee_50%)] p-10 rounded shadow-md hover:shadow-lg transition duration-300 ease-in-out shadow-gray-300
+                                    outline-gray-400 outline-dashed outline-1 outline-offset-[-20px]">
+                <a href="">
+                    <img src="<?php echo e(asset('assets/images/product-category/05.webp')); ?>" class="mx-auto  transition-transform duration-500 hover:scale-101" alt="01">
+                    <h2 class="text-xl font-semibold capitalize my-2">Chenille Patches</h2>
+                    <p>The soft, textured threads deliver a cozy finish that’s ideal for showcasing a classic varsity
+                       vibe or bringing a fun, tactile touch to your creations.</p>
+                </a>
+            </div>
+            <div class="bg-[linear-gradient(to_bottom_left,#f3f4f6_60%,#eeeeee_50%)] p-10 rounded shadow-md hover:shadow-lg transition duration-300 ease-in-out shadow-gray-300
+                                    outline-gray-400 outline-dashed outline-1 outline-offset-[-20px]">
+                <a href="">
+                    <img src="<?php echo e(asset('assets/images/product-category/06.webp')); ?>" class="mx-auto  transition-transform duration-500 hover:scale-101" alt="01">
+                    <h2 class="text-xl font-semibold capitalize my-2">PVC Patches</h2>
+                    <p>Enhance design precision and get a bold, durable look with PVC patches. Their tough structure
+                       keeps artwork bold and bright through everyday use.</p>
+                </a>
+            </div>
+            <div class="bg-[linear-gradient(to_bottom_left,#f3f4f6_60%,#eeeeee_50%)] p-10 rounded shadow-md hover:shadow-lg transition duration-300 ease-in-out shadow-gray-300
+                                    outline-gray-400 outline-dashed outline-1 outline-offset-[-20px]">
+                <a href="">
+                    <img src="<?php echo e(asset('assets/images/product-category/07.webp')); ?>" class="mx-auto  transition-transform duration-500 hover:scale-101" alt="01">
+                    <h2 class="text-xl font-semibold capitalize my-2">Magnetic Patches</h2>
+                    <p>Magnetic patches feature durable materials and strong built in magnets perfect for easy, no-sew
+                       attachment to uniforms, hats, or gear.</p>
+                </a>
+            </div>
+            <div class="bg-[linear-gradient(to_bottom_left,#f3f4f6_60%,#eeeeee_50%)] p-10 rounded shadow-md hover:shadow-lg transition duration-300 ease-in-out shadow-gray-300
+                                    outline-gray-400 outline-dashed outline-1 outline-offset-[-20px]">
+                <a href="">
+                    <img src="<?php echo e(asset('assets/images/product-category/08.webp')); ?>" class="mx-auto  transition-transform duration-500 hover:scale-101" alt="01">
+                    <h2 class="text-xl font-semibold capitalize my-2">Woven Patches</h2>
+                    <p>Showcase detailed artwork with sharp precision. Ideal for intricate logos and fine text. Ask
+                       about custom labels.</p>
+                </a>
+            </div>
+            <div class="bg-[linear-gradient(to_bottom_left,#f3f4f6_60%,#eeeeee_50%)] p-10 rounded shadow-md hover:shadow-lg transition duration-300 ease-in-out shadow-gray-300
+                                    outline-gray-400 outline-dashed outline-1 outline-offset-[-20px]">
+                <a href="">
+                    <img src="<?php echo e(asset('assets/images/product-category/09.webp')); ?>" class="mx-auto  transition-transform duration-500 hover:scale-101" alt="01">
+                    <h2 class="text-xl font-semibold capitalize my-2">sublimated Patches</h2>
+                    <p>Turn photos into wearable art. Sublimation offers vibrant, photorealistic prints.</p>
+                </a>
+            </div>
+            <div class="bg-[linear-gradient(to_bottom_left,#f3f4f6_60%,#eeeeee_50%)] p-10 rounded shadow-md hover:shadow-lg transition duration-300 ease-in-out shadow-gray-300
+                                    outline-gray-400 outline-dashed outline-1 outline-offset-[-20px]">
+                <a href="">
+                    <img src="<?php echo e(asset('assets/images/product-category/10.webp')); ?>" class="mx-auto  transition-transform duration-500 hover:scale-101" alt="01">
+                    <h2 class="text-xl font-semibold capitalize my-2">Embroidered Neckerchiefs</h2>
+                    <p>Embroidered neckerchiefs are made from soft, durable fabric with vibrant stitching perfect for
+                       uniforms, events, or custom style.</p>
+                </a>
+            </div>
+            <div class="bg-[linear-gradient(to_bottom_left,#f3f4f6_60%,#eeeeee_50%)] p-10 rounded shadow-md hover:shadow-lg transition duration-300 ease-in-out shadow-gray-300
+                                    outline-gray-400 outline-dashed outline-1 outline-offset-[-20px]">
+                <a href="">
+                    <img src="<?php echo e(asset('assets/images/product-category/11.webp')); ?>" class="mx-auto  transition-transform duration-500 hover:scale-101" alt="01">
+                    <h2 class="text-xl font-semibold capitalize my-2">PVC Keychains</h2>
+                    <p>Take your brand everywhere with custom keychains—stylish, durable, and designed to impress.</p>
+                </a>
+            </div>
+            <div class="bg-[linear-gradient(to_bottom_left,#f3f4f6_60%,#eeeeee_50%)] p-10 rounded shadow-md hover:shadow-lg transition duration-300 ease-in-out shadow-gray-300
+                                    outline-gray-400 outline-dashed outline-1 outline-offset-[-20px]">
+                <a href="">
+                    <img src="<?php echo e(asset('assets/images/product-category/12.webp')); ?>" class="mx-auto  transition-transform duration-500 hover:scale-101" alt="01">
+                    <h2 class="text-xl font-semibold capitalize my-2">custom mouse pads</h2>
+                    <p>Custom mouse pads offer a smooth, durable surface and vibrant prints. Perfect for comfort and
+                       style during work or gaming.</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<?php /**PATH D:\laragon\www\mysaifco-laravel\resources\views/frontend/components/product_categories.blade.php ENDPATH**/ ?>
