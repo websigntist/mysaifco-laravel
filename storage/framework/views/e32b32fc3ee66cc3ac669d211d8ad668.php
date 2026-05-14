@@ -4,7 +4,7 @@
             'title' => 'Dubai Desert Safari',
             'badge' => 'Best Seller',
             'badge_style' => 'fire',
-            'image' => 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800&q=80',
+            'image' => asset('assets/images/p1.webp'),
             'rating' => '4.9',
             'reviews' => '5.1k',
             'price' => '150',
@@ -14,7 +14,7 @@
             'title' => 'Private Luxury Yacht Charter',
             'badge' => 'Best Price Yacht Deal',
             'badge_style' => 'fire',
-            'image' => 'https://images.unsplash.com/photo-1567894340315-735d7c361db0?w=800&q=80',
+            'image' => asset('assets/images/p2.webp'),
             'rating' => '4.8',
             'reviews' => '3.2k',
             'price' => '890',
@@ -24,7 +24,7 @@
             'title' => 'Dinner Cruise Dubai Marina',
             'badge' => 'Top Rated Dinner Cruise',
             'badge_style' => 'star',
-            'image' => 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80',
+            'image' => asset('assets/images/p3.webp'),
             'rating' => '4.9',
             'reviews' => '8.4k',
             'price' => '220',
@@ -34,7 +34,7 @@
             'title' => 'Abu Dhabi City Tour',
             'badge' => 'Best Seller',
             'badge_style' => 'fire',
-            'image' => 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80',
+            'image' => asset('assets/images/p1.webp'),
             'rating' => '4.7',
             'reviews' => '2.1k',
             'price' => '185',
@@ -44,7 +44,7 @@
             'title' => 'Dubai Frame & Sky Views',
             'badge' => 'Top Rated',
             'badge_style' => 'star',
-            'image' => 'https://images.unsplash.com/photo-1458695406213-6ed82fad51c8?w=800&q=80',
+            'image' => asset('assets/images/p2.webp'),
             'rating' => '4.6',
             'reviews' => '1.4k',
             'price' => '95',
@@ -54,7 +54,7 @@
             'title' => 'Morning Desert Safari',
             'badge' => 'Best Seller',
             'badge_style' => 'fire',
-            'image' => 'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&q=80',
+            'image' => asset('assets/images/p3.webp'),
             'rating' => '4.8',
             'reviews' => '4.0k',
             'price' => '125',
@@ -62,7 +62,6 @@
         ],
     ];
 ?>
-
 <section class="flex justify-center items-center bg-white py-12 px-4 md:py-14">
     <div class="container mx-auto">
         <div
@@ -77,20 +76,32 @@
                     <div class="best-seller-nav flex shrink-0 items-center justify-end gap-2.5 sm:justify-start">
                         <button
                             type="button"
-                            class="best-seller-swiper-prev best-seller-nav-btn best-seller-nav-btn--prev"
+                            class="best-seller-swiper-prev best-seller-nav-btn best-seller-nav-btn--prev px-8 py-2"
                             aria-label="Previous tours"
                         >
                             <svg class="best-seller-nav-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path
+                                    d="M15 18l-6-6 6-6"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
                             </svg>
                         </button>
                         <button
                             type="button"
-                            class="best-seller-swiper-next best-seller-nav-btn best-seller-nav-btn--next"
+                            class="best-seller-swiper-next best-seller-nav-btn best-seller-nav-btn--next px-8 py-2"
                             aria-label="Next tours"
                         >
                             <svg class="best-seller-nav-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path
+                                    d="M9 18l6-6-6-6"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
                             </svg>
                         </button>
                     </div>
@@ -100,72 +111,84 @@
                     tours, and Abu Dhabi trips – all top-rated and best value for money.
                 </p>
             </header>
-
             <div class="relative mt-8 -mx-4 px-4 sm:mx-0 sm:px-0">
-            <div
-                class="swiper best-seller-swiper"
-                id="best-seller-swiper"
-            >
-                <div class="swiper-wrapper">
-                    <?php $__currentLoopData = $bestSellerSlides; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $slide): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <div class="swiper-slide !h-auto">
-                            <article
-                                class="best-seller-card flex h-full flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm"
-                            >
-                                <a href="<?php echo e($slide['url']); ?>" class="relative block aspect-[16/10] shrink-0 overflow-hidden">
-                                    <img
-                                        src="<?php echo e($slide['image']); ?>"
-                                        alt=""
-                                        class="h-full w-full object-cover transition duration-300 hover:scale-105"
-                                        loading="lazy"
-                                        width="400"
-                                        height="250"
-                                    >
-                                    <span
-                                        class="absolute left-3 top-3 inline-flex items-center gap-1 rounded px-2 py-1 text-xs font-semibold text-white shadow-sm bg-red-600"
-                                    >
-                                        <?php if(($slide['badge_style'] ?? '') === 'star'): ?>
-                                            <span aria-hidden="true">&#11088;</span>
-                                        <?php else: ?>
-                                            <span aria-hidden="true">&#128293;</span>
-                                        <?php endif; ?>
-                                        <?php echo e($slide['badge']); ?>
-
-                                    </span>
-                                </a>
-                                <div class="flex flex-1 flex-col p-4">
-                                    <h2 class="font-heading text-lg font-bold leading-snug text-mst-gray line-clamp-2">
-                                        <a href="<?php echo e($slide['url']); ?>" class="hover:text-mst focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-mst">
-                                            <?php echo e($slide['title']); ?>
-
-                                        </a>
-                                    </h2>
-                                    <div class="mt-2 flex flex-wrap items-center gap-1.5 text-sm text-gray-500">
-                                        <span class="text-amber-400" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                                        <span class="font-body">(<?php echo e($slide['rating']); ?>/5)</span>
-                                        <span><?php echo e($slide['reviews']); ?> Reviews</span>
-                                    </div>
-                                    <div class="mt-auto flex items-end justify-between gap-3 pt-4">
-                                        <div>
-                                            <p class="text-xs text-gray-500">From</p>
-                                            <p class="font-heading text-base font-bold text-mst-gray">
-                                                AED <?php echo e($slide['price']); ?><span class="text-sm font-normal text-gray-600">/person</span>
-                                            </p>
-                                        </div>
-                                        <a
-                                            href="<?php echo e($slide['url']); ?>"
-                                            class="inline-flex shrink-0 items-center gap-1 rounded-full bg-mst px-4 py-2 text-sm font-semibold text-white transition hover:bg-mst-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-mst-dark"
+                <div
+                    class="swiper best-seller-swiper"
+                    id="best-seller-swiper"
+                >
+                    <div class="swiper-wrapper">
+                        <?php $__currentLoopData = $bestSellerSlides; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $slide): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <div class="swiper-slide !h-auto">
+                                <article
+                                    class="best-seller-card flex h-full flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm"
+                                >
+                                    <a href="<?php echo e($slide['url']); ?>" class="relative block aspect-[16/10] shrink-0 overflow-hidden">
+                                        <img
+                                            src="<?php echo e($slide['image']); ?>"
+                                            alt=""
+                                            class="h-full w-full object-cover transition duration-300 hover:scale-105"
+                                            loading="lazy"
+                                            width="400"
+                                            height="250"
+                                        > <span
+                                            class="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full px-3
+                                        py-1 text-sm font-normal text-white shadow-sm bg-red-600 font-heading"
                                         >
-                                            Book Now
-                                            <span class="text-white/90" aria-hidden="true">&rsaquo;</span>
-                                        </a>
+                                        <?php if(($slide['badge_style'] ?? '') === 'star'): ?>
+                                                <span aria-hidden="true">&#11088;</span>
+                                            <?php else: ?>
+                                                <span aria-hidden="true">&#128293;</span>
+                                            <?php endif; ?>
+                                            <?php echo e($slide['badge']); ?>
+
+                                    </span> </a>
+                                    <div class="flex flex-1 flex-col p-4">
+                                        <h2 class="font-heading text-xl font-bold leading-snug text-mst-gray line-clamp-2">
+                                            <a href="<?php echo e($slide['url']); ?>" class="hover:text-mst focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-mst">
+                                                <?php echo e($slide['title']); ?>
+
+                                            </a>
+                                        </h2>
+                                        <div class="mt-2 flex flex-wrap items-center gap-1.5 text-xs text-gray-700
+                                    font-heading">
+                                            <span class="text-amber-400" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                            <span class="font-body">(<?php echo e($slide['rating']); ?>/5)</span> <span><?php echo e($slide['reviews']); ?> Reviews</span>
+                                        </div>
+                                        <div class="mt-auto flex items-end justify-between gap-3 pt-4">
+                                            <div>
+                                                <p class="text-xs text-gray-700 -mb-1">From</p>
+                                                <p class="font-heading text-xl font-bold text-mst-gray">
+                                                    AED <?php echo e($slide['price']); ?>
+
+                                                    <span class="text-sm font-normal text-gray-600">/person</span>
+                                                </p>
+                                            </div>
+                                            <a
+                                                href="<?php echo e($slide['url']); ?>"
+                                                class="inline-flex shrink-0 items-center gap-1 rounded-full px-4 py-2
+                                            text-sm font-light text-white
+                                            bg-gradient-to-r from-[#BA9B31] to-[#74611E]
+                                             hover:bg-gradient-to-r hover:from-[#74611E] hover:to-[#BA9B31]
+                                             transition duration-300 font-heading italic
+                                            focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-mst-dark"
+                                            > Book Now <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
+                                                            class="w-4 ms-1"
+                                                            alt="arrow"> </a>
+                                        </div>
                                     </div>
-                                </div>
-                            </article>
-                        </div>
-                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                </article>
+                            </div>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    </div>
                 </div>
-            </div>
+                <div class="mt-15">
+                    <a href="" class="flex items-center justify-center w-64 text-mst-gray text-xl px-6 py-4 rounded-full
+                                                border border-mst-gray font-bold
+                                                 transition duration-300 font-heading mx-auto"> View all Tours
+                        <img src="<?php echo e(asset('assets/images/icons/btn-arrow-blk.svg')); ?>"
+                             class="w-6 ms-3"
+                             alt="arrow"> </a>
+                </div>
             </div>
         </div>
     </div>
