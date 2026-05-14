@@ -68,49 +68,48 @@
             class="best-seller-swiper-wrap"
             aria-label="Best seller tours carousel"
         >
-            <header class="best-seller-header flex flex-col gap-6 md:gap-7">
-                <div class="best-seller-heading-row flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6 md:gap-8">
-                    <h1 class="min-w-0 flex-1 font-heading text-3xl font-bold italic leading-tight tracking-tight text-mst-gray md:text-4xl md:leading-[1.15]">
-                        <span class="text-mst-gray">Best Seller &amp;</span><span class="text-mst"> Top Rated Dubai Tours</span>
-                    </h1>
-                    <div class="best-seller-nav flex shrink-0 items-center justify-end gap-2.5 sm:justify-start">
-                        <button
-                            type="button"
-                            class="best-seller-swiper-prev best-seller-nav-btn best-seller-nav-btn--prev px-8 py-2"
-                            aria-label="Previous tours"
-                        >
-                            <svg class="best-seller-nav-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                <path
-                                    d="M15 18l-6-6 6-6"
-                                    stroke="currentColor"
-                                    stroke-width="1.5"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                />
-                            </svg>
-                        </button>
-                        <button
-                            type="button"
-                            class="best-seller-swiper-next best-seller-nav-btn best-seller-nav-btn--next px-8 py-2"
-                            aria-label="Next tours"
-                        >
-                            <svg class="best-seller-nav-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                <path
-                                    d="M9 18l6-6-6-6"
-                                    stroke="currentColor"
-                                    stroke-width="1.5"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                />
-                            </svg>
-                        </button>
+            <div class="best-seller-header flex item-center justify-between gap-6 md:gap-7">
+                <div class="">
+                    <div class="best-seller-heading-row flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6 md:gap-8">
+                        <h1 class="min-w-0 flex-1 font-heading text-3xl font-bold italic leading-tight tracking-tight text-mst-gray md:text-4xl md:leading-[1.15]">
+                            <span class="text-mst-gray">Best Seller &amp;</span><span class="text-mst"> Top Rated Dubai Tours</span>
+                        </h1>
                     </div>
+                    <p class="pe-10 font-body text-body leading-7 md:text-lg md:leading-8 mt-4">
+                        Discover our most popular Dubai tours and experiences, including desert safari, yacht tours,
+                        city tours, and Abu Dhabi trips – all top-rated and best value for money.
+                    </p>
                 </div>
-                <p class="max-w-4xl font-body text-base leading-7 text-neutral-600 md:text-lg md:leading-8">
-                    Discover our most popular Dubai tours and experiences, including desert safari, yacht tours, city
-                    tours, and Abu Dhabi trips – all top-rated and best value for money.
-                </p>
-            </header>
+                {{-- arrow buttons --}}
+                <div class="best-seller-nav flex shrink-0 items-center justify-end gap-4 sm:justify-start">
+                    <button
+                        type="button"
+                        class="best-seller-swiper-prev best-seller-nav-btn best-seller-nav-btn--prev"
+                        aria-label="Previous tours"
+                    >
+                        <img
+                            src="{{ asset('assets/images/icons/btn-arrow-blk-left.svg') }}"
+                            class="best-seller-nav-img best-seller-nav-img--prev rotate-180"
+                            width="20"
+                            height="20"
+                            alt=""
+                        />
+                    </button>
+                    <button
+                        type="button"
+                        class="best-seller-swiper-next best-seller-nav-btn best-seller-nav-btn--next"
+                        aria-label="Next tours"
+                    >
+                        <img
+                            src="{{ asset('assets/images/icons/btn-arrow-wht-right.svg') }}"
+                            class="best-seller-nav-img"
+                            width="20"
+                            height="20"
+                            alt=""
+                        />
+                    </button>
+                </div>
+            </div>
             <div class="relative mt-8 -mx-4 px-4 sm:mx-0 sm:px-0">
                 <div
                     class="swiper best-seller-swiper"
