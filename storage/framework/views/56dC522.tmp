@@ -1,0 +1,36 @@
+<section class="flex justify-center items-center bg-white py-12 px-4 md:py-14">
+    <div class="container mx-auto">
+        <div
+            class="best-seller-swiper-wrap"
+            aria-label="Best seller tours carousel"
+        >
+            <div class="flex item-center justify-between gap-6 md:gap-7">
+                <div class="">
+                    <div class="best-seller-heading-row flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6 md:gap-8">
+                        <h1 class="min-w-0 flex-1 font-heading text-3xl font-bold italic leading-tight tracking-tight text-mst-gray md:text-4xl md:leading-[1.15]">
+                            <span class="text-mst-gray">Our Popular</span>
+                            <span class="text-mst"> Tour Categories</span>
+                        </h1>
+                    </div>
+                    <p class="pe-10 font-body text-body leading-7 md:text-lg md:leading-8 mt-4">
+                        Explore our travel packages for every traveler. Whether a camel race, safari tour , or city
+                        exploration, we have something special!
+                    </p>
+                </div>
+                
+                <div class="bflex shrink-0 items-center justify-end gap-4 sm:justify-start">
+                    <a href="" class="flex items-center justify-center text-white text-lg px-7 py-4 rounded-full
+                                                bg-gradient-to-r from-[#BA9B31] to-[#74611E]
+                                                 hover:bg-gradient-to-r hover:from-[#74611E] hover:to-[#BA9B31]
+                                                 transition duration-300 font-heading italic"> View all Packages
+                        <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
+                             class="w-6 ms-1"
+                             alt="arrow"> </a>
+                </div>
+            </div>
+            <div class="">
+            </div>
+        </div>
+    </div>
+</section>
+<?php /**PATH D:\laragon\www\mysaifco-laravel\resources\views/frontend/components/our_popular.blade.php ENDPATH**/ ?>

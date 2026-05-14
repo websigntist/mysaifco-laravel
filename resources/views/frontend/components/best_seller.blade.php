@@ -71,7 +71,7 @@
             <div class="best-seller-header flex item-center justify-between gap-6 md:gap-7">
                 <div class="">
                     <div class="best-seller-heading-row flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6 md:gap-8">
-                        <h1 class="min-w-0 flex-1 font-heading text-3xl font-bold italic leading-tight tracking-tight text-mst-gray md:text-4xl md:leading-[1.15]">
+                        <h1 class="min-w-0 flex-1 font-heading text-3xl font-semibold italic leading-tight tracking-tight text-mst-gray">
                             <span class="text-mst-gray">Best Seller &amp;</span><span class="text-mst"> Top Rated Dubai Tours</span>
                         </h1>
                     </div>

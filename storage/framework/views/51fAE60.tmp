@@ -1,0 +1,18 @@
+<section class="flex justify-center items-center bg-white py-12 px-4 md:py-14">
+    <div class="container mx-auto">
+        <div class="grid-5">
+            <div class="mx-auto">
+                <h2 class="font-heading text-3xl font-bold italic leading-tight tracking-tight text-center">
+                    <span class="text-mst-gray">Customer </span><span class="text-mst"> Reviews</span>
+                </h2>
+                <p class="mt-4 max-w-2xl font-body text-center inline-block">
+                    Trusted by thousands of travelers for Dubai tours & Umrah packages, delivering reliable service,
+                    smooth journeys, and unforgettable experiences.
+                </p>
+            </div>
+            <div class="">
+            </div>
+        </div>
+    </div>
+</section>
+<?php /**PATH D:\laragon\www\mysaifco-laravel\resources\views/frontend/components/testimonials.blade.php ENDPATH**/ ?>

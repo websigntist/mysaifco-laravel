@@ -36,10 +36,11 @@
                                         exceeded.</p>
             </div>
             <div class="flex justify-center items-center">
-                <img src="{{asset('assets/images/sliders/p2.webp')}}"
+                <img src="<?php echo e(asset('assets/images/sliders/p2.webp')); ?>"
                      class="mx-auto mix-blend-multiply mt-10 transition-transform duration-500 hover:scale-101"
                      alt="01">
             </div>
         </div>
     </div>
 </section>
+<?php /**PATH D:\laragon\www\mysaifco-laravel\resources\views/frontend/components/our_popular.blade.php ENDPATH**/ ?>

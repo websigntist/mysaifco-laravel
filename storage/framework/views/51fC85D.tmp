@@ -1,0 +1,120 @@
+<?php
+    $testimonials = $testimonials ?? [
+        [
+            'quote' => 'The desert safari was perfectly organized from pickup to drop-off. Our guide was knowledgeable and the whole family felt safe and entertained throughout.',
+            'name' => 'Syed Hussain Hashmi',
+            'meta' => 'Umrah Traveler · Dubai',
+        ],
+        [
+            'quote' => 'We booked a yacht charter for a corporate event and Saifco handled every detail. Professional crew, stunning views, and seamless communication from start to finish.',
+            'name' => 'Amna Al-Rashid',
+            'meta' => 'Corporate Guest · Abu Dhabi',
+        ],
+        [
+            'quote' => 'Honest pricing, clear itinerary, and no hidden fees. Our Dubai city tour covered everything we wanted to see without feeling rushed. Highly recommend.',
+            'name' => 'James Mitchell',
+            'meta' => 'Family Traveler · UK',
+        ],
+        [
+            'quote' => 'From airport transfers to hotel coordination, the team made our Umrah journey stress-free. Kind staff and reliable timing at every step.',
+            'name' => 'Fatima Zahra',
+            'meta' => 'Pilgrim · Pakistan',
+        ],
+        [
+            'quote' => 'The dhow cruise dinner exceeded expectations — great food, live music, and a magical view of the marina skyline. Worth every dirham.',
+            'name' => 'Omar El-Sayed',
+            'meta' => 'Honeymoon · Egypt',
+        ],
+        [
+            'quote' => 'Responsive WhatsApp support and flexible rescheduling when our flight was delayed. That level of service is rare and deeply appreciated.',
+            'name' => 'Priya Natarajan',
+            'meta' => 'Solo Traveler · India',
+        ],
+    ];
+?>
+
+<section class="flex justify-center items-center bg-neutral-50 py-12 px-4 md:py-16">
+    <div class="container mx-auto">
+        <div class="testimonials-section-inner mx-auto max-w-6xl">
+            <div class="mx-auto max-w-2xl text-center">
+                <h2 class="font-heading text-3xl font-bold italic leading-tight tracking-tight text-mst-gray md:text-4xl">
+                    <span class="text-mst-gray">Customer </span><span class="text-mst">Reviews</span>
+                </h2>
+                <p class="mt-4 font-body text-base leading-7 text-neutral-600 md:text-lg md:leading-8">
+                    Trusted by thousands of travelers for Dubai tours &amp; Umrah packages, delivering reliable service,
+                    smooth journeys, and unforgettable experiences.
+                </p>
+            </div>
+
+            <div class="customer_reviews mt-10 md:mt-14">
+                <div class="testimonials-swiper-wrap">
+                    <div class="flex items-stretch gap-3 sm:gap-4 md:items-center">
+                        <button
+                            type="button"
+                            class="testimonials-swiper-prev testimonials-nav-btn testimonials-nav-btn--prev shrink-0 self-center max-md:mt-1"
+                            aria-label="Previous testimonials"
+                        >
+                            <svg class="testimonials-nav-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+
+                        <div
+                            class="swiper testimonials-swiper min-w-0 flex-1 py-1"
+                            id="testimonials-swiper"
+                            aria-roledescription="carousel"
+                        >
+                            <div class="swiper-wrapper">
+                                <?php $__currentLoopData = $testimonials; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $t): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <div class="swiper-slide !h-auto">
+                                        <article
+                                            class="testimonial-card flex h-full flex-col rounded-[18px] border border-[#eeeeee] bg-white p-6 shadow-[0_4px_24px_rgba(0,0,0,0.06)] md:p-7 md:px-8"
+                                        >
+                                            <div class="flex gap-0.5 text-[#D4AF37]" aria-hidden="true">
+                                                <?php for($i = 0; $i < 5; $i++): ?>
+                                                    <span class="text-base leading-none md:text-lg">&#9733;</span>
+                                                <?php endfor; ?>
+                                            </div>
+                                            <div class="relative mt-4 min-h-[7rem] flex-1 md:min-h-[8rem]">
+                                                <p class="pr-10 font-body text-[15px] leading-relaxed text-[#333333] md:text-base md:leading-relaxed">
+                                                    <?php echo e($t['quote']); ?>
+
+                                                </p>
+                                                <span
+                                                    class="pointer-events-none absolute bottom-0 right-0 font-heading text-5xl font-bold leading-none text-[#D4AF37] opacity-90 md:text-6xl"
+                                                    aria-hidden="true"
+                                                >&rdquo;</span>
+                                            </div>
+                                            <hr class="mt-6 border-0 border-t border-[#eeeeee]">
+                                            <footer class="pt-5">
+                                                <p class="font-heading text-base font-bold text-[#333333] md:text-lg">
+                                                    &mdash; <?php echo e($t['name']); ?>
+
+                                                </p>
+                                                <p class="mt-1 font-body text-sm text-[#777777] md:text-[15px]">
+                                                    <?php echo e($t['meta']); ?>
+
+                                                </p>
+                                            </footer>
+                                        </article>
+                                    </div>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            </div>
+                        </div>
+
+                        <button
+                            type="button"
+                            class="testimonials-swiper-next testimonials-nav-btn testimonials-nav-btn--next shrink-0 self-center max-md:mt-1"
+                            aria-label="Next testimonials"
+                        >
+                            <svg class="testimonials-nav-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<?php /**PATH D:\laragon\www\mysaifco-laravel\resources\views/frontend/components/testimonials.blade.php ENDPATH**/ ?>

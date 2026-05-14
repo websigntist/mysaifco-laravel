@@ -3,9 +3,9 @@ bg-gradient-to-r from-[#ffffff] from-75% to-[#BA9B315F] to-25%">
     <div class="container mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-[8fr_4fr] gap-6">
             <div class="flex flex-col justify-center">
-                <h1 class="capitalize italic font-bold text-3xl font-heading">
+                <h1 class="capitalize italic font-semibold text-3xl font-heading">
                     explore UAE with
-                    <span class="text-mst italic font-bold">
+                    <span class="text-mst">
                         saifco travel & trourism
                     </span>
                 </h1>

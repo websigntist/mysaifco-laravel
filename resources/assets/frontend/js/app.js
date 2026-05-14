@@ -231,6 +231,51 @@ function initBestSellerSwiper() {
     });
 }
 
+function initTestimonialsSwiper() {
+    const el = document.querySelector('#testimonials-swiper');
+    if (!el || el.dataset.swiperInit === '1') {
+        return;
+    }
+    el.dataset.swiperInit = '1';
+
+    const wrap = el.closest('.testimonials-swiper-wrap');
+    const prevEl = wrap?.querySelector('.testimonials-swiper-prev') ?? null;
+    const nextEl = wrap?.querySelector('.testimonials-swiper-next') ?? null;
+
+    new Swiper(el, {
+        modules: [Autoplay, Navigation],
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+        spaceBetween: 20,
+        speed: 550,
+        loop: false,
+        rewind: true,
+        watchOverflow: true,
+        grabCursor: true,
+        navigation: {
+            prevEl,
+            nextEl,
+        },
+        autoplay: {
+            delay: 4500,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+        },
+        breakpoints: {
+            640: {
+                slidesPerView: 2,
+                slidesPerGroup: 1,
+                spaceBetween: 20,
+            },
+            1024: {
+                slidesPerView: 3,
+                slidesPerGroup: 1,
+                spaceBetween: 24,
+            },
+        },
+    });
+}
+
 function initWhyChooseLogosSwiper() {
     const el = document.querySelector('#why-choose-logos-swiper');
     if (!el || el.dataset.swiperInit === '1') {
@@ -390,6 +435,7 @@ function initScrollMenus() {
 function initFrontend() {
     initQuoteFormCustomSelects();
     initBestSellerSwiper();
+    initTestimonialsSwiper();
     initWhyChooseLogosSwiper();
     initImageLogosSwiper();
     initScrollMenus();
