@@ -2,7 +2,7 @@
 @section('content')
     <div class="flex justify-center items-center">
         <div
-            class="px-4 hero_section relative flex md:min-h-[86vh] 2xl:min-h-[90vh] w-full items-center justify-center
+                class="px-4 hero_section relative flex md:min-h-[86vh] 2xl:min-h-[90vh] w-full items-center justify-center
             overflow-hidden">
             <div class="absolute inset-0 scale-105 bg-cover bg-center bg-no-repeat blur-[3px]"
                  style="background-image: url('{{ asset('assets/images/sliders/banner1.webp') }}')"
@@ -133,5 +133,5 @@
         </div>
     </section>
 
-    @include('frontend.components.inspiration')
+    @include('frontend.components.global-visa')
 @endsection

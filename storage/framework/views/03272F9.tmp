@@ -1,0 +1,8 @@
+<section class="flec item-center justify-center">
+    <div class="grid grid-cols-1 md:grid-cols-5">
+        <div class="bg-gray-200">
+            <img src="<?php echo e(asset('assets/images/icons/bestprice.svg')); ?>" alt="imf">
+        </div>
+    </div>
+</section>
+<?php /**PATH D:\laragon\www\mysaifco-laravel\resources\views/frontend/components/5xboxes.blade.php ENDPATH**/ ?>

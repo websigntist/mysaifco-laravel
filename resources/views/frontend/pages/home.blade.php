@@ -6,9 +6,9 @@
     @include('frontend.components.our_popular')
     @include('frontend.components.testimonials')
     @include('frontend.components.umrah_packages')
-    {{--@include('frontend.components.why_choose')
-    @include('frontend.components.faqs')
-    @include('frontend.components.blogs')
-    @include('frontend.components.inspiration')--}}
+    @include('frontend.components.5xboxes')
+    @include('frontend.components.global-visa')
+    {{--@include('frontend.components.blogs')
+    @include('frontend.components.faqs')--}}
 @endsection
 

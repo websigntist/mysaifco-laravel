@@ -3,7 +3,7 @@
     {{--==============--}}
     <div class="flex justify-center items-center">
         <div
-            class="px-4 hero_section relative flex md:min-h-[86vh] 2xl:min-h-[90vh] w-full items-center justify-center
+                class="px-4 hero_section relative flex md:min-h-[86vh] 2xl:min-h-[90vh] w-full items-center justify-center
             overflow-hidden">
             <div class="absolute inset-0 scale-105 bg-cover bg-center bg-no-repeat blur-[3px]"
                  style="background-image: url('{{ asset('assets/images/background/bg3.webp') }}')"
@@ -82,8 +82,8 @@
                 <div class="space-y-4 leading-6">
                     <h3 class="font-bold text-lg">Exclusive Patch Customization Options</h3>
                     <img src="{{asset('assets/images/background/image-1-1.webp')}}"
-                                             class="mx-auto transition-transform duration-500 hover:scale-101 rounded-lg"
-                                             alt="01">
+                         class="mx-auto transition-transform duration-500 hover:scale-101 rounded-lg"
+                         alt="01">
                     <p class="text-justify">Why settle for the ordinary when you can have the extraordinary? With
                                             Standard Patches, customization is key. Select from styles, thread types,
                                             and unique elements to create your patches. Our customization options
@@ -98,8 +98,8 @@
                 <div class="space-y-4 leading-6">
                     <h3 class="font-bold text-lg">Quality that Withstands the Test of Time</h3>
                     <img src="{{asset('assets/images/background/image-3.webp')}}"
-                                             class="mx-auto transition-transform duration-500 hover:scale-101 rounded-lg"
-                                             alt="01">
+                         class="mx-auto transition-transform duration-500 hover:scale-101 rounded-lg"
+                         alt="01">
                     <p class="text-justify">Standard Patches understands the importance of longevity. A sturdy base
                                             material is important to ensure durability and strong adhesion. We use
                                             high-quality fabrics like polyester blend twill, felt, and ballistic nylon.
@@ -180,8 +180,8 @@
                 <div class="space-y-4 leading-6">
                     <h3 class="font-bold text-lg">Delivering Premium Level of Service</h3>
                     <img src="{{asset('assets/images/background/image-33.webp')}}"
-                             class="mx-auto transition-transform duration-500 hover:scale-101 rounded-lg"
-                             alt="01">
+                         class="mx-auto transition-transform duration-500 hover:scale-101 rounded-lg"
+                         alt="01">
                     <ul class="liststyle">
                         <li>Design consultation with experts</li>
                         <li>Tailor options for each step of the process: backing, thread colors, and borders.</li>
@@ -194,23 +194,23 @@
                 <div class="space-y-4 leading-6">
                     <h3 class="font-bold text-lg">Delivering Quality At Reasonable Rates</h3>
                     <img src="{{asset('assets/images/background/image-40.webp')}}"
-                                             class="mx-auto transition-transform duration-500 hover:scale-101 rounded-lg"
-                                             alt="01">
+                         class="mx-auto transition-transform duration-500 hover:scale-101 rounded-lg"
+                         alt="01">
                     <p class="text-justify">Promoting your message across the board as an organization, club, sports
                                             team or business is super convenient with patch marketing. We craft our
                                             products with high resistance fabric and strongly adhesive material to
                                             provide greater durability. You can choose between velcro hooks, iron
                                             backings, and glue-on backings to achieve the level of adhesion you seek.
-                                            {{--You must make sure that the patch stays put, and for that, choosing an
-                                            effective fixating backing material for each kind of fabric is the key. Give
-                                            us a call today to discuss your custom embroidered patches designs, and we
-                                            will help you achieve the perfect imitation of that.--}}</p>
+                        {{--You must make sure that the patch stays put, and for that, choosing an
+                        effective fixating backing material for each kind of fabric is the key. Give
+                        us a call today to discuss your custom embroidered patches designs, and we
+                        will help you achieve the perfect imitation of that.--}}</p>
                 </div>
                 <div class="space-y-4 leading-6">
                     <h3 class="font-bold text-lg">Guaranteed Customer Satisfaction</h3>
                     <img src="{{asset('assets/images/background/image-42.webp')}}"
-                                             class="mx-auto transition-transform duration-500 hover:scale-101 rounded-lg"
-                                             alt="01">
+                         class="mx-auto transition-transform duration-500 hover:scale-101 rounded-lg"
+                         alt="01">
                     <p class="text-justify">We select patch materials and designs to help customers meet their marketing
                                             goals. Your success is our priority. Incorporate a sense of unity among your
                                             teammates with logo-infused t-shirts or caps. Our customers recognize us for
@@ -222,8 +222,8 @@
                 <div class="space-y-4 leading-6">
                     <h3 class="font-bold text-lg">Easy ordering and Fast-track Production</h3>
                     <img src="{{asset('assets/images/background/image-46.webp')}}"
-                                             class="mx-auto transition-transform duration-500 hover:scale-101 rounded-lg"
-                                             alt="01">
+                         class="mx-auto transition-transform duration-500 hover:scale-101 rounded-lg"
+                         alt="01">
                     <p class="text-justify">Ordering premium custom-embroidered patches has never been this easy. Our
                                             intuitive platform ensures an easy steps ordering process. It lets you focus
                                             on what matters. Partner with Standard Patches to order custom patches and a
@@ -234,8 +234,8 @@
                 <div class="space-y-4 leading-6">
                     <h3 class="font-bold text-lg">Why choose Standard Patches?</h3>
                     <img src="{{asset('assets/images/background/image-38.webp')}}"
-                                             class="mx-auto transition-transform duration-500 hover:scale-101 rounded-lg"
-                                             alt="01">
+                         class="mx-auto transition-transform duration-500 hover:scale-101 rounded-lg"
+                         alt="01">
                     <p class="text-justify">Standard Patches offers high-quality patches at competitive prices. Our
                                             skilled graphic artists make creating a traditional patch seamless and
                                             enjoyable. They accept diverse design formats for adaptability. We provide a
@@ -416,5 +416,5 @@
     </section>
 
 
-    @include('frontend.components.inspiration')
+    @include('frontend.components.global-visa')
 @endsection
