@@ -33,11 +33,11 @@
     ];
 @endphp
 
-<section class="flex justify-center items-center bg-neutral-50 py-12 px-4 md:py-16">
+<section class="flex justify-center items-center py-12 px-4 md:py-16">
     <div class="container mx-auto">
         <div class="testimonials-section-inner mx-auto max-w-6xl">
             <div class="mx-auto max-w-2xl text-center">
-                <h2 class="font-heading text-3xl font-bold italic leading-tight tracking-tight text-mst-gray md:text-4xl">
+                <h2 class="font-heading text-3xl font-semibold italic leading-tight tracking-tight text-mst-gray">
                     <span class="text-mst-gray">Customer </span><span class="text-mst">Reviews</span>
                 </h2>
                 <p class="mt-4 font-body text-base leading-7 text-neutral-600 md:text-lg md:leading-8">
@@ -68,7 +68,7 @@
                                 @foreach ($testimonialItems as $t)
                                     <div class="swiper-slide !h-auto">
                                         <article
-                                            class="testimonial-card flex h-full flex-col rounded-[15px] border border-neutral-200/90 bg-white p-6 shadow-sm md:p-7 md:px-8"
+                                            class="testimonial-card flex h-full flex-col rounded-[15px] border border-neutral-200/90 bg-neutral-50 p-6 shadow-sm md:p-7 md:px-8"
                                         >
                                             <div class="flex gap-0.5 text-amber-400" aria-hidden="true">
                                                 @for ($i = 0; $i < 5; $i++)
@@ -107,6 +107,17 @@
                             </svg>
                         </button>--}}
                     </div>
+
+                    <div class="mt-10">
+                            <a href="" class="flex items-center justify-center w-32 text-white text-lg px-2 py-2
+                            rounded-full mx-auto
+                            bg-gradient-to-r from-[#BA9B31] to-[#74611E]
+                             hover:bg-gradient-to-r hover:from-[#74611E] hover:to-[#BA9B31]
+                             transition duration-300 font-heading italic"> View All
+                                <img src="{{asset('assets/images/icons/btn-arrow.svg')}}"
+                                     class="w-6 ms-1"
+                                     alt="arrow"> </a>
+                        </div>
                 </div>
             </div>
         </div>

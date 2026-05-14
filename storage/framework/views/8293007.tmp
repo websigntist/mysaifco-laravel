@@ -1,0 +1,31 @@
+<section class="flex justify-center items-center py-12 px-4 md:py-16">
+    <div class="container mx-auto">
+        <div class="testimonials-section-inner mx-auto max-w-6xl">
+            <div class="mx-auto max-w-2xl text-center">
+                <h2 class="font-heading text-3xl font-semibold italic leading-tight tracking-tight text-mst-gray md:text-4xl">
+                    <span class="text-mst-gray">Best </span><span class="text-mst">Umrah Packges</span>
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-col-2 mt-10 md:mt-14">
+                <div class="">
+                    <div class="flex items-stretch gap-3 sm:gap-4 md:items-center">
+
+                    </div>
+
+                    <div class="mt-8">
+                            <a href="" class="flex items-center justify-center w-32 text-white text-lg px-2 py-2
+                            rounded-full mx-auto
+                            bg-gradient-to-r from-[#BA9B31] to-[#74611E]
+                             hover:bg-gradient-to-r hover:from-[#74611E] hover:to-[#BA9B31]
+                             transition duration-300 font-heading italic"> View All
+                                <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
+                                     class="w-6 ms-1"
+                                     alt="arrow"> </a>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<?php /**PATH D:\laragon\www\mysaifco-laravel\resources\views/frontend/components/umrah_packages.blade.php ENDPATH**/ ?>
