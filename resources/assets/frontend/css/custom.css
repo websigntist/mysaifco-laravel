@@ -149,3 +149,24 @@
 .testimonials-swiper-wrap .testimonials-swiper-next.swiper-button-lock {
     display: none;
 }
+/*=== tabs CSS start ====*/
+/* Styles extracted from inline attributes in umrah_packages.blade.php */
+.tab-btn {
+    border-color: #DDDDDD;
+    color: inherit;
+    background-color: transparent;
+    transition: background-color .3s, color .3s, border-color .3s;
+}
+
+.tab-btn:hover {
+    background-color: #BA9B31;
+    color: white;
+    border-color: transparent;
+}
+
+.tab-btn--active {
+    background-color: #BA9B31;
+    color: white;
+    border-color: transparent;
+}
+/*=== tabs CSS end ====*/

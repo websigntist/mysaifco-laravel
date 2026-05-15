@@ -8,6 +8,7 @@
     @include('frontend.components.umrah_packages')
     @include('frontend.components.5xboxes')
     @include('frontend.components.global-visa')
+    @include('frontend.components.holiday_packages')
     {{--@include('frontend.components.blogs')
     @include('frontend.components.faqs')--}}
 @endsection

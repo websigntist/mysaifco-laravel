@@ -181,7 +181,7 @@
                     </div>
                 </div>
                 <div class="mt-15">
-                    <a href="" class="flex items-center justify-center w-64 text-mst-gray text-xl px-6 py-4 rounded-full
+                    <a href="" class="flex items-center justify-center w-64 text-mst-gray text-xl px-5 py-3 rounded-full
                                                 border border-mst-gray font-bold
                                                  transition duration-300 font-heading mx-auto"> View all Tours
                         <img src="<?php echo e(asset('assets/images/icons/btn-arrow-blk.svg')); ?>"
