@@ -181,7 +181,7 @@ function initImageLogosSwiper() {
 }
 
 function initBestSellerSwiper() {
-    const el = document.querySelector('#best-seller-swiper');
+    const el = document.querySelector('.best-seller-swiper');
     if (!el || el.dataset.swiperInit === '1') {
         return;
     }

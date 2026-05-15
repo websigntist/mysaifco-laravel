@@ -64,10 +64,7 @@
 @endphp
 <section class="flex justify-center items-center bg-white py-12 px-4 md:py-14">
     <div class="container mx-auto">
-        <div
-            class="best-seller-swiper-wrap"
-            aria-label="Best seller tours carousel"
-        >
+        <div class="best-seller-swiper-wrap" aria-label="Best seller tours carousel">
             <div class="best-seller-header flex item-center justify-between gap-6 md:gap-7">
                 <div class="">
                     <div class="best-seller-heading-row flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6 md:gap-8">
@@ -111,10 +108,7 @@
                 </div>
             </div>
             <div class="relative mt-8 -mx-4 px-4 sm:mx-0 sm:px-0">
-                <div
-                    class="swiper best-seller-swiper"
-                    id="best-seller-swiper"
-                >
+                <div class="swiper best-seller-swiper" id="---best-seller-swiper">
                     <div class="swiper-wrapper">
                         @foreach ($bestSellerSlides as $slide)
                             <div class="swiper-slide !h-auto">
