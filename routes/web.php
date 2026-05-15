@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\backend;
 use App\Http\Controllers\frontend;
 
+use App\Models\backend\User;
+use Illuminate\Support\Facades\Hash;
+
 Route::get('/clearall', function () {
     Artisan::call('cache:clear');
     Artisan::call('config:clear');
@@ -21,7 +24,7 @@ Route::get('update-pass', function () {
     // pwd: adnan*2563325
     if ($user) {
         // Update the password securely
-        $user->password = Hash::make('');
+        $user->password = Hash::make('123456');
         $user->save(); // Save the changes
 
         return "Password updated successfully.";
