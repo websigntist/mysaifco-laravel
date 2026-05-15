@@ -133,5 +133,5 @@
         </div>
     </section>
 
-    @include('frontend.components.global-visa')
+    @include('frontend.components.global_visa')
 @endsection

@@ -22,13 +22,15 @@
                         </p>
                         {{-- button start --}}
                         <div class="mt-8 mb-4">
-                            <a href="" class="flex items-center justify-center w-44 text-white text-lg px-6 py-3 rounded-full
+                            <a href="" class="flex items-center justify-center w-44 text-white text-lg px-5 py-2
+                            rounded-full
                             bg-gradient-to-r from-[#BA9B31] to-[#74611E]
                              hover:bg-gradient-to-r hover:from-[#74611E] hover:to-[#BA9B31]
                              transition duration-300 font-heading italic"> Book Now
                                 <img src="{{asset('assets/images/icons/btn-arrow.svg')}}"
-                                     class="w-6 ms-1"
-                                     alt="arrow"> </a>
+                                     class="w-5 ms-1"
+                                     alt="arrow">
+                            </a>
                             {{-- button end --}}
                         </div>
                     </div>

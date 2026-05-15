@@ -1,0 +1,118 @@
+<section class="flex justify-center items-center py-12 px-4 md:py-16">
+    <div class="container mx-auto">
+        <div class="global-vsia">
+            <div class="flex flex-col gap-6 md:flex-row md:items-start md:justify-between md:gap-8">
+                <div class="min-w-0 flex-1">
+                    <h2 class="font-heading text-3xl font-semibold italic leading-tight tracking-tight text-mst-gray">
+                        <span class="text-mst-gray">Global Visa</span><span class="text-mst"> Assistance</span>
+                    </h2>
+                    <p class="mt-4 font-body leading-7 text-mst-gray">
+                        Get reliable global visa assistance with expert support for tourist visas, visit visas, business
+                        visas, and worldwide travel. Enjoy fast processing, hassle-free documentation, and trusted visa
+                        services.
+                    </p>
+                </div>
+                <div class="flex shrink-0 md:pt-1">
+                    <a
+                        href="#"
+                        class="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-mst
+                        to-mst-dark px-7 py-3 font-heading text-base italic text-white transition hover:from-mst-dark
+                         hover:to-mst md:text-lg"
+                    > View all Packages <img
+                            src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
+                            class="ms-1 w-6"
+                            width="24"
+                            height="24"
+                            alt=""
+                        > </a>
+                </div>
+            </div>
+            
+            <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
+                <div class="border-1 bg-gray-50 border-gray-200 rounded-2xl p-4 space-y-4">
+                    <img src="<?php echo e(asset('assets/images/globle1.webp')); ?>"
+                         class="w-full h-48 object-cover"
+                         alt="img">
+                    <div class="flex items-center justify-between min-w-0">
+                        <div class="min-w-0">
+                            <div class="font-heading text-md font-medium text-mst-gray break-words mb-1">UAE</div>
+                            <div class="font-body text-xs text-mst-gray capitalize break-words">Tourist & Business
+                                                                                                visa
+                            </div>
+                        </div>
+                        <div class="text-xs font-body text-mst-gray-300">
+                            3 - 5 days
+                        </div>
+                    </div>
+                    <a href="#"
+                       class="inline-flex shrink-0 items-center gap-1 rounded-full px-3 py-1
+                        text-sm font-light text-white
+                        bg-gradient-to-r from-[#BA9B31] to-[#74611E]
+                         hover:bg-gradient-to-r hover:from-[#74611E] hover:to-[#BA9B31]
+                         transition duration-300 font-heading italic
+                        focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-mst-dark"> Explore
+                        <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
+                             class="w-3 ms-1"
+                             alt="arrow"> </a>
+                </div>
+                <div class="border-1 bg-gray-50 border-gray-200 rounded-2xl p-4 space-y-4">
+                    <img src="<?php echo e(asset('assets/images/globle2.webp')); ?>"
+                         class="w-full h-48 object-cover"
+                         alt="img">
+                    <div class="flex items-center justify-between min-w-0">
+                        <div class="min-w-0">
+                            <div class="font-heading text-md font-medium text-mst-gray break-words
+                                            mb-1">Thailand
+                            </div>
+                            <div class="font-body text-xs text-mst-gray capitalize break-words">Tourist & Business
+                                                                                                Visas
+                            </div>
+                        </div>
+                        <div class="text-xs font-body text-mst-gray-300">
+                            3 - 5 days
+                        </div>
+                    </div>
+                    <a href="#"
+                       class="inline-flex shrink-0 items-center gap-1 rounded-full px-3 py-1
+                                        text-sm font-light text-white
+                                        bg-gradient-to-r from-[#BA9B31] to-[#74611E]
+                                         hover:bg-gradient-to-r hover:from-[#74611E] hover:to-[#BA9B31]
+                                         transition duration-300 font-heading italic
+                                        focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-mst-dark">
+                        Explore <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
+                                     class="w-3 ms-1"
+                                     alt="arrow"> </a>
+                </div>
+                <div class="border-1 bg-gray-50 border-gray-200 rounded-2xl p-4 space-y-4">
+                    <img src="<?php echo e(asset('assets/images/globle3.webp')); ?>"
+                         class="w-full h-48 object-cover"
+                         alt="img">
+                    <div class="flex items-center justify-between min-w-0">
+                        <div class="min-w-0">
+                            <div class="font-heading text-md font-medium text-mst-gray break-words
+                                            mb-1">Azerbaijan
+                            </div>
+                            <div class="font-body text-xs text-mst-gray capitalize break-words">Tourist & Business
+                                                                                                visa
+                            </div>
+                        </div>
+                        <div class="text-xs font-body text-mst-gray-300">
+                            3 - 5 days
+                        </div>
+                    </div>
+                    <a href="#"
+                       class="inline-flex shrink-0 items-center gap-1 rounded-full px-3 py-1
+                                        text-sm font-light text-white
+                                        bg-gradient-to-r from-[#BA9B31] to-[#74611E]
+                                         hover:bg-gradient-to-r hover:from-[#74611E] hover:to-[#BA9B31]
+                                         transition duration-300 font-heading italic
+                                        focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-mst-dark">
+                        Explore <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
+                                     class="w-3 ms-1"
+                                     alt="arrow"> </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<?php /**PATH D:\laragon\www\mysaifco-laravel\resources\views/frontend/components/global_visa.blade.php ENDPATH**/ ?>

@@ -7,9 +7,11 @@
     @include('frontend.components.testimonials')
     @include('frontend.components.umrah_packages')
     @include('frontend.components.5xboxes')
-    @include('frontend.components.global-visa')
+    @include('frontend.components.global_visa')
     @include('frontend.components.holiday_packages')
-    {{--@include('frontend.components.blogs')
-    @include('frontend.components.faqs')--}}
+    @include('frontend.components.awards')
+    @include('frontend.components.booking_process')
+    @include('frontend.components.faqs')
+    {{--@include('frontend.components.blogs')--}}
 @endsection
 

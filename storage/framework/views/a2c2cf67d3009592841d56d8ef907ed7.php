@@ -1,67 +1,3 @@
-<?php
-    $bestSellerSlides = $bestSellerSlides ?? [
-        [
-            'title' => 'Dubai Desert Safari',
-            'badge' => 'Best Seller',
-            'badge_style' => 'fire',
-            'image' => asset('assets/images/p1.webp'),
-            'rating' => '4.9',
-            'reviews' => '5.1k',
-            'price' => '150',
-            'url' => '#',
-        ],
-        [
-            'title' => 'Private Luxury Yacht Charter',
-            'badge' => 'Best Price Yacht Deal',
-            'badge_style' => 'fire',
-            'image' => asset('assets/images/p2.webp'),
-            'rating' => '4.8',
-            'reviews' => '3.2k',
-            'price' => '890',
-            'url' => '#',
-        ],
-        [
-            'title' => 'Dinner Cruise Dubai Marina',
-            'badge' => 'Top Rated Dinner Cruise',
-            'badge_style' => 'star',
-            'image' => asset('assets/images/p3.webp'),
-            'rating' => '4.9',
-            'reviews' => '8.4k',
-            'price' => '220',
-            'url' => '#',
-        ],
-        [
-            'title' => 'Abu Dhabi City Tour',
-            'badge' => 'Best Seller',
-            'badge_style' => 'fire',
-            'image' => asset('assets/images/p1.webp'),
-            'rating' => '4.7',
-            'reviews' => '2.1k',
-            'price' => '185',
-            'url' => '#',
-        ],
-        [
-            'title' => 'Dubai Frame & Sky Views',
-            'badge' => 'Top Rated',
-            'badge_style' => 'star',
-            'image' => asset('assets/images/p2.webp'),
-            'rating' => '4.6',
-            'reviews' => '1.4k',
-            'price' => '95',
-            'url' => '#',
-        ],
-        [
-            'title' => 'Morning Desert Safari',
-            'badge' => 'Best Seller',
-            'badge_style' => 'fire',
-            'image' => asset('assets/images/p3.webp'),
-            'rating' => '4.8',
-            'reviews' => '4.0k',
-            'price' => '125',
-            'url' => '#',
-        ],
-    ];
-?>
 <section class="flex justify-center items-center py-14 px-4
 bg-gradient-to-r from-[#ffffff] from-50% to-[#E5EBFB] to-50%">
     <div class="container mx-auto">
@@ -79,12 +15,12 @@ bg-gradient-to-r from-[#ffffff] from-50% to-[#E5EBFB] to-50%">
                        explore the UAE with expertly crafted travel packages for comfort, value, and memorable
                        journeys.</p>
                 </div>
-                <a href="" class="flex items-center justify-center w-72 text-white text-lg px-4 py-2 rounded-full
+                <a href="" class="flex items-center justify-center w-fit text-white text-lg px-5 py-2 rounded-full
                                             bg-gradient-to-r from-[#BA9B31] to-[#74611E]
                                              hover:bg-gradient-to-r hover:from-[#74611E] hover:to-[#BA9B31]
                                              transition duration-300 font-heading italic mt-8"> Explore all Destination
                                                 <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
-                                                     class="w-6 ms-1"
+                                                     class="w-5 ms-1"
                                                      alt="arrow"> </a>
             </div>
             <div class="holiday_carousel"></div>
@@ -92,5 +28,4 @@ bg-gradient-to-r from-[#ffffff] from-50% to-[#E5EBFB] to-50%">
 
     </div>
 </section>
-
 <?php /**PATH D:\laragon\www\mysaifco-laravel\resources\views/frontend/components/holiday_packages.blade.php ENDPATH**/ ?>
