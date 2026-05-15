@@ -8,7 +8,7 @@
                 Find answers to frequently asked questions about Dubai tours, desert safari, holiday packages, Umrah
                 services, and global visa assistance to help you plan your journey with ease.</p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-14 items-center">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-14 items-center">
             
             <div class="faqmst">
                 <div id="accordion-card" data-accordion="collapse">
@@ -143,10 +143,18 @@
                 </div>
             </div>
             
-            <div class="">
-                <img src="<?php echo e(asset('assets/images/faq-img.webp')); ?>" class="me-auto h-fit" alt="img">
+            <div class="flex justify-end">
+                <img src="<?php echo e(asset('assets/images/faq-img.webp')); ?>" class="" alt="img">
             </div>
         </div>
+
+        <a href="" class="flex items-center justify-center w-fit text-white text-lg px-5 pt-2 pb-2 rounded-full mx-auto
+                                                    bg-gradient-to-r from-[#BA9B31] to-[#74611E]
+                                                     hover:bg-gradient-to-r hover:from-[#74611E] hover:to-[#BA9B31]
+                                                     transition duration-300 font-heading italic mt-8"> Explore all FAQs
+                                                        <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
+                                                             class="w-5 ms-1"
+                                                             alt="arrow"> </a>
     </div>
 </section>
 <?php /**PATH D:\laragon\www\mysaifco-laravel\resources\views/frontend/components/faqs.blade.php ENDPATH**/ ?>

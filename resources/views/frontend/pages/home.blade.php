@@ -12,6 +12,6 @@
     @include('frontend.components.awards')
     @include('frontend.components.booking_process')
     @include('frontend.components.faqs')
-    {{--@include('frontend.components.blogs')--}}
+    @include('frontend.components.blogs')
 @endsection
 

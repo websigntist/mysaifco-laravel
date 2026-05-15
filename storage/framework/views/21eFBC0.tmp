@@ -9,10 +9,10 @@
                 services, and global visa assistance to help you plan your journey with ease.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-14 items-center">
-            {{--============--}}
+            
             <div class="faqmst">
                 <div id="accordion-card" data-accordion="collapse">
-                    {{--===========--}}
+                    
                     <h2 id="faq-1">
                         <button type="button" class="flex items-center justify-between w-full p-4 font-medium text-white text-heading
                         rounded-lg bg-gradient-to-r from-mst to-mst-dark text-md
@@ -35,7 +35,7 @@
                                                                          and corporate groups.</p>
                         </div>
                     </div>
-                    {{--===========--}}
+                    
                     <h2 id="faq-2" class="mt-6">
                         <button type="button" class="flex items-center justify-between w-full p-4 font-medium rounded-lg border border-gray-200 text-mst-gray bg-white gap-3 transition
                         [&[aria-expanded='true']]:rounded-b-none [&[aria-expanded='true']]:shadow-none
@@ -61,7 +61,7 @@
                                                                          molestiae!</p>
                         </div>
                     </div>
-                    {{--===========--}}
+                    
                     <h2 id="faq-3" class="mt-6">
                         <button type="button" class="flex items-center justify-between w-full p-4 font-medium rounded-lg border border-gray-200 text-mst-gray bg-white gap-3 transition
                                     [&[aria-expanded='true']]:rounded-b-none [&[aria-expanded='true']]:shadow-none
@@ -86,7 +86,7 @@
                                                                          molestiae!</p>
                         </div>
                     </div>
-                    {{--===========--}}
+                    
                     <h2 id="faq-4" class="mt-6">
                         <button type="button" class="flex items-center justify-between w-full p-4 font-medium rounded-lg border border-gray-200 text-mst-gray bg-white gap-3 transition
                                 [&[aria-expanded='true']]:rounded-b-none
@@ -113,7 +113,7 @@
                                                                          molestiae!</p>
                         </div>
                     </div>
-                    {{--===========--}}
+                    
                     <h2 id="faq-5" class="mt-6">
                         <button type="button" class="flex items-center justify-between w-full p-4 font-medium rounded-lg border border-gray-200 text-mst-gray bg-white gap-3 transition
                                     [&[aria-expanded='true']]:rounded-b-none
@@ -142,18 +142,19 @@
                     </div>
                 </div>
             </div>
-            {{--============--}}
+            
             <div class="flex justify-end">
-                <img src="{{asset('assets/images/faq-img.webp')}}" class="" alt="img">
+                <img src="<?php echo e(asset('assets/images/faq-img.webp')); ?>" class="" alt="img">
             </div>
         </div>
 
-        <a href="" class="flex items-center justify-center w-fit text-white text-lg px-5 pt-2 pb-2 rounded-full mx-auto
+        <a href="" class="flex items-center justify-center w-fit text-white text-lg px-5 py-2 rounded-full mx-auto
                                                     bg-gradient-to-r from-[#BA9B31] to-[#74611E]
                                                      hover:bg-gradient-to-r hover:from-[#74611E] hover:to-[#BA9B31]
                                                      transition duration-300 font-heading italic mt-8"> Explore all FAQs
-                                                        <img src="{{asset('assets/images/icons/btn-arrow.svg')}}"
+                                                        <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
                                                              class="w-5 ms-1"
                                                              alt="arrow"> </a>
     </div>
 </section>
+<?php /**PATH D:\laragon\www\mysaifco-laravel\resources\views/frontend/components/faqs.blade.php ENDPATH**/ ?>

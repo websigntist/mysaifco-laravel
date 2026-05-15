@@ -9,33 +9,32 @@
                 Umrah packages for a better travel experience.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-[0.5fr_1.2fr_2fr_0.5fr] mt-14 gap-6 items-start justify-center">
+        <div class="grid grid-cols-1 md:grid-cols-[1fr_1fr_2fr_1fr] mt-14 gap-6 items-center">
 
-            <div class=""></div>
             <!-- Left: Large featured blog -->
             <div class="relative space-y-3">
                 <div class="relative">
-                    <img src="{{asset('assets/images/blogs/blog1.webp')}}"
-                         class="rounded-xl w-full object-cover" alt="img">
+                    <img src="<?php echo e(asset('assets/images/blogs/blog1.webp')); ?>"
+                         class="rounded-xl w-full h-72 object-cover" alt="img">
                     <!-- Read more overlay button -->
-                    <a href="" class="absolute top-4 right-4 flex items-center text-white text-sm px-4 pt-1 pb-2
+                    <a href="" class="absolute bottom-4 right-4 flex items-center text-white text-sm px-4 py-2
                        rounded-full bg-gradient-to-r from-[#BA9B31] to-[#74611E]
                        hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
                         Read more
-                        <img src="{{asset('assets/images/icons/btn-arrow.svg')}}" class="w-3 ms-1" alt="arrow">
+                        <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>" class="w-3 ms-1" alt="arrow">
                     </a>
                 </div>
-                <h2 class="font-heading font-semibold text-sm">Exploring Italy in 10 Days: A Complete Travel..</h2>
+                <h2 class="font-heading font-semibold text-lg">Exploring Italy in 10 Days: A Complete Travel..</h2>
                 <p class="text-body text-sm">Italy is a country known for its rich history...</p>
             </div>
 
             <!-- Right: Two small blog rows -->
-            <div class="space-y-2">
+            <div class="space-y-5">
 
                 <!-- Blog row 1 -->
                 <div class="flex items-center gap-4">
-                    <img src="{{asset('assets/images/blogs/blog2.webp')}}"
-                         class="rounded-xl object-cover shrink-0 w-32 h-32" alt="img">
+                    <img src="<?php echo e(asset('assets/images/blogs/blog2.webp')); ?>"
+                         class="rounded-xl w-36 h-28 object-cover shrink-0" alt="img">
                     <div class="flex-1 min-w-0">
                         <h2 class="font-heading font-semibold text-sm leading-snug">
                             Essential Travel Tips That Will Help You Save Time, Money, and Unnecessary St...
@@ -44,19 +43,21 @@
                             Travel smarter with practical tips that help you avoid common mistakes, pack efficiently, and enjoy your tri...
                         </p>
                     </div>
-                    <a href="" class="shrink-0 flex items-center text-white text-xs px-3 pt-1 pb-2
+                    <a href="" class="shrink-0 flex items-center text-white text-xs px-3 py-2
                        rounded-full bg-gradient-to-r from-[#BA9B31] to-[#74611E]
                        hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
                         Read more
-                        <img src="{{asset('assets/images/icons/btn-arrow.svg')}}" class="w-3 ms-1" alt="arrow">
+                        <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>" class="w-3 ms-1" alt="arrow">
                     </a>
                 </div>
 
+                <!-- Divider -->
+                <hr class="border-gray-200">
 
                 <!-- Blog row 2 -->
                 <div class="flex items-center gap-4">
-                    <img src="{{asset('assets/images/blogs/blog3.webp')}}"
-                         class="rounded-xl object-cover shrink-0 w-32 h-32" alt="img">
+                    <img src="<?php echo e(asset('assets/images/blogs/blog3.webp')); ?>"
+                         class="rounded-xl w-36 h-28 object-cover shrink-0" alt="img">
                     <div class="flex-1 min-w-0">
                         <h2 class="font-heading font-semibold text-sm leading-snug">
                             Top 10 Cities You Should Visit in Indonesia This Year
@@ -65,25 +66,25 @@
                             From historic streets to modern culinary scenes, these cities offer more than just beautiful views—they promis...
                         </p>
                     </div>
-                    <a href="" class="shrink-0 flex items-center text-white text-xs px-3 pt-1 pb-2
+                    <a href="" class="shrink-0 flex items-center text-white text-xs px-3 py-2
                        rounded-full bg-gradient-to-r from-[#BA9B31] to-[#74611E]
                        hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
                         Read more
-                        <img src="{{asset('assets/images/icons/btn-arrow.svg')}}" class="w-3 ms-1" alt="arrow">
+                        <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>" class="w-3 ms-1" alt="arrow">
                     </a>
                 </div>
 
             </div>
-            <div class=""></div>
         </div>
 
-        {{--===============--}}
-        <a href="" class="flex items-center justify-center w-fit text-white text-lg px-5 pt-2 pb-2 rounded-full mx-auto
+        
+        <a href="" class="flex items-center justify-center w-fit text-white text-lg px-5 py-2 rounded-full mx-auto
                                                             bg-gradient-to-r from-[#BA9B31] to-[#74611E]
                                                              hover:bg-gradient-to-r hover:from-[#74611E] hover:to-[#BA9B31]
                                                              transition duration-300 font-heading italic mt-8"> View All
-            <img src="{{asset('assets/images/icons/btn-arrow.svg')}}"
+            <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
                  class="w-5 ms-1"
                  alt="arrow"> </a>
     </div>
 </section>
+<?php /**PATH D:\laragon\www\mysaifco-laravel\resources\views/frontend/components/blogs.blade.php ENDPATH**/ ?>

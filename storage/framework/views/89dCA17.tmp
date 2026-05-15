@@ -1,0 +1,31 @@
+<section class="flex item-center justify-center  py-14 bg-gray-50">
+    <div class="container mx-auto">
+        <div class="mx-auto text-center">
+            <h2 class="font-heading text-4xl font-semibold italic leading-tight tracking-tight text-mst-gray">
+                <span class="text-mst-gray">Blogs and  </span><span class="text-mst">Articles</span>
+            </h2>
+            <p class="mt-4 font-body text-center mx-auto text-mst-gray w-7/12">
+                Explore the latest Dubai travel blogs, guides, and tips on desert safari, yacht tours, city tours, and
+                Umrah packages for a better travel experience.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-14 items-center justify-center">
+            
+            <div class="">
+                <img src="<?php echo e(asset('assets/images/blogs/blog1.webp')); ?>">
+            </div>
+            
+            <div class="">
+
+            </div>
+        </div>
+
+        <a href="" class="flex items-center justify-center w-fit text-white text-lg px-5 py-2 rounded-full mx-auto
+                                                            bg-gradient-to-r from-[#BA9B31] to-[#74611E]
+                                                             hover:bg-gradient-to-r hover:from-[#74611E] hover:to-[#BA9B31]
+                                                             transition duration-300 font-heading italic mt-8"> View All
+                                                                <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
+                                                                     class="w-5 ms-1"
+                                                                     alt="arrow"> </a>
+    </div>
+</section>
+<?php /**PATH D:\laragon\www\mysaifco-laravel\resources\views/frontend/components/blogs.blade.php ENDPATH**/ ?>
