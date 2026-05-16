@@ -1,7 +1,6 @@
 <section class="flex justify-center items-center py-14 px-4
 bg-gradient-to-r from-[#ffffff] from-50% to-[#E5EBFB] to-50%">
     <div class="container mx-auto">
-
         <div class="grid grid-cols-1 md:grid-cols-[8fr_4fr] gap-6">
             <div class="flex flex-col justify-center pe-50">
                 <h1 class="capitalize italic font-semibold text-3xl font-heading">
@@ -19,12 +18,11 @@ bg-gradient-to-r from-[#ffffff] from-50% to-[#E5EBFB] to-50%">
                                             bg-gradient-to-r from-[#BA9B31] to-[#74611E]
                                              hover:bg-gradient-to-r hover:from-[#74611E] hover:to-[#BA9B31]
                                              transition duration-300 font-heading italic mt-8"> Explore all Destination
-                                                <img src="{{asset('assets/images/icons/btn-arrow.svg')}}"
-                                                     class="w-5 ms-1"
-                                                     alt="arrow"> </a>
+                    <img src="{{asset('assets/images/icons/btn-arrow.svg')}}"
+                         class="w-5 ms-1"
+                         alt="arrow"> </a>
             </div>
             <div class="holiday_carousel"></div>
         </div>
-
     </div>
 </section>
