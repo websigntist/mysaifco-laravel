@@ -100,13 +100,13 @@ bg-gradient-to-r from-[#ffffff] from-50% to-[#E5EBFB] to-50%">
                         <div class="swiper-wrapper">
                             @foreach ($holidaySlides as $slide)
                                 <div class="swiper-slide">
+                                    <div class="holiday-card__overlay" aria-hidden="true"></div>
                                     <img
                                         src="{{ $slide['image'] }}"
                                         alt="img"
                                         class="rounded-xl"
                                         loading="lazy"
                                     />
-                                    <div class="holiday-card__overlay" aria-hidden="true"></div>
                                     <div class="holiday-card__content">
                                         <h2 class="text-xl text-white font-heading">
                                             {{ $slide['title'] }}

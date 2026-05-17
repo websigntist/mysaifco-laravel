@@ -100,13 +100,13 @@ bg-gradient-to-r from-[#ffffff] from-50% to-[#E5EBFB] to-50%">
                         <div class="swiper-wrapper">
                             <?php $__currentLoopData = $holidaySlides; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $slide): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <div class="swiper-slide">
+                                    <div class="holiday-card__overlay" aria-hidden="true"></div>
                                     <img
                                         src="<?php echo e($slide['image']); ?>"
                                         alt="img"
                                         class="rounded-xl"
                                         loading="lazy"
                                     />
-                                    <div class="holiday-card__overlay" aria-hidden="true"></div>
                                     <div class="holiday-card__content">
                                         <h2 class="text-xl text-white font-heading">
                                             <?php echo e($slide['title']); ?>

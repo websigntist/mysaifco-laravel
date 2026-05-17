@@ -192,7 +192,7 @@ function initHolidayPackagesSwiper() {
     const nextEl = wrap?.querySelector('.holiday-swiper-next') ?? null;
 
     new Swiper(el, {
-        modules: [Autoplay, Navigation],
+        modules: [-Autoplay, Navigation],
         slidesPerView: 1.1,
         slidesPerGroup: 1,
         spaceBetween: -100,
