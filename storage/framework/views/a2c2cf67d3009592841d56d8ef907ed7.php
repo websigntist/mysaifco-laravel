@@ -42,7 +42,7 @@
         ],
     ];
 ?>
-<section class="holiday-packages-section flex justify-center items-center overflow-x-clip bg-white py-10 px-4 sm:py-12 md:bg-gradient-to-r md:from-[#ffffff] md:from-50% md:to-[#E5EBFB] md:to-50% md:py-14">
+<section class="holiday-packages-section flex justify-center items-center overflow-x-clip bg-white py-10 sm:py-12 md:bg-gradient-to-r md:from-[#ffffff] md:from-50% md:to-[#E5EBFB] md:to-50% md:py-14">
     <div class="container mx-auto">
         <div class="holiday-packages-grid grid grid-cols-1 items-center gap-6 sm:gap-8 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:gap-6 lg:gap-10">
             <div class="holiday-packages-copy flex min-w-0 flex-col justify-center">
