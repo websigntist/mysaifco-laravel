@@ -193,9 +193,9 @@ function initHolidayPackagesSwiper() {
 
     const swiper = new Swiper(el, {
         modules: [Autoplay, Navigation],
-        slidesPerView: 1.08,
+        slidesPerView: 1,
         slidesPerGroup: 1,
-        spaceBetween: 14,
+        spaceBetween: 16,
         speed: 600,
         loop: true,
         watchOverflow: true,
@@ -213,14 +213,6 @@ function initHolidayPackagesSwiper() {
             pauseOnMouseEnter: true,
         },
         breakpoints: {
-            480: {
-                slidesPerView: 1.12,
-                spaceBetween: 16,
-            },
-            640: {
-                slidesPerView: 1.18,
-                spaceBetween: 18,
-            },
             768: {
                 slidesPerView: 2.1,
                 slidesPerGroup: 1,
@@ -254,7 +246,7 @@ function initBestSellerSwiper() {
 
     new Swiper(el, {
         modules: [Autoplay, Navigation],
-        slidesPerView: 1.2,
+        slidesPerView: 1,
         slidesPerGroup: 1,
         spaceBetween: 16,
         speed: 600,
@@ -272,14 +264,6 @@ function initBestSellerSwiper() {
             pauseOnMouseEnter: true,
         },
         breakpoints: {
-            480: {
-                slidesPerView: 1.35,
-                spaceBetween: 18,
-            },
-            640: {
-                slidesPerView: 2.2,
-                spaceBetween: 18,
-            },
             768: {
                 slidesPerView: 2.35,
                 spaceBetween: 20,

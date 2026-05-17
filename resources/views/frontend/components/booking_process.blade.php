@@ -12,10 +12,10 @@
             {{--============--}}
             <div class="bg-gray-50 p-8 rounded-xl border-1 border-gray-200 space-y-4 relative">
                 <div class="rounded-full bg-gradient-to-r from-mst to-mst-dark px-4 pb-1 pt-0 font-heading italic
-                text-md text-center w-fit text-white absolute -top-4 left-35">01
+                text-md text-center w-fit text-white absolute -top-4 md:left-35 left-42">01
                 </div>
                 <img src="{{asset('assets/images/process_arrow.png')}}"
-                     class="absolute left-73"
+                     class="absolute left-73 hidden md:block"
                      alt="img"> <img src="{{asset('assets/images/icons/explore.svg')}}" class="mx-auto" alt="img">
                 <h5 class="font-heading text-md font-semibold text-center mb-1">Explore & Select</h5>
                 <p class="font-body text-xs text-center">
@@ -24,10 +24,10 @@
             {{--============--}}
             <div class="bg-gray-50 p-8 rounded-xl border-1 border-gray-200 space-y-4 relative">
                 <div class="rounded-full bg-gradient-to-r from-mst to-mst-dark px-4 pb-1 pt-0 font-heading italic
-                text-md text-center w-fit text-white absolute -top-4 left-35">02
+                text-md text-center w-fit text-white absolute -top-4 md:left-35 left-42">02
                 </div>
                 <img src="{{asset('assets/images/process_arrow.png')}}"
-                     class="absolute left-73"
+                     class="absolute left-73 hidden md:block"
                      alt="img"> <img src="{{asset('assets/images/icons/enter.svg')}}" class="mx-auto" alt="img">
                 <h5 class="font-heading text-md font-semibold text-center mb-1">Enter Details</h5>
                 <p class="font-body text-xs text-center">Choose your date, guests & pickup location.</p>
@@ -35,10 +35,10 @@
             {{--============--}}
             <div class="bg-gray-50 p-8 rounded-xl border-1 border-gray-200 space-y-4 relative">
                 <div class="rounded-full bg-gradient-to-r from-mst to-mst-dark px-4 pb-1 pt-0 font-heading italic
-                text-md text-center w-fit text-white absolute -top-4 left-35">03
+                text-md text-center w-fit text-white absolute -top-4 md:left-35 left-42">03
                 </div>
                 <img src="{{asset('assets/images/process_arrow.png')}}"
-                     class="absolute left-73"
+                     class="absolute left-73 hidden md:block"
                      alt="img"> <img src="{{asset('assets/images/icons/makepayment.svg')}}" class="mx-auto" alt="img">
                 <h5 class="font-heading text-md font-semibold text-center mb-1">Make Payment</h5>
                 <p class="font-body text-xs text-center">Secure payment with instant booking confirmation.</p>
@@ -46,7 +46,7 @@
             {{--============--}}
             <div class="bg-gray-50 p-8 rounded-xl border-1 border-gray-200 space-y-4 relative">
                 <div class="rounded-full bg-gradient-to-r from-mst to-mst-dark px-4 pb-1 pt-0 font-heading italic
-                text-md text-center w-fit text-white absolute -top-4 left-35">04
+                text-md text-center w-fit text-white absolute -top-4 md:left-35 left-42">04
                 </div>
                 <img src="{{asset('assets/images/icons/confirm.svg')}}" class="mx-auto" alt="img">
                 <h5 class="font-heading text-md font-semibold text-center mb-1">Confirm & Enjoy</h5>

@@ -1,10 +1,11 @@
 <div id="accordion-flush" data-accordion="collapse"
      class="block md:hidden"
-     data-active-classes="bg-neutral-primary text-heading"
+     data-active-classes="text-heading"
      data-inactive-classes="text-body">
     <h2 id="accordion-flush-heading-1">
-        <button type="button" class="text-mst-gray flex items-center justify-between w-full py-5 font-medium rtl:text-right
-        border-b border-white gap-3" data-accordion-target="#accordion-flush-body-1" aria-expanded="false"
+        <button type="button" class="text-mst-gray flex items-center justify-between w-full py-3 font-medium
+        rtl:text-right
+        border-b border-gray-200 gap-3" data-accordion-target="#accordion-flush-body-1" aria-expanded="false"
                 aria-controls="accordion-flush-body-1">
             <span>Services</span>
             <svg data-accordion-icon class="w-5 h-5 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -27,9 +28,9 @@
         </div>
     </div>
     <h2 id="accordion-flush-heading-2">
-        <button type="button" class="text-mst-gray flex items-center justify-between w-full py-5 font-medium
-        rtl:text-right border-b border-white gap-3" data-accordion-target="#accordion-flush-body-2" aria-expanded="false" aria-controls="accordion-flush-body-2">
-            <span>company</span>
+        <button type="button" class="text-mst-gray flex items-center justify-between w-full py-3 font-medium
+        rtl:text-right border-b border-gray-200 gap-3" data-accordion-target="#accordion-flush-body-2" aria-expanded="false" aria-controls="accordion-flush-body-2">
+            <span>Company</span>
             <svg data-accordion-icon class="w-5 h-5 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 15 7-7 7 7"/>
             </svg>
@@ -48,8 +49,8 @@
         </div>
     </div>
     <h2 id="accordion-flush-heading-3">
-        <button type="button" class="text-mst-gray flex items-center justify-between w-full py-5 font-medium
-        rtl:text-right border-b border-white gap-3" data-accordion-target="#accordion-flush-body-3" aria-expanded="false" aria-controls="accordion-flush-body-3">
+        <button type="button" class="text-mst-gray flex items-center justify-between w-full py-3 font-medium
+        rtl:text-right border-b border-gray-200 gap-3" data-accordion-target="#accordion-flush-body-3" aria-expanded="false" aria-controls="accordion-flush-body-3">
             <span>Legal</span>
             <svg data-accordion-icon class="w-5 h-5 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 15 7-7 7 7"/>
@@ -67,8 +68,8 @@
         </div>
     </div>
     <h2 id="accordion-flush-heading-4">
-        <button type="button" class="flex items-center justify-between w-full py-5 font-medium rtl:text-right
-        border-b border-white gap-3 text-mst-gray" data-accordion-target="#accordion-flush-body-4" aria-expanded="false"
+        <button type="button" class="flex items-center justify-between w-full py-3 font-medium rtl:text-right
+        border-b border-gray-200 gap-3 text-mst-gray" data-accordion-target="#accordion-flush-body-4" aria-expanded="false"
                 aria-controls="accordion-flush-body-3">
             <span>Need Help?</span>
             <svg data-accordion-icon class="w-5 h-5 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">

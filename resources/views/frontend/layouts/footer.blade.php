@@ -1,11 +1,11 @@
-<footer class="py-12 pb-8 px-3 border-t-2 border-t-mst-gray">
+<footer class="py-12 pb-8 md:px-3 border-t-2 border-t-mst-gray">
     <div class="container mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-6 gap-5">
+        <div class="grid grid-cols-1 md:grid-cols-6 md:gap-5">
             <!-- Logo & Description — 2 cols -->
             <div class="md:col-span-2">
                 <a href="{{url('/')}}" class="text-2xl font-bold text-mst-gray py-3">
                     <img src="{{asset('assets/images/footer-logo.svg')}}" alt="logo" title="brand logo"> </a>
-                <p class="text-sm my-3 text-mst-gray leading-6 pe-6">
+                <p class="text-sm my-3 text-mst-gray leading-6 md:pe-6">
                     Saifco Travel & Tourism is a leading Dubai-based travel company offering Dubai tours, desert safari,
                     yacht charters, holiday packages, Umrah services, and global visa assistance with trusted service
                     and competitive prices.
@@ -55,7 +55,7 @@
     </div>
 
     <div class="container mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-[1.6fr_1fr_1fr_1fr] gap-10">
+        <div class="grid grid-cols-1 md:grid-cols-[1.6fr_1fr_1fr_1fr] md:gap-10 gap-3">
             <div>
                 <ul class="flex gap-5 mt-5 items-center">
                     <li>
@@ -81,7 +81,7 @@
                 <img src="{{asset('assets/images/email.svg')}}" class="w-10 shrink-0" alt="email"> <span>info@mysaifco.com</span>
             </div>
             <!-- Address -->
-            <div class="flex items-start text-xs text-body  md:mt-12 gap-3 -ms-10">
+            <div class="flex items-start text-xs text-body  md:mt-12 gap-3 md:-ms-10">
                 <img src="{{asset('assets/images/location.svg')}}" class="w-10 shrink-0 mt-0.5" alt="address">
                 <span class="mt-1">16th Street Shop # 5, Bohra Masjid <br> Road, Ayal Nasir, Deira, Dubai, UAE</span>
             </div>

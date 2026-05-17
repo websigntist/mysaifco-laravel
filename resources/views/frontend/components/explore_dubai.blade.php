@@ -3,7 +3,8 @@
         <h2 class="font-heading text-2xl font-semibold italic leading-tight tracking-tight text-mst-gray">
             <span class="text-mst-gray">Explore Dubai With Us   </span><span class="text-mst">– Online Travel Agency</span>
         </h2>
-        <div class="font-body text-sm bg-[#FAF7F2] mt-6 p-5 rounded-lg border border-[#BA9B31]/40">
+        <div class="font-body text-center md:text-left text-sm bg-[#FAF7F2] mt-6 p-5 rounded-lg border
+        border-[#BA9B31]/40">
             It’s everyone’s dream to explore the world and enjoy its beauty. Saifco Travel & Tourism LLC is making that
             possible and is also offering affordable Dubai tour packages. We are not only letting you explore the UAE
             but are also arranging tours out of the country. And you can easily find a travel agency near me like ours.

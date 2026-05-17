@@ -10,8 +10,8 @@
             <div class="container mx-auto w-full">
                 <div class="grid w-full grid-cols-1 md:grid-cols-2 items-center gap-5">
                     <div class="flex flex-col justify-center">
-                        <h1 class="text-4xl text-center md:text-left md:text-5xl font-bold text-mst capitalize
-                        italic leading-14 tracking-wide">
+                        <h1 class="text-5xl text-center md:text-left font-bold text-mst capitalize
+                        italic leading-14 md:leading-16 tracking-wide">
                             Best Dubai Tours, <br class="hidden md:block"> Desert Safari & <br class="hidden md:block">
                             Yacht Experience
                         </h1>
@@ -23,7 +23,7 @@
                         
                         <div class="mt-8 mb-4">
                             <a href="" class="flex items-center justify-center w-44 text-white text-lg px-5 py-2
-                            rounded-full
+                            rounded-full md:ms-auto mx-auto
                             bg-gradient-to-r from-[#BA9B31] to-[#74611E]
                              hover:bg-gradient-to-r hover:from-[#74611E] hover:to-[#BA9B31]
                              transition duration-300 font-heading italic"> Book Now

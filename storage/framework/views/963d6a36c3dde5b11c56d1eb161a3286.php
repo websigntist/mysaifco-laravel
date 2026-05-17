@@ -27,9 +27,9 @@
         id="navbar-multi-level-dropdown"
         aria-label="Mobile navigation"
     >
-        <motion class="site-navbar__panel mx-auto w-full max-w-full px-4 py-2">
+        <div class="site-navbar__panel mx-auto w-full max-w-full px-4 py-2">
             <?php echo $__env->make('frontend.components.navbar-menu', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
-        </motion>
+        </div>
     </nav>
 </header>
 <?php /**PATH D:\laragon\www\mysaifco-laravel\resources\views/frontend/layouts/header.blade.php ENDPATH**/ ?>

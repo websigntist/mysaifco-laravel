@@ -7,6 +7,11 @@
         padding-right: 0;
     }
 
+    .best-seller-nav,
+    .holiday-swiper-header {
+        display: none !important;
+    }
+
     .holiday-packages-section {
         padding-left: 0;
         padding-right: 0;
@@ -68,6 +73,100 @@
 
     .site-navbar--mobile {
         display: none !important;
+    }
+}
+
+/* Our Popular tour categories */
+.our-popular-card {
+    position: relative;
+    min-width: 0;
+}
+
+.our-popular-card__link {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    aspect-ratio: 4 / 3;
+    text-decoration: none;
+    color: inherit;
+}
+
+.our-popular-card__img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.our-popular-card__link:hover .our-popular-card__img {
+    transform: scale(1.04);
+}
+
+.our-popular-card__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border-radius: inherit;
+    pointer-events: none;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.88) 0%,
+        rgba(0, 0, 0, 0.45) 40%,
+        transparent 70%
+    );
+    transition: opacity 0.3s ease;
+}
+
+.our-popular-card__link:hover .our-popular-card__overlay {
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.75) 0%,
+        rgba(0, 0, 0, 0.35) 45%,
+        rgba(0, 0, 0, 0.15) 100%
+    );
+}
+
+.our-popular-card__content {
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    z-index: 2;
+    padding: 1rem 1.25rem;
+    pointer-events: none;
+}
+
+.our-popular-card__title {
+    font-size: 1.15rem;
+    font-weight: 500;
+    line-height: 1.3;
+    color: #fff;
+}
+
+.our-popular-card__count {
+    margin-top: 0.2rem;
+    font-size: 0.75rem;
+    line-height: 1.3;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+@media (min-width: 768px) {
+    .our-popular-card__link {
+        aspect-ratio: 16 / 10;
+    }
+
+    .our-popular-card--wide .our-popular-card__link {
+        aspect-ratio: 16 / 9;
+    }
+
+    .our-popular-card__title {
+        font-size: 1.25rem;
+    }
+
+    .our-popular-card__content {
+        padding: 1.1rem 1.35rem 1.15rem;
     }
 }
 

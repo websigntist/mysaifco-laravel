@@ -4,7 +4,7 @@
             <h2 class="font-heading text-4xl font-semibold italic leading-tight tracking-tight text-mst-gray">
                 <span class="text-mst-gray">Blogs and  </span><span class="text-mst">Articles</span>
             </h2>
-            <p class="mt-4 font-body text-center mx-auto text-mst-gray w-7/12">
+            <p class="mt-4 font-body text-center mx-auto text-mst-gray md:w-7/12">
                 Explore the latest Dubai travel blogs, guides, and tips on desert safari, yacht tours, city tours, and
                 Umrah packages for a better travel experience.</p>
         </div>

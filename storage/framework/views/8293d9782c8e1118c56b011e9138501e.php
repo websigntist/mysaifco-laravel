@@ -8,7 +8,8 @@
                 </h2>
             </div>
             <div class="mt-10">
-                <ul class="flex flex-wrap text-md font-medium text-center justify-center" id="default-styled-tab"
+                <ul class="flex flex-wrap text-md font-medium text-center justify-center space-y-5 md:space-y-0"
+                    id="default-styled-tab"
                     data-tabs-toggle="#default-styled-tab-content" data-tabs-active-classes="text-purple hover:text-purple border-purple" data-tabs-inactive-classes="dark:border-transparent text-body hover:text-fg-brand border-default hover:border-brand" role="tablist">
                     <li class="me-2" role="presentation">
                         <button class="inline-block py-1 px-4 rounded-full border border-transparent font-heading

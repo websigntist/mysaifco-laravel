@@ -4,7 +4,7 @@
             <h2 class="font-heading text-4xl font-semibold italic leading-tight tracking-tight text-mst-gray">
                 <span class="text-mst-gray">Frequently Asked  </span><span class="text-mst">Questions</span>
             </h2>
-            <p class="mt-4 font-body text-center mx-auto text-mst-gray w-7/12">
+            <p class="mt-4 font-body text-center mx-auto text-mst-gray md:w-7/12">
                 Find answers to frequently asked questions about Dubai tours, desert safari, holiday packages, Umrah
                 services, and global visa assistance to help you plan your journey with ease.</p>
         </div>
@@ -14,7 +14,8 @@
                 <div id="accordion-card" data-accordion="collapse">
                     
                     <h2 id="faq-1">
-                        <button type="button" class="flex items-center justify-between w-full p-4 font-medium text-white text-heading
+                        <button type="button" class="flex items-center justify-between w-full py-4 px-2 font-medium
+                        text-white text-heading
                         rounded-lg bg-gradient-to-r from-mst to-mst-dark text-md
                          gap-3 [&[aria-expanded='true']]:rounded-b-none [&[aria-expanded='true']]:shadow-none" data-accordion-target="#accordion-card-body-1" aria-expanded="true" aria-controls="accordion-card-body-1">
                             <span>What are the best tours to book in Dubai?</span>
@@ -37,7 +38,8 @@
                     </div>
                     
                     <h2 id="faq-2" class="mt-6">
-                        <button type="button" class="flex items-center justify-between w-full p-4 font-medium rounded-lg border border-gray-200 text-mst-gray bg-white gap-3 transition
+                        <button type="button" class="flex items-center justify-between w-full py-4 px-2 font-medium
+                        rounded-lg border border-gray-200 text-mst-gray bg-white gap-3 transition
                         [&[aria-expanded='true']]:rounded-b-none [&[aria-expanded='true']]:shadow-none
                         [&[aria-expanded='true']]:bg-gradient-to-r [&[aria-expanded='true']]:from-mst [&[aria-expanded='true']]:to-mst-dark
                         [&[aria-expanded='true']]:text-white [&[aria-expanded='true']]:border-transparent" data-accordion-target="#faq-body-2" aria-expanded="false" aria-controls="faq-body-2">
@@ -63,7 +65,7 @@
                     </div>
                     
                     <h2 id="faq-3" class="mt-6">
-                        <button type="button" class="flex items-center justify-between w-full p-4 font-medium rounded-lg border border-gray-200 text-mst-gray bg-white gap-3 transition
+                        <button type="button" class="flex items-center justify-between w-full py-4 px-2 font-medium rounded-lg border border-gray-200 text-mst-gray bg-white gap-3 transition
                                     [&[aria-expanded='true']]:rounded-b-none [&[aria-expanded='true']]:shadow-none
                                     [&[aria-expanded='true']]:bg-gradient-to-r [&[aria-expanded='true']]:from-mst [&[aria-expanded='true']]:to-mst-dark
                                     [&[aria-expanded='true']]:text-white [&[aria-expanded='true']]:border-transparent" data-accordion-target="#faq-body-3" aria-expanded="false" aria-controls="faq-body-3">
@@ -88,7 +90,7 @@
                     </div>
                     
                     <h2 id="faq-4" class="mt-6">
-                        <button type="button" class="flex items-center justify-between w-full p-4 font-medium rounded-lg border border-gray-200 text-mst-gray bg-white gap-3 transition
+                        <button type="button" class="flex items-center justify-between w-full py-4 px-2 font-medium rounded-lg border border-gray-200 text-mst-gray bg-white gap-3 transition
                                 [&[aria-expanded='true']]:rounded-b-none
                                 [&[aria-expanded='true']]:shadow-none
                                 [&[aria-expanded='true']]:bg-gradient-to-r [&[aria-expanded='true']]:from-mst [&[aria-expanded='true']]:to-mst-dark
@@ -115,7 +117,7 @@
                     </div>
                     
                     <h2 id="faq-5" class="mt-6">
-                        <button type="button" class="flex items-center justify-between w-full p-4 font-medium rounded-lg border border-gray-200 text-mst-gray bg-white gap-3 transition
+                        <button type="button" class="flex items-center justify-between w-full py-4 px-2 font-medium rounded-lg border border-gray-200 text-mst-gray bg-white gap-3 transition
                                     [&[aria-expanded='true']]:rounded-b-none
                                     [&[aria-expanded='true']]:shadow-none
                                     [&[aria-expanded='true']]:bg-gradient-to-r [&[aria-expanded='true']]:from-mst [&[aria-expanded='true']]:to-mst-dark
