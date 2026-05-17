@@ -18,7 +18,7 @@
     <link rel="icon" type="image/x-icon" href="<?php echo e(asset('assets/images/favicon.png')); ?>">
     <?php echo app('Illuminate\Foundation\Vite')(['resources/assets/frontend/css/app.css']); ?>
 </head>
-<body class="mx-auto">
+<body class="w-full overflow-x-hidden antialiased">
 <?php echo $__env->make('frontend.layouts.header', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 <?php echo $__env->yieldContent('content'); ?>
 <?php echo $__env->make('frontend.layouts.footer', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>

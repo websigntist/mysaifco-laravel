@@ -34,12 +34,12 @@
                             
                         </div>
                     </div>
-                    <div class="flex flex-col items-end space-y-5">
-                        <div class="bg-mst p-4 w-80 rounded-lg">
+                    <div class="flex w-full flex-col items-center gap-4 sm:gap-5 md:items-end">
+                        <div class="bg-mst w-full max-w-xs rounded-lg p-4 sm:max-w-sm md:w-80">
                             <div class="text-white text-xl font-medium text-center italic font-heading">50K + Customers</div>
                             <div class="text-white text-sm text-center mt-1">World Wide Travelers</div>
                         </div>
-                        <div class="bg-mst p-4 w-80 rounded-lg">
+                        <div class="bg-mst w-full max-w-xs rounded-lg p-4 sm:max-w-sm md:w-80">
                             <div class="text-white text-xl font-medium text-center italic font-heading">Licensed Operator</div>
                             <div class="text-white text-sm text-center mt-1">Dubai Approved</div>
                         </div>
