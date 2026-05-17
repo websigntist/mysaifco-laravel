@@ -192,13 +192,12 @@ function initHolidayPackagesSwiper() {
     const nextEl = wrap?.querySelector('.holiday-swiper-next') ?? null;
 
     new Swiper(el, {
-        modules: [-Autoplay, Navigation],
-        slidesPerView: 1.1,
+        modules: [Autoplay, Navigation],
+        slidesPerView: 1.15,
         slidesPerGroup: 1,
-        spaceBetween: -100,
+        spaceBetween: 20,
         speed: 600,
         loop: true,
-        rewind: true,
         watchOverflow: true,
         grabCursor: true,
         navigation: {
@@ -206,30 +205,24 @@ function initHolidayPackagesSwiper() {
             nextEl,
         },
         autoplay: {
-                    delay: 4000,
-                    disableOnInteraction: false,
-                    pauseOnMouseEnter: true,
-                },
+            delay: 4000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+        },
         breakpoints: {
-            480: {
-                slidesPerView: 1.25,
-                spaceBetween: -100,
-            },
             640: {
-                slidesPerView: 1.45,
-                spaceBetween: -100,
+                slidesPerView: 1.35,
+                spaceBetween: 22,
             },
             768: {
-                slidesPerView: 1.65,
-                spaceBetween: -100,
+                slidesPerView: 2.2,
+                slidesPerGroup: 1,
+                spaceBetween: 24,
             },
             1024: {
-                slidesPerView: 2,
-                spaceBetween: -100,
-            },
-            1280: {
-                slidesPerView: 3,
-                spaceBetween: -100,
+                slidesPerView: 2.2,
+                slidesPerGroup: 1,
+                spaceBetween: 28,
             },
         },
     });

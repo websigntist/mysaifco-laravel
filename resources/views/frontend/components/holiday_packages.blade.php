@@ -99,32 +99,35 @@ bg-gradient-to-r from-[#ffffff] from-50% to-[#E5EBFB] to-50%">
                     <div class="swiper holiday-swiper" id="holiday-packages-swiper">
                         <div class="swiper-wrapper">
                             @foreach ($holidaySlides as $slide)
-                                <div class="swiper-slide">
-                                    <div class="holiday-card__overlay" aria-hidden="true"></div>
-                                    <img
-                                        src="{{ $slide['image'] }}"
-                                        alt="img"
-                                        class="rounded-xl"
-                                        loading="lazy"
-                                    />
-                                    <div class="holiday-card__content">
-                                        <h2 class="text-xl text-white font-heading">
+                                <div class="swiper-slide !h-auto">
+                                    <article class="holiday-card">
+                                        <img
+                                            src="{{ $slide['image'] }}"
+                                            alt="{{ $slide['title'] }}"
+                                            class="holiday-card__img"
+                                            loading="lazy"
+                                            width="420"
+                                            height="250"
+                                        />
+                                        <div class="holiday-card__overlay" aria-hidden="true"></div>
+                                        <div class="holiday-card__content">
+                                        <h2 class="holiday-card__title font-heading">
                                             {{ $slide['title'] }}
                                         </h2>
-                                        <p class="text-sm text-white mt-1 font-body">
+                                        <p class="holiday-card__meta font-body">
                                             {{ $slide['meta'] }}
                                         </p>
-                                        <div class="holiday-card__footer flex justify-between">
-                                            <span class="font-body bg-mst text-white rounded-full text-xs p-1
-                                             px-3">
+                                        <div class="holiday-card__footer">
+                                            <span class="holiday-card__price font-heading">
                                                 AED {{ $slide['price'] }}
                                             </span>
-                                            <span class="holiday-card__rating font-body bg-white">
+                                            <span class="holiday-card__rating font-body">
                                                 <span class="holiday-card__rating-star" aria-hidden="true">&#9733;</span>
                                                 {{ $slide['rating'] }}
                                             </span>
                                         </div>
                                     </div>
+                                    </article>
                                 </div>
                             @endforeach
                         </div>
