@@ -75,7 +75,7 @@ bg-gradient-to-r from-[#ffffff] from-50% to-[#E5EBFB] to-50%">
                     >
                         <img
                             src="<?php echo e(asset('assets/images/icons/btn-arrow-blk-left.svg')); ?>"
-                            class="holiday-nav-img holiday-nav-img--prev"
+                            class="holiday-nav-img holiday-nav-img--prev rotate-180"
                             width="20"
                             height="20"
                             alt=""
@@ -106,8 +106,8 @@ bg-gradient-to-r from-[#ffffff] from-50% to-[#E5EBFB] to-50%">
                                             alt="<?php echo e($slide['title']); ?>"
                                             class="holiday-card__img"
                                             loading="lazy"
-                                            width="420"
-                                            height="250"
+                                            width="380"
+                                            height="200"
                                         />
                                         <div class="holiday-card__overlay" aria-hidden="true"></div>
                                         <div class="holiday-card__content">

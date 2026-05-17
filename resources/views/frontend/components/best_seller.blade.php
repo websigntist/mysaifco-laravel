@@ -81,7 +81,7 @@
                 <div class="best-seller-nav flex shrink-0 items-center justify-end gap-4 sm:justify-start">
                     <button
                         type="button"
-                        class="best-seller-swiper-prev best-seller-nav-btn best-seller-nav-btn--prev"
+                        class="best-seller-swiper-prev best-seller-nav-btn best-seller-nav-btn--prev cursor-pointer"
                         aria-label="Previous tours"
                     >
                         <img
@@ -94,7 +94,7 @@
                     </button>
                     <button
                         type="button"
-                        class="best-seller-swiper-next best-seller-nav-btn best-seller-nav-btn--next"
+                        class="best-seller-swiper-next best-seller-nav-btn best-seller-nav-btn--next cursor-pointer"
                         aria-label="Next tours"
                     >
                         <img
@@ -135,7 +135,7 @@
                                             {{ $slide['badge'] }}
                                     </span> </a>
                                     <div class="flex flex-1 flex-col p-4">
-                                        <h2 class="font-heading text-xl font-bold leading-snug text-mst-gray line-clamp-2">
+                                        <h2 class="font-heading text-xl leading-snug text-mst-gray line-clamp-2">
                                             <a href="{{ $slide['url'] }}" class="hover:text-mst focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-mst">
                                                 {{ $slide['title'] }}
                                             </a>
