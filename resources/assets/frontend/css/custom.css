@@ -153,7 +153,7 @@
 /* Slide WIDTH  → Swiper slidesPerView (app.js). Slide HEIGHT → CSS vars below. */
 .holiday-packages-section {
     --holiday-card-aspect: 4 / 5;
-    --holiday-card-height: 22rem;
+    --holiday-card-height: 15.5rem;
     --holiday-card-radius: 1.25rem;
 }
 
@@ -330,7 +330,7 @@
 
 @media (min-width: 768px) {
     .holiday-packages-section {
-        --holiday-card-height: 26rem;
+        --holiday-card-height: 18rem;
     }
 
     .holiday-card__title {
@@ -344,7 +344,7 @@
 
 @media (min-width: 1024px) {
     .holiday-packages-section {
-        --holiday-card-height: 28rem;
+        --holiday-card-height: 19.5rem;
     }
 
     .holiday-card__title {
