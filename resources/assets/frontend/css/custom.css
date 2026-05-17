@@ -1,3 +1,53 @@
+/* ===== Homepage mobile / tablet (desktop 1024px+ unchanged) ===== */
+@media (max-width: 767px) {
+    .best-seller-swiper-wrap .relative.mt-8 {
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .holiday-packages-section {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .holiday-packages-section > .container {
+        padding-inline: 1rem;
+    }
+
+    .holiday-packages-grid {
+        gap: 1.25rem;
+    }
+
+    .holiday-packages-cta {
+        margin-top: 1.25rem;
+    }
+}
+
+@media (max-width: 1023px) {
+    #navbar-multi-level-dropdown {
+        position: absolute;
+        right: 0;
+        top: 100%;
+        z-index: 60;
+        margin-top: 0.5rem;
+        width: min(18rem, calc(100vw - 2rem));
+        border-radius: 0.5rem;
+        border: 1px solid #e5e7eb;
+        background: #fff;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    #navbar-multi-level-dropdown:not(.hidden) {
+        display: block;
+    }
+
+    #navbar-multi-level-dropdown ul {
+        padding: 0.5rem;
+    }
+}
+
 /* Best seller: fractional slidesPerView peek on the right; Swiper slide height follows tallest card */
 .best-seller-swiper .swiper-slide {
     height:     auto;
@@ -161,14 +211,29 @@
     position: relative;
 }
 
+/* Mobile/tablet: keep carousel inside container (no horizontal bleed) */
 .holiday-swiper-bleed {
-    overflow: visible;
-    width: calc(100% + max(0px, (100vw - 100%) / 2));
-    margin-right: calc(-1 * max(0px, (100vw - 100%) / 2));
+    position: relative;
+    width: 100%;
+    margin-right: 0;
+    overflow: hidden;
 }
 
 .holiday-swiper {
-    overflow: visible;
+    overflow: hidden;
+}
+
+/* Desktop: right-edge bleed + 2.1 slides (unchanged layout) */
+@media (min-width: 768px) {
+    .holiday-swiper-bleed {
+        overflow: visible;
+        width: calc(100% + max(0px, (100vw - 100%) / 2));
+        margin-right: calc(-1 * max(0px, (100vw - 100%) / 2));
+    }
+
+    .holiday-swiper {
+        overflow: visible;
+    }
 }
 
 .holiday-swiper .swiper-slide {
@@ -221,14 +286,19 @@
     z-index: 2;
     width: 100%;
     box-sizing: border-box;
-    padding: 1.25rem 1.15rem 1.15rem;
+    padding: 0.85rem 0.75rem 0.8rem;
 }
 
 .holiday-card__title {
-    font-size: 1.15rem;
+    font-size: 1rem;
+    font-weight: 600;
     font-style: italic;
-    line-height: 1.25;
+    line-height: 1.2;
     color: #fff;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
 }
 
 .holiday-card__meta {
@@ -242,19 +312,20 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 0.75rem;
+    gap: 0.5rem;
     width: 100%;
-    margin-top: 0.85rem;
+    margin-top: 0.55rem;
 }
 
 .holiday-card__price {
     display: inline-flex;
     align-items: center;
     flex-shrink: 0;
+    max-width: 58%;
     border-radius: 9999px;
     background: linear-gradient(90deg, #ba9b31 0%, #74611e 100%);
-    padding: 0.35rem 0.75rem;
-    font-size: 0.8rem;
+    padding: 0.28rem 0.55rem;
+    font-size: 0.7rem;
     font-weight: 600;
     color: #fff;
     white-space: nowrap;
@@ -263,11 +334,12 @@
 .holiday-card__rating {
     display: inline-flex;
     align-items: center;
-    gap: 0.2rem;
+    gap: 0.15rem;
+    flex-shrink: 0;
     border-radius: 9999px;
     background: #fff;
-    padding: 0.3rem 0.65rem;
-    font-size: 0.8rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.7rem;
     font-weight: 600;
     color: #282828;
     white-space: nowrap;
@@ -283,7 +355,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 4rem;
+    width: 2.75rem;
     height: 2.75rem;
     flex-shrink: 0;
     border-radius: 9999px;
@@ -328,17 +400,101 @@
     display: none;
 }
 
+/* ---- Mobile only (< 768px) ---- */
+@media (max-width: 767px) {
+    .holiday-packages-section {
+        --holiday-card-height: 14rem;
+        --holiday-card-radius: 1rem;
+    }
+
+    .holiday_carousel {
+        padding: 1rem;
+        border-radius: 0.75rem;
+        background-color: #e8edfb;
+    }
+
+    .holiday-card__overlay {
+        background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.92) 0%,
+            rgba(0, 0, 0, 0.6) 30%,
+            rgba(0, 0, 0, 0.2) 50%,
+            transparent 62%
+        );
+    }
+
+    .holiday-card__meta {
+        font-size: 0.72rem;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+    }
+
+    .holiday-packages-cta {
+        margin-top: 1.25rem;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+    .holiday-packages-section {
+        --holiday-card-height: 15rem;
+    }
+}
+
+/* ---- Desktop (768px+) — preserve existing layout ---- */
 @media (min-width: 768px) {
     .holiday-packages-section {
         --holiday-card-height: 18rem;
+        --holiday-card-radius: 1.25rem;
+    }
+
+    .holiday-nav-btn {
+        width: 4rem;
+        height: 2.75rem;
     }
 
     .holiday-card__title {
         font-size: 1.35rem;
+        -webkit-line-clamp: 3;
+    }
+
+    .holiday-card__meta {
+        font-size: 0.8rem;
+        display: block;
+        -webkit-line-clamp: unset;
+        overflow: visible;
     }
 
     .holiday-card__content {
         padding: 1.35rem 1.25rem 1.2rem;
+    }
+
+    .holiday-card__footer {
+        gap: 0.75rem;
+        margin-top: 0.85rem;
+    }
+
+    .holiday-card__price,
+    .holiday-card__rating {
+        padding: 0.35rem 0.75rem;
+        font-size: 0.8rem;
+        max-width: none;
+    }
+
+    .holiday-card__rating {
+        padding: 0.3rem 0.65rem;
+    }
+
+    .holiday-card__overlay {
+        background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.9) 0%,
+            rgba(0, 0, 0, 0.65) 22%,
+            rgba(0, 0, 0, 0.35) 42%,
+            rgba(0, 0, 0, 0.08) 52%,
+            transparent 58%
+        );
     }
 }
 

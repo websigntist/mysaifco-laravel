@@ -42,23 +42,22 @@
         ],
     ];
 @endphp
-<section class="holiday-packages-section flex justify-center items-center overflow-x-clip py-14 px-4
-bg-gradient-to-r from-[#ffffff] from-50% to-[#E5EBFB] to-50%">
+<section class="holiday-packages-section flex justify-center items-center overflow-x-clip bg-white py-10 sm:py-12 md:bg-gradient-to-r md:from-[#ffffff] md:from-50% md:to-[#E5EBFB] md:to-50% md:py-14">
     <div class="container mx-auto">
-        <div class="grid grid-cols-1 items-center gap-8 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:gap-6 lg:gap-10">
-            <div class="flex flex-col justify-center">
-                <h1 class="capitalize italic font-semibold text-3xl font-heading">
+        <div class="holiday-packages-grid grid grid-cols-1 items-center gap-6 sm:gap-8 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:gap-6 lg:gap-10">
+            <div class="holiday-packages-copy flex min-w-0 flex-col justify-center">
+                <h1 class="holiday-packages-heading capitalize italic font-semibold text-2xl sm:text-3xl font-heading">
                     holiday <span class="text-mst">
                         packages
                     </span>
                 </h1>
-                <div class="text-md my-2 leading-6 font-body w-full mt-5 pe-2">
+                <div class="holiday-packages-desc text-sm sm:text-base my-2 leading-6 font-body text-gray-600 w-full max-w-lg mt-4 sm:mt-5 md:pe-2">
                     <p>Discover the best Dubai holiday packages with top UAE tours, exclusive deals, and unforgettable
                        experiences. From desert safari and luxury yacht tours to Abu Dhabi city tours and dhow cruises,
                        explore the UAE with expertly crafted travel packages for comfort, value, and memorable
                        journeys.</p>
                 </div>
-                <a href="" class="flex items-center justify-center w-fit text-white text-lg px-5 py-2 rounded-full
+                <a href="" class="holiday-packages-cta flex items-center justify-center w-fit text-white text-base sm:text-lg px-5 py-2 rounded-full
                                             bg-gradient-to-r from-[#BA9B31] to-[#74611E]
                                              hover:bg-gradient-to-r hover:from-[#74611E] hover:to-[#BA9B31]
                                              transition duration-300 font-heading italic mt-8"> Explore all Destination
@@ -66,8 +65,8 @@ bg-gradient-to-r from-[#ffffff] from-50% to-[#E5EBFB] to-50%">
                          class="w-5 ms-1"
                          alt="arrow"> </a>
             </div>
-            <div class="holiday_carousel holiday-swiper-wrap min-w-0" aria-label="Holiday packages carousel">
-                <div class="holiday-swiper-header mb-5 flex items-center justify-end gap-4 md:mb-6">
+            <div class="holiday_carousel holiday-swiper-wrap min-w-0 w-full" aria-label="Holiday packages carousel">
+                <div class="holiday-swiper-header mb-4 flex items-center justify-end gap-3 sm:gap-4 sm:mb-5 md:mb-6">
                     <button
                         type="button"
                         class="holiday-swiper-prev holiday-nav-btn holiday-nav-btn--prev"

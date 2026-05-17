@@ -191,15 +191,18 @@ function initHolidayPackagesSwiper() {
     const prevEl = wrap?.querySelector('.holiday-swiper-prev') ?? null;
     const nextEl = wrap?.querySelector('.holiday-swiper-next') ?? null;
 
-    new Swiper(el, {
+    const swiper = new Swiper(el, {
         modules: [Autoplay, Navigation],
-        slidesPerView: 1.15,
+        slidesPerView: 1.08,
         slidesPerGroup: 1,
-        spaceBetween: 20,
+        spaceBetween: 14,
         speed: 600,
         loop: true,
         watchOverflow: true,
         grabCursor: true,
+        observer: true,
+        observeParents: true,
+        resizeObserver: true,
         navigation: {
             prevEl,
             nextEl,
@@ -210,9 +213,13 @@ function initHolidayPackagesSwiper() {
             pauseOnMouseEnter: true,
         },
         breakpoints: {
+            480: {
+                slidesPerView: 1.12,
+                spaceBetween: 16,
+            },
             640: {
-                slidesPerView: 1.35,
-                spaceBetween: 22,
+                slidesPerView: 1.18,
+                spaceBetween: 18,
             },
             768: {
                 slidesPerView: 2.1,
@@ -220,11 +227,17 @@ function initHolidayPackagesSwiper() {
                 spaceBetween: 24,
             },
             1024: {
-                slidesPerView: 3.1,
+                slidesPerView: 2.1,
                 slidesPerGroup: 1,
                 spaceBetween: 28,
             },
         },
+    });
+
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => swiper.update(), 150);
     });
 }
 

@@ -18,7 +18,7 @@
     <link rel="icon" type="image/x-icon" href="{{asset('assets/images/favicon.png')}}">
     @vite(['resources/assets/frontend/css/app.css'])
 </head>
-<body class="mx-auto">
+<body class="w-full overflow-x-hidden antialiased">
 @include('frontend.layouts.header')
 @yield('content')
 @include('frontend.layouts.footer')

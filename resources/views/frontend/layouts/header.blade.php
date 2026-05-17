@@ -1,17 +1,15 @@
-<header class="sticky top-0 z-50 flex items-center overflow-visible py-1 px-3 bg-white">
-    <div class="container mx-auto overflow-visible">
-        <div class="flex items-center justify-between gap-3 overflow-visible">
+<header class="sticky top-0 z-50 w-full border-b border-gray-100 bg-white py-2">
+    <div class="container mx-auto">
+        <div class="flex min-w-0 items-center justify-between gap-2 sm:gap-3">
             <div class="brand_logo">
                 <a href="{{url('/')}}">
                     <img src="{{asset('assets/images/logo.svg')}}" class="w-14" alt="brand_logo"
                          title="standard patches">
                 </a>
             </div>
-            {{-- menu start --}}
-            <div class="flex items-center">
+            <div class="flex min-w-0 flex-1 items-center justify-end">
                 @include('frontend.components.navbar')
             </div>
-            {{-- menu end --}}
             {{--<div class="flex justify-end items-center shrink-0">
                 <ul class="flex items-center gap-2 md:gap-4">
                     <li class="hidden md:flex text-body text-xs">

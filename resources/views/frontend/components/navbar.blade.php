@@ -1,4 +1,4 @@
-<nav class="z-20 top-0 start-0 flex items-center justify-end">
+<nav class="relative z-20 flex w-full items-center justify-end">
     <div class="flex flex-wrap items-center justify-end py-4">
         <button data-collapse-toggle="navbar-multi-level-dropdown" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary" aria-controls="navbar-multi-level-dropdown" aria-expanded="false">
             <span class="sr-only">Open main menu</span>

@@ -1,4 +1,4 @@
-<section class="flec item-center justify-center pb-12 pt-6">
+<section class="flex items-center justify-center px-4 pb-12 pt-6">
     <div class="container mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-5 gap-5">
             {{--============--}}
