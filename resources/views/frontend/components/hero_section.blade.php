@@ -6,12 +6,12 @@
              style="background-image: url('{{ asset('assets/images/sliders/hero-banner.webp') }}')"
              aria-hidden="true"></div>
         <div class="absolute inset-0 bg-gray-950/0" aria-hidden="true"></div>
-        <div class="relative z-10 w-full py-10 md:py-14">
+        <div class="relative z-10 w-full py-14">
             <div class="container mx-auto w-full">
                 <div class="grid w-full grid-cols-1 md:grid-cols-2 items-center gap-5">
                     <div class="flex flex-col justify-center">
-                        <h1 class="text-5xl text-center md:text-left font-bold text-mst capitalize
-                        italic leading-14 md:leading-16 tracking-wide">
+                        <h1 class="text-4xl md:text-5xl text-center md:text-left font-bold text-mst capitalize
+                        italic leading-12 md:leading-14 md:leading-16 tracking-wide">
                             Best Dubai Tours, <br class="hidden md:block"> Desert Safari & <br class="hidden md:block">
                             Yacht Experience
                         </h1>
