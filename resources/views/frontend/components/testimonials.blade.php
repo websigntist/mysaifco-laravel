@@ -37,7 +37,8 @@
     <div class="container mx-auto">
         <div class="testimonials-section-inner mx-auto max-w-6xl">
             <div class="mx-auto max-w-2xl text-center">
-                <h2 class="font-heading text-4xl font-semibold italic leading-tight tracking-tight text-mst-gray">
+                <h2 class="font-heading text-3xl md:text-4xl font-semibold italic leading-tight tracking-tight
+                text-mst-gray">
                     <span class="text-mst-gray">Customer </span><span class="text-mst">Reviews</span>
                 </h2>
                 <p class="mt-4 font-body text-base leading-7 text-neutral-600 md:text-lg md:leading-8">

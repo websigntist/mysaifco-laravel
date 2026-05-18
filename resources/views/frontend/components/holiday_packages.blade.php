@@ -46,7 +46,7 @@
     <div class="container mx-auto">
         <div class="holiday-packages-grid grid grid-cols-1 items-center gap-6 sm:gap-8 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:gap-6 lg:gap-10">
             <div class="holiday-packages-copy flex min-w-0 flex-col justify-center">
-                <h1 class="holiday-packages-heading capitalize italic font-semibold text-4xl font-heading">
+                <h1 class="holiday-packages-heading capitalize italic font-semibold text-3xl md:text-4xl font-heading">
                     holiday <span class="text-mst">
                         packages
                     </span>

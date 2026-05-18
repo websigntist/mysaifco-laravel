@@ -1,7 +1,7 @@
 <section class="flec item-center justify-center pt-14 pb-18">
     <div class="container mx-auto">
         <div class="mx-auto text-center">
-            <h2 class="font-heading text-4xl font-semibold italic leading-tight tracking-tight text-mst-gray">
+            <h2 class="font-heading text-3xl md:text-4xl font-semibold italic leading-tight tracking-tight text-mst-gray">
                 <span class="text-mst-gray">How to Book </span><span class="text-mst">Your Dubai Tour?</span>
             </h2>
             <p class="mt-4 font-body text-center text-mst-gray">

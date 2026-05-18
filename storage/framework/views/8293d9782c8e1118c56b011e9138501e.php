@@ -3,7 +3,7 @@
     <div class="container mx-auto">
         <div class="testimonials-section-inner mx-auto">
             <div class="mx-auto text-center">
-                <h2 class="font-heading text-4xl font-semibold italic leading-tight tracking-tight text-mst-gray">
+                <h2 class="font-heading text-3xl md:text-4xl font-semibold italic leading-tight tracking-tight text-mst-gray">
                     <span class="text-mst-gray">Best </span><span class="text-mst">Umrah Packges</span>
                 </h2>
             </div>
