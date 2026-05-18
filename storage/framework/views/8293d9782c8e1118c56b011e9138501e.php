@@ -4,7 +4,7 @@
         <div class="testimonials-section-inner mx-auto">
             <div class="mx-auto text-center">
                 <h2 class="font-heading text-3xl md:text-4xl font-semibold italic leading-tight tracking-tight text-mst-gray">
-                    <span class="text-mst-gray">Best </span><span class="text-mst">Umrah Packges</span>
+                    <span class="text-mst-gray">Best </span><span class="text-mst">Umrah Packages</span>
                 </h2>
             </div>
             <div class="mt-10">

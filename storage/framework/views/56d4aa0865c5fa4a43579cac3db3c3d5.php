@@ -16,7 +16,7 @@
         <div class="our-popular-inner">
             <div class="our-popular-header flex flex-col gap-5 md:flex-row md:items-start md:justify-between md:gap-8">
                 <div class="min-w-0 flex-1">
-                    <h2 class="font-heading ttext-3xl md:text-4xl font-semibold italic leading-tight tracking-tight text-mst-gray">
+                    <h2 class="font-heading text-3xl md:text-4xl font-semibold italic leading-tight tracking-tight text-mst-gray">
                         <span class="text-mst-gray">Our Popular</span><span class="text-mst"> Tour Categories</span>
                     </h2>
                     <p class="mt-4 font-body text-base leading-7 text-neutral-600 md:text-lg md:leading-8">
