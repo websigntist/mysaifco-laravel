@@ -8,32 +8,53 @@
                 </h2>
             </div>
             <div class="mt-10">
-                <ul class="flex flex-wrap text-md font-medium text-center justify-center space-y-5 md:space-y-0"
+                <ul class="umrah-package-tabs flex flex-wrap justify-center gap-2 text-center text-md font-medium md:gap-3"
                     id="default-styled-tab"
-                    data-tabs-toggle="#default-styled-tab-content" data-tabs-active-classes="text-purple hover:text-purple border-purple" data-tabs-inactive-classes="dark:border-transparent text-body hover:text-fg-brand border-default hover:border-brand" role="tablist">
-                    <li class="me-2" role="presentation">
-                        <button class="inline-block py-1 px-4 rounded-full border border-transparent font-heading
-                        italic transition duration-300 tab-btn tab-btn--active cursor-pointer"
+                    data-tabs-toggle="#default-styled-tab-content"
+                    data-tabs-active-classes="tab-btn--active"
+                    data-tabs-inactive-classes=""
+                    role="tablist">
+                    <li class="me-0 md:me-1" role="presentation">
+                        <button class="tab-btn inline-block cursor-pointer rounded-full px-4 py-1 font-heading italic"
                                 id="profile-styled-tab"
-                                data-tabs-target="#styled-profile" type="button" role="tab" aria-controls="profile" aria-selected="false">
+                                data-tabs-target="#styled-profile"
+                                type="button"
+                                role="tab"
+                                aria-controls="profile"
+                                aria-selected="true">
                             Umrah by Bus
                         </button>
                     </li>
-                    <li class="me-2" role="presentation">
-                        <button class="inline-block py-1 px-4 rounded-full border transition duration-300 font-heading italic tab-btn cursor-pointer"
-                                id="dashboard-styled-tab" data-tabs-target="#styled-dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">
+                    <li class="me-0 md:me-1" role="presentation">
+                        <button class="tab-btn inline-block cursor-pointer rounded-full px-4 py-1 font-heading italic"
+                                id="dashboard-styled-tab"
+                                data-tabs-target="#styled-dashboard"
+                                type="button"
+                                role="tab"
+                                aria-controls="dashboard"
+                                aria-selected="false">
                             Umrah by Air
                         </button>
                     </li>
-                    <li class="me-2" role="presentation">
-                        <button class="inline-block py-1 px-4 rounded-full border transition duration-300 font-heading italic tab-btn cursor-pointer"
-                                id="settings-styled-tab" data-tabs-target="#styled-settings" type="button" role="tab" aria-controls="settings" aria-selected="false">
+                    <li class="me-0 md:me-1" role="presentation">
+                        <button class="tab-btn inline-block cursor-pointer rounded-full px-4 py-1 font-heading italic"
+                                id="settings-styled-tab"
+                                data-tabs-target="#styled-settings"
+                                type="button"
+                                role="tab"
+                                aria-controls="settings"
+                                aria-selected="false">
                             Umrah Visa
                         </button>
                     </li>
                     <li role="presentation">
-                        <button class="inline-block py-1 px-4 rounded-full border transition duration-300 font-heading italic tab-btn cursor-pointer"
-                                id="contacts-styled-tab" data-tabs-target="#styled-contacts" type="button" role="tab" aria-controls="contacts" aria-selected="false">
+                        <button class="tab-btn inline-block cursor-pointer rounded-full px-4 py-1 font-heading italic"
+                                id="contacts-styled-tab"
+                                data-tabs-target="#styled-contacts"
+                                type="button"
+                                role="tab"
+                                aria-controls="contacts"
+                                aria-selected="false">
                             Saudi Multi Entery Visa
                         </button>
                     </li>

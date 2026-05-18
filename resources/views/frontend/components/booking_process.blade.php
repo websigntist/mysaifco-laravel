@@ -15,7 +15,7 @@
                 text-md text-center w-fit text-white absolute -top-4 md:left-35 left-42">01
                 </div>
                 <img src="{{asset('assets/images/process_arrow.png')}}"
-                     class="absolute left-73 hidden md:block"
+                     class="absolute left-70 hidden md:block"
                      alt="img"> <img src="{{asset('assets/images/icons/explore.svg')}}" class="mx-auto" alt="img">
                 <h5 class="font-heading text-md font-semibold text-center mb-1">Explore & Select</h5>
                 <p class="font-body text-xs text-center">
@@ -27,7 +27,7 @@
                 text-md text-center w-fit text-white absolute -top-4 md:left-35 left-42">02
                 </div>
                 <img src="{{asset('assets/images/process_arrow.png')}}"
-                     class="absolute left-73 hidden md:block"
+                     class="absolute left-70 hidden md:block"
                      alt="img"> <img src="{{asset('assets/images/icons/enter.svg')}}" class="mx-auto" alt="img">
                 <h5 class="font-heading text-md font-semibold text-center mb-1">Enter Details</h5>
                 <p class="font-body text-xs text-center">Choose your date, guests & pickup location.</p>
@@ -38,7 +38,7 @@
                 text-md text-center w-fit text-white absolute -top-4 md:left-35 left-42">03
                 </div>
                 <img src="{{asset('assets/images/process_arrow.png')}}"
-                     class="absolute left-73 hidden md:block"
+                     class="absolute left-70 hidden md:block"
                      alt="img"> <img src="{{asset('assets/images/icons/makepayment.svg')}}" class="mx-auto" alt="img">
                 <h5 class="font-heading text-md font-semibold text-center mb-1">Make Payment</h5>
                 <p class="font-body text-xs text-center">Secure payment with instant booking confirmation.</p>

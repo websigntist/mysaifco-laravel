@@ -9,7 +9,7 @@
                 Umrah packages for a better travel experience.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-[0.5fr_1.2fr_2fr_0.5fr] mt-14 gap-6 items-start justify-center">
+        <div class="grid grid-cols-1 md:grid-cols-[0.2fr_1.2fr_2fr_0.2fr] mt-14 gap-6 items-start justify-center">
 
             <div class=""></div>
             <!-- Left: Large featured blog -->
@@ -25,22 +25,21 @@
                         <img src="{{asset('assets/images/icons/btn-arrow.svg')}}" class="w-3 ms-1" alt="arrow">
                     </a>
                 </div>
-                <h2 class="font-heading font-semibold text-sm">Exploring Italy in 10 Days: A Complete Travel..</h2>
+                <h2 class="font-heading font-semibold text-md">Exploring Italy in 10 Days: A Complete Travel..</h2>
                 <p class="text-body text-sm">Italy is a country known for its rich history...</p>
             </div>
 
             <!-- Right: Two small blog rows -->
-            <div class="space-y-2">
-
+            <div class="">
                 <!-- Blog row 1 -->
-                <div class="flex items-center gap-4">
+                <div class="flex items-center gap-4 space-y-3">
                     <img src="{{asset('assets/images/blogs/blog2.webp')}}"
                          class="rounded-xl object-cover shrink-0 w-32 h-32" alt="img">
                     <div class="flex-1 min-w-0">
-                        <h2 class="font-heading font-semibold text-sm leading-snug">
+                        <h2 class="font-heading font-semibold text-md leading-snug">
                             Essential Travel Tips That Will Help You Save Time, Money, and Unnecessary St...
                         </h2>
-                        <p class="text-body text-xs mt-1 line-clamp-2">
+                        <p class="text-body text-sm mt-1 line-clamp-2">
                             Travel smarter with practical tips that help you avoid common mistakes, pack efficiently, and enjoy your tri...
                         </p>
                     </div>
@@ -52,16 +51,15 @@
                     </a>
                 </div>
 
-
                 <!-- Blog row 2 -->
-                <div class="flex items-center gap-4">
+                <div class="flex items-center gap-4 space-y-3">
                     <img src="{{asset('assets/images/blogs/blog3.webp')}}"
                          class="rounded-xl object-cover shrink-0 w-32 h-32" alt="img">
                     <div class="flex-1 min-w-0">
-                        <h2 class="font-heading font-semibold text-sm leading-snug">
+                        <h2 class="font-heading font-semibold text-md leading-snug">
                             Top 10 Cities You Should Visit in Indonesia This Year
                         </h2>
-                        <p class="text-body text-xs mt-1 line-clamp-2">
+                        <p class="text-body text-sm mt-1 line-clamp-2">
                             From historic streets to modern culinary scenes, these cities offer more than just beautiful views—they promis...
                         </p>
                     </div>

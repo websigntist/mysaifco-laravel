@@ -48,7 +48,7 @@
                         </ul>
                     </div>
                 </div>
-                <img src="{{asset('assets/images/payment-icons.png')}}" class="w-fit" alt="payment-icons">
+                <img src="{{asset('assets/images/payment-icons.png')}}" alt="payment-icons">
             </div>
             @include('frontend.components.footer_menu')
         </div>
@@ -59,35 +59,36 @@
             <div>
                 <ul class="flex gap-5 mt-5 items-center">
                     <li>
-                        <a href=""><img src="{{asset('assets/images/fb.svg')}}" class="w-10" alt="facebook"></a>
+                        <a href=""><img src="{{asset('assets/images/fb.svg')}}" alt="facebook"></a>
                     </li>
                     <li>
-                        <a href=""><img src="{{asset('assets/images/insta.svg')}}" class="w-10" alt="instagram"></a>
+                        <a href=""><img src="{{asset('assets/images/insta.svg')}}" alt="instagram"></a>
                     </li>
                     <li>
-                        <a href=""><img src="{{asset('assets/images/yt.svg')}}" class="w-10" alt="youtube"></a>
+                        <a href=""><img src="{{asset('assets/images/yt.svg')}}" alt="youtube"></a>
                     </li>
                     <li>
-                        <a href=""><img src="{{asset('assets/images/tt.svg')}}" class="w-10" alt="tiktok"></a>
+                        <a href=""><img src="{{asset('assets/images/tt.svg')}}" alt="tiktok"></a>
                     </li>
                     <li>
-                        <a href=""><img src="{{asset('assets/images/lk.svg')}}" class="w-10" alt="linkedin"></a>
+                        <a href=""><img src="{{asset('assets/images/lk.svg')}}" alt="linkedin"></a>
                     </li>
                 </ul>
-                <p class="text-xs text-body mt-3">Copyright © 2025 Mysaifco.com. All Rights Reserved.</p>
+                <p class="text-sm text-body mt-3">Copyright © 2025 Mysaifco.com. All Rights Reserved.</p>
             </div>
             <!-- Email -->
-            <div class="flex items-center text-xs text-body md:mt-10 gap-3">
+            <div class="flex items-center text-sm text-body md:mt-10 gap-3">
                 <img src="{{asset('assets/images/email.svg')}}" class="w-10 shrink-0" alt="email"> <span>info@mysaifco.com</span>
             </div>
             <!-- Address -->
-            <div class="flex items-start text-xs text-body  md:mt-12 gap-3 md:-ms-10">
+            <div class="flex items-start text-sm text-body  md:mt-12 gap-3 md:-ms-10">
                 <img src="{{asset('assets/images/location.svg')}}" class="w-10 shrink-0 mt-0.5" alt="address">
-                <span class="mt-1">16th Street Shop # 5, Bohra Masjid <br> Road, Ayal Nasir, Deira, Dubai, UAE</span>
+                <span class="mt-0">16th Street Shop # 5, Bohra Masjid <br> Road, Ayal Nasir, Deira, Dubai, UAE</span>
             </div>
             <!-- Phone -->
-            <div class="flex items-start text-xs text-body md:mt-10 gap-3">
-                <img src="{{asset('assets/images/phone.svg')}}" class="w-10 shrink-0 mt-1" alt="phone"> <span>
+            <div class="flex items-start text-sm text-body md:mt-10 gap-3">
+                <img src="{{asset('assets/images/phone.svg')}}" class="w-10 shrink-0 mt-2.5" alt="phone">
+                <span class="mt-0">
                     Office: +971 4 2733868 <br>
                     Tours: +971 50 5593840 <br>
                     Umrah: +971 55 6337710
