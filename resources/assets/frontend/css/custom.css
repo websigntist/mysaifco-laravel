@@ -662,3 +662,29 @@
     border-color: #ddd !important;
 }
 /*=== tabs CSS end ====*/
+
+/*=== FAQ accordion (faqs.blade.php) ====*/
+.faqmst .faq-accordion-btn[aria-expanded="false"] {
+    background-color: #fff;
+    border-color: #e5e7eb;
+    color: #282828;
+}
+
+.faqmst .faq-accordion-btn[aria-expanded="true"] {
+    border-color: transparent;
+    background: linear-gradient(to right, #ba9b31, #74611e);
+    color: #fff;
+}
+
+.faqmst .faq-accordion-btn [data-accordion-icon] {
+    transition: transform 0.2s ease;
+}
+
+.faqmst .faq-accordion-btn[aria-expanded="false"] [data-accordion-icon] {
+    transform: rotate(0deg);
+}
+
+.faqmst .faq-accordion-btn[aria-expanded="true"] [data-accordion-icon] {
+    transform: rotate(180deg);
+}
+/*=== FAQ accordion end ====*/

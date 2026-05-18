@@ -75,7 +75,7 @@
 </section>
 
 
-<section class="hidden md:block justify-center items-center bg-white py-12 px-4 md:py-14">
+<section class="hidden md:block justify-center items-center bg-white py-12 px-4 md:py-10">
     <div class="container mx-auto">
         <div class="our-popular-inner">
             <div class="flex flex-col gap-6 md:flex-row md:items-start md:justify-between md:gap-8">

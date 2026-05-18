@@ -62,7 +62,7 @@
         ],
     ];
 @endphp
-<section class="flex justify-center items-center bg-white py-12 px-4 md:py-14">
+<section class="flex justify-center items-center bg-white py-12 px-4 md:py-10">
     <div class="container mx-auto">
         <div class="best-seller-swiper-wrap" aria-label="Best seller tours carousel">
             <div class="best-seller-header flex item-center justify-between gap-6 md:gap-7">

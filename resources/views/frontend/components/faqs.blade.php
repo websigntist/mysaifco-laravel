@@ -9,23 +9,26 @@
                 services, and global visa assistance to help you plan your journey with ease.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-14 items-center">
+            @php
+                $faqBtnClass = 'faq-accordion-btn flex w-full items-center justify-between gap-3 rounded-lg border border-gray-200 bg-white px-2 py-4 font-heading text-md font-medium text-mst-gray transition md:px-3 [&[aria-expanded=\'true\']]:rounded-b-none [&[aria-expanded=\'true\']]:border-transparent [&[aria-expanded=\'true\']]:bg-gradient-to-r [&[aria-expanded=\'true\']]:from-mst [&[aria-expanded=\'true\']]:to-mst-dark [&[aria-expanded=\'true\']]:text-white [&[aria-expanded=\'true\']]:shadow-none';
+            @endphp
             {{--============--}}
             <div class="faqmst">
                 <div id="accordion-card" data-accordion="collapse">
                     {{--===========--}}
                     <h2 id="faq-1">
-                        <button type="button" class="flex items-center justify-between w-full py-4 px-2 md:px-3
-                        font-medium
-                        text-white text-heading
-                        rounded-lg bg-gradient-to-r from-mst to-mst-dark text-md
-                         gap-3 [&[aria-expanded='true']]:rounded-b-none [&[aria-expanded='true']]:shadow-none" data-accordion-target="#accordion-card-body-1" aria-expanded="true" aria-controls="accordion-card-body-1">
+                        <button type="button"
+                                class="{{ $faqBtnClass }}"
+                                data-accordion-target="#faq-body-1"
+                                aria-expanded="true"
+                                aria-controls="faq-body-1">
                             <span>What are the best tours to book in Dubai?</span>
-                            <svg data-accordion-icon class="w-5 h-5 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <svg data-accordion-icon class="h-5 w-5 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 15 7-7 7 7"/>
                             </svg>
                         </button>
                     </h2>
-                    <div id="accordion-card-body-1" class="hidden rounded-b-lg bg-gradient-to-r from-mst to-mst-dark"
+                    <div id="faq-body-1" class="rounded-b-lg bg-gradient-to-r from-mst to-mst-dark"
                          aria-labelledby="faq-1">
                         <div class="pb-4 pt-0 px-4">
                             <p class="mb-2 text-body text-xs text-white">Dubai offers a variety of top-rated experiences
@@ -39,13 +42,13 @@
                     </div>
                     {{--===========--}}
                     <h2 id="faq-2" class="mt-6">
-                        <button type="button" class="flex items-center justify-between w-full py-4 px-2 md:px-3 font-medium
-                        rounded-lg border border-gray-200 text-mst-gray bg-white gap-3 transition
-                        [&[aria-expanded='true']]:rounded-b-none [&[aria-expanded='true']]:shadow-none
-                        [&[aria-expanded='true']]:bg-gradient-to-r [&[aria-expanded='true']]:from-mst [&[aria-expanded='true']]:to-mst-dark
-                        [&[aria-expanded='true']]:text-white [&[aria-expanded='true']]:border-transparent" data-accordion-target="#faq-body-2" aria-expanded="false" aria-controls="faq-body-2">
+                        <button type="button"
+                                class="{{ $faqBtnClass }}"
+                                data-accordion-target="#faq-body-2"
+                                aria-expanded="false"
+                                aria-controls="faq-body-2">
                             <span>How much does a Dubai desert safari cost?</span>
-                            <svg data-accordion-icon class="w-5 h-5 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <svg data-accordion-icon class="h-5 w-5 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 15 7-7 7 7"/>
                             </svg>
                         </button>
@@ -66,12 +69,13 @@
                     </div>
                     {{--===========--}}
                     <h2 id="faq-3" class="mt-6">
-                        <button type="button" class="flex items-center justify-between w-full py-4 px-2 md:px-3 font-medium rounded-lg border border-gray-200 text-mst-gray bg-white gap-3 transition
-                                    [&[aria-expanded='true']]:rounded-b-none [&[aria-expanded='true']]:shadow-none
-                                    [&[aria-expanded='true']]:bg-gradient-to-r [&[aria-expanded='true']]:from-mst [&[aria-expanded='true']]:to-mst-dark
-                                    [&[aria-expanded='true']]:text-white [&[aria-expanded='true']]:border-transparent" data-accordion-target="#faq-body-3" aria-expanded="false" aria-controls="faq-body-3">
+                        <button type="button"
+                                class="{{ $faqBtnClass }}"
+                                data-accordion-target="#faq-body-3"
+                                aria-expanded="false"
+                                aria-controls="faq-body-3">
                             <span>Do you provide hotel pickup and drop-off for tours?</span>
-                            <svg data-accordion-icon class="w-5 h-5 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <svg data-accordion-icon class="h-5 w-5 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 15 7-7 7 7"/>
                             </svg>
                         </button>
@@ -91,14 +95,13 @@
                     </div>
                     {{--===========--}}
                     <h2 id="faq-4" class="mt-6">
-                        <button type="button" class="flex items-center justify-between w-full py-4 px-2 md:px-3 font-medium rounded-lg border border-gray-200 text-mst-gray bg-white gap-3 transition
-                                [&[aria-expanded='true']]:rounded-b-none
-                                [&[aria-expanded='true']]:shadow-none
-                                [&[aria-expanded='true']]:bg-gradient-to-r [&[aria-expanded='true']]:from-mst [&[aria-expanded='true']]:to-mst-dark
-                                [&[aria-expanded='true']]:text-white [&[aria-expanded='true']]:border-transparent"
-                                data-accordion-target="#faq-body-4" aria-expanded="false" aria-controls="faq-body-4">
+                        <button type="button"
+                                class="{{ $faqBtnClass }}"
+                                data-accordion-target="#faq-body-4"
+                                aria-expanded="false"
+                                aria-controls="faq-body-4">
                             <span>Do you offer private yacht rentals in Dubai?</span>
-                            <svg data-accordion-icon class="w-5 h-5 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <svg data-accordion-icon class="h-5 w-5 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 15 7-7 7 7"/>
                             </svg>
                         </button>
@@ -118,14 +121,13 @@
                     </div>
                     {{--===========--}}
                     <h2 id="faq-5" class="mt-6">
-                        <button type="button" class="flex items-center justify-between w-full py-4 px-2 md:px-3 font-medium rounded-lg border border-gray-200 text-mst-gray bg-white gap-3 transition
-                                    [&[aria-expanded='true']]:rounded-b-none
-                                    [&[aria-expanded='true']]:shadow-none
-                                    [&[aria-expanded='true']]:bg-gradient-to-r [&[aria-expanded='true']]:from-mst [&[aria-expanded='true']]:to-mst-dark
-                                    [&[aria-expanded='true']]:text-white [&[aria-expanded='true']]:border-transparent"
-                                data-accordion-target="#faq-body-5" aria-expanded="false" aria-controls="faq-body-5">
+                        <button type="button"
+                                class="{{ $faqBtnClass }}"
+                                data-accordion-target="#faq-body-5"
+                                aria-expanded="false"
+                                aria-controls="faq-body-5">
                             <span>Can I apply for a UAE visa through your company?</span>
-                            <svg data-accordion-icon class="w-5 h-5 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <svg data-accordion-icon class="h-5 w-5 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 15 7-7 7 7"/>
                             </svg>
                         </button>
