@@ -18,7 +18,7 @@ bg-gradient-to-r from-[#ffffff] from-75% to-[#BA9B315F] to-25%">
                         <div class="text-white text-md font-medium text-center italic font-heading">
                             Best Price
                         </div>
-                        <div class="text-white text-xs text-center">Guaranteed Deals</div>
+                        <div class="text-white text-sm text-center">Guaranteed Deals</div>
                     </li>
                     <li class="bg-mst p-2 w-40 rounded-lg">
                         <div class="text-white text-md font-medium text-center italic font-heading">
