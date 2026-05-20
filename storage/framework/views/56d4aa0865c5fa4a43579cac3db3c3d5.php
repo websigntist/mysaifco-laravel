@@ -78,12 +78,12 @@
 <section class="hidden md:block justify-center items-center bg-white py-12 px-4 md:py-10">
     <div class="container mx-auto">
         <div class="our-popular-inner">
-            <div class="flex flex-col gap-6 md:flex-row md:items-start md:justify-between md:gap-8">
+            <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between md:gap-8">
                 <div class="min-w-0 flex-1">
-                    <h2 class="font-heading text-3xl md:text-4xl font-semibold italic leading-tight tracking-tight text-mst-gray">
-                        <span class="text-mst-gray">Our Popular</span><span class="text-mst"> Tour Categories</span>
-                    </h2>
-                    <p class="mt-4 max-w-2xl font-body text-base leading-7 text-neutral-600 md:text-lg md:leading-8">
+                    <h1>
+                        <span>Our Popular</span><span class="text-mst"> Tour Categories</span>
+                    </h1>
+                    <p class="mt-5 pe-20">
                         Explore our travel packages for every traveler. Whether a camel race, safari tour, or city
                         exploration, we have something special!
                     </p>

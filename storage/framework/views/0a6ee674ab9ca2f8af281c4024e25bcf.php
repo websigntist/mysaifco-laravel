@@ -1,12 +1,12 @@
 <section class="flex justify-center items-center py-12 px-4 md:py-16">
     <div class="container mx-auto">
         <div class="global-vsia">
-            <div class="flex flex-col gap-6 md:flex-row md:items-start md:justify-between md:gap-8">
+            <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between md:gap-8">
                 <div class="min-w-0 flex-1">
-                    <h2 class="font-heading text-3xl font-semibold italic leading-tight tracking-tight text-mst-gray">
-                        <span class="text-mst-gray">Global Visa</span><span class="text-mst"> Assistance</span>
-                    </h2>
-                    <p class="mt-4 font-body leading-7 text-mst-gray">
+                    <h1>
+                        <span>Global Visa</span><span class="text-mst"> Assistance</span>
+                    </h1>
+                    <p class="mt-4 md:pe-20">
                         Get reliable global visa assistance with expert support for tourist visas, visit visas, business
                         visas, and worldwide travel. Enjoy fast processing, hassle-free documentation, and trusted visa
                         services.

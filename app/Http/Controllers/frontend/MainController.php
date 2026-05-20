@@ -80,14 +80,14 @@ class MainController
         ]);
     }
 
-    public function patches()
+    public function all_categories()
         {
             // Fetch "about-us" page data from the API
             $pageData = null;
 
-            return view('frontend.pages.custom-embroidered-patches-maker-in-usa', [
+            return view('frontend.pages.all-categories', [
                 'pageData'         => $pageData,
-                'meta_title'       => $pageData['meta']['title'] ?? "Custom Embroidered Patches Maker in USA",
+                'meta_title'       => $pageData['meta']['title'] ?? "All Tour Categories",
                 'meta_keywords'    => $pageData['meta']['keywords'] ?? 'meta keywords mention here',
                 'meta_description' => $pageData['meta']['description'] ?? 'meta description mention here',
             ]);

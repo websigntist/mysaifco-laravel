@@ -1,10 +1,10 @@
 <section class="flex item-center justify-center pt-14 pb-18">
     <div class="container mx-auto">
         <div class="mx-auto text-center">
-            <h2 class="font-heading text-4xl font-semibold italic leading-tight tracking-tight text-mst-gray">
-                <span class="text-mst-gray">Frequently Asked  </span><span class="text-mst">Questions</span>
-            </h2>
-            <p class="mt-4 font-body text-center mx-auto text-mst-gray md:w-7/12">
+            <h1>
+                <span>Frequently Asked  </span><span class="text-mst">Questions</span>
+            </h1>
+            <p class="mt-4 text-center mx-auto md:w-7/12">
                 Find answers to frequently asked questions about Dubai tours, desert safari, holiday packages, Umrah
                 services, and global visa assistance to help you plan your journey with ease.</p>
         </div>
@@ -22,7 +22,7 @@
                                 data-accordion-target="#faq-body-1"
                                 aria-expanded="true"
                                 aria-controls="faq-body-1">
-                            <span>What are the best tours to book in Dubai?</span>
+                            <span class="text-xl">What are the best tours to book in Dubai?</span>
                             <svg data-accordion-icon class="h-5 w-5 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 15 7-7 7 7"/>
                             </svg>
@@ -47,7 +47,7 @@
                                 data-accordion-target="#faq-body-2"
                                 aria-expanded="false"
                                 aria-controls="faq-body-2">
-                            <span>How much does a Dubai desert safari cost?</span>
+                            <span class="text-xl">How much does a Dubai desert safari cost?</span>
                             <svg data-accordion-icon class="h-5 w-5 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 15 7-7 7 7"/>
                             </svg>
@@ -74,7 +74,7 @@
                                 data-accordion-target="#faq-body-3"
                                 aria-expanded="false"
                                 aria-controls="faq-body-3">
-                            <span>Do you provide hotel pickup and drop-off for tours?</span>
+                            <span class="text-xl">Do you provide hotel pickup and drop-off for tours?</span>
                             <svg data-accordion-icon class="h-5 w-5 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 15 7-7 7 7"/>
                             </svg>
@@ -100,7 +100,7 @@
                                 data-accordion-target="#faq-body-4"
                                 aria-expanded="false"
                                 aria-controls="faq-body-4">
-                            <span>Do you offer private yacht rentals in Dubai?</span>
+                            <span class="text-xl">Do you offer private yacht rentals in Dubai?</span>
                             <svg data-accordion-icon class="h-5 w-5 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 15 7-7 7 7"/>
                             </svg>
@@ -126,7 +126,7 @@
                                 data-accordion-target="#faq-body-5"
                                 aria-expanded="false"
                                 aria-controls="faq-body-5">
-                            <span>Can I apply for a UAE visa through your company?</span>
+                            <span class="text-xl">Can I apply for a UAE visa through your company?</span>
                             <svg data-accordion-icon class="h-5 w-5 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 15 7-7 7 7"/>
                             </svg>

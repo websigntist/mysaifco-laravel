@@ -1,4 +1,4 @@
-<div class="flex justify-center items-center border-b-1 border-gray-200">
+<section class="flex justify-center items-center border-b-1 border-gray-200">
     <div class="px-4 hero_section relative flex min-h-[80vh] --md:min-h-[88vh] --2xl:min-h-[92vh] w-full items-center
     justify-center
     overflow-hidden">
@@ -48,4 +48,4 @@
             </div>
         </div>
     </div>
-</div>
+</section>

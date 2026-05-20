@@ -3,9 +3,9 @@
     <div class="container mx-auto">
         <div class="testimonials-section-inner mx-auto">
             <div class="mx-auto text-center">
-                <h2 class="font-heading text-3xl md:text-4xl font-semibold italic leading-tight tracking-tight text-mst-gray">
-                    <span class="text-mst-gray">Best </span><span class="text-mst">Umrah Packages</span>
-                </h2>
+                <h1>
+                    <span>Best </span><span class="text-mst">Umrah Packages</span>
+                </h1>
             </div>
             <div class="mt-10">
                 <ul class="umrah-package-tabs flex flex-wrap justify-center gap-2 text-center text-md font-medium md:gap-3"

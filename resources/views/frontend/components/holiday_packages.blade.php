@@ -46,17 +46,14 @@
     <div class="container mx-auto">
         <div class="holiday-packages-grid grid grid-cols-1 items-center gap-6 sm:gap-8 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:gap-6 lg:gap-10">
             <div class="holiday-packages-copy flex min-w-0 flex-col justify-center">
-                <h1 class="holiday-packages-heading capitalize italic font-semibold text-3xl md:text-4xl font-heading">
-                    holiday <span class="text-mst">
-                        packages
-                    </span>
+                <h1>
+                    holiday <span class="text-mst">packages</span>
                 </h1>
-                <div class="holiday-packages-desc text-sm sm:text-base my-2 leading-6 font-body text-gray-600 w-full max-w-lg mt-4 sm:mt-5 md:pe-2">
-                    <p>Discover the best Dubai holiday packages with top UAE tours, exclusive deals, and unforgettable
-                       experiences. From desert safari and luxury yacht tours to Abu Dhabi city tours and dhow cruises,
-                       explore the UAE with expertly crafted travel packages for comfort, value, and memorable
-                       journeys.</p>
-                </div>
+                <p class="mt-4">
+                    Discover the best Dubai holiday packages with top UAE tours, exclusive deals, and unforgettable
+                   experiences. From desert safari and luxury yacht tours to Abu Dhabi city tours and dhow cruises,
+                   explore the UAE with expertly crafted travel packages for comfort, value, and memorable
+                   journeys.</p>
                 <a href="" class="holiday-packages-cta flex items-center justify-center w-fit text-white text-base sm:text-lg px-5 py-2 rounded-full
                                             bg-gradient-to-r from-[#BA9B31] to-[#74611E]
                                              hover:bg-gradient-to-r hover:from-[#74611E] hover:to-[#BA9B31]
