@@ -3,7 +3,7 @@
         <a href="#" class="block py-2.5 px-4 md:py-2 md:px-3" aria-current="page">Home</a>
     </li>
     <li class="block text-mst-gray transition duration-300 hover:rounded-full hover:bg-gradient-to-r hover:from-[#BA9B31] hover:to-[#74611E] hover:text-white">
-        <a href="#" class="block py-2.5 px-4 md:py-2 md:px-3">UAE Tour</a>
+        <a href="<?php echo e(route('all-categories')); ?>" class="block py-2.5 px-4 md:py-2 md:px-3">UAE Tour</a>
     </li>
     <li class="block text-mst-gray transition duration-300 hover:rounded-full hover:bg-gradient-to-r hover:from-[#BA9B31] hover:to-[#74611E] hover:text-white">
         <a href="#" class="block py-2.5 px-4 md:py-2 md:px-3">Umrah</a>
