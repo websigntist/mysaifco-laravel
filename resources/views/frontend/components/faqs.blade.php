@@ -149,7 +149,19 @@
             </div>
             {{--============--}}
             <div class="flex justify-end">
-                <img src="{{asset('assets/images/faq-img.webp')}}" class="" alt="img">
+                @php
+                    $slug = request()->segment(1);
+
+                    $images = [
+                        'all-categories' => 'Intersect.webp',
+                        '/'          => 'city.webp',
+                    ];
+
+                    $image = $images[$slug] ?? 'faq-img.webp'; // fallback
+                @endphp
+
+                <img src="{{ asset('assets/images/' . $image) }}" alt="Tour Image">
+
             </div>
         </div>
 

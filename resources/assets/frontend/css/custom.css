@@ -687,4 +687,53 @@
 .faqmst .faq-accordion-btn[aria-expanded="true"] [data-accordion-icon] {
     transform: rotate(180deg);
 }
-/*=== FAQ accordion end ====*/
+
+/*=== FAQ accordion – desert safari (two-column cards) ====*/
+.faq-disert-safari .faqmst {
+    margin: 0;
+}
+
+.faq-disert-safari .faqmst h2 {
+    margin: 0;
+    font-size: inherit;
+    line-height: inherit;
+    text-transform: none;
+}
+
+.faq-disert-safari .faqmst .faq-accordion-btn {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.faq-disert-safari .faqmst .faq-accordion-btn[aria-expanded="false"] {
+    background: transparent;
+    border: none;
+    color: #282828;
+}
+
+.faq-disert-safari .faqmst:has(.faq-accordion-btn[aria-expanded="true"]) {
+    background: linear-gradient(to right, #ba9b31, #74611e);
+    border-color: transparent;
+}
+
+.faq-disert-safari .faqmst .faq-accordion-btn[aria-expanded="true"] {
+    background: transparent;
+    border: none;
+    color: #fff;
+}
+
+.faq-disert-safari .faqmst .faq-accordion-btn[aria-expanded="true"] [data-accordion-icon] {
+    color: #fff;
+}
+
+.faq-disert-safari .faqmst:has(.faq-accordion-btn[aria-expanded="true"]) .faq-accordion-btn {
+    padding-bottom: 0.625rem;
+}
+
+.faq-disert-safari .faqmst [id^="faq-body-"] {
+    margin-top: 0;
+    padding-top: 0;
+}
+/*=== FAQ accordion desert safari end ====*/

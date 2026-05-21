@@ -35,17 +35,14 @@
                    other inbound tours. Rent a jet ski, Go for the Dubai Desert Safari, Eat a delicious Dhow cruise
                    dinner, or opt for luxury yacht cruising.</p>
             <?php elseif($slug == 'disert-safari-tour'): ?>
-                <p>All You Need to Know About Desert Safari in Dubai </p>
-                <p>Have you ever been captivated by the breathtaking scenes of a Dubai Desert Safari in movies or music
-                   videos? Ever dreamed of feeling the golden sand slip through your fingers, surrounded by endless
-                   dunes that stretch as far as the eye can see? There’s a reason why the Desert Safari in Dubai is one
-                   of the most talked-about experiences among tourists—it’s a thrilling adventure that leaves an
-                   unforgettable mark on every traveler.
-                </p>
-                <p>If you’re planning a trip to Dubai, make sure the Dubai Desert Safari is at the top of your
-                   itinerary. This iconic tour offers a perfect mix of excitement, culture, and natural beauty, making
-                   it a must-do activity. Whether you’re looking for heart-racing dune bashing, serene camel rides, or
-                   mesmerizing desert sunsets, a desert safari tour in Dubai delivers it all—and more.</p>
+                <p><p>It’s everyone’s dream to explore the world and enjoy its beauty. Saifco Travel & Tourism LLC is
+                      making that possible and is also offering affordable Dubai tour packages. We are not only letting
+                      you explore the UAE but are also arranging tours out of the country. And you can easily find a
+                      travel agency near me like ours. All of our Dubai tour packages are priced relatively lower than
+                      other companies. Also, we make it easier and more convenient for you to go on any tour whether in
+                      the country or internationally. Moreover, you can also roam inside Dubai, Sharjah, and Abu Dhabi
+                      on our other inbound tours. Rent a jet ski, Go for the Dubai Desert Safari, Eat a delicious Dhow
+                      cruise dinner, or opt for luxury yacht cruising.</p></p>
             <?php endif; ?>
         </div>
     </div>

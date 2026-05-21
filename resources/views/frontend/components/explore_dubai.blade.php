@@ -1,21 +1,54 @@
+@php
+    $slug = request()->segment(1);
+@endphp
 <section class="py-14">
     <div class="container mx-auto">
         <h2 class="font-heading text-2xl font-semibold italic leading-tight tracking-tight text-mst-gray">
-            <span class="text-mst-gray">Explore Dubai With Us   </span><span class="text-mst">– Online Travel Agency</span>
+            @if($slug == '/')
+                <span class="text-mst-gray">Explore Dubai With Us   </span>
+                <span class="text-mst">– Online Travel Agency</span>
+            @elseif($slug == 'all-categories')
+                <span class="text-mst-gray">Explore Dubai With Us   </span>
+                <span class="text-mst">– Online Travel Agency</span>
+            @elseif($slug == 'disert-safari-tour')
+                <span class="text-mst-gray">Desert Safari </span><span class="text-mst"> Dubai Deals</span>
+            @endif
         </h2>
         <div class="font-body text-center md:text-left text-sm bg-[#FAF7F2] mt-6 p-5 rounded-lg border
         border-[#BA9B31]/40">
-            It’s everyone’s dream to explore the world and enjoy its beauty. Saifco Travel & Tourism LLC is making that
-            possible and is also offering affordable Dubai tour packages. We are not only letting you explore the UAE
-            but are also arranging tours out of the country. And you can easily find a travel agency near me like ours.
-            All of our Dubai tour packages are priced relatively lower than other companies. Also, we make it easier and
-            more convenient for you to go on any tour whether in the country or internationally. Moreover, you can also
-            roam inside Dubai, Sharjah, and Abu Dhabi on our other inbound tours. Rent a jet ski, Go for the Dubai
-            Desert Safari, Eat a delicious Dhow cruise dinner, or opt for luxury yacht cruising.
+            @if($slug == '/')
+                <p>It’s everyone’s dream to explore the world and enjoy its beauty. Saifco Travel & Tourism LLC is
+                   making that possible and is also offering affordable Dubai tour packages. We are not only letting you
+                   explore the UAE but are also arranging tours out of the country. And you can easily find a travel
+                   agency near me like ours. All of our Dubai tour packages are priced relatively lower than other
+                   companies. Also, we make it easier and more convenient for you to go on any tour whether in the
+                   country or internationally. Moreover, you can also roam inside Dubai, Sharjah, and Abu Dhabi on our
+                   other inbound tours. Rent a jet ski, Go for the Dubai Desert Safari, Eat a delicious Dhow cruise
+                   dinner, or opt for luxury yacht cruising.</p>
+            @elseif($slug == 'all-categories')
+                <p>It’s everyone’s dream to explore the world and enjoy its beauty. Saifco Travel & Tourism LLC is
+                   making that possible and is also offering affordable Dubai tour packages. We are not only letting you
+                   explore the UAE but are also arranging tours out of the country. And you can easily find a travel
+                   agency near me like ours. All of our Dubai tour packages are priced relatively lower than other
+                   companies. Also, we make it easier and more convenient for you to go on any tour whether in the
+                   country or internationally. Moreover, you can also roam inside Dubai, Sharjah, and Abu Dhabi on our
+                   other inbound tours. Rent a jet ski, Go for the Dubai Desert Safari, Eat a delicious Dhow cruise
+                   dinner, or opt for luxury yacht cruising.</p>
+            @elseif($slug == 'disert-safari-tour')
+                <p>All You Need to Know About Desert Safari in Dubai </p>
+                <p>Have you ever been captivated by the breathtaking scenes of a Dubai Desert Safari in movies or music
+                   videos? Ever dreamed of feeling the golden sand slip through your fingers, surrounded by endless
+                   dunes that stretch as far as the eye can see? There’s a reason why the Desert Safari in Dubai is one
+                   of the most talked-about experiences among tourists—it’s a thrilling adventure that leaves an
+                   unforgettable mark on every traveler.
+                </p>
+                <p>If you’re planning a trip to Dubai, make sure the Dubai Desert Safari is at the top of your
+                   itinerary. This iconic tour offers a perfect mix of excitement, culture, and natural beauty, making
+                   it a must-do activity. Whether you’re looking for heart-racing dune bashing, serene camel rides, or
+                   mesmerizing desert sunsets, a desert safari tour in Dubai delivers it all—and more.</p>
+            @endif
         </div>
     </div>
-
-
     {{--==================--}}
     <div class="container mx-auto mt-10">
         <h2 class="font-heading text-2xl font-semibold italic leading-tight tracking-tight text-mst-gray">
@@ -23,7 +56,7 @@
         </h2>
         <p class="font-body mt-2">
             Quick access to what travelers explore most—making it easier to find the right experience without the
-           search</p>
+            search</p>
         <ul class="flex flex-wrap items-center justify-center gap-3 font-body text-sm
                    bg-[#FAF7F2] mt-6 p-5 rounded-lg border border-[#BA9B31]/40">
             <li class="bg-mst rounded-full py-2 px-4 text-white italic font-heading cursor-pointer
