@@ -71,7 +71,7 @@
         </div>
     </section>
 
-    {{--===== best dubai heading ======--}}
+    {{--===== main heading ======--}}
     <section class="flex justify-center items-center py-8 px-4 md:py-10">
         <div class="container mx-auto">
             <div class="testimonials-section-inner mx-auto max-w-6xl">
@@ -93,7 +93,7 @@
     </section>
 
     {{--===== desert safari ======--}}
-    <section class="hidden md:block justify-center items-center bg-white py-8 px-4 md:py-6">
+    <section class="justify-center items-center bg-white py-8 px-4 md:py-6">
         <div class="container mx-auto">
             <div class="our-popular-inner">
                 <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between md:gap-8">
@@ -212,7 +212,7 @@
     </section>
 
     {{--===== yacht charter ======--}}
-    <section class="hidden md:block justify-center items-center bg-white py-8 px-4 md:py-6">
+    <section class="justify-center items-center bg-white py-8 px-4 md:py-6">
         <div class="container mx-auto">
             <div class="our-popular-inner">
                 <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between md:gap-8">
@@ -326,7 +326,7 @@
     </section>
 
     {{--===== dubai city tour ======--}}
-    <section class="hidden md:block justify-center items-center bg-white py-8 px-4 md:py-6">
+    <section class="justify-center items-center bg-white py-8 px-4 md:py-6">
         <div class="container mx-auto">
             <div class="our-popular-inner">
                 <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between md:gap-8">
@@ -354,14 +354,14 @@
                 </div>
                 <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
                     <div class="relative">
-                        <img src="{{asset('assets/images/packages/04.webp')}}"
+                        <img src="{{asset('assets/images/packages/05.webp')}}"
                              class="rounded-lg w-full h-full object-cover"
                              alt="img">
                         <!-- Overlay -->
                         <div class="absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-black/80
                             hover:bg-black/20 transition duration-300 ease-in-out"></div>
                         <div class="absolute left-5 bottom-20 font-heading text-xl font-normal text-white
-                            z-10 truncate max-w-[85%]">Shared Yacht Tour Dubai Marina
+                            z-10 truncate max-w-[85%]">Dubai City Tour
                         </div>
                         <div class="absolute left-5 bottom-14 flex gap-0.5 text-amber-400 items-center z-10"
                              aria-hidden="true">
@@ -381,15 +381,14 @@
                             <img src="{{asset('assets/images/icons/line-arrow.svg')}}" alt="arrow" class="w-5 h-6"> </a>
                     </div>
                     <div class="relative">
-                        <img src="{{asset('assets/images/packages/05.webp')}}"
+                        <img src="{{asset('assets/images/packages/06.webp')}}"
                              class="rounded-lg w-full h-full object-cover"
                              alt="img">
                         <!-- Overlay -->
                         <div class="absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-black/80
                                                 hover:bg-black/20 transition duration-300 ease-in-out"></div>
                         <div class="absolute left-5 bottom-20 font-heading text-xl font-normal text-white
-                                                z-10 truncate max-w-[85%]">Private Luxury Yacht Cruising 36 Ft
-                        </div>
+                                                z-10 truncate max-w-[85%]">Dubai Trio (City Tour, Desert Safari</div>
                         <div class="absolute left-5 bottom-14 flex gap-0.5 text-amber-400 items-center z-10"
                              aria-hidden="true">
                             @for ($i = 0; $i < 5; $i++)
@@ -408,15 +407,569 @@
                             <img src="{{asset('assets/images/icons/line-arrow.svg')}}" alt="arrow" class="w-5 h-6"> </a>
                     </div>
                     <div class="relative">
-                        <img src="{{asset('assets/images/packages/06.webp')}}"
+                        <img src="{{asset('assets/images/packages/07.webp')}}"
                              class="rounded-lg w-full h-full object-cover"
                              alt="img">
                         <!-- Overlay -->
                         <div class="absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-black/80
                                                 hover:bg-black/20 transition duration-300 ease-in-out"></div>
                         <div class="absolute left-5 bottom-20 font-heading text-xl font-normal text-white
-                                                z-10 truncate max-w-[85%]">Jet Ski rental Dubai
+                                                z-10 truncate max-w-[85%]">4 Tours: Desert Safari, Dubai City</div>
+                        <div class="absolute left-5 bottom-14 flex gap-0.5 text-amber-400 items-center z-10"
+                             aria-hidden="true">
+                            @for ($i = 0; $i < 5; $i++)
+                                <span class="text-base leading-none md:text-lg">&#9733;</span>
+                            @endfor
+                            <span class="text-white text-xs">(4.9/5) 900 Reviews</span>
                         </div>
+                        <div class="absolute left-5 bottom-5 font-body font-medium text-xs bg-mst rounded-full py-1
+                                                px-4
+                                                text-white z-10">Starting from: AED 726.35
+                        </div>
+                        <a href=""
+                           class="absolute right-5 bottom-5 inline-flex shrink-0 items-center justify-center
+                                                      w-15 h-9 rounded-full bg-white z-10
+                                                      hover:right-4 transition-all ease-in-out duration-500">
+                            <img src="{{asset('assets/images/icons/line-arrow.svg')}}" alt="arrow" class="w-5 h-6"> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{--===== dubai city tour ======--}}
+    <section class="justify-center items-center bg-white py-8 px-4 md:py-6">
+        <div class="container mx-auto">
+            <div class="our-popular-inner">
+                <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between md:gap-8">
+                    <div class="min-w-0 flex-1">
+                        <h1>
+                            <span>Abu Dhabi </span><span class="text-mst"> tour</span>
+                        </h1>
+                        <p class="mt-4 pe-20">
+                            Explore Abu Dhabi tours with Sheikh Zayed Grand Mosque, Louvre Museum, city sightseeing, and full-day guided tours from Dubai.
+                        </p>
+                    </div>
+                    {{--===== button ======--}}
+                    <div class="flex shrink-0 md:pt-1">
+                        <a
+                            href="{{ $link ?? '#' }}"
+                            class="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-mst to-mst-dark px-7 py-3.5 font-heading text-base italic text-white transition hover:from-mst-dark hover:to-mst md:py-4 md:text-lg"
+                        > View all <img
+                                src="{{ asset('assets/images/icons/btn-arrow.svg') }}"
+                                class="ms-1 w-6"
+                                width="24"
+                                height="24"
+                                alt=""
+                            > </a>
+                    </div>
+                </div>
+                <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
+                    <div class="relative">
+                        <img src="{{asset('assets/images/packages/10.webp')}}"
+                             class="rounded-lg w-full h-full object-cover"
+                             alt="img">
+                        <!-- Overlay -->
+                        <div class="absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-black/80
+                            hover:bg-black/20 transition duration-300 ease-in-out"></div>
+                        <div class="absolute left-5 bottom-20 font-heading text-xl font-normal text-white
+                            z-10 truncate max-w-[85%]">Abu Dhabi City Tours </div>
+                        <div class="absolute left-5 bottom-14 flex gap-0.5 text-amber-400 items-center z-10"
+                             aria-hidden="true">
+                            @for ($i = 0; $i < 5; $i++)
+                                <span class="text-base leading-none md:text-lg">&#9733;</span>
+                            @endfor
+                            <span class="text-white text-xs">(4.9/5) 2.4K Reviews</span>
+                        </div>
+                        <div class="absolute left-5 bottom-5 font-body font-medium text-xs bg-mst rounded-full py-1
+                            px-4
+                            text-white z-10">Starting from: AED 99
+                        </div>
+                        <a href=""
+                           class="absolute right-5 bottom-5 inline-flex shrink-0 items-center justify-center
+                                  w-15 h-9 rounded-full bg-white z-10
+                                  hover:right-4 transition-all ease-in-out duration-500">
+                            <img src="{{asset('assets/images/icons/line-arrow.svg')}}" alt="arrow" class="w-5 h-6"> </a>
+                    </div>
+                    <div class="relative">
+                        <img src="{{asset('assets/images/packages/11.webp')}}"
+                             class="rounded-lg w-full h-full object-cover"
+                             alt="img">
+                        <!-- Overlay -->
+                        <div class="absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-black/80
+                                                hover:bg-black/20 transition duration-300 ease-in-out"></div>
+                        <div class="absolute left-5 bottom-20 font-heading text-xl font-normal text-white
+                                                z-10 truncate max-w-[85%]">Abu Dhabi City Tour with Louvre M..</div>
+                        <div class="absolute left-5 bottom-14 flex gap-0.5 text-amber-400 items-center z-10"
+                             aria-hidden="true">
+                            @for ($i = 0; $i < 5; $i++)
+                                <span class="text-base leading-none md:text-lg">&#9733;</span>
+                            @endfor
+                            <span class="text-white text-xs">(4.9/5) 2.4K Reviews</span>
+                        </div>
+                        <div class="absolute left-5 bottom-5 font-body font-medium text-xs bg-mst rounded-full py-1
+                                                px-4
+                                                text-white z-10">Starting from: AED 726.35
+                        </div>
+                        <a href=""
+                           class="absolute right-5 bottom-5 inline-flex shrink-0 items-center justify-center
+                                                      w-15 h-9 rounded-full bg-white z-10
+                                                      hover:right-4 transition-all ease-in-out duration-500">
+                            <img src="{{asset('assets/images/icons/line-arrow.svg')}}" alt="arrow" class="w-5 h-6"> </a>
+                    </div>
+                    <div class="relative">
+                        <img src="{{asset('assets/images/packages/12.webp')}}"
+                             class="rounded-lg w-full h-full object-cover"
+                             alt="img">
+                        <!-- Overlay -->
+                        <div class="absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-black/80
+                                                hover:bg-black/20 transition duration-300 ease-in-out"></div>
+                        <div class="absolute left-5 bottom-20 font-heading text-xl font-normal text-white
+                                                z-10 truncate max-w-[85%]">Abu Dhabi City Tour with Ferrari W..</div>
+                        <div class="absolute left-5 bottom-14 flex gap-0.5 text-amber-400 items-center z-10"
+                             aria-hidden="true">
+                            @for ($i = 0; $i < 5; $i++)
+                                <span class="text-base leading-none md:text-lg">&#9733;</span>
+                            @endfor
+                            <span class="text-white text-xs">(4.9/5) 900 Reviews</span>
+                        </div>
+                        <div class="absolute left-5 bottom-5 font-body font-medium text-xs bg-mst rounded-full py-1
+                                                px-4
+                                                text-white z-10">Starting from: AED 726.35
+                        </div>
+                        <a href=""
+                           class="absolute right-5 bottom-5 inline-flex shrink-0 items-center justify-center
+                                                      w-15 h-9 rounded-full bg-white z-10
+                                                      hover:right-4 transition-all ease-in-out duration-500">
+                            <img src="{{asset('assets/images/icons/line-arrow.svg')}}" alt="arrow" class="w-5 h-6"> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{--===== dubai city tour ======--}}
+    <section class="justify-center items-center bg-white py-8 px-4 md:py-6">
+        <div class="container mx-auto">
+            <div class="our-popular-inner">
+                <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between md:gap-8">
+                    <div class="min-w-0 flex-1">
+                        <h1>
+                            <span>Dhow Cruise </span><span class="text-mst"> tour</span>
+                        </h1>
+                        <p class="mt-4 pe-20">
+                            Book dhow cruise Dubai with dinner, live entertainment, and scenic views of Dubai Marina or Creek for a relaxing evening experience.
+                        </p>
+                    </div>
+                    {{--===== button ======--}}
+                    <div class="flex shrink-0 md:pt-1">
+                        <a
+                            href="{{ $link ?? '#' }}"
+                            class="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-mst to-mst-dark px-7 py-3.5 font-heading text-base italic text-white transition hover:from-mst-dark hover:to-mst md:py-4 md:text-lg"
+                        > View all <img
+                                src="{{ asset('assets/images/icons/btn-arrow.svg') }}"
+                                class="ms-1 w-6"
+                                width="24"
+                                height="24"
+                                alt=""
+                            > </a>
+                    </div>
+                </div>
+                <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
+                    <div class="relative">
+                        <img src="{{asset('assets/images/packages/13.webp')}}"
+                             class="rounded-lg w-full h-full object-cover"
+                             alt="img">
+                        <!-- Overlay -->
+                        <div class="absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-black/80
+                            hover:bg-black/20 transition duration-300 ease-in-out"></div>
+                        <div class="absolute left-5 bottom-20 font-heading text-xl font-normal text-white
+                            z-10 truncate max-w-[85%]">Dhow Cruise Dinner in Dubai Marina</div>
+                        <div class="absolute left-5 bottom-14 flex gap-0.5 text-amber-400 items-center z-10"
+                             aria-hidden="true">
+                            @for ($i = 0; $i < 5; $i++)
+                                <span class="text-base leading-none md:text-lg">&#9733;</span>
+                            @endfor
+                            <span class="text-white text-xs">(4.9/5) 2.4K Reviews</span>
+                        </div>
+                        <div class="absolute left-5 bottom-5 font-body font-medium text-xs bg-mst rounded-full py-1
+                            px-4
+                            text-white z-10">Starting from: AED 99
+                        </div>
+                        <a href=""
+                           class="absolute right-5 bottom-5 inline-flex shrink-0 items-center justify-center
+                                  w-15 h-9 rounded-full bg-white z-10
+                                  hover:right-4 transition-all ease-in-out duration-500">
+                            <img src="{{asset('assets/images/icons/line-arrow.svg')}}" alt="arrow" class="w-5 h-6"> </a>
+                    </div>
+                    <div class="relative">
+                        <img src="{{asset('assets/images/packages/14.webp')}}"
+                             class="rounded-lg w-full h-full object-cover"
+                             alt="img">
+                        <!-- Overlay -->
+                        <div class="absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-black/80
+                                                hover:bg-black/20 transition duration-300 ease-in-out"></div>
+                        <div class="absolute left-5 bottom-20 font-heading text-xl font-normal text-white
+                                                z-10 truncate max-w-[85%]">Musandam Dibba Day Cruise with</div>
+                        <div class="absolute left-5 bottom-14 flex gap-0.5 text-amber-400 items-center z-10"
+                             aria-hidden="true">
+                            @for ($i = 0; $i < 5; $i++)
+                                <span class="text-base leading-none md:text-lg">&#9733;</span>
+                            @endfor
+                            <span class="text-white text-xs">(4.9/5) 2.4K Reviews</span>
+                        </div>
+                        <div class="absolute left-5 bottom-5 font-body font-medium text-xs bg-mst rounded-full py-1
+                                                px-4
+                                                text-white z-10">Starting from: AED 726.35
+                        </div>
+                        <a href=""
+                           class="absolute right-5 bottom-5 inline-flex shrink-0 items-center justify-center
+                                                      w-15 h-9 rounded-full bg-white z-10
+                                                      hover:right-4 transition-all ease-in-out duration-500">
+                            <img src="{{asset('assets/images/icons/line-arrow.svg')}}" alt="arrow" class="w-5 h-6"> </a>
+                    </div>
+                    <div class="relative">
+                        <img src="{{asset('assets/images/packages/15.webp')}}"
+                             class="rounded-lg w-full h-full object-cover"
+                             alt="img">
+                        <!-- Overlay -->
+                        <div class="absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-black/80
+                                                hover:bg-black/20 transition duration-300 ease-in-out"></div>
+                        <div class="absolute left-5 bottom-20 font-heading text-xl font-normal text-white
+                                                z-10 truncate max-w-[85%]">Dhow Cruise Dinner in Dubai Creek</div>
+                        <div class="absolute left-5 bottom-14 flex gap-0.5 text-amber-400 items-center z-10"
+                             aria-hidden="true">
+                            @for ($i = 0; $i < 5; $i++)
+                                <span class="text-base leading-none md:text-lg">&#9733;</span>
+                            @endfor
+                            <span class="text-white text-xs">(4.9/5) 900 Reviews</span>
+                        </div>
+                        <div class="absolute left-5 bottom-5 font-body font-medium text-xs bg-mst rounded-full py-1
+                                                px-4
+                                                text-white z-10">Starting from: AED 726.35
+                        </div>
+                        <a href=""
+                           class="absolute right-5 bottom-5 inline-flex shrink-0 items-center justify-center
+                                                      w-15 h-9 rounded-full bg-white z-10
+                                                      hover:right-4 transition-all ease-in-out duration-500">
+                            <img src="{{asset('assets/images/icons/line-arrow.svg')}}" alt="arrow" class="w-5 h-6"> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{--===== dubai city tour ======--}}
+    <section class="justify-center items-center bg-white py-8 px-4 md:py-6">
+        <div class="container mx-auto">
+            <div class="our-popular-inner">
+                <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between md:gap-8">
+                    <div class="min-w-0 flex-1">
+                        <h1>
+                            <span>Dubai Combo </span><span class="text-mst"> tour</span>
+                        </h1>
+                        <p class="mt-4 pe-20">
+                            Save more with Dubai combo tours including desert safari, city tours, dhow cruise, and Abu Dhabi tours in one package.
+                        </p>
+                    </div>
+                    {{--===== button ======--}}
+                    <div class="flex shrink-0 md:pt-1">
+                        <a
+                            href="{{ $link ?? '#' }}"
+                            class="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-mst to-mst-dark px-7 py-3.5 font-heading text-base italic text-white transition hover:from-mst-dark hover:to-mst md:py-4 md:text-lg"
+                        > View all <img
+                                src="{{ asset('assets/images/icons/btn-arrow.svg') }}"
+                                class="ms-1 w-6"
+                                width="24"
+                                height="24"
+                                alt=""
+                            > </a>
+                    </div>
+                </div>
+                <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
+                    <div class="relative">
+                        <img src="{{asset('assets/images/packages/16.webp')}}"
+                             class="rounded-lg w-full h-full object-cover"
+                             alt="img">
+                        <!-- Overlay -->
+                        <div class="absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-black/80
+                            hover:bg-black/20 transition duration-300 ease-in-out"></div>
+                        <div class="absolute left-5 bottom-20 font-heading text-xl font-normal text-white
+                            z-10 truncate max-w-[85%]">Dubai Trio (Dubai City Tour, Desert</div>
+                        <div class="absolute left-5 bottom-14 flex gap-0.5 text-amber-400 items-center z-10"
+                             aria-hidden="true">
+                            @for ($i = 0; $i < 5; $i++)
+                                <span class="text-base leading-none md:text-lg">&#9733;</span>
+                            @endfor
+                            <span class="text-white text-xs">(4.9/5) 2.4K Reviews</span>
+                        </div>
+                        <div class="absolute left-5 bottom-5 font-body font-medium text-xs bg-mst rounded-full py-1
+                            px-4
+                            text-white z-10">Starting from: AED 99
+                        </div>
+                        <a href=""
+                           class="absolute right-5 bottom-5 inline-flex shrink-0 items-center justify-center
+                                  w-15 h-9 rounded-full bg-white z-10
+                                  hover:right-4 transition-all ease-in-out duration-500">
+                            <img src="{{asset('assets/images/icons/line-arrow.svg')}}" alt="arrow" class="w-5 h-6"> </a>
+                    </div>
+                    <div class="relative">
+                        <img src="{{asset('assets/images/packages/17.webp')}}"
+                             class="rounded-lg w-full h-full object-cover"
+                             alt="img">
+                        <!-- Overlay -->
+                        <div class="absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-black/80
+                                                hover:bg-black/20 transition duration-300 ease-in-out"></div>
+                        <div class="absolute left-5 bottom-20 font-heading text-xl font-normal text-white
+                                                z-10 truncate max-w-[85%]">4 Tours: Desert Safari, Dubai City</div>
+                        <div class="absolute left-5 bottom-14 flex gap-0.5 text-amber-400 items-center z-10"
+                             aria-hidden="true">
+                            @for ($i = 0; $i < 5; $i++)
+                                <span class="text-base leading-none md:text-lg">&#9733;</span>
+                            @endfor
+                            <span class="text-white text-xs">(4.9/5) 2.4K Reviews</span>
+                        </div>
+                        <div class="absolute left-5 bottom-5 font-body font-medium text-xs bg-mst rounded-full py-1
+                                                px-4
+                                                text-white z-10">Starting from: AED 726.35
+                        </div>
+                        <a href=""
+                           class="absolute right-5 bottom-5 inline-flex shrink-0 items-center justify-center
+                                                      w-15 h-9 rounded-full bg-white z-10
+                                                      hover:right-4 transition-all ease-in-out duration-500">
+                            <img src="{{asset('assets/images/icons/line-arrow.svg')}}" alt="arrow" class="w-5 h-6"> </a>
+                    </div>
+                    <div class="relative">
+                        <img src="{{asset('assets/images/packages/18.webp')}}"
+                             class="rounded-lg w-full h-full object-cover"
+                             alt="img">
+                        <!-- Overlay -->
+                        <div class="absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-black/80
+                                                hover:bg-black/20 transition duration-300 ease-in-out"></div>
+                        <div class="absolute left-5 bottom-20 font-heading text-xl font-normal text-white
+                                                z-10 truncate max-w-[85%]">Combo 1: Dubai City Tour & Desert</div>
+                        <div class="absolute left-5 bottom-14 flex gap-0.5 text-amber-400 items-center z-10"
+                             aria-hidden="true">
+                            @for ($i = 0; $i < 5; $i++)
+                                <span class="text-base leading-none md:text-lg">&#9733;</span>
+                            @endfor
+                            <span class="text-white text-xs">(4.9/5) 900 Reviews</span>
+                        </div>
+                        <div class="absolute left-5 bottom-5 font-body font-medium text-xs bg-mst rounded-full py-1
+                                                px-4
+                                                text-white z-10">Starting from: AED 726.35
+                        </div>
+                        <a href=""
+                           class="absolute right-5 bottom-5 inline-flex shrink-0 items-center justify-center
+                                                      w-15 h-9 rounded-full bg-white z-10
+                                                      hover:right-4 transition-all ease-in-out duration-500">
+                            <img src="{{asset('assets/images/icons/line-arrow.svg')}}" alt="arrow" class="w-5 h-6"> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{--===== dubai city tour ======--}}
+    <section class="justify-center items-center bg-white py-8 px-4 md:py-6">
+        <div class="container mx-auto">
+            <div class="our-popular-inner">
+                <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between md:gap-8">
+                    <div class="min-w-0 flex-1">
+                        <h1>
+                            <span>Water  </span><span class="text-mst"> Activities</span>
+                        </h1>
+                        <p class="mt-4 pe-20">
+                            Experience Dubai water activities including jet ski, parasailing, flyboarding, banana rides, and exciting beach adventures across Dubai.
+                        </p>
+                    </div>
+                    {{--===== button ======--}}
+                    <div class="flex shrink-0 md:pt-1">
+                        <a
+                            href="{{ $link ?? '#' }}"
+                            class="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-mst to-mst-dark px-7 py-3.5 font-heading text-base italic text-white transition hover:from-mst-dark hover:to-mst md:py-4 md:text-lg"
+                        > View all <img
+                                src="{{ asset('assets/images/icons/btn-arrow.svg') }}"
+                                class="ms-1 w-6"
+                                width="24"
+                                height="24"
+                                alt=""
+                            > </a>
+                    </div>
+                </div>
+                <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
+                    <div class="relative">
+                        <img src="{{asset('assets/images/packages/19.webp')}}"
+                             class="rounded-lg w-full h-full object-cover"
+                             alt="img">
+                        <!-- Overlay -->
+                        <div class="absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-black/80
+                            hover:bg-black/20 transition duration-300 ease-in-out"></div>
+                        <div class="absolute left-5 bottom-20 font-heading text-xl font-normal text-white
+                            z-10 truncate max-w-[85%]">Jet Ski rental Dubai</div>
+                        <div class="absolute left-5 bottom-14 flex gap-0.5 text-amber-400 items-center z-10"
+                             aria-hidden="true">
+                            @for ($i = 0; $i < 5; $i++)
+                                <span class="text-base leading-none md:text-lg">&#9733;</span>
+                            @endfor
+                            <span class="text-white text-xs">(4.9/5) 2.4K Reviews</span>
+                        </div>
+                        <div class="absolute left-5 bottom-5 font-body font-medium text-xs bg-mst rounded-full py-1
+                            px-4
+                            text-white z-10">Starting from: AED 99
+                        </div>
+                        <a href=""
+                           class="absolute right-5 bottom-5 inline-flex shrink-0 items-center justify-center
+                                  w-15 h-9 rounded-full bg-white z-10
+                                  hover:right-4 transition-all ease-in-out duration-500">
+                            <img src="{{asset('assets/images/icons/line-arrow.svg')}}" alt="arrow" class="w-5 h-6"> </a>
+                    </div>
+                    <div class="relative">
+                        <img src="{{asset('assets/images/packages/20.webp')}}"
+                             class="rounded-lg w-full h-full object-cover"
+                             alt="img">
+                        <!-- Overlay -->
+                        <div class="absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-black/80
+                                                hover:bg-black/20 transition duration-300 ease-in-out"></div>
+                        <div class="absolute left-5 bottom-20 font-heading text-xl font-normal text-white
+                                                z-10 truncate max-w-[85%]">Speed Boat Tour Dubai - 90 mins</div>
+                        <div class="absolute left-5 bottom-14 flex gap-0.5 text-amber-400 items-center z-10"
+                             aria-hidden="true">
+                            @for ($i = 0; $i < 5; $i++)
+                                <span class="text-base leading-none md:text-lg">&#9733;</span>
+                            @endfor
+                            <span class="text-white text-xs">(4.9/5) 2.4K Reviews</span>
+                        </div>
+                        <div class="absolute left-5 bottom-5 font-body font-medium text-xs bg-mst rounded-full py-1
+                                                px-4
+                                                text-white z-10">Starting from: AED 726.35
+                        </div>
+                        <a href=""
+                           class="absolute right-5 bottom-5 inline-flex shrink-0 items-center justify-center
+                                                      w-15 h-9 rounded-full bg-white z-10
+                                                      hover:right-4 transition-all ease-in-out duration-500">
+                            <img src="{{asset('assets/images/icons/line-arrow.svg')}}" alt="arrow" class="w-5 h-6"> </a>
+                    </div>
+                    <div class="relative">
+                        <img src="{{asset('assets/images/packages/21.webp')}}"
+                             class="rounded-lg w-full h-full object-cover"
+                             alt="img">
+                        <!-- Overlay -->
+                        <div class="absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-black/80
+                                                hover:bg-black/20 transition duration-300 ease-in-out"></div>
+                        <div class="absolute left-5 bottom-20 font-heading text-xl font-normal text-white
+                                                z-10 truncate max-w-[85%]">Deep Sea Fishing 4 hours Tour</div>
+                        <div class="absolute left-5 bottom-14 flex gap-0.5 text-amber-400 items-center z-10"
+                             aria-hidden="true">
+                            @for ($i = 0; $i < 5; $i++)
+                                <span class="text-base leading-none md:text-lg">&#9733;</span>
+                            @endfor
+                            <span class="text-white text-xs">(4.9/5) 900 Reviews</span>
+                        </div>
+                        <div class="absolute left-5 bottom-5 font-body font-medium text-xs bg-mst rounded-full py-1
+                                                px-4
+                                                text-white z-10">Starting from: AED 726.35
+                        </div>
+                        <a href=""
+                           class="absolute right-5 bottom-5 inline-flex shrink-0 items-center justify-center
+                                                      w-15 h-9 rounded-full bg-white z-10
+                                                      hover:right-4 transition-all ease-in-out duration-500">
+                            <img src="{{asset('assets/images/icons/line-arrow.svg')}}" alt="arrow" class="w-5 h-6"> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{--===== dubai city tour ======--}}
+    <section class="justify-center items-center bg-white py-8 px-4 md:py-6">
+        <div class="container mx-auto">
+            <div class="our-popular-inner">
+                <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between md:gap-8">
+                    <div class="min-w-0 flex-1">
+                        <h1>
+                            <span>Theme Park </span><span class="text-mst"> Tickets</span>
+                        </h1>
+                        <p class="mt-4 pe-20">
+                            Get theme park tickets for Dubai attractions including Ferrari World, IMG Worlds, Motiongate, and Aquaventure water park experiences.
+                        </p>
+                    </div>
+                    {{--===== button ======--}}
+                    <div class="flex shrink-0 md:pt-1">
+                        <a
+                            href="{{ $link ?? '#' }}"
+                            class="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-mst to-mst-dark px-7 py-3.5 font-heading text-base italic text-white transition hover:from-mst-dark hover:to-mst md:py-4 md:text-lg"
+                        > View all <img
+                                src="{{ asset('assets/images/icons/btn-arrow.svg') }}"
+                                class="ms-1 w-6"
+                                width="24"
+                                height="24"
+                                alt=""
+                            > </a>
+                    </div>
+                </div>
+                <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
+                    <div class="relative">
+                        <img src="{{asset('assets/images/packages/22.webp')}}"
+                             class="rounded-lg w-full h-full object-cover"
+                             alt="img">
+                        <!-- Overlay -->
+                        <div class="absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-black/80
+                            hover:bg-black/20 transition duration-300 ease-in-out"></div>
+                        <div class="absolute left-5 bottom-20 font-heading text-xl font-normal text-white
+                            z-10 truncate max-w-[85%]">Hot Air Balloon Tour (6 Hours)</div>
+                        <div class="absolute left-5 bottom-14 flex gap-0.5 text-amber-400 items-center z-10"
+                             aria-hidden="true">
+                            @for ($i = 0; $i < 5; $i++)
+                                <span class="text-base leading-none md:text-lg">&#9733;</span>
+                            @endfor
+                            <span class="text-white text-xs">(4.9/5) 2.4K Reviews</span>
+                        </div>
+                        <div class="absolute left-5 bottom-5 font-body font-medium text-xs bg-mst rounded-full py-1
+                            px-4
+                            text-white z-10">Starting from: AED 99
+                        </div>
+                        <a href=""
+                           class="absolute right-5 bottom-5 inline-flex shrink-0 items-center justify-center
+                                  w-15 h-9 rounded-full bg-white z-10
+                                  hover:right-4 transition-all ease-in-out duration-500">
+                            <img src="{{asset('assets/images/icons/line-arrow.svg')}}" alt="arrow" class="w-5 h-6"> </a>
+                    </div>
+                    <div class="relative">
+                        <img src="{{asset('assets/images/packages/23.webp')}}"
+                             class="rounded-lg w-full h-full object-cover"
+                             alt="img">
+                        <!-- Overlay -->
+                        <div class="absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-black/80
+                                                hover:bg-black/20 transition duration-300 ease-in-out"></div>
+                        <div class="absolute left-5 bottom-20 font-heading text-xl font-normal text-white
+                                                z-10 truncate max-w-[85%]">Wonder Bus Tour</div>
+                        <div class="absolute left-5 bottom-14 flex gap-0.5 text-amber-400 items-center z-10"
+                             aria-hidden="true">
+                            @for ($i = 0; $i < 5; $i++)
+                                <span class="text-base leading-none md:text-lg">&#9733;</span>
+                            @endfor
+                            <span class="text-white text-xs">(4.9/5) 2.4K Reviews</span>
+                        </div>
+                        <div class="absolute left-5 bottom-5 font-body font-medium text-xs bg-mst rounded-full py-1
+                                                px-4
+                                                text-white z-10">Starting from: AED 726.35
+                        </div>
+                        <a href=""
+                           class="absolute right-5 bottom-5 inline-flex shrink-0 items-center justify-center
+                                                      w-15 h-9 rounded-full bg-white z-10
+                                                      hover:right-4 transition-all ease-in-out duration-500">
+                            <img src="{{asset('assets/images/icons/line-arrow.svg')}}" alt="arrow" class="w-5 h-6"> </a>
+                    </div>
+                    <div class="relative">
+                        <img src="{{asset('assets/images/packages/24.webp')}}"
+                             class="rounded-lg w-full h-full object-cover"
+                             alt="img">
+                        <!-- Overlay -->
+                        <div class="absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-black/80
+                                                hover:bg-black/20 transition duration-300 ease-in-out"></div>
+                        <div class="absolute left-5 bottom-20 font-heading text-xl font-normal text-white
+                                                z-10 truncate max-w-[85%]">Bollywood Parks™ Dubai</div>
                         <div class="absolute left-5 bottom-14 flex gap-0.5 text-amber-400 items-center z-10"
                              aria-hidden="true">
                             @for ($i = 0; $i < 5; $i++)
@@ -440,4 +993,6 @@
     </section>
 
     @include('frontend.components.testimonials')
+    @include('frontend.components.faqs')
+    @include('frontend.components.explore_dubai')
 @endsection

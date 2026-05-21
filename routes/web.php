@@ -624,6 +624,7 @@ Route::middleware(['frontend', 'maintenance'])->group(function () {
     Route::get('/', [frontend\MainController::class, 'index'])->name('/');
     Route::get('/about-us', [frontend\MainController::class, 'about'])->name('about-us');
     Route::get('/all-categories', [frontend\MainController::class, 'all_categories'])->name('all-categories');
+    Route::get('/disert-safari-tour', [frontend\MainController::class, 'disert_safari_tour'])->name('disert-safari-tour');
     Route::match(['get', 'post'], '/send', [frontend\InquiriesController::class, 'index'])->name('send');
 });
 

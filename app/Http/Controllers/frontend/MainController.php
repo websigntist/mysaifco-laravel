@@ -93,4 +93,17 @@ class MainController
             ]);
         }
 
+    public function disert_safari_tour()
+            {
+                // Fetch "about-us" page data from the API
+                $pageData = null;
+
+                return view('frontend.pages.disert-safari-tour', [
+                    'pageData'         => $pageData,
+                    'meta_title'       => $pageData['meta']['title'] ?? "Disert Safari Tour",
+                    'meta_keywords'    => $pageData['meta']['keywords'] ?? 'meta keywords mention here',
+                    'meta_description' => $pageData['meta']['description'] ?? 'meta description mention here',
+                ]);
+            }
+
 }
