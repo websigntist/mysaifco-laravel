@@ -14,8 +14,7 @@
     <meta property="og:description" content="">
     <meta property="og:site_name" content="">
     <link rel="canonical" href="">
-    {{--<link rel="icon" type="image/x-icon" href="{{asset('assets/images/settings/'.get_setting('favicon'))}}">--}}
-    <link rel="icon" type="image/x-icon" href="{{asset('assets/images/favicon.png')}}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/settings/'.get_setting('favicon')) }}">
     @vite(['resources/assets/frontend/css/app.css'])
 </head>
 <body class="w-full overflow-x-hidden antialiased">

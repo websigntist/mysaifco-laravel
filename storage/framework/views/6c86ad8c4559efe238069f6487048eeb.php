@@ -4,7 +4,8 @@
             <!-- Logo & Description — 2 cols -->
             <div class="md:col-span-2">
                 <a href="<?php echo e(url('/')); ?>" class="text-2xl font-bold text-mst-gray py-3">
-                    <img src="<?php echo e(asset('assets/images/footer-logo.svg')); ?>" alt="logo" title="brand logo"> </a>
+                    <img src="<?php echo e(asset('assets/images/settings/'.get_setting('footer_logo'))); ?>" alt="logo" title="brand
+                    logo"> </a>
                 <p class="text-sm my-3 text-mst-gray leading-6 md:pe-6">
                     Saifco Travel & Tourism is a leading Dubai-based travel company offering Dubai tours, desert safari,
                     yacht charters, holiday packages, Umrah services, and global visa assistance with trusted service

@@ -2,7 +2,8 @@
     <div class="site-header__bar container mx-auto flex min-w-0 items-center justify-between gap-2 px-4 py-2 sm:gap-3 md:px-6">
         <div class="brand_logo shrink-0">
             <a href="<?php echo e(url('/')); ?>">
-                <img src="<?php echo e(asset('assets/images/logo.svg')); ?>" class="w-14" alt="brand_logo"
+                <img src="<?php echo e(asset('assets/images/settings/'.get_setting('logo'))); ?>"
+                     class="w-14" alt="brand_logo"
                      title="standard patches">
             </a>
         </div>

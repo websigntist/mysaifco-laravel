@@ -21,7 +21,7 @@ Route::get('update-pass', function () {
     $user = User::find(1); // insert user id which user password want to change
 
     // user: websigntist@gmail.com
-    // pwd: adnan*2563325
+    // pwd: adnang2563325
     if ($user) {
         // Update the password securely
         $user->password = Hash::make('123456');
