@@ -626,5 +626,10 @@ Route::middleware(['frontend', 'maintenance'])->group(function () {
     Route::get('/all-categories', [frontend\MainController::class, 'all_categories'])->name('all-categories');
     Route::get('/disert-safari-tour', [frontend\MainController::class, 'disert_safari_tour'])->name('disert-safari-tour');
     Route::match(['get', 'post'], '/send', [frontend\InquiriesController::class, 'index'])->name('send');
+
+    // CMS pages by slug (must be last — e.g. /uae-tour)
+    Route::get('/{slug}', [frontend\MainController::class, 'show'])
+        ->where('slug', '[a-zA-Z0-9\-]+')
+        ->name('page.show');
 });
 

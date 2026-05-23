@@ -6,6 +6,8 @@ use App\Http\Controllers\frontend\PagesApiController;
 use App\Models\backend\Page;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\View;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class MainController
 {
@@ -105,5 +107,43 @@ class MainController
                     'meta_description' => $pageData['meta']['description'] ?? 'meta description mention here',
                 ]);
             }
+
+    /**
+     * CMS page by friendly_url (slug). Supports [include file="page-name"] in description.
+     */
+    public function show(string $slug)
+    {
+        $reserved = ['admin', 'api', 'send', 'clearall', 'update-pass'];
+
+        if (in_array(strtolower($slug), $reserved, true)) {
+            throw new NotFoundHttpException();
+        }
+
+        $page = Page::query()
+            ->where('friendly_url', $slug)
+            ->where('status', 'published')
+            ->first();
+
+        if (! $page) {
+            throw new NotFoundHttpException();
+        }
+
+        $viewData = cms_page_view_data($page);
+
+        // Description is only [include file="all-categories"] → render full page template
+        $includeFile = cms_page_includes_only_file($page->description);
+
+        if ($includeFile !== null) {
+            $viewName = shortcode_include_view_name($includeFile);
+
+            if ($viewName && View::exists($viewName)) {
+                return view($viewName, $viewData);
+            }
+        }
+
+        $viewData['pageContent'] = do_shortcode($page->description);
+
+        return view('frontend.pages.show', $viewData);
+    }
 
 }
