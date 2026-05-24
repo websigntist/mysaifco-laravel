@@ -1,58 +1,61 @@
-@extends('backend.layouts.master')
-@push('style')
-    <link rel="stylesheet" href="{{ asset('assets/backend/css/select2.css') }}">
-@endpush
-@section('content')
+<?php $__env->startPush('style'); ?>
+    <link rel="stylesheet" href="<?php echo e(asset('assets/backend/css/select2.css')); ?>">
+<?php $__env->stopPush(); ?>
+<?php $__env->startSection('content'); ?>
     <div class="container-xxl flex-grow-1 mt-3 -container-p-y">
-        <form action="{{ route($module.'.store') }}" method="post" class="needs-validation" enctype="multipart/form-data" id="dropzone-multi" novalidate>
-            @csrf
+        <form action="<?php echo e(route($module.'.store')); ?>" method="post" class="needs-validation" enctype="multipart/form-data" id="dropzone-multi" novalidate>
+            <?php echo csrf_field(); ?>
             <div class="row gy-6">
                 <div class="col-sm-12">
                     <div class="d-flex justify-content-between align-items-center mb-3 mt-5">
                         <div class="d-flex flex-column justify-content-center">
-                            {!! heading_breadcrumbs('Add New '. $title, $title.' form') !!}
+                            <?php echo heading_breadcrumbs('Add New '. $title, $title.' form'); ?>
+
                         </div>
                         <div class="card-header-elements ms-auto d-flex align-content-between">
-                            {!! goBack($module) !!}
+                            <?php echo goBack($module); ?>
+
                         </div>
                     </div>
                 </div>
             </div>
-            @if ($errors->any())
+            <?php if($errors->any()): ?>
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                     <h5 class="alert-heading mb-2">Validation Errors:</h5>
                     <ul class="mb-0">
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
+                        <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <li><?php echo e($error); ?></li>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </ul>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
-            @endif
+            <?php endif; ?>
             <div class="row mb-6 gy-6">
                 <div class="col-sm-12 col-xl-8">
                     <div class="card card-action border-top-bottom">
                         <div class="card-header border-bottom py-3 d-flex justify-content-between align-items-center">
                             <h6 class="mb-0 text-capitalize">
                                 <span class="icon-sm icon-base ti tabler-apps iconmrgn me-1"></span>
-                                Fill Out The {{ ucfirst($title) }} Details
+                                Fill Out The <?php echo e(ucfirst($title)); ?> Details
                             </h6>
-                            {!! card_action_element() !!}
+                            <?php echo card_action_element(); ?>
+
                         </div>
                         <div class="collapse show">
                             <div class="card-body">
                                 <div class="row g-6 pt-5">
                                     <div class="col-md-12">
                                         <label class="form-label text-capitalize" for="title">
-                                            <span>{{ _label('gallery_title') ?? 'Gallery Title' }}</span>
+                                            <span><?php echo e(_label('gallery_title') ?? 'Gallery Title'); ?></span>
                                         </label>
                                         <input type="text"
                                                id="title"
                                                name="title"
-                                               value="{{ old('title') }}"
+                                               value="<?php echo e(old('title')); ?>"
                                                class="form-control"
                                                placeholder="Enter gallery title..." required>
-                                        {!! error_label('title') !!}
+                                        <?php echo error_label('title'); ?>
+
                                     </div>
                                 </div>
                             </div>
@@ -64,7 +67,8 @@
                                 <span class="icon-sm icon-base ti tabler-photo iconmrgn me-1"></span>
                                 Gallery Images (multiple)
                             </h6>
-                            {!! card_action_element() !!}
+                            <?php echo card_action_element(); ?>
+
                         </div>
 
                         <div class="collapse show">
@@ -87,7 +91,8 @@
                                 <span class="icon-sm icon-base ti tabler-photo iconmrgn me-1"></span>
                                 Gallery cover image
                             </h6>
-                            {!! card_action_element() !!}
+                            <?php echo card_action_element(); ?>
+
                         </div>
                         <div class="collapse show">
                             <div class="card-body">
@@ -107,33 +112,34 @@
                                 <span class="icon-sm icon-base ti tabler-table-options iconmrgn me-1"></span>
                                 Other options
                             </h6>
-                            {!! card_action_element() !!}
+                            <?php echo card_action_element(); ?>
+
                         </div>
                         <div class="collapse show">
                             <div class="card-body">
                                 <div class="row g-6 pt-5">
                                     <div class="col-md-12">
+                                        <?php echo $__env->make('backend.components.tour-type-select', [
+                                            'tourTypes' => $tourTypes,
+                                            'selected' => old('tour_type_id') ? [(int) old('tour_type_id')] : [],
+                                        ], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+                                    </div>
+                                    <div class="col-md-12">
                                         <label class="form-label text-capitalize" for="status">
-                                            <span>{{ _label('status') ?? 'Status' }}</span>
+                                            <span><?php echo e(_label('status') ?? 'Status'); ?></span>
                                         </label>
                                         <select id="status" name="status" class="form-select select2" required>
-                                            @foreach($getStatus as $status)
-                                                <option value="{{ $status }}" {{ old('status', 'Active') === $status ? 'selected' : '' }}>{{ ucfirst($status) }}</option>
-                                            @endforeach
+                                            <?php $__currentLoopData = $getStatus; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $status): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                <option value="<?php echo e(old($status, $status)); ?>"><?php echo e(ucfirst($status)); ?></option>
+                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                         </select>
                                     </div>
                                     <div class="col-md-12">
-                                        @include('backend.components.tour-type-select', [
-                                            'tourTypes' => $tourTypes,
-                                            'selected' => $selectedTourTypes ?? [],
-                                            'multiple' => true,
-                                        ])
-                                    </div>
-                                    <div class="col-md-12">
                                         <label class="form-label text-capitalize" for="ordering">
-                                            {{ _label('ordering') ?? 'Ordering' }}
+                                            <?php echo e(_label('ordering') ?? 'Ordering'); ?>
+
                                         </label>
-                                        <input type="number" id="ordering" name="ordering" value="{{ old('ordering', 0) }}" class="form-control" placeholder="0" min="0">
+                                        <input type="number" id="ordering" name="ordering" value="<?php echo e(old('ordering', 0)); ?>" class="form-control" placeholder="0" min="0">
                                     </div>
                                 </div>
                             </div>
@@ -141,16 +147,18 @@
                     </div>
                     <div class="card border-top-bottom mt-5 py-3">
                         <div class="row">
-                            {!! form_action_buttons('Submit Now', 'Save & New', 'Save & Stay') !!}
+                            <?php echo form_action_buttons('Submit Now', 'Save & New', 'Save & Stay'); ?>
+
                         </div>
                     </div>
                 </div>
             </div>
         </form>
     </div>
-@endsection
-@push('script')
-    <script src="{{ asset('assets/backend/js/select2.js') }}"></script>
-    <script src="{{ asset('assets/backend/js/form-layouts.js') }}"></script>
-    <script src="{{ asset('assets/backend/js/form-validation.js') }}"></script>
-@endpush
+<?php $__env->stopSection(); ?>
+<?php $__env->startPush('script'); ?>
+    <script src="<?php echo e(asset('assets/backend/js/select2.js')); ?>"></script>
+    <script src="<?php echo e(asset('assets/backend/js/form-validation.js')); ?>"></script>
+<?php $__env->stopPush(); ?>
+
+<?php echo $__env->make('backend.layouts.master', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH D:\laragon\www\mysaifco-laravel\resources\views/backend/galleries/form.blade.php ENDPATH**/ ?>

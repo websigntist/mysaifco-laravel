@@ -20,6 +20,7 @@ class Review extends Model
         'review',
         'rating',
         'type',
+        'tour_type_id',
         'status',
         'created_by',
         'ordering',
@@ -32,4 +33,8 @@ class Review extends Model
         return $this->belongsTo(User::class, 'created_by');
     }
 
+    public function tourType()
+    {
+        return $this->belongsTo(TourType::class, 'tour_type_id');
+    }
 }

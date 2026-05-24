@@ -116,6 +116,13 @@
                                </div>
                                <div class="col-md-12">
                                   <textarea name="description" class="form-control" id="editor"></textarea>
+                                  <p class="text-muted small mt-2 mb-0">
+                                      Shortcode: <code>[include file="all-categories"]</code> loads
+                                      <code>resources/views/frontend/pages/all-categories.blade.php</code>
+                                      (use this shortcode alone as the full description for full-page templates).
+                                      For inline content, add
+                                      <code>resources/views/frontend/pages/includes/your-file.blade.php</code>.
+                                  </p>
                                </div>
                             </div>
                          </div>

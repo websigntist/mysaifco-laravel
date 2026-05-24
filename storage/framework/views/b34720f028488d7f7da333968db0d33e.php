@@ -254,60 +254,12 @@
                                    </select>
                                </div>
                                <div class="col-md-12">
-                                  <label class="form-label text-capitalize" for="tour_type">
-                                      <?php echo e(_label('tour_type')); ?>
-
-                                  </label> <select id="tour_type" name="tour_type[]" multiple class="form-select select2">
-                                       <option value="0">- select tour type -</option>
-                                       <option value="Dubai Tour">Dubai Tour</option>
-                                       <option value="Abu Dhabi Tour">Abu Dhabi Tour</option>
-                                       <option value="Dubai City Tours">Dubai City Tours</option>
-                                       <option value="Theme Park Tickets">Theme Park Tickets</option>
-                                   </select>
+                                   <?php echo $__env->make('backend.components.tour-type-select', [
+                                       'tourTypes' => $tourTypes,
+                                       'selected' => $selectedTourTypes,
+                                       'multiple' => true,
+                                   ], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
                                </div>
-                                <div class="col-md-12">
-                                    <label class="form-label text-capitalize" for="tour_faqs">
-                                        <?php echo e(_label('tour_FAQs')); ?>
-
-                                    </label>
-                                    <select id="tour_faqs" name="tour_faqs[]" multiple class="form-select select2" data-placeholder="Select FAQs for this tour...">
-                                        <?php $__currentLoopData = $faqs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $faq): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                            <option value="<?php echo e($faq->id); ?>" <?php echo e(in_array($faq->id, old('tour_faqs', [])) ? 'selected' : ''); ?>>
-                                                <?php echo e(Str::words($faq->title, 2, '')); ?>
-
-                                            </option>
-                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                    </select> <small class="text-muted">Select one or more FAQs to display with this
-                                                                        tour.</small>
-                                </div>
-                                <div class="col-md-12">
-                                    <label class="form-label text-capitalize" for="tour_gallery">
-                                        <?php echo e(_label('tour_gallery')); ?>
-
-                                    </label>
-                                    <select id="tour_galleries" name="tour_galleries[]" multiple class="form-select select2" data-placeholder="Select Gallery for this tour...">
-                                        <?php $__currentLoopData = $galleries; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $gallery): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                            <option value="<?php echo e($gallery->id); ?>" <?php echo e(in_array($gallery->id, old ('tour_galleries', [])) ? 'selected' : ''); ?>>
-                                                <?php echo e($gallery->title); ?>
-
-                                            </option>
-                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                    </select>
-                                </div>
-                                <div class="col-md-12">
-                                    <label class="form-label text-capitalize" for="tour_review">
-                                        <?php echo e(_label('tour_review')); ?>
-
-                                    </label>
-                                    <select id="tour_reviews" name="tour_reviews[]" multiple class="form-select select2" data-placeholder="Select Review for this tour...">
-                                        <?php $__currentLoopData = $reviews; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $review): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                            <option value="<?php echo e($review->id); ?>" <?php echo e(in_array($review->id, old ('tour_reviews', [])) ? 'selected' : ''); ?>>
-                                                <?php echo e($review->name); ?>
-
-                                            </option>
-                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                    </select>
-                                </div>
                                 <div class="col-md-12">
                                     <label class="form-label text-capitalize" for="ordering">
                                         <?php echo e(_label('ordering')); ?>

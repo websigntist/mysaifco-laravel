@@ -4,6 +4,7 @@ namespace App\Http\Controllers\backend;
 
 use App\Models\backend\Gallery;
 use App\Models\backend\GalleryImage;
+use App\Models\backend\TourType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
@@ -63,9 +64,11 @@ class GalleryController
         $getStatus = getEnumValues($this->module, 'status');
 
         return view('backend.' . $this->module . '.form', [
-            'title'            => $moduleTitle,
-            'module'           => $moduleName,
-            'getStatus'        => $getStatus,
+            'title'              => $moduleTitle,
+            'module'             => $moduleName,
+            'getStatus'          => $getStatus,
+            'tourTypes'          => TourType::activeList(),
+            'selectedTourTypes'  => $this->resolveTourTypeIds(old('tour_type', [])),
             'meta_title'       => "Create New | Admin Panel",
             'meta_keywords'    => '',
             'meta_description' => ''
@@ -84,11 +87,12 @@ class GalleryController
             $coverImage = imageHandling($request, null, 'cover_image', $this->module);
 
             $gallery = ($this->table)::create([
-                'title'        => $request->title,
-                'cover_image'  => $coverImage,
-                'status'       => $request->status ?? 'active',
-                'ordering'     => (int)($request->ordering ?? 0),
-                'created_by'   => $this->userId,
+                'title'         => $request->title,
+                'tour_type'     => $this->encodeTourTypesForStorage($request->tour_type),
+                'cover_image'   => $coverImage,
+                'status'        => $request->status ?? 'active',
+                'ordering'      => (int)($request->ordering ?? 0),
+                'created_by'    => $this->userId,
             ]);
 
             if (!$gallery) {
@@ -121,10 +125,14 @@ class GalleryController
         $getStatus = getEnumValues($this->module, 'status');
 
         return view('backend.' . $this->module . '.edit', [
-            'data'             => $gallery,
-            'title'            => $moduleTitle,
-            'module'           => $moduleName,
-            'getStatus'        => $getStatus,
+            'data'               => $gallery,
+            'title'              => $moduleTitle,
+            'module'             => $moduleName,
+            'getStatus'          => $getStatus,
+            'tourTypes'          => TourType::activeList(),
+            'selectedTourTypes'  => $this->resolveTourTypeIds(
+                old('tour_type', $this->parseStoredTourTypes($gallery->tour_type))
+            ),
             'meta_title'       => "Edit | Admin Panel",
             'meta_keywords'    => '',
             'meta_description' => ''
@@ -143,10 +151,11 @@ class GalleryController
             $gallery = ($this->table)::findOrFail($id);
 
             $dataToUpdate = [
-                'title'      => $request->title,
-                'status'     => $request->status ?? 'active',
-                'ordering'   => (int)($request->ordering ?? 0),
-                'created_by' => $this->userId,
+                'title'         => $request->title,
+                'tour_type'     => $this->encodeTourTypesForStorage($request->tour_type),
+                'status'        => $request->status ?? 'active',
+                'ordering'      => (int)($request->ordering ?? 0),
+                'created_by'    => $this->userId,
             ];
 
             $dataToUpdate['cover_image'] = imageHandling($request, $gallery, 'cover_image', $this->module);
@@ -488,5 +497,104 @@ class GalleryController
         $item = ($this->table)::withTrashed()->findOrFail($id);
         $item->forceDelete();
         return redirect()->route($this->module)->with('success', $this->notify_title . ' permanently deleted!');
+    }
+
+    private function normalizeTourTypeInput($values): array
+    {
+        if (!is_array($values)) {
+            return [];
+        }
+
+        return array_values(array_filter(array_map('intval', $values)));
+    }
+
+    private function encodeTourTypesForStorage($values): ?string
+    {
+        $ids = $this->normalizeTourTypeInput($values);
+        if (empty($ids)) {
+            return null;
+        }
+
+        $names = TourType::whereIn('id', $ids)
+            ->orderBy('ordering')
+            ->orderBy('title')
+            ->get()
+            ->map(fn (TourType $type) => trim((string) ($type->title ?? '')))
+            ->filter()
+            ->values()
+            ->all();
+
+        return $names !== [] ? implode(', ', $names) : null;
+    }
+
+    /**
+     * @param mixed $stored
+     * @return array<int, string|int>
+     */
+    private function parseStoredTourTypes($stored): array
+    {
+        if (is_string($stored) && $stored !== '') {
+            $trimmed = trim($stored);
+            if (str_starts_with($trimmed, '[') || str_starts_with($trimmed, '{')) {
+                $decoded = json_decode($stored, true);
+                if (is_array($decoded)) {
+                    return $this->parseStoredTourTypes($decoded);
+                }
+            }
+
+            return array_map('trim', explode(',', $stored));
+        }
+
+        if (!is_array($stored)) {
+            return [];
+        }
+
+        $parsed = [];
+        foreach ($stored as $value) {
+            if (is_array($value)) {
+                if (!empty($value['title'])) {
+                    $parsed[] = $value['title'];
+                } elseif (!empty($value['id'])) {
+                    $parsed[] = (int) $value['id'];
+                }
+            } else {
+                $parsed[] = $value;
+            }
+        }
+
+        return $parsed;
+    }
+
+    private function resolveTourTypeIds($values): array
+    {
+        if (is_string($values)) {
+            $values = array_map('trim', explode(',', $values));
+        }
+
+        if (!is_array($values)) {
+            return [];
+        }
+
+        $ids = [];
+        foreach ($values as $value) {
+            if (is_array($value) && !empty($value['id'])) {
+                $ids[] = (int) $value['id'];
+                continue;
+            }
+
+            if (is_numeric($value) && (int) $value > 0) {
+                $ids[] = (int) $value;
+                continue;
+            }
+
+            if (is_string($value) && $value !== '') {
+                $match = TourType::where('title', $value)->first();
+                if ($match) {
+                    $ids[] = $match->id;
+                }
+            }
+        }
+
+        return array_values(array_unique($ids));
     }
 }

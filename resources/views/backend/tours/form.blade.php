@@ -238,53 +238,12 @@
                                    </select>
                                </div>
                                <div class="col-md-12">
-                                  <label class="form-label text-capitalize" for="tour_type">
-                                      {{_label('tour_type')}}
-                                  </label> <select id="tour_type" name="tour_type[]" multiple class="form-select select2">
-                                       <option value="0">- select tour type -</option>
-                                       <option value="Dubai Tour">Dubai Tour</option>
-                                       <option value="Abu Dhabi Tour">Abu Dhabi Tour</option>
-                                       <option value="Dubai City Tours">Dubai City Tours</option>
-                                       <option value="Theme Park Tickets">Theme Park Tickets</option>
-                                   </select>
+                                   @include('backend.components.tour-type-select', [
+                                       'tourTypes' => $tourTypes,
+                                       'selected' => $selectedTourTypes,
+                                       'multiple' => true,
+                                   ])
                                </div>
-                                <div class="col-md-12">
-                                    <label class="form-label text-capitalize" for="tour_faqs">
-                                        {{ _label('tour_FAQs') }}
-                                    </label>
-                                    <select id="tour_faqs" name="tour_faqs[]" multiple class="form-select select2" data-placeholder="Select FAQs for this tour...">
-                                        @foreach($faqs as $faq)
-                                            <option value="{{ $faq->id }}" {{ in_array($faq->id, old('tour_faqs', [])) ? 'selected' : '' }}>
-                                                {{ Str::words($faq->title, 2, '') }}
-                                            </option>
-                                        @endforeach
-                                    </select> <small class="text-muted">Select one or more FAQs to display with this
-                                                                        tour.</small>
-                                </div>
-                                <div class="col-md-12">
-                                    <label class="form-label text-capitalize" for="tour_gallery">
-                                        {{_label('tour_gallery')}}
-                                    </label>
-                                    <select id="tour_galleries" name="tour_galleries[]" multiple class="form-select select2" data-placeholder="Select Gallery for this tour...">
-                                        @foreach($galleries as $gallery)
-                                            <option value="{{ $gallery->id }}" {{ in_array($gallery->id, old ('tour_galleries', [])) ? 'selected' : '' }}>
-                                                {{ $gallery->title }}
-                                            </option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="col-md-12">
-                                    <label class="form-label text-capitalize" for="tour_review">
-                                        {{_label('tour_review')}}
-                                    </label>
-                                    <select id="tour_reviews" name="tour_reviews[]" multiple class="form-select select2" data-placeholder="Select Review for this tour...">
-                                        @foreach($reviews as $review)
-                                            <option value="{{ $review->id }}" {{ in_array($review->id, old ('tour_reviews', [])) ? 'selected' : '' }}>
-                                                {{ $review->name }}
-                                            </option>
-                                        @endforeach
-                                    </select>
-                                </div>
                                 <div class="col-md-12">
                                     <label class="form-label text-capitalize" for="ordering">
                                         {{_label('ordering')}}

@@ -4,9 +4,7 @@ namespace App\Http\Controllers\backend;
 
 use App\Models\backend\Module;
 use App\Models\backend\Tour;
-use App\Models\backend\Faq;
-use App\Models\backend\Review;
-use App\Models\backend\Gallery;
+use App\Models\backend\TourType;
 use App\Models\backend\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -44,7 +42,6 @@ class TourController
             'title',
             'tour_type',
             'price',
-            'tour_duration',
             'status',
             'ordering',
             'created_at',
@@ -54,7 +51,6 @@ class TourController
         // columns to hide
         $hiddenColumns = [
             'created_by',
-            'tour_type',
             'ordering',
             'title',
         ];
@@ -66,6 +62,7 @@ class TourController
             'getData'          => $getData,
             'columns'          => $columns,
             'hiddenColumns'    => $hiddenColumns,
+            'tourTypeMap'      => TourType::pluck('title', 'id'),
             'meta_title'       => "List | Admin Panel",
             'meta_keywords'    => '',
             'meta_description' => ''
@@ -78,17 +75,16 @@ class TourController
         $moduleName = $segments[count($segments) - 2] ?? null;
         $moduleTitle = Str::singular($moduleName);
 
-        $faqs = Faq::select('id', 'title')->orderBy('ordering')->orderBy('id')->get();
-        $galleries = Gallery::select('id', 'title')->orderBy('ordering')->orderBy('id')->get();
-
         $getStatus = getEnumValues($this->module, 'status');
+        $tourTypes = TourType::activeList();
+        $selectedTourTypes = $this->resolveTourTypeIds(old('tour_type', []));
 
         return view('backend.' . $this->module . '.form', [
             'title'            => $moduleTitle,
             'module'           => $moduleName,
             'getStatus'        => $getStatus,
-            'faqs'             => $faqs,
-            'galleries'        => $galleries,
+            'tourTypes'        => $tourTypes,
+            'selectedTourTypes' => $selectedTourTypes,
             'meta_title'       => "Create New | Admin Panel",
             'meta_keywords'    => '',
             'meta_description' => ''
@@ -128,7 +124,7 @@ class TourController
                 'tour_duration'    => $request->tour_duration,
                 'max_persons'      => $request->max_persons,
                 'min_age'          => $request->min_age,
-                'tour_type'        => json_encode($request->tour_type ?? []),
+                'tour_type'        => $this->encodeTourTypesForStorage($request->tour_type),
                 'extra_options'    => $request->extra_options,
                 'itinerary'        => $request->itinerary,
                 'description'      => $request->description,
@@ -150,12 +146,7 @@ class TourController
                 return back()->with('error', 'Failed to create.');
             }
 
-            $tour->faqs()->sync($request->input('tour_faqs', []));
-            $tour->galleries()->sync($request->input('tour_galleries', []));
-            $tour->reviews()->sync($request->input('tour_reviews', []));
-
             if ($action === 'save_new') {
-                // Insert into maintenance_modes table if maintenance_title and mode are provided
                 return to_route($this->module . '.create')->with('success', $this->notify_title . ' Created Successfully.');
             } elseif ($action === 'save_stay') {
                 return to_route($this->module . '.edit', $tour->id)->with('success', $this->notify_title . ' Created successfully.');
@@ -170,11 +161,7 @@ class TourController
 
     public function duplicate($id)
     {
-        $source = ($this->table)::withTrashed()->with([
-            'faqs'      => fn ($q) => $q->withPivot('ordering'),
-            'galleries' => fn ($q) => $q->withPivot('ordering'),
-            'reviews',
-        ])->findOrFail($id);
+        $source = ($this->table)::withTrashed()->findOrFail($id);
 
         $baseUrl = $source->friendly_url ?: 'tour';
         $candidateUrl = '';
@@ -226,20 +213,6 @@ class TourController
             'image_title'      => $source->image_title,
         ]);
 
-        $faqSync = [];
-        foreach ($source->faqs as $faq) {
-            $faqSync[$faq->id] = ['ordering' => $faq->pivot->ordering ?? 0];
-        }
-        $tour->faqs()->sync($faqSync);
-
-        $gallerySync = [];
-        foreach ($source->galleries as $g) {
-            $gallerySync[$g->id] = ['ordering' => $g->pivot->ordering ?? 0];
-        }
-        $tour->galleries()->sync($gallerySync);
-
-        $tour->reviews()->sync($source->reviews->pluck('id')->all());
-
         return redirect()
             ->route($this->module . '.edit', $tour->id)
             ->with('success', $this->notify_title . ' duplicated. Adjust title or URL if needed.');
@@ -247,27 +220,25 @@ class TourController
 
     public function editForm($id, Request $request)
     {
-        $tour = ($this->table)::with('faqs')->findOrFail($id);
-        $gallery = ($this->table)::with('galleries')->findOrFail($id);
-        $review = ($this->table)::with('reviews')->findOrFail($id);
+        $tour = ($this->table)::findOrFail($id);
 
         $segments = $request->segments();
         $moduleName = $segments[count($segments) - 3] ?? null;
         $moduleTitle = Str::singular($moduleName);
 
         $getStatus = getEnumValues($this->module, 'status');
-        $faqs = Faq::select('id', 'title')->orderBy('ordering')->orderBy('id')->get();
-        $galleries = Gallery::select('id', 'title')->orderBy('ordering')->orderBy('id')->get();
-        $reviews = Review::select('id', 'name')->orderBy('ordering')->orderBy('id')->get();
+        $tourTypes = TourType::activeList();
+        $selectedTourTypes = $this->resolveTourTypeIds(
+            old('tour_type', $this->parseStoredTourTypes($tour->tour_type))
+        );
 
         return view('backend.' . $this->module . '.edit', [
             'data'             => $tour,
             'title'            => $moduleTitle,
             'module'           => $moduleName,
             'getStatus'        => $getStatus,
-            'faqs'             => $faqs,
-            'galleries'        => $galleries,
-            'reviews'          => $reviews,
+            'tourTypes'        => $tourTypes,
+            'selectedTourTypes' => $selectedTourTypes,
             'meta_title'       => "Edit | Admin Panel",
             'meta_keywords'    => '',
             'meta_description' => ''
@@ -299,7 +270,7 @@ class TourController
                 'tour_duration'    => $request->tour_duration,
                 'max_persons'      => $request->max_persons,
                 'min_age'          => $request->min_age,
-                'tour_type'        => json_encode($request->tour_type ?? []),
+                'tour_type'        => $this->encodeTourTypesForStorage($request->tour_type),
                 'extra_options'    => $request->extra_options,
                 'itinerary'        => $request->itinerary,
                 'description'      => $request->description,
@@ -319,9 +290,6 @@ class TourController
 
             // Update
             $tour->update($dataToUpdate);
-            $tour->faqs()->sync($request->input('tour_faqs', []));
-            $tour->galleries()->sync($request->input('tour_galleries', []));
-            $tour->reviews()->sync($request->input('tour_reviews', []));
 
             if ($action === 'save_new') {
                 return to_route('tours.create')->with('success', $this->notify_title . ' Updated! Ready to add another.');
@@ -700,8 +668,8 @@ class TourController
             'moduleName'       => $trashed,
             'getData'          => $getData,
             'columns'          => $columns,
-            'moduleName'       => $moduleName,
             'hiddenColumns'    => $hiddenColumns,
+            'tourTypeMap'      => TourType::pluck('title', 'id'),
             'meta_title'       => "Trashed list | Admin Panel",
             'meta_keywords'    => '',
             'meta_description' => ''
@@ -724,4 +692,107 @@ class TourController
         return redirect()->route($this->module)->with('success', $this->notify_title . ' permanently deleted!');
     }
 
+    private function normalizeTourTypeInput($values): array
+    {
+        if (!is_array($values)) {
+            return [];
+        }
+
+        return array_values(array_filter(array_map('intval', $values)));
+    }
+
+    /**
+     * Store tour type as plain text (e.g. "Desert Safari" or "Desert Safari, Dubai Tour").
+     */
+    private function encodeTourTypesForStorage($values): ?string
+    {
+        $ids = $this->normalizeTourTypeInput($values);
+        if (empty($ids)) {
+            return null;
+        }
+
+        $names = TourType::whereIn('id', $ids)
+            ->orderBy('ordering')
+            ->orderBy('title')
+            ->get()
+            ->map(fn (TourType $type) => trim((string) ($type->title ?? '')))
+            ->filter()
+            ->values()
+            ->all();
+
+        return $names !== [] ? implode(', ', $names) : null;
+    }
+
+    /**
+     * @param mixed $stored
+     * @return array<int, string|int>
+     */
+    private function parseStoredTourTypes($stored): array
+    {
+        if (is_string($stored) && $stored !== '') {
+            $trimmed = trim($stored);
+            if (str_starts_with($trimmed, '[') || str_starts_with($trimmed, '{')) {
+                $decoded = json_decode($stored, true);
+                if (is_array($decoded)) {
+                    return $this->parseStoredTourTypes($decoded);
+                }
+            }
+
+            return array_map('trim', explode(',', $stored));
+        }
+
+        if (!is_array($stored)) {
+            return [];
+        }
+
+        $parsed = [];
+        foreach ($stored as $value) {
+            if (is_array($value)) {
+                if (!empty($value['title'])) {
+                    $parsed[] = $value['title'];
+                } elseif (!empty($value['title_1'])) {
+                    $parsed[] = $value['title_1'];
+                } elseif (!empty($value['id'])) {
+                    $parsed[] = (int) $value['id'];
+                }
+            } else {
+                $parsed[] = $value;
+            }
+        }
+
+        return $parsed;
+    }
+
+    private function resolveTourTypeIds($values): array
+    {
+        if (is_string($values)) {
+            $values = array_map('trim', explode(',', $values));
+        }
+
+        if (!is_array($values)) {
+            return [];
+        }
+
+        $ids = [];
+        foreach ($values as $value) {
+            if (is_array($value) && !empty($value['id'])) {
+                $ids[] = (int) $value['id'];
+                continue;
+            }
+
+            if (is_numeric($value) && (int) $value > 0) {
+                $ids[] = (int) $value;
+                continue;
+            }
+
+            if (is_string($value) && $value !== '') {
+                $match = TourType::where('title', $value)->first();
+                if ($match) {
+                    $ids[] = $match->id;
+                }
+            }
+        }
+
+        return array_values(array_unique($ids));
+    }
 }

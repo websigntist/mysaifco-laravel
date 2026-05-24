@@ -2,19 +2,13 @@
 
 namespace App\Http\Controllers\backend;
 
-use App\Models\backend\Faq;
 use App\Models\backend\TourType;
-use App\Models\backend\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
-use Termwind\Components\Dd;
-use Illuminate\Support\Facades\Response;
 
-class FaqController
+class TourTypeController
 {
     protected $userId;
     protected $table;
@@ -23,34 +17,32 @@ class FaqController
 
     public function __construct()
     {
-        $this->userId = currentUserId(); // global helper
-        $this->table = Faq::class;
-        $this->module = 'faqs';
-        $this->notify_title = 'FAQs';
+        $this->userId = currentUserId();
+        $this->table = TourType::class;
+        $this->module = 'tour-types';
+        $this->notify_title = 'Tour Type';
     }
 
     public function index(Request $request)
     {
         $segments = $request->segments();
         $moduleName = collect($segments)->last();
-        $moduleTitle = Str::singular($moduleName);
+        $moduleTitle = Str::singular(str_replace('-', ' ', $moduleName));
 
-        $getData = ($this->table)::latest()->get();
+        $getData = ($this->table)::orderBy('ordering')->orderByDesc('id')->get();
         $columns = [
             'image',
             'title',
-            'description',
             'status',
             'ordering',
+            'created_at',
             'created_by',
         ];
 
-        // columns to hide
         $hiddenColumns = [
-            'image',
-            'description',
-            'ordering',
             'created_by',
+            'title',
+            'ordering',
         ];
 
         return view('backend.' . $this->module . '.listing', [
@@ -60,9 +52,9 @@ class FaqController
             'getData'          => $getData,
             'columns'          => $columns,
             'hiddenColumns'    => $hiddenColumns,
-            'meta_title'       => "Listing | Admin Panel",
+            'meta_title'       => 'Listing | Admin Panel',
             'meta_keywords'    => '',
-            'meta_description' => ''
+            'meta_description' => '',
         ]);
     }
 
@@ -70,18 +62,17 @@ class FaqController
     {
         $segments = $request->segments();
         $moduleName = $segments[count($segments) - 2] ?? null;
-        $moduleTitle = Str::singular($moduleName);
+        $moduleTitle = Str::singular(str_replace('-', ' ', $moduleName));
 
-        $getStatus = getEnumValues($this->module, 'status');
+        $getStatus = getEnumValues('tour_types', 'status');
 
         return view('backend.' . $this->module . '.form', [
-            'title'            => $moduleName,
+            'title'            => $moduleTitle,
             'module'           => $moduleName,
             'getStatus'        => $getStatus,
-            'tourTypes'        => TourType::activeList(),
-            'meta_title'       => "Create | Admin Panel",
+            'meta_title'       => 'Create | Admin Panel',
             'meta_keywords'    => '',
-            'meta_description' => ''
+            'meta_description' => '',
         ]);
     }
 
@@ -90,45 +81,44 @@ class FaqController
         $action = $request->submitBtn;
 
         if ($request->isMethod('post')) {
-            // Log request data for debugging
-            Log::info('Request data:', $request->all());
-
-            // Validate input
-            $validated = $request->validate([
-                'title'        => 'required|string|max:255',
-                'description' => 'required|string|max:255',
+            $request->validate([
+                'title'  => 'required|string|max:255',
+                'status' => 'required|string',
             ]);
 
             $uploadImage = imageHandling($request, null, 'image', $this->module);
 
-            // Insert into pages table
-            $tourTypeId = $request->tour_type_id ?: null;
-
             $dataToStore = [
-                'title'         => $request->title,
-                'description'   => $request->description,
-                'type'          => $tourTypeId ? 'Tour' : 'Default',
-                'tour_type_id'  => $tourTypeId,
-                'status'        => $request->status,
-                'ordering'      => $request->ordering ?? 0,
-                'created_by'    => currentUserId(),
-                'image'         => $uploadImage,
+                'title'             => $request->title,
+                'short_description' => $request->short_description,
+                'description'       => $request->description,
+                'status'            => $request->status,
+                'view_all_link'     => $request->view_all_link,
+                'ordering'          => $request->ordering ?? 0,
+                'meta_title'        => $request->meta_title,
+                'meta_keywords'     => $request->meta_keywords,
+                'meta_description'  => $request->meta_description,
+                'image_alt'         => $request->image_alt,
+                'image_title'       => $request->image_title,
+                'created_by'        => currentUserId(),
+                'image'             => $uploadImage,
             ];
 
             $dbdata = ($this->table)::create($dataToStore);
             if (!$dbdata) {
-                Log::error('Failed to create', $dataToStore);
+                Log::error('Failed to create tour type', $dataToStore);
                 return back()->with('error', 'Failed to create.');
             }
 
             if ($action === 'save_new') {
-                return to_route($this->module . '.create')->with('success', $this->notify_title . 'Created Successfully.');
+                return to_route($this->module . '.create')->with('success', $this->notify_title . ' Created Successfully.');
             } elseif ($action === 'save_stay') {
-                return to_route($this->module . '.edit', $dbdata->id)->with('success', $this->notify_title . 'Created Successfully.');
-            } else {
-                return redirect()->route($this->module)->with('success', $this->notify_title . 'Created Successfully.');
+                return to_route($this->module . '.edit', $dbdata->id)->with('success', $this->notify_title . ' Created Successfully.');
             }
+
+            return redirect()->route($this->module)->with('success', $this->notify_title . ' Created Successfully.');
         }
+
         return back()->with('error', 'Invalid request method.');
     }
 
@@ -148,14 +138,19 @@ class FaqController
         }
 
         $dbdata = ($this->table)::create([
-            'title'         => $source->title . ' (Copy)',
-            'description'   => $source->description,
-            'type'          => $source->type,
-            'tour_type_id'  => $source->tour_type_id,
-            'status'        => $source->status,
-            'ordering'      => $source->ordering,
-            'created_by'    => currentUserId(),
-            'image'         => $newImage,
+            'title'             => $source->title . ' (Copy)',
+            'short_description' => $source->short_description,
+            'description'       => $source->description,
+            'status'            => $source->status,
+            'view_all_link'     => $source->view_all_link,
+            'ordering'          => $source->ordering,
+            'meta_title'        => $source->meta_title,
+            'meta_keywords'     => $source->meta_keywords,
+            'meta_description'  => $source->meta_description,
+            'image_alt'         => $source->image_alt,
+            'image_title'       => $source->image_title,
+            'created_by'        => currentUserId(),
+            'image'             => $newImage,
         ]);
 
         return redirect()
@@ -169,73 +164,67 @@ class FaqController
 
         $segments = $request->segments();
         $moduleName = $segments[count($segments) - 3] ?? null;
-        $moduleTitle = Str::singular($moduleName);
+        $moduleTitle = Str::singular(str_replace('-', ' ', $moduleName));
 
-        $getStatus = getEnumValues($this->module, 'status');
+        $getStatus = getEnumValues('tour_types', 'status');
 
         return view('backend.' . $this->module . '.edit', [
             'data'             => $dbdata,
-            'title'            => $moduleName,
+            'title'            => $moduleTitle,
             'module'           => $moduleName,
             'getStatus'        => $getStatus,
-            'tourTypes'        => TourType::activeList(),
-            'meta_title'       => "Edit | Admin Panel",
+            'meta_title'       => 'Edit | Admin Panel',
             'meta_keywords'    => '',
-            'meta_description' => ''
+            'meta_description' => '',
         ]);
     }
 
     public function update(Request $request, $id)
     {
         $action = $request->submitBtn;
-        // Validate input
-        $validated = $request->validate([
-            'title'        => 'required|string|max:255',
-            'description' => 'required|string|max:255',
+
+        $request->validate([
+            'title'  => 'required|string|max:255',
+            'status' => 'required|string',
         ]);
 
         try {
-            // Find the slider
             $dbdata = ($this->table)::findOrFail($id);
 
-            // Initialize data to update
-            $tourTypeId = $request->tour_type_id ?: null;
-
             $dataToUpdate = [
-                'title'         => $request->title,
-                'description'   => $request->description,
-                'company'       => $request->company,
-                'review'        => $request->review,
-                'type'          => $tourTypeId ? 'Tour' : 'Default',
-                'tour_type_id'  => $tourTypeId,
-                'status'        => $request->status,
-                'ordering'      => $request->ordering ?? 0,
-                'created_by'    => currentUserId(),
+                'title'             => $request->title,
+                'short_description' => $request->short_description,
+                'description'       => $request->description,
+                'status'            => $request->status,
+                'view_all_link'     => $request->view_all_link,
+                'ordering'          => $request->ordering ?? 0,
+                'meta_title'        => $request->meta_title,
+                'meta_keywords'     => $request->meta_keywords,
+                'meta_description'  => $request->meta_description,
+                'image_alt'         => $request->image_alt,
+                'image_title'       => $request->image_title,
+                'created_by'        => currentUserId(),
+                'image'             => imageHandling($request, $dbdata, 'image', $this->module),
             ];
 
-            // Handle image update or deletion
-            $dataToUpdate['image'] = imageHandling($request, $dbdata, 'image', $this->module);
-
-            // Update slider
             $dbdata->update($dataToUpdate);
 
             if ($action === 'save_new') {
-                return to_route($this->module.'.create')->with('success', $this->notify_title . ' Updated! Ready to add another.');
+                return to_route($this->module . '.create')->with('success', $this->notify_title . ' Updated! Ready to add another.');
             } elseif ($action === 'save_stay') {
-                return to_route($this->module.'.edit', $dbdata->id)->with('success', $this->notify_title . ' Updated! You can continue editing.');
-            } else {
-                return redirect()->route($this->module)->with('success', $this->notify_title . ' Successfully data updated.');
+                return to_route($this->module . '.edit', $dbdata->id)->with('success', $this->notify_title . ' Updated! You can continue editing.');
             }
 
+            return redirect()->route($this->module)->with('success', $this->notify_title . ' Successfully updated.');
         } catch (\Exception $e) {
-            Log::error('Update failed: ' . $e->getMessage());
-            return back()->with('error', 'An error occurred while updating the:  ' . $this->notify_title . $e->getMessage());
+            Log::error('Tour type update failed: ' . $e->getMessage());
+            return back()->with('error', 'An error occurred while updating the ' . $this->notify_title . ': ' . $e->getMessage());
         }
     }
 
     public function deleteAll(Request $request)
     {
-        $selectedIds = $request->ids; // array of IDs
+        $selectedIds = $request->ids;
         $trashed = $request->trashed;
 
         if (is_array($selectedIds) && count($selectedIds)) {
@@ -255,7 +244,6 @@ class FaqController
     {
         $dbdata = ($this->table)::findOrFail($id);
 
-        // Toggle or set status
         $newStatus = $request->status === 'Active' ? 'Inactive' : 'Active';
         $dbdata->status = $newStatus;
         $dbdata->save();
@@ -263,47 +251,48 @@ class FaqController
         return response()->json([
             'success' => true,
             'status'  => $newStatus,
-            'message' => $this->notify_title . " Status Updated to {$newStatus}"
+            'message' => $this->notify_title . " Status Updated to {$newStatus}",
         ]);
     }
 
     public function deleteAjax($id)
     {
         try {
-            // Find the slider
             $dbdata = ($this->table)::findOrFail($id);
-
-            // Delete the slider itself
             $dbdata->delete();
 
             return response()->json([
                 'success' => true,
-                'message' => $this->notify_title . 'Deleted Successfully.'
+                'message' => $this->notify_title . ' Deleted Successfully.',
             ]);
-
         } catch (\Exception $e) {
             return response()->json([
                 'success' => false,
-                'message' => $this->notify_title . 'Failed to Delete: ' . $e->getMessage()
+                'message' => $this->notify_title . ' Failed to Delete: ' . $e->getMessage(),
             ], 500);
         }
     }
 
     public function modalView($id)
     {
-        // Load the slider with its parent and creator relationships
         $dbdata = ($this->table)::with(['creator'])->findOrFail($id);
 
         return response()->json([
-            'id'              => $dbdata->id,
-            'title'            => $dbdata->title,
-            'description'     => $dbdata->description,
-            'type'            => $dbdata->type,
-            'status'          => $dbdata->status,
-            'ordering'        => $dbdata->ordering,
-            'image'           => $dbdata->image ?? null,
-            'created_at'      => $dbdata->created_at ? $dbdata->created_at->format('M d, Y') : null,
-            'created_by_name' => trim(($dbdata->creator->first_name ?? '') . ' ' . ($dbdata->creator->last_name ?? '')),
+            'id'                => $dbdata->id,
+            'title'             => $dbdata->title,
+            'short_description' => $dbdata->short_description,
+            'description'       => $dbdata->description,
+            'status'            => $dbdata->status,
+            'view_all_link'     => $dbdata->view_all_link,
+            'ordering'          => $dbdata->ordering,
+            'meta_title'        => $dbdata->meta_title,
+            'meta_keywords'     => $dbdata->meta_keywords,
+            'meta_description'  => $dbdata->meta_description,
+            'image'             => $dbdata->image ?? null,
+            'image_alt'         => $dbdata->image_alt,
+            'image_title'       => $dbdata->image_title,
+            'created_at'        => $dbdata->created_at ? $dbdata->created_at->format('M d, Y') : null,
+            'created_by_name'   => trim(($dbdata->creator->first_name ?? '') . ' ' . ($dbdata->creator->last_name ?? '')),
         ]);
     }
 
@@ -311,7 +300,7 @@ class FaqController
     {
         $segments = $request->segments();
         $trashed = collect($segments)->last();
-        $moduleTitle = Str::singular($trashed);
+        $moduleTitle = Str::singular(str_replace('-', ' ', $trashed));
         $moduleName = $segments[count($segments) - 2] ?? null;
 
         $getData = ($this->table)::onlyTrashed()->latest()->get();
@@ -319,17 +308,16 @@ class FaqController
         $columns = [
             'image',
             'title',
-            'description',
             'status',
             'ordering',
+            'created_at',
             'created_by',
         ];
 
-        // columns to hide
         $hiddenColumns = [
-            'image',
-            'ordering',
             'created_by',
+            'title',
+            'ordering',
         ];
 
         return view('backend.' . $this->module . '.listing', [
@@ -339,9 +327,9 @@ class FaqController
             'getData'          => $getData,
             'columns'          => $columns,
             'hiddenColumns'    => $hiddenColumns,
-            'meta_title'       => "Trashed List | Admin Panel",
+            'meta_title'       => 'Trashed List | Admin Panel',
             'meta_keywords'    => '',
-            'meta_description' => ''
+            'meta_description' => '',
         ]);
     }
 
@@ -350,7 +338,7 @@ class FaqController
         $restore = ($this->table)::withTrashed()->findOrFail($id);
         $restore->restore();
 
-        return redirect()->route($this->module)->with('success', $this->notify_title . 'Restored Successfully!');
+        return redirect()->route($this->module)->with('success', $this->notify_title . ' Restored Successfully!');
     }
 
     public function forceDelete($id)
@@ -358,7 +346,6 @@ class FaqController
         $forcedelete = ($this->table)::withTrashed()->findOrFail($id);
         $forcedelete->forceDelete();
 
-        return redirect()->route($this->module)->with('success', $this->notify_title . 'Permanently Deleted!');
+        return redirect()->route($this->module)->with('success', $this->notify_title . ' Permanently Deleted!');
     }
-
 }

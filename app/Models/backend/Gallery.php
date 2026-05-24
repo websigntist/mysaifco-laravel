@@ -13,6 +13,7 @@ class Gallery extends Model
 
     protected $fillable = [
         'title',
+        'tour_type',
         'cover_image',
         'status',
         'ordering',
@@ -28,4 +29,5 @@ class Gallery extends Model
     {
         return $this->hasMany(GalleryImage::class)->orderBy('ordering');
     }
+
 }

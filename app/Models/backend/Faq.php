@@ -17,6 +17,7 @@ class Faq extends Model
         'image',
         'status',
         'type',
+        'tour_type_id',
         'ordering',
         'created_by',
         'deleted_at',
@@ -35,5 +36,10 @@ class Faq extends Model
         return $this->belongsToMany(Tour::class, 'tour_faq')
             ->withPivot('ordering')
             ->withTimestamps();
+    }
+
+    public function tourType()
+    {
+        return $this->belongsTo(TourType::class, 'tour_type_id');
     }
 }

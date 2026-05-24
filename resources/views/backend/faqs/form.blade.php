@@ -75,11 +75,15 @@
                                         </select>
                                     </div>
                                     <div class="col-md-4">
-                                        <label class="form-label text-capitalize" for="type">
-                                            <span>{{_label('type')}}</span> </label>
-                                        <select id="type" name="type" class="form-select select2" required>
-                                            @foreach($gettype as $type)
-                                                <option value="{{ old($type, $type) }}">{{ ucfirst($type) }}</option>
+                                        <label class="form-label text-capitalize" for="tour_type_id">
+                                            <span>{{ _label('type') }}</span>
+                                        </label>
+                                        <select id="tour_type_id" name="tour_type_id" class="form-select select2">
+                                            <option value="">- select tour type -</option>
+                                            @foreach($tourTypes as $tourType)
+                                                <option value="{{ $tourType->id }}" {{ (int) old('tour_type_id') === $tourType->id ? 'selected' : '' }}>
+                                                    {{ $tourType->displayName() }}
+                                                </option>
                                             @endforeach
                                         </select>
                                     </div>

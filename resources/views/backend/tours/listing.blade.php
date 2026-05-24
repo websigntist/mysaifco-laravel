@@ -55,6 +55,7 @@
                                             $renameMap = [
                                                 'parent_id' => 'parent',
                                                 'created_at' => 'Created',
+                                                'tour_type' => 'Tour Type',
                                             ];
 
                                             if (get_setting('site_currency') == 'usd') {
@@ -88,11 +89,6 @@
                                                 @if(in_array($col, $hiddenColumns))
                                                     @continue
                                                 @endif
-                                                    @php
-                                                        $types = is_string($data->tour_type)
-                                                            ? json_decode($data->tour_type, true)
-                                                            : ($data->tour_type ?? []);
-                                                    @endphp
                                                 <td class="capitalize">
                                                     @if($col === 'image')
                                                         <div class="d-flex justify-content-start align-items-center user-name">
@@ -121,7 +117,28 @@
                                                                value="{{ $data->title }}"
                                                                class="title form-control">--}}
                                                     @elseif($col === 'tour_type')
-                                                        {{ implode(', ', $types ?? []) }}
+                                                        @if(is_string($data->tour_type) && $data->tour_type !== '' && !str_starts_with(trim($data->tour_type), '['))
+                                                            {{ $data->tour_type }}
+                                                        @else
+                                                            @php
+                                                                $types = is_string($data->tour_type)
+                                                                    ? json_decode($data->tour_type, true)
+                                                                    : ($data->tour_type ?? []);
+                                                                $typeLabels = [];
+                                                                foreach ($types ?? [] as $val) {
+                                                                    if (is_array($val) && !empty($val['title'])) {
+                                                                        $typeLabels[] = $val['title'];
+                                                                    } elseif (is_array($val) && !empty($val['title_1'])) {
+                                                                        $typeLabels[] = $val['title_1'];
+                                                                    } elseif (is_numeric($val) && isset($tourTypeMap[(int) $val])) {
+                                                                        $typeLabels[] = $tourTypeMap[(int) $val];
+                                                                    } elseif (is_string($val) && $val !== '' && $val !== '0') {
+                                                                        $typeLabels[] = $val;
+                                                                    }
+                                                                }
+                                                            @endphp
+                                                            {{ implode(', ', $typeLabels) }}
+                                                        @endif
                                                     @elseif($col === 'ordering')
                                                         {{ $data->ordering }}
                                                         {{--<span class="invisible">{{ $data->ordering }}</span>

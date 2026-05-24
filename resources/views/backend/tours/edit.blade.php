@@ -227,68 +227,11 @@
                                         </select>
                                     </div>
                                     <div class="col-md-12">
-                                          <label class="form-label text-capitalize" for="tour_type">
-                                              {{_label('tour_type')}}
-                                          </label>
-                                        <select id="tour_type" name="tour_type[]" multiple class="form-select select2">
-                                            <option value="0">- select tour type -</option>
-                                            @php
-                                                $tourTypes = is_array($data->tour_type) ? $data->tour_type : json_decode($data->tour_type ?? '[]', true);
-                                            @endphp
-                                            @foreach(['Dubai Tour', 'Abu Dhabi Tour', 'Dubai City Tours', 'Theme Park Tickets'] as $type)
-                                                <option value="{{ $type }}" {{ in_array($type, $tourTypes ?? []) ? 'selected' : '' }}>
-                                                    {{ $type }}
-                                                </option>
-                                            @endforeach
-                                        </select>
-                                       </div>
-                                    <div class="col-md-12">
-                                        <label class="form-label text-capitalize" for="tour_faqs">
-                                            {{ _label('tour_FAQs') }}
-                                        </label>
-                                        <select id="tour_faqs" name="tour_faqs[]" multiple class="form-select select2" data-placeholder="Select FAQs for this tour...">
-                                            @php
-                                                $selectedFaqIds = old('tour_faqs', $data->faqs->pluck('id')->toArray());
-                                            @endphp
-                                            @foreach($faqs as $faq)
-                                                <option value="{{ $faq->id }}" {{ in_array($faq->id, $selectedFaqIds) ? 'selected' : '' }}>
-                                                    {{ Str::words($faq->title, 2, '') }}
-                                                </option>
-                                            @endforeach
-                                        </select>
-                                        <small class="text-muted">Select FAQs to display with this tour.</small>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <label class="form-label text-capitalize" for="tour_galleries">
-                                            {{ _label('tour_Gallery') }}
-                                        </label>
-                                        <select id="tour_galleries" name="tour_galleries[]" multiple class="form-select select2" data-placeholder="Select Gallery for this tour...">
-                                            @php
-                                                $selectedGalleryIds = old('tour_galleries', $data->galleries->pluck ('id') ->toArray());
-                                            @endphp
-                                            @foreach($galleries as $gallery)
-                                                <option value="{{ $gallery->id }}" {{ in_array($gallery->id, $selectedGalleryIds) ? 'selected' : '' }}>
-                                                    {{ $gallery->title }}
-                                                </option>
-                                            @endforeach
-                                        </select>
-                                        <small class="text-muted">Select Gallery to display with this tour.</small>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <label class="form-label text-capitalize" for="tour_review">
-                                            {{ _label('tour_review') }}
-                                        </label>
-                                        <select id="tour_reviews" name="tour_reviews[]" multiple class="form-select select2" data-placeholder="Select Review for this tour...">
-                                            @php
-                                                $selectedReviewIds = old('tour_reviews', $data->reviews->pluck ('id') ->toArray());
-                                            @endphp
-                                            @foreach($reviews as $review)
-                                                <option value="{{ $review->id }}" {{ in_array($review->id, $selectedReviewIds) ? 'selected' : '' }}>
-                                                    {{ $review->name }}
-                                                </option>
-                                            @endforeach
-                                        </select> <small class="text-muted">Select Gallery to display with this
-                                                                            tour.</small>
+                                        @include('backend.components.tour-type-select', [
+                                            'tourTypes' => $tourTypes,
+                                            'selected' => $selectedTourTypes,
+                                            'multiple' => true,
+                                        ])
                                     </div>
                                     <div class="col-md-12">
                                         <label class="form-label text-capitalize" for="ordering">

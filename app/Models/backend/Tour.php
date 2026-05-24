@@ -36,10 +36,6 @@ class Tour extends Model
         'meta_description'
     ];
 
-    protected $casts = [
-        'tour_type' => 'array',
-    ];
-
     public function creator()
     {
         return $this->belongsTo(User::class, 'created_by');

@@ -217,6 +217,25 @@ Route::prefix('admin')->group(function () {
         Route::post('/tours/{id}/status', [backend\TourController::class, 'updateStatusAjax'])->middleware('check.permission:tours,status')->name('tours.status');
         // TOURS ROUTES END
 
+        // TOUR TYPES ROUTES START
+        Route::get('/tour-types', [backend\TourTypeController::class, 'index'])->name('tour-types');
+        Route::get('/tour-types/create', [backend\TourTypeController::class, 'create'])->middleware('check.permission:tour-types,add')->name('tour-types.create');
+        Route::get('/tour-types/duplicate/{id}', [backend\TourTypeController::class, 'duplicate'])->middleware('check.permission:tour-types,duplicate')->name('tour-types.duplicate');
+        Route::get('/tour-types/edit/{id}', [backend\TourTypeController::class, 'editForm'])->middleware('check.permission:tour-types,edit')->name('tour-types.edit');
+
+        Route::put('/tour-types/update/{id}', [backend\TourTypeController::class, 'update'])->middleware('check.permission:tour-types,update')->name('tour-types.update');
+        Route::post('/tour-types/store', [backend\TourTypeController::class, 'store'])->middleware('check.permission:tour-types,store')->name('tour-types.store');
+
+        Route::post('/tour-types/delete-all', [backend\TourTypeController::class, 'deleteAll'])->middleware('check.permission:tour-types,delete-all')->name('tour-types.delete-all');
+        Route::get('/tour-types/trashed', [backend\TourTypeController::class, 'trashed'])->middleware('check.permission:tour-types,trashed')->name('tour-types.trashed');
+        Route::get('/tour-types/restore/{id}', [backend\TourTypeController::class, 'restore'])->middleware('check.permission:tour-types,restore')->name('tour-types.restore');
+        Route::get('/tour-types/forcedelete/{id}', [backend\TourTypeController::class, 'forceDelete'])->middleware('check.permission:tour-types,forcedelete')->name('tour-types.forcedelete');
+
+        Route::get('/tour-types/modal-view/{id}', [backend\TourTypeController::class, 'modalView'])->middleware('check.permission:tour-types,modal-view')->name('tour-types.modal-view');
+        Route::delete('/tour-types/delete/{id}', [backend\TourTypeController::class, 'deleteAjax'])->middleware('check.permission:tour-types,delete')->name('tour-types.delete');
+        Route::post('/tour-types/{id}/status', [backend\TourTypeController::class, 'updateStatusAjax'])->middleware('check.permission:tour-types,status')->name('tour-types.status');
+        // TOUR TYPES ROUTES END
+
         // BLOGS CATEGORIES ROUTES START
         Route::get('/blog-categories', [backend\BlogCategoryController::class, 'index'])->name('blog-categories');
         Route::get('/blog-category/create', [backend\BlogCategoryController::class, 'create'])->name('blog-category.create');

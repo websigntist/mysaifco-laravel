@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\backend;
 
 use App\Models\backend\Review;
+use App\Models\backend\TourType;
 use App\Models\backend\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -79,6 +80,7 @@ class ReviewController
             'module'           => $moduleName,
             'getStatus'        => $getStatus,
             'gettype'          => $getType,
+            'tourTypes'        => TourType::activeList(),
             'meta_title'       => "Create | Admin Panel",
             'meta_keywords'    => '',
             'meta_description' => ''
@@ -101,17 +103,18 @@ class ReviewController
 
             // Insert into pages table
             $dataToStore = [
-                'name'        => $request->name,
-                'email'       => $request->email,
-                'phone'       => $request->phone,
-                'designation' => $request->designation,
-                'company'     => $request->company,
-                'review'      => $request->review,
-                'rating'      => $request->rating,
-                'type'        => $request->type,
-                'status'      => $request->status,
-                'ordering'    => $request->ordering ?? 0,
-                'created_by'  => currentUserId(),
+                'name'          => $request->name,
+                'email'         => $request->email,
+                'phone'         => $request->phone,
+                'designation'   => $request->designation,
+                'company'       => $request->company,
+                'review'        => $request->review,
+                'rating'        => $request->rating,
+                'type'          => $request->type,
+                'tour_type_id'  => $request->tour_type_id ?: null,
+                'status'        => $request->status,
+                'ordering'      => $request->ordering ?? 0,
+                'created_by'    => currentUserId(),
             ];
 
             $dbdata = ($this->table)::create($dataToStore);
@@ -148,6 +151,7 @@ class ReviewController
             'module'           => $moduleName,
             'getStatus'        => $getStatus,
             'gettype'          => $getType,
+            'tourTypes'        => TourType::activeList(),
             'meta_title'       => "Edit | Admin Panel",
             'meta_keywords'    => '',
             'meta_description' => ''
@@ -169,17 +173,18 @@ class ReviewController
 
             // Initialize data to update
             $dataToUpdate = [
-                'name'        => $request->name,
-                'email'       => $request->email,
-                'phone'       => $request->phone,
-                'designation' => $request->designation,
-                'company'     => $request->company,
-                'review'      => $request->review,
-                'rating'      => $request->rating,
-                'type'        => $request->type,
-                'status'      => $request->status,
-                'ordering'    => $request->ordering ?? 0,
-                'created_by'  => currentUserId(),
+                'name'          => $request->name,
+                'email'         => $request->email,
+                'phone'         => $request->phone,
+                'designation'   => $request->designation,
+                'company'       => $request->company,
+                'review'        => $request->review,
+                'rating'        => $request->rating,
+                'type'          => $request->type,
+                'tour_type_id'  => $request->tour_type_id ?: null,
+                'status'        => $request->status,
+                'ordering'      => $request->ordering ?? 0,
+                'created_by'    => currentUserId(),
             ];
 
             // Update slider
