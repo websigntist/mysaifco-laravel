@@ -204,26 +204,72 @@ $(document).ready(function () {
 
 // delete other module image
 $(document).ready(function () {
-    $('.del_img').click(function () {
+    $(document).on('click', '.del_img', function () {
         let button = $(this);
-        let hiddenInput = $('.delete_img'); // find the global hidden input for delete flag
+        let widget = button.closest('.image-upload-widget');
 
-        // mark image for deletion
-        hiddenInput.val('1');
+        if (widget.length) {
+            widget.find('.delete_img').val('1');
+            widget.find('.image-file-input').val('');
+            widget.find('.light-gallery, .lightgallery').fadeOut(300, function () {
+                $(this).hide();
+            });
+            widget.find('.fImg').fadeOut(200, function () {
+                $(this).hide();
+            });
+            return;
+        }
 
-        // remove image preview
-        $('.lightgallery').fadeOut(300, function () {
-            $(this).remove();
+        $('.delete_img').val('1');
+        $('.light-gallery, .lightgallery').fadeOut(300, function () {
+            $(this).hide();
         });
-
         $('.trashImg').fadeOut(300, function () {
             $(this).remove();
         });
-
-        // remove delete button container
         button.closest('.fImg').fadeOut(200, function () {
-            $(this).remove();
+            $(this).hide();
         });
+    });
+
+    $(document).on('change', '.image-upload-widget .image-file-input', function () {
+        let widget = $(this).closest('.image-upload-widget');
+        let file = this.files && this.files[0];
+
+        if (!file) {
+            return;
+        }
+
+        widget.find('.delete_img').val('0');
+
+        let reader = new FileReader();
+        reader.onload = function (e) {
+            let gallery = widget.find('.light-gallery, .lightgallery').first();
+
+            if (!gallery.length) {
+                gallery = $('<div class="light-gallery lightgallery text-center image-preview-wrap"></div>');
+                widget.find('.image-file-input').after(gallery);
+            }
+
+            let img = gallery.find('img.image-preview');
+            let link = gallery.find('a').first();
+
+            if (!link.length) {
+                link = $('<a href="#" target="_blank"></a>');
+                gallery.empty().append(link);
+            }
+
+            if (!img.length) {
+                img = $('<img class="rounded mt-2 img-fluid border image-preview" alt="preview">');
+                link.append(img);
+            }
+
+            link.attr('href', e.target.result);
+            img.attr('src', e.target.result);
+            gallery.show();
+            widget.find('.fImg').show();
+        };
+        reader.readAsDataURL(file);
     });
 });
 

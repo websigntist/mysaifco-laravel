@@ -4,6 +4,7 @@ namespace App\Http\Controllers\backend;
 
 use App\Models\backend\Module;
 use App\Models\backend\Tour;
+use App\Models\backend\RedTag;
 use App\Models\backend\TourType;
 use App\Models\backend\User;
 use Illuminate\Http\Request;
@@ -84,6 +85,7 @@ class TourController
             'module'           => $moduleName,
             'getStatus'        => $getStatus,
             'tourTypes'        => $tourTypes,
+            'redTags'          => RedTag::activeList(),
             'selectedTourTypes' => $selectedTourTypes,
             'meta_title'       => "Create New | Admin Panel",
             'meta_keywords'    => '',
@@ -125,6 +127,7 @@ class TourController
                 'max_persons'      => $request->max_persons,
                 'min_age'          => $request->min_age,
                 'tour_type'        => $this->encodeTourTypesForStorage($request->tour_type),
+                'red_tag_id'       => $request->red_tag_id ?: null,
                 'extra_options'    => $request->extra_options,
                 'itinerary'        => $request->itinerary,
                 'description'      => $request->description,
@@ -197,11 +200,11 @@ class TourController
             'max_persons'      => $source->max_persons,
             'min_age'          => $source->min_age,
             'tour_type'        => $source->tour_type,
+            'red_tag_id'       => $source->red_tag_id,
             'extra_options'    => $source->extra_options,
             'itinerary'        => $source->itinerary,
             'description'      => $source->description,
             'price'            => $source->price,
-            'show_in_menu'     => $source->show_in_menu,
             'status'           => $source->status,
             'ordering'         => $source->ordering,
             'meta_title'       => $source->meta_title,
@@ -238,6 +241,7 @@ class TourController
             'module'           => $moduleName,
             'getStatus'        => $getStatus,
             'tourTypes'        => $tourTypes,
+            'redTags'          => RedTag::activeList(),
             'selectedTourTypes' => $selectedTourTypes,
             'meta_title'       => "Edit | Admin Panel",
             'meta_keywords'    => '',
@@ -271,6 +275,7 @@ class TourController
                 'max_persons'      => $request->max_persons,
                 'min_age'          => $request->min_age,
                 'tour_type'        => $this->encodeTourTypesForStorage($request->tour_type),
+                'red_tag_id'       => $request->red_tag_id ?: null,
                 'extra_options'    => $request->extra_options,
                 'itinerary'        => $request->itinerary,
                 'description'      => $request->description,
@@ -285,7 +290,6 @@ class TourController
                 'image_title'      => $request->image_title,
             ];
 
-            // Handle image update or deletion
             $dataToUpdate['image'] = imageHandling($request, $tour, 'image', $this->module);
 
             // Update

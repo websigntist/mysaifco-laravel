@@ -1,6 +1,5 @@
 @extends('frontend.layouts.master')
 @section('content')
-    @include('frontend.pages.partials.cms-content')
     @php
         $packages = $packages ?? [
             [
@@ -196,24 +195,35 @@
     </section>
 
     {{--===== main heading ======--}}
-    <section class="flex justify-center items-center py-8 px-4 md:py-10">
-        <div class="container mx-auto">
-            <div class="testimonials-section-inner mx-auto max-w-6xl">
-                <div class="mx-auto text-center">
-                    <h1>
-                        <span>Desert Safari   </span><span class="text-mst">Tours</span>
-                    </h1>
-                    <p class="mt-4">Experience the best Desert Safari Dubai with thrilling dune bashing, camel rides,
-                                    sandboarding, and BBQ dinner under the stars. Choose from evening desert safari,
-                                    morning safari, private desert safari, and VIP desert camp experiences. Enjoy live
-                                    entertainment including belly dance, Tanoura show, and fire show while exploring the
-                                    golden dunes of Dubai. These desert safari tours offer a perfect mix of adventure,
-                                    culture, and relaxation, making them one of the top things to do in Dubai for
-                                    tourists and families.</p>
+    @if(filled($pageContent ?? null))
+        <section class="flex justify-center items-center py-8 px-4 md:py-10">
+            <div class="container mx-auto">
+                <div class="testimonials-section-inner mx-auto max-w-6xl">
+                    <div class="mx-auto text-center">
+                        @if($page->show_title == '1' && filled($page->page_title))
+                            @php
+                                $words     = explode(' ', $page->page_title);
+                                $mainText  = implode(' ', array_slice($words, 0, -2)); // all except last 2
+                                $spanText  = implode(' ', array_slice($words, -2));    // last 2 words
+                            @endphp
+                            <h1>
+                                <span>{{ $mainText }}  </span><span class="text-mst">{{ $spanText }}</span>
+                            </h1>
+                        @endif
+                        <p class="mt-4">
+                            {!! $pageContent !!}
+                            {{--Explore the best Dubai tours and activities with a trusted local tour operator. Find top
+                            experiences including Dubai desert safari, Dubai city tours, Dubai Marina yacht tours, dhow
+                            cruise dinner, and full-day Abu Dhabi city tours with Ferrari World and Louvre Museum. Choose
+                            from popular Dubai water activities, theme park tickets, and value Dubai combo tours with hotel
+                            pickup and drop-off, best price guarantee, and 24/7 support. All tours are designed for easy
+                            booking, flexible options, and a smooth travel experience.--}}
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    @endif
 
     <section>
         <div class="container mx-auto">
@@ -233,15 +243,14 @@
                                 <h2 class="line-clamp-2">
                                     <a href="{{ $slide['url'] }}" class="hover:text-mst transition ease-in-out duration-500
                                     focus-visible:outline
-                                    focus-visible:outline-offset-2 focus-visible:outline-mst">
+                                    focus-visible:outline-offset-2 focus-visible:outline-mst line-clamp-1 mb-4">
                                         {{ $slide['title'] }}
                                     </a>
                                 </h2>
                                 <div class="mt-2 flex flex-wrap items-center gap-1.5 text-xs text-gray-700
                                                             font-heading">
-                                    <span class="text-amber-400" aria-hidden="true">&#9733;</span>
-                                    <span class="font-body">{{ $slide['rating'] }}/5 |</span> <span>{{
-                                    $slide['reviews'] }}</span>
+                                    <span class="text-amber-400 text-[14px] -mt-1" aria-hidden="true">&#9733;</span>
+                                    <span class="font-body">{{ $slide['rating'] }}/5 |</span> <span>{{ $slide['reviews'] }}</span>
                                 </div>
                                 <div class="mt-auto flex items-end justify-between gap-3 pt-4">
                                     <div>

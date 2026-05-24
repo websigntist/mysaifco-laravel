@@ -29,8 +29,6 @@
                                 <?php echo actionButton($module, 'export', route($module.'.export'), '', 'tabler-download', 'Export CSV'); ?>
 
                             </div>
-                            <?php echo e(get_setting('site_currency')); ?>
-
                             <!-- ===== actions buttons end =====-->
                         </div>
                     </div>

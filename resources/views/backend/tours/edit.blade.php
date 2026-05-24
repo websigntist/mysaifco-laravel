@@ -234,6 +234,12 @@
                                         ])
                                     </div>
                                     <div class="col-md-12">
+                                        @include('backend.components.red-tag-select', [
+                                            'redTags' => $redTags,
+                                            'selected' => old('red_tag_id', $data->red_tag_id),
+                                        ])
+                                    </div>
+                                    <div class="col-md-12">
                                         <label class="form-label text-capitalize" for="ordering">
                                             {{_label('ordering')}}
                                         </label> <input type="number"

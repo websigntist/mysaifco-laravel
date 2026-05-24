@@ -196,10 +196,7 @@
                          <div class="card-body">
                             <div class="row g-6 pt-5">
                                <div class="col-md-12">
-                                  <input class="form-control"
-                                         type="file"
-                                         name="image"
-                                         id="image">
+                                  {!! image_input_option(imageNotFound(), 'image') !!}
                                </div>
                                 <div class="col-md-12">
                                     <label class="form-label text-capitalize" for="image_alt">{{_label('image_alt')}} </label>
@@ -242,6 +239,12 @@
                                        'tourTypes' => $tourTypes,
                                        'selected' => $selectedTourTypes,
                                        'multiple' => true,
+                                   ])
+                               </div>
+                               <div class="col-md-12">
+                                   @include('backend.components.red-tag-select', [
+                                       'redTags' => $redTags,
+                                       'selected' => old('red_tag_id'),
                                    ])
                                </div>
                                 <div class="col-md-12">

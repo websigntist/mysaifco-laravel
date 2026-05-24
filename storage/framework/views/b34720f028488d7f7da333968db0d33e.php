@@ -209,10 +209,8 @@
                          <div class="card-body">
                             <div class="row g-6 pt-5">
                                <div class="col-md-12">
-                                  <input class="form-control"
-                                         type="file"
-                                         name="image"
-                                         id="image">
+                                  <?php echo image_input_option(imageNotFound(), 'image'); ?>
+
                                </div>
                                 <div class="col-md-12">
                                     <label class="form-label text-capitalize" for="image_alt"><?php echo e(_label('image_alt')); ?> </label>
@@ -258,6 +256,12 @@
                                        'tourTypes' => $tourTypes,
                                        'selected' => $selectedTourTypes,
                                        'multiple' => true,
+                                   ], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+                               </div>
+                               <div class="col-md-12">
+                                   <?php echo $__env->make('backend.components.red-tag-select', [
+                                       'redTags' => $redTags,
+                                       'selected' => old('red_tag_id'),
                                    ], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
                                </div>
                                 <div class="col-md-12">

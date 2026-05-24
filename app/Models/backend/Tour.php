@@ -19,11 +19,11 @@ class Tour extends Model
         'max_persons',
         'min_age',
         'tour_type',
+        'red_tag_id',
         'extra_options',
         'description',
         'itinerary',
         'price',
-        'show_in_menu',
         'status',
         'image',
         'image_alt',
@@ -59,5 +59,8 @@ class Tour extends Model
         return $this->belongsToMany(Review::class, 'tour_review');
     }
 
-
+    public function redTag()
+    {
+        return $this->belongsTo(RedTag::class, 'red_tag_id');
+    }
 }

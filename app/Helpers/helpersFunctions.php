@@ -268,15 +268,7 @@ if (!function_exists('imageHandling')) {
         $oldImage = $model?->$columnName ?? null;
         $enableWebpConversion = true; // Toggle this to false to disable WebP conversion
 
-        // Delete image manually
-        if (isset($request->delete_img[$columnName]) && $request->delete_img[$columnName] == '1') {
-            if (!empty($oldImage) && file_exists("{$basePath}/{$oldImage}")) {
-                unlink("{$basePath}/{$oldImage}");
-            }
-            return null;
-        }
-
-        // Handle new upload
+        // Handle new upload first (so replace works even if delete flag was toggled earlier)
         if ($request->hasFile($columnName) && $request->file($columnName)->isValid()) {
             $file = $request->file($columnName);
             $extension = strtolower($file->getClientOriginalExtension());
@@ -345,6 +337,13 @@ if (!function_exists('imageHandling')) {
             }
 
             \Log::error("Failed to move uploaded file for {$columnName} into {$folderName}");
+        }
+
+        if (isset($request->delete_img[$columnName]) && $request->delete_img[$columnName] == '1') {
+            if (!empty($oldImage) && file_exists("{$basePath}/{$oldImage}")) {
+                unlink("{$basePath}/{$oldImage}");
+            }
+            return null;
         }
 
         return $oldImage;
@@ -1491,32 +1490,37 @@ if (!function_exists('notify')) {
 if (!function_exists('image_input_option')) {
     function image_input_option($image_path = '', $name = 'image', $width = '', $alt = 'image not found',  $title = 'image title', $file_ext = 'webp, jpg, png, svg, jpeg (max size 2mb)')
     {
+        $fieldId = preg_replace('/[^a-zA-Z0-9_-]/', '_', $name);
+        $hasPreview = $image_path !== '' && ! str_contains($image_path, 'no-image');
+        $previewStyle = $hasPreview ? '' : 'display:none;';
+
         $html = <<<HTML
-        <input class="form-control"
-               name="{$name}"
-               type="file"
-               id="image">
-        <div class="light-gallery text-center">
-            <a href="{$image_path}">
-                <img class="rounded mt-2 img-fluid border"
-                src="{$image_path}"
-                width="{$width}"
-                alt="{$alt}"
-                title="{$title}">
-            </a>
-        </div>
-        <div class="text-center my-3">
-            <small class="text-danger">{$file_ext}</small>
-        </div>
-
-        <input type="hidden" name="delete_img[image]" value="0" class="delete_img">
-
-            <div class="d-flex justify-content-center fImg">
-                <button type="button" value="Delete"
-                    class="del_img btn btn-sm btn-danger waves-effect waves-light mt-2">
+        <div class="image-upload-widget" data-field="{$name}">
+            <input class="form-control image-file-input"
+                   name="{$name}"
+                   type="file"
+                   id="{$fieldId}"
+                   accept="image/*">
+            <div class="light-gallery lightgallery text-center image-preview-wrap" style="{$previewStyle}">
+                <a href="{$image_path}">
+                    <img class="rounded mt-2 img-fluid border image-preview"
+                         src="{$image_path}"
+                         width="{$width}"
+                         alt="{$alt}"
+                         title="{$title}">
+                </a>
+            </div>
+            <div class="text-center my-3">
+                <small class="text-danger">{$file_ext}</small>
+            </div>
+            <input type="hidden" name="delete_img[{$name}]" value="0" class="delete_img">
+            <div class="d-flex justify-content-center fImg" style="{$previewStyle}">
+                <button type="button"
+                        class="del_img btn btn-sm btn-danger waves-effect waves-light mt-2">
                     Remove Image
                 </button>
             </div>
+        </div>
         HTML;
 
         return $html;

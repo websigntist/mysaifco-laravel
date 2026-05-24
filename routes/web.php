@@ -236,6 +236,22 @@ Route::prefix('admin')->group(function () {
         Route::post('/tour-types/{id}/status', [backend\TourTypeController::class, 'updateStatusAjax'])->middleware('check.permission:tour-types,status')->name('tour-types.status');
         // TOUR TYPES ROUTES END
 
+        // RED TAGS ROUTES START
+        Route::get('/red-tags', [backend\RedTagController::class, 'index'])->name('red-tags');
+        Route::get('/red-tags/create', [backend\RedTagController::class, 'create'])->middleware('check.permission:red-tags,add')->name('red-tags.create');
+        Route::get('/red-tags/duplicate/{id}', [backend\RedTagController::class, 'duplicate'])->middleware('check.permission:red-tags,duplicate')->name('red-tags.duplicate');
+        Route::get('/red-tags/edit/{id}', [backend\RedTagController::class, 'editForm'])->middleware('check.permission:red-tags,edit')->name('red-tags.edit');
+        Route::put('/red-tags/update/{id}', [backend\RedTagController::class, 'update'])->middleware('check.permission:red-tags,update')->name('red-tags.update');
+        Route::post('/red-tags/store', [backend\RedTagController::class, 'store'])->middleware('check.permission:red-tags,store')->name('red-tags.store');
+        Route::post('/red-tags/delete-all', [backend\RedTagController::class, 'deleteAll'])->middleware('check.permission:red-tags,delete-all')->name('red-tags.delete-all');
+        Route::get('/red-tags/trashed', [backend\RedTagController::class, 'trashed'])->middleware('check.permission:red-tags,trashed')->name('red-tags.trashed');
+        Route::get('/red-tags/restore/{id}', [backend\RedTagController::class, 'restore'])->middleware('check.permission:red-tags,restore')->name('red-tags.restore');
+        Route::get('/red-tags/forcedelete/{id}', [backend\RedTagController::class, 'forceDelete'])->middleware('check.permission:red-tags,forcedelete')->name('red-tags.forcedelete');
+        Route::get('/red-tags/modal-view/{id}', [backend\RedTagController::class, 'modalView'])->middleware('check.permission:red-tags,modal-view')->name('red-tags.modal-view');
+        Route::delete('/red-tags/delete/{id}', [backend\RedTagController::class, 'deleteAjax'])->middleware('check.permission:red-tags,delete')->name('red-tags.delete');
+        Route::post('/red-tags/{id}/status', [backend\RedTagController::class, 'updateStatusAjax'])->middleware('check.permission:red-tags,status')->name('red-tags.status');
+        // RED TAGS ROUTES END
+
         // BLOGS CATEGORIES ROUTES START
         Route::get('/blog-categories', [backend\BlogCategoryController::class, 'index'])->name('blog-categories');
         Route::get('/blog-category/create', [backend\BlogCategoryController::class, 'create'])->name('blog-category.create');

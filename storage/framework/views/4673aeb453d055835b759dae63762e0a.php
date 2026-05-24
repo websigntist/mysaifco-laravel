@@ -253,6 +253,12 @@
                                         ], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
                                     </div>
                                     <div class="col-md-12">
+                                        <?php echo $__env->make('backend.components.red-tag-select', [
+                                            'redTags' => $redTags,
+                                            'selected' => old('red_tag_id', $data->red_tag_id),
+                                        ], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+                                    </div>
+                                    <div class="col-md-12">
                                         <label class="form-label text-capitalize" for="ordering">
                                             <?php echo e(_label('ordering')); ?>
 

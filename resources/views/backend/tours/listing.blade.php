@@ -23,7 +23,6 @@
                                 {!! actionButton($module, 'import', route($module.'.import'), '', 'tabler-upload', 'Import CSV') !!}
                                 {!! actionButton($module, 'export', route($module.'.export'), '', 'tabler-download', 'Export CSV') !!}
                             </div>
-                            {{get_setting('site_currency')}}
                             <!-- ===== actions buttons end =====-->
                         </div>
                     </div>
