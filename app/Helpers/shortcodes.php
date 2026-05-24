@@ -25,6 +25,48 @@ if (!function_exists('do_shortcode')) {
     }
 }
 
+if (!function_exists('cms_page_description_has_include')) {
+    /**
+     * Whether the CMS description contains an [include file="..."] shortcode.
+     */
+    function cms_page_description_has_include(?string $description): bool
+    {
+        if ($description === null || trim($description) === '') {
+            return false;
+        }
+
+        return (bool) preg_match(
+            '/\[include\s+file=(["\'])[a-zA-Z0-9_-]+\1(?:\s[^\]]*)?\]/i',
+            $description
+        );
+    }
+}
+
+if (!function_exists('cms_page_full_template_view_name')) {
+    /**
+     * Full-page Blade for a CMS slug: frontend.pages.{slug}
+     * (not includes/ partials; excludes system templates).
+     */
+    function cms_page_full_template_view_name(string $slug): ?string
+    {
+        $slug = shortcode_sanitize_file_slug($slug);
+
+        if ($slug === '') {
+            return null;
+        }
+
+        $reserved = ['show', 'default', 'home', 'under_maintenance'];
+
+        if (in_array($slug, $reserved, true)) {
+            return null;
+        }
+
+        $viewName = "frontend.pages.{$slug}";
+
+        return View::exists($viewName) ? $viewName : null;
+    }
+}
+
 if (!function_exists('cms_page_includes_only_file')) {
     /**
      * If the page description is only a single [include file="..."] shortcode, return the file slug.

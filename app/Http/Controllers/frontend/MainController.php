@@ -129,19 +129,31 @@ class MainController
         }
 
         $viewData = cms_page_view_data($page);
+        $viewData['pageContent'] = do_shortcode($page->description);
 
-        // Description is only [include file="all-categories"] → render full page template
+        // Description is only [include file="page-name"] → render that full page template
         $includeFile = cms_page_includes_only_file($page->description);
 
         if ($includeFile !== null) {
             $viewName = shortcode_include_view_name($includeFile);
 
-            if ($viewName && View::exists($viewName)) {
+            if ($viewName !== null && shortcode_include_is_full_page_view($viewName)) {
                 return view($viewName, $viewData);
             }
         }
 
-        $viewData['pageContent'] = do_shortcode($page->description);
+        // No include shortcode in editor: use pages/{slug}.blade.php or default layout with CMS content
+        if (! cms_page_description_has_include($page->description)) {
+            $templateView = cms_page_full_template_view_name($slug);
+
+            if ($templateView !== null) {
+                return view($templateView, $viewData);
+            }
+
+            if (View::exists('frontend.pages.default')) {
+                return view('frontend.pages.default', $viewData);
+            }
+        }
 
         return view('frontend.pages.show', $viewData);
     }

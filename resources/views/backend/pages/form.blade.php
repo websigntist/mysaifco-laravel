@@ -111,10 +111,13 @@
                                <div class="col-md-12">
                                   <textarea name="description" class="form-control" id="editor"></textarea>
                                   <p class="text-muted small mt-2 mb-0">
-                                      Shortcode: <code>[include file="bladeFileName"]</code> loads
+                                      Optional shortcode: <code>[include file="bladeFileName"]</code> loads
                                       <code>resources/views/frontend/pages/yourFile.blade.php</code>
-                                      (use this shortcode alone as the full description for full-page templates).
-                                      For inline content, add
+                                      (use alone in the editor for an explicit full-page template).
+                                      If the shortcode is omitted, the page uses
+                                      <code>frontend/pages/{friendly_url}.blade.php</code> when that file exists;
+                                      otherwise <code>frontend/pages/default.blade.php</code> shows the editor content.
+                                      For inline embeds inside HTML, use
                                       <code>resources/views/frontend/pages/includes/your-file.blade.php</code>.
                                   </p>
                                </div>
