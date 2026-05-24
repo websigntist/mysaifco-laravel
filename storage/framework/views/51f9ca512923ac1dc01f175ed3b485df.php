@@ -1,37 +1,3 @@
-<?php
-    $testimonialItems = $testimonials ?? [
-        [
-            'quote' => 'Saifco made our Umrah journey truly unforgettable. Every detail was handled with care and professionalism. Highly recommended.',
-            'name' => 'Syed Hussain Hashmi',
-            'meta' => 'Umrah Traveler · Dubai',
-        ],
-        [
-            'quote' => 'Very good service from start to end! I really recommend this company for anyone visiting Dubai — the experience was world-class.',
-            'name' => 'Preety Zinta',
-            'meta' => 'Dubai City Tour · India',
-        ],
-        [
-            'quote' => 'My trip to Dubai was amazing, and the desert safari with Saifco was the highlight! The team was friendly, knowledgeable, and made us feel so welcome.',
-            'name' => 'Melissa Johnson',
-            'meta' => 'Desert Safari · UK',
-        ],
-        [
-            'quote' => 'From airport transfers to hotel coordination, the team made our Umrah journey stress-free. Kind staff and reliable timing at every step.',
-            'name' => 'Fatima Zahra',
-            'meta' => 'Pilgrim · Pakistan',
-        ],
-        [
-            'quote' => 'The dhow cruise dinner exceeded expectations — great food, live music, and a magical view of the marina skyline. Worth every dirham.',
-            'name' => 'Omar El-Sayed',
-            'meta' => 'Honeymoon · Egypt',
-        ],
-        [
-            'quote' => 'Responsive WhatsApp support and flexible rescheduling when our flight was delayed. That level of service is rare and deeply appreciated.',
-            'name' => 'Priya Natarajan',
-            'meta' => 'Solo Traveler · India',
-        ],
-    ];
-?>
 
 <section class="flex justify-center items-center py-12 px-4 md:py-16">
     <div class="container mx-auto">
@@ -49,15 +15,13 @@
             <div class="customer_reviews mt-10 md:mt-14">
                 <div class="testimonials-swiper-wrap">
                     <div class="flex items-stretch gap-3 sm:gap-4 md:items-center">
-                        
-
                         <div
                             class="swiper testimonials-swiper min-w-0 flex-1 py-1"
                             id="testimonials-swiper"
                             aria-roledescription="carousel"
                         >
                             <div class="swiper-wrapper">
-                                <?php $__currentLoopData = $testimonialItems; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $t): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <?php $__empty_1 = true; $__currentLoopData = $testimonialItems ?? []; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $t): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
                                     <div class="swiper-slide !h-auto">
                                         <article
                                             class="testimonial-card flex h-full flex-col rounded-[15px] border border-neutral-200/90 bg-neutral-50 p-6 shadow-sm md:p-7 md:px-8"
@@ -69,42 +33,43 @@
                                             </div>
                                             <div class="relative mt-5 min-h-[6.5rem] flex-1 pb-10 md:min-h-[7.5rem]">
                                                 <p class="pr-2 font-body text-sm">
-                                                    <?php echo e($t['quote']); ?>
+                                                    <?php echo e($t['quote'] ?? ''); ?>
 
                                                 </p>
                                                 <span class="pointer-events-none absolute bottom-0 right-0">
-                                                  <img src="<?php echo e(asset('assets/images/icons/quote-down.svg')); ?>" alt="img">
+                                                    <img src="<?php echo e(asset('assets/images/icons/quote-down.svg')); ?>" alt="">
                                                 </span>
                                             </div>
                                             <footer>
                                                 <p class="font-heading font-semibold">
-                                                    &mdash; <?php echo e($t['name']); ?>
+                                                    &mdash; <?php echo e($t['name'] ?? ''); ?>
 
                                                 </p>
-                                                <p class="mt-1 font-body text-sm">
-                                                    <?php echo e($t['meta']); ?>
+                                                <?php if(filled($t['meta'] ?? null)): ?>
+                                                    <p class="mt-1 font-body text-sm">
+                                                        <?php echo e($t['meta']); ?>
 
-                                                </p>
+                                                    </p>
+                                                <?php endif; ?>
                                             </footer>
                                         </article>
                                     </div>
-                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
+                                    <div class="swiper-slide">
+                                        <p class="py-8 text-center text-gray-600">No customer reviews available yet.</p>
+                                    </div>
+                                <?php endif; ?>
                             </div>
                         </div>
-
-                        
                     </div>
 
                     <div class="mt-10">
-                            <a href="" class="flex items-center justify-center w-32 text-white text-lg px-2 py-2
-                            rounded-full mx-auto
-                            bg-gradient-to-r from-[#BA9B31] to-[#74611E]
-                             hover:bg-gradient-to-r hover:from-[#74611E] hover:to-[#BA9B31]
-                             transition duration-300 font-heading italic"> View All
-                                <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
-                                     class="w-6 ms-1"
-                                     alt="arrow"> </a>
-                        </div>
+                        <a href="#"
+                           class="flex items-center justify-center w-32 text-white text-lg px-2 py-2 rounded-full mx-auto bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
+                            View All
+                            <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>" class="w-6 ms-1" alt="">
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

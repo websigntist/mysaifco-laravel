@@ -40,6 +40,8 @@ class TestimonialController
             'name',
             'designation',
             'company',
+            'services',
+            'country',
             'type',
             'status',
             'ordering',
@@ -97,18 +99,21 @@ class TestimonialController
             $validated = $request->validate([
                 'name'        => 'required|string|max:255',
                 'designation' => 'required|string|max:255',
-                'company'     => 'required|string|max:255',
-                'review'      => 'required|string|max:255',
+                'company'     => 'nullable|string|max:255',
+                'services'    => 'nullable|string|max:255',
+                'country'     => 'nullable|string|max:255',
+                'review'      => 'required|string|max:5000',
                 'image'       => 'nullable|image|mimes:webp,jpeg,png,jpg|max:2048',
             ]);
 
             $uploadImage = imageHandling($request, null, 'image', $this->module);
 
-            // Insert into pages table
             $dataToStore = [
                 'name'        => $request->name,
                 'designation' => $request->designation,
                 'company'     => $request->company,
+                'services'    => $request->services,
+                'country'     => $request->country,
                 'review'      => $request->review,
                 'type'        => $request->type,
                 'status'      => $request->status,
@@ -153,6 +158,8 @@ class TestimonialController
             'name'        => $source->name . ' (Copy)',
             'designation' => $source->designation,
             'company'     => $source->company,
+            'services'    => $source->services,
+            'country'     => $source->country,
             'review'      => $source->review,
             'type'        => $source->type,
             'status'      => $source->status,
@@ -196,20 +203,22 @@ class TestimonialController
         $validated = $request->validate([
             'name'        => 'required|string|max:255',
             'designation' => 'required|string|max:255',
-            'company'     => 'required|string|max:255',
-            'review'      => 'required|string|max:255',
+            'company'     => 'nullable|string|max:255',
+            'services'    => 'nullable|string|max:255',
+            'country'     => 'nullable|string|max:255',
+            'review'      => 'required|string|max:5000',
             'image'       => 'nullable|image|mimes:webp,jpeg,png,jpg|max:2048',
         ]);
 
         try {
-            // Find the slider
             $dbdata = ($this->table)::findOrFail($id);
 
-            // Initialize data to update
             $dataToUpdate = [
                 'name'        => $request->name,
                 'designation' => $request->designation,
                 'company'     => $request->company,
+                'services'    => $request->services,
+                'country'     => $request->country,
                 'review'      => $request->review,
                 'type'        => $request->type,
                 'status'      => $request->status,
@@ -303,6 +312,8 @@ class TestimonialController
             'name'            => $dbdata->name,
             'designation'     => $dbdata->designation,
             'company'         => $dbdata->company,
+            'services'        => $dbdata->services,
+            'country'         => $dbdata->country,
             'review'          => $dbdata->review,
             'type'            => $dbdata->type,
             'status'          => $dbdata->status,

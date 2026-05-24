@@ -44,13 +44,13 @@
     "src": "resources/assets/backend/fonts/lg.woff2"
   },
   "resources/assets/backend/js/app.js": {
-    "file": "assets/app-BUarIUhS.js",
+    "file": "assets/app-ClU1nUSK.js",
     "name": "app",
     "src": "resources/assets/backend/js/app.js",
     "isEntry": true
   },
   "resources/assets/frontend/css/app.css": {
-    "file": "assets/app-Dq9hCvr0.css",
+    "file": "assets/app-Cb6SzvU2.css",
     "src": "resources/assets/frontend/css/app.css",
     "isEntry": true,
     "name": "app",

@@ -218,7 +218,9 @@
                                 <tr><th>{{_label('name')}}</th><td>${data.name ?? '-'}</td></tr>
                                 <tr><th>{{_label('designation')}}</th><td>${data.designation ?? '-'}</td></tr>
                                 <tr><th>{{_label('company')}}</th><td>${data.company ?? '-'}</td></tr>
-                                <tr><th>{{_label('review')}}</th><td>${data.review ?? '-'}</td></tr>
+                                <tr><th>Services</th><td>${data.services ?? '-'}</td></tr>
+                                <tr><th>Country</th><td>${data.country ?? '-'}</td></tr>
+                                <tr><th>{{ _label('write_review') }}</th><td>${data.review ?? '-'}</td></tr>
                                 <tr><th>{{_label('type')}}</th><td>${data.type ?? '-'}</td></tr>
                                 <tr>
                                     <th>{{_label('status')}}</th>

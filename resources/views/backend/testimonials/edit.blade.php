@@ -80,9 +80,34 @@
                                                   placeholder="Enter {{_label('company')}}...">
                                             {!! error_label('company') !!}
                                         </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label text-capitalize" for="services">
+                                                <span>Services</span>
+                                            </label>
+                                            <input type="text"
+                                                   id="services"
+                                                   name="services"
+                                                   value="{{ old('services', $data->services) }}"
+                                                   class="form-control"
+                                                   placeholder="e.g. Desert Safari, Umrah Package">
+                                            {!! error_label('services') !!}
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label text-capitalize" for="country">
+                                                <span>Country</span>
+                                            </label>
+                                            <input type="text"
+                                                   id="country"
+                                                   name="country"
+                                                   value="{{ old('country', $data->country) }}"
+                                                   class="form-control"
+                                                   placeholder="e.g. UAE, India, UK">
+                                            {!! error_label('country') !!}
+                                        </div>
                                         <div class="col-md-12">
                                             <label class="form-label text-capitalize" for="review">
-                                                {{_label('write_review')}} </label>
+                                                {{ _label('write_review') }}
+                                            </label>
                                             <textarea class="form-control"
                                                      id="review"
                                                      name="review"
@@ -122,10 +147,9 @@
                                         </div>
                                         <div class="col-md-12">
                                             <label class="form-label text-capitalize" for="image">
-                                                <span>{{_label ('photo')}}</span>
+                                                <span>{{ _label('photo') }}</span>
                                             </label>
-                                            <input type="file" name="image" id="image">
-                                            {!! image_input_option($data->image ? asset('assets/images/'.$module .'/' . $data->image) : imageNotFound(),'image','100px') !!}
+                                            {!! image_input_option($data->image ? asset('assets/images/'.$module .'/' . $data->image) : imageNotFound(), 'image', '100px') !!}
                                         </div>
                                         <div class="col-md-12">
                                             {!! form_action_buttons('Update Now', 'Update & New', 'Update & Stay') !!}
