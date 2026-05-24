@@ -1,5 +1,6 @@
 @extends('frontend.layouts.master')
 @section('content')
+    @include('frontend.pages.partials.cms-content')
     <div class="flex justify-center items-center">
         <div
                 class="px-4 hero_section relative flex md:min-h-[86vh] 2xl:min-h-[90vh] w-full items-center justify-center

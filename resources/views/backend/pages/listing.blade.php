@@ -103,6 +103,10 @@
                                                         {{--{{ $data->parentPage?->menu_title ?? '/Parent' }}--}}
                                                     @elseif($col === 'ordering')
                                                         {{ $data->ordering }}
+                                                     @elseif($col === 'friendly_url')
+                                                        <a href="{{ route('/').'/'.$data->friendly_url }}" target="_blank">
+                                                            {{ $data->friendly_url }}
+                                                        </a>
                                                         {{--<span class="invisible">{{ $data->ordering }}</span>
                                                         <input type="number"
                                                                id="ordering"

@@ -44,31 +44,18 @@
                         <div class="collapse show">
                             <div class="card-body">
                                 <div class="row g-6 pt-5">
-                                    <div class="col-md-6">
-                                        <label class="form-label text-capitalize" for="title_1">
-                                            <span>Title 1</span>
+                                    <div class="col-md-12">
+                                        <label class="form-label text-capitalize" for="title">
+                                            <span><?php echo e(_label('title')); ?></span>
                                         </label>
                                         <input type="text"
-                                               id="title_1"
-                                               name="title_1"
-                                               value="<?php echo e(old('title_1')); ?>"
+                                               id="title"
+                                               name="title"
+                                               value="<?php echo e(old('title')); ?>"
                                                class="form-control"
-                                               placeholder="Enter title 1..."
+                                               placeholder="Enter tour type title..."
                                                required>
-                                        <?php echo error_label('title_1'); ?>
-
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="form-label text-capitalize" for="title_2">
-                                            <span>Title 2</span>
-                                        </label>
-                                        <input type="text"
-                                               id="title_2"
-                                               name="title_2"
-                                               value="<?php echo e(old('title_2')); ?>"
-                                               class="form-control"
-                                               placeholder="Enter title 2...">
-                                        <?php echo error_label('title_2'); ?>
+                                        <?php echo error_label('title'); ?>
 
                                     </div>
                                     <div class="col-md-12">
@@ -234,7 +221,7 @@
 <?php $__env->stopSection(); ?>
 <?php $__env->startPush('script'); ?>
     <script>
-        $('#title_1').bind('keyup blur', function () {
+        $('#title').bind('keyup blur', function () {
             var title = $(this).val();
             $('#meta_title').val(meta_title(title));
             $('#image_title').val(image_title(title));

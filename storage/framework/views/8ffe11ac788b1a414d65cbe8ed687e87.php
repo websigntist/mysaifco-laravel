@@ -67,7 +67,7 @@
             <li class="nav-item dropdown-shortcuts navbar-dropdown dropdown"
                 data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="View Frontend">
                 <a class="nav-link dropdown-toggle hide-arrow btn btn-icon btn-text-secondary rounded-pill"
-                   href="javascript:void(0);"
+                   href="<?php echo e(route('/')); ?>" target="_blank"
                    aria-expanded="false"> <i class="icon-base ti tabler-screen-share icon-22px text-heading d-flex"></i> </a>
             </li>
             <!-- Quick links -->

@@ -107,6 +107,11 @@
                                                     <?php elseif($col === 'ordering'): ?>
                                                         <?php echo e($data->ordering); ?>
 
+                                                     <?php elseif($col === 'friendly_url'): ?>
+                                                        <a href="<?php echo e(route('/').'/'.$data->friendly_url); ?>" target="_blank">
+                                                            <?php echo e($data->friendly_url); ?>
+
+                                                        </a>
                                                         
                                                     <?php elseif($col === 'status'): ?>
                                                         <span id="statusLabel-<?php echo e($data->id); ?>"

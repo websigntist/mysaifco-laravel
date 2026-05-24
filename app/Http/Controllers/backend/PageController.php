@@ -52,7 +52,7 @@ class pageController
         // columns to hide
         $hiddenColumns = [
             'created_by',
-            'menu_title',
+            'page_title',
             'ordering',
         ];
 

@@ -42,28 +42,53 @@ if (!function_exists('cms_page_description_has_include')) {
     }
 }
 
-if (!function_exists('cms_page_full_template_view_name')) {
+if (!function_exists('cms_page_first_include_file')) {
     /**
-     * Full-page Blade for a CMS slug: frontend.pages.{slug}
-     * (not includes/ partials; excludes system templates).
+     * First [include file="..."] slug in the CMS description.
      */
-    function cms_page_full_template_view_name(string $slug): ?string
+    function cms_page_first_include_file(?string $description): ?string
     {
-        $slug = shortcode_sanitize_file_slug($slug);
-
-        if ($slug === '') {
+        if ($description === null || trim($description) === '') {
             return null;
         }
 
-        $reserved = ['show', 'default', 'home', 'under_maintenance'];
-
-        if (in_array($slug, $reserved, true)) {
-            return null;
+        if (preg_match(
+            '/\[include\s+file=(["\'])([a-zA-Z0-9_-]+)\1(?:\s[^\]]*)?\]/i',
+            $description,
+            $matches
+        )) {
+            return shortcode_sanitize_file_slug($matches[2]);
         }
 
-        $viewName = "frontend.pages.{$slug}";
+        return null;
+    }
+}
 
-        return View::exists($viewName) ? $viewName : null;
+if (!function_exists('cms_page_strip_include_shortcodes')) {
+    /**
+     * Editor HTML with all [include file="..."] shortcodes removed.
+     */
+    function cms_page_strip_include_shortcodes(?string $description): string
+    {
+        if ($description === null || $description === '') {
+            return '';
+        }
+
+        return trim((string) preg_replace(
+            '/\[include\s+file=(["\'])[a-zA-Z0-9_-]+\1(?:\s[^\]]*)?\]/i',
+            '',
+            $description
+        ));
+    }
+}
+
+if (!function_exists('cms_page_render_editor_content')) {
+    /**
+     * Process editor HTML only (excludes include shortcodes).
+     */
+    function cms_page_render_editor_content(?string $description): string
+    {
+        return do_shortcode(cms_page_strip_include_shortcodes($description));
     }
 }
 

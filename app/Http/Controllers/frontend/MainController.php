@@ -129,33 +129,29 @@ class MainController
         }
 
         $viewData = cms_page_view_data($page);
-        $viewData['pageContent'] = do_shortcode($page->description);
 
-        // Description is only [include file="page-name"] → render that full page template
-        $includeFile = cms_page_includes_only_file($page->description);
+        if (cms_page_description_has_include($page->description)) {
+            $includeFile = cms_page_first_include_file($page->description);
+            $viewData['pageContent'] = cms_page_render_editor_content($page->description);
+            $viewData['includeFile'] = $includeFile;
 
-        if ($includeFile !== null) {
-            $viewName = shortcode_include_view_name($includeFile);
+            $viewName = $includeFile !== null
+                ? shortcode_include_view_name($includeFile)
+                : null;
 
+            // frontend.pages.{name} → full page + optional editor content above it
             if ($viewName !== null && shortcode_include_is_full_page_view($viewName)) {
                 return view($viewName, $viewData);
             }
+
+            // includes/{name}.blade.php → default shell + content + inline partial
+            return view('frontend.pages.combined', $viewData);
         }
 
-        // No include shortcode in editor: use pages/{slug}.blade.php or default layout with CMS content
-        if (! cms_page_description_has_include($page->description)) {
-            $templateView = cms_page_full_template_view_name($slug);
+        // Editor content only → default layout
+        $viewData['pageContent'] = do_shortcode($page->description);
 
-            if ($templateView !== null) {
-                return view($templateView, $viewData);
-            }
-
-            if (View::exists('frontend.pages.default')) {
-                return view('frontend.pages.default', $viewData);
-            }
-        }
-
-        return view('frontend.pages.show', $viewData);
+        return view('frontend.pages.default', $viewData);
     }
 
 }
