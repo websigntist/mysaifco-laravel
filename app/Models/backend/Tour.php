@@ -63,4 +63,76 @@ class Tour extends Model
     {
         return $this->belongsTo(RedTag::class, 'red_tag_id');
     }
+
+    public function scopePublished($query)
+    {
+        return $query->where('status', 'active');
+    }
+
+    /**
+     * Match tours whose tour_type CSV contains the given tour type title.
+     */
+    public function scopeForTourTypeTitle($query, string $typeTitle)
+    {
+        $typeTitle = trim($typeTitle);
+
+        if ($typeTitle === '') {
+            return $query->whereRaw('1 = 0');
+        }
+
+        return $query->where(function ($q) use ($typeTitle) {
+            $q->where('tour_type', $typeTitle)
+                ->orWhere('tour_type', 'like', $typeTitle . ',%')
+                ->orWhere('tour_type', 'like', '%, ' . $typeTitle . ',%')
+                ->orWhere('tour_type', 'like', '%,' . $typeTitle . ',%')
+                ->orWhere('tour_type', 'like', '%, ' . $typeTitle)
+                ->orWhere('tour_type', 'like', '%,' . $typeTitle);
+        });
+    }
+
+    public function imageUrl(): string
+    {
+        if (filled($this->image)) {
+            return asset('assets/images/tours/' . ltrim($this->image, '/'));
+        }
+
+        return imageNotFound();
+    }
+
+    public function frontendUrl(): string
+    {
+        return filled($this->friendly_url) ? url('/' . $this->friendly_url) : '#';
+    }
+
+    /**
+     * Active tour types with a limited list of tours each (for all-categories page).
+     *
+     * @return array<int, array{tourType: \App\Models\backend\TourType, tours: \Illuminate\Support\Collection<int, self>}>
+     */
+    public static function groupedByTourType(int $limitPerType = 3): array
+    {
+        $limitPerType = max(1, min($limitPerType, 12));
+
+        $sections = [];
+
+        foreach (TourType::activeListForAllCategories() as $tourType) {
+            $tours = static::query()
+                ->published()
+                ->forTourTypeTitle($tourType->title)
+                ->with('redTag')
+                ->orderBy('ordering')
+                ->orderBy('title')
+                ->limit($limitPerType)
+                ->get();
+
+            if ($tours->isNotEmpty()) {
+                $sections[] = [
+                    'tourType' => $tourType,
+                    'tours'    => $tours,
+                ];
+            }
+        }
+
+        return $sections;
+    }
 }

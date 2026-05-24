@@ -4,6 +4,7 @@ namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\frontend\PagesApiController;
 use App\Models\backend\Page;
+use App\Models\backend\Tour;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\View;
@@ -42,72 +43,21 @@ class MainController
         ]);
     }
 
-    public function about()
+    /**
+     * Tours grouped by active tour types (limit per type from ?limit=2|3|…).
+     */
+    protected function allCategoriesTourViewData(): array
     {
-        // Fetch "about-us" page data from the API
-        $pageData = null;
-
-        try {
-            // Call the Pages API Controller directly (better for internal use)
-            $apiController = new PagesApiController();
-            $request = new Request();
-            $request->headers->set('X-API-KEY', env('API_CONTACT_KEY'));
-
-            $response = $apiController->showBySlug($request, 'about-us');
-            $result = json_decode($response->getContent(), true);
-
-            if (isset($result['success']) && $result['success']) {
-                $pageData = $result['data'];
-
-                Log::info('About page data fetched from API', [
-                    'page_id' => $pageData['id'],
-                    'title' => $pageData['page_title']
-                ]);
-            } else {
-                Log::warning('Failed to fetch about page from API', [
-                    'response' => $result
-                ]);
-            }
-        } catch (\Exception $e) {
-            Log::error('Error fetching about page from API', [
-                'error' => $e->getMessage()
-            ]);
+        $limitPerType = (int) request()->query('limit', 3);
+        if (! in_array($limitPerType, [2, 3, 4, 5, 6], true)) {
+            $limitPerType = 3;
         }
 
-        return view('frontend.pages.about-us', [
-            'pageData'         => $pageData,
-            'meta_title'       => $pageData['meta']['title'] ?? "meta title mention here",
-            'meta_keywords'    => $pageData['meta']['keywords'] ?? 'meta keywords mention here',
-            'meta_description' => $pageData['meta']['description'] ?? 'meta description mention here',
-        ]);
+        return [
+            'tourSections' => Tour::groupedByTourType($limitPerType),
+            'toursPerType' => $limitPerType,
+        ];
     }
-
-    public function all_categories()
-        {
-            // Fetch "about-us" page data from the API
-            $pageData = null;
-
-            return view('frontend.pages.all-categories', [
-                'pageData'         => $pageData,
-                'meta_title'       => $pageData['meta']['title'] ?? "All Tour Categories",
-                'meta_keywords'    => $pageData['meta']['keywords'] ?? 'meta keywords mention here',
-                'meta_description' => $pageData['meta']['description'] ?? 'meta description mention here',
-            ]);
-        }
-
-    public function disert_safari_tour()
-            {
-                // Fetch "about-us" page data from the API
-                $pageData = null;
-
-                return view('frontend.pages.disert-safari-tour', [
-                    'pageData'         => $pageData,
-                    'meta_title'       => $pageData['meta']['title'] ?? "Disert Safari Tour",
-                    'meta_keywords'    => $pageData['meta']['keywords'] ?? 'meta keywords mention here',
-                    'meta_description' => $pageData['meta']['description'] ?? 'meta description mention here',
-                ]);
-            }
-
     /**
      * CMS page by friendly_url (slug). Supports [include file="page-name"] in description.
      */
@@ -141,6 +91,10 @@ class MainController
 
             // frontend.pages.{name} → full page + optional editor content above it
             if ($viewName !== null && shortcode_include_is_full_page_view($viewName)) {
+                if ($includeFile === 'all-categories') {
+                    $viewData = array_merge($viewData, $this->allCategoriesTourViewData());
+                }
+
                 return view($viewName, $viewData);
             }
 

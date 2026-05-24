@@ -9,6 +9,19 @@ class TourType extends Model
 {
     use SoftDeletes;
 
+    /**
+     * Section order on the all-categories page.
+     */
+    public const ALL_CATEGORIES_DISPLAY_ORDER = [
+        'Desert Safari',
+        'Yacht Charter',
+        'Dubai City Tour',
+        'Abu Dhabi Tours',
+        'Dubai Combo Tours',
+        'Water Activities',
+        'Theme Park Tickets',
+    ];
+
     protected $table = 'tour_types';
 
     protected $fillable = [
@@ -44,5 +57,26 @@ class TourType extends Model
             ->orderBy('ordering')
             ->orderBy('title')
             ->get();
+    }
+
+    /**
+     * Active tour types sorted for the all-categories page.
+     */
+    public static function activeListForAllCategories()
+    {
+        $orderMap = array_flip(self::ALL_CATEGORIES_DISPLAY_ORDER);
+
+        return static::where('status', 'Active')
+            ->get()
+            ->sortBy(function (self $type) use ($orderMap) {
+                $title = trim((string) $type->title);
+
+                if (isset($orderMap[$title])) {
+                    return $orderMap[$title];
+                }
+
+                return 100 + (int) $type->ordering;
+            })
+            ->values();
     }
 }
