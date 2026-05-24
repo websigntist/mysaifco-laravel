@@ -4,6 +4,7 @@ namespace App\Models\backend;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Str;
 
 class TourType extends Model
 {
@@ -26,6 +27,7 @@ class TourType extends Model
 
     protected $fillable = [
         'title',
+        'friendly_url',
         'short_description',
         'description',
         'image',
@@ -57,6 +59,58 @@ class TourType extends Model
             ->orderBy('ordering')
             ->orderBy('title')
             ->get();
+    }
+
+    /**
+     * Resolve tour type from frontend URL slug (e.g. desert-safari-tours).
+     */
+    public static function findActiveBySlug(string $slug): ?self
+    {
+        $slug = trim($slug);
+
+        if ($slug === '') {
+            return null;
+        }
+
+        $byFriendlyUrl = static::query()
+            ->where('status', 'Active')
+            ->where('friendly_url', $slug)
+            ->first();
+
+        if ($byFriendlyUrl) {
+            return $byFriendlyUrl;
+        }
+
+        $types = static::where('status', 'Active')->get();
+
+        foreach ($types as $type) {
+            if (strcasecmp(trim((string) $type->title), $slug) === 0) {
+                return $type;
+            }
+        }
+
+        $candidates = array_values(array_unique(array_filter([
+            $slug,
+            (string) preg_replace('/-tours$/', '', $slug),
+            (string) preg_replace('/-tours$/', '-tour', $slug),
+        ])));
+
+        foreach ($types as $type) {
+            if (in_array(Str::slug((string) $type->title), $candidates, true)) {
+                return $type;
+            }
+        }
+
+        return null;
+    }
+
+    public function pageUrl(): string
+    {
+        $slug = filled($this->friendly_url)
+            ? $this->friendly_url
+            : Str::slug((string) $this->title);
+
+        return url('/' . $slug);
     }
 
     /**

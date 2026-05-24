@@ -2,17 +2,13 @@
 
 namespace App\Http\Controllers\frontend;
 
-use App\Http\Controllers\frontend\PagesApiController;
 use App\Models\backend\Page;
 use App\Models\backend\Tour;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\View;
+use App\Models\backend\TourType;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class MainController
 {
-
     public function index()
     {
         $metaTitle = (string) (get_setting('site_title') ?? '');
@@ -43,23 +39,32 @@ class MainController
         ]);
     }
 
-    /**
-     * Tours grouped by active tour types (limit per type from ?limit=2|3|…).
-     */
-    protected function allCategoriesTourViewData(): array
+    public function all_categories()
     {
         $limitPerType = (int) request()->query('limit', 3);
         if (! in_array($limitPerType, [2, 3, 4, 5, 6], true)) {
             $limitPerType = 3;
         }
 
-        return [
-            'tourSections' => Tour::groupedByTourType($limitPerType),
-            'toursPerType' => $limitPerType,
-        ];
+        $page = Page::query()
+            ->where('friendly_url', 'all-categories')
+            ->where('status', 'published')
+            ->first();
+
+        return view('frontend.pages.all-categories', [
+            'tourSections'     => Tour::groupedByTourType($limitPerType),
+            'toursPerType'     => $limitPerType,
+            'page'             => $page,
+            'pageContent'      => $page?->description,
+            'meta_title'       => filled($page?->meta_title) ? $page->meta_title : 'All Tour Categories',
+            'meta_keywords'    => (string) ($page?->meta_keywords ?? ''),
+            'meta_description' => (string) ($page?->meta_description ?? ''),
+        ]);
     }
+
     /**
-     * CMS page by friendly_url (slug). Supports [include file="page-name"] in description.
+     * CMS page or tour-type packages page (single template) by URL slug.
+     * e.g. /desert-safari-tours → all tours for tour type with friendly_url desert-safari-tours
      */
     public function show(string $slug)
     {
@@ -67,6 +72,12 @@ class MainController
 
         if (in_array(strtolower($slug), $reserved, true)) {
             throw new NotFoundHttpException();
+        }
+
+        $tourType = TourType::findActiveBySlug($slug);
+
+        if ($tourType) {
+            return view('frontend.all-tours-packages', $this->tourPackagesViewData($tourType));
         }
 
         $page = Page::query()
@@ -89,23 +100,62 @@ class MainController
                 ? shortcode_include_view_name($includeFile)
                 : null;
 
-            // frontend.pages.{name} → full page + optional editor content above it
             if ($viewName !== null && shortcode_include_is_full_page_view($viewName)) {
                 if ($includeFile === 'all-categories') {
-                    $viewData = array_merge($viewData, $this->allCategoriesTourViewData());
+                    $limitPerType = (int) request()->query('limit', 3);
+                    if (! in_array($limitPerType, [2, 3, 4, 5, 6], true)) {
+                        $limitPerType = 3;
+                    }
+                    $viewData['tourSections'] = Tour::groupedByTourType($limitPerType);
+                    $viewData['toursPerType'] = $limitPerType;
                 }
 
                 return view($viewName, $viewData);
             }
 
-            // includes/{name}.blade.php → default shell + content + inline partial
             return view('frontend.pages.combined', $viewData);
         }
 
-        // Editor content only → default layout
         $viewData['pageContent'] = do_shortcode($page->description);
 
         return view('frontend.pages.default', $viewData);
     }
 
+    protected function tourPackagesViewData(TourType $tourType): array
+    {
+        $slug = (string) ($tourType->friendly_url ?? '');
+
+        $page = $slug !== ''
+            ? Page::query()->where('friendly_url', $slug)->where('status', 'published')->first()
+            : null;
+
+        $pageContent = null;
+        if ($page && filled($page->description)) {
+            $pageContent = cms_page_render_editor_content($page->description);
+            if (trim(strip_tags((string) $pageContent)) === '') {
+                $pageContent = null;
+            }
+        }
+
+        $bannerImageUrl = asset('assets/images/sliders/560650.webp');
+        if ($page && filled($page->image)) {
+            $bannerImageUrl = asset('assets/images/pages/' . ltrim($page->image, '/'));
+        } elseif (filled($tourType->image)) {
+            $bannerImageUrl = asset('assets/images/tour-types/' . ltrim($tourType->image, '/'));
+        }
+
+        return [
+            'tourType'         => $tourType,
+            'tours'            => Tour::publishedForTourType($tourType->title),
+            'page'             => $page,
+            'pageContent'      => $pageContent,
+            'bannerImageUrl'   => $bannerImageUrl,
+            'pageSlug'         => $slug,
+            'meta_title'       => filled($page?->meta_title)
+                ? $page->meta_title
+                : (filled($tourType->meta_title) ? $tourType->meta_title : $tourType->title),
+            'meta_keywords'    => (string) ($page?->meta_keywords ?? $tourType->meta_keywords ?? ''),
+            'meta_description' => (string) ($page?->meta_description ?? $tourType->meta_description ?? ''),
+        ];
+    }
 }

@@ -194,7 +194,7 @@
     </section>
 
     
-    <?php if(filled($pageContent ?? null)): ?>
+    <?php if( filled($pageContent ?? null) ): ?>
         <section class="flex justify-center items-center py-8 px-4 md:py-10">
             <div class="container mx-auto">
                 <div class="testimonials-section-inner mx-auto max-w-6xl">

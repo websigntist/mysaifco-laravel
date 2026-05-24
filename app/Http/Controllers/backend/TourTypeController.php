@@ -82,14 +82,16 @@ class TourTypeController
 
         if ($request->isMethod('post')) {
             $request->validate([
-                'title'  => 'required|string|max:255',
-                'status' => 'required|string',
+                'title'         => 'required|string|max:255',
+                'friendly_url'  => 'nullable|string|max:191|regex:/^[a-z0-9]+(?:-[a-z0-9]+)*$/|unique:tour_types,friendly_url',
+                'status'        => 'required|string',
             ]);
 
             $uploadImage = imageHandling($request, null, 'image', $this->module);
 
             $dataToStore = [
                 'title'             => $request->title,
+                'friendly_url'      => $this->resolveFriendlyUrl($request->friendly_url, $request->title),
                 'short_description' => $request->short_description,
                 'description'       => $request->description,
                 'status'            => $request->status,
@@ -137,8 +139,11 @@ class TourTypeController
             }
         }
 
+        $copyTitle = $source->title . ' (Copy)';
+
         $dbdata = ($this->table)::create([
-            'title'             => $source->title . ' (Copy)',
+            'title'             => $copyTitle,
+            'friendly_url'      => $this->resolveFriendlyUrl(null, $copyTitle, $source->id),
             'short_description' => $source->short_description,
             'description'       => $source->description,
             'status'            => $source->status,
@@ -184,8 +189,9 @@ class TourTypeController
         $action = $request->submitBtn;
 
         $request->validate([
-            'title'  => 'required|string|max:255',
-            'status' => 'required|string',
+            'title'         => 'required|string|max:255',
+            'friendly_url'  => 'nullable|string|max:191|regex:/^[a-z0-9]+(?:-[a-z0-9]+)*$/|unique:tour_types,friendly_url,' . $id,
+            'status'        => 'required|string',
         ]);
 
         try {
@@ -193,6 +199,7 @@ class TourTypeController
 
             $dataToUpdate = [
                 'title'             => $request->title,
+                'friendly_url'      => $this->resolveFriendlyUrl($request->friendly_url, $request->title, $id),
                 'short_description' => $request->short_description,
                 'description'       => $request->description,
                 'status'            => $request->status,
@@ -347,5 +354,28 @@ class TourTypeController
         $forcedelete->forceDelete();
 
         return redirect()->route($this->module)->with('success', $this->notify_title . ' Permanently Deleted!');
+    }
+
+    protected function resolveFriendlyUrl(?string $friendlyUrl, string $title, ?int $ignoreId = null): string
+    {
+        $slug = Str::slug(trim((string) ($friendlyUrl ?: $title)));
+
+        if ($slug === '') {
+            $slug = 'tour-type';
+        }
+
+        $unique = $slug;
+        $n = 1;
+
+        while (
+            TourType::query()
+                ->when($ignoreId, fn ($q) => $q->where('id', '!=', $ignoreId))
+                ->where('friendly_url', $unique)
+                ->exists()
+        ) {
+            $unique = $slug . '-' . $n++;
+        }
+
+        return $unique;
     }
 }

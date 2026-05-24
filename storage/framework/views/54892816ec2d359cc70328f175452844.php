@@ -10,7 +10,7 @@
             <?php elseif($slug == 'all-categories'): ?>
                 <span class="text-mst-gray">Explore Dubai With Us   </span>
                 <span class="text-mst">– Online Travel Agency</span>
-            <?php elseif($slug == 'disert-safari-tour'): ?>
+            <?php elseif(in_array($slug ?? '', ['disert-safari-tour', 'desert-safari-tours'], true)): ?>
                 <span class="text-mst-gray">Desert Safari </span><span class="text-mst"> Dubai Deals</span>
             <?php endif; ?>
         </h2>
@@ -34,7 +34,7 @@
                    country or internationally. Moreover, you can also roam inside Dubai, Sharjah, and Abu Dhabi on our
                    other inbound tours. Rent a jet ski, Go for the Dubai Desert Safari, Eat a delicious Dhow cruise
                    dinner, or opt for luxury yacht cruising.</p>
-            <?php elseif($slug == 'disert-safari-tour'): ?>
+            <?php elseif(in_array($slug ?? '', ['disert-safari-tour', 'desert-safari-tours'], true)): ?>
                 <p>All You Need to Know About Desert Safari in Dubai </p>
                 <p>Have you ever been captivated by the breathtaking scenes of a Dubai Desert Safari in movies or music
                    videos? Ever dreamed of feeling the golden sand slip through your fingers, surrounded by endless

@@ -4,9 +4,7 @@
     $titleWords = $tourType ? preg_split('/\s+/', trim($tourType->title)) : [];
     $mainText = count($titleWords) > 1 ? implode(' ', array_slice($titleWords, 0, -1)) : '';
     $accentText = count($titleWords) > 1 ? implode(' ', array_slice($titleWords, -1)) : ($tourType->title ?? '');
-    $viewAllLink = filled($tourType->view_all_link ?? null)
-        ? $tourType->view_all_link
-        : ($tours->first()?->frontendUrl() ?? '#');
+    $viewAllTours = Str::slug($tourType->title . ' tours');
 ?>
 <?php if($tourType && $tours->isNotEmpty()): ?>
     <section class="justify-center items-center bg-white py-8 px-4 md:py-6">
@@ -26,7 +24,7 @@
                         <?php endif; ?>
                     </div>
                     <div class="flex shrink-0 md:pt-1">
-                        <a href="<?php echo e($viewAllLink); ?>"
+                        <a href="<?php echo e($viewAllTours); ?>"
                            class="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-mst to-mst-dark px-7 py-3.5 font-heading text-base italic text-white transition hover:from-mst-dark hover:to-mst md:py-4 md:text-lg">
                             View all
                             <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"

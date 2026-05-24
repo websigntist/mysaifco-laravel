@@ -109,6 +109,22 @@ class Tour extends Model
      *
      * @return array<int, array{tourType: \App\Models\backend\TourType, tours: \Illuminate\Support\Collection<int, self>}>
      */
+    public static function publishedForTourType(string $typeTitle, ?int $limit = null)
+    {
+        $query = static::query()
+            ->published()
+            ->forTourTypeTitle($typeTitle)
+            ->with('redTag')
+            ->orderBy('ordering')
+            ->orderBy('title');
+
+        if ($limit !== null) {
+            $query->limit(max(1, (int) $limit));
+        }
+
+        return $query->get();
+    }
+
     public static function groupedByTourType(int $limitPerType = 3): array
     {
         $limitPerType = max(1, min($limitPerType, 12));
