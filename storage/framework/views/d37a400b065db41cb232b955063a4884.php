@@ -60,6 +60,18 @@
 
                                     </div>
                                     <div class="col-md-12">
+                                        <label class="form-label text-capitalize" for="friendly_url">Page URL (slug)</label>
+                                        <input type="text"
+                                               id="friendly_url"
+                                               name="friendly_url"
+                                               value="<?php echo e(old('friendly_url', $data->friendly_url)); ?>"
+                                               class="form-control"
+                                               placeholder="e.g. desert-safari-tours">
+                                        <small class="text-muted">Frontend URL: <?php echo e(url('/')); ?>/<span id="friendly_url_preview"><?php echo e(old('friendly_url', $data->friendly_url ?: 'your-slug')); ?></span></small>
+                                        <?php echo error_label('friendly_url'); ?>
+
+                                    </div>
+                                    <div class="col-md-12">
                                         <label class="form-label text-capitalize" for="short_description">Short Description</label>
                                         <textarea class="form-control"
                                                   id="short_description"

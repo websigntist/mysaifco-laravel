@@ -252,6 +252,37 @@ Route::prefix('admin')->group(function () {
         Route::post('/red-tags/{id}/status', [backend\RedTagController::class, 'updateStatusAjax'])->middleware('check.permission:red-tags,status')->name('red-tags.status');
         // RED TAGS ROUTES END
 
+        // EXPLORE ROUTES START
+        Route::get('/explore', [backend\ExploreController::class, 'index'])->name('explore');
+        Route::get('/explore/create', [backend\ExploreController::class, 'create'])->middleware('check.permission:explore,add')->name('explore.create');
+        Route::get('/explore/duplicate/{id}', [backend\ExploreController::class, 'duplicate'])->middleware('check.permission:explore,duplicate')->name('explore.duplicate');
+        Route::get('/explore/edit/{id}', [backend\ExploreController::class, 'editForm'])->middleware('check.permission:explore,edit')->name('explore.edit');
+        Route::put('/explore/update/{id}', [backend\ExploreController::class, 'update'])->middleware('check.permission:explore,update')->name('explore.update');
+        Route::post('/explore/store', [backend\ExploreController::class, 'store'])->middleware('check.permission:explore,store')->name('explore.store');
+        Route::post('/explore/delete-all', [backend\ExploreController::class, 'deleteAll'])->middleware('check.permission:explore,delete-all')->name('explore.delete-all');
+        Route::get('/explore/trashed', [backend\ExploreController::class, 'trashed'])->middleware('check.permission:explore,trashed')->name('explore.trashed');
+        Route::get('/explore/restore/{id}', [backend\ExploreController::class, 'restore'])->middleware('check.permission:explore,restore')->name('explore.restore');
+        Route::get('/explore/forcedelete/{id}', [backend\ExploreController::class, 'forceDelete'])->middleware('check.permission:explore,forcedelete')->name('explore.forcedelete');
+        Route::get('/explore/modal-view/{id}', [backend\ExploreController::class, 'modalView'])->middleware('check.permission:explore,modal-view')->name('explore.modal-view');
+        Route::delete('/explore/delete/{id}', [backend\ExploreController::class, 'deleteAjax'])->middleware('check.permission:explore,delete')->name('explore.delete');
+        Route::post('/explore/{id}/status', [backend\ExploreController::class, 'updateStatusAjax'])->middleware('check.permission:explore,status')->name('explore.status');
+        // EXPLORE ROUTES END
+
+        // POPULAR SEARCHES ROUTES START
+        Route::get('/popular-searches', [backend\PopularSearchController::class, 'index'])->name('popular-searches');
+        Route::get('/popular-searches/create', [backend\PopularSearchController::class, 'create'])->middleware('check.permission:popular-searches,add')->name('popular-searches.create');
+        Route::get('/popular-searches/duplicate/{id}', [backend\PopularSearchController::class, 'duplicate'])->middleware('check.permission:popular-searches,duplicate')->name('popular-searches.duplicate');
+        Route::get('/popular-searches/edit/{id}', [backend\PopularSearchController::class, 'editForm'])->middleware('check.permission:popular-searches,edit')->name('popular-searches.edit');
+        Route::put('/popular-searches/update/{id}', [backend\PopularSearchController::class, 'update'])->middleware('check.permission:popular-searches,update')->name('popular-searches.update');
+        Route::post('/popular-searches/store', [backend\PopularSearchController::class, 'store'])->middleware('check.permission:popular-searches,store')->name('popular-searches.store');
+        Route::post('/popular-searches/delete-all', [backend\PopularSearchController::class, 'deleteAll'])->middleware('check.permission:popular-searches,delete-all')->name('popular-searches.delete-all');
+        Route::get('/popular-searches/trashed', [backend\PopularSearchController::class, 'trashed'])->middleware('check.permission:popular-searches,trashed')->name('popular-searches.trashed');
+        Route::get('/popular-searches/restore/{id}', [backend\PopularSearchController::class, 'restore'])->middleware('check.permission:popular-searches,restore')->name('popular-searches.restore');
+        Route::get('/popular-searches/forcedelete/{id}', [backend\PopularSearchController::class, 'forceDelete'])->middleware('check.permission:popular-searches,forcedelete')->name('popular-searches.forcedelete');
+        Route::get('/popular-searches/modal-view/{id}', [backend\PopularSearchController::class, 'modalView'])->middleware('check.permission:popular-searches,modal-view')->name('popular-searches.modal-view');
+        Route::delete('/popular-searches/delete/{id}', [backend\PopularSearchController::class, 'deleteAjax'])->middleware('check.permission:popular-searches,delete')->name('popular-searches.delete');
+        // POPULAR SEARCHES ROUTES END
+
         // BLOGS CATEGORIES ROUTES START
         Route::get('/blog-categories', [backend\BlogCategoryController::class, 'index'])->name('blog-categories');
         Route::get('/blog-category/create', [backend\BlogCategoryController::class, 'create'])->name('blog-category.create');

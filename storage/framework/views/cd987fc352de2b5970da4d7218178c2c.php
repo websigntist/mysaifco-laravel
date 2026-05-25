@@ -1,4 +1,3 @@
-
 <?php $__env->startSection('content'); ?>
     
     <section class="flex justify-center items-center border-b-1 border-gray-200">
