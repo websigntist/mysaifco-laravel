@@ -16,7 +16,7 @@
                             </a>
                         </div>
                         <!-- /Logo -->
-                        <h5 class="mb-1">Welcome to Laravel Admin</h5>
+                        <h5 class="mb-1">Welcome to <?php echo e(get_setting('site_title')); ?> Admin Panel</h5>
                         <p class="mb-6">Please sign-in to your account.</p>
                         <form action="<?php echo e(route('login')); ?>" method="POST" class="mb-6 needs-validation" novalidate>
                             <?php echo csrf_field(); ?>
