@@ -284,6 +284,8 @@
             $('#friendly_url').val(friendly_URL(menu_title));
             $('#meta_title').val(meta_title(menu_title));
             $('#page_title').val(page_title(menu_title));
+            $('#image_title').val(image_title(menu_title));
+            $('#image_alt').val(image_alt(menu_title));
             $('#title').val(meta_title(menu_title));
         });
 
@@ -311,6 +313,24 @@
         function meta_title(url) {
             url.trim();
             var URL = url.replace(/\-+/g, '-').replace(/\W+/g, ' ');// Replace Non-word characters
+            if (URL.substr((URL.length - 1), URL.length) == ' ') {
+                URL = URL.substr(0, (URL.length - 1));
+            }
+            return capital_letter(URL);
+        }
+
+        function image_alt(url) {
+            url.trim();
+            var img_alt = url.replace(/\-+/g, '-').replace(/\W+/g, '-');
+            if (img_alt.substr((img_alt.length - 1), img_alt.length) == ' ') {
+                img_alt = img_alt.substr(0, (img_alt.length - 1));
+            }
+            return img_alt.toLowerCase();
+        }
+
+        function image_title(url) {
+            url.trim();
+            var URL = url.replace(/\-+/g, '-').replace(/\W+/g, ' ');
             if (URL.substr((URL.length - 1), URL.length) == ' ') {
                 URL = URL.substr(0, (URL.length - 1));
             }
