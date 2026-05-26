@@ -1,6 +1,5 @@
 <div class="tab-pane fade mt-5" id="header_footer">
     <div class="row g-6 d-flex align-items-center">
-
         {!! setting_image('header logo', 'logo') !!}
         {!! setting_image('footer logo', 'footer_logo') !!}
         {!! setting_image('favicon', 'favicon') !!}
@@ -9,13 +8,20 @@
         <div class="col-md-12">
             <label class="form-label text-capitalize" for="site_loader">
                 <?php echo _label('robots'); ?>
-            </label>
-            <select id="robots" name="settings[robots]" class="form-select select2">
+            </label> <select id="robots" name="settings[robots]" class="form-select select2">
                 <option value="0">-Select option-</option>
-                <option value="INDEX,FOLLOW" {{(get_setting('robots')) == 'INDEX,FOLLOW' ? 'selected' : ''}}>INDEX, FOLLOW</option>
-                <option value="NOINDEX, FOLLOW" {{(get_setting('robots')) == 'NOINDEX, FOLLOW' ? 'selected' : ''}}>NOINDEX, FOLLOW</option>
-                <option value="INDEX, NOFOLLOW" {{(get_setting('robots')) == 'INDEX, NOFOLLOW' ? 'selected' : ''}}>INDEX, NOFOLLOW</option>
-                <option value="NOINDEX, NOFOLLOW" {{(get_setting('robots')) == 'NOINDEX, NOFOLLOW' ? 'selected' : ''}}>NOINDEX, NOFOLLOW</option>
+                <option value="INDEX,FOLLOW" {{(get_setting('robots')) == 'INDEX,FOLLOW' ? 'selected' : ''}}>INDEX,
+                                                                                                             FOLLOW
+                </option>
+                <option value="NOINDEX, FOLLOW" {{(get_setting('robots')) == 'NOINDEX, FOLLOW' ? 'selected' : ''}}>
+                    NOINDEX, FOLLOW
+                </option>
+                <option value="INDEX, NOFOLLOW" {{(get_setting('robots')) == 'INDEX, NOFOLLOW' ? 'selected' : ''}}>
+                    INDEX, NOFOLLOW
+                </option>
+                <option value="NOINDEX, NOFOLLOW" {{(get_setting('robots')) == 'NOINDEX, NOFOLLOW' ? 'selected' : ''}}>
+                    NOINDEX, NOFOLLOW
+                </option>
             </select>
         </div>
         <!-- copyright -->
@@ -31,13 +37,21 @@
         </div>
         <!-- google analytics code -->
         <div class="col-md-12">
+            <label class="form-label text-capitalize" for="footer_about_us">
+                <?php echo _label('footer_about_us'); ?>
+            </label> <textarea class="form-control"
+                               id="footer_about_us"
+                               name="settings[footer_about_us]"
+                               placeholder="Write <?php echo _label('footer_about_us'); ?>" rows="4">{{old('footer_about_us', get_setting('footer_about_us')) }}</textarea>
+        </div>
+        <!-- google analytics code -->
+        <div class="col-md-12">
             <label class="form-label text-capitalize" for="google_analytics_code">
                 <?php echo _label('google_analytics_code'); ?>
-            </label>
-            <textarea class="form-control"
-                       id="google_analytics_code"
-                       name="settings[google_analytics_code]"
-                       placeholder="Write <?php echo _label('google_analytics_code'); ?>" rows="4">{{old('google_analytics_code', get_setting('google_analytics_code')) }}</textarea>
+            </label> <textarea class="form-control"
+                               id="google_analytics_code"
+                               name="settings[google_analytics_code]"
+                               placeholder="Write <?php echo _label('google_analytics_code'); ?>" rows="4">{{old('google_analytics_code', get_setting('google_analytics_code')) }}</textarea>
         </div>
     </div>
 </div>

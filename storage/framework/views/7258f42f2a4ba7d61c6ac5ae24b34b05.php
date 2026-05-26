@@ -54,6 +54,7 @@
                                     <?php
                                         $renameMap = [
                                             'title' => 'Question & Answer',
+                                            'tour_type' => 'Tour Type',
                                             'created_at' => 'Created',
                                         ];
                                     ?>
@@ -80,11 +81,13 @@
                                                 <?php if($col === 'title'): ?>
                                                     <div class="d-flex justify-content-start align-items-center user-name">
                                                         <div class="d-flex flex-column">
-                                                            <a href="javascript:" class="text-heading text-truncate">
-                                                                <span class="fw-medium"><?php echo e(Str::words($data->title, 15, '')); ?></span>
-                                                            </a> <small><?php echo e(Str::words(strip_tags($data->description), 15, '...')); ?></small>
+                                                            <span class="fw-medium"><?php echo e(Str::words($data->title, 15, '')); ?></span>
+                                                            <small><?php echo e(Str::words(strip_tags($data->description), 15, '...')); ?></small>
                                                         </div>
                                                     </div>
+                                                <?php elseif($col === 'tour_type'): ?>
+                                                    <?php echo e($data->tourType?->title ?? ($tourTypeMap[$data->tour_type_id] ?? '—')); ?>
+
                                                 <?php elseif($col === 'ordering'): ?>
                                                     <?php echo e($data->ordering); ?>
 

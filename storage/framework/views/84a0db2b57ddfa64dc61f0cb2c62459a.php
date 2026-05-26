@@ -83,18 +83,10 @@
                                             </select>
                                         </div>
                                         <div class="col-md-4">
-                                            <label class="form-label text-capitalize" for="tour_type_id">
-                                                <span><?php echo e(_label('type')); ?></span>
-                                            </label>
-                                            <select id="tour_type_id" name="tour_type_id" class="form-select select2">
-                                                <option value="">- select tour type -</option>
-                                                <?php $__currentLoopData = $tourTypes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tourType): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                    <option value="<?php echo e($tourType->id); ?>" <?php echo e((int) old('tour_type_id', $data->tour_type_id) === $tourType->id ? 'selected' : ''); ?>>
-                                                        <?php echo e($tourType->displayName()); ?>
-
-                                                    </option>
-                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                            </select>
+                                            <?php echo $__env->make('backend.components.tour-type-select', [
+                                                'tourTypes' => $tourTypes ?? collect(),
+                                                'selected' => old('tour_type_id', $data->tour_type_id) ? [(int) old('tour_type_id', $data->tour_type_id)] : [],
+                                            ], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
                                         </div>
                                         <div class="col-md-4">
                                             <label class="form-label text-capitalize" for="ordering">

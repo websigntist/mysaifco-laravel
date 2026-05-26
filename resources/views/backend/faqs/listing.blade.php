@@ -49,6 +49,7 @@
                                     @php
                                         $renameMap = [
                                             'title' => 'Question & Answer',
+                                            'tour_type' => 'Tour Type',
                                             'created_at' => 'Created',
                                         ];
                                     @endphp
@@ -75,11 +76,12 @@
                                                 @if($col === 'title')
                                                     <div class="d-flex justify-content-start align-items-center user-name">
                                                         <div class="d-flex flex-column">
-                                                            <a href="javascript:" class="text-heading text-truncate">
-                                                                <span class="fw-medium">{{ Str::words($data->title, 15, '') }}</span>
-                                                            </a> <small>{{ Str::words(strip_tags($data->description), 15, '...') }}</small>
+                                                            <span class="fw-medium">{{ Str::words($data->title, 15, '') }}</span>
+                                                            <small>{{ Str::words(strip_tags($data->description), 15, '...') }}</small>
                                                         </div>
                                                     </div>
+                                                @elseif($col === 'tour_type')
+                                                    {{ $data->tourType?->title ?? ($tourTypeMap[$data->tour_type_id] ?? '—') }}
                                                 @elseif($col === 'ordering')
                                                     {{ $data->ordering }}
                                                 @elseif($col === 'status')

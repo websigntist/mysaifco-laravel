@@ -55,9 +55,9 @@
                                 </div>
                                 <div class="bg-gray-50 rounded-xl p-4 border gap-3 border-gray-200 flex item-center justify-start">
                                     <img src="{{asset('assets/images/icons/whatsapp.svg')}}" class="w36" alt="whatsapp">
-                                    <a href="tel:+971505593840">
+                                    <a href="tel:{{ get_setting('tour_inquiry_whatsapp') }}">
                                         <div class="font-heading font-bold italic text-mst text-xl">Tour Inquires <br>
-                                            <span class="text-mst-gray">+971 50 559 3840</span>
+                                            <span class="text-mst-gray">{{ get_setting('tour_inquiry_whatsapp') }}</span>
                                         </div>
                                     </a>
                                     <img src="{{asset('assets/images/icons/line-arrow.svg')}}" class="w36 ml-auto" alt="arrow">

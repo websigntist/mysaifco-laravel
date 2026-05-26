@@ -4,12 +4,12 @@
             <!-- Logo & Description — 2 cols -->
             <div class="md:col-span-2">
                 <a href="{{url('/')}}" class="text-2xl font-bold text-mst-gray py-3">
-                    <img src="{{ asset('assets/images/settings/'.get_setting('footer_logo'))}}" alt="logo" title="brand
-                    logo"> </a>
+                    <img src="{{ asset('assets/images/settings/'.get_setting('footer_logo'))}}"
+                         alt="{{ get_setting('site_title') }}"
+                         title="{{ get_setting('site_title') }}">
+                </a>
                 <p class="text-sm my-3 text-mst-gray leading-6 md:pe-6">
-                    Saifco Travel & Tourism is a leading Dubai-based travel company offering Dubai tours, desert safari,
-                    yacht charters, holiday packages, Umrah services, and global visa assistance with trusted service
-                    and competitive prices.
+                    {{ get_setting('footer_about_us') }}
                 </p>
             </div>
             <!-- Services — 1 col -->
@@ -75,24 +75,26 @@
                         <a href=""><img src="{{asset('assets/images/lk.svg')}}" alt="linkedin"></a>
                     </li>
                 </ul>
-                <p class="text-sm text-body mt-3">Copyright © 2025 Mysaifco.com. All Rights Reserved.</p>
+                <p class="text-sm text-body mt-3">{{ get_setting('copyright_text') }}</p>
             </div>
             <!-- Email -->
             <div class="flex items-center text-sm text-body md:mt-10 gap-3">
-                <img src="{{asset('assets/images/email.svg')}}" class="w-10 shrink-0" alt="email"> <span>info@mysaifco.com</span>
+                <img src="{{asset('assets/images/email.svg')}}" class="w-10 shrink-0" alt="email"> <span>{{
+                get_setting('email') }}</span>
             </div>
             <!-- Address -->
             <div class="flex items-start text-sm text-body  md:mt-12 gap-3 md:-ms-10">
                 <img src="{{asset('assets/images/location.svg')}}" class="w-10 shrink-0 mt-0.5" alt="address">
-                <span class="mt-0">16th Street Shop # 5, Bohra Masjid <br> Road, Ayal Nasir, Deira, Dubai, UAE</span>
+                <span class="mt-0">{{ get_setting('address') }}</span>
+                {{--<span class="mt-0">16th Street Shop # 5, Bohra Masjid <br> Road, Ayal Nasir, Deira, Dubai, UAE</span>--}}
             </div>
             <!-- Phone -->
             <div class="flex items-start text-sm text-body md:mt-10 gap-3">
                 <img src="{{asset('assets/images/phone.svg')}}" class="w-10 shrink-0 mt-2.5" alt="phone">
                 <span class="mt-0">
-                    Office: +971 4 2733868 <br>
-                    Tours: +971 50 5593840 <br>
-                    Umrah: +971 55 6337710
+                    Office: {{ get_setting('mobile_number') }} <br>
+                    Tours: {{ get_setting('tour_inquiry_whatsapp') }} <br>
+                    Umrah: {{ get_setting('umrah_inquiry_whatsapp') }}
                 </span>
             </div>
         </div>

@@ -69,12 +69,6 @@
                                                    name="description"
                                                    placeholder="Write <?php echo e(_label('description')); ?>" rows="5"><?php echo e(old('description')); ?></textarea>
                                     </div>
-                                    <div class="col-md-12">
-                                        <?php echo $__env->make('backend.components.tour-type-select', [
-                                            'tourTypes' => $tourTypes,
-                                            'selected' => old('tour_type_id') ? [(int) old('tour_type_id')] : [],
-                                        ], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
-                                    </div>
                                     <div class="col-md-4">
                                         <label class="form-label text-capitalize" for="status">
                                             <span><?php echo e(_label('status')); ?></span> </label>
@@ -85,13 +79,10 @@
                                         </select>
                                     </div>
                                     <div class="col-md-4">
-                                        <label class="form-label text-capitalize" for="type">
-                                            <span><?php echo e(_label('type')); ?></span> </label>
-                                        <select id="type" name="type" class="form-select select2" required>
-                                            <?php $__currentLoopData = $gettype; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $type): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                <option value="<?php echo e(old($type, $type)); ?>"><?php echo e(ucfirst($type)); ?></option>
-                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                        </select>
+                                        <?php echo $__env->make('backend.components.tour-type-select', [
+                                            'tourTypes' => $tourTypes ?? collect(),
+                                            'selected' => old('tour_type_id') ? [(int) old('tour_type_id')] : [],
+                                        ], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
                                     </div>
                                     <div class="col-md-4">
                                         <label class="form-label text-capitalize" for="ordering">

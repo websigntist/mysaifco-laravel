@@ -35,11 +35,12 @@ class FaqController
         $moduleName = collect($segments)->last();
         $moduleTitle = Str::singular($moduleName);
 
-        $getData = ($this->table)::latest()->get();
+        $getData = ($this->table)::with('tourType')->latest()->get();
         $columns = [
             'image',
             'title',
             'description',
+            'tour_type',
             'status',
             'ordering',
             'created_by',
@@ -60,6 +61,7 @@ class FaqController
             'getData'          => $getData,
             'columns'          => $columns,
             'hiddenColumns'    => $hiddenColumns,
+            'tourTypeMap'      => TourType::pluck('title', 'id'),
             'meta_title'       => "Listing | Admin Panel",
             'meta_keywords'    => '',
             'meta_description' => ''
@@ -96,7 +98,7 @@ class FaqController
             // Validate input
             $validated = $request->validate([
                 'title'        => 'required|string|max:255',
-                'description' => 'required|string|max:255',
+                'description'  => 'required|string',
             ]);
 
             $uploadImage = imageHandling($request, null, 'image', $this->module);
@@ -191,11 +193,10 @@ class FaqController
         // Validate input
         $validated = $request->validate([
             'title'        => 'required|string|max:255',
-            'description' => 'required|string|max:255',
+            'description'  => 'required|string',
         ]);
 
         try {
-            // Find the slider
             $dbdata = ($this->table)::findOrFail($id);
 
             // Initialize data to update
@@ -314,12 +315,13 @@ class FaqController
         $moduleTitle = Str::singular($trashed);
         $moduleName = $segments[count($segments) - 2] ?? null;
 
-        $getData = ($this->table)::onlyTrashed()->latest()->get();
+        $getData = ($this->table)::onlyTrashed()->with('tourType')->latest()->get();
 
         $columns = [
             'image',
             'title',
             'description',
+            'tour_type',
             'status',
             'ordering',
             'created_by',
@@ -328,6 +330,7 @@ class FaqController
         // columns to hide
         $hiddenColumns = [
             'image',
+            'description',
             'ordering',
             'created_by',
         ];
@@ -339,6 +342,7 @@ class FaqController
             'getData'          => $getData,
             'columns'          => $columns,
             'hiddenColumns'    => $hiddenColumns,
+            'tourTypeMap'      => TourType::pluck('title', 'id'),
             'meta_title'       => "Trashed List | Admin Panel",
             'meta_keywords'    => '',
             'meta_description' => ''

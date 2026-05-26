@@ -1,1 +1,0 @@
-<?php /**PATH D:\laragon\www\mysaifco-laravel\resources\views/frontend/components/delivering_precision.blade.php ENDPATH**/ ?>

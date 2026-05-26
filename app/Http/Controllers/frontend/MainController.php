@@ -79,7 +79,7 @@ class MainController
         $tourType = TourType::findActiveBySlug($slug);
 
         if ($tourType) {
-            return view('frontend.all-tours-packages', $this->tourPackagesViewData($tourType));
+            return view('frontend.pages.all-tours-packages', $this->tourPackagesViewData($tourType));
         }
 
         $page = Page::query()

@@ -2,25 +2,25 @@
     <div class="row g-6">
         <!-- landline 1 -->
         <div class="col-md-6">
-            <label class="form-label text-capitalize" for="landline_number">
-                <?php echo _label('landline_number_1'); ?>
+            <label class="form-label text-capitalize" for="umrah_inquiry_whatsapp">
+                <?php echo _label('umrah_inquiry_whatsapp'); ?>
             </label> <input type="text"
-                            id="landline_number"
-                            name="settings[landline_number]"
-                            value="{{old('landline_number', get_setting('landline_number'))}}"
+                            id="umrah_inquiry_whatsapp"
+                            name="settings[umrah_inquiry_whatsapp]"
+                            value="{{old('umrah_inquiry_whatsapp', get_setting('umrah_inquiry_whatsapp'))}}"
                             class="form-control"
-                            placeholder="Enter <?php echo _label('landline_number'); ?>...">
+                            placeholder="Enter <?php echo _label('umrah_inquiry_whatsapp'); ?>...">
         </div>
         <!-- landline 2 -->
         <div class="col-md-6">
-            <label class="form-label text-capitalize" for="landline_number_2">
-                <?php echo _label('landline_number_2'); ?>
+            <label class="form-label text-capitalize" for="tour_inquiry_whatsapp">
+                <?php echo _label('tour_inquiry_whatsapp'); ?>
             </label> <input type="text"
-                            id="landline_number_2"
-                            name="settings[landline_number_2]"
-                            value="{{old('landline_number_2', get_setting('landline_number_2'))}}"
+                            id="tour_inquiry_whatsapp"
+                            name="settings[tour_inquiry_whatsapp]"
+                            value="{{old('tour_inquiry_whatsapp', get_setting('tour_inquiry_whatsapp'))}}"
                             class="form-control"
-                            placeholder="Enter <?php echo _label('landline_number_2'); ?>...">
+                            placeholder="Enter <?php echo _label('tour_inquiry_whatsapp'); ?>...">
         </div>
         <!-- mobile -->
         <div class="col-md-6">
@@ -35,14 +35,14 @@
         </div>
         <!-- whatsapp -->
         <div class="col-md-6">
-            <label class="form-label text-capitalize" for="whatsapp_number">
-                <?php echo _label('whatsapp_number'); ?>
+            <label class="form-label text-capitalize" for="office_whatsapp">
+                <?php echo _label('office_whatsapp'); ?>
             </label> <input type="text"
-                            id="whatsapp_number"
-                            name="settings[whatsapp_number]"
-                            value="{{old('whatsapp_number' ,get_setting('whatsapp_number'))}}"
+                            id="office_whatsapp"
+                            name="settings[office_whatsapp]"
+                            value="{{old('office_whatsapp' ,get_setting('office_whatsapp'))}}"
                             class="form-control"
-                            placeholder="Enter <?php echo _label('whatsapp_number'); ?>...">
+                            placeholder="Enter <?php echo _label('office_whatsapp'); ?>...">
         </div>
         <!-- email -->
         <div class="col-md-6">

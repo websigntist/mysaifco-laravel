@@ -36,20 +36,22 @@ bg-gradient-to-r from-[#ffffff] from-75% to-[#BA9B315F] to-25%">
                 </div>
                 <div class="bg-gray-50 rounded-xl p-4 border border-gray-200 flex gap-4 item-center justify-start">
                     <img src="<?php echo e(asset('assets/images/icons/whatsapp.svg')); ?>" class="w36" alt="whatsapp">
-                    <a href="tel:+971556637710">
+                    <a href="tel:<?php echo e(get_setting('umrah_inquiry_whatsapp')); ?>">
                         <div class="font-heading font-bold italic text-mst text-xl">
                             Umrah Inquires <br> <span class="text-mst-gray">
-                                                    +971 55 663 7710
+                                                    <?php echo e(get_setting('umrah_inquiry_whatsapp')); ?>
+
                                                 </span>
                         </div>
                     </a> <img src="<?php echo e(asset('assets/images/icons/line-arrow.svg')); ?>" class="w36 ml-auto" alt="arrow">
                 </div>
                 <div class="bg-gray-50 rounded-xl p-4 border border-gray-200 flex gap-4 item-center justify-start">
                     <img src="<?php echo e(asset('assets/images/icons/whatsapp.svg')); ?>" class="w36" alt="whatsapp">
-                    <a href="tel:+971505593840">
+                    <a href="tel:<?php echo e(get_setting('tour_inquiry_whatsapp')); ?>">
                         <div class="font-heading font-bold italic text-mst text-xl">
                             Tour Inquires <br> <span class="text-mst-gray">
-                                +971 50559 3840
+                                <?php echo e(get_setting('tour_inquiry_whatsapp')); ?>
+
                             </span>
                         </div>
                     </a> <img src="<?php echo e(asset('assets/images/icons/line-arrow.svg')); ?>" class="w36 ml-auto" alt="arrow">

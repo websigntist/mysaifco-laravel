@@ -78,17 +78,10 @@
                                             </select>
                                         </div>
                                         <div class="col-md-4">
-                                            <label class="form-label text-capitalize" for="tour_type_id">
-                                                <span>{{ _label('type') }}</span>
-                                            </label>
-                                            <select id="tour_type_id" name="tour_type_id" class="form-select select2">
-                                                <option value="">- select tour type -</option>
-                                                @foreach($tourTypes as $tourType)
-                                                    <option value="{{ $tourType->id }}" {{ (int) old('tour_type_id', $data->tour_type_id) === $tourType->id ? 'selected' : '' }}>
-                                                        {{ $tourType->displayName() }}
-                                                    </option>
-                                                @endforeach
-                                            </select>
+                                            @include('backend.components.tour-type-select', [
+                                                'tourTypes' => $tourTypes ?? collect(),
+                                                'selected' => old('tour_type_id', $data->tour_type_id) ? [(int) old('tour_type_id', $data->tour_type_id)] : [],
+                                            ])
                                         </div>
                                         <div class="col-md-4">
                                             <label class="form-label text-capitalize" for="ordering">
