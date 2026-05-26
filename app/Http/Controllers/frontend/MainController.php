@@ -6,6 +6,7 @@ use App\Models\backend\Page;
 use App\Models\backend\Tour;
 use App\Models\backend\TourType;
 use App\Models\backend\Explore;
+use App\Models\backend\Faq;
 use App\Models\backend\PopularSearch;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
@@ -255,6 +256,19 @@ class MainController
                 : (filled($tourType->meta_title) ? $tourType->meta_title : $tourType->title),
             'meta_keywords'    => (string) ($page?->meta_keywords ?? $tourType->meta_keywords ?? ''),
             'meta_description' => (string) ($page?->meta_description ?? $tourType->meta_description ?? ''),
-        ], $this->exploreAndPopularSearchViewData((int) $tourType->id));
+        ], array_merge(
+            $this->exploreAndPopularSearchViewData((int) $tourType->id),
+            $this->faqsForTourTypeViewData((int) $tourType->id)
+        ));
+    }
+
+    /**
+     * FAQs assigned to the current tour type in admin.
+     */
+    protected function faqsForTourTypeViewData(int $tourTypeId): array
+    {
+        return [
+            'faqs' => Faq::activeForTourType($tourTypeId),
+        ];
     }
 }

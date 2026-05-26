@@ -42,4 +42,17 @@ class Faq extends Model
     {
         return $this->belongsTo(TourType::class, 'tour_type_id');
     }
+
+    /**
+     * Active FAQs for a tour-type packages page (e.g. Desert Safari Tour).
+     */
+    public static function activeForTourType(int $tourTypeId)
+    {
+        return static::query()
+            ->where('status', 'Active')
+            ->where('tour_type_id', $tourTypeId)
+            ->orderBy('ordering')
+            ->orderByDesc('id')
+            ->get();
+    }
 }

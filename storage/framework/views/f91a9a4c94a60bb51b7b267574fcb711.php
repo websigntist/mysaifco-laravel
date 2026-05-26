@@ -82,12 +82,15 @@
                     <div class="mx-auto text-center">
                         <?php if($page && ($page->show_title ?? '0') == '1' && filled($page->page_title)): ?>
                             <?php
-                                $words     = explode(' ', $page->page_title);
-                                $mainText  = implode(' ', array_slice($words, 0, -2));
-                                $spanText  = implode(' ', array_slice($words, -2));
+                                $words    = explode(' ', $page->page_title);
+                                $count    = count($words);
+                                $spanN    = $count >= 3 ? 2 : 1;  // 3+ words = last 2, 2 words = last 1
+                                $mainText = implode(' ', array_slice($words, 0, -$spanN));
+                                $spanText = implode(' ', array_slice($words, -$spanN));
                             ?>
+
                             <h1>
-                                <span><?php echo e($mainText); ?>  </span><span class="text-mst"><?php echo e($spanText); ?></span>
+                                <span><?php echo e($mainText); ?> </span><span class="text-mst"><?php echo e($spanText); ?></span>
                             </h1>
                         <?php elseif($tourType && ! $page): ?>
                             <h1>
