@@ -38,7 +38,7 @@ class MainController
             'meta_title'       => $metaTitle,
             'meta_keywords'    => $metaKeywords,
             'meta_description' => $metaDescription,
-        ], $this->exploreAndPopularSearchViewData(null)));
+        ], $this->exploreAndPopularSearchViewData($this->homeTourTypeId())));
     }
 
     public function all_categories()
@@ -61,7 +61,7 @@ class MainController
             'meta_title'       => filled($page?->meta_title) ? $page->meta_title : 'All Tour Categories',
             'meta_keywords'    => (string) ($page?->meta_keywords ?? ''),
             'meta_description' => (string) ($page?->meta_description ?? ''),
-        ], $this->exploreAndPopularSearchViewData(null)));
+        ], $this->exploreAndPopularSearchViewData($this->allCategoriesTourTypeId())));
     }
 
     /**
@@ -93,7 +93,7 @@ class MainController
 
         $viewData = array_merge(
             cms_page_view_data($page),
-            $this->exploreAndPopularSearchViewData(null)
+            $this->exploreAndPopularSearchViewData($this->exploreTourTypeIdForPage($slug, $page))
         );
 
         if (cms_page_description_has_include($page->description)) {
@@ -124,6 +124,62 @@ class MainController
         $viewData['pageContent'] = do_shortcode($page->description);
 
         return view('frontend.pages.default', $viewData);
+    }
+
+    /**
+     * Tour type used for Explore / Popular Searches on the home page (Tour Types → Home, id 9).
+     */
+    protected function homeTourTypeId(): int
+    {
+        $id = TourType::query()
+            ->where('status', 'Active')
+            ->where(function ($query) {
+                $query->where('id', 9)->orWhere('friendly_url', 'home');
+            })
+            ->orderByRaw('id = 9 DESC')
+            ->value('id');
+
+        return (int) ($id ?? 9);
+    }
+
+    /**
+     * Tour type for the all-tour-categories page (Tour Types → All Tour Categories, id 10).
+     */
+    protected function allCategoriesTourTypeId(): int
+    {
+        $id = TourType::query()
+            ->where('status', 'Active')
+            ->where(function ($query) {
+                $query->where('id', 10)
+                    ->orWhere('friendly_url', 'all-tour-categories')
+                    ->orWhere('friendly_url', 'all-categories');
+            })
+            ->orderByRaw('id = 10 DESC')
+            ->value('id');
+
+        return (int) ($id ?? 10);
+    }
+
+    /**
+     * Resolve which tour_type_id drives Explore / Popular Searches for a CMS page slug.
+     */
+    protected function exploreTourTypeIdForPage(string $slug, Page $page): ?int
+    {
+        if ($this->isAllCategoriesPageSlug($slug)) {
+            return $this->allCategoriesTourTypeId();
+        }
+
+        if (cms_page_description_has_include($page->description)
+            && cms_page_first_include_file($page->description) === 'all-categories') {
+            return $this->allCategoriesTourTypeId();
+        }
+
+        return null;
+    }
+
+    protected function isAllCategoriesPageSlug(string $slug): bool
+    {
+        return in_array($slug, ['all-categories', 'all-tour-categories'], true);
     }
 
     /**

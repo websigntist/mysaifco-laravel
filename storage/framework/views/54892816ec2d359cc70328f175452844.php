@@ -31,8 +31,8 @@
             <?php if(filled($popularSearch->title)): ?>
                 <?php
                     $words     = explode(' ', $popularSearch->title);
-                    $mainText  = implode(' ', array_slice($words, 0, -2));
-                    $spanText  = implode(' ', array_slice($words, -2));
+                    $mainText  = implode(' ', array_slice($words, 0, -1));
+                    $spanText  = implode(' ', array_slice($words, -1));
                 ?>
                 <h2 class="font-heading text-2xl font-semibold italic leading-tight tracking-tight text-mst-gray">
                     <span><?php echo e($mainText); ?>  </span><span class="text-mst"><?php echo e($spanText); ?></span>
@@ -60,6 +60,4 @@
         </div>
     <?php endif; ?>
 </section>
-
-
 <?php /**PATH D:\laragon\www\mysaifco-laravel\resources\views/frontend/components/explore_dubai.blade.php ENDPATH**/ ?>

@@ -90,7 +90,6 @@
                     <p class="mt-4">
                         <?php echo $pageContent; ?>
 
-                        
                     </p>
                 </div>
             </div>

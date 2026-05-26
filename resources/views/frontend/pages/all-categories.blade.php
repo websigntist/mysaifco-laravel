@@ -90,12 +90,6 @@
                     @endif
                     <p class="mt-4">
                         {!! $pageContent !!}
-                        {{--Explore the best Dubai tours and activities with a trusted local tour operator. Find top
-                        experiences including Dubai desert safari, Dubai city tours, Dubai Marina yacht tours, dhow
-                        cruise dinner, and full-day Abu Dhabi city tours with Ferrari World and Louvre Museum. Choose
-                        from popular Dubai water activities, theme park tickets, and value Dubai combo tours with hotel
-                        pickup and drop-off, best price guarantee, and 24/7 support. All tours are designed for easy
-                        booking, flexible options, and a smooth travel experience.--}}
                     </p>
                 </div>
             </div>
