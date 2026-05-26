@@ -60,6 +60,18 @@
 
                                     </div>
                                     <div class="col-md-12">
+                                        <label class="form-label text-capitalize" for="description">
+                                            <span><?php echo e(_label('description')); ?></span>
+                                        </label>
+                                        <textarea class="form-control"
+                                                  id="description"
+                                                  name="description"
+                                                  placeholder="Enter <?php echo e(_label('description')); ?>..."
+                                                  rows="4"><?php echo e(old('description', $data->description)); ?></textarea>
+                                        <?php echo error_label('description'); ?>
+
+                                    </div>
+                                    <div class="col-md-12">
                                         <?php echo $__env->make('backend.components.tour-type-select', [
                                             'tourTypes' => $tourTypes,
                                             'selected' => old('tour_type_id', $data->tour_type_id) ? [(int) old('tour_type_id', $data->tour_type_id)] : [],

@@ -13,6 +13,7 @@ class PopularSearch extends Model
 
     protected $fillable = [
         'title',
+        'description',
         'tour_type_id',
         'search_items',
         'created_by',

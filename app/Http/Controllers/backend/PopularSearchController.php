@@ -79,6 +79,7 @@ class PopularSearchController
         if ($request->isMethod('post')) {
             $request->validate([
                 'title'                           => 'required|string|max:255',
+                'description'                     => 'nullable|string',
                 'tour_type_id'                    => 'nullable|exists:tour_types,id',
                 'popular-search-items'            => 'required|array|min:1',
                 'popular-search-items.*.title'    => 'required|string|max:255',
@@ -108,6 +109,7 @@ class PopularSearchController
 
         $dbdata = ($this->table)::create([
             'title'         => $source->title . ' (Copy)',
+            'description'   => $source->description,
             'tour_type_id'  => $source->tour_type_id,
             'search_items'  => $source->search_items,
             'created_by'    => currentUserId(),
@@ -143,6 +145,7 @@ class PopularSearchController
 
         $request->validate([
             'title'                           => 'required|string|max:255',
+            'description'                     => 'nullable|string',
             'tour_type_id'                    => 'nullable|exists:tour_types,id',
             'popular-search-items'            => 'required|array|min:1',
             'popular-search-items.*.title'    => 'required|string|max:255',
@@ -217,6 +220,7 @@ class PopularSearchController
         return response()->json([
             'id'              => $dbdata->id,
             'title'           => $dbdata->title,
+            'description'     => $dbdata->description,
             'tour_type'       => $dbdata->tourType?->title,
             'search_items'    => $terms,
             'created_at'      => $dbdata->created_at ? $dbdata->created_at->format('M d, Y') : null,
@@ -287,6 +291,7 @@ class PopularSearchController
 
         return [
             'title'         => $request->title,
+            'description'   => $request->description,
             'tour_type_id'  => $request->tour_type_id ?: null,
             'search_items'  => $items,
             'created_by'    => currentUserId(),

@@ -207,6 +207,7 @@
                         const rows = `
                             <tr><th>ID</th><td>${data.id ?? '-'}</td></tr>
                             <tr><th>Title</th><td>${data.title ?? '-'}</td></tr>
+                            <tr><th>Description</th><td>${data.description ?? '-'}</td></tr>
                             <tr><th>Tour Type</th><td>${data.tour_type ?? '-'}</td></tr>
                             <tr><th>Search Terms</th><td>${(data.search_items && data.search_items.length) ? data.search_items.join(', ') : '-'}</td></tr>
                             <tr><th>Created At</th><td>${data.created_at ?? '-'}</td></tr>

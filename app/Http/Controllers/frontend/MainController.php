@@ -5,6 +5,8 @@ namespace App\Http\Controllers\frontend;
 use App\Models\backend\Page;
 use App\Models\backend\Tour;
 use App\Models\backend\TourType;
+use App\Models\backend\Explore;
+use App\Models\backend\PopularSearch;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class MainController
@@ -32,11 +34,11 @@ class MainController
             }
         }
 
-        return view('frontend.pages.home', [
+        return view('frontend.pages.home', array_merge([
             'meta_title'       => $metaTitle,
             'meta_keywords'    => $metaKeywords,
             'meta_description' => $metaDescription,
-        ]);
+        ], $this->exploreAndPopularSearchViewData(null)));
     }
 
     public function all_categories()
@@ -51,7 +53,7 @@ class MainController
             ->where('status', 'published')
             ->first();
 
-        return view('frontend.pages.all-categories', [
+        return view('frontend.pages.all-categories', array_merge([
             'tourSections'     => Tour::groupedByTourType($limitPerType),
             'toursPerType'     => $limitPerType,
             'page'             => $page,
@@ -59,7 +61,7 @@ class MainController
             'meta_title'       => filled($page?->meta_title) ? $page->meta_title : 'All Tour Categories',
             'meta_keywords'    => (string) ($page?->meta_keywords ?? ''),
             'meta_description' => (string) ($page?->meta_description ?? ''),
-        ]);
+        ], $this->exploreAndPopularSearchViewData(null)));
     }
 
     /**
@@ -89,7 +91,10 @@ class MainController
             throw new NotFoundHttpException();
         }
 
-        $viewData = cms_page_view_data($page);
+        $viewData = array_merge(
+            cms_page_view_data($page),
+            $this->exploreAndPopularSearchViewData(null)
+        );
 
         if (cms_page_description_has_include($page->description)) {
             $includeFile = cms_page_first_include_file($page->description);
@@ -121,6 +126,44 @@ class MainController
         return view('frontend.pages.default', $viewData);
     }
 
+    /**
+     * Explore block + popular search chips for a tour type (or site-wide when $tourTypeId is null).
+     */
+    protected function exploreAndPopularSearchViewData(?int $tourTypeId = null): array
+    {
+        $exploreQuery = Explore::query()->where('status', 'Active');
+        $popularQuery = PopularSearch::query();
+
+        if ($tourTypeId !== null) {
+            $exploreQuery->where('tour_type_id', $tourTypeId);
+            $popularQuery->where('tour_type_id', $tourTypeId);
+        } else {
+            $exploreQuery->whereNull('tour_type_id');
+            $popularQuery->whereNull('tour_type_id');
+        }
+
+        $explore = $exploreQuery
+            ->orderBy('ordering')
+            ->orderByDesc('id')
+            ->first();
+
+        $popularSearch = $popularQuery
+            ->orderByDesc('id')
+            ->first();
+
+        $popularSearchItems = collect($popularSearch?->search_items ?? [])
+            ->map(fn (array $item) => trim((string) ($item['title'] ?? '')))
+            ->filter()
+            ->values()
+            ->all();
+
+        return [
+            'explore'            => $explore,
+            'popularSearch'      => $popularSearch,
+            'popularSearchItems' => $popularSearchItems,
+        ];
+    }
+
     protected function tourPackagesViewData(TourType $tourType): array
     {
         $slug = (string) ($tourType->friendly_url ?? '');
@@ -144,7 +187,7 @@ class MainController
             $bannerImageUrl = asset('assets/images/tour-types/' . ltrim($tourType->image, '/'));
         }
 
-        return [
+        return array_merge([
             'tourType'         => $tourType,
             'tours'            => Tour::publishedForTourType($tourType->title),
             'page'             => $page,
@@ -156,6 +199,6 @@ class MainController
                 : (filled($tourType->meta_title) ? $tourType->meta_title : $tourType->title),
             'meta_keywords'    => (string) ($page?->meta_keywords ?? $tourType->meta_keywords ?? ''),
             'meta_description' => (string) ($page?->meta_description ?? $tourType->meta_description ?? ''),
-        ];
+        ], $this->exploreAndPopularSearchViewData((int) $tourType->id));
     }
 }

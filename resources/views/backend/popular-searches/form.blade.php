@@ -56,6 +56,17 @@
                                         {!! error_label('title') !!}
                                     </div>
                                     <div class="col-md-12">
+                                        <label class="form-label text-capitalize" for="description">
+                                            <span>{{ _label('description') }}</span>
+                                        </label>
+                                        <textarea class="form-control"
+                                                  id="description"
+                                                  name="description"
+                                                  placeholder="Enter {{ _label('description') }}..."
+                                                  rows="4">{{ old('description') }}</textarea>
+                                        {!! error_label('description') !!}
+                                    </div>
+                                    <div class="col-md-12">
                                         @include('backend.components.tour-type-select', [
                                             'tourTypes' => $tourTypes,
                                             'selected' => old('tour_type_id') ? [(int) old('tour_type_id')] : [],
