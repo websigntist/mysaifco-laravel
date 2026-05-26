@@ -224,7 +224,18 @@
             $('#meta_title').val(meta_title(title));
             $('#image_title').val(image_title(title));
             $('#image_alt').val(image_alt(title));
+            $('#friendly_url').val(friendly_URL(title));
         });
+
+        /*auto written friendly url*/
+        function friendly_URL(url) {
+            url.trim();
+            var URL = url.replace(/\-+/g, '-').replace(/\W+/g, '-');// Replace Non-word characters
+            if (URL.substr((URL.length - 1), URL.length) == '-') {
+                URL = URL.substr(0, (URL.length - 1));
+            }
+            return URL.toLowerCase();
+        }
 
         function meta_title(url) {
             url.trim();
@@ -237,7 +248,7 @@
 
         function image_alt(url) {
             url.trim();
-            var img_alt = url.replace(/\-+/g, '-').replace(/\W+/g, ' ');
+            var img_alt = url.replace(/\-+/g, '-').replace(/\W+/g, '-');
             if (img_alt.substr((img_alt.length - 1), img_alt.length) == ' ') {
                 img_alt = img_alt.substr(0, (img_alt.length - 1));
             }

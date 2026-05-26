@@ -117,14 +117,13 @@
                                <div class="col-md-12">
                                   <textarea name="description" class="form-control" id="editor"></textarea>
                                   <p class="text-muted small mt-2 mb-0">
-                                      Optional shortcode: <code>[include file="bladeFileName"]</code> loads
-                                      <code>resources/views/frontend/pages/yourFile.blade.php</code>
-                                      (use alone in the editor for an explicit full-page template).
-                                      If the shortcode is omitted, the page uses
-                                      <code>frontend/pages/{friendly_url}.blade.php</code> when that file exists;
-                                      otherwise <code>frontend/pages/default.blade.php</code> shows the editor content.
-                                      For inline embeds inside HTML, use
-                                      <code>resources/views/frontend/pages/includes/your-file.blade.php</code>.
+                                      <code>[include file="name"]</code> loads
+                                      <code>resources/views/frontend/pages/name.blade.php</code> together with any
+                                      other editor content (content appears above the included page).
+                                      Editor content only (no shortcode) uses
+                                      <code>frontend/pages/default.blade.php</code>.
+                                      For a small embed inside HTML only, use
+                                      <code>resources/views/frontend/pages/includes/name.blade.php</code>.
                                   </p>
                                </div>
                             </div>
@@ -321,6 +320,8 @@
                 $('#friendly_url').val(friendly_URL(menu_title));
                 $('#meta_title').val(meta_title(menu_title));
                 $('#page_title').val(page_title(menu_title));
+                $('#image_title').val(image_title(menu_title));
+                $('#image_alt').val(image_alt(menu_title));
                 $('#title').val(meta_title(menu_title));
             });
 
@@ -348,6 +349,24 @@
             function meta_title(url) {
                 url.trim();
                 var URL = url.replace(/\-+/g, '-').replace(/\W+/g, ' ');// Replace Non-word characters
+                if (URL.substr((URL.length - 1), URL.length) == ' ') {
+                    URL = URL.substr(0, (URL.length - 1));
+                }
+                return capital_letter(URL);
+            }
+
+            function image_alt(url) {
+                url.trim();
+                var img_alt = url.replace(/\-+/g, '-').replace(/\W+/g, '-');
+                if (img_alt.substr((img_alt.length - 1), img_alt.length) == ' ') {
+                    img_alt = img_alt.substr(0, (img_alt.length - 1));
+                }
+                return img_alt.toLowerCase();
+            }
+
+            function image_title(url) {
+                url.trim();
+                var URL = url.replace(/\-+/g, '-').replace(/\W+/g, ' ');
                 if (URL.substr((URL.length - 1), URL.length) == ' ') {
                     URL = URL.substr(0, (URL.length - 1));
                 }
