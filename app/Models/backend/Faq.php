@@ -46,13 +46,18 @@ class Faq extends Model
     /**
      * Active FAQs for a tour-type packages page (e.g. Desert Safari Tour).
      */
-    public static function activeForTourType(int $tourTypeId)
+    public static function activeForTourType(int $tourTypeId, ?int $limit = null)
     {
-        return static::query()
+        $query = static::query()
             ->where('status', 'Active')
             ->where('tour_type_id', $tourTypeId)
             ->orderBy('ordering')
-            ->orderByDesc('id')
-            ->get();
+            ->orderByDesc('id');
+
+        if ($limit !== null) {
+            $query->limit($limit);
+        }
+
+        return $query->get();
     }
 }

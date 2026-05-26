@@ -39,7 +39,7 @@ class MainController
             'meta_title'       => $metaTitle,
             'meta_keywords'    => $metaKeywords,
             'meta_description' => $metaDescription,
-        ], $this->exploreAndPopularSearchViewData($this->homeTourTypeId())));
+        ], $this->exploreAndPopularSearchViewData($this->homeTourTypeId()), $this->homeFaqsViewData()));
     }
 
     public function all_categories()
@@ -62,7 +62,7 @@ class MainController
             'meta_title'       => filled($page?->meta_title) ? $page->meta_title : 'All Tour Categories',
             'meta_keywords'    => (string) ($page?->meta_keywords ?? ''),
             'meta_description' => (string) ($page?->meta_description ?? ''),
-        ], $this->exploreAndPopularSearchViewData($this->allCategoriesTourTypeId())));
+        ], $this->exploreAndPopularSearchViewData($this->allCategoriesTourTypeId()), $this->allCategoriesFaqsViewData()));
     }
 
     /**
@@ -96,6 +96,10 @@ class MainController
             cms_page_view_data($page),
             $this->exploreAndPopularSearchViewData($this->exploreTourTypeIdForPage($slug, $page))
         );
+
+        if ($this->isAllCategoriesPageSlug($slug)) {
+            $viewData = array_merge($viewData, $this->allCategoriesFaqsViewData());
+        }
 
         if (cms_page_description_has_include($page->description)) {
             $includeFile = cms_page_first_include_file($page->description);
@@ -265,10 +269,28 @@ class MainController
     /**
      * FAQs assigned to the current tour type in admin.
      */
-    protected function faqsForTourTypeViewData(int $tourTypeId): array
+    protected function faqsForTourTypeViewData(int $tourTypeId, ?int $limit = null): array
     {
         return [
-            'faqs' => Faq::activeForTourType($tourTypeId),
+            'faqs' => Faq::activeForTourType($tourTypeId, $limit),
         ];
+    }
+
+    /** Home page: 5 FAQs (tour type id 9) + side image. */
+    protected function homeFaqsViewData(): array
+    {
+        return array_merge(
+            $this->faqsForTourTypeViewData($this->homeTourTypeId(), 5),
+            ['faqImage' => 'city.webp']
+        );
+    }
+
+    /** All categories page: 8 FAQs (tour type id 10) + side image. */
+    protected function allCategoriesFaqsViewData(): array
+    {
+        return array_merge(
+            $this->faqsForTourTypeViewData($this->allCategoriesTourTypeId(), 8),
+            ['faqImage' => 'Intersect.webp']
+        );
     }
 }
