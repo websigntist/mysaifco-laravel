@@ -99,6 +99,21 @@ class MainController
 
         if ($this->isAllCategoriesPageSlug($slug)) {
             $viewData = array_merge($viewData, $this->allCategoriesFaqsViewData());
+
+            $limitPerType = (int) request()->query('limit', 3);
+            if (! in_array($limitPerType, [2, 3, 4, 5, 6], true)) {
+                $limitPerType = 3;
+            }
+
+            $viewData['tourSections'] = Tour::groupedByTourType($limitPerType);
+            $viewData['toursPerType'] = $limitPerType;
+
+            $editorHtml = cms_page_strip_include_shortcodes($page->description);
+            $viewData['pageContent'] = trim($editorHtml) !== ''
+                ? do_shortcode($editorHtml)
+                : null;
+
+            return view('frontend.pages.all-categories', $viewData);
         }
 
         if (cms_page_description_has_include($page->description)) {

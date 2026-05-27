@@ -88,7 +88,7 @@ if (!function_exists('cms_page_render_editor_content')) {
      */
     function cms_page_render_editor_content(?string $description): string
     {
-        return do_shortcode(cms_page_strip_include_shortcodes($description));
+        return do_shortcode($description);
     }
 }
 
@@ -178,10 +178,15 @@ if (!function_exists('shortcode_include_render')) {
         }
 
         if (shortcode_include_is_full_page_view($viewName)) {
-            return shortcode_include_error(
-                $file,
-                'This template is a full page layout. Use only the shortcode as the entire page description (no other HTML), or add resources/views/frontend/pages/includes/' . $file . '.blade.php for inline content.'
-            );
+            $includeView = 'frontend.pages.includes.' . $file;
+            if (View::exists($includeView)) {
+                $viewName = $includeView;
+            } else {
+                return shortcode_include_error(
+                    $file,
+                    'Add resources/views/frontend/pages/includes/' . $file . '.blade.php for [include file="' . $file . '"].'
+                );
+            }
         }
 
         try {

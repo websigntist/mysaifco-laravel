@@ -25,13 +25,4 @@
 
         @include('frontend.pages.partials.cms-content')
     </div>
-
-    @if(!empty($includeFile))
-        <div class="cms-page__include">
-            {!! shortcode_include_render($includeFile, [
-                'page'    => $page,
-                'cmsPage' => $page,
-            ]) !!}
-        </div>
-    @endif
 @endsection
