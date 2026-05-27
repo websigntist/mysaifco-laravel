@@ -182,10 +182,7 @@ if (!function_exists('shortcode_include_render')) {
             if (View::exists($includeView)) {
                 $viewName = $includeView;
             } else {
-                return shortcode_include_error(
-                    $file,
-                    'Add resources/views/frontend/pages/includes/' . $file . '.blade.php for [include file="' . $file . '"].'
-                );
+                $data = array_merge($data, ['asInclude' => true]);
             }
         }
 

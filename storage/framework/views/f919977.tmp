@@ -115,11 +115,13 @@
 
     <?php $slug = request()->segment(1); ?>
 
-    <?php if(in_array($slug, ['about-us', 'contact-us', 'umrah-travel-agency'])): ?>
-        
-    <?php else: ?>
-        <?php echo $__env->make('frontend.components.tour-listing-grid', ['tours' => $tours], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
-    <?php endif; ?>
+                       <?php if($slug === ''): ?>
+                           <?php echo $__env->make('frontend.components.tour-listing-grid', ['tours' => $tours], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+                       <?php elseif($slug === 'all-tour-categories'): ?>
+                           <?php echo $__env->make('frontend.components.tour-listing-grid', ['tours' => $tours], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+                       <?php elseif($slug === 'all-tour-categories'): ?>
+                           <?php echo $__env->make('frontend.components.tour-listing-grid', ['tours' => $tours], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+                       <?php endif; ?>
 
 
     <?php echo $__env->make('frontend.components.testimonials', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>

@@ -1,10 +1,15 @@
-{{-- Inline content for [include file="all-categories"] (same as all-categories.blade.php @section) --}}
-{{--===== top banner ======--}}
+<?php if (! ($asInclude ?? false)): ?>
+
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('frontend.pages.umrah', ['asInclude' => true], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php $__env->stopSection(); ?>
+<?php else: ?>
+
 <section class="flex justify-center items-center border-b-1 border-gray-200">
     <div class="px-4 relative flex min-h-[400px] w-full
         items-center justify-center overflow-hidden">
         <div class="absolute inset-0 scale-105 bg-cover bg-top bg-no-repeat"
-             style="background-image: url('{{ asset('assets/images/sliders/560650.webp') }}')"
+             style="background-image: url('<?php echo e(asset('assets/images/sliders/560650.webp')); ?>')"
              aria-hidden="true"></div>
         <div class="absolute inset-0 bg-gray-950/25" aria-hidden="true"></div>
         <div class="relative z-10 w-full py-14">
@@ -52,13 +57,13 @@
                                 Contact with <span class="text-mst">Us</span>
                             </div>
                             <div class="bg-gray-50 rounded-xl p-4 border gap-3 border-gray-200 flex item-center justify-start">
-                                <img src="{{asset('assets/images/icons/whatsapp.svg')}}" class="w36" alt="whatsapp">
-                                <a href="tel:{{ get_setting('tour_inquiry_whatsapp') }}">
+                                <img src="<?php echo e(asset('assets/images/icons/whatsapp.svg')); ?>" class="w36" alt="whatsapp">
+                                <a href="tel:<?php echo e(get_setting('tour_inquiry_whatsapp')); ?>">
                                     <div class="font-heading font-bold italic text-mst text-xl">Tour Inquires <br>
-                                        <span class="text-mst-gray">{{ get_setting('tour_inquiry_whatsapp') }}</span>
+                                        <span class="text-mst-gray"><?php echo e(get_setting('tour_inquiry_whatsapp')); ?></span>
                                     </div>
                                 </a>
-                                <img src="{{asset('assets/images/icons/line-arrow.svg')}}" class="w36 ml-auto" alt="arrow">
+                                <img src="<?php echo e(asset('assets/images/icons/line-arrow.svg')); ?>" class="w36 ml-auto" alt="arrow">
                             </div>
                         </div>
                     </div>
@@ -68,34 +73,42 @@
     </div>
 </section>
 
-@if(filled($pageContent ?? null) && isset($page))
+<div class="text-5xl font-bold">UMRAH</div>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi asperiores cum dicta distinctio dolorem
+   eaque eos esse eveniet facere iusto laboriosam natus neque nesciunt odit possimus quae quaerat quas, recusandae
+   repellat reprehenderit sequi similique sint unde ut velit veniam! Aspernatur at autem commodi magnam modi natus
+   repellendus sint voluptas?</p>
+
+
+<?php if(filled($pageContent ?? null) && isset($page)): ?>
 <section class="flex justify-center items-center py-8 px-4 md:py-10">
     <div class="container mx-auto">
         <div class="testimonials-section-inner mx-auto max-w-6xl">
             <div class="mx-auto text-center">
-                @if($page->show_title == '1' && filled($page->page_title))
-                @php
+                <?php if($page->show_title == '1' && filled($page->page_title)): ?>
+                <?php
                     $words     = explode(' ', $page->page_title);
                     $mainText  = implode(' ', array_slice($words, 0, -2));
                     $spanText  = implode(' ', array_slice($words, -2));
-                @endphp
+                ?>
                 <h1>
-                    <span>{{ $mainText }}  </span><span class="text-mst">{{ $spanText }}</span>
+                    <span><?php echo e($mainText); ?>  </span><span class="text-mst"><?php echo e($spanText); ?></span>
                 </h1>
-                @endif
+                <?php endif; ?>
                 <p class="mt-4">
-                    {!! $pageContent !!}
+                    <?php echo $pageContent; ?>
+
                 </p>
             </div>
         </div>
     </div>
 </section>
-@endif
+<?php endif; ?>
 
-@foreach($tourSections ?? [] as $section)
-    @include('frontend.components.tour-type-section', ['section' => $section])
-@endforeach
 
-@include('frontend.components.testimonials')
-@include('frontend.components.faqs')
-@include('frontend.components.explore_dubai')
+<?php echo $__env->make('frontend.components.testimonials', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('frontend.components.faqs', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('frontend.components.explore_dubai', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php endif; ?>
+
+<?php echo $__env->make('frontend.layouts.master', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH D:\laragon\www\mysaifco-laravel\resources\views/frontend/pages/umrah.blade.php ENDPATH**/ ?>
