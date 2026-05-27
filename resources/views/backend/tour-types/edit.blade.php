@@ -228,6 +228,16 @@
             $('#friendly_url').val(friendly_URL(title));
         });
 
+        /*auto written friendly url*/
+        function friendly_URL(url) {
+            url.trim();
+            var URL = url.replace(/\-+/g, '-').replace(/\W+/g, '-');// Replace Non-word characters
+            if (URL.substr((URL.length - 1), URL.length) == '-') {
+                URL = URL.substr(0, (URL.length - 1));
+            }
+            return URL.toLowerCase();
+        }
+
         function meta_title(url) {
             url.trim();
             var URL = url.replace(/\-+/g, '-').replace(/\W+/g, ' ');

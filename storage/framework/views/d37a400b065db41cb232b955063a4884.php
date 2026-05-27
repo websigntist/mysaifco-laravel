@@ -236,47 +236,57 @@
 <?php $__env->startPush('script'); ?>
     <script>
         $('#title').bind('keyup blur', function () {
-            var title = $(this).val();
-            $('#meta_title').val(meta_title(title));
-            $('#image_title').val(image_title(title));
-            $('#image_alt').val(image_alt(title));
-            $('#friendly_url').val(friendly_URL(title));
-        });
+                    var title = $(this).val();
+                    $('#meta_title').val(meta_title(title));
+                    $('#image_title').val(image_title(title));
+                    $('#image_alt').val(image_alt(title));
+                    $('#friendly_url').val(friendly_URL(title));
+                });
 
-        function meta_title(url) {
-            url.trim();
-            var URL = url.replace(/\-+/g, '-').replace(/\W+/g, ' ');
-            if (URL.substr((URL.length - 1), URL.length) == ' ') {
-                URL = URL.substr(0, (URL.length - 1));
-            }
-            return capital_letter(URL);
-        }
+                /*auto written friendly url*/
+                function friendly_URL(url) {
+                    url.trim();
+                    var URL = url.replace(/\-+/g, '-').replace(/\W+/g, '-');// Replace Non-word characters
+                    if (URL.substr((URL.length - 1), URL.length) == '-') {
+                        URL = URL.substr(0, (URL.length - 1));
+                    }
+                    return URL.toLowerCase();
+                }
 
-        function image_alt(url) {
-            url.trim();
-            var img_alt = url.replace(/\-+/g, '-').replace(/\W+/g, '-');
-            if (img_alt.substr((img_alt.length - 1), img_alt.length) == ' ') {
-                img_alt = img_alt.substr(0, (img_alt.length - 1));
-            }
-            return img_alt.toLowerCase();
-        }
+                function meta_title(url) {
+                    url.trim();
+                    var URL = url.replace(/\-+/g, '-').replace(/\W+/g, ' ');
+                    if (URL.substr((URL.length - 1), URL.length) == ' ') {
+                        URL = URL.substr(0, (URL.length - 1));
+                    }
+                    return capital_letter(URL);
+                }
 
-        function image_title(url) {
-            url.trim();
-            var URL = url.replace(/\-+/g, '-').replace(/\W+/g, ' ');
-            if (URL.substr((URL.length - 1), URL.length) == ' ') {
-                URL = URL.substr(0, (URL.length - 1));
-            }
-            return capital_letter(URL);
-        }
+                function image_alt(url) {
+                    url.trim();
+                    var img_alt = url.replace(/\-+/g, '-').replace(/\W+/g, '-');
+                    if (img_alt.substr((img_alt.length - 1), img_alt.length) == ' ') {
+                        img_alt = img_alt.substr(0, (img_alt.length - 1));
+                    }
+                    return img_alt.toLowerCase();
+                }
 
-        function capital_letter(str) {
-            str = str.split(" ");
-            for (var i = 0, x = str.length; i < x; i++) {
-                str[i] = str[i][0].toUpperCase() + str[i].substr(1);
-            }
-            return str.join(" ");
-        }
+                function image_title(url) {
+                    url.trim();
+                    var URL = url.replace(/\-+/g, '-').replace(/\W+/g, ' ');
+                    if (URL.substr((URL.length - 1), URL.length) == ' ') {
+                        URL = URL.substr(0, (URL.length - 1));
+                    }
+                    return capital_letter(URL);
+                }
+
+                function capital_letter(str) {
+                    str = str.split(" ");
+                    for (var i = 0, x = str.length; i < x; i++) {
+                        str[i] = str[i][0].toUpperCase() + str[i].substr(1);
+                    }
+                    return str.join(" ");
+                }
     </script>
     <script src="<?php echo e(asset('assets/backend/js/select2.js')); ?>"></script>
     <script src="<?php echo e(asset('assets/backend/js/form-layouts.js')); ?>"></script>
