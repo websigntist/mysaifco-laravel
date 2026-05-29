@@ -14,24 +14,21 @@ class MainController
 {
     public function index()
     {
-        $metaTitle = (string) (get_setting('site_title') ?? '');
-        $metaKeywords = (string) (get_setting('site_keywords') ?? '');
-        $metaDescription = (string) (get_setting('site_description') ?? '');
+        $metaTitle = (string)(get_setting('site_title') ?? '');
+        $metaKeywords = (string)(get_setting('site_keywords') ?? '');
+        $metaDescription = (string)(get_setting('site_description') ?? '');
 
-        $homePage = Page::query()
-            ->where('friendly_url', 'home')
-            ->where('status', 'published')
-            ->first();
+        $homePage = Page::query()->where('friendly_url', 'home')->where('status', 'published')->first();
 
         if ($homePage) {
             if (filled($homePage->meta_title)) {
-                $metaTitle = (string) $homePage->meta_title;
+                $metaTitle = (string)$homePage->meta_title;
             }
             if (filled($homePage->meta_keywords)) {
-                $metaKeywords = (string) $homePage->meta_keywords;
+                $metaKeywords = (string)$homePage->meta_keywords;
             }
             if (filled($homePage->meta_description)) {
-                $metaDescription = (string) $homePage->meta_description;
+                $metaDescription = (string)$homePage->meta_description;
             }
         }
 
@@ -44,15 +41,18 @@ class MainController
 
     public function all_categories()
     {
-        $limitPerType = (int) request()->query('limit', 3);
-        if (! in_array($limitPerType, [2, 3, 4, 5, 6], true)) {
+        $limitPerType = (int)request()->query('limit', 3);
+        if (!in_array($limitPerType, [
+            2,
+            3,
+            4,
+            5,
+            6
+        ], true)) {
             $limitPerType = 3;
         }
 
-        $page = Page::query()
-            ->where('friendly_url', 'all-categories')
-            ->where('status', 'published')
-            ->first();
+        $page = Page::query()->where('friendly_url', 'all-categories')->where('status', 'published')->first();
 
         return view('frontend.pages.all-categories', array_merge([
             'tourSections'     => Tour::groupedByTourType($limitPerType),
@@ -60,8 +60,8 @@ class MainController
             'page'             => $page,
             'pageContent'      => $page?->description,
             'meta_title'       => filled($page?->meta_title) ? $page->meta_title : 'All Tour Categories',
-            'meta_keywords'    => (string) ($page?->meta_keywords ?? ''),
-            'meta_description' => (string) ($page?->meta_description ?? ''),
+            'meta_keywords'    => (string)($page?->meta_keywords ?? ''),
+            'meta_description' => (string)($page?->meta_description ?? ''),
         ], $this->exploreAndPopularSearchViewData($this->allCategoriesTourTypeId()), $this->allCategoriesFaqsViewData()));
     }
 
@@ -71,7 +71,13 @@ class MainController
      */
     public function show(string $slug)
     {
-        $reserved = ['admin', 'api', 'send', 'clearall', 'update-pass'];
+        $reserved = [
+            'admin',
+            'api',
+            'send',
+            'clearall',
+            'update-pass'
+        ];
 
         if (in_array(strtolower($slug), $reserved, true)) {
             throw new NotFoundHttpException();
@@ -83,25 +89,25 @@ class MainController
             return view('frontend.pages.all-tours-packages', $this->tourPackagesViewData($tourType));
         }
 
-        $page = Page::query()
-            ->where('friendly_url', $slug)
-            ->where('status', 'published')
-            ->first();
+        $page = Page::query()->where('friendly_url', $slug)->where('status', 'published')->first();
 
-        if (! $page) {
+        if (!$page) {
             throw new NotFoundHttpException();
         }
 
-        $viewData = array_merge(
-            cms_page_view_data($page),
-            $this->exploreAndPopularSearchViewData($this->exploreTourTypeIdForPage($slug, $page))
-        );
+        $viewData = array_merge(cms_page_view_data($page), $this->exploreAndPopularSearchViewData($this->exploreTourTypeIdForPage($slug, $page)));
 
         if ($this->isAllCategoriesPageSlug($slug)) {
             $viewData = array_merge($viewData, $this->allCategoriesFaqsViewData());
 
-            $limitPerType = (int) request()->query('limit', 3);
-            if (! in_array($limitPerType, [2, 3, 4, 5, 6], true)) {
+            $limitPerType = (int)request()->query('limit', 3);
+            if (!in_array($limitPerType, [
+                2,
+                3,
+                4,
+                5,
+                6
+            ], true)) {
                 $limitPerType = 3;
             }
 
@@ -109,9 +115,7 @@ class MainController
             $viewData['toursPerType'] = $limitPerType;
 
             $editorHtml = cms_page_strip_include_shortcodes($page->description);
-            $viewData['pageContent'] = trim($editorHtml) !== ''
-                ? do_shortcode($editorHtml)
-                : null;
+            $viewData['pageContent'] = trim($editorHtml) !== '' ? do_shortcode($editorHtml) : null;
 
             return view('frontend.pages.all-categories', $viewData);
         }
@@ -121,14 +125,18 @@ class MainController
             $viewData['pageContent'] = cms_page_render_editor_content($page->description);
             $viewData['includeFile'] = $includeFile;
 
-            $viewName = $includeFile !== null
-                ? shortcode_include_view_name($includeFile)
-                : null;
+            $viewName = $includeFile !== null ? shortcode_include_view_name($includeFile) : null;
 
             if ($viewName !== null && shortcode_include_is_full_page_view($viewName)) {
                 if ($includeFile === 'all-categories') {
-                    $limitPerType = (int) request()->query('limit', 3);
-                    if (! in_array($limitPerType, [2, 3, 4, 5, 6], true)) {
+                    $limitPerType = (int)request()->query('limit', 3);
+                    if (!in_array($limitPerType, [
+                        2,
+                        3,
+                        4,
+                        5,
+                        6
+                    ], true)) {
                         $limitPerType = 3;
                     }
                     $viewData['tourSections'] = Tour::groupedByTourType($limitPerType);
@@ -151,15 +159,11 @@ class MainController
      */
     protected function homeTourTypeId(): int
     {
-        $id = TourType::query()
-            ->where('status', 'Active')
-            ->where(function ($query) {
+        $id = TourType::query()->where('status', 'Active')->where(function ($query) {
                 $query->where('id', 9)->orWhere('friendly_url', 'home');
-            })
-            ->orderByRaw('id = 9 DESC')
-            ->value('id');
+            })->orderByRaw('id = 9 DESC')->value('id');
 
-        return (int) ($id ?? 9);
+        return (int)($id ?? 9);
     }
 
     /**
@@ -167,17 +171,11 @@ class MainController
      */
     protected function allCategoriesTourTypeId(): int
     {
-        $id = TourType::query()
-            ->where('status', 'Active')
-            ->where(function ($query) {
-                $query->where('id', 10)
-                    ->orWhere('friendly_url', 'all-tour-categories')
-                    ->orWhere('friendly_url', 'all-categories');
-            })
-            ->orderByRaw('id = 10 DESC')
-            ->value('id');
+        $id = TourType::query()->where('status', 'Active')->where(function ($query) {
+                $query->where('id', 10)->orWhere('friendly_url', 'all-tour-categories')->orWhere('friendly_url', 'all-categories');
+            })->orderByRaw('id = 10 DESC')->value('id');
 
-        return (int) ($id ?? 10);
+        return (int)($id ?? 10);
     }
 
     /**
@@ -189,8 +187,7 @@ class MainController
             return $this->allCategoriesTourTypeId();
         }
 
-        if (cms_page_description_has_include($page->description)
-            && cms_page_first_include_file($page->description) === 'all-categories') {
+        if (cms_page_description_has_include($page->description) && cms_page_first_include_file($page->description) === 'all-categories') {
             return $this->allCategoriesTourTypeId();
         }
 
@@ -199,7 +196,10 @@ class MainController
 
     protected function isAllCategoriesPageSlug(string $slug): bool
     {
-        return in_array($slug, ['all-categories', 'all-tour-categories'], true);
+        return in_array($slug, [
+            'all-categories',
+            'all-tour-categories'
+        ], true);
     }
 
     /**
@@ -218,20 +218,11 @@ class MainController
             $popularQuery->whereNull('tour_type_id');
         }
 
-        $explore = $exploreQuery
-            ->orderBy('ordering')
-            ->orderByDesc('id')
-            ->first();
+        $explore = $exploreQuery->orderBy('ordering')->orderByDesc('id')->first();
 
-        $popularSearch = $popularQuery
-            ->orderByDesc('id')
-            ->first();
+        $popularSearch = $popularQuery->orderByDesc('id')->first();
 
-        $popularSearchItems = collect($popularSearch?->search_items ?? [])
-            ->map(fn (array $item) => trim((string) ($item['title'] ?? '')))
-            ->filter()
-            ->values()
-            ->all();
+        $popularSearchItems = collect($popularSearch?->search_items ?? [])->map(fn(array $item) => trim((string)($item['title'] ?? '')))->filter()->values()->all();
 
         return [
             'explore'            => $explore,
@@ -242,16 +233,14 @@ class MainController
 
     protected function tourPackagesViewData(TourType $tourType): array
     {
-        $slug = (string) ($tourType->friendly_url ?? '');
+        $slug = (string)($tourType->friendly_url ?? '');
 
-        $page = $slug !== ''
-            ? Page::query()->where('friendly_url', $slug)->where('status', 'published')->first()
-            : null;
+        $page = $slug !== '' ? Page::query()->where('friendly_url', $slug)->where('status', 'published')->first() : null;
 
         $pageContent = null;
         if ($page && filled($page->description)) {
             $pageContent = cms_page_render_editor_content($page->description);
-            if (trim(strip_tags((string) $pageContent)) === '') {
+            if (trim(strip_tags((string)$pageContent)) === '') {
                 $pageContent = null;
             }
         }
@@ -270,15 +259,10 @@ class MainController
             'pageContent'      => $pageContent,
             'bannerImageUrl'   => $bannerImageUrl,
             'pageSlug'         => $slug,
-            'meta_title'       => filled($page?->meta_title)
-                ? $page->meta_title
-                : (filled($tourType->meta_title) ? $tourType->meta_title : $tourType->title),
-            'meta_keywords'    => (string) ($page?->meta_keywords ?? $tourType->meta_keywords ?? ''),
-            'meta_description' => (string) ($page?->meta_description ?? $tourType->meta_description ?? ''),
-        ], array_merge(
-            $this->exploreAndPopularSearchViewData((int) $tourType->id),
-            $this->faqsForTourTypeViewData((int) $tourType->id)
-        ));
+            'meta_title'       => filled($page?->meta_title) ? $page->meta_title : (filled($tourType->meta_title) ? $tourType->meta_title : $tourType->title),
+            'meta_keywords'    => (string)($page?->meta_keywords ?? $tourType->meta_keywords ?? ''),
+            'meta_description' => (string)($page?->meta_description ?? $tourType->meta_description ?? ''),
+        ], array_merge($this->exploreAndPopularSearchViewData((int)$tourType->id), $this->faqsForTourTypeViewData((int)$tourType->id)));
     }
 
     /**
@@ -294,18 +278,15 @@ class MainController
     /** Home page: 5 FAQs (tour type id 9) + side image. */
     protected function homeFaqsViewData(): array
     {
-        return array_merge(
-            $this->faqsForTourTypeViewData($this->homeTourTypeId(), 5),
-            ['faqImage' => 'city.webp']
-        );
+        return array_merge($this->faqsForTourTypeViewData($this->homeTourTypeId(), 5), ['faqImage' => 'city.webp']);
     }
 
     /** All categories page: 8 FAQs (tour type id 10) + side image. */
     protected function allCategoriesFaqsViewData(): array
     {
-        return array_merge(
-            $this->faqsForTourTypeViewData($this->allCategoriesTourTypeId(), 8),
-            ['faqImage' => 'Intersect.webp']
-        );
+        return array_merge($this->faqsForTourTypeViewData($this->allCategoriesTourTypeId(), 8), ['faqImage' => 'Intersect.webp']);
     }
+
+    public function showPage(string $slug) {}
+
 }
