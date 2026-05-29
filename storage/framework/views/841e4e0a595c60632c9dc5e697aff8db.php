@@ -54,7 +54,7 @@
                     </article>
                 </div>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
-                <p class="col-span-full py-12 text-center text-gray-600">No tour packages found for this category.</p>
+                
             <?php endif; ?>
         </div>
     </div>

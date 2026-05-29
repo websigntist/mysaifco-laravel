@@ -51,7 +51,7 @@
                     </article>
                 </div>
             @empty
-                <p class="col-span-full py-12 text-center text-gray-600">No tour packages found for this category.</p>
+                {{--<p class="col-span-full py-12 text-center text-gray-600">No tour packages found for this category.</p>--}}
             @endforelse
         </div>
     </div>
