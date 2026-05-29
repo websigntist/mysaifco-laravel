@@ -7,12 +7,12 @@
     $viewAllTours = Str::slug($tourType->title . ' tours');
 @endphp
 @if($tourType && $tours->isNotEmpty())
-    <section class="justify-center items-center bg-white py-8 px-4 md:py-6">
-        <div class="container mx-auto">
+    <section class="justify-center items-center py-8">
+        <div class="-container mx-auto">
             <div class="our-popular-inner">
                 <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between md:gap-8">
                     <div class="min-w-0 flex-1">
-                        <h1>
+                        <h1 class="text-left">
                             @if($mainText !== '')
                                 <span>{{ $mainText }} </span><span class="text-mst">{{ $accentText }}</span>
                             @else
@@ -20,7 +20,7 @@
                             @endif
                         </h1>
                         @if(filled($tourType->short_description))
-                            <p class="mt-4 pe-20">{{ $tourType->short_description }}</p>
+                            <p class="text-left mt-4 pe-20">{{ $tourType->short_description }}</p>
                         @endif
                     </div>
                     <div class="flex shrink-0 md:pt-1">

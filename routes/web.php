@@ -691,8 +691,12 @@ Route::middleware(['frontend', 'maintenance'])->group(function () {
     Route::match(['get', 'post'], '/send', [frontend\InquiriesController::class, 'index'])->name('send');
 
     // CMS pages by slug (must be last — e.g. /uae-tour)
-    Route::get('/{slug}', [frontend\MainController::class, 'show'])
+    /*Route::get('/{slug}', [frontend\MainController::class, 'show'])
         ->where('slug', '[a-zA-Z0-9\-]+')
-        ->name('page.show');
+        ->name('page.show');*/
+
+    Route::get('/{slug}', [frontend\MainController::class, 'showPage'])
+            ->where('slug', '[a-zA-Z0-9\-]+')
+            ->name('page.default-page');
 });
 

@@ -3,22 +3,31 @@
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\View;
 
+if (!function_exists('shortcode_include_pattern')) {
+    function shortcode_include_pattern(): string
+    {
+        return '/\[(?:include\s+file|include_file)=(["\'])([a-zA-Z0-9_-]+)\1(?:\s[^\]]*)?\]/i';
+    }
+}
+
 if (!function_exists('do_shortcode')) {
     /**
      * Process shortcodes in CMS HTML (pages, static blocks, etc.).
      *
-     * Supported: [include file="all-categories"]
+     * Supported:
+     * - [include file="filename"]
+     * - [include_file="filename"]
      */
-    function do_shortcode(?string $content): string
+    function do_shortcode(?string $content, array $data = []): string
     {
         if ($content === null || $content === '') {
             return '';
         }
 
         return (string) preg_replace_callback(
-            '/\[include\s+file=(["\'])([a-zA-Z0-9_-]+)\1(?:\s[^\]]*)?\]/i',
-            static function (array $matches): string {
-                return shortcode_include_render($matches[2]);
+            shortcode_include_pattern(),
+            static function (array $matches) use ($data): string {
+                return shortcode_include_render($matches[2], $data);
             },
             $content
         );
@@ -35,10 +44,7 @@ if (!function_exists('cms_page_description_has_include')) {
             return false;
         }
 
-        return (bool) preg_match(
-            '/\[include\s+file=(["\'])[a-zA-Z0-9_-]+\1(?:\s[^\]]*)?\]/i',
-            $description
-        );
+        return (bool) preg_match(shortcode_include_pattern(), $description);
     }
 }
 
@@ -52,11 +58,7 @@ if (!function_exists('cms_page_first_include_file')) {
             return null;
         }
 
-        if (preg_match(
-            '/\[include\s+file=(["\'])([a-zA-Z0-9_-]+)\1(?:\s[^\]]*)?\]/i',
-            $description,
-            $matches
-        )) {
+        if (preg_match(shortcode_include_pattern(), $description, $matches)) {
             return shortcode_sanitize_file_slug($matches[2]);
         }
 
@@ -74,11 +76,7 @@ if (!function_exists('cms_page_strip_include_shortcodes')) {
             return '';
         }
 
-        return trim((string) preg_replace(
-            '/\[include\s+file=(["\'])[a-zA-Z0-9_-]+\1(?:\s[^\]]*)?\]/i',
-            '',
-            $description
-        ));
+        return trim((string) preg_replace(shortcode_include_pattern(), '', $description));
     }
 }
 
@@ -86,9 +84,9 @@ if (!function_exists('cms_page_render_editor_content')) {
     /**
      * Process editor HTML only (excludes include shortcodes).
      */
-    function cms_page_render_editor_content(?string $description): string
+    function cms_page_render_editor_content(?string $description, array $data = []): string
     {
-        return do_shortcode($description);
+        return do_shortcode($description, $data);
     }
 }
 
@@ -104,11 +102,13 @@ if (!function_exists('cms_page_includes_only_file')) {
 
         $plain = trim(strip_tags($description));
 
-        if (preg_match('/^\[include\s+file=(["\'])([a-zA-Z0-9_-]+)\1\]\s*$/i', $plain, $matches)) {
+        $onlyPattern = '/^\[(?:include\s+file|include_file)=(["\'])([a-zA-Z0-9_-]+)\1\]\s*$/i';
+
+        if (preg_match($onlyPattern, $plain, $matches)) {
             return shortcode_sanitize_file_slug($matches[2]);
         }
 
-        if (preg_match('/^\[include\s+file=(["\'])([a-zA-Z0-9_-]+)\1\]\s*$/i', trim($description), $matches)) {
+        if (preg_match($onlyPattern, trim($description), $matches)) {
             return shortcode_sanitize_file_slug($matches[2]);
         }
 

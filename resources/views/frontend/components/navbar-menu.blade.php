@@ -3,10 +3,10 @@
         <a href="{{route('/')}}" class="block py-2.5 px-4 md:py-2 md:px-3" aria-current="page">Home</a>
     </li>
     <li class="block text-mst-gray transition duration-300 hover:rounded-full hover:bg-gradient-to-r hover:from-[#BA9B31] hover:to-[#74611E] hover:text-white">
-        <a href="{{route('page.show','all-tour-categories')}}" class="block py-2.5 px-4 md:py-2 md:px-3">UAE Tour</a>
+        <a href="{{route('page.default-page','all-tour-categories')}}" class="block py-2.5 px-4 md:py-2 md:px-3">UAE Tour</a>
     </li>
     <li class="block text-mst-gray transition duration-300 hover:rounded-full hover:bg-gradient-to-r hover:from-[#BA9B31] hover:to-[#74611E] hover:text-white">
-        <a href="{{ route('page.show', 'desert-safari-tour') }}" class="block py-2.5 px-4 md:py-2 md:px-3">Desert Safari</a>
+        <a href="{{ route('page.default-page', 'desert-safari-tour') }}" class="block py-2.5 px-4 md:py-2 md:px-3">Desert Safari</a>
     </li>
     <li class="block text-mst-gray transition duration-300 hover:rounded-full hover:bg-gradient-to-r hover:from-[#BA9B31] hover:to-[#74611E] hover:text-white">
         <a href="#" class="block py-2.5 px-4 md:py-2 md:px-3">Holiday Packages</a>

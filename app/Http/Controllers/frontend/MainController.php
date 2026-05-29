@@ -69,7 +69,7 @@ class MainController
      * CMS page or tour-type packages page (single template) by URL slug.
      * e.g. /desert-safari-tours → all tours for tour type with friendly_url desert-safari-tours
      */
-    public function show(string $slug)
+    /*public function show(string $slug)
     {
         $reserved = [
             'admin',
@@ -152,7 +152,7 @@ class MainController
         $viewData['pageContent'] = do_shortcode($page->description);
 
         return view('frontend.pages.default', $viewData);
-    }
+    }*/
 
     /**
      * Tour type used for Explore / Popular Searches on the home page (Tour Types → Home, id 9).
@@ -287,6 +287,57 @@ class MainController
         return array_merge($this->faqsForTourTypeViewData($this->allCategoriesTourTypeId(), 8), ['faqImage' => 'Intersect.webp']);
     }
 
-    public function showPage(string $slug) {}
+    /**
+     * CMS page by friendly_url with [include_file="filename"] shortcode support.
+     * Loads resources/views/frontend/pages/{filename}.blade.php into page content.
+     */
+    public function showPage(string $slug)
+    {
+        $reserved = [
+            'admin',
+            'api',
+            'send',
+            'clearall',
+            'update-pass',
+        ];
+
+        if (in_array(strtolower($slug), $reserved, true)) {
+            throw new NotFoundHttpException();
+        }
+
+        $page = Page::query()
+            ->where('friendly_url', $slug)
+            ->where('status', 'published')
+            ->first();
+
+        if (! $page) {
+            throw new NotFoundHttpException();
+        }
+
+        $viewData = array_merge(
+            cms_page_view_data($page),
+            $this->exploreAndPopularSearchViewData($this->exploreTourTypeIdForPage($slug, $page))
+        );
+
+        $description = (string) ($page->description ?? '');
+        $includeFile = cms_page_first_include_file($description);
+
+        if ($this->isAllCategoriesPageSlug($slug) || $includeFile === 'all-categories') {
+            $limitPerType = (int) request()->query('limit', 3);
+            if (! in_array($limitPerType, [2, 3, 4, 5, 6], true)) {
+                $limitPerType = 3;
+            }
+            $viewData = array_merge($viewData, $this->allCategoriesFaqsViewData(), [
+                'tourSections' => Tour::groupedByTourType($limitPerType),
+                'toursPerType' => $limitPerType,
+            ]);
+        }
+
+        $pageContent = do_shortcode($description, $viewData);
+        $pageContent = trim($pageContent);
+        $viewData['pageContent'] = $pageContent !== '' ? $pageContent : null;
+
+        return view('frontend.pages.default', $viewData);
+    }
 
 }
