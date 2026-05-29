@@ -23,7 +23,7 @@
                             <?php endif; ?>
                         </a>
                         <div class="flex flex-1 flex-col p-4">
-                            <h2 class="line-clamp-2">
+                            <h2 class="line-clamp-2 text-left">
                                 <a href="<?php echo e($tour->frontendUrl()); ?>"
                                    class="hover:text-mst transition ease-in-out duration-500 line-clamp-1 mb-4">
                                     <?php echo e($tour->title); ?>
@@ -31,13 +31,13 @@
                                 </a>
                             </h2>
                             <?php if(filled($tour->tour_duration)): ?>
-                                <div class="mt-2 text-xs text-gray-700 font-heading">
+                                <div class="mt-2 text-xs text-gray-700 font-heading text-left">
                                     <span class="text-amber-400">&#9733;</span>4.9/5  |  5.1k Reviews  | 3 Hours 
                                 </div>
                             <?php endif; ?>
                             <div class="mt-auto flex items-end justify-between gap-3 pt-4">
                                 <div>
-                                    <p class="text-xs text-fine -mb-1">Starting</p>
+                                    <p class="text-xs text-fine -mb-1 text-left">Starting</p>
                                     <p class="font-heading text-xl font-bold text-mst-gray">
                                         AED <?php echo e(number_format((float) $tour->price, 0)); ?>
 

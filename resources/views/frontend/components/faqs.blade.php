@@ -47,11 +47,12 @@
                 <div class="flex justify-end">
                     @php $slug = request()->segment(1); @endphp
 
-                    @if($slug === '')
+
+                    @if($slug == '')
                         <img src="{{ asset('assets/images/faq-img.webp') }}"
                              alt="Frequently asked questions"
                              class="max-w-full h-auto">
-                    @elseif($slug === 'all-tour-categories')
+                    @elseif($slug == 'all-tour-categories')
                         <img src="{{ asset('assets/images/Intersect.webp') }}"
                              alt="Frequently asked questions"
                              class="max-w-full h-auto">

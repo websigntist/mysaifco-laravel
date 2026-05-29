@@ -11,15 +11,13 @@
                     smooth journeys, and unforgettable experiences.
                 </p>
             </div>
-
             <div class="customer_reviews mt-10 md:mt-14">
                 <div class="testimonials-swiper-wrap">
                     <div class="flex items-stretch gap-3 sm:gap-4 md:items-center">
                         <div
                             class="swiper testimonials-swiper min-w-0 flex-1 py-1"
                             id="testimonials-swiper"
-                            aria-roledescription="carousel"
-                        >
+                            aria-roledescription="carousel">
                             <div class="swiper-wrapper">
                                 @forelse ($testimonialItems ?? [] as $t)
                                     <div class="swiper-slide !h-auto">
@@ -59,13 +57,11 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="mt-10">
                         <a href="#"
                            class="flex items-center justify-center w-32 text-white text-lg px-2 py-2 rounded-full mx-auto bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
                             View All
-                            <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}" class="w-6 ms-1" alt="">
-                        </a>
+                            <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}" class="w-6 ms-1" alt=""> </a>
                     </div>
                 </div>
             </div>

@@ -47,11 +47,12 @@
                 <div class="flex justify-end">
                     <?php $slug = request()->segment(1); ?>
 
-                    <?php if($slug === ''): ?>
+
+                    <?php if($slug == ''): ?>
                         <img src="<?php echo e(asset('assets/images/faq-img.webp')); ?>"
                              alt="Frequently asked questions"
                              class="max-w-full h-auto">
-                    <?php elseif($slug === 'all-tour-categories'): ?>
+                    <?php elseif($slug == 'all-tour-categories'): ?>
                         <img src="<?php echo e(asset('assets/images/Intersect.webp')); ?>"
                              alt="Frequently asked questions"
                              class="max-w-full h-auto">

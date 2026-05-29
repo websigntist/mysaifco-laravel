@@ -4,6 +4,7 @@
     $popularSearchItems = $popularSearchItems ?? [];
 @endphp
 <section class="py-14">
+
     @if($explore && (filled($explore->title) || filled($explore->description)))
         <div class="container mx-auto">
             @if(filled($explore->title))
@@ -13,7 +14,7 @@
                     $spanText  = implode(' ', array_slice($words, -2));    // last 2 words
                 @endphp
 
-                <h2 class="font-heading text-2xl font-semibold italic leading-tight tracking-tight text-mst-gray">
+                <h2 class="text-left font-heading text-2xl font-semibold italic leading-tight tracking-tight text-mst-gray">
                     <span>{{ $mainText }}  </span><span class="text-mst">{{ $spanText }}</span>
                 </h2>
             @endif
@@ -33,16 +34,16 @@
                     $mainText  = implode(' ', array_slice($words, 0, -1));
                     $spanText  = implode(' ', array_slice($words, -1));
                 @endphp
-                <h2 class="font-heading text-2xl font-semibold italic leading-tight tracking-tight text-mst-gray">
+                <h2 class="text-left font-heading text-2xl font-semibold italic leading-tight tracking-tight text-mst-gray">
                     <span>{{ $mainText }}  </span><span class="text-mst">{{ $spanText }}</span>
                 </h2>
             @else
-                <h2 class="font-heading text-2xl font-semibold italic leading-tight tracking-tight text-mst-gray">
+                <h2 class="text-left font-heading text-2xl font-semibold italic leading-tight tracking-tight text-mst-gray">
                     <span class="text-mst-gray">Popular </span><span class="text-mst">Searches</span>
                 </h2>
             @endif
             @if(filled($popularSearch->description))
-                <p class="font-body mt-2">{{ $popularSearch->description }}</p>
+                <p class="text-left font-body mt-2">{{ $popularSearch->description }}</p>
             @endif
             @if(count($popularSearchItems) > 0)
                 <ul class="flex flex-wrap items-center justify-center gap-3 font-body text-sm

@@ -4,7 +4,7 @@
     $titleWords = $tourType ? preg_split('/\s+/', trim($tourType->title)) : [];
     $mainText = count($titleWords) > 1 ? implode(' ', array_slice($titleWords, 0, -1)) : '';
     $accentText = count($titleWords) > 1 ? implode(' ', array_slice($titleWords, -1)) : ($tourType->title ?? '');
-    $viewAllTours = Str::slug($tourType->title . ' tours');
+    $viewAllTours = Str::slug($tourType->title);
 ?>
 <?php if($tourType && $tours->isNotEmpty()): ?>
     <section class="justify-center items-center py-8">

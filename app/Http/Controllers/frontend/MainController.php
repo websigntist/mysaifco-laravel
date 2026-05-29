@@ -69,7 +69,7 @@ class MainController
      * CMS page or tour-type packages page (single template) by URL slug.
      * e.g. /desert-safari-tours → all tours for tour type with friendly_url desert-safari-tours
      */
-    /*public function show(string $slug)
+    /*public function showPage(string $slug)
     {
         $reserved = [
             'admin',
@@ -187,8 +187,18 @@ class MainController
             return $this->allCategoriesTourTypeId();
         }
 
-        if (cms_page_description_has_include($page->description) && cms_page_first_include_file($page->description) === 'all-categories') {
-            return $this->allCategoriesTourTypeId();
+        if (cms_page_description_has_include($page->description)) {
+            $includeFile = cms_page_first_include_file($page->description);
+
+            if ($includeFile === 'all-categories') {
+                return $this->allCategoriesTourTypeId();
+            }
+
+            if ($includeFile === 'all-tours-packages') {
+                $tourType = TourType::findActiveBySlug($slug);
+
+                return $tourType ? (int) $tourType->id : null;
+            }
         }
 
         return null;
@@ -287,11 +297,25 @@ class MainController
         return array_merge($this->faqsForTourTypeViewData($this->allCategoriesTourTypeId(), 8), ['faqImage' => 'Intersect.webp']);
     }
 
+    protected function pageDescriptionIncludesFile(?string $description, string $file): bool
+    {
+        $file = preg_replace('/[^a-zA-Z0-9_-]/', '', $file);
+
+        if ($description === null || trim($description) === '' || $file === '') {
+            return false;
+        }
+
+        return (bool) preg_match(
+            '/\[(?:include\s+file|include_file)=(["\'])' . preg_quote($file, '/') . '\1(?:\s[^\]]*)?\]/i',
+            $description
+        );
+    }
+
     /**
      * CMS page by friendly_url with [include_file="filename"] shortcode support.
      * Loads resources/views/frontend/pages/{filename}.blade.php into page content.
      */
-    public function showPage(string $slug)
+    public function show(string $slug)
     {
         $reserved = [
             'admin',
@@ -331,6 +355,26 @@ class MainController
                 'tourSections' => Tour::groupedByTourType($limitPerType),
                 'toursPerType' => $limitPerType,
             ]);
+        }
+
+        if ($this->pageDescriptionIncludesFile($description, 'all-tours-packages')) {
+            $tourType = TourType::findActiveBySlug($slug);
+
+            if ($tourType) {
+                $viewData = array_merge($viewData, [
+                    'tourType' => $tourType,
+                    'tours'    => Tour::publishedForTourType($tourType->title),
+                    'pageSlug' => $slug,
+                ], $this->faqsForTourTypeViewData((int) $tourType->id));
+                $viewData = array_merge(
+                    $viewData,
+                    $this->exploreAndPopularSearchViewData((int) $tourType->id)
+                );
+            } else {
+                $viewData['tourType'] = null;
+                $viewData['tours'] = collect();
+                $viewData['pageSlug'] = $slug;
+            }
         }
 
         $pageContent = do_shortcode($description, $viewData);
