@@ -25,7 +25,7 @@
                                                                             bg-gradient-to-r from-[#BA9B31] to-[#74611E]
                                                                              hover:bg-gradient-to-r hover:from-[#74611E] hover:to-[#BA9B31]
                                                                              transition duration-300 font-heading
-                                                                             italic mt-8 mx-auto md:ms-auto">
+                                                                             italic mt-8 mx-auto md:ms-0">
                     Get Umrah Details on WhatsApp <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
                                                        class="w-5 ms-1"
                                                        alt="arrow"> </a>
@@ -61,7 +61,7 @@
                                                            families, and groups seeking a comfortable spiritual journey
                                                            to Makkah and Madinah.</p>
                     <a href="#"
-                       class="flex items-center justify-center w-fit text-white text-sm px-4 pt-1 pb-2 rounded-full mx-auto md:ms-auto
+                       class="flex items-center justify-center w-fit text-white text-sm px-4 pt-1 pb-2 rounded-full mx-auto md:ms-0
                                bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
                         Explore Umrah by Bus Packages <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
                                                            class="w-4 mt-1 ms-1" alt=""> </a>
@@ -70,7 +70,7 @@
                     <img src="<?php echo e(asset('assets/images/umrah/umrah-12.webp')); ?>"
                          alt=""
                          title=""
-                         class="max-w-2xl h-auto mx-auto md:ms-auto md:mt-0 mt-5">
+                         class="max-w-2xl h-auto mx-auto md:ms-0 md:mt-0 mt-5">
                 </div>
             </div>
             <div class="md:flex items-center justify-between bg-gray-50 border border-gray-200 px-8 pt-5 pb-8 rounded-xl">
@@ -81,7 +81,7 @@
                                                            complete travel assistance. Choose flexible Umrah options
                                                            with trusted guidance for a smooth pilgrimage experience.</p>
                     <a href="#"
-                       class="flex items-center justify-center w-fit text-white text-sm px-4 pt-1 pb-2 rounded-full mx-auto md:ms-auto
+                       class="flex items-center justify-center w-fit text-white text-sm px-4 pt-1 pb-2 rounded-full mx-auto md:ms-0
                                bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
                         View Umrah by Air Packages <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
                                                         class="w-4 mt-1 ms-1" alt=""> </a>
@@ -90,7 +90,7 @@
                     <img src="<?php echo e(asset('assets/images/umrah/umrah-13.webp')); ?>"
                          alt=""
                          title=""
-                         class="max-w-2xl h-auto mx-auto md:ms-auto md:mt-0 mt-5">
+                         class="max-w-2xl h-auto mx-auto md:ms-0 md:mt-0 mt-5">
                 </div>
             </div>
             <div class="md:flex items-center justify-between bg-gray-50 border border-gray-200 px-8 pt-5 pb-8 rounded-xl">
@@ -101,7 +101,7 @@
                                                            throughout the application process. Learn about eligibility,
                                                            processing times, and required documents.</p>
                     <a href="#"
-                       class="flex items-center justify-center w-fit text-white text-sm px-4 pt-1 pb-2 rounded-full mx-auto md:ms-auto
+                       class="flex items-center justify-center w-fit text-white text-sm px-4 pt-1 pb-2 rounded-full mx-auto md:ms-0
                                bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
                         Check Umrah Visa Requirements <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
                                                            class="w-4 mt-1 ms-1" alt=""> </a>
@@ -110,7 +110,7 @@
                     <img src="<?php echo e(asset('assets/images/umrah/umrah-16.webp')); ?>"
                          alt=""
                          title=""
-                         class="max-w-2xl h-auto mx-auto md:ms-auto md:mt-0 mt-5">
+                         class="max-w-2xl h-auto mx-auto md:ms-0 md:mt-0 mt-5">
                 </div>
             </div>
             <div class="md:flex items-center justify-between bg-gray-50 border border-gray-200 px-8 pt-5 pb-8 rounded-xl">
@@ -122,7 +122,7 @@
                                                            multiple-entry visas can provide flexible travel
                                                            opportunities.</p>
                     <a href="#"
-                       class="flex items-center justify-center w-fit text-white text-sm px-4 pt-1 pb-2 rounded-full mx-auto md:ms-auto
+                       class="flex items-center justify-center w-fit text-white text-sm px-4 pt-1 pb-2 rounded-full mx-auto md:ms-0
                                bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
                         Explore Saudi Multiple Entry Visa Options
                         <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
@@ -132,7 +132,7 @@
                     <img src="<?php echo e(asset('assets/images/umrah/umrah-14.webp')); ?>"
                          alt=""
                          title=""
-                         class="max-w-2xl h-auto mx-auto md:ms-auto md:mt-0 mt-5">
+                         class="max-w-2xl h-auto mx-auto md:ms-0 md:mt-0 mt-5">
                 </div>
             </div>
         </div>
@@ -255,15 +255,17 @@
     <div class="container">
         <div class="grid grid-cols-1 md:grid-cols-[2fr_1fr] items-center gap-8">
             <div>
-                <h1 class="text-center">
+                <h1 class="md:text-left text-center">
                     <span>How to perform </span><span class="text-mst">Umrah?</span>
                 </h1>
-                <p class="text-[16px] mt-4 text-center">Learn the step-by-step process of performing Umrah, from the journey to
+                <p class="text-[16px] mt-4 md:text-left text-center">Learn the step-by-step process of performing Umrah,
+                                                                 from the
+                                                         journey to
                                             Mecca to completing the rituals with devotion and reverence.</p>
             </div>
             <div class="flex items-center justify-end">
                 <a href="" class="flex items-center justify-center w-fit text-white text-lg px-7 pt-3 pb-3
-                rounded-full mx-auto md:ms-auto
+                rounded-full mx-auto md:ms-0
                                     bg-gradient-to-r from-[#BA9B31] to-[#74611E]
                                      hover:bg-gradient-to-r hover:from-[#74611E] hover:to-[#BA9B31]
                                      transition duration-300 font-heading italic"> Download Umrah Guide
