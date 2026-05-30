@@ -2,7 +2,7 @@
 <section class="flex justify-center items-center py-12 px-4 md:py-16">
     <div class="container mx-auto">
         <div class="testimonials-section-inner mx-auto">
-            <div class="mx-auto max-w-2xl text-center">
+            <div class="mx-auto md:max-w-2xl text-center">
                 <h1>
                     <span>Customer </span><span class="text-mst">Reviews</span>
                 </h1>

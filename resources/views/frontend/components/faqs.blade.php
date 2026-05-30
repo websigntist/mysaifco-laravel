@@ -47,7 +47,6 @@
                 <div class="flex justify-end">
                     @php $slug = request()->segment(1); @endphp
 
-
                     @if($slug == '')
                         <img src="{{ asset('assets/images/faq-img.webp') }}"
                              alt="Frequently asked questions"

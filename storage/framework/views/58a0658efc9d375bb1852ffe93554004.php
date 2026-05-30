@@ -78,7 +78,7 @@
     <div class="cms-page">
         <?php if($page->show_title == '1' && filled($page->page_title)): ?>
             <section class="flex justify-center py-8">
-                <div class="container mx-auto text-center">
+                <div class="container mx-auto">
                     <?php if($page && ($page->show_title ?? '0') == '1' && filled($page->page_title)): ?>
                         <?php
                             $words    = explode(' ', $page->page_title);
@@ -88,7 +88,7 @@
                             $spanText = implode(' ', array_slice($words, -$spanN));
                         ?>
 
-                        <h1>
+                        <h1 class="text-center">
                             <span><?php echo e($mainText); ?> </span><span class="text-mst"><?php echo e($spanText); ?></span>
                         </h1>
                     <?php endif; ?>
@@ -101,7 +101,7 @@
         <?php endif; ?>
 
         <?php if(filled($pageContent ?? null)): ?>
-            <div class="container mx-auto text-center">
+            <div class="-container mx-auto">
                 <?php echo $pageContent; ?>
 
             </div>

@@ -8,7 +8,7 @@
 ?>
 <?php if($tourType && $tours->isNotEmpty()): ?>
     <section class="justify-center items-center py-8">
-        <div class="-container mx-auto">
+        <div class="container mx-auto">
             <div class="our-popular-inner">
                 <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between md:gap-8">
                     <div class="min-w-0 flex-1">

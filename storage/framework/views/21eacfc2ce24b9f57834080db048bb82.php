@@ -47,7 +47,6 @@
                 <div class="flex justify-end">
                     <?php $slug = request()->segment(1); ?>
 
-
                     <?php if($slug == ''): ?>
                         <img src="<?php echo e(asset('assets/images/faq-img.webp')); ?>"
                              alt="Frequently asked questions"
