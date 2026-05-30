@@ -226,7 +226,8 @@
 <?php echo $__env->make('frontend.components.testimonials', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 
 <section class="flex justify-center items-center">
-    <div class="px-4 relative flex md:min-h-[995px]  min-h-[520px] w-full bg-[-250px] bg-cover bg-no-repeat"
+    <div class="px-4 relative flex md:min-h-[995px]  min-h-[520px] w-full bg-[-250px] md:bg-center bg-cover
+    bg-no-repeat"
          style="background-image: url('<?php echo e(asset('assets/images/umrah/umrah-15.webp')); ?>')">
         <div class="z-10 w-full py-10">
             <div class="container mx-auto">
