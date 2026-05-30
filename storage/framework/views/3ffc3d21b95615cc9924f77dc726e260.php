@@ -1,18 +1,18 @@
-{{-- umrah travel --}}
+
 <section class="flex justify-between items-center py-12">
     <div class="container">
         <div class="grid grid-cols-1 md:grid-cols-[2fr_1fr] items-center gap-8">
             <div>
-                @php
+                <?php
                     $page_title = "Umrah Travel Agency";
                     $words      = explode(' ', $page_title);
                     $count      = count($words);
                     $spanN      = $count >= 3 ? 2 : 1;
                     $mainText   = implode(' ', array_slice($words, 0, -$spanN));
                     $spanText   = implode(' ', array_slice($words, -$spanN));
-                @endphp
+                ?>
                 <h1 class="text-center md:text-left">
-                    <span>{{ $mainText }} </span><span class="text-mst">{{ $spanText }}</span>
+                    <span><?php echo e($mainText); ?> </span><span class="text-mst"><?php echo e($spanText); ?></span>
                 </h1>
                 <p class="text-[16px] mt-4 text-center md:text-left">Get everything on a single call with Umrah
                                                                      travel agency. Every Muslim
@@ -25,20 +25,20 @@
                                                                             bg-gradient-to-r from-[#BA9B31] to-[#74611E]
                                                                              hover:bg-gradient-to-r hover:from-[#74611E] hover:to-[#BA9B31]
                                                                              transition duration-300 font-heading
-                                                                             italic mt-8 mx-auto md:ms-0">
-                    Get Umrah Details on WhatsApp <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}"
+                                                                             italic mt-8 mx-auto md:ms-auto">
+                    Get Umrah Details on WhatsApp <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
                                                        class="w-5 ms-1"
                                                        alt="arrow"> </a>
             </div>
             <div class="flex items-center justify-end">
-                <img src="{{asset('assets/images/umrah/umrah-2.webp')}}"
+                <img src="<?php echo e(asset('assets/images/umrah/umrah-2.webp')); ?>"
                      class="w-full object-cover"
                      alt="umrah">
             </div>
         </div>
     </div>
 </section>
-{{-- umrah offered --}}
+
 <section class="pb-12">
     <div class="container">
         <div class="mx-auto max-w-5xl text-center pt-12 pb-10">
@@ -61,16 +61,16 @@
                                                            families, and groups seeking a comfortable spiritual journey
                                                            to Makkah and Madinah.</p>
                     <a href="#"
-                       class="flex items-center justify-center w-fit text-white text-sm px-4 pt-1 pb-2 rounded-full mx-auto md:ms-0
+                       class="flex items-center justify-center w-fit text-white text-sm px-4 pt-1 pb-2 rounded-full mx-auto md:ms-auto
                                bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                        Explore Umrah by Bus Packages <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}"
+                        Explore Umrah by Bus Packages <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
                                                            class="w-4 mt-1 ms-1" alt=""> </a>
                 </div>
                 <div class="">
-                    <img src="{{ asset('assets/images/umrah/umrah-12.webp') }}"
+                    <img src="<?php echo e(asset('assets/images/umrah/umrah-12.webp')); ?>"
                          alt=""
                          title=""
-                         class="max-w-2xl h-auto mx-auto md:ms-0 md:mt-0 mt-5">
+                         class="max-w-2xl h-auto mx-auto md:ms-auto md:mt-0 mt-5">
                 </div>
             </div>
             <div class="md:flex items-center justify-between bg-gray-50 border border-gray-200 px-8 pt-5 pb-8 rounded-xl">
@@ -81,16 +81,16 @@
                                                            complete travel assistance. Choose flexible Umrah options
                                                            with trusted guidance for a smooth pilgrimage experience.</p>
                     <a href="#"
-                       class="flex items-center justify-center w-fit text-white text-sm px-4 pt-1 pb-2 rounded-full mx-auto md:ms-0
+                       class="flex items-center justify-center w-fit text-white text-sm px-4 pt-1 pb-2 rounded-full mx-auto md:ms-auto
                                bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                        View Umrah by Air Packages <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}"
+                        View Umrah by Air Packages <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
                                                         class="w-4 mt-1 ms-1" alt=""> </a>
                 </div>
                 <div class="">
-                    <img src="{{ asset('assets/images/umrah/umrah-13.webp') }}"
+                    <img src="<?php echo e(asset('assets/images/umrah/umrah-13.webp')); ?>"
                          alt=""
                          title=""
-                         class="max-w-2xl h-auto mx-auto md:ms-0 md:mt-0 mt-5">
+                         class="max-w-2xl h-auto mx-auto md:ms-auto md:mt-0 mt-5">
                 </div>
             </div>
             <div class="md:flex items-center justify-between bg-gray-50 border border-gray-200 px-8 pt-5 pb-8 rounded-xl">
@@ -101,16 +101,16 @@
                                                            throughout the application process. Learn about eligibility,
                                                            processing times, and required documents.</p>
                     <a href="#"
-                       class="flex items-center justify-center w-fit text-white text-sm px-4 pt-1 pb-2 rounded-full mx-auto md:ms-0
+                       class="flex items-center justify-center w-fit text-white text-sm px-4 pt-1 pb-2 rounded-full mx-auto md:ms-auto
                                bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                        Check Umrah Visa Requirements <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}"
+                        Check Umrah Visa Requirements <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
                                                            class="w-4 mt-1 ms-1" alt=""> </a>
                 </div>
                 <div class="">
-                    <img src="{{ asset('assets/images/umrah/umrah-16.webp') }}"
+                    <img src="<?php echo e(asset('assets/images/umrah/umrah-16.webp')); ?>"
                          alt=""
                          title=""
-                         class="max-w-2xl h-auto mx-auto md:ms-0 md:mt-0 mt-5">
+                         class="max-w-2xl h-auto mx-auto md:ms-auto md:mt-0 mt-5">
                 </div>
             </div>
             <div class="md:flex items-center justify-between bg-gray-50 border border-gray-200 px-8 pt-5 pb-8 rounded-xl">
@@ -122,23 +122,23 @@
                                                            multiple-entry visas can provide flexible travel
                                                            opportunities.</p>
                     <a href="#"
-                       class="flex items-center justify-center w-fit text-white text-sm px-4 pt-1 pb-2 rounded-full mx-auto md:ms-0
+                       class="flex items-center justify-center w-fit text-white text-sm px-4 pt-1 pb-2 rounded-full mx-auto md:ms-auto
                                bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
                         Explore Saudi Multiple Entry Visa Options
-                        <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}"
+                        <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
                              class="w-4 mt-1 ms-1" alt=""> </a>
                 </div>
                 <div class="">
-                    <img src="{{ asset('assets/images/umrah/umrah-14.webp') }}"
+                    <img src="<?php echo e(asset('assets/images/umrah/umrah-14.webp')); ?>"
                          alt=""
                          title=""
-                         class="max-w-2xl h-auto mx-auto md:ms-0 md:mt-0 mt-5">
+                         class="max-w-2xl h-auto mx-auto md:ms-auto md:mt-0 mt-5">
                 </div>
             </div>
         </div>
     </div>
 </section>
-{{-- world wide --}}
+
 <section class="flec item-center justify-center pt-14 pb-18">
     <div class="container">
         <div class="mx-auto text-center">
@@ -150,30 +150,30 @@
                                           Whatsapp.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mt-14">
-            {{--============--}}
+            
             <div class="bg-gray-50 p-8 rounded-xl border-1 border-gray-200 space-y-4">
-                <img src="{{asset('assets/images/umrah/umrah-3.webp')}}" class="mx-auto" alt="img">
+                <img src="<?php echo e(asset('assets/images/umrah/umrah-3.webp')); ?>" class="mx-auto" alt="img">
                 <h5 class="font-heading text-md font-semibold text-center mb-1">Visa Services</h5>
                 <p class="font-body text-xs text-center">Avail umrah visa with just a 3 step online process and get an
                                                          approval in the next 48 hours.</p>
             </div>
-            {{--============--}}
+            
             <div class="bg-gray-50 p-8 rounded-xl border-1 border-gray-200 space-y-4">
-                <img src="{{asset('assets/images/umrah/umrah-4.webp')}}" class="mx-auto" alt="img">
+                <img src="<?php echo e(asset('assets/images/umrah/umrah-4.webp')); ?>" class="mx-auto" alt="img">
                 <h5 class="font-heading text-md font-semibold text-center mb-1">Flights Reservations</h5>
                 <p class="font-body text-xs text-center">Booking flights is easy with Saifco Travel – we always have the
                                                          best prices for Umrah Flights.</p>
             </div>
-            {{--============--}}
+            
             <div class="bg-gray-50 p-8 rounded-xl border-1 border-gray-200 space-y-4">
-                <img src="{{asset('assets/images/umrah/umrah-5.webp')}}" class="mx-auto" alt="img">
+                <img src="<?php echo e(asset('assets/images/umrah/umrah-5.webp')); ?>" class="mx-auto" alt="img">
                 <h5 class="font-heading text-md font-semibold text-center mb-1">Transportation</h5>
                 <p class="font-body text-xs text-center">Our agency offers different VIP transportation facility from
                                                          Makkah to Madina and vise versa.</p>
             </div>
-            {{--============--}}
+            
             <div class="bg-gray-50 p-8 rounded-xl border-1 border-gray-200 space-y-4">
-                <img src="{{asset('assets/images/umrah/umrah-6.webp')}}" class="mx-auto" alt="img">
+                <img src="<?php echo e(asset('assets/images/umrah/umrah-6.webp')); ?>" class="mx-auto" alt="img">
                 <h5 class="font-heading text-md font-semibold text-center mb-1">Hotel Booking</h5>
                 <p class="font-body text-xs text-center">Book luxury hotel in best prices as we are in collaboration
                                                          with top hotels in Saudi Arabia.</p>
@@ -181,7 +181,7 @@
         </div>
     </div>
 </section>
-{{-- required documents --}}
+
 <section class="pt-10 pb-30 bg-gray-50">
     <div class="container">
         <div class="mx-auto max-w-5xl text-center pt-12 pb-10">
@@ -216,19 +216,19 @@
                 </div>
             </div>
             <div class="flex items-center justify-end">
-                <img src="{{asset('assets/images/umrah/umrah-1.webp')}}"
+                <img src="<?php echo e(asset('assets/images/umrah/umrah-1.webp')); ?>"
                      class="w-full object-cover rounded-xl"
                      alt="umrah">
             </div>
         </div>
     </div>
 </section>
-@include('frontend.components.testimonials')
-{{--===== umrah for single ======--}}
+<?php echo $__env->make('frontend.components.testimonials', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+
 <section class="flex justify-center items-center">
     <div class="px-4 relative flex md:min-h-[995px]  min-h-[520px] w-full bg-[-250px] md:bg-center bg-cover
     bg-no-repeat"
-         style="background-image: url('{{ asset('assets/images/umrah/umrah-15.webp') }}')">
+         style="background-image: url('<?php echo e(asset('assets/images/umrah/umrah-15.webp')); ?>')">
         <div class="z-10 w-full py-10">
             <div class="container mx-auto">
                 <div class="mx-auto max-w-3xl text-center pt-12 pb-10">
@@ -243,40 +243,38 @@
                        class="flex items-center justify-center mx-auto mt-8 w-44 text-white px-4 pt-2 pb-3
                    rounded-full
                            bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                        Read More <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}"
+                        Read More <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
                                        class="w-4 mt-1 ms-1" alt=""> </a>
                 </div>
             </div>
         </div>
     </div>
 </section>
-{{-- how to perform --}}
+
 <section class="flex justify-between items-center py-12 bg-gray-50">
     <div class="container">
         <div class="grid grid-cols-1 md:grid-cols-[2fr_1fr] items-center gap-8">
             <div>
-                <h1 class="md:text-left text-center">
+                <h1 class="text-center">
                     <span>How to perform </span><span class="text-mst">Umrah?</span>
                 </h1>
-                <p class="text-[16px] mt-4 md:text-left text-center">Learn the step-by-step process of performing Umrah,
-                                                                 from the
-                                                         journey to
+                <p class="text-[16px] mt-4 text-center">Learn the step-by-step process of performing Umrah, from the journey to
                                             Mecca to completing the rituals with devotion and reverence.</p>
             </div>
             <div class="flex items-center justify-end">
                 <a href="" class="flex items-center justify-center w-fit text-white text-lg px-7 pt-3 pb-3
-                rounded-full mx-auto md:ms-0
+                rounded-full mx-auto md:ms-auto
                                     bg-gradient-to-r from-[#BA9B31] to-[#74611E]
                                      hover:bg-gradient-to-r hover:from-[#74611E] hover:to-[#BA9B31]
                                      transition duration-300 font-heading italic"> Download Umrah Guide
-                    <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}"
+                    <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
                          class="w-5 ms-2 rotate-90"
                          alt="arrow"> </a>
             </div>
         </div>
     </div>
 </section>
-{{-- umrah offer  --}}
+
 <section class="pb-12">
     <div class="container">
         <div class="mx-auto max-w-5xl text-center pt-12 pb-10">
@@ -292,7 +290,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
             <div class="flex items-center justify-between bg-gray-50 border border-gray-200 px-8 pt-5 pb-8 rounded-3xl">
                 <div class="text-center">
-                    <img src="{{ asset('assets/images/umrah/umrah-7.webp') }}" class="mx-auto mb-4" alt="">
+                    <img src="<?php echo e(asset('assets/images/umrah/umrah-7.webp')); ?>" class="mx-auto mb-4" alt="">
                     <h3 class="text-xl">Umrah from Dubai</h3>
                     <p class="text-sm leading-6 my-4 line-clamp-2">Saifco Travel is a Dubai Based Specialist Umrah
                                                                    Travel Agency providing luxury Umrah packages by Bus
@@ -301,13 +299,13 @@
                        class="flex items-center justify-center w-fit mx-auto text-white text-sm mt-5 px-4 pt-1 pb-2
                        rounded-full
                                bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                        Learn more <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}"
+                        Learn more <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
                                         class="w-4 mt-1 ms-1" alt=""> </a>
                 </div>
             </div>
             <div class="flex items-center justify-between bg-gray-50 border border-gray-200 px-8 pt-5 pb-8 rounded-3xl">
                 <div class="text-center">
-                    <img src="{{ asset('assets/images/umrah/umrah-8.webp') }}" class="mx-auto mb-4" alt="">
+                    <img src="<?php echo e(asset('assets/images/umrah/umrah-8.webp')); ?>" class="mx-auto mb-4" alt="">
                     <h3 class="text-xl">Umrah from Abu Dhabi</h3>
                     <p class="text-sm leading-6 my-4 line-clamp-2">Avail best Umrah by bus and air packages from Abu
                                                                    Dhabi. Visa services included in all of the
@@ -316,13 +314,13 @@
                        class="flex items-center justify-center w-fit mx-auto text-white text-sm mt-5 px-4 pt-1 pb-2
                                    rounded-full
                                            bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                        Learn more <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}"
+                        Learn more <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
                                         class="w-4 mt-1 ms-1" alt=""> </a>
                 </div>
             </div>
             <div class="flex items-center justify-between bg-gray-50 border border-gray-200 px-8 pt-5 pb-8 rounded-3xl">
                 <div class="text-center">
-                    <img src="{{ asset('assets/images/umrah/umrah-9.webp') }}" class="mx-auto mb-4" alt="">
+                    <img src="<?php echo e(asset('assets/images/umrah/umrah-9.webp')); ?>" class="mx-auto mb-4" alt="">
                     <h3 class="text-xl">Umrah from Sharjah</h3>
                     <p class="text-sm leading-6 my-4 line-clamp-2">Our experienced and highest quality services range
                                                                    from just Umrah Visa to a complete Umrah package</p>
@@ -330,7 +328,7 @@
                        class="flex items-center justify-center w-fit mx-auto text-white text-sm mt-5 px-4 pt-1 pb-2
                                    rounded-full
                                            bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                        Learn more <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}"
+                        Learn more <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
                                         class="w-4 mt-1 ms-1" alt=""> </a>
                 </div>
             </div>
@@ -338,7 +336,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
             <div class="flex items-center justify-between bg-gray-50 border border-gray-200 px-8 pt-5 pb-8 rounded-3xl">
                 <div class="text-center">
-                    <img src="{{ asset('assets/images/umrah/umrah-10.webp') }}" class="mx-auto mb-4" alt="">
+                    <img src="<?php echo e(asset('assets/images/umrah/umrah-10.webp')); ?>" class="mx-auto mb-4" alt="">
                     <h3 class="text-xl">VFS Tasheel Locations</h3>
                     <p class="text-sm leading-6 my-4 line-clamp-3">VFS Tasheel International processes visas for the
                                                                    Kingdom of Saudi Arabia. Visas are processed at VFS
@@ -349,13 +347,13 @@
                        class="flex items-center justify-center w-fit mx-auto text-white text-sm mt-5 px-4 pt-1 pb-2
                                rounded-full
                                        bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                        Learn more <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}"
+                        Learn more <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
                                         class="w-4 mt-1 ms-1" alt=""> </a>
                 </div>
             </div>
             <div class="flex items-center justify-between bg-gray-50 border border-gray-200 px-8 pt-5 pb-8 rounded-3xl">
                 <div class="text-center">
-                    <img src="{{ asset('assets/images/umrah/umrah-11.webp') }}" class="mx-auto mb-4" alt="">
+                    <img src="<?php echo e(asset('assets/images/umrah/umrah-11.webp')); ?>" class="mx-auto mb-4" alt="">
                     <h3 class="text-xl">Umrah Vaccination Center</h3>
                     <p class="text-sm leading-6 my-4 line-clamp-3">Every year, millions of Muslims are traveling to
                                                                    Mecca to perform Hajj and Umrah. They are coming from
@@ -366,17 +364,17 @@
                        class="flex items-center justify-center w-fit mx-auto text-white text-sm mt-5 px-4 pt-1 pb-2
                                            rounded-full
                                                    bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                        Learn more <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}"
+                        Learn more <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
                                         class="w-4 mt-1 ms-1" alt=""> </a>
                 </div>
             </div>
         </div>
     </div>
 </section>
-@include('frontend.components.tour_faqs')
-@include('frontend.components.explore_dubai')
+<?php echo $__env->make('frontend.components.tour_faqs', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('frontend.components.explore_dubai', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 
-{{-- how to perform --}}
+
 <section class="flex justify-between items-center py-12 bg-gray-50 -mb-8">
     <div class="container">
         <div class="text-center">
@@ -392,9 +390,10 @@
                                     bg-gradient-to-r from-[#BA9B31] to-[#74611E]
                                      hover:bg-gradient-to-r hover:from-[#74611E] hover:to-[#BA9B31]
                                      transition duration-300 font-heading italic"> Send Inquiry
-                <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}"
+                <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
                      class="w-5 ms-2"
                      alt="arrow"> </a>
         </div>
     </div>
 </section>
+<?php /**PATH D:\laragon\www\mysaifco-laravel\resources\views\frontend\pages\includes\umrah.blade.php ENDPATH**/ ?>
