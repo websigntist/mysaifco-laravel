@@ -737,3 +737,50 @@
     padding-top: 0;
 }
 /*=== FAQ accordion desert safari end ====*/
+/* Scrollbar width */
+.ddscroll::-webkit-scrollbar {
+    width: 160px;
+}
+
+/* Track */
+.ddscroll::-webkit-scrollbar-track {
+    background: #9a8020 !important;
+    border-radius: 10px;
+}
+
+/* Thumb */
+.ddscroll::-webkit-scrollbar-thumb {
+    background: #9a8020 !important;
+    border-radius: 10px;
+}
+
+/* Thumb hover */
+.ddscroll::-webkit-scrollbar-thumb:hover {
+    background: #9a8020 !important;
+}
+
+/* Arrow buttons (top & bottom) */
+.ddscroll::-webkit-scrollbar-button {
+    background: #9a8020 !important;
+    border-radius: 10px;
+    height: 20px;
+    display: block;
+}
+
+/* Up arrow */
+.ddscroll::-webkit-scrollbar-button:vertical:decrement {
+    background: #ffffff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath d='M5 3L9 7H1L5 3Z' fill='white'/%3E%3C/svg%3E") no-repeat center;
+    border-radius: 10px 10px 0 0;
+}
+
+/* Down arrow */
+.ddscroll::-webkit-scrollbar-button:vertical:increment {
+    background: #ffffff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath d='M5 7L1 3H9L5 7Z' fill='white'/%3E%3C/svg%3E") no-repeat center;
+    border-radius: 0 0 10px 10px;
+}
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #9a8020 !important;
+}

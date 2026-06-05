@@ -214,12 +214,12 @@ function initHolidayPackagesSwiper() {
         },
         breakpoints: {
             768: {
-                slidesPerView: 2.1,
+                slidesPerView: 1.72,
                 slidesPerGroup: 1,
                 spaceBetween: 24,
             },
             1024: {
-                slidesPerView: 3.1,
+                slidesPerView: 2.8,
                 slidesPerGroup: 1,
                 spaceBetween: 28,
             },

@@ -19,7 +19,8 @@
                 </h2>
             @endif
             @if(filled($explore->description))
-                <div class="font-body text-center md:text-left text-sm bg-[#FAF7F2] mt-6 p-5 rounded-lg border border-[#BA9B31]/40">
+                <div class="font-body text-center md:text-left text-sm bg-[#FAF7F2] mt-6 p-5 rounded-lg border border-[#BA9B31]/40
+                -overflow-y-scroll ddscroll">
                     {!! $explore->description !!}
                 </div>
             @endif
