@@ -3,8 +3,13 @@
     <div class="container mx-auto">
         <div class="testimonials-section-inner mx-auto">
             <div class="mx-auto md:max-w-2xl text-center">
+                <?php
+                    $slug = request()->segment(1);
+                    $heading = $slug === 'umrah-travel-agency' ? 'Umrah' : '';
+                ?>
                 <h1>
-                    <span>Customer </span><span class="text-mst">Reviews</span>
+
+                    <span><?php echo e($heading); ?> Customer </span><span class="text-mst">Reviews</span>
                 </h1>
                 <p class="mt-5">
                     Trusted by thousands of travelers for Dubai tours &amp; Umrah packages, delivering reliable service,

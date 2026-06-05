@@ -159,21 +159,21 @@
             </div>
             {{--============--}}
             <div class="bg-gray-50 p-8 rounded-xl border-1 border-gray-200 space-y-4">
-                <img src="{{asset('assets/images/umrah/umrah-4.webp')}}" class="mx-auto" alt="img">
+                <img src="{{asset('assets/images/umrah/plan.webp')}}" class="mx-auto" alt="img">
                 <h5 class="font-heading text-md font-semibold text-center mb-1">Flights Reservations</h5>
                 <p class="font-body text-xs text-center">Booking flights is easy with Saifco Travel – we always have the
                                                          best prices for Umrah Flights.</p>
             </div>
             {{--============--}}
             <div class="bg-gray-50 p-8 rounded-xl border-1 border-gray-200 space-y-4">
-                <img src="{{asset('assets/images/umrah/umrah-5.webp')}}" class="mx-auto" alt="img">
+                <img src="{{asset('assets/images/umrah/umrah-6.webp')}}" class="mx-auto" alt="img">
                 <h5 class="font-heading text-md font-semibold text-center mb-1">Transportation</h5>
                 <p class="font-body text-xs text-center">Our agency offers different VIP transportation facility from
                                                          Makkah to Madina and vise versa.</p>
             </div>
             {{--============--}}
             <div class="bg-gray-50 p-8 rounded-xl border-1 border-gray-200 space-y-4">
-                <img src="{{asset('assets/images/umrah/umrah-6.webp')}}" class="mx-auto" alt="img">
+                <img src="{{asset('assets/images/umrah/umrah-5.webp')}}" class="mx-auto" alt="img">
                 <h5 class="font-heading text-md font-semibold text-center mb-1">Hotel Booking</h5>
                 <p class="font-body text-xs text-center">Book luxury hotel in best prices as we are in collaboration
                                                          with top hotels in Saudi Arabia.</p>
@@ -186,7 +186,7 @@
     <div class="container">
         <div class="mx-auto max-w-5xl text-center pt-12 pb-10">
             <h1>
-                <span>Umrah Offered </span><span class="text-mst">By</span>
+                <span>Required Documents for </span><span class="text-mst">Umrah Visa</span>
             </h1>
             <p class="mt-5">
                 Begin your sacred journey with comfort, trust, and complete guidance. We believe in reliability, quality
@@ -281,7 +281,7 @@
     <div class="container">
         <div class="mx-auto max-w-5xl text-center pt-12 pb-10">
             <h1>
-                <span>Umrah Offered </span><span class="text-mst">By</span>
+                <span>We Offer </span><span class="text-mst">Umrah from</span>
             </h1>
             <p class="mt-5">
                 Begin your sacred journey with comfort, trust, and complete guidance. We believe in reliability, quality
@@ -377,7 +377,7 @@
 @include('frontend.components.explore_dubai')
 
 {{-- how to perform --}}
-<section class="flex justify-between items-center py-12 bg-gray-50 -mb-8">
+<section class="flex justify-between items-center py-8 bg-gray-50 -mb-8">
     <div class="container">
         <div class="text-center">
             <h1 class="">

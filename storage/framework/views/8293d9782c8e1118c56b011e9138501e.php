@@ -1,5 +1,5 @@
 <section class="flex justify-center items-center pt-12 pb-2">
-    <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
+    <link rel="stylesheet" href="<?php echo e(asset('assets/css/custom.css')); ?>">
     <div class="container mx-auto">
         <div class="testimonials-section-inner mx-auto">
             <div class="mx-auto text-center">
@@ -59,12 +59,12 @@
                         </button>
                     </li>
                 </ul>
-                {{--==============--}}
+                
                 <div id="default-styled-tab-content" class="mt-8">
                     <div class="hidden" id="styled-profile" role="tabpanel" aria-labelledby="profile-tab">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
                             <div>
-                                <img src="{{asset('assets/images/image_2.webp')}}" class="rounded-xl w-full" alt="img">
+                                <img src="<?php echo e(asset('assets/images/image_2.webp')); ?>" class="rounded-xl w-full" alt="img">
                             </div>
                             <div class="space-y-4">
                                 <h2 class="font-semibold text-3xl font-heading">Umrah by Bus packages from Dubai</h2>
@@ -75,12 +75,12 @@
                                    from Dubai, Sharjah and Abu Dhabi.</p>
                                 <div class="flex shrink-0 md:pt-1 mt-8">
                                     <a
-                                        href="{{ route('page.default', 'umrah-travel-agency') }}"
+                                        href="<?php echo e(route('page.default', 'umrah-travel-agency')); ?>"
                                         class="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-mst
                                     to-mst-dark px-4 py-2 font-heading text-base italic text-white transition
                                     hover:from-mst-dark
                                      hover:to-mst md:text-lg"> Get more Details <img
-                                            src="{{ asset('assets/images/icons/btn-arrow.svg') }}"
+                                            src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
                                             class="ms-1 w-6"
                                             width="22"
                                             height="22"
@@ -106,7 +106,7 @@
                                                             to-mst-dark px-4 py-2 font-heading text-base italic text-white transition
                                                             hover:from-mst-dark
                                                              hover:to-mst md:text-lg"> Get more Details <img
-                                            src="{{ asset('assets/images/icons/btn-arrow.svg') }}"
+                                            src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
                                             class="ms-1 w-6"
                                             width="22"
                                             height="22"
@@ -115,14 +115,14 @@
                                 </div>
                             </div>
                             <div>
-                                <img src="{{asset('assets/images/image_2.webp')}}" class="rounded-xl w-full" alt="img">
+                                <img src="<?php echo e(asset('assets/images/image_2.webp')); ?>" class="rounded-xl w-full" alt="img">
                             </div>
                         </div>
                     </div>
                     <div class="hidden rounded-base bg-neutral-secondary-soft" id="styled-settings" role="tabpanel" aria-labelledby="settings-tab">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
                             <div>
-                                                            <img src="{{asset('assets/images/image_2.webp')}}" class="rounded-xl w-full" alt="img">
+                                                            <img src="<?php echo e(asset('assets/images/image_2.webp')); ?>" class="rounded-xl w-full" alt="img">
                                                         </div>
                             <div class="space-y-4">
                                 <h2 class="font-semibold text-3xl font-heading">Umrah by Bus packages from Dubai</h2>
@@ -138,7 +138,7 @@
                                                             to-mst-dark px-4 py-2 font-heading text-base italic text-white transition
                                                             hover:from-mst-dark
                                                              hover:to-mst md:text-lg"> Get more Details <img
-                                            src="{{ asset('assets/images/icons/btn-arrow.svg') }}"
+                                            src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
                                             class="ms-1 w-6"
                                             width="22"
                                             height="22"
@@ -164,7 +164,7 @@
                                                                 to-mst-dark px-4 py-2 font-heading text-base italic text-white transition
                                                                 hover:from-mst-dark
                                                                  hover:to-mst md:text-lg"> Get more Details <img
-                                                src="{{ asset('assets/images/icons/btn-arrow.svg') }}"
+                                                src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
                                                 class="ms-1 w-6"
                                                 width="22"
                                                 height="22"
@@ -173,7 +173,7 @@
                                     </div>
                                 </div>
                             <div>
-                                <img src="{{asset('assets/images/image_2.webp')}}" class="rounded-xl w-full" alt="img">
+                                <img src="<?php echo e(asset('assets/images/image_2.webp')); ?>" class="rounded-xl w-full" alt="img">
                             </div>
                         </div>
                     </div>
@@ -182,3 +182,4 @@
         </div>
     </div>
 </section>
+<?php /**PATH D:\laragon\www\mysaifco-laravel\resources\views/frontend/components/umrah_packages.blade.php ENDPATH**/ ?>
