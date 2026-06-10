@@ -90,7 +90,7 @@
                 </div>
                 <div class="flex shrink-0 md:pt-1">
                     <a
-                        href="<?php echo e($popularPackagesViewAllUrl ?? '#'); ?>"
+                        href="<?php echo e(route( 'page.default', 'all-tour-categories') ?? '#'); ?>"
                         class="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-mst to-mst-dark px-7 py-3.5 font-heading text-base italic text-white transition hover:from-mst-dark hover:to-mst md:py-4 md:text-lg"
                     > View all Packages <img
                             src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"

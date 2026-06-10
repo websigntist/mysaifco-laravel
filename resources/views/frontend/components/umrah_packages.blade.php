@@ -75,7 +75,7 @@
                                    from Dubai, Sharjah and Abu Dhabi.</p>
                                 <div class="flex shrink-0 md:pt-1 mt-8">
                                     <a
-                                        href="{{ route('page.default', 'umrah-travel-agency') }}"
+                                        href="{{ route('page.default', 'umrah') }}"
                                         class="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-mst
                                     to-mst-dark px-4 py-2 font-heading text-base italic text-white transition
                                     hover:from-mst-dark

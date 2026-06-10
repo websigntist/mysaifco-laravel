@@ -1,0 +1,1 @@
+<?php /**PATH D:\laragon\www\mysaifco-laravel\resources\views/frontend/components/umrah-pricing.blade.php ENDPATH**/ ?>
