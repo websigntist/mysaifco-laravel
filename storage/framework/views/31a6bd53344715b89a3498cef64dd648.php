@@ -58,7 +58,7 @@
     </div>
 </section>
 
-<section class="pb-12">
+<section class="">
     <div class="container">
         <div class="mx-auto max-w-5xl text-center pt-12 pb-10">
             <h1>
@@ -72,6 +72,193 @@
     </div>
 </section>
 
+<section class="">
+    <div class="container">
+        <div class="mx-auto max-w-5xl text-center pb-10">
+            <h1>
+                <span>Packages  </span><span class="text-mst">Include</span>
+            </h1>
+            <p class="mt-5">Our comprehensive Umrah packages include visa processing, accommodation, transportation, and
+                            guided services for a seamless pilgrimage experience</p>
+        </div>
+        <div class="pkg-include">
+            <!-- Service Cards Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1: Luxury Bus -->
+                <div id="pkg-include-bus-card" class="flex flex-col items-center justify-center text-center px-4 py-10
+                rounded-3xl border border-gray-200 bg-gray-50 transition
+                duration-300 hover:-translate-y-1 hover:border-gray-200 group">
+                    <div class="w-16 h-16 mb-5 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+                        <img src="<?php echo e(asset('assets/images/icons/bus.svg')); ?>" alt="Luxury Bus" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="font-heading font-semibold text-lg text-mst-gray mb-3">Luxury Bus</h3>
+                    <p class="text-sm font-body font-medium text-gray-700">Comfortable air-conditioned bus travel from
+                                                                           UAE to Saudi Arabia .</p>
+                </div>
+                <!-- Card 2: Umrah Visa -->
+                <div id="pkg-include-visa-card" class="flex flex-col items-center justify-center text-center px-4 py-10
+                                rounded-3xl border border-gray-200 bg-gray-50 transition
+                                duration-300 hover:-translate-y-1 hover:border-gray-200 group">
+                    <div class="w-16 h-16 mb-5 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+                        <img src="<?php echo e(asset('assets/images/icons/visa.svg')); ?>" alt="Umrah Visa" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="font-heading font-semibold text-lg text-mst-gray mb-3">Umrah Visa</h3>
+                    <p class="text-sm font-body font-medium text-gray-700">Fast and reliable Umrah visa processing
+                                                                           included.</p>
+                </div>
+                <!-- Card 3: Hotel Stay -->
+                <div id="pkg-include-hotel-card" class="flex flex-col items-center justify-center text-center px-4 py-10
+                                rounded-3xl border border-gray-200 bg-gray-50 transition
+                                duration-300 hover:-translate-y-1 hover:border-gray-200 group">
+                    <div class="w-16 h-16 mb-5 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+                        <img src="<?php echo e(asset('assets/images/icons/hotel.svg')); ?>" alt="Hotel Stay" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="font-heading font-semibold text-lg text-mst-gray mb-3">Hotel Stay</h3>
+                    <p class="text-sm font-body font-medium text-gray-700">Quality accommodation in Makkah and
+                                                                           Madinah.</p>
+                </div>
+                <!-- Card 4: Visit to Holy Sites -->
+                <div id="pkg-include-ziyarat-card" class="flex flex-col items-center justify-center text-center px-4 py-10
+                                rounded-3xl border border-gray-200 bg-gray-50 transition
+                                duration-300 hover:-translate-y-1 hover:border-gray-200 group">
+                    <div class="w-16 h-16 mb-5 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+                        <img src="<?php echo e(asset('assets/images/icons/mosque.svg')); ?>" alt="Visit to Holy Sites (Ziyarat)" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="font-heading font-semibold text-lg text-mst-gray mb-3">Visit to Holy Sites (Ziyarat)</h3>
+                    <p class="text-sm font-body font-medium text-gray-700">Guided visits to renowned Islamic
+                                                                           landmarks.</p>
+                </div>
+            </div>
+            <!-- Bottom Features Bar -->
+            <div class="mt-8 p-6 lg:p-8 rounded-3xl border border-gray-200 bg-gray-50">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x
+                lg:divide-black">
+                    <!-- Feature 1: Licensed & Trusted -->
+                    <div id="pkg-feature-licensed" class="flex items-center gap-4 lg:pr-6">
+                        <div class="w-14 h-14 flex-shrink-0 transition-transform duration-300 hover:scale-105">
+                            <img src="<?php echo e(asset('assets/images/icons/trusted2.svg')); ?>" alt="Licensed & Trusted" class="w-full h-full object-contain">
+                        </div>
+                        <div>
+                            <h4 class="font-heading font-semibold text-[15px] sm:text-base text-mst-gray mb-0.5 leading-snug">
+                                Licensed & Trusted</h4>
+                            <p class="text-xs text-gray-900 font-body leading-normal">UAE Licensed Travel Agency</p>
+                        </div>
+                    </div>
+                    <!-- Feature 2: 18+ Years Experience -->
+                    <div id="pkg-feature-experience" class="flex items-center gap-4 lg:px-6">
+                        <div class="w-14 h-14 flex-shrink-0 transition-transform duration-300 hover:scale-105">
+                            <img src="<?php echo e(asset('assets/images/icons/18exp.svg')); ?>" alt="18+ Years Experience" class="w-full h-full object-contain">
+                        </div>
+                        <div>
+                            <h4 class="font-heading font-semibold text-[15px] sm:text-base text-mst-gray mb-0.5 leading-snug">
+                                18+ Years Experience</h4>
+                            <p class="text-xs text-gray-900 font-body leading-normal">Serving Pilgrims Since 2008</p>
+                        </div>
+                    </div>
+                    <!-- Feature 3: Best Price Guaranteed -->
+                    <div id="pkg-feature-price" class="flex items-center gap-4 lg:px-6">
+                        <div class="w-14 h-14 flex-shrink-0 transition-transform duration-300 hover:scale-105">
+                            <img src="<?php echo e(asset('assets/images/icons/guarented.svg')); ?>" alt="Best Price Guaranteed" class="w-full h-full object-contain">
+                        </div>
+                        <div>
+                            <h4 class="font-heading font-semibold text-[15px] sm:text-base text-mst-gray mb-0.5 leading-snug">
+                                Best Price Guaranteed</h4>
+                            <p class="text-xs text-gray-900 font-body leading-normal">Quality service at Affordable
+                                                                                      Price</p>
+                        </div>
+                    </div>
+                    <!-- Feature 4: 24/7 Support -->
+                    <div id="pkg-feature-support" class="flex items-center gap-4 lg:pl-6">
+                        <div class="w-14 h-14 flex-shrink-0 transition-transform duration-300 hover:scale-105">
+                            <img src="<?php echo e(asset('assets/images/icons/support.svg')); ?>" alt="24/7 Support" class="w-full h-full object-contain">
+                        </div>
+                        <div>
+                            <h4 class="font-heading font-semibold text-[15px] sm:text-base text-mst-gray mb-0.5 leading-snug">
+                                24/7 Support</h4>
+                            <p class="text-xs text-gray-900 font-body leading-normal">We are here to help you
+                                                                                      anytime</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pb-12">
+    <div class="container">
+        <div class="mx-auto max-w-5xl text-center pt-16 pb-10">
+            <h1>
+                <span>Ramadan Umrah by Bus  </span><span class="text-mst"> Packages 2026</span>
+            </h1>
+            <p class="mt-5">Travel comfortably this Ramadan with our specially arranged Umrah by Bus packages.
+                            Affordable fares, reliable service, and a spiritually enriching journey.</p>
+        </div>
+        <div class="ramadan-umrah" id="ramadan-umrah-section">
+            <!-- Responsive Table Container with Custom Scrollbar -->
+            <div class="overflow-x-auto ddscroll rounded-2xl border border-gray-200/60 shadow-[0_4px_25px_rgba(0,0,0,0.01)]">
+                <table id="ramadan-umrah-table" class="w-full min-w-[768px] border-collapse bg-white text-center">
+                    <thead>
+                        <tr class="bg-[#1E5E28] text-white">
+                            <th id="ramadan-umrah-table-head-departure" class="py-4 px-6 font-heading font-semibold border-r border-[#17491E] last:border-r-0">
+                                <div class="flex items-center justify-center gap-2">
+                                    <img src="<?php echo e(asset('assets/images/icons/calender.svg')); ?>" alt="Calendar"
+                                         class="w-5 h-5">
+                                    <span>Departure Day</span>
+                                </div>
+                            </th>
+                            <th id="ramadan-umrah-table-head-sharing-4-5" class="py-4 px-6 font-heading font-semibold border-r border-[#17491E] last:border-r-0">
+                                <div class="flex items-center justify-center gap-2">
+                                    <img src="<?php echo e(asset('assets/images/icons/bed.svg')); ?>" alt="Bed" class="w-6 h-5
+                                    object-contain">
+                                    <span>Sharing 4~5 Beds</span>
+                                </div>
+                            </th>
+                            <th id="ramadan-umrah-table-head-sharing-3" class="py-4 px-6 font-heading font-semibold border-r border-[#17491E] last:border-r-0">
+                                <div class="flex items-center justify-center gap-2">
+                                    <img src="<?php echo e(asset('assets/images/icons/bed.svg')); ?>" alt="Bed" class="w-6 h-5 object-contain">
+                                    <span>Sharing 3 Beds</span>
+                                </div>
+                            </th>
+                            <th id="ramadan-umrah-table-head-sharing-2" class="py-4 px-6 font-heading font-semibold border-r border-[#17491E] last:border-r-0">
+                                <div class="flex items-center justify-center gap-2">
+                                    <img src="<?php echo e(asset('assets/images/icons/bed.svg')); ?>" alt="Bed" class="w-6 h-5 object-contain">
+                                    <span>Sharing 2 Beds</span>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200 text-md text-mst-gray font-semibold">
+                        <tr class="hover:bg-gray-50/50 transition duration-150">
+                            <td class="py-5 px-6 border-r border-gray-100">05 March 2025</td>
+                            <td class="py-5 px-6 border-r border-gray-100">2200/-</td>
+                            <td class="py-5 px-6 border-r border-gray-100">2400/-</td>
+                            <td class="py-5 px-6 text-[#282828]">2750/-</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50/50 transition duration-150">
+                            <td class="py-5 px-6 border-r border-gray-100">12 March 2025</td>
+                            <td class="py-5 px-6 border-r border-gray-100">2200/-</td>
+                            <td class="py-5 px-6 border-r border-gray-100 ">2400/-</td>
+                            <td class="py-5 px-6 text-[#282828]">2750/-</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50/50 transition duration-150">
+                            <td class="py-5 px-6 border-r border-gray-100">19 March 2025</td>
+                            <td class="py-5 px-6 border-r border-gray-100 text-[#282828]">2600/-</td>
+                            <td class="py-5 px-6 border-r border-gray-100 text-[#282828]">2400/-</td>
+                            <td class="py-5 px-6 text-[#282828]">3100/-</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50/50 transition duration-150">
+                            <td class="py-5 px-6 border-r border-gray-100">26 March 2025</td>
+                            <td class="py-5 px-6 border-r border-gray-100 text-[#282828]">3200/-</td>
+                            <td class="py-5 px-6 border-r border-gray-100 text-[#282828]">2400/-</td>
+                            <td class="py-5 px-6 text-[#282828]">4000/-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
 
 <section class="pt-10 pb-30 bg-gray-50">
     <div class="container">
