@@ -5,7 +5,7 @@
 <?php echo $__env->make('frontend.components.tour-listing-grid', ['tours' => $tours], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 <?php $slug = request()->segment(1); ?>
 
-<?php if(!in_array($slug, ['umrah-by-bus', 'umrah'])): ?>
+<?php if(!in_array($slug, ['umrah-by-bus', 'umrah', 'umrah-for-single-lady'])): ?>
     <?php echo $__env->make('frontend.components.testimonials', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
     <?php echo $__env->make('frontend.components.tour_faqs', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
     <?php echo $__env->make('frontend.components.explore_dubai', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>

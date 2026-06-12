@@ -5,10 +5,15 @@
             <div class="mx-auto md:max-w-2xl text-center">
                 <?php
                     $slug = request()->segment(1);
-                    $heading = $slug === 'umrah-travel-agency' ? 'Umrah' : '';
+
+                    $headings = [
+                        'umrah'                   => 'Umrah',
+                        'umrah-for-single-lady'   => 'Umrah'
+                    ];
+
+                    $heading = $headings[$slug] ?? 'Customer';
                 ?>
                 <h1>
-
                     <span><?php echo e($heading); ?> Customer </span><span class="text-mst">Reviews</span>
                 </h1>
                 <p class="mt-5">
@@ -68,8 +73,7 @@
                     <div class="mt-10">
                         <a href="#"
                            class="flex items-center justify-center w-32 text-white text-lg px-2 py-2 rounded-full mx-auto bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                            View All
-                            <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>" class="w-6 ms-1" alt=""> </a>
+                            View All <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>" class="w-6 ms-1" alt=""> </a>
                     </div>
                 </div>
             </div>

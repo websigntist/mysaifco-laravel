@@ -198,7 +198,7 @@
         </div>
         <div class="ramadan-umrah" id="ramadan-umrah-section">
             <!-- Responsive Table Container with Custom Scrollbar -->
-            <div class="overflow-x-auto ddscroll rounded-2xl border border-gray-200/60 shadow-[0_4px_25px_rgba(0,0,0,0.01)]">
+            <div class="w-full overflow-x-auto ddscroll rounded-2xl border border-gray-200/60 shadow-[0_4px_25px_rgba(0,0,0,0.01)]">
                 <table id="ramadan-umrah-table" class="w-full min-w-[768px] border-collapse bg-white text-center">
                     <thead>
                     <tr class="bg-[#1E5E28] text-white">
@@ -273,8 +273,8 @@
         </div>
         <div class="bus-schedule" id="bus-schedule-section">
             <!-- Responsive Table Container with Custom Scrollbar -->
-            <div class="overflow-x-auto ddscroll rounded-2xl border border-gray-300">
-                <table id="bus-schedule-table" class="w-full border-collapse bg-white text-center">
+            <div class="w-full overflow-x-auto ddscroll rounded-2xl border border-gray-300">
+                <table id="bus-schedule-table" class="w-full min-w-[992px] border-collapse bg-white text-center">
                     <thead>
                     <tr class="bg-[#1E5E28] text-white">
                         <th id="bus-schedule-table-head-month" class="w-[15%] py-4 px-4 font-heading font-semibold

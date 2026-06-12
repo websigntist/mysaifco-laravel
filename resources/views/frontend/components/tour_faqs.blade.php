@@ -20,10 +20,10 @@
     ];
 @endphp
 @if(count($faqItems) > 0)
-    <section class="flex items-center justify-center pt-14 pb-18">
+    <section class="flex items-center justify-center pt-5 pb-18">
         <div class="container mx-auto px-4">
             <div class="mx-auto text-center">
-                <h1>
+                <h1 class="text-3xl md:text-5xl">
                     <span>Frequently Asked  </span><span class="text-mst">Questions</span>
                 </h1>
                 <p class="mt-4 text-center mx-auto md:w-7/12">
@@ -69,7 +69,7 @@
                     @endforeach
                 </div>
             </div>
-            <a href="" class="flex items-center justify-center w-fit text-white text-lg px-5 pt-2 pb-2 rounded-full mx-auto
+            <a href="" class="flex items-center justify-center w-fit text-white text-lg px-6 pt-3 pb-3 rounded-full mx-auto
                                                         bg-gradient-to-r from-[#BA9B31] to-[#74611E]
                                                          hover:bg-gradient-to-r hover:from-[#74611E] hover:to-[#BA9B31]
                                                          transition duration-300 font-heading italic mt-8"> Explore all FAQs

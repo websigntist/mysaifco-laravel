@@ -1,6 +1,6 @@
 
 <section class="flex justify-center items-center">
-    <div class="px-4 relative flex md:min-h-[995px]  min-h-[520px] w-full bg-[-250px] md:bg-center bg-cover
+    <div class="px-4 relative flex md:min-h-[995px] min-h-[520px] w-full bg-[-250px] md:bg-center bg-cover
     bg-no-repeat"
          style="background-image: url('<?php echo e(asset('assets/images/umrah/umrah-15.webp')); ?>')">
         <div class="z-10 w-full py-10">
@@ -36,10 +36,314 @@
                             room options, we have packages suitable for every pilgrim.</p>
         </div>
         <div class="single-packages">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-                <div class=""></div>
-                <div class=""></div>
-                <div class=""></div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Card 1: 5 Star Package -->
+                <div class="bg-gray-50 rounded-3xl border border-gray-200 p-4 flex flex-col justify-between">
+                    <div>
+                        <!-- Header Image Container -->
+                        <div class="relative pb-6">
+                            <!-- Image Wrapper -->
+                            <div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden">
+                                <img src="<?php echo e(asset('assets/images/umrah/macca1.webp')); ?>" class="w-full h-full
+                                object-cover" alt="5 Nights 5 Star Umrah Package">
+                                <!-- Bottom Gradient Overlay -->
+                                <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/75
+                                via-black/50 to-transparent"></div>
+                                <!-- Title -->
+                                <div class="absolute bottom-16 left-0 right-0 px-2 text-center">
+                                    <h3 class="text-white text-[22px] font-bold italic font-heading capitalize
+                                    leading-tight">
+                                        5 Nights 5 Star Umrah Package
+                                    </h3>
+                                </div>
+                            </div>
+                            <!-- Hanging Badge -->
+                            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 translate-y-1/2 z-10 w-[90%]
+                                        md:w-[78%] bg-gradient-to-r from-[#BA9B31] to-[#74611E] rounded-full py-4 px-6 flex
+                                        items-center justify-between text-white">
+                                <!-- Price -->
+                                <div class="flex items-center gap-1.5">
+                                    <!-- Coin SVG -->
+                                    <img src="<?php echo e(asset('assets/images/icons/icon5.svg')); ?>" alt="">
+                                    <div class="flex flex-col text-left">
+                                        <span class="text-xs text-white tracking-wider leading-none">Price Per Head</span>
+                                        <span class="text-xs md:text-sm font-medium text-white leading-none mt-1">AED4600</span>
+                                    </div>
+                                </div>
+                                <!-- Dot -->
+                                <span class="text-white text-lg font-bold select-none">•</span>
+                                <!-- Min People -->
+                                <div class="flex items-center gap-1.5">
+                                    <!-- Group SVG -->
+                                    <img src="<?php echo e(asset('assets/images/icons/gr3.svg')); ?>" alt="">
+                                    <div class="flex flex-col text-left">
+                                        <span class="text-xs text-white tracking-wider leading-none">Min People</span>
+                                        <span class="text-xs md:text-sm font-medium text-white leading-none mt-1">2 Persons</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Accommodation Info Block -->
+                        <div class="mt-4 space-y-4">
+                            <!-- Hotel Box 1 -->
+                            <div class="bg-gray-100 rounded-2xl p-3 flex gap-3.5 ">
+                                <div class="rounded-xl overflow-hidden flex-shrink-0">
+                                    <img src="<?php echo e(asset('assets/images/umrah/macca4.webp')); ?>" class="w-full h-full object-cover" alt="Makkah Hotel">
+                                </div>
+                                <div class="flex-grow flex flex-col justify-center min-w-0">
+                                    <h4 class="text-[18px] font-bold italic font-heading leading-tight mb-1 truncate">3 Nights in Makkah</h4>
+                                    <div class="flex items-center gap-1 text-gray-700 mt-2 mb-3">
+                                        <img src="<?php echo e(asset('assets/images/icons/redmark.svg')); ?>" alt="">
+                                        <span class="text-xs font-medium truncate">Pullman Zamzam or Similar</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 text-[#282828]">
+                                        <img src="<?php echo e(asset('assets/images/icons/star.svg')); ?>" alt="">
+                                        <span class="text-xs text-gray-500 font-medium">
+                                            <strong class="text-gray-800">4.9</strong>/5 <span class="mx-0.5 text-gray-300">|</span> 5.1k Reviews</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Hotel Box 2 -->
+                            <div class="bg-gray-100 rounded-2xl p-3 flex gap-3.5 ">
+                            <div class="rounded-xl overflow-hidden flex-shrink-0">
+                                <img src="<?php echo e(asset('assets/images/umrah/madina1.webp')); ?>" class="w-full h-full object-cover" alt="Makkah Hotel">
+                            </div>
+                            <div class="flex-grow flex flex-col justify-center min-w-0">
+                                <h4 class="text-[18px] font-bold italic font-heading leading-tight mb-1 truncate">2 Nights in Madinah</h4>
+                                <div class="flex items-center gap-1 text-gray-700 mt-2 mb-3">
+                                    <img src="<?php echo e(asset('assets/images/icons/redmark.svg')); ?>" alt="">
+                                    <span class="text-xs font-medium truncate">Pullman Zamzam or Similar</span>
+                                </div>
+                                <div class="flex items-center gap-1 text-[#282828]">
+                                    <img src="<?php echo e(asset('assets/images/icons/star.svg')); ?>" alt="">
+                                    <span class="text-xs text-gray-500 font-medium">
+                                        <strong class="text-gray-800">4.9</strong>/5 <span class="mx-0.5 text-gray-300">|</span> 5.1k Reviews</span>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="mt-5 flex items-center justify-between px-3">
+                        <a href="#"
+                           class="flex items-center justify-center mx-auto w-fit text-white px-6 pt-1 pb-2 rounded-full text-sm
+                               bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
+                            Package Inquiry  <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>" class="w-4 mt-1 ms-1" alt=""> </a>
+
+                        <a href="#"
+                           class="flex items-center justify-center mx-auto w-fit text-white px-6 pt-1 pb-2 rounded-full text-sm
+                               bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
+                            Call me Back  <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>" class="w-4 mt-1 ms-1" alt=""> </a>
+                    </div>
+                </div>
+
+                <!-- Card 2: 5 Star Package -->
+                <div class="bg-gray-50 rounded-3xl border border-gray-200 p-4 flex flex-col justify-between">
+                    <div>
+                        <!-- Header Image Container -->
+                        <div class="relative pb-6">
+                            <!-- Image Wrapper -->
+                            <div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden">
+                                <img src="<?php echo e(asset('assets/images/umrah/macca2.webp')); ?>" class="w-full h-full
+                                object-cover" alt="5 Nights 5 Star Umrah Package">
+                                <!-- Bottom Gradient Overlay -->
+                                <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/75
+                                via-black/50 to-transparent"></div>
+                                <!-- Title -->
+                                <div class="absolute bottom-16 left-0 right-0 px-2 text-center">
+                                    <h3 class="text-white text-[22px] font-bold italic font-heading capitalize
+                                    leading-tight">
+                                        5 Nights 5 Star Umrah Package
+                                    </h3>
+                                </div>
+                            </div>
+                            <!-- Hanging Badge -->
+                            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 translate-y-1/2 z-10 w-[90%]
+                                md:w-[78%] bg-gradient-to-r from-[#BA9B31] to-[#74611E] rounded-full py-4 px-6 flex
+                                items-center justify-between text-white">
+                                <!-- Price -->
+                                <div class="flex items-center gap-1.5">
+                                    <!-- Coin SVG -->
+                                    <img src="<?php echo e(asset('assets/images/icons/icon5.svg')); ?>" alt="">
+                                    <div class="flex flex-col text-left">
+                                        <span class="text-xs text-white tracking-wider leading-none">Price Per Head</span>
+                                        <span class="text-xs md:text-sm font-medium text-white leading-none mt-1">AED4600</span>
+                                    </div>
+                                </div>
+                                <!-- Dot -->
+                                <span class="text-white text-lg font-bold select-none">•</span>
+                                <!-- Min People -->
+                                <div class="flex items-center gap-1.5">
+                                    <!-- Group SVG -->
+                                    <img src="<?php echo e(asset('assets/images/icons/gr3.svg')); ?>" alt="">
+                                    <div class="flex flex-col text-left">
+                                        <span class="text-xs text-white tracking-wider leading-none">Min People</span>
+                                        <span class="text-xs md:text-sm font-medium text-white leading-none mt-1">2 Persons</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Accommodation Info Block -->
+                        <div class="mt-4 space-y-4">
+                            <!-- Hotel Box 1 -->
+                            <div class="bg-gray-100 rounded-2xl p-3 flex gap-3.5 ">
+                                <div class="rounded-xl overflow-hidden flex-shrink-0">
+                                    <img src="<?php echo e(asset('assets/images/umrah/macca4.webp')); ?>" class="w-full h-full object-cover" alt="Makkah Hotel">
+                                </div>
+                                <div class="flex-grow flex flex-col justify-center min-w-0">
+                                    <h4 class="text-[18px] font-bold italic font-heading leading-tight mb-1 truncate">3 Nights in Makkah</h4>
+                                    <div class="flex items-center gap-1 text-gray-700 mt-2 mb-3">
+                                        <img src="<?php echo e(asset('assets/images/icons/redmark.svg')); ?>" alt="">
+                                        <span class="text-xs font-medium truncate">Pullman Zamzam or Similar</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 text-[#282828]">
+                                        <img src="<?php echo e(asset('assets/images/icons/star.svg')); ?>" alt="">
+                                        <span class="text-xs text-gray-500 font-medium">
+                                            <strong class="text-gray-800">4.9</strong>/5 <span class="mx-0.5 text-gray-300">|</span> 5.1k Reviews</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Hotel Box 2 -->
+                            <div class="bg-gray-100 rounded-2xl p-3 flex gap-3.5 ">
+                            <div class="rounded-xl overflow-hidden flex-shrink-0">
+                                <img src="<?php echo e(asset('assets/images/umrah/madina1.webp')); ?>" class="w-full h-full object-cover" alt="Makkah Hotel">
+                            </div>
+                            <div class="flex-grow flex flex-col justify-center min-w-0">
+                                <h4 class="text-[18px] font-bold italic font-heading leading-tight mb-1 truncate">2 Nights in Madinah</h4>
+                                <div class="flex items-center gap-1 text-gray-700 mt-2 mb-3">
+                                    <img src="<?php echo e(asset('assets/images/icons/redmark.svg')); ?>" alt="">
+                                    <span class="text-xs font-medium truncate">Pullman Zamzam or Similar</span>
+                                </div>
+                                <div class="flex items-center gap-1 text-[#282828]">
+                                    <img src="<?php echo e(asset('assets/images/icons/star.svg')); ?>" alt="">
+                                    <span class="text-xs text-gray-500 font-medium">
+                                        <strong class="text-gray-800">4.9</strong>/5 <span class="mx-0.5 text-gray-300">|</span> 5.1k Reviews</span>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="mt-5 flex items-center justify-between px-3">
+                        <a href="#"
+                           class="flex items-center justify-center mx-auto w-fit text-white px-6 pt-1 pb-2 rounded-full text-sm
+                               bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
+                            Package Inquiry  <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>" class="w-4 mt-1 ms-1" alt=""> </a>
+
+                        <a href="#"
+                           class="flex items-center justify-center mx-auto w-fit text-white px-6 pt-1 pb-2 rounded-full text-sm
+                               bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
+                            Call me Back  <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>" class="w-4 mt-1 ms-1" alt=""> </a>
+                    </div>
+                </div>
+
+                <!-- Card 3: 5 Star Package -->
+                <div class="bg-gray-50 rounded-3xl border border-gray-200 p-4 flex flex-col justify-between">
+                    <div>
+                        <!-- Header Image Container -->
+                        <div class="relative pb-6">
+                            <!-- Image Wrapper -->
+                            <div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden">
+                                <img src="<?php echo e(asset('assets/images/umrah/macca3.webp')); ?>" class="w-full h-full
+                                object-cover" alt="5 Nights 5 Star Umrah Package">
+                                <!-- Bottom Gradient Overlay -->
+                                <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/75
+                                via-black/50 to-transparent"></div>
+                                <!-- Title -->
+                                <div class="absolute bottom-16 left-0 right-0 px-2 text-center">
+                                    <h3 class="text-white text-[22px] font-bold italic font-heading capitalize
+                                    leading-tight">
+                                        5 Nights 5 Star Umrah Package
+                                    </h3>
+                                </div>
+                            </div>
+                            <!-- Hanging Badge -->
+                            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 translate-y-1/2 z-10 w-[90%]
+                            md:w-[78%] bg-gradient-to-r from-[#BA9B31] to-[#74611E] rounded-full py-4 px-6 flex
+                            items-center justify-between text-white">
+                                <!-- Price -->
+                                <div class="flex items-center gap-1.5">
+                                    <!-- Coin SVG -->
+                                    <img src="<?php echo e(asset('assets/images/icons/icon5.svg')); ?>" alt="">
+                                    <div class="flex flex-col text-left">
+                                        <span class="text-xs text-white tracking-wider leading-none">Price Per Head</span>
+                                        <span class="text-xs md:text-sm font-medium text-white leading-none mt-1">AED4600</span>
+                                    </div>
+                                </div>
+                                <!-- Dot -->
+                                <span class="text-white text-lg font-bold select-none">•</span>
+                                <!-- Min People -->
+                                <div class="flex items-center gap-1.5">
+                                    <!-- Group SVG -->
+                                    <img src="<?php echo e(asset('assets/images/icons/gr3.svg')); ?>" alt="">
+                                    <div class="flex flex-col text-left">
+                                        <span class="text-xs text-white tracking-wider leading-none">Min People</span>
+                                        <span class="text-xs md:text-sm font-medium text-white leading-none mt-1">2 Persons</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Accommodation Info Block -->
+                        <div class="mt-4 space-y-4">
+                            <!-- Hotel Box 1 -->
+                            <div class="bg-gray-100 rounded-2xl p-3 flex gap-3.5 ">
+                                <div class="rounded-xl overflow-hidden flex-shrink-0">
+                                    <img src="<?php echo e(asset('assets/images/umrah/macca4.webp')); ?>" class="w-full h-full object-cover" alt="Makkah Hotel">
+                                </div>
+                                <div class="flex-grow flex flex-col justify-center min-w-0">
+                                    <h4 class="text-[18px] font-bold italic font-heading leading-tight mb-1 truncate">3 Nights in Makkah</h4>
+                                    <div class="flex items-center gap-1 text-gray-700 mt-2 mb-3">
+                                        <img src="<?php echo e(asset('assets/images/icons/redmark.svg')); ?>" alt="">
+                                        <span class="text-xs font-medium truncate">Pullman Zamzam or Similar</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 text-[#282828]">
+                                        <img src="<?php echo e(asset('assets/images/icons/star.svg')); ?>" alt="">
+                                        <span class="text-xs text-gray-500 font-medium">
+                                            <strong class="text-gray-800">4.9</strong>/5 <span class="mx-0.5 text-gray-300">|</span> 5.1k Reviews</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Hotel Box 2 -->
+                            <div class="bg-gray-100 rounded-2xl p-3 flex gap-3.5 ">
+                            <div class="rounded-xl overflow-hidden flex-shrink-0">
+                                <img src="<?php echo e(asset('assets/images/umrah/madina1.webp')); ?>" class="w-full h-full object-cover" alt="Makkah Hotel">
+                            </div>
+                            <div class="flex-grow flex flex-col justify-center min-w-0">
+                                <h4 class="text-[18px] font-bold italic font-heading leading-tight mb-1 truncate">2 Nights in Madinah</h4>
+                                <div class="flex items-center gap-1 text-gray-700 mt-2 mb-3">
+                                    <img src="<?php echo e(asset('assets/images/icons/redmark.svg')); ?>" alt="">
+                                    <span class="text-xs font-medium truncate">Pullman Zamzam or Similar</span>
+                                </div>
+                                <div class="flex items-center gap-1 text-[#282828]">
+                                    <img src="<?php echo e(asset('assets/images/icons/star.svg')); ?>" alt="">
+                                    <span class="text-xs text-gray-500 font-medium">
+                                        <strong class="text-gray-800">4.9</strong>/5 <span class="mx-0.5 text-gray-300">|</span> 5.1k Reviews</span>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="mt-5 flex items-center justify-between px-3">
+                        <a href="#"
+                           class="flex items-center justify-center mx-auto w-fit text-white px-6 pt-1 pb-2 rounded-full text-sm
+                               bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
+                            Package Inquiry  <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>" class="w-4 mt-1 ms-1" alt=""> </a>
+
+                        <a href="#"
+                           class="flex items-center justify-center mx-auto w-fit text-white px-6 pt-1 pb-2 rounded-full text-sm
+                               bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
+                            Call me Back  <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>" class="w-4 mt-1 ms-1" alt=""> </a>
+                    </div>
+                </div>
+
+
             </div>
         </div>
     </div>
@@ -172,7 +476,7 @@
     </div>
 </section>
 
-<section class="flex justify-between items-center py-12 bg-gray-100">
+<section class="flex justify-between items-center py-12">
     <div class="container">
         <div class="grid grid-cols-1 md:grid-cols-[2fr_1.5fr] items-center gap-8">
             <div>
@@ -185,7 +489,7 @@
                                                                      visa valid for one year. It will allow them to stay
                                                                      in the country for up to 90 days at once.
                     <a href="" class="text-mst">Read more</a></p>
-                <div class="flex items-center mt-10">
+                <div class="flex items-center justify-center md:justify-start mt-10">
                     <a href="" class="flex items-center justify-center w-fit text-white text-lg px-7 pt-3 pb-3
                     rounded-full
                                         bg-gradient-to-r from-[#BA9B31] to-[#74611E]
@@ -196,7 +500,7 @@
                              alt="arrow"> </a>
                 </div>
             </div>
-            <div class="flex justify-end">
+            <div class="flex justify-center md:justify-end">
                 <img src="<?php echo e(asset('assets/images/umrah/evisa.webp')); ?>" alt="">
             </div>
         </div>
