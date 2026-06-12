@@ -180,6 +180,48 @@ function initImageLogosSwiper() {
     });
 }
 
+function initTourDetailsSwiper() {
+    const el = document.querySelector('.tour-details-swiper');
+    if (!el || el.dataset.swiperInit === '1') {
+        return;
+    }
+    el.dataset.swiperInit = '1';
+
+    const wrap = el.parentElement;
+    const prevEl = wrap?.querySelector('.tour-details-swiper-prev') ?? null;
+    const nextEl = wrap?.querySelector('.tour-details-swiper-next') ?? null;
+
+    const swiper = new Swiper(el, {
+        modules: [Navigation, Pagination, Autoplay],
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+        spaceBetween: 0,
+        speed: 800,
+        loop: true,
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+        },
+        pagination: {
+            el: wrap?.querySelector('.tour-details-swiper-pagination') ?? null,
+            clickable: true,
+        },
+        navigation: {
+            prevEl,
+            nextEl,
+        },
+    });
+
+    el.addEventListener('click', (e) => {
+        if (!e.target.closest('.tour-details-swiper-prev') && !e.target.closest('.tour-details-swiper-next')) {
+            swiper.slideNext();
+        }
+    });
+}
+
+
+
 function initHolidayPackagesSwiper() {
     const el = document.querySelector('.holiday-swiper');
     if (!el || el.dataset.swiperInit === '1') {
@@ -484,6 +526,7 @@ function initFrontend() {
     initTestimonialsSwiper();
     initWhyChooseLogosSwiper();
     initImageLogosSwiper();
+    initTourDetailsSwiper();
     initScrollMenus();
     initNavbarDropdowns();
 }

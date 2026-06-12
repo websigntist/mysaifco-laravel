@@ -688,6 +688,7 @@ Route::prefix('admin')->group(function () {
 // FRONTEND ROUTES
 Route::middleware(['frontend', 'maintenance'])->group(function () {
     Route::get('/', [frontend\MainController::class, 'index'])->name('/');
+    Route::get('/tour-details', [frontend\MainController::class, 'tourDetails'])->name('tour-details');
     Route::match(['get', 'post'], '/send', [frontend\InquiriesController::class, 'index'])->name('send');
 
     Route::get('/{slug}', [frontend\MainController::class, 'show'])
