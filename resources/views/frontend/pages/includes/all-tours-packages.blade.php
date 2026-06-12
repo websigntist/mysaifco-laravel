@@ -5,7 +5,7 @@
 @include('frontend.components.tour-listing-grid', ['tours' => $tours])
 @php $slug = request()->segment(1); @endphp
 
-@if($slug != 'umrah-travel-agency')
+@if(!in_array($slug, ['umrah-by-bus', 'umrah']))
     @include('frontend.components.testimonials')
     @include('frontend.components.tour_faqs')
     @include('frontend.components.explore_dubai')

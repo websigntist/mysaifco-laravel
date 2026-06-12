@@ -185,7 +185,7 @@
     </div>
 </section>
 
-<section class="pb-12">
+<section class="">
     <div class="container">
         <div class="mx-auto max-w-5xl text-center pt-16 pb-10">
             <h1>
@@ -199,156 +199,312 @@
             <div class="overflow-x-auto ddscroll rounded-2xl border border-gray-200/60 shadow-[0_4px_25px_rgba(0,0,0,0.01)]">
                 <table id="ramadan-umrah-table" class="w-full min-w-[768px] border-collapse bg-white text-center">
                     <thead>
-                        <tr class="bg-[#1E5E28] text-white">
-                            <th id="ramadan-umrah-table-head-departure" class="py-4 px-6 font-heading font-semibold border-r border-[#17491E] last:border-r-0">
-                                <div class="flex items-center justify-center gap-2">
-                                    <img src="<?php echo e(asset('assets/images/icons/calender.svg')); ?>" alt="Calendar"
-                                         class="w-5 h-5">
-                                    <span>Departure Day</span>
-                                </div>
-                            </th>
-                            <th id="ramadan-umrah-table-head-sharing-4-5" class="py-4 px-6 font-heading font-semibold border-r border-[#17491E] last:border-r-0">
-                                <div class="flex items-center justify-center gap-2">
-                                    <img src="<?php echo e(asset('assets/images/icons/bed.svg')); ?>" alt="Bed" class="w-6 h-5
-                                    object-contain">
-                                    <span>Sharing 4~5 Beds</span>
-                                </div>
-                            </th>
-                            <th id="ramadan-umrah-table-head-sharing-3" class="py-4 px-6 font-heading font-semibold border-r border-[#17491E] last:border-r-0">
-                                <div class="flex items-center justify-center gap-2">
-                                    <img src="<?php echo e(asset('assets/images/icons/bed.svg')); ?>" alt="Bed" class="w-6 h-5 object-contain">
-                                    <span>Sharing 3 Beds</span>
-                                </div>
-                            </th>
-                            <th id="ramadan-umrah-table-head-sharing-2" class="py-4 px-6 font-heading font-semibold border-r border-[#17491E] last:border-r-0">
-                                <div class="flex items-center justify-center gap-2">
-                                    <img src="<?php echo e(asset('assets/images/icons/bed.svg')); ?>" alt="Bed" class="w-6 h-5 object-contain">
-                                    <span>Sharing 2 Beds</span>
-                                </div>
-                            </th>
-                        </tr>
+                    <tr class="bg-[#1E5E28] text-white">
+                        <th id="ramadan-umrah-table-head-departure" class="py-4 px-6 font-heading font-semibold border-r border-[#17491E] last:border-r-0">
+                            <div class="flex items-center justify-center gap-2">
+                                <img src="<?php echo e(asset('assets/images/icons/calender.svg')); ?>" alt="Calendar"
+                                     class="w-5 h-5"> <span>Departure Day</span>
+                            </div>
+                        </th>
+                        <th id="ramadan-umrah-table-head-sharing-4-5" class="py-4 px-6 font-heading font-semibold border-r border-[#17491E] last:border-r-0">
+                            <div class="flex items-center justify-center gap-2">
+                                <img src="<?php echo e(asset('assets/images/icons/bed.svg')); ?>" alt="Bed" class="w-6 h-5
+                                    object-contain"> <span>Sharing 4~5 Beds</span>
+                            </div>
+                        </th>
+                        <th id="ramadan-umrah-table-head-sharing-3" class="py-4 px-6 font-heading font-semibold border-r border-[#17491E] last:border-r-0">
+                            <div class="flex items-center justify-center gap-2">
+                                <img src="<?php echo e(asset('assets/images/icons/bed.svg')); ?>" alt="Bed" class="w-6 h-5 object-contain">
+                                <span>Sharing 3 Beds</span>
+                            </div>
+                        </th>
+                        <th id="ramadan-umrah-table-head-sharing-2" class="py-4 px-6 font-heading font-semibold border-r border-[#17491E] last:border-r-0">
+                            <div class="flex items-center justify-center gap-2">
+                                <img src="<?php echo e(asset('assets/images/icons/bed.svg')); ?>" alt="Bed" class="w-6 h-5 object-contain">
+                                <span>Sharing 2 Beds</span>
+                            </div>
+                        </th>
+                    </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-200 text-md text-mst-gray font-semibold">
-                        <tr class="hover:bg-gray-50/50 transition duration-150">
-                            <td class="py-5 px-6 border-r border-gray-100">05 March 2025</td>
-                            <td class="py-5 px-6 border-r border-gray-100">2200/-</td>
-                            <td class="py-5 px-6 border-r border-gray-100">2400/-</td>
-                            <td class="py-5 px-6 text-[#282828]">2750/-</td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/50 transition duration-150">
-                            <td class="py-5 px-6 border-r border-gray-100">12 March 2025</td>
-                            <td class="py-5 px-6 border-r border-gray-100">2200/-</td>
-                            <td class="py-5 px-6 border-r border-gray-100 ">2400/-</td>
-                            <td class="py-5 px-6 text-[#282828]">2750/-</td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/50 transition duration-150">
-                            <td class="py-5 px-6 border-r border-gray-100">19 March 2025</td>
-                            <td class="py-5 px-6 border-r border-gray-100 text-[#282828]">2600/-</td>
-                            <td class="py-5 px-6 border-r border-gray-100 text-[#282828]">2400/-</td>
-                            <td class="py-5 px-6 text-[#282828]">3100/-</td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/50 transition duration-150">
-                            <td class="py-5 px-6 border-r border-gray-100">26 March 2025</td>
-                            <td class="py-5 px-6 border-r border-gray-100 text-[#282828]">3200/-</td>
-                            <td class="py-5 px-6 border-r border-gray-100 text-[#282828]">2400/-</td>
-                            <td class="py-5 px-6 text-[#282828]">4000/-</td>
-                        </tr>
+                    <tr>
+                        <td class="py-5 px-6 border-r border-gray-100">05 March 2025</td>
+                        <td class="py-5 px-6 border-r border-gray-100">2200/-</td>
+                        <td class="py-5 px-6 border-r border-gray-100">2400/-</td>
+                        <td class="py-5 px-6 text-[#282828]">2750/-</td>
+                    </tr>
+                    <tr>
+                        <td class="py-5 px-6 border-r border-gray-100">12 March 2025</td>
+                        <td class="py-5 px-6 border-r border-gray-100">2200/-</td>
+                        <td class="py-5 px-6 border-r border-gray-100 ">2400/-</td>
+                        <td class="py-5 px-6 text-[#282828]">2750/-</td>
+                    </tr>
+                    <tr>
+                        <td class="py-5 px-6 border-r border-gray-100">19 March 2025</td>
+                        <td class="py-5 px-6 border-r border-gray-100 text-[#282828]">2600/-</td>
+                        <td class="py-5 px-6 border-r border-gray-100 text-[#282828]">2400/-</td>
+                        <td class="py-5 px-6 text-[#282828]">3100/-</td>
+                    </tr>
+                    <tr>
+                        <td class="py-5 px-6 border-r border-gray-100">26 March 2025</td>
+                        <td class="py-5 px-6 border-r border-gray-100 text-[#282828]">3200/-</td>
+                        <td class="py-5 px-6 border-r border-gray-100 text-[#282828]">2400/-</td>
+                        <td class="py-5 px-6 text-[#282828]">4000/-</td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
 </section>
-
-<section class="pt-10 pb-30 bg-gray-50">
-    <div class="container">
-        <div class="mx-auto max-w-5xl text-center pt-12 pb-10">
-            <h1>
-                <span>Required Documents for </span><span class="text-mst">Umrah Visa</span>
-            </h1>
-            <p class="mt-5">
-                Begin your sacred journey with comfort, trust, and complete guidance. We believe in reliability, quality
-                customer service, willingness and dedication to serving you the best umrah packages from Dubai, Abu
-                Dhabi & Sharjah.
-            </p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
-            <div class="space-y-7">
-                <div class="py-4 px-6 rounded-xl border border-gray-200 bg-white text-center md:text-left">
-                    <h3 class="italic"><span>Clear Scans of  </span><span class="text-mst">Passport Copy</span></h3>
-                    <p class="text-[14px] mt-2">Passport should be valid for 6 months and Visa should be valid for
-                                                months .</p>
-                </div>
-                <div class="py-4 px-6 rounded-xl border border-gray-200 bg-white text-center md:text-left">
-                    <h3 class="italic"><span>1 Passport   </span><span class="text-mst">Size Photo</span></h3>
-                    <p class="text-[14px] mt-2">Passport should be valid for 6 months and Visa should be valid for
-                                                months.</p>
-                </div>
-                <div class="py-4 px-6 rounded-xl border border-gray-200 bg-white text-center md:text-left">
-                    <h3 class="italic"><span>National ID   </span><span class="text-mst">Card Copy</span></h3>
-                    <p class="text-[14px] mt-2">National ID Card copy (Front & Back)</p>
-                </div>
-                <div class="py-4 px-6 rounded-xl border border-gray-200 bg-white text-center md:text-left">
-                    <h3 class="italic"><span>Processing  </span><span class="text-mst">Time</span></h3>
-                    <p class="text-[14px] mt-2">Umrah Visa Processing will take approximately 2-3 working days.</p>
-                </div>
-            </div>
-            <div class="flex items-center justify-end">
-                <img src="<?php echo e(asset('assets/images/umrah/umrah-1.webp')); ?>"
-                     class="w-full object-cover rounded-xl"
-                     alt="umrah">
-            </div>
-        </div>
-    </div>
-</section>
 <?php echo $__env->make('frontend.components.testimonials', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 
-<section class="flex justify-center items-center">
-    <div class="px-4 relative flex md:min-h-[995px]  min-h-[520px] w-full bg-[-250px] md:bg-center bg-cover
-    bg-no-repeat"
-         style="background-image: url('<?php echo e(asset('assets/images/umrah/umrah-15.webp')); ?>')">
-        <div class="z-10 w-full py-10">
-            <div class="container mx-auto">
-                <div class="mx-auto max-w-3xl text-center pt-12 pb-10">
-                    <h1>
-                        <span>Umrah for </span><span class="text-mst">Single Ladies</span>
-                    </h1>
-                    <p class="mt-5 text-[16px]">Yes, We make this possible for all single ladies to perform umrah
-                                                without mahram. Contact us and avail different type of umrah packages
-                                                offered from UAE and UK. Our umrah agency make it convenient for single
-                                                ladies to visit the Holy Kabba without any hustle.</p>
-                    <a href="#"
-                       class="flex items-center justify-center mx-auto mt-8 w-44 text-white px-4 pt-2 pb-3
-                   rounded-full
-                           bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                        Read More <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
-                                       class="w-4 mt-1 ms-1" alt=""> </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="flex justify-between items-center py-12 bg-gray-50">
+<section class="pb-12">
     <div class="container">
-        <div class="grid grid-cols-1 md:grid-cols-[2fr_1fr] items-center gap-8">
-            <div>
-                <h1 class="md:text-left text-center">
-                    <span>How to perform </span><span class="text-mst">Umrah?</span>
-                </h1>
-                <p class="text-[16px] mt-4 md:text-left text-center">Learn the step-by-step process of performing Umrah,
-                                                                     from the journey to Mecca to completing the rituals
-                                                                     with devotion and reverence.</p>
+        <div class="mx-auto max-w-5xl text-center pb-10">
+            <h1>
+                <span>Umrah Bus   </span><span class="text-mst"> Schedule</span>
+            </h1>
+            <p class="mt-5">Explore upcoming Umrah by Bus schedules from Dubai, Sharjah, and UAE. Find affordable Umrah
+                            packages with visa processing, luxury bus travel, hotel accommodation in Makkah and Madinah,
+                            and guided Ziyarat tours.</p>
+        </div>
+        <div class="bus-schedule" id="bus-schedule-section">
+            <!-- Responsive Table Container with Custom Scrollbar -->
+            <div class="overflow-x-auto ddscroll rounded-2xl border border-gray-300">
+                <table id="bus-schedule-table" class="w-full border-collapse bg-white text-center">
+                    <thead>
+                    <tr class="bg-[#1E5E28] text-white">
+                        <th id="bus-schedule-table-head-month" class="w-[15%] py-4 px-4 font-heading font-semibold
+                            border-r border-[#17491E] last:border-r-0">
+                            <div class="flex items-center justify-center gap-2">
+                                <img src="<?php echo e(asset('assets/images/icons/calender.svg')); ?>" alt="Calendar" class="w-5 h-5">
+                                <span>Month</span>
+                            </div>
+                        </th>
+                        <th id="bus-schedule-table-head-dep-day" class="w-[15%] py-4 px-4 font-heading font-semibold
+                            border-r border-[#17491E] last:border-r-0">
+                            <div class="flex items-center justify-center gap-2">
+                                <img src="<?php echo e(asset('assets/images/icons/calender.svg')); ?>" alt="Calendar" class="w-5 h-5">
+                                <span>Departure Day</span>
+                            </div>
+                        </th>
+                        <th id="bus-schedule-table-head-dep-date" class="w-[26%] py-4 px-4 font-heading
+                            font-semibold
+                             border-r border-[#17491E] last:border-r-0">
+                            <div class="flex items-center justify-center gap-2">
+                                <img src="<?php echo e(asset('assets/images/icons/calender.svg')); ?>" alt="Calendar" class="w-5 h-5">
+                                <span>Departure Date</span>
+                            </div>
+                        </th>
+                        <th id="bus-schedule-table-head-arr-day" class="w-[15%] py-4 px-4 font-heading font-semibold
+                            border-r border-[#17491E] last:border-r-0">
+                            <div class="flex items-center justify-center gap-2">
+                                <img src="<?php echo e(asset('assets/images/icons/calender.svg')); ?>" alt="Calendar" class="w-5 h-5">
+                                <span>Arrival Day</span>
+                            </div>
+                        </th>
+                        <th id="bus-schedule-table-head-arr-date" class="w-[26%] py-4 px-4 font-heading font-semibold
+                             border-r border-[#17491E] last:border-r-0">
+                            <div class="flex items-center justify-center gap-2">
+                                <img src="<?php echo e(asset('assets/images/icons/calender.svg')); ?>" alt="Calendar" class="w-5 h-5">
+                                <span>Arrival Day</span>
+                            </div>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-300 font-body text-md sm:text-mst-gray">
+                    <!-- Row 1: July 2026 -->
+                    <tr>
+                        <!-- Column 1: Month -->
+                        <td class="py-6 px-4 border-r border-gray-300 align-middle">
+                            <div class="flex flex-col items-center justify-center text-center w-full">
+                                <img src="<?php echo e(asset('assets/images/icons/calender-circle.svg')); ?>" alt="Calendar" class="w-12 h-12 mb-2">
+                                <span class="font-semibold">July 2026</span>
+                            </div>
+                        </td>
+                        <!-- Column 2: Departure Day -->
+                        <td class="py-6 px-4 border-r border-gray-300 align-middle font-semibold">
+                            Wednesday
+                        </td>
+                        <!-- Column 3: Departure Date -->
+                        <td class="py-6 px-4 border-r border-gray-300 align-middle text-left">
+                            <div class="space-y-2 mx-auto">
+                                <?php $__currentLoopData = [['1', '09/07/2025'], ['2', '16/07/2025'], ['3', '23/07/2025'], ['4', '30/07/2025']]; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $date): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <div class="flex items-center gap-3 bg-gray-50 rounded-xl px-3 py-2">
+                                            <span class="w-6 h-6 flex items-center justify-center border border-gray-300
+                                            rounded-md text-xs font-semibold"><?php echo e($date[0]); ?></span>
+                                        <span class="font-medium text-sm mx-auto"><?php echo e($date[1]); ?></span>
+                                    </div>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            </div>
+                        </td>
+                        <!-- Column 4: Arrival Day -->
+                        <td class="py-6 px-4 border-r border-gray-300 align-middle">
+                            <div class="flex flex-col items-center justify-center text-center">
+                                <img src="<?php echo e(asset('assets/images/icons/calender-circle.svg')); ?>" alt="Calendar" class="w-12 h-12 mb-2">
+                                <span class="font-semibold">Saturday</span>
+                            </div>
+                        </td>
+                        <!-- Column 5: Arrival Day (Dates) -->
+                        <td class="py-6 px-4 align-middle text-left">
+                            <div class="space-y-2 mx-auto">
+                                <?php $__currentLoopData = [['1', '09/07/2025'], ['2', '16/07/2025'], ['3', '23/07/2025'], ['4', '30/07/2025']]; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $date): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <div class="flex items-center gap-3 bg-gray-50 rounded-xl px-3 py-2">
+                                                                                    <span class="w-6 h-6 flex items-center justify-center border border-gray-300
+                                                                                    rounded-md text-xs font-semibold"><?php echo e($date[0]); ?></span>
+                                        <span class="font-medium text-sm mx-auto"><?php echo e($date[1]); ?></span>
+                                    </div>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- Row 2: Aug 2026 -->
+                    <tr>
+                        <!-- Column 1: Month -->
+                        <td class="py-6 px-4 border-r border-gray-300 align-middle">
+                            <div class="flex flex-col items-center justify-center text-center">
+                                <img src="<?php echo e(asset('assets/images/icons/calender-circle.svg')); ?>" alt="Calendar" class="w-12 h-12 mb-2">
+                                <span class="font-semibold">Aug 2026</span>
+                            </div>
+                        </td>
+                        <!-- Column 2: Departure Day -->
+                        <td class="py-6 px-4 border-r border-gray-300 align-middle font-semibold">
+                            Wednesday
+                        </td>
+                        <!-- Column 3: Departure Date -->
+                        <td class="py-6 px-4 border-r border-gray-300 align-middle text-left">
+                            <div class="space-y-2 mx-auto">
+                                <?php $__currentLoopData = [['1', '09/07/2025'], ['2', '16/07/2025'], ['3', '23/07/2025'], ['4', '30/07/2025']]; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $date): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <div class="flex items-center gap-3 bg-gray-50 rounded-xl px-3 py-2">
+                                            <span class="w-6 h-6 flex items-center justify-center border border-gray-300
+                                            rounded-md text-xs font-semibold"><?php echo e($date[0]); ?></span>
+                                        <span class="font-medium text-sm mx-auto"><?php echo e($date[1]); ?></span>
+                                    </div>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            </div>
+                        </td>
+                        <!-- Column 4: Arrival Day -->
+                        <td class="py-6 px-4 border-r border-gray-300 align-middle">
+                            <div class="flex flex-col items-center justify-center text-center">
+                                <img src="<?php echo e(asset('assets/images/icons/calender-circle.svg')); ?>" alt="Calendar" class="w-12 h-12 mb-2">
+                                <span class="font-semibold">Saturday</span>
+                            </div>
+                        </td>
+                        <!-- Column 5: Arrival Day (Dates) -->
+                        <td class="py-6 px-4 align-middle text-left">
+                            <div class="space-y-2 mx-auto">
+                                <?php $__currentLoopData = [['1', '09/07/2025'], ['2', '16/07/2025'], ['3', '23/07/2025'], ['4', '30/07/2025']]; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $date): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <div class="flex items-center gap-3 bg-gray-50 rounded-xl px-3 py-2">
+                                                                                    <span class="w-6 h-6 flex items-center justify-center border border-gray-300
+                                                                                    rounded-md text-xs font-semibold"><?php echo e($date[0]); ?></span>
+                                        <span class="font-medium text-sm mx-auto"><?php echo e($date[1]); ?></span>
+                                    </div>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- Row 3: Sep 2026 -->
+                    <tr>
+                        <!-- Column 1: Month -->
+                        <td class="py-6 px-4 border-r border-gray-300 align-middle">
+                            <div class="flex flex-col items-center justify-center text-center">
+                                <img src="<?php echo e(asset('assets/images/icons/calender-circle.svg')); ?>" alt="Calendar" class="w-12 h-12 mb-2">
+                                <span class="font-semibold">Sep 2026</span>
+                            </div>
+                        </td>
+                        <!-- Column 2: Departure Day -->
+                        <td class="py-6 px-4 border-r border-gray-300 align-middle font-semibold">
+                            Wednesday
+                        </td>
+                        <!-- Column 3: Departure Date -->
+                        <td class="py-6 px-4 border-r border-gray-300 align-middle text-left">
+                            <div class="space-y-2 mx-auto">
+                                <?php $__currentLoopData = [['1', '06/08/2025'], ['2', '13/08/2025'], ['3', '20/08/2025'], ['4', '27/08/2025']]; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $date): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <div class="flex items-center gap-3 bg-gray-50 rounded-xl px-3 py-2">
+                                                                                    <span class="w-6 h-6 flex items-center justify-center border border-gray-300
+                                                                                    rounded-md text-xs font-semibold"><?php echo e($date[0]); ?></span>
+                                        <span class="font-medium text-sm mx-auto"><?php echo e($date[1]); ?></span>
+                                    </div>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            </div>
+                        </td>
+                        <!-- Column 4: Arrival Day -->
+                        <td class="py-6 px-4 border-r border-gray-300 align-middle">
+                            <div class="flex flex-col items-center justify-center text-center">
+                                <img src="<?php echo e(asset('assets/images/icons/calender-circle.svg')); ?>" alt="Calendar" class="w-12 h-12 mb-2">
+                                <span class="font-semibold">Saturday</span>
+                            </div>
+                        </td>
+                        <!-- Column 5: Arrival Day (Dates) -->
+                        <td class="py-6 px-4 align-middle text-left">
+                            <div class="space-y-2 mx-auto">
+                                <?php $__currentLoopData = [['1', '06/08/2025'], ['2', '13/08/2025'], ['3', '20/08/2025'], ['4', '27/08/2025']]; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $date): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <div class="flex items-center gap-3 bg-gray-50 rounded-xl px-3 py-2">
+                                                                                    <span class="w-6 h-6 flex items-center justify-center border border-gray-300
+                                                                                    rounded-md text-xs font-semibold"><?php echo e($date[0]); ?></span>
+                                        <span class="font-medium text-sm mx-auto"><?php echo e($date[1]); ?></span>
+                                    </div>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- Row 4: Oct 2026 -->
+                    <tr>
+                        <!-- Column 1: Month -->
+                        <td class="py-6 px-4 border-r border-gray-300 align-middle">
+                            <div class="flex flex-col items-center justify-center text-center">
+                                <img src="<?php echo e(asset('assets/images/icons/calender-circle.svg')); ?>" alt="Calendar" class="w-12 h-12 mb-2">
+                                <span class="font-semibold">Oct 2026</span>
+                            </div>
+                        </td>
+                        <!-- Column 2: Departure Day -->
+                        <td class="py-6 px-4 border-r border-gray-300 align-middle font-semibold">
+                            Wednesday
+                        </td>
+                        <!-- Column 3: Departure Date -->
+                        <td class="py-6 px-4 border-r border-gray-300 align-middle text-left">
+                            <div class="space-y-2 mx-auto">
+                                <?php $__currentLoopData = [['1', '06/08/2025'], ['2', '13/08/2025'], ['3', '20/08/2025'], ['4', '27/08/2025']]; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $date): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <div class="flex items-center gap-3 bg-gray-50 rounded-xl px-3 py-2">
+                                                                                    <span class="w-6 h-6 flex items-center justify-center border border-gray-300
+                                                                                    rounded-md text-xs font-semibold"><?php echo e($date[0]); ?></span>
+                                        <span class="font-medium text-sm mx-auto"><?php echo e($date[1]); ?></span>
+                                    </div>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            </div>
+                        </td>
+                        <!-- Column 4: Arrival Day -->
+                        <td class="py-6 px-4 border-r border-gray-300 align-middle">
+                            <div class="flex flex-col items-center justify-center text-center">
+                                <img src="<?php echo e(asset('assets/images/icons/calender-circle.svg')); ?>" alt="Calendar" class="w-12 h-12 mb-2">
+                                <span class="font-semibold">Saturday</span>
+                            </div>
+                        </td>
+                        <!-- Column 5: Arrival Day (Dates) -->
+                        <td class="py-6 px-4 align-middle text-left">
+                            <div class="space-y-2 mx-auto">
+                                <?php $__currentLoopData = [['1', '06/08/2025'], ['2', '13/08/2025'], ['3', '20/08/2025'], ['4', '27/08/2025']]; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $date): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <div class="flex items-center gap-3 bg-gray-50 rounded-xl px-3 py-2">
+                                                                                    <span class="w-6 h-6 flex items-center justify-center border border-gray-300
+                                                                                    rounded-md text-xs font-semibold"><?php echo e($date[0]); ?></span>
+                                        <span class="font-medium text-sm mx-auto"><?php echo e($date[1]); ?></span>
+                                    </div>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
-            <div class="flex items-center justify-end">
-                <a href="" class="flex items-center justify-center w-fit text-white text-lg px-7 pt-3 pb-3
-                rounded-full mx-auto md:ms-0
-                                    bg-gradient-to-r from-[#BA9B31] to-[#74611E]
-                                     hover:bg-gradient-to-r hover:from-[#74611E] hover:to-[#BA9B31]
-                                     transition duration-300 font-heading italic"> Download Umrah Guide
-                    <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
-                         class="w-5 ms-2 rotate-90"
-                         alt="arrow"> </a>
+            <!-- Centered Button below the table -->
+            <div class="flex justify-center mt-8">
+                <a href="#" id="view-all-schedules-btn" class="flex items-center justify-center gap-2 text-white text-base px-6 py-2.5 rounded-full bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic shadow-sm hover:shadow-md">
+                    <span>View all Schedules</span>
+                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </a>
             </div>
         </div>
     </div>
@@ -360,11 +516,9 @@
             <h1>
                 <span>We Offer </span><span class="text-mst">Umrah from</span>
             </h1>
-            <p class="mt-5">
-                Begin your sacred journey with comfort, trust, and complete guidance. We believe in reliability, quality
-                customer service, willingness and dedication to serving you the best umrah packages from Dubai, Abu
-                Dhabi & Sharjah.
-            </p>
+            <p class="mt-5">Find the perfect umrah packages as per your family needs, we got a wide range of luxury,
+                            VIP, 5 Star, 4 Star and 3 Star packages to perfrom umrah by bus and air from all emirates in
+                            UAE.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
             <div class="flex items-center justify-between bg-gray-50 border border-gray-200 px-8 pt-5 pb-8 rounded-3xl">
@@ -412,40 +566,97 @@
                 </div>
             </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
-            <div class="flex items-center justify-between bg-gray-50 border border-gray-200 px-8 pt-5 pb-8 rounded-3xl">
-                <div class="text-center">
-                    <img src="<?php echo e(asset('assets/images/umrah/umrah-10.webp')); ?>" class="mx-auto mb-4" alt="">
-                    <h3 class="text-xl">VFS Tasheel Locations</h3>
-                    <p class="text-sm leading-6 my-4 line-clamp-3">VFS Tasheel International processes visas for the
-                                                                   Kingdom of Saudi Arabia. Visas are processed at VFS
-                                                                   Tasheel Visa Services Center as mandated by the
-                                                                   Ministry of Foreign Affairs, Kingdom of Saudi
-                                                                   Arabia.</p>
-                    <a href="#"
-                       class="flex items-center justify-center w-fit mx-auto text-white text-sm mt-5 px-4 pt-1 pb-2
-                               rounded-full
-                                       bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                        Learn more <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
-                                        class="w-4 mt-1 ms-1" alt=""> </a>
+    </div>
+</section>
+
+<section class="pt-10 pb-30 bg-gray-50">
+    <div class="container">
+        <div class="mx-auto max-w-5xl text-center pt-12 pb-10">
+            <h1>
+                <span>Required Documents for </span><span class="text-mst">Umrah Visa</span>
+            </h1>
+            <p class="mt-5">Please ensure all documents are clear, valid and up to date.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
+            <div class="space-y-7">
+                <div class="py-4 px-6 rounded-xl border border-gray-200 bg-white text-center md:text-left">
+                    <div class="flex items-center">
+                        <div class="me-3">
+                            <img src="<?php echo e(asset('assets/images/icons/scan.svg')); ?>" alt="">
+                        </div>
+                        <div class="">
+                            <h3 class="italic"><span>Clear Scans of  </span><span class="text-mst">Passport Copy</span>
+                            </h3>
+                            <p class="text-[14px] mt-2">Passport should be valid for 6 months and Visa should be valid
+                                                        for months .</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="py-4 px-6 rounded-xl border border-gray-200 bg-white text-center md:text-left">
+                    <div class="flex items-center">
+                        <div class="me-3">
+                            <img src="<?php echo e(asset('assets/images/icons/photo.svg')); ?>" alt="">
+                        </div>
+                        <div class="">
+                            <h3 class="italic"><span>1 Passport   </span><span class="text-mst">Size Photo</span></h3>
+                            <p class="text-[14px] mt-2">Passport should be valid for 6 months and Visa should be valid
+                                                        for months.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="py-4 px-6 rounded-xl border border-gray-200 bg-white text-center md:text-left">
+                    <div class="flex items-center">
+                        <div class="me-3">
+                            <img src="<?php echo e(asset('assets/images/icons/idcard.svg')); ?>" alt="">
+                        </div>
+                        <div class="">
+                            <h3 class="italic"><span>National ID   </span><span class="text-mst">Card Copy</span></h3>
+                            <p class="text-[14px] mt-2">National ID Card copy (Front & Back)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="py-4 px-6 rounded-xl border border-gray-200 bg-white text-center md:text-left">
+                    <div class="flex items-center">
+                        <div class="me-3">
+                            <img src="<?php echo e(asset('assets/images/icons/timer.svg')); ?>" alt="">
+                        </div>
+                        <div class="">
+                            <h3 class="italic"><span>Processing  </span><span class="text-mst">Time</span></h3>
+                            <p class="text-[14px] mt-2">Umrah Visa Processing will take approximately 2-3 working
+                                                        days.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="flex items-center justify-between bg-gray-50 border border-gray-200 px-8 pt-5 pb-8 rounded-3xl">
-                <div class="text-center">
-                    <img src="<?php echo e(asset('assets/images/umrah/umrah-11.webp')); ?>" class="mx-auto mb-4" alt="">
-                    <h3 class="text-xl">Umrah Vaccination Center</h3>
-                    <p class="text-sm leading-6 my-4 line-clamp-3">Every year, millions of Muslims are traveling to
-                                                                   Mecca to perform Hajj and Umrah. They are coming from
-                                                                   different regions with different age groups. As a
-                                                                   result, different health problems may occur if they
-                                                                   don’t take preventative.</p>
-                    <a href="#"
-                       class="flex items-center justify-center w-fit mx-auto text-white text-sm mt-5 px-4 pt-1 pb-2
-                                           rounded-full
-                                                   bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                        Learn more <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
-                                        class="w-4 mt-1 ms-1" alt=""> </a>
-                </div>
+            <div class="flex items-center justify-end">
+                <img src="<?php echo e(asset('assets/images/umrah/umrah-1.webp')); ?>"
+                     class="w-full object-cover rounded-xl"
+                     alt="umrah">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="flex justify-between items-center py-12 bg-gray-100">
+    <div class="container">
+        <div class="grid grid-cols-1 md:grid-cols-[2fr_1fr] items-center gap-8">
+            <div>
+                <h1 class="md:text-left text-center">
+                    <span>How to perform </span><span class="text-mst">Umrah?</span>
+                </h1>
+                <p class="text-[16px] mt-4 md:text-left text-center">Learn the step-by-step process of performing Umrah,
+                                                                     from the journey to Mecca to completing the rituals
+                                                                     with devotion and reverence.</p>
+            </div>
+            <div class="flex items-center justify-end">
+                <a href="" class="flex items-center justify-center w-fit text-white text-lg px-7 pt-3 pb-3
+                rounded-full
+                                    bg-gradient-to-r from-[#BA9B31] to-[#74611E]
+                                     hover:bg-gradient-to-r hover:from-[#74611E] hover:to-[#BA9B31]
+                                     transition duration-300 font-heading italic"> Download Umrah Guide
+                    <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
+                         class="w-5 ms-2 rotate-90"
+                         alt="arrow"> </a>
             </div>
         </div>
     </div>

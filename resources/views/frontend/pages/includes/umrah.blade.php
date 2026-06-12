@@ -265,7 +265,7 @@
             </div>
             <div class="flex items-center justify-end">
                 <a href="" class="flex items-center justify-center w-fit text-white text-lg px-7 pt-3 pb-3
-                rounded-full mx-auto md:ms-0
+                rounded-full
                                     bg-gradient-to-r from-[#BA9B31] to-[#74611E]
                                      hover:bg-gradient-to-r hover:from-[#74611E] hover:to-[#BA9B31]
                                      transition duration-300 font-heading italic"> Download Umrah Guide
