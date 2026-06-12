@@ -35,7 +35,7 @@
                                                              alt="arrow"> </a>
                 </div>
             </div>
-            <div class="flex items-center justify-end">
+            <div class="flex items-center md:justify-end justify-center">
                 <img src="<?php echo e(asset('assets/images/umrah/busstop.webp')); ?>"
                      class="object-cover"
                      alt="umrah"
@@ -48,12 +48,14 @@
 </section>
 
 <section class="py-5 flex items-center justify-center bg-[#EB001B26]">
-    <div class="flex">
+    <div class="md:flex sm:mx-auto px-2">
         <img src="<?php echo e(asset('assets/images/icons/alert.svg')); ?>"
-             class="me-2"
+             class="md:me-2 mb-2 md:mb-0 mx-auto md:mx-0"
              title="alert"
              alt="alert">
-        <p>The Below Rates are not valid for RAMADAN. Rates for the Umrah by Bus Ramadan package can be discussed on the
+        <p class="text-center">The Below Rates are not valid for RAMADAN. Rates for the Umrah by Bus Ramadan
+                                    package can be
+                discussed on the
            phone.</p>
     </div>
 </section>
@@ -231,25 +233,25 @@
                         <td class="py-5 px-6 border-r border-gray-100">05 March 2025</td>
                         <td class="py-5 px-6 border-r border-gray-100">2200/-</td>
                         <td class="py-5 px-6 border-r border-gray-100">2400/-</td>
-                        <td class="py-5 px-6 text-[#282828]">2750/-</td>
+                        <td class="py-5 px-6">2750/-</td>
                     </tr>
                     <tr>
                         <td class="py-5 px-6 border-r border-gray-100">12 March 2025</td>
                         <td class="py-5 px-6 border-r border-gray-100">2200/-</td>
                         <td class="py-5 px-6 border-r border-gray-100 ">2400/-</td>
-                        <td class="py-5 px-6 text-[#282828]">2750/-</td>
+                        <td class="py-5 px-6">2750/-</td>
                     </tr>
                     <tr>
                         <td class="py-5 px-6 border-r border-gray-100">19 March 2025</td>
-                        <td class="py-5 px-6 border-r border-gray-100 text-[#282828]">2600/-</td>
-                        <td class="py-5 px-6 border-r border-gray-100 text-[#282828]">2400/-</td>
-                        <td class="py-5 px-6 text-[#282828]">3100/-</td>
+                        <td class="py-5 px-6 border-r border-gray-100">2600/-</td>
+                        <td class="py-5 px-6 border-r border-gray-100">2400/-</td>
+                        <td class="py-5 px-6">3100/-</td>
                     </tr>
                     <tr>
                         <td class="py-5 px-6 border-r border-gray-100">26 March 2025</td>
-                        <td class="py-5 px-6 border-r border-gray-100 text-[#282828]">3200/-</td>
-                        <td class="py-5 px-6 border-r border-gray-100 text-[#282828]">2400/-</td>
-                        <td class="py-5 px-6 text-[#282828]">4000/-</td>
+                        <td class="py-5 px-6 border-r border-gray-100">3200/-</td>
+                        <td class="py-5 px-6 border-r border-gray-100">2400/-</td>
+                        <td class="py-5 px-6">4000/-</td>
                     </tr>
                     </tbody>
                 </table>
@@ -610,7 +612,7 @@
                             <img src="<?php echo e(asset('assets/images/icons/idcard.svg')); ?>" alt="">
                         </div>
                         <div class="">
-                            <h3 class="italic"><span>National ID   </span><span class="text-mst">Card Copy</span></h3>
+                            <h3 class="italic"><span>National ID </span><span class="text-mst">Card Copy</span></h3>
                             <p class="text-[14px] mt-2">National ID Card copy (Front & Back)</p>
                         </div>
                     </div>
@@ -621,9 +623,9 @@
                             <img src="<?php echo e(asset('assets/images/icons/timer.svg')); ?>" alt="">
                         </div>
                         <div class="">
-                            <h3 class="italic"><span>Processing  </span><span class="text-mst">Time</span></h3>
+                            <h3 class="italic"><span>Processing </span><span class="text-mst">Time</span></h3>
                             <p class="text-[14px] mt-2">Umrah Visa Processing will take approximately 2-3 working
-                                                        days.</p>
+                                                                                    days.</p>
                         </div>
                     </div>
                 </div>
@@ -648,7 +650,7 @@
                                                                      from the journey to Mecca to completing the rituals
                                                                      with devotion and reverence.</p>
             </div>
-            <div class="flex items-center justify-end">
+            <div class="flex items-center justify-center md:justify-end">
                 <a href="" class="flex items-center justify-center w-fit text-white text-lg px-7 pt-3 pb-3
                 rounded-full
                                     bg-gradient-to-r from-[#BA9B31] to-[#74611E]
