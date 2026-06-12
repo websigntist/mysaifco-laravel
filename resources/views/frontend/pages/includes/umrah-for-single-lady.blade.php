@@ -126,7 +126,7 @@
                     </div>
 
                     <!-- CTA Buttons -->
-                    <div class="mt-5 flex items-center justify-between px-3">
+                    <div class="mt-5 flex items-center justify-between sm:gap-3 px-3">
                         <a href="#"
                            class="flex items-center justify-center mx-auto w-fit text-white px-6 pt-1 pb-2 rounded-full text-sm
                                bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
@@ -228,7 +228,7 @@
                     </div>
 
                     <!-- CTA Buttons -->
-                    <div class="mt-5 flex items-center justify-between px-3">
+                    <div class="mt-5 flex items-center justify-between sm:gap-3 px-3">
                         <a href="#"
                            class="flex items-center justify-center mx-auto w-fit text-white px-6 pt-1 pb-2 rounded-full text-sm
                                bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
@@ -330,7 +330,7 @@
                     </div>
 
                     <!-- CTA Buttons -->
-                    <div class="mt-5 flex items-center justify-between px-3">
+                    <div class="mt-5 flex items-center justify-between sm:gap-3 px-3">
                         <a href="#"
                            class="flex items-center justify-center mx-auto w-fit text-white px-6 pt-1 pb-2 rounded-full text-sm
                                bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">

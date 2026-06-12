@@ -263,7 +263,7 @@
                                                          journey to
                                             Mecca to completing the rituals with devotion and reverence.</p>
             </div>
-            <div class="flex items-center justify-end">
+            <div class="flex items-center justify-center md:justify-end">
                 <a href="" class="flex items-center justify-center w-fit text-white text-lg px-7 pt-3 pb-3
                 rounded-full
                                     bg-gradient-to-r from-[#BA9B31] to-[#74611E]
