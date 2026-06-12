@@ -20,13 +20,15 @@
                                                                      travel arrangements to ensure a smooth and
                                                                      spiritually rewarding journey.</p>
                 <div class="flex items-center justify-start gap-3">
-                    <a href="" class="flex items-center justify-center w-fit text-white text-lg px-5 pt-2 pb-2 rounded-full
+                    <a href="" class="flex items-center justify-center w-fit text-white text-md md:text-lg px-3 md:px-5 pt-2 pb-2
+                    rounded-full
                             bg-gradient-to-r from-[#BA9B31] to-[#74611E]
                              hover:bg-gradient-to-r hover:from-[#74611E] hover:to-[#BA9B31]
                              transition duration-300 font-heading
                              italic mt-8"> View Packages <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
                                                               class="w-5 ms-1"
-                                                              alt="arrow"> </a> <a href="" class="flex items-center justify-center w-fit text-white text-lg px-5 pt-2 pb-2 rounded-full
+                                                              alt="arrow"> </a>
+                    <a href="" class="flex items-center justify-center w-fit text-white text-md md:text-lg px-3 md:px-5 pt-2 pb-2 rounded-full
                             bg-gradient-to-r from-[#2D9D3E] to-[#1E5E28]
                              hover:bg-gradient-to-r hover:from-[#1E5E28] hover:to-[#2D9D3E]
                              transition duration-300 font-heading
