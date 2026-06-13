@@ -250,6 +250,10 @@ class MainController
         $page = Page::query()->where('friendly_url', $slug)->where('status', 'published')->first();
 
         if (!$page) {
+            $tour = Tour::query()->where('friendly_url', $slug)->published()->first();
+            if ($tour) {
+                return $this->showTour($tour);
+            }
             throw new NotFoundHttpException();
         }
 
@@ -314,6 +318,53 @@ class MainController
             'meta_title'       => filled($page?->meta_title) ? $page->meta_title : 'Tour Details',
             'meta_keywords'    => (string)($page?->meta_keywords ?? 'keyword mention here'),
             'meta_description' => (string)($page?->meta_description ?? 'Lorem ipsum dolor sit amet.'),
+        ], $this->exploreAndPopularSearchViewData($this->allCategoriesTourTypeId()), $this->allCategoriesFaqsViewData()));
+    }
+
+    public function showTour(Tour $tour)
+    {
+        $limitPerType = 3;
+        $page = Page::query()->where('friendly_url', 'tour-details')->where('status', 'published')->first();
+        $reviews = $tour->reviews()->where('status', 'active')->orderBy('ordering')->get();
+
+        $sliderImages = collect();
+        if (filled($tour->image)) {
+            $sliderImages->push([
+                'url' => $tour->imageUrl(),
+                'alt' => $tour->image_alt ?? $tour->title,
+            ]);
+        }
+        foreach ($tour->galleries as $gallery) {
+            foreach ($gallery->images as $img) {
+                if ($img->status === 'active') {
+                    $sliderImages->push([
+                        'url' => asset('assets/images/galleries/images/' . $img->image),
+                        'alt' => $img->image_alt ?? $tour->title,
+                    ]);
+                }
+            }
+        }
+        if ($sliderImages->isEmpty()) {
+            $sliderImages->push([
+                'url' => asset('assets/images/sliders/tourbanner1.webp'),
+                'alt' => $tour->title,
+            ]);
+        }
+
+        $explore_uae = ExploreUae::query()->where('status', 'Active')->orderBy('ordering', 'asc')->get();
+
+        return view('frontend.pages.tour-details', array_merge([
+            'tour'             => $tour,
+            'reviews'          => $reviews,
+            'sliderImages'     => $sliderImages,
+            'tourSections'     => Tour::groupedByTourType($limitPerType),
+            'toursPerType'     => $limitPerType,
+            'page'             => $page,
+            'pageContent'      => $page?->description,
+            'explore_uae'      => $explore_uae,
+            'meta_title'       => filled($tour->meta_title) ? $tour->meta_title : ($tour->title . ' | Saifco Travel'),
+            'meta_keywords'    => (string)($tour->meta_keywords ?? 'keyword mention here'),
+            'meta_description' => (string)($tour->meta_description ?? 'Lorem ipsum dolor sit amet.'),
         ], $this->exploreAndPopularSearchViewData($this->allCategoriesTourTypeId()), $this->allCategoriesFaqsViewData()));
     }
 

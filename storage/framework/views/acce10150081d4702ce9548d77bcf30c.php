@@ -46,7 +46,7 @@
                 <div class="flex items-center justify-between">
                     <div class="flex flex-col text-left">
                         <span class="font-bold text-sm md:text-md">Adult (11 - 99 years)</span>
-                        <span class="mt-1 font-bold  text-xs md:text-ms">AED<strong class="adult-price-value text-mst font-bold">150</strong> per head</span>
+                        <span class="mt-1 font-bold  text-xs md:text-ms">AED <strong class="adult-price-value text-mst font-bold"><?php echo e(isset($tour) ? number_format($tour->price, 0) : '150'); ?></strong> per head</span>
                     </div>
                     <!-- Dropdown select wrapper -->
                     <div class="relative w-25 md:w-64">
@@ -76,7 +76,7 @@
                 <div class="flex items-center justify-between">
                     <div class="flex flex-col text-left">
                         <span class="font-bold text-sm md:text-md">Child (02 - 10 years)</span>
-                        <span class="mt-1 font-bold  text-xs md:text-ms">AED <strong class="adult-price-value text-mst font-bold">150</strong> per head</span>
+                        <span class="mt-1 font-bold  text-xs md:text-ms">AED <strong class="child-price-value text-mst font-bold"><?php echo e(isset($tour) ? number_format($tour->price, 0) : '150'); ?></strong> per head</span>
                     </div>
                     <!-- Dropdown select wrapper -->
                     <div class="relative w-25 md:w-64">
@@ -105,7 +105,7 @@
                 <div class="flex items-center justify-between">
                     <div class="flex flex-col text-left">
                         <span class="font-bold text-sm md:text-md">Infant (0 - 01 years)</span>
-                        <span class="mt-1 font-bold  text-xs md:text-ms">AED <strong class="adult-price-value text-mst font-bold">0</strong> per head</span>
+                        <span class="mt-1 font-bold  text-xs md:text-ms">AED <strong class="infant-price-value text-mst font-bold">0</strong> per head</span>
                     </div>
                     <!-- Dropdown select wrapper -->
                     <div class="relative w-25 md:w-64">

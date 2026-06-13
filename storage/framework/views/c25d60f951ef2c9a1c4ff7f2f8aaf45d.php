@@ -16,7 +16,8 @@
                              class="w-4 rotate-180 mt-1 me-1"
                              alt="arrow"> Back </a>
                     <h1 class="md:text-3xl font-heading font-semibold italic capitalize leading-none -mt-1">
-                        Abu Dhabi City Tour
+                        <?php echo e($tour->title ?? 'Abu Dhabi City Tour'); ?>
+
                     </h1>
                 </div>
                 <!-- Right: Action Buttons (Share, Heart, More) -->
@@ -39,14 +40,20 @@
                 <!-- Swiper Container -->
                 <div class="swiper tour-details-swiper rounded-xl md:rounded-2xl overflow-hidden shadow-xs relative">
                     <div class="swiper-wrapper">
-                        <!-- Slide 1 -->
-                        <div class="swiper-slide relative aspect-[16/12] md:aspect-[21/9] w-full">
-                            <img src="<?php echo e(asset('assets/images/sliders/tourbanner1.webp')); ?>" class="w-full h-full object-cover" alt="Abu Dhabi City Tour View 1">
-                        </div>
-                        <!-- Slide 2 -->
-                        <div class="swiper-slide relative aspect-[16/12] md:aspect-[21/9] w-full">
-                            <img src="<?php echo e(asset('assets/images/sliders/tourbanner2.webp')); ?>" class="w-full h-full object-cover" alt="Abu Dhabi City Tour View 2">
-                        </div>
+                        <?php if(isset($sliderImages)): ?>
+                            <?php $__currentLoopData = $sliderImages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $sliderImage): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <div class="swiper-slide relative aspect-[16/12] md:aspect-[21/9] w-full">
+                                    <img src="<?php echo e($sliderImage['url']); ?>" class="w-full h-full object-cover" alt="<?php echo e($sliderImage['alt']); ?>">
+                                </div>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        <?php else: ?>
+                            <div class="swiper-slide relative aspect-[16/12] md:aspect-[21/9] w-full">
+                                <img src="<?php echo e(asset('assets/images/sliders/tourbanner1.webp')); ?>" class="w-full h-full object-cover" alt="Abu Dhabi City Tour View 1">
+                            </div>
+                            <div class="swiper-slide relative aspect-[16/12] md:aspect-[21/9] w-full">
+                                <img src="<?php echo e(asset('assets/images/sliders/tourbanner2.webp')); ?>" class="w-full h-full object-cover" alt="Abu Dhabi City Tour View 2">
+                            </div>
+                        <?php endif; ?>
                     </div>
                     <!-- Pagination Dots -->
                     
@@ -74,7 +81,7 @@
                         <img src="<?php echo e(asset('assets/images/icons/redpin.svg')); ?>" alt="">
                         <div class="flex flex-col text-left">
                             <span class="text-xs font-semibold leading-none text-gray-600">StartingFrom</span>
-                            <span class="text-[16px] font-bold mt-1">AED 125<span class="text-gray-800 font-normal
+                            <span class="text-[16px] font-bold mt-1">AED <?php echo e(isset($tour) ? number_format($tour->price, 0) : '125'); ?><span class="text-gray-800 font-normal
                             text-xs">/person</span></span>
                         </div>
                     </div>
@@ -85,7 +92,7 @@
                         <img src="<?php echo e(asset('assets/images/icons/redpin.svg')); ?>" alt="">
                         <div class="flex flex-col text-left">
                             <span class="text-xs font-semibold leading-none">Tour Location</span>
-                            <span class="text-[16px] font-bold mt-1">Abu Dhabi Tours</span>
+                            <span class="text-[16px] font-bold mt-1"><?php echo e($tour->tour_location ?? 'Abu Dhabi Tours'); ?></span>
                         </div>
                     </div>
                     <!-- Bullet Dot -->
@@ -95,7 +102,7 @@
                         <img src="<?php echo e(asset('assets/images/icons/3dclock.svg')); ?>" alt="">
                         <div class="flex flex-col text-left">
                             <span class="text-xs font-semibold leading-none">Tour Duration</span>
-                            <span class="text-[16px] font-bold mt-1">10 Hours</span>
+                            <span class="text-[16px] font-bold mt-1"><?php echo e($tour->tour_duration ?? '10 Hours'); ?></span>
                         </div>
                     </div>
                     <!-- Bullet Dot -->
@@ -105,7 +112,7 @@
                         <img src="<?php echo e(asset('assets/images/icons/gr3.svg')); ?>" alt="">
                         <div class="flex flex-col text-left">
                             <span class="text-xs font-semibold leading-none">Max People</span>
-                            <span class="text-[16px] font-bold mt-1">150</span>
+                            <span class="text-[16px] font-bold mt-1"><?php echo e($tour->max_persons ?? '150'); ?></span>
                         </div>
                     </div>
                     <!-- Bullet Dot -->
@@ -115,7 +122,7 @@
                         <img src="<?php echo e(asset('assets/images/icons/min-age.svg')); ?>" alt="">
                         <div class="flex flex-col text-left">
                             <span class="text-xs font-semibold leading-none">Min. Age</span>
-                            <span class="text-[16px] font-bold mt-1">N/A</span>
+                            <span class="text-[16px] font-bold mt-1"><?php echo e(isset($tour) && $tour->min_age > 0 ? $tour->min_age : 'N/A'); ?></span>
                         </div>
                     </div>
                     <!-- Bullet Dot -->
@@ -128,7 +135,11 @@
                             <span class="text-[16px] font-bold mt-1 flex items-center gap-1">
                                 <!-- Yellow Star -->
                                 <img src="<?php echo e(asset('assets/images/icons/star.svg')); ?>" alt="">
-                                (4.9/5) 2.4K Reviews
+                                <?php if(isset($reviews) && $reviews->isNotEmpty()): ?>
+                                    (<?php echo e(number_format($reviews->avg('rating'), 1)); ?>/5) <?php echo e($reviews->count()); ?> Reviews
+                                <?php else: ?>
+                                    (4.9/5) 2.4K Reviews
+                                <?php endif; ?>
                             </span>
                         </div>
                     </div>
@@ -182,53 +193,53 @@
                         </button>
                     </li>
                 </ul>
-                
                 <div id="default-styled-tab-content" class="mt-8 mb-10">
                     <div class="hidden" id="styled-description" role="tabpanel" aria-labelledby="description-tab">
                         <h2 class="font-semibold text-3xl font-heading mb-4">
                             <span>Tour </span><span class="text-mst">Overview</span>
                         </h2>
-                        <p>Marvel the beauty of the United Arab Emirates’ capital – Abu Dhabi .Also known as one of the
-                           riches cities in the middle east and world’s largest producer of oil. House of the world’s
-                           most expensive hotel is the famous Emirates Palace. This amazing tour starts with a pick up
-                           from your hotel, approximately 2 hours drive towards south. On the way to Abu Dhabi you will
-                           pass through an industrial area called Jebel Ali free zone. Once you reach Abu Dhabi’s border
-                           you will see several stunning plantations all along the wayside and superb villages in the
-                           city. First stop will be at Sheikh Zayed Grand Mosque, the 3rd largest Mosque in the world
-                           and one of the best architectural landmarks of the capital. The mosque also features an
-                           exceptional collection of marble works and the largest carpet in the world designed by
-                           Iranian artists. <a href="">Read More</a>
-                        </p>
+                        <div class="prose max-w-none text-gray-700">
+                            <?php echo $tour->description ?? '<p>No description available.</p>'; ?>
+
+                        </div>
                     </div>
                     <div class="hidden rounded-base bg-neutral-secondary-soft" id="styled-itinerary" role="tabpanel" aria-labelledby="itinerary-tab">
                         <h2 class="font-semibold text-3xl font-heading mb-4">
-                            <span>Tour </span><span class="text-mst">Overview</span>
+                            <span>Tour </span><span class="text-mst">Itinerary</span>
                         </h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda beatae commodi,
-                           consectetur culpa cum, dolorem doloremque eum eveniet exercitationem hic ipsam labore natus
-                           neque nisi odit officiis placeat quisquam, quo quos recusandae soluta voluptas voluptatibus.
-                           Aliquam amet at atque aut autem beatae cumque debitis est expedita facere fugit impedit
-                           incidunt itaque laudantium magnam maiores necessitatibus neque nesciunt nisi, numquam odio
-                           odit porro quae quasi quisquam, rerum sequi suscipit tempore tenetur totam vel vero, vitae
-                           voluptate! Accusantium ad, aliquam amet aspernatur corporis deserunt dolore eos facere
-                           facilis id laborum obcaecati officiis placeat, possimus quae quasi quo rerum, sint tenetur
-                           veniam voluptas? <a href="">Read More</a>
-                        </p>
+                        <div class="prose max-w-none text-gray-700">
+                            <?php echo $tour->itinerary ?? '<p>No itinerary details available.</p>'; ?>
+
+                        </div>
                     </div>
                     <div class="hidden rounded-base bg-neutral-secondary-soft" id="styled-reviews" role="tabpanel" aria-labelledby="reviews-tab">
                         <h2 class="font-semibold text-3xl font-heading mb-4">
-                            <span>Tour </span><span class="text-mst">Overview</span>
+                            <span>Customer </span><span class="text-mst">Reviews</span>
                         </h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci delectus
-                           deserunt doloremque eius eos fugiat ipsum iure libero molestiae molestias non odit pariatur
-                           perferendis perspiciatis quam quidem, quos rerum sapiente veniam vero voluptatem voluptates?
-                           Assumenda fugiat nisi nostrum odio quas quidem rerum sed, soluta tenetur velit. Amet,
-                           delectus deleniti expedita in laborum officiis perspiciatis unde voluptatum? Accusantium
-                           aliquid aperiam autem consectetur consequuntur eius eligendi enim eos hic illum incidunt
-                           ipsam iure labore laborum magni minus molestias neque nostrum numquam odio odit optio, quidem
-                           rerum similique sint veniam vitae? Dolorum expedita fugiat iste minus nam nisi pariatur
-                           soluta suscipit veritatis. <a href="">Read More</a>
-                        </p>
+                        <div class="space-y-4">
+                            <?php if(isset($reviews) && $reviews->isNotEmpty()): ?>
+                                <?php $__currentLoopData = $reviews; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $review): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <div class="p-4 bg-white rounded-xl border border-gray-100 shadow-2xs">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <div>
+                                                <div class="font-bold text-gray-800"><?php echo e($review->name); ?></div>
+                                                <?php if($review->designation || $review->company): ?>
+                                                    <div class="text-xs text-gray-500"><?php echo e($review->designation); ?> <?php echo e($review->company ? '@ ' . $review->company : ''); ?></div>
+                                                <?php endif; ?>
+                                            </div>
+                                            <div class="flex items-center text-amber-400">
+                                                <?php for($i = 1; $i <= 5; $i++): ?>
+                                                    <span class="text-lg leading-none"><?php echo e($i <= $review->rating ? '★' : '☆'); ?></span>
+                                                <?php endfor; ?>
+                                            </div>
+                                        </div>
+                                        <p class="text-sm text-gray-600 italic">"<?php echo e($review->review); ?>"</p>
+                                    </div>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            <?php else: ?>
+                                <p class="text-gray-500 italic">No reviews yet for this tour.</p>
+                            <?php endif; ?>
+                        </div>
                     </div>
                 </div>
             </div>
