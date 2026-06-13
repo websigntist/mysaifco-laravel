@@ -1,34 +1,10 @@
-{{--===== umrah for single ======--}}
-{{--<section class="flex justify-center items-center">
-    <div class="px-4 relative flex md:min-h-[995px] min-h-[520px] w-full bg-[-250px] md:bg-center bg-cover
-    bg-no-repeat"
-         style="background-image: url('{{ asset('assets/images/umrah/umrah-15.webp') }}')">
-        <div class="z-10 w-full py-10">
-            <div class="container mx-auto">
-                <div class="mx-auto max-w-3xl text-center pt-12 pb-10">
-                    <h1>
-                        <span>Umrah for </span><span class="text-mst">Single Ladies</span>
-                    </h1>
-                    <p class="mt-5 text-[16px]">Yes, We make this possible for all single ladies to perform umrah
-                                                without mahram. Contact us and avail different type of umrah packages
-                                                offered from UAE and UK. Our umrah agency make it convenient for single
-                                                ladies to visit the Holy Kabba without any hustle.</p>
-                    <a href="#"
-                       class="flex items-center justify-center mx-auto mt-8 w-fit text-white px-6 pt-2 pb-3
-                   rounded-full
-                           bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                        Connect with Us <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}"
-                                             class="w-4 mt-1 ms-1" alt=""> </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>--}}
+
+
 
 <section class="flex justify-center items-center">
     <div class="px-4 relative flex md:min-h-[995px] min-h-[720px] w-full umrah-hero-section"
          style="
-             background-image: url('{{ asset('assets/images/umrah/lady.webp') }}'), url('{{ asset('assets/images/umrah/umrah-15.webp') }}');
+             background-image: url('<?php echo e(asset('assets/images/umrah/lady.webp')); ?>'), url('<?php echo e(asset('assets/images/umrah/umrah-15.webp')); ?>');
              background-position: center bottom, center center;
              background-repeat: no-repeat, no-repeat;
          ">
@@ -47,7 +23,7 @@
                        rounded-full bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E]
                        hover:to-[#BA9B31] transition duration-300 font-heading italic">
                         Connect with Us
-                        <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}" class="w-4 mt-1 ms-1" alt="">
+                        <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>" class="w-4 mt-1 ms-1" alt="">
                     </a>
                 </div>
             </div>
@@ -55,7 +31,7 @@
     </div>
 </section>
 
-{{-- umrah packages --}}
+
 <section class="pb-12">
     <div class="container">
         <div class="mx-auto max-w-5xl text-center pt-12 pb-10">
@@ -75,7 +51,7 @@
                         <div class="relative pb-6">
                             <!-- Image Wrapper -->
                             <div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden">
-                                <img src="{{ asset('assets/images/umrah/macca1.webp') }}" class="w-full h-full
+                                <img src="<?php echo e(asset('assets/images/umrah/macca1.webp')); ?>" class="w-full h-full
                                 object-cover" alt="5 Nights 5 Star Umrah Package">
                                 <!-- Bottom Gradient Overlay -->
                                 <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/75
@@ -95,7 +71,7 @@
                                 <!-- Price -->
                                 <div class="flex items-center gap-1.5">
                                     <!-- Coin SVG -->
-                                    <img src="{{ asset('assets/images/icons/icon5.svg') }}" alt="">
+                                    <img src="<?php echo e(asset('assets/images/icons/icon5.svg')); ?>" alt="">
                                     <div class="flex flex-col text-left">
                                         <span class="text-xs text-white tracking-wider leading-none">Price Per Head</span>
                                         <span class="text-xs md:text-sm font-medium text-white leading-none mt-1">AED4600</span>
@@ -106,7 +82,7 @@
                                 <!-- Min People -->
                                 <div class="flex items-center gap-1.5">
                                     <!-- Group SVG -->
-                                    <img src="{{ asset('assets/images/icons/gr3.svg') }}" alt="">
+                                    <img src="<?php echo e(asset('assets/images/icons/gr3.svg')); ?>" alt="">
                                     <div class="flex flex-col text-left">
                                         <span class="text-xs text-white tracking-wider leading-none">Min People</span>
                                         <span class="text-xs md:text-sm font-medium text-white leading-none mt-1">2 Persons</span>
@@ -120,16 +96,16 @@
                             <!-- Hotel Box 1 -->
                             <div class="bg-gray-100 rounded-2xl p-3 flex gap-3.5 ">
                                 <div class="rounded-xl overflow-hidden flex-shrink-0">
-                                    <img src="{{ asset('assets/images/umrah/macca4.webp') }}" class="w-full h-full object-cover" alt="Makkah Hotel">
+                                    <img src="<?php echo e(asset('assets/images/umrah/macca4.webp')); ?>" class="w-full h-full object-cover" alt="Makkah Hotel">
                                 </div>
                                 <div class="flex-grow flex flex-col justify-center min-w-0">
                                     <h4 class="text-[18px] font-bold italic font-heading leading-tight mb-1 truncate">3 Nights in Makkah</h4>
                                     <div class="flex items-center gap-1 text-gray-700 mt-2 mb-3">
-                                        <img src="{{asset('assets/images/icons/redmark.svg')}}" alt="">
+                                        <img src="<?php echo e(asset('assets/images/icons/redmark.svg')); ?>" alt="">
                                         <span class="text-xs font-medium truncate">Pullman Zamzam or Similar</span>
                                     </div>
                                     <div class="flex items-center gap-1 text-[#282828]">
-                                        <img src="{{asset('assets/images/icons/star.svg')}}" alt="">
+                                        <img src="<?php echo e(asset('assets/images/icons/star.svg')); ?>" alt="">
                                         <span class="text-xs text-gray-500 font-medium">
                                             <strong class="text-gray-800">4.9</strong>/5 <span class="mx-0.5 text-gray-300">|</span> 5.1k Reviews</span>
                                     </div>
@@ -138,16 +114,16 @@
                             <!-- Hotel Box 2 -->
                             <div class="bg-gray-100 rounded-2xl p-3 flex gap-3.5 ">
                             <div class="rounded-xl overflow-hidden flex-shrink-0">
-                                <img src="{{ asset('assets/images/umrah/madina1.webp') }}" class="w-full h-full object-cover" alt="Makkah Hotel">
+                                <img src="<?php echo e(asset('assets/images/umrah/madina1.webp')); ?>" class="w-full h-full object-cover" alt="Makkah Hotel">
                             </div>
                             <div class="flex-grow flex flex-col justify-center min-w-0">
                                 <h4 class="text-[18px] font-bold italic font-heading leading-tight mb-1 truncate">2 Nights in Madinah</h4>
                                 <div class="flex items-center gap-1 text-gray-700 mt-2 mb-3">
-                                    <img src="{{asset('assets/images/icons/redmark.svg')}}" alt="">
+                                    <img src="<?php echo e(asset('assets/images/icons/redmark.svg')); ?>" alt="">
                                     <span class="text-xs font-medium truncate">Pullman Zamzam or Similar</span>
                                 </div>
                                 <div class="flex items-center gap-1 text-[#282828]">
-                                    <img src="{{asset('assets/images/icons/star.svg')}}" alt="">
+                                    <img src="<?php echo e(asset('assets/images/icons/star.svg')); ?>" alt="">
                                     <span class="text-xs text-gray-500 font-medium">
                                         <strong class="text-gray-800">4.9</strong>/5 <span class="mx-0.5 text-gray-300">|</span> 5.1k Reviews</span>
                                 </div>
@@ -161,12 +137,12 @@
                         <a href="#"
                            class="flex items-center justify-center mx-auto w-fit text-white px-6 pt-1 pb-2 rounded-full text-sm
                                bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                            Package Inquiry  <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}" class="w-4 mt-1 ms-1" alt=""> </a>
+                            Package Inquiry  <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>" class="w-4 mt-1 ms-1" alt=""> </a>
 
                         <a href="#"
                            class="flex items-center justify-center mx-auto w-fit text-white px-6 pt-1 pb-2 rounded-full text-sm
                                bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                            Call me Back  <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}" class="w-4 mt-1 ms-1" alt=""> </a>
+                            Call me Back  <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>" class="w-4 mt-1 ms-1" alt=""> </a>
                     </div>
                 </div>
 
@@ -177,7 +153,7 @@
                         <div class="relative pb-6">
                             <!-- Image Wrapper -->
                             <div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden">
-                                <img src="{{ asset('assets/images/umrah/macca2.webp') }}" class="w-full h-full
+                                <img src="<?php echo e(asset('assets/images/umrah/macca2.webp')); ?>" class="w-full h-full
                                 object-cover" alt="5 Nights 5 Star Umrah Package">
                                 <!-- Bottom Gradient Overlay -->
                                 <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/75
@@ -197,7 +173,7 @@
                                 <!-- Price -->
                                 <div class="flex items-center gap-1.5">
                                     <!-- Coin SVG -->
-                                    <img src="{{ asset('assets/images/icons/icon5.svg') }}" alt="">
+                                    <img src="<?php echo e(asset('assets/images/icons/icon5.svg')); ?>" alt="">
                                     <div class="flex flex-col text-left">
                                         <span class="text-xs text-white tracking-wider leading-none">Price Per Head</span>
                                         <span class="text-xs md:text-sm font-medium text-white leading-none mt-1">AED4600</span>
@@ -208,7 +184,7 @@
                                 <!-- Min People -->
                                 <div class="flex items-center gap-1.5">
                                     <!-- Group SVG -->
-                                    <img src="{{ asset('assets/images/icons/gr3.svg') }}" alt="">
+                                    <img src="<?php echo e(asset('assets/images/icons/gr3.svg')); ?>" alt="">
                                     <div class="flex flex-col text-left">
                                         <span class="text-xs text-white tracking-wider leading-none">Min People</span>
                                         <span class="text-xs md:text-sm font-medium text-white leading-none mt-1">2 Persons</span>
@@ -222,16 +198,16 @@
                             <!-- Hotel Box 1 -->
                             <div class="bg-gray-100 rounded-2xl p-3 flex gap-3.5 ">
                                 <div class="rounded-xl overflow-hidden flex-shrink-0">
-                                    <img src="{{ asset('assets/images/umrah/macca4.webp') }}" class="w-full h-full object-cover" alt="Makkah Hotel">
+                                    <img src="<?php echo e(asset('assets/images/umrah/macca4.webp')); ?>" class="w-full h-full object-cover" alt="Makkah Hotel">
                                 </div>
                                 <div class="flex-grow flex flex-col justify-center min-w-0">
                                     <h4 class="text-[18px] font-bold italic font-heading leading-tight mb-1 truncate">3 Nights in Makkah</h4>
                                     <div class="flex items-center gap-1 text-gray-700 mt-2 mb-3">
-                                        <img src="{{asset('assets/images/icons/redmark.svg')}}" alt="">
+                                        <img src="<?php echo e(asset('assets/images/icons/redmark.svg')); ?>" alt="">
                                         <span class="text-xs font-medium truncate">Pullman Zamzam or Similar</span>
                                     </div>
                                     <div class="flex items-center gap-1 text-[#282828]">
-                                        <img src="{{asset('assets/images/icons/star.svg')}}" alt="">
+                                        <img src="<?php echo e(asset('assets/images/icons/star.svg')); ?>" alt="">
                                         <span class="text-xs text-gray-500 font-medium">
                                             <strong class="text-gray-800">4.9</strong>/5 <span class="mx-0.5 text-gray-300">|</span> 5.1k Reviews</span>
                                     </div>
@@ -240,16 +216,16 @@
                             <!-- Hotel Box 2 -->
                             <div class="bg-gray-100 rounded-2xl p-3 flex gap-3.5 ">
                             <div class="rounded-xl overflow-hidden flex-shrink-0">
-                                <img src="{{ asset('assets/images/umrah/madina1.webp') }}" class="w-full h-full object-cover" alt="Makkah Hotel">
+                                <img src="<?php echo e(asset('assets/images/umrah/madina1.webp')); ?>" class="w-full h-full object-cover" alt="Makkah Hotel">
                             </div>
                             <div class="flex-grow flex flex-col justify-center min-w-0">
                                 <h4 class="text-[18px] font-bold italic font-heading leading-tight mb-1 truncate">2 Nights in Madinah</h4>
                                 <div class="flex items-center gap-1 text-gray-700 mt-2 mb-3">
-                                    <img src="{{asset('assets/images/icons/redmark.svg')}}" alt="">
+                                    <img src="<?php echo e(asset('assets/images/icons/redmark.svg')); ?>" alt="">
                                     <span class="text-xs font-medium truncate">Pullman Zamzam or Similar</span>
                                 </div>
                                 <div class="flex items-center gap-1 text-[#282828]">
-                                    <img src="{{asset('assets/images/icons/star.svg')}}" alt="">
+                                    <img src="<?php echo e(asset('assets/images/icons/star.svg')); ?>" alt="">
                                     <span class="text-xs text-gray-500 font-medium">
                                         <strong class="text-gray-800">4.9</strong>/5 <span class="mx-0.5 text-gray-300">|</span> 5.1k Reviews</span>
                                 </div>
@@ -263,12 +239,12 @@
                         <a href="#"
                            class="flex items-center justify-center mx-auto w-fit text-white px-6 pt-1 pb-2 rounded-full text-sm
                                bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                            Package Inquiry  <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}" class="w-4 mt-1 ms-1" alt=""> </a>
+                            Package Inquiry  <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>" class="w-4 mt-1 ms-1" alt=""> </a>
 
                         <a href="#"
                            class="flex items-center justify-center mx-auto w-fit text-white px-6 pt-1 pb-2 rounded-full text-sm
                                bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                            Call me Back  <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}" class="w-4 mt-1 ms-1" alt=""> </a>
+                            Call me Back  <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>" class="w-4 mt-1 ms-1" alt=""> </a>
                     </div>
                 </div>
 
@@ -279,7 +255,7 @@
                         <div class="relative pb-6">
                             <!-- Image Wrapper -->
                             <div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden">
-                                <img src="{{ asset('assets/images/umrah/macca3.webp') }}" class="w-full h-full
+                                <img src="<?php echo e(asset('assets/images/umrah/macca3.webp')); ?>" class="w-full h-full
                                 object-cover" alt="5 Nights 5 Star Umrah Package">
                                 <!-- Bottom Gradient Overlay -->
                                 <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/75
@@ -299,7 +275,7 @@
                                 <!-- Price -->
                                 <div class="flex items-center gap-1.5">
                                     <!-- Coin SVG -->
-                                    <img src="{{ asset('assets/images/icons/icon5.svg') }}" alt="">
+                                    <img src="<?php echo e(asset('assets/images/icons/icon5.svg')); ?>" alt="">
                                     <div class="flex flex-col text-left">
                                         <span class="text-xs text-white tracking-wider leading-none">Price Per Head</span>
                                         <span class="text-xs md:text-sm font-medium text-white leading-none mt-1">AED4600</span>
@@ -310,7 +286,7 @@
                                 <!-- Min People -->
                                 <div class="flex items-center gap-1.5">
                                     <!-- Group SVG -->
-                                    <img src="{{ asset('assets/images/icons/gr3.svg') }}" alt="">
+                                    <img src="<?php echo e(asset('assets/images/icons/gr3.svg')); ?>" alt="">
                                     <div class="flex flex-col text-left">
                                         <span class="text-xs text-white tracking-wider leading-none">Min People</span>
                                         <span class="text-xs md:text-sm font-medium text-white leading-none mt-1">2 Persons</span>
@@ -324,16 +300,16 @@
                             <!-- Hotel Box 1 -->
                             <div class="bg-gray-100 rounded-2xl p-3 flex gap-3.5 ">
                                 <div class="rounded-xl overflow-hidden flex-shrink-0">
-                                    <img src="{{ asset('assets/images/umrah/macca4.webp') }}" class="w-full h-full object-cover" alt="Makkah Hotel">
+                                    <img src="<?php echo e(asset('assets/images/umrah/macca4.webp')); ?>" class="w-full h-full object-cover" alt="Makkah Hotel">
                                 </div>
                                 <div class="flex-grow flex flex-col justify-center min-w-0">
                                     <h4 class="text-[18px] font-bold italic font-heading leading-tight mb-1 truncate">3 Nights in Makkah</h4>
                                     <div class="flex items-center gap-1 text-gray-700 mt-2 mb-3">
-                                        <img src="{{asset('assets/images/icons/redmark.svg')}}" alt="">
+                                        <img src="<?php echo e(asset('assets/images/icons/redmark.svg')); ?>" alt="">
                                         <span class="text-xs font-medium truncate">Pullman Zamzam or Similar</span>
                                     </div>
                                     <div class="flex items-center gap-1 text-[#282828]">
-                                        <img src="{{asset('assets/images/icons/star.svg')}}" alt="">
+                                        <img src="<?php echo e(asset('assets/images/icons/star.svg')); ?>" alt="">
                                         <span class="text-xs text-gray-500 font-medium">
                                             <strong class="text-gray-800">4.9</strong>/5 <span class="mx-0.5 text-gray-300">|</span> 5.1k Reviews</span>
                                     </div>
@@ -342,16 +318,16 @@
                             <!-- Hotel Box 2 -->
                             <div class="bg-gray-100 rounded-2xl p-3 flex gap-3.5 ">
                             <div class="rounded-xl overflow-hidden flex-shrink-0">
-                                <img src="{{ asset('assets/images/umrah/madina1.webp') }}" class="w-full h-full object-cover" alt="Makkah Hotel">
+                                <img src="<?php echo e(asset('assets/images/umrah/madina1.webp')); ?>" class="w-full h-full object-cover" alt="Makkah Hotel">
                             </div>
                             <div class="flex-grow flex flex-col justify-center min-w-0">
                                 <h4 class="text-[18px] font-bold italic font-heading leading-tight mb-1 truncate">2 Nights in Madinah</h4>
                                 <div class="flex items-center gap-1 text-gray-700 mt-2 mb-3">
-                                    <img src="{{asset('assets/images/icons/redmark.svg')}}" alt="">
+                                    <img src="<?php echo e(asset('assets/images/icons/redmark.svg')); ?>" alt="">
                                     <span class="text-xs font-medium truncate">Pullman Zamzam or Similar</span>
                                 </div>
                                 <div class="flex items-center gap-1 text-[#282828]">
-                                    <img src="{{asset('assets/images/icons/star.svg')}}" alt="">
+                                    <img src="<?php echo e(asset('assets/images/icons/star.svg')); ?>" alt="">
                                     <span class="text-xs text-gray-500 font-medium">
                                         <strong class="text-gray-800">4.9</strong>/5 <span class="mx-0.5 text-gray-300">|</span> 5.1k Reviews</span>
                                 </div>
@@ -365,12 +341,12 @@
                         <a href="#"
                            class="flex items-center justify-center mx-auto w-fit text-white px-6 pt-1 pb-2 rounded-full text-sm
                                bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                            Package Inquiry  <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}" class="w-4 mt-1 ms-1" alt=""> </a>
+                            Package Inquiry  <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>" class="w-4 mt-1 ms-1" alt=""> </a>
 
                         <a href="#"
                            class="flex items-center justify-center mx-auto w-fit text-white px-6 pt-1 pb-2 rounded-full text-sm
                                bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                            Call me Back  <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}" class="w-4 mt-1 ms-1" alt=""> </a>
+                            Call me Back  <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>" class="w-4 mt-1 ms-1" alt=""> </a>
                     </div>
                 </div>
 
@@ -379,7 +355,7 @@
         </div>
     </div>
 </section>
-{{-- umrah offer  --}}
+
 <section class="pb-12">
     <div class="container">
         <div class="mx-auto max-w-5xl text-center pt-12 pb-10">
@@ -393,7 +369,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
             <div class="flex items-center justify-between bg-gray-50 border border-gray-200 px-8 pt-5 pb-8 rounded-3xl">
                 <div class="text-center">
-                    <img src="{{ asset('assets/images/umrah/umrah-7.webp') }}" class="mx-auto mb-4" alt="">
+                    <img src="<?php echo e(asset('assets/images/umrah/umrah-7.webp')); ?>" class="mx-auto mb-4" alt="">
                     <h3 class="text-xl">Umrah from Dubai</h3>
                     <p class="text-sm leading-6 my-4 line-clamp-2">Saifco Travel is a Dubai Based Specialist Umrah
                                                                    Travel Agency providing luxury Umrah packages by Bus
@@ -402,13 +378,13 @@
                        class="flex items-center justify-center w-fit mx-auto text-white text-sm mt-5 px-4 pt-1 pb-2
                        rounded-full
                                bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                        Learn more <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}"
+                        Learn more <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
                                         class="w-4 mt-1 ms-1" alt=""> </a>
                 </div>
             </div>
             <div class="flex items-center justify-between bg-gray-50 border border-gray-200 px-8 pt-5 pb-8 rounded-3xl">
                 <div class="text-center">
-                    <img src="{{ asset('assets/images/umrah/umrah-8.webp') }}" class="mx-auto mb-4" alt="">
+                    <img src="<?php echo e(asset('assets/images/umrah/umrah-8.webp')); ?>" class="mx-auto mb-4" alt="">
                     <h3 class="text-xl">Umrah from Abu Dhabi</h3>
                     <p class="text-sm leading-6 my-4 line-clamp-2">Avail best Umrah by bus and air packages from Abu
                                                                    Dhabi. Visa services included in all of the
@@ -417,13 +393,13 @@
                        class="flex items-center justify-center w-fit mx-auto text-white text-sm mt-5 px-4 pt-1 pb-2
                                    rounded-full
                                            bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                        Learn more <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}"
+                        Learn more <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
                                         class="w-4 mt-1 ms-1" alt=""> </a>
                 </div>
             </div>
             <div class="flex items-center justify-between bg-gray-50 border border-gray-200 px-8 pt-5 pb-8 rounded-3xl">
                 <div class="text-center">
-                    <img src="{{ asset('assets/images/umrah/umrah-9.webp') }}" class="mx-auto mb-4" alt="">
+                    <img src="<?php echo e(asset('assets/images/umrah/umrah-9.webp')); ?>" class="mx-auto mb-4" alt="">
                     <h3 class="text-xl">Umrah from Sharjah</h3>
                     <p class="text-sm leading-6 my-4 line-clamp-2">Our experienced and highest quality services range
                                                                    from just Umrah Visa to a complete Umrah package</p>
@@ -431,14 +407,14 @@
                        class="flex items-center justify-center w-fit mx-auto text-white text-sm mt-5 px-4 pt-1 pb-2
                                    rounded-full
                                            bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                        Learn more <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}"
+                        Learn more <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
                                         class="w-4 mt-1 ms-1" alt=""> </a>
                 </div>
             </div>
         </div>
     </div>
 </section>
-{{--required documents --}}
+
 <section class="pt-10 pb-30 bg-gray-50">
     <div class="container">
         <div class="mx-auto max-w-5xl text-center pt-12 pb-10">
@@ -452,7 +428,7 @@
                 <div class="py-4 px-6 rounded-xl border border-gray-200 bg-white text-center md:text-left">
                     <div class="flex items-center">
                         <div class="me-3">
-                            <img src="{{ asset('assets/images/icons/scan.svg') }}" alt="">
+                            <img src="<?php echo e(asset('assets/images/icons/scan.svg')); ?>" alt="">
                         </div>
                         <div class="">
                             <h3 class="italic"><span>Clear Scans of  </span><span class="text-mst">Passport Copy</span>
@@ -465,7 +441,7 @@
                 <div class="py-4 px-6 rounded-xl border border-gray-200 bg-white text-center md:text-left">
                     <div class="flex items-center">
                         <div class="me-3">
-                            <img src="{{ asset('assets/images/icons/photo.svg') }}" alt="">
+                            <img src="<?php echo e(asset('assets/images/icons/photo.svg')); ?>" alt="">
                         </div>
                         <div class="">
                             <h3 class="italic"><span>1 Passport   </span><span class="text-mst">Size Photo</span></h3>
@@ -477,7 +453,7 @@
                 <div class="py-4 px-6 rounded-xl border border-gray-200 bg-white text-center md:text-left">
                     <div class="flex items-center">
                         <div class="me-3">
-                            <img src="{{ asset('assets/images/icons/idcard.svg') }}" alt="">
+                            <img src="<?php echo e(asset('assets/images/icons/idcard.svg')); ?>" alt="">
                         </div>
                         <div class="">
                             <h3 class="italic"><span>National ID </span><span class="text-mst">Card Copy</span></h3>
@@ -488,7 +464,7 @@
                 <div class="py-4 px-6 rounded-xl border border-gray-200 bg-white text-center md:text-left">
                     <div class="flex items-center">
                         <div class="me-3">
-                            <img src="{{ asset('assets/images/icons/timer.svg') }}" alt="">
+                            <img src="<?php echo e(asset('assets/images/icons/timer.svg')); ?>" alt="">
                         </div>
                         <div class="">
                             <h3 class="italic"><span>Processing </span><span class="text-mst">Time</span></h3>
@@ -499,14 +475,14 @@
                 </div>
             </div>
             <div class="flex items-center justify-end">
-                <img src="{{asset('assets/images/umrah/umrah-1.webp')}}"
+                <img src="<?php echo e(asset('assets/images/umrah/umrah-1.webp')); ?>"
                      class="w-full object-cover rounded-xl"
                      alt="umrah">
             </div>
         </div>
     </div>
 </section>
-{{-- how to perform --}}
+
 <section class="flex justify-between items-center py-12">
     <div class="container">
         <div class="grid grid-cols-1 md:grid-cols-[2fr_1.5fr] items-center gap-8">
@@ -526,13 +502,13 @@
                                         bg-gradient-to-r from-[#BA9B31] to-[#74611E]
                                          hover:bg-gradient-to-r hover:from-[#74611E] hover:to-[#BA9B31]
                                          transition duration-300 font-heading italic"> Explore more Details
-                        <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}"
+                        <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
                              class="w-5 ms-2 rotate-90"
                              alt="arrow"> </a>
                 </div>
             </div>
             <div class="flex justify-center md:justify-end">
-                <img src="{{ asset('assets/images/umrah/evisa.webp') }}" alt="">
+                <img src="<?php echo e(asset('assets/images/umrah/evisa.webp')); ?>" alt="">
             </div>
         </div>
     </div>
@@ -548,30 +524,30 @@
                                              Whatsapp.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mt-14">
-            {{--============--}}
+            
             <div class="bg-gray-50 p-8 rounded-xl border-1 border-gray-200 space-y-4">
-                <img src="{{asset('assets/images/umrah/umrah-3.webp')}}" class="mx-auto" alt="img">
+                <img src="<?php echo e(asset('assets/images/umrah/umrah-3.webp')); ?>" class="mx-auto" alt="img">
                 <h5 class="font-heading text-md font-semibold text-center mb-1">Visa Services</h5>
                 <p class="font-body text-xs text-center">Avail umrah visa with just a 3 step online process and get an
                                                          approval in the next 48 hours.</p>
             </div>
-            {{--============--}}
+            
             <div class="bg-gray-50 p-8 rounded-xl border-1 border-gray-200 space-y-4">
-                <img src="{{asset('assets/images/umrah/plan.webp')}}" class="mx-auto" alt="img">
+                <img src="<?php echo e(asset('assets/images/umrah/plan.webp')); ?>" class="mx-auto" alt="img">
                 <h5 class="font-heading text-md font-semibold text-center mb-1">Flights Reservations</h5>
                 <p class="font-body text-xs text-center">Booking flights is easy with Saifco Travel – we always have the
                                                          best prices for Umrah Flights.</p>
             </div>
-            {{--============--}}
+            
             <div class="bg-gray-50 p-8 rounded-xl border-1 border-gray-200 space-y-4">
-                <img src="{{asset('assets/images/umrah/umrah-6.webp')}}" class="mx-auto" alt="img">
+                <img src="<?php echo e(asset('assets/images/umrah/umrah-6.webp')); ?>" class="mx-auto" alt="img">
                 <h5 class="font-heading text-md font-semibold text-center mb-1">Transportation</h5>
                 <p class="font-body text-xs text-center">Our agency offers different VIP transportation facility from
                                                          Makkah to Madina and vise versa.</p>
             </div>
-            {{--============--}}
+            
             <div class="bg-gray-50 p-8 rounded-xl border-1 border-gray-200 space-y-4">
-                <img src="{{asset('assets/images/umrah/umrah-5.webp')}}" class="mx-auto" alt="img">
+                <img src="<?php echo e(asset('assets/images/umrah/umrah-5.webp')); ?>" class="mx-auto" alt="img">
                 <h5 class="font-heading text-md font-semibold text-center mb-1">Hotel Booking</h5>
                 <p class="font-body text-xs text-center">Book luxury hotel in best prices as we are in collaboration
                                                          with top hotels in Saudi Arabia.</p>
@@ -580,7 +556,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
             <div class="flex items-center justify-between bg-gray-50 border border-gray-200 px-8 pt-5 pb-8 rounded-3xl">
                 <div class="text-center">
-                    <img src="{{ asset('assets/images/umrah/umrah-10.webp') }}" class="mx-auto mb-4" alt="">
+                    <img src="<?php echo e(asset('assets/images/umrah/umrah-10.webp')); ?>" class="mx-auto mb-4" alt="">
                     <h3 class="text-xl">VFS Tasheel Locations</h3>
                     <p class="text-sm leading-6 my-4 line-clamp-3">VFS Tasheel International processes visas for the
                                                                    Kingdom of Saudi Arabia. Visas are processed at VFS
@@ -591,13 +567,13 @@
                        class="flex items-center justify-center w-fit mx-auto text-white text-sm mt-5 px-4 pt-1 pb-2
                                        rounded-full
                                                bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                        Learn more <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}"
+                        Learn more <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
                                         class="w-4 mt-1 ms-1" alt=""> </a>
                 </div>
             </div>
             <div class="flex items-center justify-between bg-gray-50 border border-gray-200 px-8 pt-5 pb-8 rounded-3xl">
                 <div class="text-center">
-                    <img src="{{ asset('assets/images/umrah/umrah-11.webp') }}" class="mx-auto mb-4" alt="">
+                    <img src="<?php echo e(asset('assets/images/umrah/umrah-11.webp')); ?>" class="mx-auto mb-4" alt="">
                     <h3 class="text-xl">Umrah Vaccination Center</h3>
                     <p class="text-sm leading-6 my-4 line-clamp-3">Every year, millions of Muslims are traveling to
                                                                    Mecca to perform Hajj and Umrah. They are coming from
@@ -608,17 +584,17 @@
                        class="flex items-center justify-center w-fit mx-auto text-white text-sm mt-5 px-4 pt-1 pb-2
                                                    rounded-full
                                                            bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                        Learn more <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}"
+                        Learn more <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
                                         class="w-4 mt-1 ms-1" alt=""> </a>
                 </div>
             </div>
         </div>
     </div>
 </section>
-@include('frontend.components.testimonials')
-@include('frontend.components.tour_faqs')
-@include('frontend.components.explore_dubai')
-{{-- how to perform --}}
+<?php echo $__env->make('frontend.components.testimonials', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('frontend.components.tour_faqs', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('frontend.components.explore_dubai', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+
 <section class="flex justify-between items-center py-8 bg-gray-50 -mb-8">
     <div class="container">
         <div class="text-center">
@@ -634,9 +610,10 @@
                                     bg-gradient-to-r from-[#BA9B31] to-[#74611E]
                                      hover:bg-gradient-to-r hover:from-[#74611E] hover:to-[#BA9B31]
                                      transition duration-300 font-heading italic"> Send Inquiry
-                <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}"
+                <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
                      class="w-5 ms-2"
                      alt="arrow"> </a>
         </div>
     </div>
 </section>
+<?php /**PATH D:\laragon\www\mysaifco-laravel\resources\views/frontend/pages/includes/umrah-for-single-lady.blade.php ENDPATH**/ ?>
