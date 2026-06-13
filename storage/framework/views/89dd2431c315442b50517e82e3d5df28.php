@@ -11,7 +11,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-[0.2fr_1.2fr_2fr_0.2fr] mt-14 gap-6 items-start justify-center">
 
-            <div class=""></div>
+            <div class="hidden md:block"></div>
             <!-- Left: Large featured blog -->
             <div class="relative space-y-3">
                 <div class="relative">
@@ -25,7 +25,7 @@
                         <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>" class="w-3 ms-1" alt="arrow">
                     </a>
                 </div>
-                <h2 class="font-heading font-semibold text-md">Exploring Italy in 10 Days: A Complete Travel..</h2>
+                <h2 class="font-heading font-semibold text-md line-clamp-1">Exploring Italy in 10 Days: A Complete Travel..</h2>
                 <p class="text-body text-sm">Italy is a country known for its rich history...</p>
             </div>
 
@@ -36,13 +36,21 @@
                     <img src="<?php echo e(asset('assets/images/blogs/blog2.webp')); ?>"
                          class="rounded-xl object-cover shrink-0 w-32 h-32" alt="img">
                     <div class="flex-1 min-w-0">
-                        <h2 class="font-heading font-semibold text-md leading-snug">
+                        <h2 class="font-heading font-semibold text-md leading-snug line-clamp-1">
                             Essential Travel Tips That Will Help You Save Time, Money, and Unnecessary St...
                         </h2>
                         <p class="text-body text-sm mt-1 line-clamp-2">
                             Travel smarter with practical tips that help you avoid common mistakes, pack efficiently, and enjoy your tri...
                         </p>
+                        <a href="" class="block md:hidden shrink-0 flex items-center text-white text-xs px-3 pt-1
+                        pb-2 mt-4 w-fit
+                           rounded-full bg-gradient-to-r from-[#BA9B31] to-[#74611E]
+                           hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
+                            Read more
+                            <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>" class="w-3 ms-1" alt="arrow">
+                        </a>
                     </div>
+                    
                     <a href="" class="shrink-0 flex items-center text-white text-xs px-3 pt-1 pb-2
                        rounded-full bg-gradient-to-r from-[#BA9B31] to-[#74611E]
                        hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
@@ -56,13 +64,21 @@
                     <img src="<?php echo e(asset('assets/images/blogs/blog3.webp')); ?>"
                          class="rounded-xl object-cover shrink-0 w-32 h-32" alt="img">
                     <div class="flex-1 min-w-0">
-                        <h2 class="font-heading font-semibold text-md leading-snug">
+                        <h2 class="font-heading font-semibold text-md leading-snug line-clamp-1">
                             Top 10 Cities You Should Visit in Indonesia This Year
                         </h2>
                         <p class="text-body text-sm mt-1 line-clamp-2">
                             From historic streets to modern culinary scenes, these cities offer more than just beautiful views—they promis...
                         </p>
+                        <a href="" class="block md:hidden shrink-0 flex items-center text-white text-xs px-3 pt-1
+                        pb-2 mt-4 w-fit
+                           rounded-full bg-gradient-to-r from-[#BA9B31] to-[#74611E]
+                           hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
+                            Read more
+                            <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>" class="w-3 ms-1" alt="arrow">
+                        </a>
                     </div>
+                    
                     <a href="" class="shrink-0 flex items-center text-white text-xs px-3 pt-1 pb-2
                        rounded-full bg-gradient-to-r from-[#BA9B31] to-[#74611E]
                        hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
@@ -72,7 +88,7 @@
                 </div>
 
             </div>
-            <div class=""></div>
+            <div class="hidden md:block"></div>
         </div>
 
         
