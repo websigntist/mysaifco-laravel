@@ -9,6 +9,9 @@ php artisan view:clear
 php artisan cache:clear
 php artisan route:clear
 
+all in one:
+php artisan optimize:clear
+
 @push('style') @endpush
 @push('script') @endpush
 

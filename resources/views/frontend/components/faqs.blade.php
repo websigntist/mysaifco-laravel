@@ -15,30 +15,30 @@
                     services, and global visa assistance to help you plan your journey with ease.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-14 items-center">
-                <div class="faqmst">
-                    <div id="accordion-card" data-accordion="collapse">
+                <div>
+                    <div id="accordion-card" class="faq-disert-safari flex flex-col gap-4" data-accordion="collapse">
                         @foreach($faqs as $faq)
                             @php
                                 $faqNumber = $loop->iteration;
                                 $isFirst = $loop->first;
                             @endphp
-                            <h2 id="faq-{{ $faqNumber }}" @if(! $isFirst) class="mt-6" @endif>
-                                <button type="button"
-                                        class="{{ $faqBtnClass }}"
-                                        data-accordion-target="#faq-body-{{ $faqNumber }}"
-                                        aria-expanded="{{ $isFirst ? 'true' : 'false' }}"
-                                        aria-controls="faq-body-{{ $faqNumber }}">
-                                    <span class="text-xl">{{ $faq->title }}</span>
-                                    <svg data-accordion-icon class="h-5 w-5 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 15 7-7 7 7"/>
-                                    </svg>
-                                </button>
-                            </h2>
-                            <div id="faq-body-{{ $faqNumber }}"
-                                 class="{{ $isFirst ? '' : 'hidden' }} rounded-b-lg bg-gradient-to-r from-mst to-mst-dark"
-                                 aria-labelledby="faq-{{ $faqNumber }}">
-                                <div class="pb-4 pt-0 px-4">
-                                    <p class="mb-2 text-body text-xs text-white">{{ $faq->description }}</p>
+                            <div class="faqmst overflow-hidden rounded-lg border border-gray-200 bg-white transition">
+                                <h2 id="faq-{{ $faqNumber }}">
+                                    <button type="button"
+                                            class="faq-accordion-btn flex w-full items-center justify-between gap-4 border-0 bg-transparent px-5 py-5 font-heading text-lg font-semibold text-left text-mst-gray transition [&[aria-expanded='true']]:text-white"
+                                            data-accordion-target="#faq-body-{{ $faqNumber }}"
+                                            aria-expanded="{{ $isFirst ? 'true' : 'false' }}"
+                                            aria-controls="faq-body-{{ $faqNumber }}">
+                                        <span>{{ $faq->title }}</span>
+                                        <svg data-accordion-icon class="h-5 w-5 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 15 7-7 7 7"/>
+                                        </svg>
+                                    </button>
+                                </h2>
+                                <div id="faq-body-{{ $faqNumber }}"
+                                     class="{{ $isFirst ? '' : 'hidden' }} px-5 pb-5"
+                                     aria-labelledby="faq-{{ $faqNumber }}">
+                                    <p class="font-body text-sm leading-relaxed text-white">{{ $faq->description }}</p>
                                 </div>
                             </div>
                         @endforeach
