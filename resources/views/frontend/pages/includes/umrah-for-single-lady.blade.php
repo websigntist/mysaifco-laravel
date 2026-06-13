@@ -1,30 +1,4 @@
 {{--===== umrah for single ======--}}
-{{--<section class="flex justify-center items-center">
-    <div class="px-4 relative flex md:min-h-[995px] min-h-[520px] w-full bg-[-250px] md:bg-center bg-cover
-    bg-no-repeat"
-         style="background-image: url('{{ asset('assets/images/umrah/umrah-15.webp') }}')">
-        <div class="z-10 w-full py-10">
-            <div class="container mx-auto">
-                <div class="mx-auto max-w-3xl text-center pt-12 pb-10">
-                    <h1>
-                        <span>Umrah for </span><span class="text-mst">Single Ladies</span>
-                    </h1>
-                    <p class="mt-5 text-[16px]">Yes, We make this possible for all single ladies to perform umrah
-                                                without mahram. Contact us and avail different type of umrah packages
-                                                offered from UAE and UK. Our umrah agency make it convenient for single
-                                                ladies to visit the Holy Kabba without any hustle.</p>
-                    <a href="#"
-                       class="flex items-center justify-center mx-auto mt-8 w-fit text-white px-6 pt-2 pb-3
-                   rounded-full
-                           bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                        Connect with Us <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}"
-                                             class="w-4 mt-1 ms-1" alt=""> </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>--}}
-
 <section class="flex justify-center items-center">
     <div class="px-4 relative flex md:min-h-[850px] min-h-[650px] w-full umrah-hero-section"
          style="
@@ -537,7 +511,7 @@
         </div>
     </div>
 </section>
-<section class="flec item-center justify-center pt-14 pb-18">
+<section class="flec item-center justify-center pt-14">
     <div class="container">
         <div class="mx-auto text-center">
             <h1>

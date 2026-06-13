@@ -1,6 +1,4 @@
 
-
-
 <section class="flex justify-center items-center">
     <div class="px-4 relative flex md:min-h-[850px] min-h-[650px] w-full umrah-hero-section"
          style="
@@ -513,7 +511,7 @@
         </div>
     </div>
 </section>
-<section class="flec item-center justify-center pt-14 pb-18">
+<section class="flec item-center justify-center pt-14">
     <div class="container">
         <div class="mx-auto text-center">
             <h1>
