@@ -1,11 +1,11 @@
 <?php $__env->startSection('content'); ?>
-    <div class="tour_slider pt-8">
+    <div class="pt-8">
         <div class="container mx-auto">
             <!-- Top Bar: Back Button, Title, Action Buttons -->
             <div class="flex items-center justify-between gap-4 flex-wrap mb-6">
                 <!-- Left: Back Button & Title -->
                 <div class="flex items-center gap-4 flex-wrap">
-                    <a href="javascript:history.back()" class="inline-flex items-center gap-2 text-white px-4 pt-1 pb-2
+                    <a href="javascript:history.back()" class="inline-flex items-center text-white ps-4 pe-6 pt-1 pb-2
                     rounded-full
                      font-heading italic font-medium text-md
                      bg-gradient-to-r from-[#BA9B31] to-[#74611E]
@@ -13,9 +13,9 @@
                       transition duration-300">
                         <!-- Left Chevron SVG -->
                         <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
-                             class="w-4 rotate-180"
+                             class="w-4 rotate-180 mt-1 me-1"
                              alt="arrow"> Back </a>
-                    <h1 class="md:text-3xl font-heading font-semibold italic capitalize leading-none">
+                    <h1 class="md:text-3xl font-heading font-semibold italic capitalize leading-none -mt-1">
                         Abu Dhabi City Tour
                     </h1>
                 </div>
@@ -35,17 +35,16 @@
 
     <div class="tour_slider">
         <div class="container mx-auto">
-            <!-- Slider Wrapper -->
             <div class="relative w-full mb-8">
                 <!-- Swiper Container -->
-                <div class="swiper tour-details-swiper rounded-2xl overflow-hidden shadow-xs relative">
+                <div class="swiper tour-details-swiper rounded-xl md:rounded-2xl overflow-hidden shadow-xs relative">
                     <div class="swiper-wrapper">
                         <!-- Slide 1 -->
-                        <div class="swiper-slide relative aspect-[16/7] md:aspect-[21/9] w-full">
+                        <div class="swiper-slide relative aspect-[16/12] md:aspect-[21/9] w-full">
                             <img src="<?php echo e(asset('assets/images/sliders/tourbanner1.webp')); ?>" class="w-full h-full object-cover" alt="Abu Dhabi City Tour View 1">
                         </div>
                         <!-- Slide 2 -->
-                        <div class="swiper-slide relative aspect-[16/7] md:aspect-[21/9] w-full">
+                        <div class="swiper-slide relative aspect-[16/12] md:aspect-[21/9] w-full">
                             <img src="<?php echo e(asset('assets/images/sliders/tourbanner2.webp')); ?>" class="w-full h-full object-cover" alt="Abu Dhabi City Tour View 2">
                         </div>
                     </div>
@@ -54,11 +53,11 @@
                 </div>
                 <!-- Navigation Arrows -->
                 <!-- Left Chevron -->
-                <button class="tour-details-swiper-prev absolute left-6 top-1/2 -translate-y-1/2 z-20 cursor-pointer" aria-label="Previous Slide">
+                <button class="hidden md:block tour-details-swiper-prev absolute left-6 top-1/2 -translate-y-1/2 z-20 cursor-pointer" aria-label="Previous Slide">
                     <img src="<?php echo e(asset('assets/images/icons/ltarrow.svg')); ?>" alt="">
                 </button>
                 <!-- Right Chevron -->
-                <button class="tour-details-swiper-next absolute right-6 top-1/2 -translate-y-1/2 z-20 cursor-pointer" aria-label="Next Slide">
+                <button class="hidden md:block tour-details-swiper-next absolute right-6 top-1/2 -translate-y-1/2 z-20 cursor-pointer" aria-label="Next Slide">
                     <img src="<?php echo e(asset('assets/images/icons/rtarrow.svg')); ?>" alt="">
                 </button>
             </div>
@@ -68,8 +67,8 @@
     <div class="more_details">
         <div class="container mx-auto">
             <!-- Bottom Metadata List Bar -->
-            <div class="py-5 overflow-x-auto ddscroll w-full mb-6">
-                <div class="flex items-center justify-between gap-6 text-sm">
+            <div class="py-5 overflow-x-auto ddscroll w-fulls">
+                <div class="md:flex md:items-center md:justify-between gap-6 text-sm space-y-5 md:space-y-0 ">
                     <!-- Item 1: Starting From -->
                     <div class="flex items-center gap-3">
                         <img src="<?php echo e(asset('assets/images/icons/redpin.svg')); ?>" alt="">
@@ -80,7 +79,7 @@
                         </div>
                     </div>
                     <!-- Bullet Dot -->
-                    <span class="text-gray-300 select-none font-bold text-3xl">•</span>
+                    <span class="hidden md:block text-gray-300 select-none font-bold text-3xl">•</span>
                     <!-- Item 2: Tour Location -->
                     <div class="flex items-center gap-3">
                         <img src="<?php echo e(asset('assets/images/icons/redpin.svg')); ?>" alt="">
@@ -90,7 +89,7 @@
                         </div>
                     </div>
                     <!-- Bullet Dot -->
-                    <span class="text-gray-300 select-none font-bold text-3xl">•</span>
+                    <span class="hidden md:block text-gray-300 select-none font-bold text-3xl">•</span>
                     <!-- Item 3: Tour Duration -->
                     <div class="flex items-center gap-3">
                         <img src="<?php echo e(asset('assets/images/icons/3dclock.svg')); ?>" alt="">
@@ -100,7 +99,7 @@
                         </div>
                     </div>
                     <!-- Bullet Dot -->
-                    <span class="text-gray-300 select-none font-bold text-3xl">•</span>
+                    <span class="hidden md:block text-gray-300 select-none font-bold text-3xl">•</span>
                     <!-- Item 4: Max People -->
                     <div class="flex items-center gap-3">
                         <img src="<?php echo e(asset('assets/images/icons/gr3.svg')); ?>" alt="">
@@ -110,7 +109,7 @@
                         </div>
                     </div>
                     <!-- Bullet Dot -->
-                    <span class="text-gray-300 select-none font-bold text-3xl">•</span>
+                    <span class="hidden md:block text-gray-300 select-none font-bold text-3xl">•</span>
                     <!-- Item 5: Min. Age -->
                     <div class="flex items-center gap-3">
                         <img src="<?php echo e(asset('assets/images/icons/min-age.svg')); ?>" alt="">
@@ -120,7 +119,7 @@
                         </div>
                     </div>
                     <!-- Bullet Dot -->
-                    <span class="text-gray-300 select-none font-bold text-3xl">•</span>
+                    <span class="hidden md:block text-gray-300 select-none font-bold text-3xl">•</span>
                     <!-- Item 6: Reviews -->
                     <div class="flex items-center gap-3">
                         <img src="<?php echo e(asset('assets/images/icons/review.svg')); ?>" alt="">
@@ -138,18 +137,19 @@
         </div>
     </div>
 
-    <div class="container">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+    <div class="container mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             <div class="mt-10">
-                <ul class="umrah-package-tabs flex flex-wrap gap-2 text-md font-medium md:gap-3"
+                <ul class="umrah-package-tabs flex justify-center  md:justify-start flex-wrap gap-2 text-sm md:
+                text-md font-medium
+                md:gap-3"
                     id="default-styled-tab"
                     data-tabs-toggle="#default-styled-tab-content"
                     data-tabs-active-classes="tab-btn--active"
                     data-tabs-inactive-classes=""
                     role="tablist">
                     <li class="me-0 md:me-1" role="presentation">
-                        <button class="tab-btn inline-block cursor-pointer rounded-full px-4 pt-1 pb-2 font-heading
-                        italic"
+                        <button class="tab-btn inline-block cursor-pointer rounded-full px-4 pt-1 pb-2 font-heading italic"
                                 id="description-tab"
                                 data-tabs-target="#styled-description"
                                 type="button"
@@ -233,8 +233,88 @@
                 </div>
             </div>
             <div class="mt-10">
-                <div class="booking_form"></div>
+                <?php echo $__env->make('frontend.components.booking_form', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
             </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto my-14">
+        <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between md:gap-8">
+            <div class="min-w-0 flex-1">
+                <h1 class="text-left">
+                    <span>You May </span><span class="text-mst">also Like</span>
+                </h1>
+                <p class="text-left mt-4 pe-20">Get reliable global visa assistance with expert support for tourist
+                                                visas, visit visas, business visas, and worldwide travel. </p>
+            </div>
+        </div>
+        <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div class="relative">
+                <img src="<?php echo e(asset('assets/images/packages/01.webp')); ?>"
+                     class="rounded-lg w-full h-full min-h-[280px] object-cover"
+                     alt="">
+                <div class="absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-black/80 hover:bg-black/20 transition duration-300 ease-in-out"></div>
+                <div class="absolute left-5 bottom-20 font-heading text-xl font-normal text-white z-10 truncate max-w-[85%]">
+                    Dhow Cruise Dinner in Dubai Marina
+                </div>
+                <div class="absolute left-5 bottom-14 flex gap-0.5 text-amber-400 items-center z-10" aria-hidden="true">
+                    <?php for($i = 0; $i < 5; $i++): ?>
+                        <span class="text-base leading-none md:text-lg">&#9733;</span>
+                    <?php endfor; ?>
+                    <span class="text-white text-xs ms-1">(4.9/5) 3.1K Reviews</span>
+                </div>
+                <div class="absolute left-5 bottom-5 font-body font-medium text-xs bg-mst rounded-full py-1 px-4 text-white z-10">
+                    Starting from: AED <?php echo e(number_format((float) 599, 0)); ?>
+
+                </div>
+                <a href="#"
+                   class="absolute right-5 bottom-5 inline-flex shrink-0 items-center justify-center w-15 h-9 rounded-full bg-white z-10 hover:right-4 transition-all ease-in-out duration-500">
+                    <img src="<?php echo e(asset('assets/images/icons/line-arrow.svg')); ?>" alt="" class="w-5 h-6"> </a>
+            </div>
+            <div class="relative">
+                            <img src="<?php echo e(asset('assets/images/packages/02.webp')); ?>"
+                                 class="rounded-lg w-full h-full min-h-[280px] object-cover"
+                                 alt="">
+                            <div class="absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-black/80 hover:bg-black/20 transition duration-300 ease-in-out"></div>
+                            <div class="absolute left-5 bottom-20 font-heading text-xl font-normal text-white z-10 truncate max-w-[85%]">
+                                Dhow Cruise Dinner in Dubai Marina
+                            </div>
+                            <div class="absolute left-5 bottom-14 flex gap-0.5 text-amber-400 items-center z-10" aria-hidden="true">
+                                <?php for($i = 0; $i < 5; $i++): ?>
+                                    <span class="text-base leading-none md:text-lg">&#9733;</span>
+                                <?php endfor; ?>
+                                <span class="text-white text-xs ms-1">(4.9/5) 3.1K Reviews</span>
+                            </div>
+                            <div class="absolute left-5 bottom-5 font-body font-medium text-xs bg-mst rounded-full py-1 px-4 text-white z-10">
+                                Starting from: AED <?php echo e(number_format((float) 599, 0)); ?>
+
+                            </div>
+                            <a href="#"
+                               class="absolute right-5 bottom-5 inline-flex shrink-0 items-center justify-center w-15 h-9 rounded-full bg-white z-10 hover:right-4 transition-all ease-in-out duration-500">
+                                <img src="<?php echo e(asset('assets/images/icons/line-arrow.svg')); ?>" alt="" class="w-5 h-6"> </a>
+                        </div>
+            <div class="relative">
+                            <img src="<?php echo e(asset('assets/images/packages/03.webp')); ?>"
+                                 class="rounded-lg w-full h-full min-h-[280px] object-cover"
+                                 alt="">
+                            <div class="absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-black/80 hover:bg-black/20 transition duration-300 ease-in-out"></div>
+                            <div class="absolute left-5 bottom-20 font-heading text-xl font-normal text-white z-10 truncate max-w-[85%]">
+                                Dhow Cruise Dinner in Dubai Marina
+                            </div>
+                            <div class="absolute left-5 bottom-14 flex gap-0.5 text-amber-400 items-center z-10" aria-hidden="true">
+                                <?php for($i = 0; $i < 5; $i++): ?>
+                                    <span class="text-base leading-none md:text-lg">&#9733;</span>
+                                <?php endfor; ?>
+                                <span class="text-white text-xs ms-1">(4.9/5) 3.1K Reviews</span>
+                            </div>
+                            <div class="absolute left-5 bottom-5 font-body font-medium text-xs bg-mst rounded-full py-1 px-4 text-white z-10">
+                                Starting from: AED <?php echo e(number_format((float) 599, 0)); ?>
+
+                            </div>
+                            <a href="#"
+                               class="absolute right-5 bottom-5 inline-flex shrink-0 items-center justify-center w-15 h-9 rounded-full bg-white z-10 hover:right-4 transition-all ease-in-out duration-500">
+                                <img src="<?php echo e(asset('assets/images/icons/line-arrow.svg')); ?>" alt="" class="w-5 h-6"> </a>
+                        </div>
         </div>
     </div>
 

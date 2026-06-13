@@ -220,6 +220,64 @@ function initTourDetailsSwiper() {
     });
 }
 
+function initTourBookingForm() {
+    const form = document.getElementById('tour-booking-form');
+    if (!form) return;
+
+    const adultSelect = document.getElementById('adult-count');
+    const childSelect = document.getElementById('child-count');
+    const infantSelect = document.getElementById('infant-count');
+    const totalEl = document.getElementById('booking-total-price');
+
+    // Custom date picker logic
+    const dateInput = document.getElementById('booking-date');
+    const dateDisplay = document.getElementById('booking-date-display');
+    if (dateInput && dateDisplay) {
+        dateInput.addEventListener('change', function() {
+            if (dateInput.value) {
+                const date = new Date(dateInput.value);
+                if (!isNaN(date.getTime())) {
+                    const options = { day: '2-digit', month: 'short', year: 'numeric' };
+                    dateDisplay.textContent = date.toLocaleDateString('en-US', options);
+                } else {
+                    dateDisplay.textContent = dateInput.value;
+                }
+                dateDisplay.classList.remove('text-gray-400');
+                dateDisplay.classList.add('text-[#282828]');
+            } else {
+                dateDisplay.textContent = 'Select Date';
+            }
+        });
+    }
+
+    // Parse prices from HTML dynamically for robustness
+    const adultPriceText = document.querySelector('.adult-price-value');
+    const childPriceText = document.querySelector('.child-price-value');
+    const infantPriceText = document.querySelector('.infant-price-value');
+
+    const ADULT_PRICE = adultPriceText ? (parseFloat(adultPriceText.textContent) || 0) : 150;
+    const CHILD_PRICE = childPriceText ? (parseFloat(childPriceText.textContent) || 0) : 150;
+    const INFANT_PRICE = infantPriceText ? (parseFloat(infantPriceText.textContent) || 0) : 0;
+
+    function calculateTotal() {
+        const adults = parseInt(adultSelect.value) || 0;
+        const children = parseInt(childSelect.value) || 0;
+        const infants = parseInt(infantSelect.value) || 0;
+
+        const total = (adults * ADULT_PRICE) + (children * CHILD_PRICE) + (infants * INFANT_PRICE);
+        
+        totalEl.textContent = `AED ${total.toFixed(2)}`;
+    }
+
+    adultSelect.addEventListener('change', calculateTotal);
+    childSelect.addEventListener('change', calculateTotal);
+    infantSelect.addEventListener('change', calculateTotal);
+
+    // Initial calculation
+    calculateTotal();
+}
+
+
 
 
 function initHolidayPackagesSwiper() {
@@ -527,6 +585,7 @@ function initFrontend() {
     initWhyChooseLogosSwiper();
     initImageLogosSwiper();
     initTourDetailsSwiper();
+    initTourBookingForm();
     initScrollMenus();
     initNavbarDropdowns();
 }

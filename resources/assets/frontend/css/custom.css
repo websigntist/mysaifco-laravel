@@ -784,3 +784,18 @@
     scrollbar-width: thin;
     scrollbar-color: #9a8020 !important;
 }
+
+/* Custom date picker styles */
+.booking-date-wrapper input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+    z-index: 10;
+}
