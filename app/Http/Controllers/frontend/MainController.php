@@ -8,6 +8,7 @@ use App\Models\backend\TourType;
 use App\Models\backend\Explore;
 use App\Models\backend\Faq;
 use App\Models\backend\PopularSearch;
+use App\Models\backend\Slider;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class MainController
@@ -33,11 +34,13 @@ class MainController
         }
 
         /* slider data */
+        $sliders = Slider::query()->where('status', 'Active')->orderBy('ordering', 'asc')->get();
 
         return view('frontend.pages.home', array_merge([
             'meta_title'       => $metaTitle,
             'meta_keywords'    => $metaKeywords,
             'meta_description' => $metaDescription,
+            'sliders'          => $sliders,
         ], $this->exploreAndPopularSearchViewData($this->homeTourTypeId()), $this->homeFaqsViewData()));
     }
 
