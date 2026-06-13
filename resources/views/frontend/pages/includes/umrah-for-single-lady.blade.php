@@ -13,22 +13,19 @@
                         <span>Umrah for </span><span class="text-mst">Single Ladies</span>
                     </h1>
                     <p class="mt-5 text-[16px]">Yes, We make this possible for all single ladies to perform umrah
-                        without mahram. Contact us and avail different type of umrah packages
-                        offered from UAE and UK. Our umrah agency make it convenient for single
-                        ladies to visit the Holy Kabba without any hustle.</p>
+                                                without mahram. Contact us and avail different type of umrah packages
+                                                offered from UAE and UK. Our umrah agency make it convenient for single
+                                                ladies to visit the Holy Kabba without any hustle.</p>
                     <a href="#"
                        class="flex items-center justify-center mx-auto mt-8 w-fit text-white px-6 pt-2 pb-3
                        rounded-full bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E]
-                       hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                        Connect with Us
-                        <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}" class="w-4 mt-1 ms-1" alt="">
-                    </a>
+                       hover:to-[#BA9B31] transition duration-300 font-heading italic"> Connect with Us
+                        <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}" class="w-4 mt-1 ms-1" alt=""> </a>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
 {{-- umrah packages --}}
 <section class="pb-12">
     <div class="container">
@@ -88,7 +85,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <!-- Accommodation Info Block -->
                         <div class="mt-4 space-y-4">
                             <!-- Hotel Box 1 -->
@@ -97,7 +93,10 @@
                                     <img src="{{ asset('assets/images/umrah/macca4.webp') }}" class="w-full h-full object-cover" alt="Makkah Hotel">
                                 </div>
                                 <div class="flex-grow flex flex-col justify-center min-w-0">
-                                    <h4 class="text-[18px] font-bold italic font-heading leading-tight mb-1 truncate">3 Nights in Makkah</h4>
+                                    <h4 class="text-[18px] font-bold italic font-heading leading-tight mb-1 truncate">3
+                                                                                                                      Nights
+                                                                                                                      in
+                                                                                                                      Makkah</h4>
                                     <div class="flex items-center gap-1 text-gray-700 mt-2 mb-3">
                                         <img src="{{asset('assets/images/icons/redmark.svg')}}" alt="">
                                         <span class="text-xs font-medium truncate">Pullman Zamzam or Similar</span>
@@ -111,39 +110,42 @@
                             </div>
                             <!-- Hotel Box 2 -->
                             <div class="bg-gray-100 rounded-2xl p-3 flex gap-3.5 ">
-                            <div class="rounded-xl overflow-hidden flex-shrink-0">
-                                <img src="{{ asset('assets/images/umrah/madina1.webp') }}" class="w-full h-full object-cover" alt="Makkah Hotel">
-                            </div>
-                            <div class="flex-grow flex flex-col justify-center min-w-0">
-                                <h4 class="text-[18px] font-bold italic font-heading leading-tight mb-1 truncate">2 Nights in Madinah</h4>
-                                <div class="flex items-center gap-1 text-gray-700 mt-2 mb-3">
-                                    <img src="{{asset('assets/images/icons/redmark.svg')}}" alt="">
-                                    <span class="text-xs font-medium truncate">Pullman Zamzam or Similar</span>
+                                <div class="rounded-xl overflow-hidden flex-shrink-0">
+                                    <img src="{{ asset('assets/images/umrah/madina1.webp') }}" class="w-full h-full object-cover" alt="Makkah Hotel">
                                 </div>
-                                <div class="flex items-center gap-1 text-[#282828]">
-                                    <img src="{{asset('assets/images/icons/star.svg')}}" alt="">
-                                    <span class="text-xs text-gray-500 font-medium">
+                                <div class="flex-grow flex flex-col justify-center min-w-0">
+                                    <h4 class="text-[18px] font-bold italic font-heading leading-tight mb-1 truncate">2
+                                                                                                                      Nights
+                                                                                                                      in
+                                                                                                                      Madinah</h4>
+                                    <div class="flex items-center gap-1 text-gray-700 mt-2 mb-3">
+                                        <img src="{{asset('assets/images/icons/redmark.svg')}}" alt="">
+                                        <span class="text-xs font-medium truncate">Pullman Zamzam or Similar</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 text-[#282828]">
+                                        <img src="{{asset('assets/images/icons/star.svg')}}" alt="">
+                                        <span class="text-xs text-gray-500 font-medium">
                                         <strong class="text-gray-800">4.9</strong>/5 <span class="mx-0.5 text-gray-300">|</span> 5.1k Reviews</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         </div>
                     </div>
-
                     <!-- CTA Buttons -->
                     <div class="mt-5 flex items-center justify-between sm:gap-3 px-3">
                         <a href="#"
                            class="flex items-center justify-center mx-auto w-fit text-white px-6 pt-1 pb-2 rounded-full text-sm
                                bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                            Package Inquiry  <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}" class="w-4 mt-1 ms-1" alt=""> </a>
-
-                        <a href="#"
-                           class="flex items-center justify-center mx-auto w-fit text-white px-6 pt-1 pb-2 rounded-full text-sm
+                            Package Inquiry
+                            <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}" class="w-4 mt-1 ms-1" alt="">
+                        </a> <a href="#"
+                                class="flex items-center justify-center mx-auto w-fit text-white px-6 pt-1 pb-2 rounded-full text-sm
                                bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                            Call me Back  <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}" class="w-4 mt-1 ms-1" alt=""> </a>
+                            Call me Back
+                            <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}" class="w-4 mt-1 ms-1" alt="">
+                        </a>
                     </div>
                 </div>
-
                 <!-- Card 2: 5 Star Package -->
                 <div class="bg-gray-50 rounded-3xl border border-gray-200 p-4 flex flex-col justify-between">
                     <div>
@@ -190,7 +192,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <!-- Accommodation Info Block -->
                         <div class="mt-4 space-y-4">
                             <!-- Hotel Box 1 -->
@@ -199,7 +200,10 @@
                                     <img src="{{ asset('assets/images/umrah/macca4.webp') }}" class="w-full h-full object-cover" alt="Makkah Hotel">
                                 </div>
                                 <div class="flex-grow flex flex-col justify-center min-w-0">
-                                    <h4 class="text-[18px] font-bold italic font-heading leading-tight mb-1 truncate">3 Nights in Makkah</h4>
+                                    <h4 class="text-[18px] font-bold italic font-heading leading-tight mb-1 truncate">3
+                                                                                                                      Nights
+                                                                                                                      in
+                                                                                                                      Makkah</h4>
                                     <div class="flex items-center gap-1 text-gray-700 mt-2 mb-3">
                                         <img src="{{asset('assets/images/icons/redmark.svg')}}" alt="">
                                         <span class="text-xs font-medium truncate">Pullman Zamzam or Similar</span>
@@ -213,39 +217,42 @@
                             </div>
                             <!-- Hotel Box 2 -->
                             <div class="bg-gray-100 rounded-2xl p-3 flex gap-3.5 ">
-                            <div class="rounded-xl overflow-hidden flex-shrink-0">
-                                <img src="{{ asset('assets/images/umrah/madina1.webp') }}" class="w-full h-full object-cover" alt="Makkah Hotel">
-                            </div>
-                            <div class="flex-grow flex flex-col justify-center min-w-0">
-                                <h4 class="text-[18px] font-bold italic font-heading leading-tight mb-1 truncate">2 Nights in Madinah</h4>
-                                <div class="flex items-center gap-1 text-gray-700 mt-2 mb-3">
-                                    <img src="{{asset('assets/images/icons/redmark.svg')}}" alt="">
-                                    <span class="text-xs font-medium truncate">Pullman Zamzam or Similar</span>
+                                <div class="rounded-xl overflow-hidden flex-shrink-0">
+                                    <img src="{{ asset('assets/images/umrah/madina1.webp') }}" class="w-full h-full object-cover" alt="Makkah Hotel">
                                 </div>
-                                <div class="flex items-center gap-1 text-[#282828]">
-                                    <img src="{{asset('assets/images/icons/star.svg')}}" alt="">
-                                    <span class="text-xs text-gray-500 font-medium">
+                                <div class="flex-grow flex flex-col justify-center min-w-0">
+                                    <h4 class="text-[18px] font-bold italic font-heading leading-tight mb-1 truncate">2
+                                                                                                                      Nights
+                                                                                                                      in
+                                                                                                                      Madinah</h4>
+                                    <div class="flex items-center gap-1 text-gray-700 mt-2 mb-3">
+                                        <img src="{{asset('assets/images/icons/redmark.svg')}}" alt="">
+                                        <span class="text-xs font-medium truncate">Pullman Zamzam or Similar</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 text-[#282828]">
+                                        <img src="{{asset('assets/images/icons/star.svg')}}" alt="">
+                                        <span class="text-xs text-gray-500 font-medium">
                                         <strong class="text-gray-800">4.9</strong>/5 <span class="mx-0.5 text-gray-300">|</span> 5.1k Reviews</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         </div>
                     </div>
-
                     <!-- CTA Buttons -->
                     <div class="mt-5 flex items-center justify-between sm:gap-3 px-3">
                         <a href="#"
                            class="flex items-center justify-center mx-auto w-fit text-white px-6 pt-1 pb-2 rounded-full text-sm
                                bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                            Package Inquiry  <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}" class="w-4 mt-1 ms-1" alt=""> </a>
-
-                        <a href="#"
-                           class="flex items-center justify-center mx-auto w-fit text-white px-6 pt-1 pb-2 rounded-full text-sm
+                            Package Inquiry
+                            <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}" class="w-4 mt-1 ms-1" alt="">
+                        </a> <a href="#"
+                                class="flex items-center justify-center mx-auto w-fit text-white px-6 pt-1 pb-2 rounded-full text-sm
                                bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                            Call me Back  <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}" class="w-4 mt-1 ms-1" alt=""> </a>
+                            Call me Back
+                            <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}" class="w-4 mt-1 ms-1" alt="">
+                        </a>
                     </div>
                 </div>
-
                 <!-- Card 3: 5 Star Package -->
                 <div class="bg-gray-50 rounded-3xl border border-gray-200 p-4 flex flex-col justify-between">
                     <div>
@@ -292,7 +299,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <!-- Accommodation Info Block -->
                         <div class="mt-4 space-y-4">
                             <!-- Hotel Box 1 -->
@@ -301,7 +307,10 @@
                                     <img src="{{ asset('assets/images/umrah/macca4.webp') }}" class="w-full h-full object-cover" alt="Makkah Hotel">
                                 </div>
                                 <div class="flex-grow flex flex-col justify-center min-w-0">
-                                    <h4 class="text-[18px] font-bold italic font-heading leading-tight mb-1 truncate">3 Nights in Makkah</h4>
+                                    <h4 class="text-[18px] font-bold italic font-heading leading-tight mb-1 truncate">3
+                                                                                                                      Nights
+                                                                                                                      in
+                                                                                                                      Makkah</h4>
                                     <div class="flex items-center gap-1 text-gray-700 mt-2 mb-3">
                                         <img src="{{asset('assets/images/icons/redmark.svg')}}" alt="">
                                         <span class="text-xs font-medium truncate">Pullman Zamzam or Similar</span>
@@ -315,40 +324,42 @@
                             </div>
                             <!-- Hotel Box 2 -->
                             <div class="bg-gray-100 rounded-2xl p-3 flex gap-3.5 ">
-                            <div class="rounded-xl overflow-hidden flex-shrink-0">
-                                <img src="{{ asset('assets/images/umrah/madina1.webp') }}" class="w-full h-full object-cover" alt="Makkah Hotel">
-                            </div>
-                            <div class="flex-grow flex flex-col justify-center min-w-0">
-                                <h4 class="text-[18px] font-bold italic font-heading leading-tight mb-1 truncate">2 Nights in Madinah</h4>
-                                <div class="flex items-center gap-1 text-gray-700 mt-2 mb-3">
-                                    <img src="{{asset('assets/images/icons/redmark.svg')}}" alt="">
-                                    <span class="text-xs font-medium truncate">Pullman Zamzam or Similar</span>
+                                <div class="rounded-xl overflow-hidden flex-shrink-0">
+                                    <img src="{{ asset('assets/images/umrah/madina1.webp') }}" class="w-full h-full object-cover" alt="Makkah Hotel">
                                 </div>
-                                <div class="flex items-center gap-1 text-[#282828]">
-                                    <img src="{{asset('assets/images/icons/star.svg')}}" alt="">
-                                    <span class="text-xs text-gray-500 font-medium">
+                                <div class="flex-grow flex flex-col justify-center min-w-0">
+                                    <h4 class="text-[18px] font-bold italic font-heading leading-tight mb-1 truncate">2
+                                                                                                                      Nights
+                                                                                                                      in
+                                                                                                                      Madinah</h4>
+                                    <div class="flex items-center gap-1 text-gray-700 mt-2 mb-3">
+                                        <img src="{{asset('assets/images/icons/redmark.svg')}}" alt="">
+                                        <span class="text-xs font-medium truncate">Pullman Zamzam or Similar</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 text-[#282828]">
+                                        <img src="{{asset('assets/images/icons/star.svg')}}" alt="">
+                                        <span class="text-xs text-gray-500 font-medium">
                                         <strong class="text-gray-800">4.9</strong>/5 <span class="mx-0.5 text-gray-300">|</span> 5.1k Reviews</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         </div>
                     </div>
-
                     <!-- CTA Buttons -->
                     <div class="mt-5 flex items-center justify-between sm:gap-3 px-3">
                         <a href="#"
                            class="flex items-center justify-center mx-auto w-fit text-white px-6 pt-1 pb-2 rounded-full text-sm
                                bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                            Package Inquiry  <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}" class="w-4 mt-1 ms-1" alt=""> </a>
-
-                        <a href="#"
-                           class="flex items-center justify-center mx-auto w-fit text-white px-6 pt-1 pb-2 rounded-full text-sm
+                            Package Inquiry
+                            <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}" class="w-4 mt-1 ms-1" alt="">
+                        </a> <a href="#"
+                                class="flex items-center justify-center mx-auto w-fit text-white px-6 pt-1 pb-2 rounded-full text-sm
                                bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                            Call me Back  <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}" class="w-4 mt-1 ms-1" alt=""> </a>
+                            Call me Back
+                            <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}" class="w-4 mt-1 ms-1" alt="">
+                        </a>
                     </div>
                 </div>
-
-
             </div>
         </div>
     </div>
