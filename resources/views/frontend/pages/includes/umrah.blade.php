@@ -226,7 +226,7 @@
 @include('frontend.components.testimonials')
 {{--===== umrah for single ======--}}
 <section class="flex justify-center items-center">
-    <div class="px-4 relative flex md:min-h-[995px]  min-h-[720px] w-full bg-[-250px] md:bg-center bg-cover
+    <div class="px-4 relative flex md:min-h-[850px]  min-h-[650px] w-full bg-[-250px] md:bg-center bg-cover
     bg-no-repeat umrah-hero-section"
          style="
               background-image: url('{{ asset('assets/images/umrah/lady.webp') }}'), url('{{ asset('assets/images/umrah/umrah-15.webp') }}');

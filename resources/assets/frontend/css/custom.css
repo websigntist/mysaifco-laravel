@@ -803,11 +803,11 @@
 
 /* Desktop - default */
 .umrah-hero-section {
-    background-size: 600px auto, cover;
+    background-size: 470px auto, cover;
 }
 /* Mobile */
 @media (min-width: 320px) and (max-width: 480px) {
     .umrah-hero-section {
-        background-size: 250px auto, cover !important;
+        background-size: 180px auto, cover !important;
     }
 }
