@@ -577,6 +577,52 @@ function initScrollMenus() {
     });
 }
 
+function initCustomAccordions() {
+    const accordions = document.querySelectorAll('[data-custom-accordion="collapse"]');
+    accordions.forEach(accordion => {
+        const buttons = accordion.querySelectorAll('[data-custom-accordion-target]');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = btn.getAttribute('data-custom-accordion-target');
+                const target = accordion.querySelector(targetId);
+                if (!target) return;
+
+                const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+
+                // Collapse other items if accordion has collapse behavior
+                buttons.forEach(otherBtn => {
+                    if (otherBtn !== btn && otherBtn.getAttribute('aria-expanded') === 'true') {
+                        otherBtn.setAttribute('aria-expanded', 'false');
+                        const otherTargetId = otherBtn.getAttribute('data-custom-accordion-target');
+                        const otherTarget = accordion.querySelector(otherTargetId);
+                        if (otherTarget) {
+                            otherTarget.style.gridTemplateRows = '0fr';
+                        }
+                        const otherIcon = otherBtn.querySelector('[data-accordion-icon]');
+                        if (otherIcon) {
+                            otherIcon.classList.remove('rotate-180');
+                        }
+                    }
+                });
+
+                // Toggle selected item
+                if (isExpanded) {
+                    btn.setAttribute('aria-expanded', 'false');
+                    target.style.gridTemplateRows = '0fr';
+                    const icon = btn.querySelector('[data-accordion-icon]');
+                    if (icon) icon.classList.remove('rotate-180');
+                } else {
+                    btn.setAttribute('aria-expanded', 'true');
+                    target.style.gridTemplateRows = '1fr';
+                    const icon = btn.querySelector('[data-accordion-icon]');
+                    if (icon) icon.classList.add('rotate-180');
+                }
+            });
+        });
+    });
+}
+
 function initFrontend() {
     initQuoteFormCustomSelects();
     initHolidayPackagesSwiper();
@@ -588,6 +634,7 @@ function initFrontend() {
     initTourBookingForm();
     initScrollMenus();
     initNavbarDropdowns();
+    initCustomAccordions();
 }
 
 if (document.readyState === 'loading') {

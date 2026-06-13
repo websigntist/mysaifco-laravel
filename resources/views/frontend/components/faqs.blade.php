@@ -16,7 +16,7 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-14 items-center">
                 <div>
-                    <div id="accordion-card" class="faq-disert-safari flex flex-col gap-4" data-accordion="collapse">
+                    <div id="accordion-card" class="faq-disert-safari flex flex-col gap-4" data-custom-accordion="collapse">
                         @foreach($faqs as $faq)
                             @php
                                 $faqNumber = $loop->iteration;
@@ -26,19 +26,24 @@
                                 <h2 id="faq-{{ $faqNumber }}">
                                     <button type="button"
                                             class="faq-accordion-btn flex w-full items-center justify-between gap-4 border-0 bg-transparent px-5 py-5 font-heading text-lg font-semibold text-left text-mst-gray transition [&[aria-expanded='true']]:text-white"
-                                            data-accordion-target="#faq-body-{{ $faqNumber }}"
+                                            data-custom-accordion-target="#faq-body-{{ $faqNumber }}"
                                             aria-expanded="{{ $isFirst ? 'true' : 'false' }}"
                                             aria-controls="faq-body-{{ $faqNumber }}">
                                         <span>{{ $faq->title }}</span>
-                                        <svg data-accordion-icon class="h-5 w-5 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <svg data-accordion-icon class="h-5 w-5 shrink-0 transition-transform duration-300 {{ $isFirst ? 'rotate-180' : '' }}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 15 7-7 7 7"/>
                                         </svg>
                                     </button>
                                 </h2>
                                 <div id="faq-body-{{ $faqNumber }}"
-                                     class="{{ $isFirst ? '' : 'hidden' }} px-5 pb-5"
+                                     class="grid transition-all duration-300 ease-in-out"
+                                     style="grid-template-rows: {{ $isFirst ? '1fr' : '0fr' }};"
                                      aria-labelledby="faq-{{ $faqNumber }}">
-                                    <p class="font-body text-sm leading-relaxed text-white">{{ $faq->description }}</p>
+                                    <div class="overflow-hidden">
+                                        <div class="px-5 pb-5">
+                                            <p class="font-body text-sm leading-relaxed text-white">{{ $faq->description }}</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         @endforeach

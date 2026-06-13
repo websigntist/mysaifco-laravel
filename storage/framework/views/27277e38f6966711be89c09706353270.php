@@ -34,7 +34,7 @@
                     <?php endif; ?>
                 </p>
             </div>
-            <div id="accordion-card" class="faq-disert-safari mt-14" data-accordion="collapse">
+            <div id="accordion-card" class="faq-disert-safari mt-14" data-custom-accordion="collapse">
                 <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-x-10">
                     <?php $__currentLoopData = $faqColumns; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $columnIndex => $columnItems): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <?php if(count($columnItems) > 0): ?>
@@ -48,19 +48,24 @@
                                         <h2 id="faq-<?php echo e($faqNumber); ?>">
                                             <button type="button"
                                                     class="<?php echo e($faqBtnClass); ?>"
-                                                    data-accordion-target="#faq-body-<?php echo e($faqNumber); ?>"
+                                                    data-custom-accordion-target="#faq-body-<?php echo e($faqNumber); ?>"
                                                     aria-expanded="<?php echo e($isOpen ? 'true' : 'false'); ?>"
                                                     aria-controls="faq-body-<?php echo e($faqNumber); ?>">
                                                 <span><?php echo e($faq['question']); ?></span>
-                                                <svg data-accordion-icon class="h-5 w-5 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                                <svg data-accordion-icon class="h-5 w-5 shrink-0 transition-transform duration-300 <?php echo e($isOpen ? 'rotate-180' : ''); ?>" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 15 7-7 7 7"/>
                                                 </svg>
                                             </button>
                                         </h2>
                                         <div id="faq-body-<?php echo e($faqNumber); ?>"
-                                             class="<?php echo e($isOpen ? '' : 'hidden'); ?> px-5 pb-5"
+                                             class="grid transition-all duration-300 ease-in-out"
+                                             style="grid-template-rows: <?php echo e($isOpen ? '1fr' : '0fr'); ?>;"
                                              aria-labelledby="faq-<?php echo e($faqNumber); ?>">
-                                            <p class="font-body text-sm leading-relaxed text-white"><?php echo e($faq['answer']); ?></p>
+                                            <div class="overflow-hidden">
+                                                <div class="px-5 pb-5">
+                                                    <p class="font-body text-sm leading-relaxed text-white"><?php echo e($faq['answer']); ?></p>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

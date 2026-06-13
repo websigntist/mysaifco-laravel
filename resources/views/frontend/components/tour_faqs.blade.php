@@ -34,7 +34,7 @@
                     @endif
                 </p>
             </div>
-            <div id="accordion-card" class="faq-disert-safari mt-14" data-accordion="collapse">
+            <div id="accordion-card" class="faq-disert-safari mt-14" data-custom-accordion="collapse">
                 <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-x-10">
                     @foreach ($faqColumns as $columnIndex => $columnItems)
                         @if(count($columnItems) > 0)
@@ -48,19 +48,24 @@
                                         <h2 id="faq-{{ $faqNumber }}">
                                             <button type="button"
                                                     class="{{ $faqBtnClass }}"
-                                                    data-accordion-target="#faq-body-{{ $faqNumber }}"
+                                                    data-custom-accordion-target="#faq-body-{{ $faqNumber }}"
                                                     aria-expanded="{{ $isOpen ? 'true' : 'false' }}"
                                                     aria-controls="faq-body-{{ $faqNumber }}">
                                                 <span>{{ $faq['question'] }}</span>
-                                                <svg data-accordion-icon class="h-5 w-5 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                                <svg data-accordion-icon class="h-5 w-5 shrink-0 transition-transform duration-300 {{ $isOpen ? 'rotate-180' : '' }}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 15 7-7 7 7"/>
                                                 </svg>
                                             </button>
                                         </h2>
                                         <div id="faq-body-{{ $faqNumber }}"
-                                             class="{{ $isOpen ? '' : 'hidden' }} px-5 pb-5"
+                                             class="grid transition-all duration-300 ease-in-out"
+                                             style="grid-template-rows: {{ $isOpen ? '1fr' : '0fr' }};"
                                              aria-labelledby="faq-{{ $faqNumber }}">
-                                            <p class="font-body text-sm leading-relaxed text-white">{{ $faq['answer'] }}</p>
+                                            <div class="overflow-hidden">
+                                                <div class="px-5 pb-5">
+                                                    <p class="font-body text-sm leading-relaxed text-white">{{ $faq['answer'] }}</p>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 @endforeach
