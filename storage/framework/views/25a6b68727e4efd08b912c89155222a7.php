@@ -1,37 +1,31 @@
 <?php $__env->startSection('content'); ?>
     <div class="content-wrapper">
-        <!-- Content -->
         <div class="container-xxl flex-grow-1 container-p-y">
             <div class="row gy-6">
                 <div class="col-sm-12 mt-8">
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <div class="d-flex flex-column justify-content-center">
-                            <?php echo heading_breadcrumbs(ucfirst(str_replace('-',' ',$title) .' '. 'list')); ?>
+                            <?php echo heading_breadcrumbs(ucfirst('Tour Categories' .' '. 'list')); ?>
 
                         </div>
-                        <!-- ===== actions buttons start =====-->
                         <div class="card-header-elements ms-auto d-flex align-content-between">
-                            
                             <?php echo actionButton($module, 'add', route($module.'.create'), 'Add New'); ?>
 
                             <?php echo actionButton($module, 'add_mob', route($module.'.create'),'','tabler-plus', 'Add New'); ?>
 
-
-                            
                             <?php echo actionButton($module, 'delete', null, 'Delete All'); ?>
 
                             <?php echo actionButton($module, 'delete_mob', null, '', 'tabler-trash', 'Delete All'); ?>
 
                         </div>
-                        <!-- ===== actions buttons end =====-->
                     </div>
                 </div>
             </div>
-            <!-- ========= card =============-->
+
             <div class="card card-action mb-12 border-top-bottom">
-                <div class="card-header border-bottom sticky-element pb-3 pt-3 cardStyling">
+                <div class="card-header border-bottom pb-3 pt-3 cardStyling">
                     <i class="icon-base ti tabler-layout-list me-1"></i>
-                    <h6 class="card-action-title mb-0 text-capitalize"><?php echo e(str_replace('-',' ',$title) .' '. 'list'); ?></h6>
+                    <h6 class="card-action-title mb-0 text-capitalize"><?php echo e($title .' '. 'list'); ?></h6>
                     <?php echo card_action_element(); ?>
 
                 </div>
@@ -56,7 +50,6 @@
                                             'created_at' => 'Created',
                                         ];
                                     ?>
-
                                     <?php $__currentLoopData = $columns; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $col): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <?php if (! (in_array($col, $hiddenColumns))): ?>
                                             <th><?php echo e($renameMap[$col] ?? ucfirst(str_replace('_', ' ', $col))); ?></th>
@@ -76,33 +69,30 @@
                                                 <?php continue; ?>
                                             <?php endif; ?>
                                             <td class="capitalize">
-                                                <?php if($col === 'title'): ?>
-                                                    <?php echo e(ucwords($data->title)); ?>
-
-                                                <?php elseif($col === 'image'): ?>
-                                                    <div class="avatar avatar-md  light-gallery" id="gallery-<?php echo e($data->id); ?>">
-                                                        <a href="<?php echo e(asset('assets/images/'.$module .'/'. $data->image)); ?>">
-                                                            <img src="<?php echo e($data->image ? asset ('assets/images/' . $module .'/'. $data->image) : imageNotFound()); ?>"
-                                                                 alt="<?php echo e($data->image); ?>"
-                                                                 class="rounded">
-                                                        </a>
-                                                    </div>
-                                                <?php elseif($col === 'ordering'): ?>
-                                                    <?php echo e($data->ordering); ?>
-
-                                                <?php elseif($col === 'heading'): ?>
+                                                <?php if($col === 'image'): ?>
                                                     <div class="d-flex justify-content-start align-items-center user-name">
+                                                        <div class="avatar-wrapper">
+                                                            <div class="avatar avatar-md me-4 light-gallery" id="gallery-<?php echo e($data->id); ?>">
+                                                                <a href="<?php echo e(asset('assets/images/'.$module .'/'. $data->image)); ?>">
+                                                                    <img src="<?php echo e($data->image ? asset('assets/images/' . $module .'/'. $data->image) : imageNotFound()); ?>"
+                                                                         alt="<?php echo e($data->title); ?>"
+                                                                         class="rounded-circle">
+                                                                </a>
+                                                            </div>
+                                                        </div>
                                                         <div class="d-flex flex-column">
-                                                            <span class="fw-medium"><?php echo e(Str::words($data->heading, 15, '')); ?></span>
-                                                            <small><?php echo e(Str::words(strip_tags($data->description), 15, '...')); ?></small>
+                                                            <a href="javascript:" class="text-heading text-truncate">
+                                                                <span class="fw-medium"><?php echo e($data->title); ?></span>
+                                                            </a>
+                                                            <small><?php echo e(Str::words(strip_tags((string) ($data->description ?? '')), 10, '...')); ?></small>
                                                         </div>
                                                     </div>
                                                 <?php elseif($col === 'status'): ?>
                                                     <span id="statusLabel-<?php echo e($data->id); ?>"
                                                           class="badge <?php echo e($data->status === 'Active' ? 'bg-label-success' : 'bg-label-danger'); ?>">
-                                                            <?php echo e(ucfirst($data->status)); ?>
+                                                        <?php echo e(ucfirst($data->status)); ?>
 
-                                                        </span>
+                                                    </span>
                                                 <?php elseif($col === 'created_at'): ?>
                                                     <?php echo e($data->created_at?->format('M d, Y') ?? '-'); ?>
 
@@ -144,16 +134,15 @@
                 </div>
             </div>
         </div>
-        <!-- / Content -->
     </div>
     <?php echo $__env->make('backend.components.viewModal', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 <?php $__env->stopSection(); ?>
 <?php $__env->startPush('script'); ?>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Shift+Click Range Selection
             let lastChecked = null;
             const checkboxes = document.querySelectorAll('.childCheckbox');
+
             checkboxes.forEach((checkbox) => {
                 checkbox.addEventListener('click', function(e) {
                     if (e.shiftKey && lastChecked) {
@@ -181,6 +170,7 @@
                     lastChecked = this;
                 });
             });
+
             const selectAllCheckbox = document.getElementById('selectAll');
             if (selectAllCheckbox) {
                 selectAllCheckbox.addEventListener('change', function() {
@@ -195,7 +185,7 @@
                     });
                 });
             }
-            // Original Scripts Below
+
             const modalEl = document.getElementById("dataModal");
             const modal = new bootstrap.Modal(modalEl);
             const contentArea = document.getElementById("detailContentId");
@@ -205,10 +195,7 @@
                     const dataId = this.getAttribute("data-id");
                     const url = `/admin/<?php echo e($module); ?>/modal-view/${dataId}`;
 
-                    // Show loading state
-                    contentArea.innerHTML = `
-                        <tr><td colspan="2" class="text-center text-info">Loading...</td></tr>
-                    `;
+                    contentArea.innerHTML = `<tr><td colspan="2" class="text-center text-info">Loading...</td></tr>`;
 
                     try {
                         const response = await fetch(url, {
@@ -218,65 +205,40 @@
                         if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
 
                         const data = await response.json();
-                        console.log("<?php echo e(ucfirst($title)); ?> Data:", data);
 
-                        // Handle empty data
                         if (!data || Object.keys(data).length === 0) {
-                            contentArea.innerHTML = `
-                                <tr><td colspan="2" class="text-center text-warning">No <?php echo e($title); ?> data found.</td></tr>
-                            `;
+                            contentArea.innerHTML = `<tr><td colspan="2" class="text-center text-warning">No <?php echo e($title); ?> data found.</td></tr>`;
                             modal.show();
                             return;
                         }
 
-                        // Define image URL safely
-                        const imageUrl = data.image
-                            ? `/assets/images/<?php echo e($module); ?>/${data.image}`
-                            : "<?php echo e(imageNotFound()); ?>";
-
-                        // Build data rows
                         const rows = `
-                                <tr><th><?php echo e(_label('ID')); ?></th><td>${data.id ?? '-'}</td></tr>
-                                <tr><th><?php echo e(_label('title')); ?></th><td>${data.title ?? '-'}</td></tr>
-                                <tr><th><?php echo e(_label('heading')); ?></th><td>${data.heading ?? '-'}</td></tr>
-                                <tr><th><?php echo e(_label('sub_heading')); ?></th><td>${data.sub_heading ?? '-'}</td></tr>
-                                <tr><th><?php echo e(_label('description')); ?></th><td>${data.description ?? '-'}</td></tr>
-                                <tr><th><?php echo e(_label('link')); ?></th><td>${data.link ?? '-'}</td></tr>
-                                <tr><th><?php echo e(_label('button_text')); ?></th><td>${data.button_text ?? '-'}</td></tr>
-                                <tr><th><?php echo e(_label('type')); ?></th><td>${data.type ?? '-'}</td></tr>
-                                <tr>
-                                    <th><?php echo e(_label('status')); ?></th>
-                                    <td>
-                                        <span class="badge ${data.status === 'Active' ? 'bg-label-success' : 'bg-label-danger'}">
-                                            ${data.status ? data.status.charAt(0).toUpperCase() + data.status.slice(1) : '-'}
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr><th><?php echo e(_label('ordering')); ?></th><td>${data.ordering ?? '-'}</td></tr>
-                                <tr><th><?php echo e(_label('created_at')); ?></th><td>${data.created_at ?? '-'}</td></tr>
-                                <tr><th><?php echo e(_label('created_by')); ?></th><td>${data.created_by_name ?? '-'}</td></tr>
-                                <tr>
-                                    <th><?php echo e(_label('image')); ?></th>
-                                    <td>
-                                        <img
-                                            src="${data.image ? `/assets/images/<?php echo e($module); ?>/${data.image}` : imageNotFound()}"
-                                            alt="Image"
-                                            class="img-thumbnail rounded border-1"
-                                            width="100"
-                                        />
-                                    </td>
-                                </tr>
-                            `;
+                            <tr><th>ID</th><td>${data.id ?? '-'}</td></tr>
+                            <tr><th>Title</th><td>${data.title ?? '-'}</td></tr>
+                            <tr><th>Short Description</th><td>${data.short_description ?? '-'}</td></tr>
+                            <tr><th>Description</th><td>${data.description ?? '-'}</td></tr>
+                            <tr><th>View All Link</th><td>${data.view_all_link ?? '-'}</td></tr>
+                            <tr>
+                                <th>Status</th>
+                                <td>
+                                    <span class="badge ${data.status === 'Active' ? 'bg-label-success' : 'bg-label-danger'}">
+                                        ${data.status ?? '-'}
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr><th>Ordering</th><td>${data.ordering ?? '-'}</td></tr>
+                            <tr><th>Meta Title</th><td>${data.meta_title ?? '-'}</td></tr>
+                            <tr><th>Meta Keywords</th><td>${data.meta_keywords ?? '-'}</td></tr>
+                            <tr><th>Meta Description</th><td>${data.meta_description ?? '-'}</td></tr>
+                            <tr><th>Created At</th><td>${data.created_at ?? '-'}</td></tr>
+                            <tr><th>Created By</th><td>${data.created_by_name ?? '-'}</td></tr>
+                        `;
 
-                        // Inject and show modal
                         contentArea.innerHTML = rows;
                         modal.show();
-
                     } catch (error) {
                         console.error("Fetch error:", error);
-                        contentArea.innerHTML = `
-                            <tr><td colspan="2" class="text-danger text-center">Error loading <?php echo e($title); ?> data.</td></tr>
-                        `;
+                        contentArea.innerHTML = `<tr><td colspan="2" class="text-danger text-center">Error loading <?php echo e($title); ?> data.</td></tr>`;
                         modal.show();
                     }
                 });
@@ -290,16 +252,13 @@
                     const id = this.getAttribute("data-id");
                     const url = "<?php echo e(url('admin/'.$module.'/delete')); ?>/" + id;
 
-                    // Notiflix confirmation dialog
                     Notiflix.Confirm.show(
                         'Confirm Delete',
                         'Are you sure you want to delete this <?php echo e($title); ?>? This action cannot be undone.',
                         'Yes, Delete',
                         'Cancel',
                         async () => {
-                            // Show loading while deleting
                             Notiflix.Loading.standard('Deleting...');
-
                             try {
                                 const response = await fetch(url, {
                                     method: "DELETE",
@@ -316,11 +275,8 @@
 
                                 if (data.success) {
                                     Notiflix.Notify.failure(data.message || '<?php echo e(ucfirst($title)); ?> deleted successfully.');
-
-                                    // Remove table row instantly
                                     const row = this.closest("tr");
                                     if (row) row.remove();
-
                                 } else {
                                     Notiflix.Notify.failure(data.message || 'Failed to delete <?php echo e($title); ?>.');
                                 }
@@ -330,10 +286,7 @@
                                 Notiflix.Notify.failure('Error deleting record. Please try again.');
                             }
                         },
-                        () => {
-                            // Cancel callback
-                            Notiflix.Notify.info('Delete cancelled.');
-                        },
+                        () => { Notiflix.Notify.info('Delete cancelled.'); },
                         {
                             width: '320px',
                             borderRadius: '8px',
@@ -357,7 +310,6 @@
                     const currentStatus = this.getAttribute("data-current-status");
                     const url = `/admin/<?php echo e($module); ?>/${dataId}/status`;
 
-                    // Optional: show loading indicator
                     Notiflix.Loading.circle('Updating status...');
 
                     fetch(url, {
@@ -371,10 +323,9 @@
                     })
                         .then(res => res.json())
                         .then(data => {
-                            Notiflix.Loading.remove(); // remove loading
+                            Notiflix.Loading.remove();
 
                             if (data.success) {
-                                // Update label
                                 const statusLabel = document.getElementById("statusLabel-" + dataId);
                                 if (statusLabel) {
                                     statusLabel.textContent = data.status.charAt(0).toUpperCase() + data.status.slice(1);
@@ -383,11 +334,7 @@
                                             ? "badge bg-label-success"
                                             : "badge bg-label-danger";
                                 }
-
-                                // Update button attribute
                                 this.setAttribute("data-current-status", data.status);
-
-                                // Success notification
                                 Notiflix.Notify.success(data.message || "Status updated successfully");
                             } else {
                                 Notiflix.Notify.failure(data.message || "Failed to update status");
@@ -404,4 +351,4 @@
     </script>
 <?php $__env->stopPush(); ?>
 
-<?php echo $__env->make('backend.layouts.master', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH D:\laragon\www\mysaifco-laravel\resources\views/backend/sliders/listing.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('backend.layouts.master', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH D:\laragon\www\mysaifco-laravel\resources\views/backend/tour-types/listing.blade.php ENDPATH**/ ?>

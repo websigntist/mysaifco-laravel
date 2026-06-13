@@ -3,30 +3,38 @@ bg-gradient-to-r from-[#ffffff] from-75% to-[#BA9B315F] to-25%">
     <div class="container mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-[8.2fr_3.8fr] gap-6">
             <div class="flex flex-col justify-center">
-                <h1>explore UAE with <span class="text-mst">saifco travel & trourism</span></h1>
+                {{--@dump($explore_uae)--}}
+                @php
+                    $words = explode(' ', $explore_uae[0]->title ?? '');
+                    $splitIndex = max(0, count($words) - 4); // last 3 words
+                    $part1 = implode(' ', array_slice($words, 0, $splitIndex));
+                    $part2 = implode(' ', array_slice($words, $splitIndex));
+                @endphp
+
+                <h1>
+                    {{ $part1 }} <span class="text-mst">{{ $part2 }}</span>
+                </h1>
                 <div class="my-2 md:w-10/12 mt-5">
-                    <p>Book the best Dubai tours, desert safari deals, and luxury yacht tours with a trusted local
-                       Operator Enjoy top-rated Dubai city tours and Abu Dhabi trips at the best prices with instant
-                       confirmation and 18+ years of experience.</p>
+                    {!! $explore_uae[0]->description !!}
                 </div>
                 <ul class="flex items-center justify-start gap-5 mt-5">
                     <li class="bg-mst p-2 w-50 rounded-lg">
                         <div class="text-white text-md font-medium text-center italic font-heading">
-                            Best Price
+                            {!! $explore_uae[0]->title1 !!}
                         </div>
-                        <div class="text-white text-sm text-center">Guaranteed Deals</div>
+                        <div class="text-white text-sm text-center">{!! $explore_uae[0]->sub_title1 !!}</div>
                     </li>
                     <li class="bg-mst p-2 w-50 rounded-lg">
                         <div class="text-white text-md font-medium text-center italic font-heading">
-                            18 + Years
+                            {!! $explore_uae[0]->title2 !!}
                         </div>
-                        <div class="text-white text-sm text-center">Trusted Experience</div>
+                        <div class="text-white text-sm text-center">{!! $explore_uae[0]->sub_title2 !!}</div>
                     </li>
                     <li class="bg-mst p-2 w-50 rounded-lg">
                         <div class="text-white text-md font-medium text-center italic font-heading">
-                            Top Rated
+                            {!! $explore_uae[0]->title3 !!}
                         </div>
-                        <div class="text-white text-sm text-center">5 Starts Rated</div>
+                        <div class="text-white text-sm text-center">{!! $explore_uae[0]->sub_title3 !!}</div>
                     </li>
                 </ul>
             </div>
@@ -36,17 +44,17 @@ bg-gradient-to-r from-[#ffffff] from-75% to-[#BA9B315F] to-25%">
                 </div>
                 <div class="bg-gray-50 rounded-xl p-4 border border-gray-200 flex gap-4 item-center justify-start">
                     <img src="{{asset('assets/images/icons/whatsapp.svg')}}" class="w36" alt="whatsapp">
-                    <a href="tel:{{ get_setting('umrah_inquiry_whatsapp') }}">
+                    <a href="tel:https://wa.me/{{ get_setting('tour_inquiry_whatsapp') }}?text=Hello%2C%20I%20am%20interested">
                         <div class="font-heading font-bold italic text-mst text-xl">
                             Umrah Inquires <br> <span class="text-mst-gray">
-                                                    {{ get_setting('umrah_inquiry_whatsapp') }}
-                                                </span>
+                            {{ get_setting('umrah_inquiry_whatsapp') }}
+                        </span>
                         </div>
                     </a> <img src="{{asset('assets/images/icons/line-arrow.svg')}}" class="w36 ml-auto" alt="arrow">
                 </div>
                 <div class="bg-gray-50 rounded-xl p-4 border border-gray-200 flex gap-4 item-center justify-start">
                     <img src="{{asset('assets/images/icons/whatsapp.svg')}}" class="w36" alt="whatsapp">
-                    <a href="tel:{{ get_setting('tour_inquiry_whatsapp') }}">
+                    <a href="tel:https://wa.me/{{ get_setting('tour_inquiry_whatsapp') }}?text=Hello%2C%20I%20am%20interested">
                         <div class="font-heading font-bold italic text-mst text-xl">
                             Tour Inquires <br> <span class="text-mst-gray">
                                 {{ get_setting('tour_inquiry_whatsapp') }}

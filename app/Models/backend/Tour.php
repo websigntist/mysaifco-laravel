@@ -16,6 +16,7 @@ class Tour extends Model
         'title',
         'friendly_url',
         'tour_duration',
+        'tour_location',
         'max_persons',
         'min_age',
         'tour_type',

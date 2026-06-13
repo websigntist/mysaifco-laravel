@@ -37,16 +37,18 @@
                         </div>
                         <div class="flex w-full flex-col items-center gap-4 sm:gap-5 md:items-end">
                             <div class="bg-mst w-full max-w-xs rounded-lg p-4 sm:max-w-sm md:w-80">
-                                <div class="text-white text-xl font-medium text-center italic font-heading">50K +
-                                                                                                            Customers
+                                <div class="text-white text-xl font-medium text-center italic font-heading">
+                                    <?php echo $explore_uae[0]->title5; ?>
+
                                 </div>
-                                <div class="text-white text-sm text-center mt-1">World Wide Travelers</div>
+                                <div class="text-white text-sm text-center mt-1"><?php echo $explore_uae[0]->sub_title5; ?></div>
                             </div>
                             <div class="bg-mst w-full max-w-xs rounded-lg p-4 sm:max-w-sm md:w-80">
-                                <div class="text-white text-xl font-medium text-center italic font-heading">Licensed
-                                                                                                            Operator
+                                <div class="text-white text-xl font-medium text-center italic font-heading">
+                                    <?php echo $explore_uae[0]->title4; ?>
+
                                 </div>
-                                <div class="text-white text-sm text-center mt-1">Dubai Approved</div>
+                                <div class="text-white text-sm text-center mt-1"><?php echo $explore_uae[0]->sub_title4; ?></div>
                             </div>
                         </div>
                     </div>

@@ -6,11 +6,20 @@
                 <div class="col-sm-12 mt-8">
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <div class="d-flex flex-column justify-content-center">
-                            {!! heading_breadcrumbs(ucfirst('Tour Categories' .' '. 'list')) !!}
+                            {!! heading_breadcrumbs(ucfirst($title .' '. 'list')) !!}
                         </div>
-                        <div class="card-header-elements ms-auto d-flex align-content-between">
-                            {!! actionButton($module, 'add', route($module.'.create'), 'Add New') !!}
-                            {!! actionButton($module, 'add_mob', route($module.'.create'),'','tabler-plus', 'Add New') !!}
+                        <div class="card-header-elements ms-auto d-flex align-content-between gap-2">
+                            @if(($moduleName ?? $module) !== 'trashed')
+                                {!! actionButton($module, 'add', route($module.'.create'), 'Add New') !!}
+                                {!! actionButton($module, 'add_mob', route($module.'.create'),'','tabler-plus', 'Add New') !!}
+                                <a href="{{ route($module.'.trashed') }}" class="btn btn-sm btn-label-secondary waves-effect d-lg-block d-none d-flex" data-bs-toggle="tooltip" title="Trashed">
+                                    <span class="icon-xs icon-base ti tabler-trash me-2 topicon"></span>Trashed
+                                </a>
+                            @else
+                                <a href="{{ route($module) }}" class="btn btn-sm btn-label-primary waves-effect d-lg-block d-none d-flex">
+                                    <span class="icon-xs icon-base ti tabler-arrow-left me-2 topicon"></span>Back to list
+                                </a>
+                            @endif
                             {!! actionButton($module, 'delete', null, 'Delete All') !!}
                             {!! actionButton($module, 'delete_mob', null, '', 'tabler-trash', 'Delete All') !!}
                         </div>
@@ -64,23 +73,12 @@
                                                 @continue
                                             @endif
                                             <td class="capitalize">
-                                                @if($col === 'image')
-                                                    <div class="d-flex justify-content-start align-items-center user-name">
-                                                        <div class="avatar-wrapper">
-                                                            <div class="avatar avatar-md me-4 light-gallery" id="gallery-{{ $data->id }}">
-                                                                <a href="{{ asset('assets/images/'.$module .'/'. $data->image) }}">
-                                                                    <img src="{{ $data->image ? asset('assets/images/' . $module .'/'. $data->image) : imageNotFound() }}"
-                                                                         alt="{{ $data->title }}"
-                                                                         class="rounded-circle">
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="d-flex flex-column">
-                                                            <a href="javascript:" class="text-heading text-truncate">
-                                                                <span class="fw-medium">{{ $data->title }}</span>
-                                                            </a>
-                                                            <small>{{ Str::words(strip_tags((string) ($data->description ?? '')), 10, '...') }}</small>
-                                                        </div>
+                                                @if($col === 'title')
+                                                    <div class="d-flex flex-column">
+                                                        <span class="fw-medium">{{ Str::words($data->title, 12, '...') }}</span>
+                                                        @if($data->description)
+                                                            <small class="text-muted">{{ Str::words(strip_tags($data->description), 12, '...') }}</small>
+                                                        @endif
                                                     </div>
                                                 @elseif($col === 'status')
                                                     <span id="statusLabel-{{ $data->id }}"
@@ -98,16 +96,30 @@
                                         @endforeach
                                         <td>
                                             <div class="d-flex align-items-center">
-                                                {!! actionButton2($module, 'edit', route($module.'.edit', $data->id), 'Edit', $data->id, 'Edit', 'tabler-edit', 'btn btn-text-secondary rounded-pill waves-effect btn-icon') !!}
-                                                {!! actionButton2($module, 'view', '#dataModal', null, $data->id, 'View Details') !!}
-                                                <div class="dropdown">
-                                                    {!! actionButton2($module, 'more') !!}
-                                                    <div class="dropdown-menu">
-                                                        {!! actionButton2($module, 'delete', route($module.'.delete', $data->id), 'Delete', $data->id, 'Delete', 'tabler-trash', 'dropdown-item waves-effect delete-record deleteBtn') !!}
-                                                        {!! actionButton2($module, 'duplicate', route($module.'.duplicate', $data->id), 'Duplicate') !!}
-                                                        {!! actionButton2($module, 'status', null, $data->status, $data->id, 'Change Status') !!}
+                                                @if(($moduleName ?? $module) === 'trashed')
+                                                    <a href="{{ route($module.'.restore', $data->id) }}"
+                                                       class="btn btn-text-secondary rounded-pill waves-effect btn-icon"
+                                                       data-bs-toggle="tooltip" title="Restore">
+                                                        <i class="icon-base ti tabler-restore icon-22px"></i>
+                                                    </a>
+                                                    <a href="{{ route($module.'.forcedelete', $data->id) }}"
+                                                       class="btn btn-text-secondary rounded-pill waves-effect btn-icon"
+                                                       data-bs-toggle="tooltip" title="Delete permanently"
+                                                       onclick="return confirm('Permanently delete this record?');">
+                                                        <i class="icon-base ti tabler-trash-x icon-22px"></i>
+                                                    </a>
+                                                @else
+                                                    {!! actionButton2($module, 'edit', route($module.'.edit', $data->id), 'Edit', $data->id, 'Edit', 'tabler-edit', 'btn btn-text-secondary rounded-pill waves-effect btn-icon') !!}
+                                                    {!! actionButton2($module, 'view', '#dataModal', null, $data->id, 'View Details') !!}
+                                                    <div class="dropdown">
+                                                        {!! actionButton2($module, 'more') !!}
+                                                        <div class="dropdown-menu">
+                                                            {!! actionButton2($module, 'delete', route($module.'.delete', $data->id), 'Delete', $data->id, 'Delete', 'tabler-trash', 'dropdown-item waves-effect delete-record deleteBtn') !!}
+                                                            {!! actionButton2($module, 'duplicate', route($module.'.duplicate', $data->id), 'Duplicate') !!}
+                                                            {!! actionButton2($module, 'status', null, $data->status, $data->id, 'Change Status') !!}
+                                                        </div>
                                                     </div>
-                                                </div>
+                                                @endif
                                             </div>
                                         </td>
                                     </tr>
@@ -142,12 +154,6 @@
                             if (i >= rangeStart && i <= rangeEnd) {
                                 cb.checked = shouldCheck;
                                 count++;
-                                const row = cb.closest('tr');
-                                if (row) {
-                                    row.style.transition = 'background-color 0.3s ease';
-                                    row.style.backgroundColor = '#e3f2fd';
-                                    setTimeout(() => { row.style.backgroundColor = ''; }, 600);
-                                }
                             }
                         });
                         Notiflix.Notify.info(`${count} item${count !== 1 ? 's' : ''} ${shouldCheck ? 'selected' : 'deselected'}`);
@@ -160,14 +166,6 @@
             if (selectAllCheckbox) {
                 selectAllCheckbox.addEventListener('change', function() {
                     checkboxes.forEach(checkbox => { checkbox.checked = this.checked; });
-                });
-                checkboxes.forEach(checkbox => {
-                    checkbox.addEventListener('change', function() {
-                        const allChecked = Array.from(checkboxes).every(cb => cb.checked);
-                        const someChecked = Array.from(checkboxes).some(cb => cb.checked);
-                        selectAllCheckbox.checked = allChecked;
-                        selectAllCheckbox.indeterminate = someChecked && !allChecked;
-                    });
                 });
             }
 
@@ -191,18 +189,51 @@
 
                         const data = await response.json();
 
-                        if (!data || Object.keys(data).length === 0) {
-                            contentArea.innerHTML = `<tr><td colspan="2" class="text-center text-warning">No {{ $title }} data found.</td></tr>`;
-                            modal.show();
-                            return;
-                        }
-
                         const rows = `
-                            <tr><th>ID</th><td>${data.id ?? '-'}</td></tr>
+                            <tr><th style="width: 25%">ID</th><td>${data.id ?? '-'}</td></tr>
                             <tr><th>Title</th><td>${data.title ?? '-'}</td></tr>
-                            <tr><th>Short Description</th><td>${data.short_description ?? '-'}</td></tr>
                             <tr><th>Description</th><td>${data.description ?? '-'}</td></tr>
-                            <tr><th>View All Link</th><td>${data.view_all_link ?? '-'}</td></tr>
+                            <tr>
+                                <th colspan="2" class="bg-light text-primary text-center font-weight-bold">Explore UAE Items</th>
+                            </tr>
+                            <tr>
+                                <th>Item 1</th>
+                                <td>
+                                    <strong>Title:</strong> ${data.title1 || '-'}<br>
+                                    <strong>Sub-Title:</strong> ${data.sub_title1 || '-'}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Item 2</th>
+                                <td>
+                                    <strong>Title:</strong> ${data.title2 || '-'}<br>
+                                    <strong>Sub-Title:</strong> ${data.sub_title2 || '-'}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Item 3</th>
+                                <td>
+                                    <strong>Title:</strong> ${data.title3 || '-'}<br>
+                                    <strong>Sub-Title:</strong> ${data.sub_title3 || '-'}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Item 4</th>
+                                <td>
+                                    <strong>Title:</strong> ${data.title4 || '-'}<br>
+                                    <strong>Sub-Title:</strong> ${data.sub_title4 || '-'}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Item 5</th>
+                                <td>
+                                    <strong>Title:</strong> ${data.title5 || '-'}<br>
+                                    <strong>Sub-Title:</strong> ${data.sub_title5 || '-'}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2" class="bg-light text-primary text-center font-weight-bold">Metadata</th>
+                            </tr>
                             <tr>
                                 <th>Status</th>
                                 <td>
@@ -212,9 +243,6 @@
                                 </td>
                             </tr>
                             <tr><th>Ordering</th><td>${data.ordering ?? '-'}</td></tr>
-                            <tr><th>Meta Title</th><td>${data.meta_title ?? '-'}</td></tr>
-                            <tr><th>Meta Keywords</th><td>${data.meta_keywords ?? '-'}</td></tr>
-                            <tr><th>Meta Description</th><td>${data.meta_description ?? '-'}</td></tr>
                             <tr><th>Created At</th><td>${data.created_at ?? '-'}</td></tr>
                             <tr><th>Created By</th><td>${data.created_by_name ?? '-'}</td></tr>
                         `;
@@ -223,7 +251,7 @@
                         modal.show();
                     } catch (error) {
                         console.error("Fetch error:", error);
-                        contentArea.innerHTML = `<tr><td colspan="2" class="text-danger text-center">Error loading {{ $title }} data.</td></tr>`;
+                        contentArea.innerHTML = `<tr><td colspan="2" class="text-danger text-center">Error loading data.</td></tr>`;
                         modal.show();
                     }
                 });
@@ -239,7 +267,7 @@
 
                     Notiflix.Confirm.show(
                         'Confirm Delete',
-                        'Are you sure you want to delete this {{ $title }}? This action cannot be undone.',
+                        'Are you sure you want to delete this record?',
                         'Yes, Delete',
                         'Cancel',
                         async () => {
@@ -253,32 +281,19 @@
                                     }
                                 });
 
-                                if (!response.ok) throw new Error(`HTTP error ${response.status}`);
-
                                 const data = await response.json();
                                 Notiflix.Loading.remove();
 
                                 if (data.success) {
-                                    Notiflix.Notify.failure(data.message || '{{ ucfirst($title) }} deleted successfully.');
-                                    const row = this.closest("tr");
-                                    if (row) row.remove();
+                                    Notiflix.Notify.success(data.message);
+                                    this.closest("tr")?.remove();
                                 } else {
-                                    Notiflix.Notify.failure(data.message || 'Failed to delete {{ $title }}.');
+                                    Notiflix.Notify.failure(data.message || 'Failed to delete.');
                                 }
                             } catch (error) {
                                 Notiflix.Loading.remove();
-                                console.error("Delete error:", error);
-                                Notiflix.Notify.failure('Error deleting record. Please try again.');
+                                Notiflix.Notify.failure('Error deleting record.');
                             }
-                        },
-                        () => { Notiflix.Notify.info('Delete cancelled.'); },
-                        {
-                            width: '320px',
-                            borderRadius: '8px',
-                            okButtonBackground: '#E3342F',
-                            titleColor: '#333333',
-                            messageColor: '#666666',
-                            buttonsFontSize: '15px'
                         }
                     );
                 });
@@ -325,10 +340,9 @@
                                 Notiflix.Notify.failure(data.message || "Failed to update status");
                             }
                         })
-                        .catch(err => {
-                            console.error("Status update error:", err);
+                        .catch(() => {
                             Notiflix.Loading.remove();
-                            Notiflix.Notify.failure("Error updating status. Please try again.");
+                            Notiflix.Notify.failure("Error updating status.");
                         });
                 });
             });

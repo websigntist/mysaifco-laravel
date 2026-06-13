@@ -172,7 +172,7 @@
                     </div>
                 </div>
                 <div class="mt-15">
-                    <a href="" class="flex items-center justify-center w-64 text-mst-gray text-xl px-5 py-3 rounded-full
+                    <a href="{{ route( 'page.default', 'all-tour-categories') ?? '#' }}" class="flex items-center justify-center w-64 text-mst-gray text-xl px-5 py-3 rounded-full
                                                 border border-mst-gray font-bold
                                                  transition duration-300 font-heading mx-auto"> View all Tours
                         <img src="{{asset('assets/images/icons/btn-arrow-blk.svg')}}"

@@ -3,30 +3,42 @@ bg-gradient-to-r from-[#ffffff] from-75% to-[#BA9B315F] to-25%">
     <div class="container mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-[8.2fr_3.8fr] gap-6">
             <div class="flex flex-col justify-center">
-                <h1>explore UAE with <span class="text-mst">saifco travel & trourism</span></h1>
+                
+                <?php
+                    $words = explode(' ', $explore_uae[0]->title ?? '');
+                    $splitIndex = max(0, count($words) - 4); // last 3 words
+                    $part1 = implode(' ', array_slice($words, 0, $splitIndex));
+                    $part2 = implode(' ', array_slice($words, $splitIndex));
+                ?>
+
+                <h1>
+                    <?php echo e($part1); ?> <span class="text-mst"><?php echo e($part2); ?></span>
+                </h1>
                 <div class="my-2 md:w-10/12 mt-5">
-                    <p>Book the best Dubai tours, desert safari deals, and luxury yacht tours with a trusted local
-                       Operator Enjoy top-rated Dubai city tours and Abu Dhabi trips at the best prices with instant
-                       confirmation and 18+ years of experience.</p>
+                    <?php echo $explore_uae[0]->description; ?>
+
                 </div>
                 <ul class="flex items-center justify-start gap-5 mt-5">
                     <li class="bg-mst p-2 w-50 rounded-lg">
                         <div class="text-white text-md font-medium text-center italic font-heading">
-                            Best Price
+                            <?php echo $explore_uae[0]->title1; ?>
+
                         </div>
-                        <div class="text-white text-sm text-center">Guaranteed Deals</div>
+                        <div class="text-white text-sm text-center"><?php echo $explore_uae[0]->sub_title1; ?></div>
                     </li>
                     <li class="bg-mst p-2 w-50 rounded-lg">
                         <div class="text-white text-md font-medium text-center italic font-heading">
-                            18 + Years
+                            <?php echo $explore_uae[0]->title2; ?>
+
                         </div>
-                        <div class="text-white text-sm text-center">Trusted Experience</div>
+                        <div class="text-white text-sm text-center"><?php echo $explore_uae[0]->sub_title2; ?></div>
                     </li>
                     <li class="bg-mst p-2 w-50 rounded-lg">
                         <div class="text-white text-md font-medium text-center italic font-heading">
-                            Top Rated
+                            <?php echo $explore_uae[0]->title3; ?>
+
                         </div>
-                        <div class="text-white text-sm text-center">5 Starts Rated</div>
+                        <div class="text-white text-sm text-center"><?php echo $explore_uae[0]->sub_title3; ?></div>
                     </li>
                 </ul>
             </div>

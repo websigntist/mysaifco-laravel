@@ -1,6 +1,6 @@
 <?php $__env->startSection('content'); ?>
     <?php
-        $breadcrumbBanner = ! empty($pageImageUrl)
+        $topTitileBaner = ! empty($pageImageUrl)
             ? $pageImageUrl
             : asset('assets/images/sliders/560650.webp');
     ?>
@@ -8,72 +8,79 @@
     <?php $slug = request()->segment(1); ?>
     <?php if(!in_array($slug, ['umrah-for-single-lady'])): ?>
         <section class="flex justify-center items-center border-b-1 border-gray-200">
-                <div class="px-4 relative flex min-h-[400px] w-full
+            <div class="px-4 relative flex min-h-[400px] w-full
                     items-center justify-center overflow-hidden">
-                    <div class="absolute inset-0 scale-105 bg-cover bg-top bg-no-repeat"
-                         style="background-image: url('<?php echo e($breadcrumbBanner); ?>')"
-                         aria-hidden="true"></div>
-                    <div class="absolute inset-0 bg-gray-950/25" aria-hidden="true"></div>
-                    <div class="relative z-10 w-full py-14">
-                        <div class="container mx-auto">
-                            <div class="grid grid-cols-1 md:grid-cols-[0.7fr_1fr] gap-6">
-                                <div class="flex flex-col justify-center">
-                                    <ul class="flex items-center justify-start gap-5">
-                                        <li class="bg-mst px-4 pt-3 pb-4 w-full rounded-lg space-y-1">
-                                            <div class="text-white text-xl font-medium text-center italic font-heading">
-                                                Best Price
-                                            </div>
-                                            <div class="text-white text-xs text-center">Guaranteed Deals</div>
-                                        </li>
-                                        <li class="bg-mst px-4 pt-3 pb-4 w-full rounded-lg space-y-1">
-                                            <div class="text-white text-xl font-medium text-center italic font-heading">
-                                                18 + Years
-                                            </div>
-                                            <div class="text-white text-xs text-center">Trusted Experience</div>
-                                        </li>
-                                        <li class="bg-mst px-4 pt-3 pb-4 w-full rounded-lg space-y-1">
-                                            <div class="text-white text-xl font-medium text-center italic font-heading">
-                                                Top Rated
-                                            </div>
-                                            <div class="text-white text-xs text-center">5 Starts Rated</div>
-                                        </li>
-                                    </ul>
-                                    <ul class="flex items-center justify-start gap-5 mt-5">
-                                        <li class="bg-mst px-4 pt-3 pb-4 w-full rounded-lg space-y-1">
-                                            <div class="text-white text-xl font-medium text-center italic font-heading">
-                                                Licensed Operator
-                                            </div>
-                                            <div class="text-white text-xs text-center">Dubai Approved</div>
-                                        </li>
-                                        <li class="bg-mst px-4 pt-3 pb-4 w-full rounded-lg space-y-1">
-                                            <div class="text-white text-xl font-medium text-center italic font-heading">
-                                                50K + Customers
-                                            </div>
-                                            <div class="text-white text-xs text-center">World Wide Travelerss</div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="flex items-center justify-end">
-                                    <div class="bg-gray-50 rounded-xl pt-3 pb-4 px-4 border border-gray-200 space-y-4 w-96 h-40">
-                                        <div class="font-heading font-bold italic text-xl capitalize mb-3">
-                                            Contact with <span class="text-mst">Us</span>
+                <div class="absolute inset-0 scale-105 bg-cover bg-top bg-no-repeat"
+                     style="background-image: url('<?php echo e($topTitileBaner); ?>')"
+                     aria-hidden="true"></div>
+                
+                <div class="absolute inset-0 bg-gray-950/25" aria-hidden="true"></div>
+                <div class="relative z-10 w-full py-14">
+                    <div class="container mx-auto">
+                        <div class="grid grid-cols-1 md:grid-cols-[0.7fr_1fr] gap-6">
+                            <div class="flex flex-col justify-center">
+                                <ul class="flex items-center justify-start gap-5">
+                                    <li class="bg-mst px-4 pt-3 pb-4 w-full rounded-lg space-y-1">
+                                        <div class="text-white text-xl font-medium text-center italic font-heading">
+                                            <?php echo e($explore_uae[0]->title1); ?>
+
                                         </div>
-                                        <div class="bg-gray-50 rounded-xl p-4 border gap-3 border-gray-200 flex item-center justify-start">
-                                            <img src="<?php echo e(asset('assets/images/icons/whatsapp.svg')); ?>" class="w36" alt="whatsapp">
-                                            <a href="tel:<?php echo e(get_setting('tour_inquiry_whatsapp')); ?>">
-                                                <div class="font-heading font-bold italic text-mst text-xl">Tour Inquires <br>
-                                                    <span class="text-mst-gray"><?php echo e(get_setting('tour_inquiry_whatsapp')); ?></span>
-                                                </div>
-                                            </a>
-                                            <img src="<?php echo e(asset('assets/images/icons/line-arrow.svg')); ?>" class="w36 ml-auto" alt="arrow">
+                                        <div class="text-white text-xs text-center"><?php echo e($explore_uae[0]->sub_title1); ?></div>
+                                    </li>
+                                    <li class="bg-mst px-4 pt-3 pb-4 w-full rounded-lg space-y-1">
+                                        <div class="text-white text-xl font-medium text-center italic font-heading">
+                                            <?php echo e($explore_uae[0]->title2); ?>
+
                                         </div>
+                                        <div class="text-white text-xs text-center"><?php echo e($explore_uae[0]->sub_title2); ?></div>
+                                    </li>
+                                    <li class="bg-mst px-4 pt-3 pb-4 w-full rounded-lg space-y-1">
+                                        <div class="text-white text-xl font-medium text-center italic font-heading">
+                                            <?php echo e($explore_uae[0]->title3); ?>
+
+                                        </div>
+                                        <div class="text-white text-xs text-center"><?php echo e($explore_uae[0]->sub_title3); ?></div>
+                                    </li>
+                                </ul>
+                                <ul class="flex items-center justify-start gap-5 mt-5">
+                                    <li class="bg-mst px-4 pt-3 pb-4 w-full rounded-lg space-y-1">
+                                        <div class="text-white text-xl font-medium text-center italic font-heading">
+                                            <?php echo e($explore_uae[0]->title5); ?>
+
+                                        </div>
+                                        <div class="text-white text-xs text-center"><?php echo e($explore_uae[0]->sub_title5); ?></div>
+                                    </li>
+                                    <li class="bg-mst px-4 pt-3 pb-4 w-full rounded-lg space-y-1">
+                                        <div class="text-white text-xl font-medium text-center italic font-heading">
+                                            <?php echo e($explore_uae[0]->sub_title4); ?>
+
+                                        </div>
+                                        <div class="text-white text-xs text-center"><?php echo e($explore_uae[0]->sub_title4); ?></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="flex items-center justify-end">
+                                <div class="bg-gray-50 rounded-xl pt-3 pb-4 px-4 border border-gray-200 space-y-4 w-96 h-40">
+                                    <div class="font-heading font-bold italic text-xl capitalize mb-3">
+                                        Contact with <span class="text-mst">Us</span>
+                                    </div>
+                                    <div class="bg-gray-50 rounded-xl p-4 border gap-3 border-gray-200 flex item-center justify-start">
+                                        <img src="<?php echo e(asset('assets/images/icons/whatsapp.svg')); ?>" class="w36" alt="whatsapp">
+                                        <a href="tel:https://wa.me/<?php echo e(get_setting('tour_inquiry_whatsapp')); ?>?text=Hello%2C%20I%20am%20interested">
+                                            <div class="font-heading font-bold italic text-mst text-xl">Tour Inquires
+                                                <br>
+                                                <span class="text-mst-gray"><?php echo e(get_setting('tour_inquiry_whatsapp')); ?></span>
+                                            </div>
+                                        </a>
+                                        <img src="<?php echo e(asset('assets/images/icons/line-arrow.svg')); ?>" class="w36 ml-auto" alt="arrow">
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
     <?php endif; ?>
 
 

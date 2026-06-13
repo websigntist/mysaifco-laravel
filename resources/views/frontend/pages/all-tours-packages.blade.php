@@ -1,3 +1,4 @@
+{{--
 @unless($asInclude ?? false)
 @extends('frontend.layouts.master')
 @section('content')
@@ -7,7 +8,9 @@
         $bannerImageUrl = $bannerImageUrl ?? asset('assets/images/sliders/560650.webp');
     @endphp
 
-    {{--===== top banner (image from CMS page or tour type) ======--}}
+    --}}
+{{--===== top banner (image from CMS page or tour type) ======--}}{{--
+
     <section class="flex justify-center items-center border-b-1 border-gray-200">
         <div class="px-4 relative flex min-h-[400px] w-full
             items-center justify-center overflow-hidden">
@@ -117,3 +120,4 @@
 @else
     @include('frontend.pages.includes.all-tours-packages')
 @endunless
+--}}

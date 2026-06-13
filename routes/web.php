@@ -268,6 +268,22 @@ Route::prefix('admin')->group(function () {
         Route::post('/explore/{id}/status', [backend\ExploreController::class, 'updateStatusAjax'])->middleware('check.permission:explore,status')->name('explore.status');
         // EXPLORE ROUTES END
 
+        // EXPLORE UAE ROUTES START
+        Route::get('/explore-uae', [backend\ExploreUaeController::class, 'index'])->name('explore-uae');
+        Route::get('/explore-uae/create', [backend\ExploreUaeController::class, 'create'])->middleware('check.permission:explore-uae,add')->name('explore-uae.create');
+        Route::get('/explore-uae/duplicate/{id}', [backend\ExploreUaeController::class, 'duplicate'])->middleware('check.permission:explore-uae,duplicate')->name('explore-uae.duplicate');
+        Route::get('/explore-uae/edit/{id}', [backend\ExploreUaeController::class, 'editForm'])->middleware('check.permission:explore-uae,edit')->name('explore-uae.edit');
+        Route::put('/explore-uae/update/{id}', [backend\ExploreUaeController::class, 'update'])->middleware('check.permission:explore-uae,update')->name('explore-uae.update');
+        Route::post('/explore-uae/store', [backend\ExploreUaeController::class, 'store'])->middleware('check.permission:explore-uae,store')->name('explore-uae.store');
+        Route::post('/explore-uae/delete-all', [backend\ExploreUaeController::class, 'deleteAll'])->middleware('check.permission:explore-uae,delete-all')->name('explore-uae.delete-all');
+        Route::get('/explore-uae/trashed', [backend\ExploreUaeController::class, 'trashed'])->middleware('check.permission:explore-uae,trashed')->name('explore-uae.trashed');
+        Route::get('/explore-uae/restore/{id}', [backend\ExploreUaeController::class, 'restore'])->middleware('check.permission:explore-uae,restore')->name('explore-uae.restore');
+        Route::get('/explore-uae/forcedelete/{id}', [backend\ExploreUaeController::class, 'forceDelete'])->middleware('check.permission:explore-uae,forcedelete')->name('explore-uae.forcedelete');
+        Route::get('/explore-uae/modal-view/{id}', [backend\ExploreUaeController::class, 'modalView'])->middleware('check.permission:explore-uae,modal-view')->name('explore-uae.modal-view');
+        Route::delete('/explore-uae/delete/{id}', [backend\ExploreUaeController::class, 'deleteAjax'])->middleware('check.permission:explore-uae,delete')->name('explore-uae.delete');
+        Route::post('/explore-uae/{id}/status', [backend\ExploreUaeController::class, 'updateStatusAjax'])->middleware('check.permission:explore-uae,status')->name('explore-uae.status');
+        // EXPLORE UAE ROUTES END
+
         // POPULAR SEARCHES ROUTES START
         Route::get('/popular-searches', [backend\PopularSearchController::class, 'index'])->name('popular-searches');
         Route::get('/popular-searches/create', [backend\PopularSearchController::class, 'create'])->middleware('check.permission:popular-searches,add')->name('popular-searches.create');
