@@ -32,6 +32,8 @@ class MainController
             }
         }
 
+        /* slider data */
+
         return view('frontend.pages.home', array_merge([
             'meta_title'       => $metaTitle,
             'meta_keywords'    => $metaKeywords,

@@ -1,5 +1,4 @@
-@extends('backend.layouts.master')
-@section('content')
+<?php $__env->startSection('content'); ?>
     <div class="content-wrapper">
         <!-- Content -->
         <div class="container-xxl flex-grow-1 container-p-y">
@@ -7,17 +6,22 @@
                 <div class="col-sm-12 mt-8">
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <div class="d-flex flex-column justify-content-center">
-                            {!! heading_breadcrumbs(ucfirst(str_replace('-',' ',$title) .' '. 'list')) !!}
+                            <?php echo heading_breadcrumbs(ucfirst(str_replace('-',' ',$title) .' '. 'list')); ?>
+
                         </div>
                         <!-- ===== actions buttons start =====-->
                         <div class="card-header-elements ms-auto d-flex align-content-between">
-                            {{-- Add Buttons --}}
-                            {!! actionButton($module, 'add', route($module.'.create'), 'Add New') !!}
-                            {!! actionButton($module, 'add_mob', route($module.'.create'),'','tabler-plus', 'Add New') !!}
+                            
+                            <?php echo actionButton($module, 'add', route($module.'.create'), 'Add New'); ?>
 
-                            {{-- Delete Buttons --}}
-                            {!! actionButton($module, 'delete', null, 'Delete All') !!}
-                            {!! actionButton($module, 'delete_mob', null, '', 'tabler-trash', 'Delete All') !!}
+                            <?php echo actionButton($module, 'add_mob', route($module.'.create'),'','tabler-plus', 'Add New'); ?>
+
+
+                            
+                            <?php echo actionButton($module, 'delete', null, 'Delete All'); ?>
+
+                            <?php echo actionButton($module, 'delete_mob', null, '', 'tabler-trash', 'Delete All'); ?>
+
                         </div>
                         <!-- ===== actions buttons end =====-->
                     </div>
@@ -27,13 +31,14 @@
             <div class="card card-action mb-12 border-top-bottom">
                 <div class="card-header border-bottom sticky-element pb-3 pt-3 cardStyling">
                     <i class="icon-base ti tabler-layout-list me-1"></i>
-                    <h6 class="card-action-title mb-0 text-capitalize">{{str_replace('-',' ',$title) .' '. 'list'}}</h6>
-                    {!! card_action_element() !!}
+                    <h6 class="card-action-title mb-0 text-capitalize"><?php echo e(str_replace('-',' ',$title) .' '. 'list'); ?></h6>
+                    <?php echo card_action_element(); ?>
+
                 </div>
                 <div class="collapse show p-5">
-                    <form action="{{ route($module.'.delete-all') }}" method="POST" class="deleteAll">
-                        <input type="hidden" name="trashed" value="{{$moduleName}}">
-                        @csrf
+                    <form action="<?php echo e(route($module.'.delete-all')); ?>" method="POST" class="deleteAll">
+                        <input type="hidden" name="trashed" value="<?php echo e($moduleName); ?>">
+                        <?php echo csrf_field(); ?>
                         <div class="table-responsive">
                             <table class="table table-hover" id="jsdatatable_list">
                                 <thead class="border-top">
@@ -46,80 +51,92 @@
                                                data-bs-placement="top"
                                                title="Select All (Use Shift+Click to select range)">
                                     </th>
-                                    @php
+                                    <?php
                                         $renameMap = [
                                             'created_at' => 'Created',
                                         ];
-                                    @endphp
+                                    ?>
 
-                                    @foreach($columns as $col)
-                                        @unless(in_array($col, $hiddenColumns))
-                                            <th>{{ $renameMap[$col] ?? ucfirst(str_replace('_', ' ', $col)) }}</th>
-                                        @endunless
-                                    @endforeach
+                                    <?php $__currentLoopData = $columns; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $col): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <?php if (! (in_array($col, $hiddenColumns))): ?>
+                                            <th><?php echo e($renameMap[$col] ?? ucfirst(str_replace('_', ' ', $col))); ?></th>
+                                        <?php endif; ?>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach ($getData as $data)
-                                    <tr id="rowId-{{ $data->id }}">
+                                <?php $__currentLoopData = $getData; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <tr id="rowId-<?php echo e($data->id); ?>">
                                         <td>
-                                            <input name="ids[]" value="{{ $data->id }}" type="checkbox" class="childCheckbox form-check-input">
+                                            <input name="ids[]" value="<?php echo e($data->id); ?>" type="checkbox" class="childCheckbox form-check-input">
                                         </td>
-                                        @foreach($columns as $col)
-                                            @if(in_array($col, $hiddenColumns))
-                                                @continue
-                                            @endif
+                                        <?php $__currentLoopData = $columns; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $col): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <?php if(in_array($col, $hiddenColumns)): ?>
+                                                <?php continue; ?>
+                                            <?php endif; ?>
                                             <td class="capitalize">
-                                                @if($col === 'title')
-                                                    {{ ucwords($data->title) }}
-                                                @elseif($col === 'image')
-                                                    <div class="avatar avatar-md  light-gallery" id="gallery-{{ $data->id }}">
-                                                        <a href="{{ asset('assets/images/'.$module .'/'. $data->image) }}">
-                                                            <img src="{{ $data->image ? asset ('assets/images/' . $module .'/'. $data->image) : imageNotFound() }}"
-                                                                 alt="{{$data->image}}"
+                                                <?php if($col === 'title'): ?>
+                                                    <?php echo e(ucwords($data->title)); ?>
+
+                                                <?php elseif($col === 'image'): ?>
+                                                    <div class="avatar avatar-md  light-gallery" id="gallery-<?php echo e($data->id); ?>">
+                                                        <a href="<?php echo e(asset('assets/images/'.$module .'/'. $data->image)); ?>">
+                                                            <img src="<?php echo e($data->image ? asset ('assets/images/' . $module .'/'. $data->image) : imageNotFound()); ?>"
+                                                                 alt="<?php echo e($data->image); ?>"
                                                                  class="rounded">
                                                         </a>
                                                     </div>
-                                                @elseif($col === 'ordering')
-                                                    {{ $data->ordering }}
-                                                @elseif($col === 'heading')
+                                                <?php elseif($col === 'ordering'): ?>
+                                                    <?php echo e($data->ordering); ?>
+
+                                                <?php elseif($col === 'heading'): ?>
                                                     <div class="d-flex justify-content-start align-items-center user-name">
                                                         <div class="d-flex flex-column">
-                                                            <span class="fw-medium">{{ Str::words($data->heading, 15, '') }}</span>
-                                                            <small>{{ Str::words(strip_tags($data->description), 15, '...') }}</small>
+                                                            <span class="fw-medium"><?php echo e(Str::words($data->heading, 15, '')); ?></span>
+                                                            <small><?php echo e(Str::words(strip_tags($data->description), 15, '...')); ?></small>
                                                         </div>
                                                     </div>
-                                                @elseif($col === 'status')
-                                                    <span id="statusLabel-{{ $data->id }}"
-                                                          class="badge {{ $data->status === 'Active' ? 'bg-label-success' : 'bg-label-danger' }}">
-                                                            {{ ucfirst($data->status) }}
+                                                <?php elseif($col === 'status'): ?>
+                                                    <span id="statusLabel-<?php echo e($data->id); ?>"
+                                                          class="badge <?php echo e($data->status === 'Active' ? 'bg-label-success' : 'bg-label-danger'); ?>">
+                                                            <?php echo e(ucfirst($data->status)); ?>
+
                                                         </span>
-                                                @elseif($col === 'created_at')
-                                                    {{ $data->created_at?->format('M d, Y') ?? '-' }}
-                                                @elseif($col === 'created_by')
-                                                    {{ getCreatedBy($data->created_by) }}
-                                                @else
-                                                    {{ $data->$col }}
-                                                @endif
+                                                <?php elseif($col === 'created_at'): ?>
+                                                    <?php echo e($data->created_at?->format('M d, Y') ?? '-'); ?>
+
+                                                <?php elseif($col === 'created_by'): ?>
+                                                    <?php echo e(getCreatedBy($data->created_by)); ?>
+
+                                                <?php else: ?>
+                                                    <?php echo e($data->$col); ?>
+
+                                                <?php endif; ?>
                                             </td>
-                                        @endforeach
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                         <td>
                                             <div class="d-flex align-items-center">
-                                                {!! actionButton2($module, 'edit', route($module.'.edit', $data->id), 'Edit', $data->id, 'Edit', 'tabler-edit', 'btn btn-text-secondary rounded-pill waves-effect btn-icon') !!}
-                                                {!! actionButton2($module, 'view', '#dataModal', null, $data->id, 'View Details') !!}
+                                                <?php echo actionButton2($module, 'edit', route($module.'.edit', $data->id), 'Edit', $data->id, 'Edit', 'tabler-edit', 'btn btn-text-secondary rounded-pill waves-effect btn-icon'); ?>
+
+                                                <?php echo actionButton2($module, 'view', '#dataModal', null, $data->id, 'View Details'); ?>
+
                                                 <div class="dropdown">
-                                                    {!! actionButton2($module, 'more') !!}
+                                                    <?php echo actionButton2($module, 'more'); ?>
+
                                                     <div class="dropdown-menu">
-                                                        {!! actionButton2($module, 'delete', route($module.'.delete', $data->id), 'Delete', $data->id, 'Delete', 'tabler-trash', 'dropdown-item waves-effect delete-record deleteBtn') !!}
-                                                        {!! actionButton2($module, 'duplicate', route($module.'.duplicate', $data->id), 'Duplicate') !!}
-                                                        {!! actionButton2($module, 'status', null, $data->status, $data->id, 'Change Status') !!}
+                                                        <?php echo actionButton2($module, 'delete', route($module.'.delete', $data->id), 'Delete', $data->id, 'Delete', 'tabler-trash', 'dropdown-item waves-effect delete-record deleteBtn'); ?>
+
+                                                        <?php echo actionButton2($module, 'duplicate', route($module.'.duplicate', $data->id), 'Duplicate'); ?>
+
+                                                        <?php echo actionButton2($module, 'status', null, $data->status, $data->id, 'Change Status'); ?>
+
                                                     </div>
                                                 </div>
                                             </div>
                                         </td>
                                     </tr>
-                                @endforeach
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </tbody>
                             </table>
                         </div>
@@ -129,9 +146,9 @@
         </div>
         <!-- / Content -->
     </div>
-    @include('backend.components.viewModal')
-@endsection
-@push('script')
+    <?php echo $__env->make('backend.components.viewModal', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php $__env->stopSection(); ?>
+<?php $__env->startPush('script'); ?>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             // Shift+Click Range Selection
@@ -186,7 +203,7 @@
             document.querySelectorAll(".viewBtn").forEach(btn => {
                 btn.addEventListener("click", async function () {
                     const dataId = this.getAttribute("data-id");
-                    const url = `/admin/{{$module}}/modal-view/${dataId}`;
+                    const url = `/admin/<?php echo e($module); ?>/modal-view/${dataId}`;
 
                     // Show loading state
                     contentArea.innerHTML = `
@@ -201,12 +218,12 @@
                         if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
 
                         const data = await response.json();
-                        console.log("{{ucfirst($title)}} Data:", data);
+                        console.log("<?php echo e(ucfirst($title)); ?> Data:", data);
 
                         // Handle empty data
                         if (!data || Object.keys(data).length === 0) {
                             contentArea.innerHTML = `
-                                <tr><td colspan="2" class="text-center text-warning">No {{$title}} data found.</td></tr>
+                                <tr><td colspan="2" class="text-center text-warning">No <?php echo e($title); ?> data found.</td></tr>
                             `;
                             modal.show();
                             return;
@@ -214,35 +231,35 @@
 
                         // Define image URL safely
                         const imageUrl = data.image
-                            ? `/assets/images/{{$module}}/${data.image}`
-                            : "{{ imageNotFound() }}";
+                            ? `/assets/images/<?php echo e($module); ?>/${data.image}`
+                            : "<?php echo e(imageNotFound()); ?>";
 
                         // Build data rows
                         const rows = `
-                                <tr><th>{{_label('ID')}}</th><td>${data.id ?? '-'}</td></tr>
-                                <tr><th>{{_label('title')}}</th><td>${data.title ?? '-'}</td></tr>
-                                <tr><th>{{_label('heading')}}</th><td>${data.heading ?? '-'}</td></tr>
-                                <tr><th>{{_label('sub_heading')}}</th><td>${data.sub_heading ?? '-'}</td></tr>
-                                <tr><th>{{_label('description')}}</th><td>${data.description ?? '-'}</td></tr>
-                                <tr><th>{{_label('link')}}</th><td>${data.link ?? '-'}</td></tr>
-                                <tr><th>{{_label('button_text')}}</th><td>${data.button_text ?? '-'}</td></tr>
-                                <tr><th>{{_label('type')}}</th><td>${data.type ?? '-'}</td></tr>
+                                <tr><th><?php echo e(_label('ID')); ?></th><td>${data.id ?? '-'}</td></tr>
+                                <tr><th><?php echo e(_label('title')); ?></th><td>${data.title ?? '-'}</td></tr>
+                                <tr><th><?php echo e(_label('heading')); ?></th><td>${data.heading ?? '-'}</td></tr>
+                                <tr><th><?php echo e(_label('sub_heading')); ?></th><td>${data.sub_heading ?? '-'}</td></tr>
+                                <tr><th><?php echo e(_label('description')); ?></th><td>${data.description ?? '-'}</td></tr>
+                                <tr><th><?php echo e(_label('link')); ?></th><td>${data.link ?? '-'}</td></tr>
+                                <tr><th><?php echo e(_label('button_text')); ?></th><td>${data.button_text ?? '-'}</td></tr>
+                                <tr><th><?php echo e(_label('type')); ?></th><td>${data.type ?? '-'}</td></tr>
                                 <tr>
-                                    <th>{{_label('status')}}</th>
+                                    <th><?php echo e(_label('status')); ?></th>
                                     <td>
                                         <span class="badge ${data.status === 'Active' ? 'bg-label-success' : 'bg-label-danger'}">
                                             ${data.status ? data.status.charAt(0).toUpperCase() + data.status.slice(1) : '-'}
                                         </span>
                                     </td>
                                 </tr>
-                                <tr><th>{{_label('ordering')}}</th><td>${data.ordering ?? '-'}</td></tr>
-                                <tr><th>{{_label('created_at')}}</th><td>${data.created_at ?? '-'}</td></tr>
-                                <tr><th>{{_label('created_by')}}</th><td>${data.created_by_name ?? '-'}</td></tr>
+                                <tr><th><?php echo e(_label('ordering')); ?></th><td>${data.ordering ?? '-'}</td></tr>
+                                <tr><th><?php echo e(_label('created_at')); ?></th><td>${data.created_at ?? '-'}</td></tr>
+                                <tr><th><?php echo e(_label('created_by')); ?></th><td>${data.created_by_name ?? '-'}</td></tr>
                                 <tr>
-                                    <th>{{_label('image')}}</th>
+                                    <th><?php echo e(_label('image')); ?></th>
                                     <td>
                                         <img
-                                            src="${data.image ? `/assets/images/{{$module}}/${data.image}` : imageNotFound()}"
+                                            src="${data.image ? `/assets/images/<?php echo e($module); ?>/${data.image}` : imageNotFound()}"
                                             alt="Image"
                                             class="img-thumbnail rounded border-1"
                                             width="100"
@@ -258,7 +275,7 @@
                     } catch (error) {
                         console.error("Fetch error:", error);
                         contentArea.innerHTML = `
-                            <tr><td colspan="2" class="text-danger text-center">Error loading {{$title}} data.</td></tr>
+                            <tr><td colspan="2" class="text-danger text-center">Error loading <?php echo e($title); ?> data.</td></tr>
                         `;
                         modal.show();
                     }
@@ -271,12 +288,12 @@
             document.querySelectorAll(".deleteBtn").forEach(btn => {
                 btn.addEventListener("click", async function () {
                     const id = this.getAttribute("data-id");
-                    const url = "{{ url('admin/'.$module.'/delete') }}/" + id;
+                    const url = "<?php echo e(url('admin/'.$module.'/delete')); ?>/" + id;
 
                     // Notiflix confirmation dialog
                     Notiflix.Confirm.show(
                         'Confirm Delete',
-                        'Are you sure you want to delete this {{$title}}? This action cannot be undone.',
+                        'Are you sure you want to delete this <?php echo e($title); ?>? This action cannot be undone.',
                         'Yes, Delete',
                         'Cancel',
                         async () => {
@@ -287,7 +304,7 @@
                                 const response = await fetch(url, {
                                     method: "DELETE",
                                     headers: {
-                                        "X-CSRF-TOKEN": "{{ csrf_token() }}",
+                                        "X-CSRF-TOKEN": "<?php echo e(csrf_token()); ?>",
                                         "X-Requested-With": "XMLHttpRequest"
                                     }
                                 });
@@ -298,14 +315,14 @@
                                 Notiflix.Loading.remove();
 
                                 if (data.success) {
-                                    Notiflix.Notify.failure(data.message || '{{ucfirst($title)}} deleted successfully.');
+                                    Notiflix.Notify.failure(data.message || '<?php echo e(ucfirst($title)); ?> deleted successfully.');
 
                                     // Remove table row instantly
                                     const row = this.closest("tr");
                                     if (row) row.remove();
 
                                 } else {
-                                    Notiflix.Notify.failure(data.message || 'Failed to delete {{$title}}.');
+                                    Notiflix.Notify.failure(data.message || 'Failed to delete <?php echo e($title); ?>.');
                                 }
                             } catch (error) {
                                 Notiflix.Loading.remove();
@@ -338,7 +355,7 @@
 
                     const dataId = this.getAttribute("data-id");
                     const currentStatus = this.getAttribute("data-current-status");
-                    const url = `/admin/{{$module}}/${dataId}/status`;
+                    const url = `/admin/<?php echo e($module); ?>/${dataId}/status`;
 
                     // Optional: show loading indicator
                     Notiflix.Loading.circle('Updating status...');
@@ -346,7 +363,7 @@
                     fetch(url, {
                         method: "POST",
                         headers: {
-                            "X-CSRF-TOKEN": "{{ csrf_token() }}",
+                            "X-CSRF-TOKEN": "<?php echo e(csrf_token()); ?>",
                             "Content-Type": "application/json",
                             "X-Requested-With": "XMLHttpRequest"
                         },
@@ -385,4 +402,6 @@
             });
         });
     </script>
-@endpush
+<?php $__env->stopPush(); ?>
+
+<?php echo $__env->make('backend.layouts.master', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH D:\laragon\www\mysaifco-laravel\resources\views/backend/sliders/listing.blade.php ENDPATH**/ ?>

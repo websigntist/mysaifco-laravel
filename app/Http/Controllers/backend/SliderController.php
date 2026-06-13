@@ -42,8 +42,7 @@ class SliderController
             'type',
             'status',
             'ordering',
-            'created_at',
-            'created_by'
+
         ];
 
         // columns to hide
