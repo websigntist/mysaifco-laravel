@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 14, 2026 at 11:03 AM
+-- Generation Time: Jun 26, 2026 at 07:23 PM
 -- Server version: 8.4.2
 -- PHP Version: 8.4.21
 
@@ -1271,7 +1271,9 @@ INSERT INTO `pages` (`id`, `parent_id`, `menu_title`, `page_title`, `show_title`
 (54, 0, 'Dubai Combo Tours', 'Dubai Combo Tours', 1, NULL, 'dubai-combo-tours', '<div class=\"w-6xl max-w-full mx-auto\">\r\n<p style=\"text-align: center;\">Experience camel race Dubai tours and discover a unique part of Emirati culture. Visit camel racing tracks like Al Marmoom, watch live races, and learn about this traditional sport. These tours offer an authentic desert experience away from modern city attractions and are perfect for cultural exploration.</p>\r\n</div>\r\n<p style=\"text-align: center;\">[include file=\"all-tours-packages\"]</p>', 'published', '1779663945_6a1384498a220_image.webp', 'dubai-combo-tours', 'Dubai Combo Tours', 'Box Container', 'Yes', 2, 'Dubai Combo Tours', NULL, NULL, 1, '2026-05-24 18:05:22', '2026-05-29 16:38:30', NULL),
 (55, 0, 'Umrah', 'Umrah', 0, NULL, 'umrah', '<p>[include file=\"umrah\"]</p>\r\n<p>[include file=\"all-tours-packages\"]</p>', 'published', '1779909275_6a17429bd44ee_image.webp', 'umrah', 'Umrah', 'Box Container', 'Yes', 2, 'Umrah', NULL, NULL, 1, '2026-05-27 03:02:27', '2026-06-08 04:12:40', NULL),
 (57, 0, 'Umrah by Bus', 'Umrah By Bus', 0, NULL, 'umrah-by-bus', '<p>[include file=\"umrah-by-bus\"]</p>\r\n<p>[include file=\"all-tours-packages\"]</p>', 'published', '1780945337_6a2711b9a102b_image.webp', 'umrah-by-bus', 'Umrah By Bus', 'Box Container', 'Yes', 2, 'Umrah By Bus', NULL, NULL, 1, '2026-06-08 04:13:10', '2026-06-08 14:02:17', NULL),
-(58, 0, 'Umrah for Single Lady', 'Umrah For Single Lady', 0, NULL, 'umrah-for-single-lady', '<p>[include file=\"umrah-for-single-lady\"]</p>\r\n<p>[include file=\"all-tours-packages\"]</p>', 'published', NULL, 'umrah-for-single-lady', 'Umrah For Single Lady', 'Box Container', 'Yes', 2, 'Umrah For Single Lady', NULL, NULL, 1, '2026-06-12 05:40:35', '2026-06-12 05:41:06', NULL);
+(58, 0, 'Umrah for Single Lady', 'Umrah For Single Lady', 0, NULL, 'umrah-for-single-lady', '<p>[include file=\"umrah-for-single-lady\"]</p>\r\n<p>[include file=\"all-tours-packages\"]</p>', 'published', NULL, 'umrah-for-single-lady', 'Umrah For Single Lady', 'Box Container', 'Yes', 2, 'Umrah For Single Lady', NULL, NULL, 1, '2026-06-12 05:40:35', '2026-06-12 05:41:06', NULL),
+(59, 0, 'FAQs', 'FAQs', 0, NULL, 'faqs', '<p>[include file=\"faqs\"]</p>', 'published', '1782415698_6a3d81521a2b6_image.webp', 'faqs', 'FAQs', 'Box Container', 'Yes', 2, 'FAQs', NULL, NULL, 1, '2026-06-25 14:12:00', '2026-06-25 14:28:18', NULL),
+(60, 0, 'Umrah FAQs', 'Umrah FAQs', 0, NULL, 'umrah-faqs', '<p>[include file=\"umrah-faqs\"]</p>', 'published', '1782498306_6a3ec402a59a4_image.webp', 'umrah-faqs', 'Umrah FAQs', 'Box Container', 'Yes', 2, 'Umrah FAQs', NULL, NULL, 1, '2026-06-26 10:01:48', '2026-06-26 13:25:06', NULL);
 
 -- --------------------------------------------------------
 
@@ -1674,7 +1676,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('izjvRqt80zw0n4GZWyxyCUdvCDFB5LZvjaBWUZjS', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiNVFrb3JaUkJNUlFWTGxXTkZQSVV0YVVyOUk2VlVzdE45MWphMGVMVCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjk6Imh0dHBzOi8vbXlzYWlmY28tbGFyYXZlbC50ZXN0IjtzOjU6InJvdXRlIjtzOjE6Ii8iO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjM6InVybCI7YToxOntzOjg6ImludGVuZGVkIjtzOjQxOiJodHRwczovL215c2FpZmNvLWxhcmF2ZWwudGVzdC9hZG1pbi90b3VycyI7fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7fQ==', 1781434878);
+('viCK5d67AUGMyk12wnzI9Cf5feIlKYxdcBPzPqWe', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoia0ZKVVdVT1lBS1NrejgwYU1GOWhuY3dhNkxQcWRSdVUzT2RlUzBpcCI7czozOiJ1cmwiO2E6MTp7czo4OiJpbnRlbmRlZCI7czo0MToiaHR0cHM6Ly9teXNhaWZjby1sYXJhdmVsLnRlc3QvYWRtaW4vcGFnZXMiO31zOjk6Il9wcmV2aW91cyI7YToyOntzOjM6InVybCI7czo0MDoiaHR0cHM6Ly9teXNhaWZjby1sYXJhdmVsLnRlc3QvdW1yYWgtZmFxcyI7czo1OiJyb3V0ZSI7czoxMjoicGFnZS5kZWZhdWx0Ijt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1782501412);
 
 -- --------------------------------------------------------
 
@@ -1695,70 +1697,70 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `setting_name`, `setting_value`, `created_at`, `updated_at`) VALUES
-(1, 'site_title', 'Mysaifco Travel & Tourism', NULL, '2026-05-26 15:30:43'),
-(2, 'site_keywords', 'travel, tour, umrah, desert safari', NULL, '2026-05-26 15:30:43'),
-(3, 'site_description', 'Saifco Travel & Tourism is a leading Dubai-based travel company offering Dubai tours, desert safari, yacht charters, holiday packages, Umrah services, and global visa assistance with trusted service and competitive prices.', NULL, '2026-05-26 15:30:43'),
+(1, 'site_title', 'Mysaifco Travel & Tourism', NULL, '2026-06-14 06:09:08'),
+(2, 'site_keywords', 'travel, tour, umrah, desert safari', NULL, '2026-06-14 06:09:08'),
+(3, 'site_description', 'Saifco Travel & Tourism is a leading Dubai-based travel company offering Dubai tours, desert safari, yacht charters, holiday packages, Umrah services, and global visa assistance with trusted service and competitive prices.', NULL, '2026-06-14 06:09:08'),
 (4, 'phone', '+92 (300) 2563325', NULL, NULL),
-(5, 'email', 'info@mysaifco.com', NULL, '2026-05-26 15:30:43'),
-(6, 'loader', 'Yes', NULL, '2026-05-26 15:30:43'),
+(5, 'email', 'info@mysaifco.com', NULL, '2026-06-14 06:09:08'),
+(6, 'loader', 'Yes', NULL, '2026-06-14 06:09:08'),
 (7, 'logo', '1779565602_logo.svg', NULL, '2026-05-23 14:46:42'),
 (8, 'footer_logo', '1779565602_footer-logo.svg', NULL, '2026-05-23 14:46:42'),
 (9, 'favicon', '1779565602_favicon.png', NULL, '2026-05-23 14:46:42'),
-(10, 'address', '16th Street Shop # 5, Bohra Masjid Road, Ayal Nasir, Deira, Dubai, UAE.', NULL, '2026-05-26 15:30:43'),
-(11, 'maintenance_mode', 'Inactive', NULL, '2026-05-26 15:30:43'),
-(12, 'robots', 'NOINDEX, NOFOLLOW', NULL, '2026-05-26 15:30:43'),
-(13, 'copyright_text', 'Copyright © 2025 Mysaifco.com. All Rights Reserved.', NULL, '2026-05-26 15:30:43'),
-(14, 'google_analytics_code', 'no code', NULL, '2026-05-26 15:30:43'),
+(10, 'address', '16th Street Shop # 5, Bohra Masjid Road, Ayal Nasir, Deira, Dubai, UAE.', NULL, '2026-06-14 06:09:08'),
+(11, 'maintenance_mode', 'Inactive', NULL, '2026-06-14 06:09:08'),
+(12, 'robots', 'NOINDEX, NOFOLLOW', NULL, '2026-06-14 06:09:08'),
+(13, 'copyright_text', 'Copyright © 2025 Mysaifco.com. All Rights Reserved.', NULL, '2026-06-14 06:09:08'),
+(14, 'google_analytics_code', 'no code', NULL, '2026-06-14 06:09:08'),
 (15, 'landline_number', '+92 21 31234567', NULL, '2026-05-25 14:06:52'),
 (16, 'landline_number_2', '+92 21 31234567', NULL, '2026-05-25 14:06:52'),
-(17, 'mobile_number', '+971 4 2733868', NULL, '2026-05-26 15:30:43'),
+(17, 'mobile_number', '+971 4 2733868', NULL, '2026-06-14 06:09:08'),
 (18, 'whatsapp_number', '+92 300 1234567', NULL, '2026-05-25 14:06:52'),
-(19, 'website_url', 'www.mysaifco.com', NULL, '2026-05-26 15:30:43'),
-(20, 'google_map_code', 'nil', NULL, '2026-05-26 15:30:43'),
-(21, 'admin_title', 'WebSigntist', NULL, '2026-05-26 15:30:43'),
-(22, 'show_title_logo', 'image_logo', NULL, '2026-05-26 15:30:43'),
-(23, 'facebook', 'https://www.facebook.com/', NULL, '2026-05-26 15:30:43'),
-(24, 'instagram', 'instagram', NULL, '2026-05-26 15:30:43'),
+(19, 'website_url', 'www.mysaifco.com', NULL, '2026-06-14 06:09:08'),
+(20, 'google_map_code', 'nil', NULL, '2026-06-14 06:09:08'),
+(21, 'admin_title', 'WebSigntist', NULL, '2026-06-14 06:09:08'),
+(22, 'show_title_logo', 'image_logo', NULL, '2026-06-14 06:09:08'),
+(23, 'facebook', 'https://www.facebook.com/', NULL, '2026-06-14 06:09:08'),
+(24, 'instagram', 'instagram', NULL, '2026-06-14 06:09:08'),
 (25, 'linkeding', NULL, NULL, NULL),
-(26, 'youtube', 'youtube', NULL, '2026-05-26 15:30:43'),
-(27, 'twitter', 'twitter', NULL, '2026-05-26 15:30:43'),
-(28, 'tiktok', 'tiktok', NULL, '2026-05-26 15:30:43'),
-(29, 'smtp_host', 'localhost', NULL, '2026-05-26 15:30:43'),
-(30, 'smtp_user', 'info@domain.com', NULL, '2026-05-26 15:30:43'),
-(31, 'smtp_password', '123456', NULL, '2026-05-26 15:30:43'),
-(32, 'smtp_port', '468', NULL, '2026-05-26 15:30:43'),
-(33, 'recaptcha_site_key', '2s1f21sf21s2df12sd', NULL, '2026-05-26 15:30:43'),
-(34, 'recaptcha_secret_key', '12435121t2re1ter2t12er', NULL, '2026-05-26 15:30:43'),
-(35, 'paypal_payment_mode', 'sandbox', NULL, '2026-05-26 15:30:43'),
-(36, 'paypal_live', 'info@livedomain.com', NULL, '2026-05-26 15:30:43'),
-(37, 'paypal_sandbox', 'info@sandboxdomain.com', NULL, '2026-05-26 15:30:43'),
-(38, 'stripe_payment_mode', 'live_mode', NULL, '2026-05-26 15:30:43'),
-(39, 'stripe_live_site_key', 'ssdf6s5df6sd6f0f5405sdf4s5', NULL, '2026-05-26 15:30:43'),
-(40, 'stripe_live_secret_key', 'f45sf50sd4f5sf45sdf4s5d0f4', NULL, '2026-05-26 15:30:43'),
-(41, 'stripe_test_site_key', '50sfs6f56tr56t0rt6r', NULL, '2026-05-26 15:30:43'),
-(42, 'stripe_test_secret_key', '065sf6s0f56sdf5r9e5', NULL, '2026-05-26 15:30:43'),
-(43, 'content', 'Hello', NULL, '2026-05-26 15:30:43'),
-(44, 'show_timer', 'Yes', NULL, '2026-05-26 15:30:43'),
-(45, 'linkedin', 'linkedin', NULL, '2026-05-26 15:30:43'),
+(26, 'youtube', 'youtube', NULL, '2026-06-14 06:09:08'),
+(27, 'twitter', 'twitter', NULL, '2026-06-14 06:09:08'),
+(28, 'tiktok', 'tiktok', NULL, '2026-06-14 06:09:08'),
+(29, 'smtp_host', 'localhost', NULL, '2026-06-14 06:09:08'),
+(30, 'smtp_user', 'info@domain.com', NULL, '2026-06-14 06:09:08'),
+(31, 'smtp_password', '123456', NULL, '2026-06-14 06:09:08'),
+(32, 'smtp_port', '468', NULL, '2026-06-14 06:09:08'),
+(33, 'recaptcha_site_key', '2s1f21sf21s2df12sd', NULL, '2026-06-14 06:09:08'),
+(34, 'recaptcha_secret_key', '12435121t2re1ter2t12er', NULL, '2026-06-14 06:09:08'),
+(35, 'paypal_payment_mode', 'sandbox', NULL, '2026-06-14 06:09:08'),
+(36, 'paypal_live', 'info@livedomain.com', NULL, '2026-06-14 06:09:08'),
+(37, 'paypal_sandbox', 'info@sandboxdomain.com', NULL, '2026-06-14 06:09:08'),
+(38, 'stripe_payment_mode', 'live_mode', NULL, '2026-06-14 06:09:08'),
+(39, 'stripe_live_site_key', 'ssdf6s5df6sd6f0f5405sdf4s5', NULL, '2026-06-14 06:09:08'),
+(40, 'stripe_live_secret_key', 'f45sf50sd4f5sf45sdf4s5d0f4', NULL, '2026-06-14 06:09:08'),
+(41, 'stripe_test_site_key', '50sfs6f56tr56t0rt6r', NULL, '2026-06-14 06:09:08'),
+(42, 'stripe_test_secret_key', '065sf6s0f56sdf5r9e5', NULL, '2026-06-14 06:09:08'),
+(43, 'content', 'Hello', NULL, '2026-06-14 06:09:08'),
+(44, 'show_timer', 'Yes', NULL, '2026-06-14 06:09:08'),
+(45, 'linkedin', 'linkedin', NULL, '2026-06-14 06:09:08'),
 (46, 'm_logo', '1761895808_undermian.webp', NULL, NULL),
 (47, 'admin_logo', '1761686938_websigntist.svg', NULL, NULL),
-(48, 'maintenance_title', 'Website Under Maintenance', NULL, '2026-05-26 15:30:43'),
+(48, 'maintenance_title', 'Website Under Maintenance', NULL, '2026-06-14 06:09:08'),
 (49, 'site_currency', 'aed', NULL, '2026-03-17 13:12:45'),
-(50, 'contact_form_email', 'info@mysaifco.com', NULL, '2026-05-26 15:30:43'),
-(51, 'shop_currency', 'aed', NULL, '2026-05-26 15:30:43'),
+(50, 'contact_form_email', 'info@mysaifco.com', NULL, '2026-06-14 06:09:08'),
+(51, 'shop_currency', 'AED', NULL, '2026-06-14 06:09:08'),
 (52, 'product_unit', 'kilogram', NULL, '2026-03-30 13:59:36'),
-(53, 'measurment_unit', 'cm', NULL, '2026-05-26 15:30:43'),
-(54, 'weight_unit', 'kg', NULL, '2026-05-26 15:30:43'),
-(55, 'facebook_status', '1', NULL, '2026-05-26 15:30:43'),
-(56, 'instagram_status', '0', NULL, '2026-05-26 15:30:43'),
-(57, 'linkedin_status', '0', NULL, '2026-05-26 15:30:43'),
-(58, 'youtube_status', '0', NULL, '2026-05-26 15:30:43'),
-(59, 'twitter_status', '0', NULL, '2026-05-26 15:30:43'),
-(60, 'tiktok_status', '0', NULL, '2026-05-26 15:30:43'),
-(61, 'umrah_inquiry_whatsapp', '+971 55 663 7710', NULL, '2026-05-26 15:30:43'),
-(62, 'tour_inquiry_whatsapp', '+971 50559 3840', NULL, '2026-05-26 15:30:43'),
-(63, 'office_whatsapp', '+971 4 2733868', NULL, '2026-05-26 15:30:43'),
-(64, 'footer_about_us', 'Saifco Travel & Tourism is a leading Dubai-based travel company offering Dubai tours, desert safari, yacht charters, holiday packages, Umrah services, and global visa assistance with trusted service and competitive prices.', NULL, NULL);
+(53, 'measurment_unit', 'cm', NULL, '2026-06-14 06:09:08'),
+(54, 'weight_unit', 'kg', NULL, '2026-06-14 06:09:08'),
+(55, 'facebook_status', '1', NULL, '2026-06-14 06:09:08'),
+(56, 'instagram_status', '0', NULL, '2026-06-14 06:09:08'),
+(57, 'linkedin_status', '0', NULL, '2026-06-14 06:09:08'),
+(58, 'youtube_status', '0', NULL, '2026-06-14 06:09:08'),
+(59, 'twitter_status', '0', NULL, '2026-06-14 06:09:08'),
+(60, 'tiktok_status', '0', NULL, '2026-06-14 06:09:08'),
+(61, 'umrah_inquiry_whatsapp', '+971 55 663 7710', NULL, '2026-06-14 06:09:08'),
+(62, 'tour_inquiry_whatsapp', '+971 50559 3840', NULL, '2026-06-14 06:09:08'),
+(63, 'office_whatsapp', '+971 4 2733868', NULL, '2026-06-14 06:09:08'),
+(64, 'footer_about_us', 'Saifco Travel & Tourism is a leading Dubai-based travel company offering Dubai tours, desert safari, yacht charters, holiday packages, Umrah services, and global visa assistance with trusted service and competitive prices.', NULL, '2026-06-14 06:09:08');
 
 -- --------------------------------------------------------
 
@@ -1906,7 +1908,7 @@ INSERT INTO `tours` (`id`, `title`, `friendly_url`, `tour_duration`, `tour_locat
 (6, 'Dubai Desert Safari', 'dubai-desert-safari', '3 Days', 'Dubai', 10, 20, 'Desert Safari Tours', 1, NULL, '<p>Marvel the beauty of the United Arab Emirates&rsquo; capital &ndash; Abu Dhabi .Also known as one of the riches cities in the middle east and world&rsquo;s largest producer of oil. House of the world&rsquo;s most expensive hotel is the famous Emirates Palace. This amazing tour starts with a pick up from your hotel, approximately 2 hours drive towards south. On the way to Abu Dhabi you will pass through an industrial area called Jebel Ali free zone. Once you reach Abu Dhabi&rsquo;s border you will see several stunning plantations all along the wayside and superb villages in the city. First stop will be at Sheikh Zayed Grand Mosque, the 3rd largest Mosque in the world and one of the best architectural landmarks of the capital. The mosque also features an exceptional collection of marble works and the largest carpet in the world designed by Iranian artists. Read More</p>', '<p>Marvel the beauty of the United Arab Emirates&rsquo; capital &ndash; Abu Dhabi .Also known as one of the riches cities in the middle east and world&rsquo;s largest producer of oil. House of the world&rsquo;s most expensive hotel is the famous Emirates Palace. This amazing tour starts with a pick up from your hotel, approximately 2 hours drive towards south. On the way to Abu Dhabi you will pass through an industrial area called Jebel Ali free zone. Once you reach Abu Dhabi&rsquo;s border you will see several stunning plantations all along the wayside and superb villages in the city. First stop will be at Sheikh Zayed Grand Mosque, the 3rd largest Mosque in the world and one of the best architectural landmarks of the capital. The mosque also features an exceptional collection of marble works and the largest carpet in the world designed by Iranian artists. Read More</p>', 150.00, 'active', '1779649444_6a134ba49ee73_image.webp', 'dubai desert safari', 'Dubai Desert Safari', 1, 1, NULL, 'Dubai Desert Safari', 'dubai, desert, tour, city tour', 'Marvel the beauty of the United Arab Emirates’ capital – Abu Dhabi .Also known as one of the riches cities in the middle east and world’s largest producer of oil.', '2026-03-13 13:10:43', '2026-06-13 14:04:42'),
 (7, 'Shared Yacht Tour Dubai Marina', 'shared-yacht-tour-dubai-marina', '0', '', 0, 0, 'Yacht Charter Tours', NULL, NULL, NULL, NULL, 99.00, 'active', '1779649725_6a134cbd956c1_image.webp', 'shared yacht tour dubai marina', 'Shared Yacht Tour Dubai Marina', 1, 1, NULL, 'Shared Yacht Tour Dubai Marina', NULL, NULL, '2026-05-24 14:08:45', '2026-05-29 15:24:38'),
 (8, 'Private Luxury Yacht Cruising 36 Ft', 'private-luxury-yacht-cruising-36-ft', '0', '', 0, 0, 'Yacht Charter Tours', NULL, NULL, NULL, NULL, 726.00, 'active', '1779650866_6a1351324d576_image.webp', 'private luxury yacht cruising 36 ft', 'Private Luxury Yacht Cruising 36 Ft', 0, 1, NULL, 'Private Luxury Yacht Cruising 36 Ft', NULL, NULL, '2026-05-24 14:27:46', '2026-05-29 15:24:29'),
-(9, 'Jet Ski rental Dubai', 'jet-ski-rental-dubai', '0', '', 0, 0, 'Yacht Charter Tours', NULL, NULL, NULL, NULL, 726.00, 'active', '1779653654_6a135c16d15e2_image.webp', 'jet ski rental dubai', 'Jet Ski Rental Dubai', 0, 1, NULL, 'Jet Ski Rental Dubai', NULL, NULL, '2026-05-24 15:14:14', '2026-05-29 15:24:19'),
+(9, 'Jet Ski rental Dubai', 'jet-ski-rental-dubai', '0', 'Dubai', 0, 0, 'Yacht Charter Tours', 3, NULL, NULL, NULL, 726.00, 'active', '1779653654_6a135c16d15e2_image.webp', 'jet ski rental dubai', 'Jet Ski Rental Dubai', 0, 1, NULL, 'Jet Ski Rental Dubai', NULL, NULL, '2026-05-24 15:14:14', '2026-06-14 06:14:21'),
 (10, 'Dubai City Tour', 'dubai-city-tour', '0', '', 0, 0, 'Dubai City Tours', NULL, NULL, NULL, NULL, 99.00, 'active', '1779653716_6a135c54ab4c1_image.webp', 'dubai city tour', 'Dubai City Tour', 0, 1, NULL, 'Dubai City Tour', NULL, NULL, '2026-05-24 15:15:16', '2026-05-29 15:19:58'),
 (11, 'Dubai Trio City Tour, Desert Safari', 'dubai-trio-city-tour-desert-safari', '0', '', 0, 0, 'Dubai City Tours', NULL, NULL, NULL, NULL, 726.00, 'active', '1779653764_6a135c84d9440_image.webp', 'dubai trio city tour desert safari', 'Dubai Trio City Tour Desert Safari', 0, 1, NULL, 'Dubai Trio City Tour Desert Safari', NULL, NULL, '2026-05-24 15:16:04', '2026-05-29 15:19:54'),
 (12, '4 Tours: Desert Safari, Dubai City', '4-tours-desert-safari-dubai-city', '0', '', 0, 0, 'Dubai City Tours', NULL, NULL, NULL, NULL, 726.00, 'active', '1779653843_6a135cd320f7d_image.webp', '4 tours desert safari dubai city', '4 Tours Desert Safari Dubai City', 0, 1, NULL, '4 Tours Desert Safari Dubai City', NULL, NULL, '2026-05-24 15:17:23', '2026-05-29 15:19:13'),
@@ -1914,14 +1916,14 @@ INSERT INTO `tours` (`id`, `title`, `friendly_url`, `tour_duration`, `tour_locat
 (14, 'Abu Dhabi City Tour with Louvre', 'abu-dhabi-city-tour-with-louvre', '0', '', 0, 0, 'Abu Dhabi Tours', NULL, NULL, NULL, NULL, 99.00, 'active', '1779653917_6a135d1d5c516_image.webp', 'abu dhabi city tour with louvre', 'Abu Dhabi City Tour With Louvre', 0, 1, NULL, 'Abu Dhabi City Tour With Louvre', NULL, NULL, '2026-05-24 15:18:37', '2026-05-29 15:21:40'),
 (15, 'Abu Dhabi City Tour with Ferrari', 'abu-dhabi-city-tour-with-ferrari', '0', '', 0, 0, 'Abu Dhabi Tours', NULL, NULL, NULL, NULL, 99.00, 'active', '1779653938_6a135d32c6793_image.webp', 'abu dhabi city tour with ferrari', 'Abu Dhabi City Tour With Ferrari', 0, 1, NULL, 'Abu Dhabi City Tour With Ferrari', NULL, NULL, '2026-05-24 15:18:58', '2026-05-29 15:21:46'),
 (16, 'Dhow Cruise Dinner in Dubai Marina', 'dhow-cruise-dinner-in-dubai-marina', '0', '', 0, 0, 'Dhow Cruise Tours', NULL, NULL, NULL, NULL, 99.00, 'active', '1779653986_6a135d625ad12_image.webp', 'dhow cruise dinner in dubai marina', 'Dhow Cruise Dinner In Dubai Marina', 0, 1, NULL, 'Dhow Cruise Dinner In Dubai Marina', NULL, NULL, '2026-05-24 15:19:46', '2026-05-29 15:33:24'),
-(17, 'Musandam Dibba Day Cruise with', 'musandam-dibba-day-cruise-with', '0', '', 0, 0, 'Dhow Cruise Tours', NULL, NULL, NULL, NULL, 99.00, 'active', '1779654016_6a135d800622b_image.webp', 'musandam dibba day cruise with', 'Musandam Dibba Day Cruise With', 0, 1, NULL, 'Musandam Dibba Day Cruise With', NULL, NULL, '2026-05-24 15:20:16', '2026-05-29 15:33:14'),
+(17, 'Musandam Dibba Day Cruise with', 'musandam-dibba-day-cruise-with', '0', 'Dubai', 0, 0, 'Dhow Cruise Tours', 2, NULL, NULL, NULL, 99.00, 'active', '1779654016_6a135d800622b_image.webp', 'musandam dibba day cruise with', 'Musandam Dibba Day Cruise With', 0, 1, NULL, 'Musandam Dibba Day Cruise With', NULL, NULL, '2026-05-24 15:20:16', '2026-06-14 06:13:55'),
 (18, 'Dhow Cruise Dinner in Dubai Creek', 'dhow-cruise-dinner-in-dubai-creek', '0', '', 0, 0, 'Dhow Cruise Tours', NULL, NULL, NULL, NULL, 99.00, 'active', '1779654060_6a135dac52cd6_image.webp', 'dhow cruise dinner in dubai creek', 'Dhow Cruise Dinner In Dubai Creek', 0, 1, NULL, 'Dhow Cruise Dinner In Dubai Creek', NULL, NULL, '2026-05-24 15:21:00', '2026-05-29 15:32:58'),
 (19, 'Dubai Trio Dubai City Tour, Desert', 'dubai-trio-dubai-city-tour-desert', '0', '', 0, 0, 'Dubai Combo Tours', NULL, NULL, NULL, NULL, 99.00, 'active', '1779654118_6a135de6bca71_image.webp', 'dubai trio dubai city tour desert', 'Dubai Trio Dubai City Tour Desert', 0, 1, NULL, 'Dubai Trio Dubai City Tour Desert', NULL, NULL, '2026-05-24 15:21:58', '2026-05-29 15:35:27'),
 (20, '4 Tours Combo: Desert Safari, Dubai City', '4-tours-combo-desert-safari-dubai-city', '0', '', 0, 0, 'Dubai Combo Tours', NULL, NULL, NULL, NULL, 99.00, 'active', '1779654195_6a135e33e1e42_image.webp', '4 tours combo desert safari dubai city', '4 Tours Combo Desert Safari Dubai City', 0, 1, NULL, '4 Tours Combo Desert Safari Dubai City', NULL, NULL, '2026-05-24 15:23:15', '2026-05-29 15:26:19'),
 (21, 'Combo 1: Dubai City Tour & Desert', 'combo-1-dubai-city-tour-desert', '0', '', 0, 0, 'Dubai Combo Tours', NULL, NULL, NULL, NULL, 99.00, 'active', '1779654225_6a135e51b0ea5_image.webp', 'combo 1 dubai city tour desert', 'Combo 1 Dubai City Tour Desert', 0, 1, NULL, 'Combo 1 Dubai City Tour Desert', NULL, NULL, '2026-05-24 15:23:45', '2026-05-29 15:30:08'),
 (22, 'Water Jet Ski rental Dubai', 'water-jet-ski-rental-dubai', '0', '', 0, 0, 'Water Activities', NULL, NULL, NULL, NULL, 99.00, 'active', '1779654290_6a135e92c233a_image.webp', 'water jet ski rental dubai', 'Water Jet Ski Rental Dubai', 0, 1, NULL, 'Water Jet Ski Rental Dubai', NULL, NULL, '2026-05-24 15:24:50', '2026-05-24 15:24:50'),
 (23, 'Speed Water Boat Tour Dubai - 90 mins', 'speed-water-boat-tour-dubai-90-mins', '0', '', 0, 0, 'Water Activities', NULL, NULL, NULL, NULL, 99.00, 'active', '1779654335_6a135ebf2796d_image.webp', 'speed water boat tour dubai 90 mins', 'Speed Water Boat Tour Dubai 90 Mins', 0, 1, NULL, 'Speed Water Boat Tour Dubai 90 Mins', NULL, NULL, '2026-05-24 15:25:35', '2026-05-24 15:25:35'),
-(24, 'Deep Sea Fishing 4 hours Tour', 'deep-sea-fishing-4-hours-tour', '0', '', 0, 0, 'Water Activities', NULL, NULL, NULL, NULL, 99.00, 'active', '1779654360_6a135ed89729b_image.webp', 'deep sea fishing 4 hours tour', 'Deep Sea Fishing 4 Hours Tour', 0, 1, NULL, 'Deep Sea Fishing 4 Hours Tour', NULL, NULL, '2026-05-24 15:26:00', '2026-05-24 15:26:00'),
+(24, 'Deep Sea Fishing 4 hours Tour', 'deep-sea-fishing-4-hours-tour', '0', 'Dubai', 0, 0, 'Water Activities', 1, NULL, NULL, NULL, 99.00, 'active', '1779654360_6a135ed89729b_image.webp', 'deep sea fishing 4 hours tour', 'Deep Sea Fishing 4 Hours Tour', 0, 1, NULL, 'Deep Sea Fishing 4 Hours Tour', NULL, NULL, '2026-05-24 15:26:00', '2026-06-14 06:13:42'),
 (25, 'Hot Air Balloon Tour (6 Hours)', 'hot-air-balloon-tour-6-hours', '0', '', 0, 0, 'Theme Park Tickets', NULL, NULL, NULL, NULL, 99.00, 'active', '1779654411_6a135f0b06008_image.webp', 'hot air balloon tour 6 hours', 'Hot Air Balloon Tour 6 Hours', 0, 1, NULL, 'Hot Air Balloon Tour 6 Hours', NULL, NULL, '2026-05-24 15:26:51', '2026-05-24 15:26:51'),
 (26, 'Wonder Bus Tour', 'wonder-bus-tour', '0', '', 0, 0, 'Theme Park Tickets', NULL, NULL, NULL, NULL, 99.00, 'active', '1779654429_6a135f1dbc533_image.webp', 'wonder bus tour', 'Wonder Bus Tour', 0, 1, NULL, 'Wonder Bus Tour', NULL, NULL, '2026-05-24 15:27:09', '2026-05-24 15:27:09'),
 (27, 'Bollywood Parks™ Dubai', 'bollywood-parks-dubai', '0', '', 0, 0, 'Theme Park Tickets', NULL, NULL, NULL, NULL, 99.00, 'active', '1779654449_6a135f314671b_image.webp', 'bollywood parks dubai', 'Bollywood Parks Dubai', 0, 1, NULL, 'Bollywood Parks Dubai', NULL, NULL, '2026-05-24 15:27:29', '2026-05-24 15:27:29'),
@@ -1935,7 +1937,7 @@ INSERT INTO `tours` (`id`, `title`, `friendly_url`, `tour_duration`, `tour_locat
 (35, 'Combo 3: Desert Safari and Dhow Cruise Dinner', 'combo-3-desert-safari-and-dhow-cruise-dinner', '0', '', 0, 0, 'Desert Safari Tours', NULL, NULL, NULL, NULL, 99.00, 'active', '1779655014_6a136166191e8_image.webp', 'combo 3 desert safari and dhow cruise dinner', 'Combo 3 Desert Safari And Dhow Cruise Dinner', 0, 1, NULL, 'Combo 3 Desert Safari And Dhow Cruise Dinner', NULL, NULL, '2026-05-24 15:36:54', '2026-05-29 15:25:26'),
 (36, 'Combo 4 : Desert Safari and Abu Dhabi City Tour', 'combo-4-desert-safari-and-abu-dhabi-city-tour', '0', '', 0, 0, 'Desert Safari Tours', NULL, NULL, NULL, NULL, 99.00, 'active', '1779655033_6a1361799a357_image.webp', 'combo 4 desert safari and abu dhabi city tour', 'Combo 4 Desert Safari And Abu Dhabi City Tour', 0, 1, NULL, 'Combo 4 Desert Safari And Abu Dhabi City Tour', NULL, NULL, '2026-05-24 15:37:13', '2026-05-29 15:25:23'),
 (37, 'Combo 4 : Desert Safari and Abu Dhabi City Tour (Copy)', 'combo-4-desert-safari-and-abu-dhabi-city-tour-copy-2gjknq', '0', '', 0, 0, 'Desert Safari', NULL, NULL, NULL, NULL, 99.00, 'active', 'dup_6a136912e43ff9.26618470.webp', 'combo 4 desert safari and abu dhabi city tour', 'Combo 4 Desert Safari And Abu Dhabi City Tour', 0, 1, '2026-05-24 16:11:51', 'Combo 4 Desert Safari And Abu Dhabi City Tour', NULL, NULL, '2026-05-24 16:09:38', '2026-05-24 16:11:51'),
-(38, 'Speed Boat Tour Dubai – 90 mins', 'speed-boat-tour-dubai-90-mins', '2 Days', 'Dubai', 10, 20, 'Yacht Charter Tours', NULL, NULL, NULL, NULL, 149.00, 'active', '1779665007_6a13886f2559d_image.webp', 'speed boat tour dubai 90 mins', 'Speed Boat Tour Dubai 90 Mins', 0, 1, NULL, 'Speed Boat Tour Dubai 90 Mins', NULL, NULL, '2026-05-24 18:23:27', '2026-06-13 14:00:47'),
+(38, 'Speed Boat Tour Dubai – 90 mins', 'speed-boat-tour-dubai-90-mins', '2 Days', 'Dubai', 10, 20, 'Yacht Charter Tours', 1, NULL, NULL, NULL, 149.00, 'active', '1779665007_6a13886f2559d_image.webp', 'speed boat tour dubai 90 mins', 'Speed Boat Tour Dubai 90 Mins', 0, 1, NULL, 'Speed Boat Tour Dubai 90 Mins', NULL, NULL, '2026-05-24 18:23:27', '2026-06-14 06:13:06'),
 (39, 'testtttttttttttttt', 'testtttttttttttttt', '0', '', 0, 0, 'Umrah Travel Agency', NULL, NULL, NULL, NULL, 149.00, 'active', 'dup_6a1a0ad295bb36.88740656.webp', 'testtttttttttttttt', 'Testtttttttttttttt', 0, 1, '2026-05-29 16:56:17', 'Testtttttttttttttt', NULL, NULL, '2026-05-29 16:53:22', '2026-05-29 16:56:17');
 
 -- --------------------------------------------------------
@@ -2015,7 +2017,7 @@ CREATE TABLE `tour_types` (
   `image_alt` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `image_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `status` enum('Active','Inactive') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Active',
-  `view_all_link` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `show_on_home` enum('Yes','No') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'No',
   `ordering` int NOT NULL DEFAULT '0',
   `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `meta_keywords` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -2030,22 +2032,22 @@ CREATE TABLE `tour_types` (
 -- Dumping data for table `tour_types`
 --
 
-INSERT INTO `tour_types` (`id`, `title`, `friendly_url`, `short_description`, `description`, `image`, `image_alt`, `image_title`, `status`, `view_all_link`, `ordering`, `meta_title`, `meta_keywords`, `meta_description`, `created_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 'Desert Safari Tours', 'desert-safari-tours', 'Book Desert Safari Dubai tours with dune bashing, camel rides, sandboarding, and BBQ dinner, including evening, morning, private, and VIP desert safari experiences.', '<p>Experience the best Desert Safari Dubai with thrilling dune bashing, camel rides, sandboarding, and BBQ dinner under the stars. Choose from evening desert safari, morning safari, private desert safari, and VIP desert camp experiences. Enjoy live entertainment including belly dance, Tanoura show, and fire show while exploring the golden dunes of Dubai. These desert safari tours offer a perfect mix of adventure, culture, and relaxation, making them one of the top things to do in Dubai for tourists and families.</p>', '1781375700_6a2da2d46738a_image.webp', 'desert-safari-tours', 'Desert Safari Tours', 'Active', NULL, 1, 'Desert Safari Tours', NULL, NULL, 1, NULL, '2026-05-23 17:09:22', '2026-06-13 13:35:00'),
-(2, 'Yacht Charter Tours', 'yacht-charter-tours', 'Enjoy luxury yacht charter Dubai experiences with private yacht rental, Dubai Marina cruises, and views of Atlantis, Burj Al Arab, and JBR.', '<p>Enjoy luxury yacht charter Dubai with private yacht rental in Dubai Marina and Palm Jumeirah. Cruise past iconic landmarks like Atlantis, Burj Al Arab, and JBR while enjoying a premium experience with professional crew and modern facilities. Perfect for parties, family trips, and corporate events.</p>', '1781375711_6a2da2df502d9_image.webp', 'yacht-charter-tours', 'Yacht Charter Tours', 'Active', NULL, 2, 'Yacht Charter Tours', NULL, NULL, 1, NULL, '2026-05-23 17:24:24', '2026-06-13 13:35:11'),
-(3, 'Dubai City Tours', 'dubai-city-tours', 'Discover Dubai city tours covering Burj Khalifa views, Dubai Frame, Jumeirah Mosque, and top attractions with guided sightseeing experiences.', '<p>Discover Dubai city tours covering iconic attractions like Burj Khalifa views, Dubai Frame, Jumeirah Mosque, Palm Jumeirah, and Dubai Marina. These guided tours offer a complete overview of modern and old Dubai with comfortable transport and expert insights. Ideal for first-time visitors, Dubai city tours provide a convenient way to explore city&rsquo;s highlights in short time.</p>', '1781375725_6a2da2edae3e1_image.webp', 'dubai-city-tours', 'Dubai City Tours', 'Active', NULL, 3, 'Dubai City Tours', NULL, NULL, 1, NULL, '2026-05-24 13:17:28', '2026-06-13 13:35:25'),
-(4, 'Abu Dhabi Tours', 'abu-dhabi-tours', 'Explore Abu Dhabi tours with Sheikh Zayed Grand Mosque, Louvre Museum, city sightseeing, and full-day guided tours from Dubai.', '<p>Explore Abu Dhabi tours from Dubai and discover the UAE&rsquo;s capital with guided sightseeing experiences. Visit Sheikh Zayed Grand Mosque, Louvre Abu Dhabi, Emirates Palace, and Ferrari World Abu Dhabi. These full-day tours offer comfortable transport, expert guides, and a well-planned itinerary. Abu Dhabi tours are perfect for travellers looking to explore culture, architecture, and world-class attractions in one unforgettable day trip.</p>', '1781375739_6a2da2fbdeaa7_image.webp', 'abu-dhabi-tours', 'Abu Dhabi Tours', 'Active', NULL, 4, 'Abu Dhabi Tours', NULL, NULL, 1, NULL, '2026-05-24 13:18:02', '2026-06-13 13:35:39'),
-(5, 'Dhow Cruise Tours', 'dhow-cruise-tours', 'Book dhow cruise Dubai with dinner, live entertainment, and scenic views of Dubai Marina or Creek for a relaxing evening experience.', '<p>Enjoy a relaxing dhow cruise Dubai experience with dinner, live entertainment, and stunning views of Dubai Marina or Dubai Creek. Cruise on a traditional wooden dhow while enjoying an international buffet dinner, Tanoura dance, and cultural performances. Dhow cruise tours are perfect for couples, families, and tourists looking for a peaceful and memorable evening in Dubai.</p>', '1781375790_6a2da32e33a93_image.webp', 'dhow-cruise-tours', 'Dhow Cruise Tours', 'Active', NULL, 8, 'Dhow Cruise Tours', NULL, NULL, 1, NULL, '2026-05-24 13:18:50', '2026-06-13 13:36:30'),
-(6, 'Dubai Combo Tours', 'dubai-combo-tours', 'Save more with Dubai combo tours including desert safari, city tours, dhow cruise, and Abu Dhabi tours in one package.', '<p>Experience camel race Dubai tours and discover a unique part of Emirati culture. Visit camel racing tracks like Al Marmoom, watch live races, and learn about this traditional sport. These tours offer an authentic desert experience away from modern city attractions and are perfect for cultural exploration.</p>', '1781375751_6a2da3071b767_image.webp', 'dubai-combo-tours', 'Dubai Combo Tours', 'Active', NULL, 5, 'Dubai Combo Tours', NULL, NULL, 1, NULL, '2026-05-24 13:19:27', '2026-06-13 13:35:51'),
-(7, 'Water Activities', 'water-activities', 'Experience Dubai water activities including jet ski, parasailing, flyboarding, banana rides, and exciting beach adventures across Dubai.', '<p>Explore the best Dubai water activities including jet ski, parasailing, flyboarding, banana boat rides, and speed boat tours along the city&rsquo;s stunning coastline. These exciting water sports are perfect for thrill seekers, families, and tourists looking for adventure in Dubai. Operated by certified professionals with safety equipment, Dubai water activities offer a fun, safe, and unforgettable experience at popular locations like JBR Beach and Dubai Marina.</p>', '1781375760_6a2da310055d1_image.webp', 'water activities', 'Water Activities', 'Active', NULL, 6, 'Water Activities', NULL, NULL, 1, NULL, '2026-05-24 13:20:00', '2026-06-13 13:36:00'),
-(8, 'Theme Park Tickets', 'theme-park-tickets', 'Get theme park tickets for Dubai attractions including Ferrari World, IMG Worlds, Motiongate, and Aquaventure water park experiences.', '<p>Enjoy a relaxing dhow cruise Dubai experience with dinner, live entertainment, and stunning views of Dubai Marina or Dubai Creek. Cruise on a traditional wooden dhow while enjoying an international buffet dinner, Tanoura dance, and cultural performances. Dhow cruise tours are perfect for couples, families, and tourists looking for a peaceful and memorable evening in Dubai.</p>', '1781375770_6a2da31a00205_image.webp', 'theme park tickets', 'Theme Park Tickets', 'Active', NULL, 7, 'Theme Park Tickets', NULL, NULL, 1, NULL, '2026-05-24 13:20:33', '2026-06-13 13:36:10'),
+INSERT INTO `tour_types` (`id`, `title`, `friendly_url`, `short_description`, `description`, `image`, `image_alt`, `image_title`, `status`, `show_on_home`, `ordering`, `meta_title`, `meta_keywords`, `meta_description`, `created_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
+(1, 'Desert Safari Tours', 'desert-safari-tours', 'Book Desert Safari Dubai tours with dune bashing, camel rides, sandboarding, and BBQ dinner, including evening, morning, private, and VIP desert safari experiences.', '<p>Experience the best Desert Safari Dubai with thrilling dune bashing, camel rides, sandboarding, and BBQ dinner under the stars. Choose from evening desert safari, morning safari, private desert safari, and VIP desert camp experiences. Enjoy live entertainment including belly dance, Tanoura show, and fire show while exploring the golden dunes of Dubai. These desert safari tours offer a perfect mix of adventure, culture, and relaxation, making them one of the top things to do in Dubai for tourists and families.</p>', '1781375700_6a2da2d46738a_image.webp', 'desert-safari-tours', 'Desert Safari Tours', 'Active', 'Yes', 1, 'Desert Safari Tours', NULL, NULL, 1, NULL, '2026-05-23 17:09:22', '2026-06-14 07:04:35'),
+(2, 'Yacht Charter Tours', 'yacht-charter-tours', 'Enjoy luxury yacht charter Dubai experiences with private yacht rental, Dubai Marina cruises, and views of Atlantis, Burj Al Arab, and JBR.', '<p>Enjoy luxury yacht charter Dubai with private yacht rental in Dubai Marina and Palm Jumeirah. Cruise past iconic landmarks like Atlantis, Burj Al Arab, and JBR while enjoying a premium experience with professional crew and modern facilities. Perfect for parties, family trips, and corporate events.</p>', '1781375711_6a2da2df502d9_image.webp', 'yacht-charter-tours', 'Yacht Charter Tours', 'Active', 'Yes', 2, 'Yacht Charter Tours', NULL, NULL, 1, NULL, '2026-05-23 17:24:24', '2026-06-14 07:04:41'),
+(3, 'Dubai City Tours', 'dubai-city-tours', 'Discover Dubai city tours covering Burj Khalifa views, Dubai Frame, Jumeirah Mosque, and top attractions with guided sightseeing experiences.', '<p>Discover Dubai city tours covering iconic attractions like Burj Khalifa views, Dubai Frame, Jumeirah Mosque, Palm Jumeirah, and Dubai Marina. These guided tours offer a complete overview of modern and old Dubai with comfortable transport and expert insights. Ideal for first-time visitors, Dubai city tours provide a convenient way to explore city&rsquo;s highlights in short time.</p>', '1781375725_6a2da2edae3e1_image.webp', 'dubai-city-tours', 'Dubai City Tours', 'Active', 'Yes', 5, 'Dubai City Tours', NULL, NULL, 1, NULL, '2026-05-24 13:17:28', '2026-06-14 07:05:07'),
+(4, 'Abu Dhabi Tours', 'abu-dhabi-tours', 'Explore Abu Dhabi tours with Sheikh Zayed Grand Mosque, Louvre Museum, city sightseeing, and full-day guided tours from Dubai.', '<p>Explore Abu Dhabi tours from Dubai and discover the UAE&rsquo;s capital with guided sightseeing experiences. Visit Sheikh Zayed Grand Mosque, Louvre Abu Dhabi, Emirates Palace, and Ferrari World Abu Dhabi. These full-day tours offer comfortable transport, expert guides, and a well-planned itinerary. Abu Dhabi tours are perfect for travellers looking to explore culture, architecture, and world-class attractions in one unforgettable day trip.</p>', '1781375739_6a2da2fbdeaa7_image.webp', 'abu-dhabi-tours', 'Abu Dhabi Tours', 'Active', 'Yes', 3, 'Abu Dhabi Tours', NULL, NULL, 1, NULL, '2026-05-24 13:18:02', '2026-06-14 07:03:07'),
+(5, 'Dhow Cruise Tours', 'dhow-cruise-tours', 'Book dhow cruise Dubai with dinner, live entertainment, and scenic views of Dubai Marina or Creek for a relaxing evening experience.', '<p>Enjoy a relaxing dhow cruise Dubai experience with dinner, live entertainment, and stunning views of Dubai Marina or Dubai Creek. Cruise on a traditional wooden dhow while enjoying an international buffet dinner, Tanoura dance, and cultural performances. Dhow cruise tours are perfect for couples, families, and tourists looking for a peaceful and memorable evening in Dubai.</p>', '1781375790_6a2da32e33a93_image.webp', 'dhow-cruise-tours', 'Dhow Cruise Tours', 'Active', 'Yes', 4, 'Dhow Cruise Tours', NULL, NULL, 1, NULL, '2026-05-24 13:18:50', '2026-06-14 07:04:52'),
+(6, 'Dubai Combo Tours', 'dubai-combo-tours', 'Save more with Dubai combo tours including desert safari, city tours, dhow cruise, and Abu Dhabi tours in one package.', '<p>Experience camel race Dubai tours and discover a unique part of Emirati culture. Visit camel racing tracks like Al Marmoom, watch live races, and learn about this traditional sport. These tours offer an authentic desert experience away from modern city attractions and are perfect for cultural exploration.</p>', '1781375751_6a2da3071b767_image.webp', 'dubai-combo-tours', 'Dubai Combo Tours', 'Active', 'Yes', 6, 'Dubai Combo Tours', NULL, NULL, 1, NULL, '2026-05-24 13:19:27', '2026-06-14 07:05:22'),
+(7, 'Water Activities', 'water-activities', 'Experience Dubai water activities including jet ski, parasailing, flyboarding, banana rides, and exciting beach adventures across Dubai.', '<p>Explore the best Dubai water activities including jet ski, parasailing, flyboarding, banana boat rides, and speed boat tours along the city&rsquo;s stunning coastline. These exciting water sports are perfect for thrill seekers, families, and tourists looking for adventure in Dubai. Operated by certified professionals with safety equipment, Dubai water activities offer a fun, safe, and unforgettable experience at popular locations like JBR Beach and Dubai Marina.</p>', '1781375760_6a2da310055d1_image.webp', 'water activities', 'Water Activities', 'Active', 'Yes', 7, 'Water Activities', NULL, NULL, 1, NULL, '2026-05-24 13:20:00', '2026-06-14 07:05:38'),
+(8, 'Theme Park Tickets', 'theme-park-tickets', 'Get theme park tickets for Dubai attractions including Ferrari World, IMG Worlds, Motiongate, and Aquaventure water park experiences.', '<p>Enjoy a relaxing dhow cruise Dubai experience with dinner, live entertainment, and stunning views of Dubai Marina or Dubai Creek. Cruise on a traditional wooden dhow while enjoying an international buffet dinner, Tanoura dance, and cultural performances. Dhow cruise tours are perfect for couples, families, and tourists looking for a peaceful and memorable evening in Dubai.</p>', '1781375770_6a2da31a00205_image.webp', 'theme park tickets', 'Theme Park Tickets', 'Active', 'Yes', 8, 'Theme Park Tickets', NULL, NULL, 1, NULL, '2026-05-24 13:20:33', '2026-06-14 07:05:45'),
 (9, 'Home', 'home', NULL, NULL, NULL, 'home', 'Home', 'Inactive', NULL, 0, 'Home', NULL, NULL, 1, '2026-06-13 13:37:59', '2026-05-25 15:00:01', '2026-06-13 13:37:59'),
 (10, 'Tour Categories', 'tour-categories', NULL, NULL, NULL, 'tour categories', 'Tour Categories', 'Inactive', NULL, 0, 'Tour Categories', NULL, NULL, 1, '2026-06-13 13:37:59', '2026-05-25 15:00:34', '2026-06-13 13:37:59'),
-(11, 'Umrah', 'umrah', NULL, NULL, '1781375953_6a2da3d1a0f7a_image.webp', 'umrah', 'Umrah', 'Active', NULL, 0, 'Umrah', NULL, NULL, 1, NULL, '2026-05-25 15:18:16', '2026-06-13 13:39:13'),
+(11, 'Umrah', 'umrah', NULL, NULL, '1781375953_6a2da3d1a0f7a_image.webp', 'umrah', 'Umrah', 'Active', 'No', 0, 'Umrah', NULL, NULL, 1, NULL, '2026-05-25 15:18:16', '2026-06-14 07:04:29'),
 (12, 'About Us', 'about-us', NULL, NULL, NULL, 'about-us', 'About Us', 'Inactive', NULL, 0, 'About Us', NULL, NULL, 1, '2026-06-13 13:37:59', '2026-05-27 15:13:46', '2026-06-13 13:37:59'),
 (13, 'Contact Us', 'contact-us', NULL, NULL, NULL, 'contact-us', 'Contact Us', 'Inactive', NULL, 0, 'Contact Us', NULL, NULL, 1, '2026-06-13 13:37:59', '2026-05-27 15:30:47', '2026-06-13 13:37:59'),
-(14, 'Umrah by Bus', 'umrah-by-bus', NULL, NULL, '1781375968_6a2da3e085020_image.webp', 'umrah-by-bus', 'Umrah By Bus', 'Active', NULL, 0, 'Umrah By Bus', NULL, NULL, 1, NULL, '2026-06-08 04:13:58', '2026-06-13 13:39:28'),
-(15, 'Umrah for Single Lady', 'umrah-for-single-lady', NULL, NULL, '1781375982_6a2da3ee597b0_image.webp', 'umrah-for-single-lady', 'Umrah For Single Lady', 'Active', NULL, 0, 'Umrah For Single Lady', NULL, NULL, 1, NULL, '2026-06-12 12:08:49', '2026-06-13 13:39:42');
+(14, 'Umrah by Bus', 'umrah-by-bus', NULL, NULL, '1781375968_6a2da3e085020_image.webp', 'umrah-by-bus', 'Umrah By Bus', 'Active', 'No', 0, 'Umrah By Bus', NULL, NULL, 1, NULL, '2026-06-08 04:13:58', '2026-06-14 07:04:22'),
+(15, 'Umrah for Single Lady', 'umrah-for-single-lady', NULL, NULL, '1781375982_6a2da3ee597b0_image.webp', 'umrah-for-single-lady', 'Umrah For Single Lady', 'Active', 'No', 0, 'Umrah For Single Lady', NULL, NULL, 1, NULL, '2026-06-12 12:08:49', '2026-06-14 07:04:16');
 
 -- --------------------------------------------------------
 
@@ -2085,7 +2087,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `user_type_id`, `first_name`, `last_name`, `email`, `image`, `email_verified_at`, `mobile_no`, `landline_no`, `dob`, `city`, `zipcode`, `state`, `address`, `country`, `password`, `status`, `gender`, `remember_token`, `created_by`, `ordering`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 1, 'adnan', 'khan', 'websigntist@gmail.com', '1757108294_image_oXKwiH8xDJ.png', NULL, '+92300-9876542', '+922131234567', '1984-10-19', 'Karachi', '75160', 'Sindh', 'Home 123', 'Australia', '$2y$12$jah8qDomb5SR2UMtbeqoh.ZYZ41cFUbRNRtKeXUJAqdqsD5V1gVG6', 'Active', 'Male', 'YwTpWoa2qMrtHUXvYc5SIhSlbTWFBVK83EHDaRZidr9VliCqsPn5xJGYSIyb', 1, 1, '2025-01-22 10:05:55', '2026-03-11 12:57:37', NULL),
+(1, 1, 'adnan', 'khan', 'websigntist@gmail.com', '1757108294_image_oXKwiH8xDJ.png', NULL, '+92300-9876542', '+922131234567', '1984-10-19', 'Karachi', '75160', 'Sindh', 'Home 123', 'Australia', '$2y$12$jah8qDomb5SR2UMtbeqoh.ZYZ41cFUbRNRtKeXUJAqdqsD5V1gVG6', 'Active', 'Male', 'AG1zOEUmVIdzMn2zax2omu9jBL50PcFnsC8m2NfTbo9kdynuyiO9h4y6RNsd', 1, 1, '2025-01-22 10:05:55', '2026-03-11 12:57:37', NULL),
 (2, 18, 'Sophia', 'Jan', 'adnan1@gmail.com', '1774467703_69c43a7720ee4_image.webp', NULL, '+92300-9876542', '+922131234567', '2025-11-15', 'Pariatur Aliquip et', '78583', 'Ducimus et totam al', 'Reiciendis at minim', 'Pakistan', '$2y$12$a5btXjxflcR0wbh6dGeccOPFILwT7dsKGp4odi5eAxWz2b5361muy', 'Active', 'Other', NULL, 1, 92, '2025-01-22 10:15:04', '2026-03-25 14:41:43', NULL),
 (58, 10, 'Allan', 'Johson', 'adnan1+copy.elpyiq@gmail.com', 'dup_69c2e691c3f143.17426739.webp', NULL, '+92300-9876542', '+922131234567', '2025-11-15', 'Pariatur Aliquip et', '78583', 'Ducimus et totam al', 'Reiciendis at minim', 'Pakistan', '$2y$12$uD5KIBEp7aWr.PDIQCNuuOTF8B4wdlUqkDXmf6.m1pL4Llb/opKdG', 'Active', 'Other', NULL, 1, 92, '2026-03-24 14:31:30', '2026-03-24 14:31:59', '2026-03-24 14:31:59'),
 (59, 18, 'Bevis', 'Howe', 'mycemu@mailinator.com', '1774468612_69c43e04b3a30_image.webp', NULL, '+1 (257) 545-3108', '+1 (418) 826-9222', '2026-02-12', NULL, NULL, NULL, 'Est vel sunt do in', 'United Arab Erimates', '$2y$12$g.f25KBh2xXr9HrkKtdKEObsNCjAxzsx45zpmoAGPgZCwh4GWd4Ou', 'Active', 'Male', NULL, 1, 65, '2026-03-25 14:56:53', '2026-03-25 14:56:53', NULL);
@@ -2644,7 +2646,7 @@ ALTER TABLE `modules`
 -- AUTO_INCREMENT for table `pages`
 --
 ALTER TABLE `pages`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT for table `popular_searches`

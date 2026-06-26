@@ -320,7 +320,7 @@ class MainController
             }
         }
 
-        if ($slug === 'faqs' || $includeFile === 'faqs') {
+        if ($slug === 'faqs' || $includeFile === 'faqs' || $slug === 'umrah-faqs' || $includeFile === 'umrah-faqs') {
             $viewData['allFaqs'] = Faq::where('status', 'Active')->orderBy('ordering')->orderByDesc('id')->get();
             $viewData = array_merge($viewData, $this->allCategoriesFaqsViewData());
         }

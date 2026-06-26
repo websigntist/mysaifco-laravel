@@ -6,7 +6,7 @@
     ?>
     
     <?php $slug = request()->segment(1); ?>
-    <?php if(!in_array($slug, ['umrah-for-single-lady','faqs'])): ?>
+    <?php if(!in_array($slug, ['umrah-for-single-lady','faqs','umrah-faqs'])): ?>
         <section class="flex justify-center items-center border-b-1 border-gray-200">
             <div class="px-4 relative flex min-h-[400px] w-full
                     items-center justify-center overflow-hidden">
