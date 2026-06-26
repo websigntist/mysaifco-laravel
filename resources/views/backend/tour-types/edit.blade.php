@@ -186,13 +186,14 @@
                                         </select>
                                     </div>
                                     <div class="col-md-12">
-                                        <label class="form-label text-capitalize" for="view_all_link">View All Link</label>
-                                        <input type="text"
-                                               id="view_all_link"
-                                               name="view_all_link"
-                                               value="{{ old('view_all_link', $data->view_all_link) }}"
-                                               class="form-control"
-                                               placeholder="Enter view all link...">
+                                        <label class="form-label text-capitalize" for="show_on_home">Show on Home</label>
+                                        <select id="show_on_home" name="show_on_home" class="form-select select2" required>
+                                            @foreach($showOnHome as $showHome)
+                                                <option value="{{ $showHome }}" {{ old('show_on_home', $data->show_on_home) === $showHome ? 'selected' : '' }}>
+                                                    {{ ucfirst($showHome) }}
+                                                </option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                     <div class="col-md-12">
                                         <label class="form-label text-capitalize" for="ordering">{{ _label('ordering') }}</label>

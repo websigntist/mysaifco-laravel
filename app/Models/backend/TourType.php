@@ -34,7 +34,7 @@ class TourType extends Model
         'image_alt',
         'image_title',
         'status',
-        'view_all_link',
+        'show_on_home',
         'ordering',
         'meta_title',
         'meta_keywords',

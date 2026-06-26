@@ -87,6 +87,11 @@
                                                           class="badge {{ $data->status === 'Active' ? 'bg-label-success' : 'bg-label-danger' }}">
                                                         {{ ucfirst($data->status) }}
                                                     </span>
+                                                @elseif($col === 'show_on_home')
+                                                    <span class="badge {{ $data->show_on_home === 'Yes' ?
+                                                          'bg-label-brand' : 'bg-label-danger' }}">
+                                                        {{ ucfirst($data->show_on_home) }}
+                                                    </span>
                                                 @elseif($col === 'created_at')
                                                     {{ $data->created_at?->format('M d, Y') ?? '-' }}
                                                 @elseif($col === 'created_by')
@@ -202,7 +207,7 @@
                             <tr><th>Title</th><td>${data.title ?? '-'}</td></tr>
                             <tr><th>Short Description</th><td>${data.short_description ?? '-'}</td></tr>
                             <tr><th>Description</th><td>${data.description ?? '-'}</td></tr>
-                            <tr><th>View All Link</th><td>${data.view_all_link ?? '-'}</td></tr>
+                            <tr><th>Show on Home</th><td>${data.show_on_home ?? '-'}</td></tr>
                             <tr>
                                 <th>Status</th>
                                 <td>

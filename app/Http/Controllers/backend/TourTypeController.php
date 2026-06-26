@@ -34,6 +34,7 @@ class TourTypeController
             'image',
             'title',
             'status',
+            'show_on_home',
             'ordering',
             'created_at',
             'created_by',
@@ -65,11 +66,13 @@ class TourTypeController
         $moduleTitle = Str::singular(str_replace('-', ' ', $moduleName));
 
         $getStatus = getEnumValues('tour_types', 'status');
+        $showOnHome = getEnumValues('tour_types', 'show_on_home');
 
         return view('backend.' . $this->module . '.form', [
             'title'            => $moduleTitle,
             'module'           => $moduleName,
             'getStatus'        => $getStatus,
+            'showOnHome'        => $showOnHome,
             'meta_title'       => 'Create | Admin Panel',
             'meta_keywords'    => '',
             'meta_description' => '',
@@ -95,7 +98,7 @@ class TourTypeController
                 'short_description' => $request->short_description,
                 'description'       => $request->description,
                 'status'            => $request->status,
-                'view_all_link'     => $request->view_all_link,
+                'show_on_home'     => $request->show_on_home,
                 'ordering'          => $request->ordering ?? 0,
                 'meta_title'        => $request->meta_title,
                 'meta_keywords'     => $request->meta_keywords,
@@ -147,7 +150,7 @@ class TourTypeController
             'short_description' => $source->short_description,
             'description'       => $source->description,
             'status'            => $source->status,
-            'view_all_link'     => $source->view_all_link,
+            'show_on_home'     => $source->show_on_home,
             'ordering'          => $source->ordering,
             'meta_title'        => $source->meta_title,
             'meta_keywords'     => $source->meta_keywords,
@@ -172,12 +175,14 @@ class TourTypeController
         $moduleTitle = Str::singular(str_replace('-', ' ', $moduleName));
 
         $getStatus = getEnumValues('tour_types', 'status');
+        $showOnHome = getEnumValues('tour_types', 'show_on_home');
 
         return view('backend.' . $this->module . '.edit', [
             'data'             => $dbdata,
             'title'            => $moduleTitle,
             'module'           => $moduleName,
             'getStatus'        => $getStatus,
+            'showOnHome'        => $showOnHome,
             'meta_title'       => 'Edit | Admin Panel',
             'meta_keywords'    => '',
             'meta_description' => '',
@@ -203,7 +208,7 @@ class TourTypeController
                 'short_description' => $request->short_description,
                 'description'       => $request->description,
                 'status'            => $request->status,
-                'view_all_link'     => $request->view_all_link,
+                'show_on_home'     => $request->show_on_home,
                 'ordering'          => $request->ordering ?? 0,
                 'meta_title'        => $request->meta_title,
                 'meta_keywords'     => $request->meta_keywords,
@@ -290,7 +295,7 @@ class TourTypeController
             'short_description' => $dbdata->short_description,
             'description'       => $dbdata->description,
             'status'            => $dbdata->status,
-            'view_all_link'     => $dbdata->view_all_link,
+            'show_on_home'     => $dbdata->show_on_home,
             'ordering'          => $dbdata->ordering,
             'meta_title'        => $dbdata->meta_title,
             'meta_keywords'     => $dbdata->meta_keywords,

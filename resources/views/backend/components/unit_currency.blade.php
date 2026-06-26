@@ -6,10 +6,10 @@
                 {{_label('shop_currency')}}
             </label> <select id="shop_currency" name="settings[shop_currency]" class="form-select select2">
                 <option value="">-Select option-</option>
-                <option value="aed" {{(get_setting('shop_currency')) == 'aed' ? 'selected' : ''}}>Dubai - د.إ</option>
-                <option value="usd" {{(get_setting('shop_currency')) == 'usd' ? 'selected' : ''}}>US Dollar - &dollar;</option>
-                <option value="pound" {{(get_setting('shop_currency')) == 'pound' ? 'selected' : ''}}>Pound - &pound;</option>
-                <option value="euro" {{(get_setting('shop_currency')) == 'euro' ? 'selected' : ''}}>Euro - &euro;</option>
+                <option value="AED" {{(get_setting('shop_currency')) == 'AED' ? 'selected' : ''}}>Dubai - د.إ</option>
+                <option value="USD" {{(get_setting('shop_currency')) == 'USD' ? 'selected' : ''}}>US Dollar - &dollar;</option>
+                <option value="POUND" {{(get_setting('shop_currency')) == 'POUND' ? 'selected' : ''}}>Pound - &pound;</option>
+                <option value="EURO" {{(get_setting('shop_currency')) == 'EURO' ? 'selected' : ''}}>Euro - &euro;</option>
             </select>
         </div>
         <!-- measurment unit -->

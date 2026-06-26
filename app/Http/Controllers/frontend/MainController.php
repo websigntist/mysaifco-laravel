@@ -40,12 +40,36 @@ class MainController
         /* explore UAE data */
         $explore_uae = ExploreUae::query()->where('status', 'Active')->orderBy('ordering', 'asc')->get();
 
+        /* best seller packages */
+        $best_seller_packages = Tour::query()
+            ->whereNotNull('red_tag_id')
+            ->published()
+            ->orderBy('ordering', 'asc')
+            ->get();
+
+        /* popular categories */
+        $popular_categories = TourType::query()
+            ->where('status', 'Active')
+            ->where('show_on_home', 'Yes')
+            ->orderBy('ordering', 'asc')
+            ->limit(8)
+            ->get()
+            ->map(function ($tourType) {
+                $tourType->tours_count = Tour::query()
+                    ->published()
+                    ->forTourTypeTitle($tourType->title)
+                    ->count();
+                return $tourType;
+            });
+
         return view('frontend.pages.home', array_merge([
-            'meta_title'       => $metaTitle,
-            'meta_keywords'    => $metaKeywords,
-            'meta_description' => $metaDescription,
-            'sliders'          => $sliders,
+            'meta_title'           => $metaTitle,
+            'meta_keywords'        => $metaKeywords,
+            'meta_description'     => $metaDescription,
+            'sliders'              => $sliders,
             'explore_uae'          => $explore_uae,
+            'popular_categories'   => $popular_categories,
+            'best_seller_packages' => $best_seller_packages,
         ], $this->exploreAndPopularSearchViewData($this->homeTourTypeId()), $this->homeFaqsViewData()));
     }
 
@@ -294,6 +318,11 @@ class MainController
                 $viewData['tours'] = collect();
                 $viewData['pageSlug'] = $slug;
             }
+        }
+
+        if ($slug === 'faqs' || $includeFile === 'faqs') {
+            $viewData['allFaqs'] = Faq::where('status', 'Active')->orderBy('ordering')->orderByDesc('id')->get();
+            $viewData = array_merge($viewData, $this->allCategoriesFaqsViewData());
         }
 
         $pageContent = do_shortcode($description, $viewData);

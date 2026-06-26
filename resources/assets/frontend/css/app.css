@@ -8,16 +8,16 @@
 
 @theme {
     /* ===== COLORS ===== */
-    --color-mst:        #BA9B31;
-    --color-mst-dark:   #74611E;
-    --color-mst-gray:   #282828;
-    --color-mst-40:     rgba(46, 58, 48, 0.40);
+    --color-mst:      #BA9B31;
+    --color-mst-dark: #74611E;
+    --color-mst-gray: #282828;
+    --color-mst-40:   rgba(46, 58, 48, 0.40);
 
     /* ===== TYPOGRAPHY ===== */
-    --text-mst-font:    1.1rem;        /* 16px - base body font size */
+    --text-mst-font:  1.1rem;        /* 16px - base body font size */
     /* ===== FONTS ===== */
-    --font-heading:     "Platypi", serif;
-    --font-body:        "Mona Sans", sans-serif;
+    --font-heading:   "Platypi", serif;
+    --font-body:      "Mona Sans", sans-serif;
 }
 @layer base {
     html {

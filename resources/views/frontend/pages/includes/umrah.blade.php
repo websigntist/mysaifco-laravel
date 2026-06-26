@@ -244,7 +244,7 @@
                                                 without mahram. Contact us and avail different type of umrah packages
                                                 offered from UAE and UK. Our umrah agency make it convenient for single
                                                 ladies to visit the Holy Kabba without any hustle.</p>
-                    <a href="#"
+                    <a href="{{ route('page.default', 'umrah-for-single-lady') }}"
                        class="flex items-center justify-center mx-auto mt-8 w-44 text-white px-4 pt-2 pb-3
                    rounded-full
                            bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
