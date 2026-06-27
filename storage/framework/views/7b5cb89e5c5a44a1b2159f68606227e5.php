@@ -2,9 +2,9 @@
     <div class="px-4 relative flex min-h-[400px] w-full
                     items-center justify-center overflow-hidden">
         <div class="absolute inset-0 scale-100 bg-cover bg-top bg-no-repeat"
-             style="background-image: url('{{ asset('assets/images/pages/1782583577_6a40111912011_image.webp') }}')"
+             style="background-image: url('<?php echo e(asset('assets/images/pages/1782583577_6a40111912011_image.webp')); ?>')"
              aria-hidden="true"></div>
-        {{--@dump($explore_uae)--}}
+        
         <div class="absolute inset-0 bg-gradient-to-r from-[#ffffff]/90 to-[#ffffff]/0" aria-hidden="true"></div>
         <div class="relative z-10 w-full py-14">
             <div class="container mx-auto">
@@ -22,7 +22,7 @@
                                             px-7 py-3 font-heading text-base italic text-white transition hover:from-mst-dark
                                              hover:to-mst md:text-lg"
                     > Explore Our Tours <img
-                            src="{{ asset('assets/images/icons/btn-arrow.svg') }}"
+                            src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
                             class="ms-1 w-6"
                             width="24"
                             height="24"
@@ -33,7 +33,7 @@
                                             to-mst-dark px-7 py-3 font-heading text-base italic text-white transition hover:from-mst-dark
                                              hover:to-mst md:text-lg"
                     > Contact Us <img
-                            src="{{ asset('assets/images/icons/call.svg') }}"
+                            src="<?php echo e(asset('assets/images/icons/call.svg')); ?>"
                             class="ms-1 w-4"
                             width="24"
                             height="24"
@@ -189,9 +189,10 @@
                 
                 <!-- Suitcase Image -->
                 <div class="w-full md:w-[260px] lg:w-[320px] flex-shrink-0 flex justify-center items-center pt-8 md:pt-0">
-                    <img src="{{ asset('assets/images/pages/1782556549_6a3fa7851bfc7_image.webp') }}" alt="Travel Gear" class="w-full max-w-[280px] md:max-w-none object-contain drop-shadow-md">
+                    <img src="<?php echo e(asset('assets/images/pages/1782556549_6a3fa7851bfc7_image.webp')); ?>" alt="Travel Gear" class="w-full max-w-[280px] md:max-w-none object-contain drop-shadow-md">
                 </div>
             </div>
         </div>
     </div>
 </section>
+<?php /**PATH D:\laragon\www\mysaifco-laravel\resources\views/frontend/pages/includes/about_us.blade.php ENDPATH**/ ?>
