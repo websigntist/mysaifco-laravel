@@ -5,7 +5,7 @@
              style="background-image: url('<?php echo e(asset('assets/images/pages/1782415698_6a3d81521a2b6_image.webp')); ?>')"
              aria-hidden="true"></div>
         
-        <div class="absolute inset-0 bg-gray-950/50" aria-hidden="true"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#000000]/90 to-[#000000]/0" aria-hidden="true"></div>
         <div class="relative z-10 w-full py-14">
             <div class="container mx-auto">
                 <h1 class="text-white text-[54px] font-body not-italic w-7/12 leading-16">Travel Help & Frequently Asked
@@ -87,110 +87,62 @@
                                  <span>Desert Safari</span>
                              </button>
                              <!-- Category Item 2 -->
-                             <button class="faq-cat-btn active flex items-center gap-3 w-full text-left px-3 py-3
-                                                          rounded-md border-l-[4px] hover:border-l-[4px]
-                                                          hover:border-mst border-transparent hover:bg-[#F9F7E8]
-                                                          font-heading text-md font-semibold
-                                                          text-mst-gray transition duration-200 font-heading cursor-pointer" data-category="general">
+                             <button class="faq-cat-btn flex items-center gap-3 w-full text-left px-3 py-3 rounded-md border-l-[4px] hover:border-l-[4px] hover:border-mst border-transparent hover:bg-[#F9F7E8] font-heading text-md font-medium text-mst-gray transition duration-200 cursor-pointer" data-category="general">
                                  <img src="<?php echo e(asset('assets/images/icons/home1.svg')); ?>" class="w-8 h-8 object-contain" alt="General">
                                  <span>General</span>
                              </button>
                              <!-- Category Item 3 -->
-                             <button class="faq-cat-btn active flex items-center gap-3 w-full text-left px-3 py-3
-                                                                                       rounded-md border-l-[4px] hover:border-l-[4px]
-                                                                                       hover:border-mst border-transparent hover:bg-[#F9F7E8]
-                                                                                       font-heading text-md font-semibold
-                                                                                       text-mst-gray transition duration-200 font-heading cursor-pointer" data-category="dhow-cruises">
+                             <button class="faq-cat-btn flex items-center gap-3 w-full text-left px-3 py-3 rounded-md border-l-[4px] hover:border-l-[4px] hover:border-mst border-transparent hover:bg-[#F9F7E8] font-heading text-md font-medium text-mst-gray transition duration-200 cursor-pointer" data-category="dhow-cruises">
                                  <img src="<?php echo e(asset('assets/images/icons/dhow.svg')); ?>" class="w-8 h-8 object-contain" alt="Dhow Cruises">
                                  <span>Dhow Cruises</span>
                              </button>
                              <!-- Category Item 4 -->
-                             <button class="faq-cat-btn active flex items-center gap-3 w-full text-left px-3 py-3
-                                                                                       rounded-md border-l-[4px] hover:border-l-[4px]
-                                                                                       hover:border-mst border-transparent hover:bg-[#F9F7E8]
-                                                                                       font-heading text-md font-semibold
-                                                                                       text-mst-gray transition duration-200 font-heading cursor-pointer" data-category="yacht-charter">
+                             <button class="faq-cat-btn flex items-center gap-3 w-full text-left px-3 py-3 rounded-md border-l-[4px] hover:border-l-[4px] hover:border-mst border-transparent hover:bg-[#F9F7E8] font-heading text-md font-medium text-mst-gray transition duration-200 cursor-pointer" data-category="yacht-charter">
                                  <img src="<?php echo e(asset('assets/images/icons/yacht.svg')); ?>" class="w-8 h-8 object-contain" alt="Yacht Charter">
                                  <span>Yacht Charter</span>
                              </button>
                              <!-- Category Item 5 -->
-                             <button class="faq-cat-btn active flex items-center gap-3 w-full text-left px-3 py-3
-                                                                                       rounded-md border-l-[4px] hover:border-l-[4px]
-                                                                                       hover:border-mst border-transparent hover:bg-[#F9F7E8]
-                                                                                       font-heading text-md font-semibold
-                                                                                       text-mst-gray transition duration-200 font-heading cursor-pointer" data-category="umrah">
+                             <button class="faq-cat-btn flex items-center gap-3 w-full text-left px-3 py-3 rounded-md border-l-[4px] hover:border-l-[4px] hover:border-mst border-transparent hover:bg-[#F9F7E8] font-heading text-md font-medium text-mst-gray transition duration-200 cursor-pointer" data-category="umrah">
                                  <img src="<?php echo e(asset('assets/images/icons/umrah.svg')); ?>" class="w-8 h-8 object-contain" alt="Umrah">
                                  <span>Umrah</span>
                              </button>
                              <!-- Category Item 6 -->
-                             <button class="faq-cat-btn active flex items-center gap-3 w-full text-left px-3 py-3
-                                                                                       rounded-md border-l-[4px] hover:border-l-[4px]
-                                                                                       hover:border-mst border-transparent hover:bg-[#F9F7E8]
-                                                                                       font-heading text-md font-semibold
-                                                                                       text-mst-gray transition duration-200 font-heading cursor-pointer" data-category="dubai-city">
+                             <button class="faq-cat-btn flex items-center gap-3 w-full text-left px-3 py-3 rounded-md border-l-[4px] hover:border-l-[4px] hover:border-mst border-transparent hover:bg-[#F9F7E8] font-heading text-md font-medium text-mst-gray transition duration-200 cursor-pointer" data-category="dubai-city">
                                  <img src="<?php echo e(asset('assets/images/icons/dubai.svg')); ?>" class="w-8 h-8 object-contain" alt="Dubai City Tours">
                                  <span>Dubai City Tours</span>
                              </button>
                              <!-- Category Item 7 -->
-                             <button class="faq-cat-btn active flex items-center gap-3 w-full text-left px-3 py-3
-                                                                                       rounded-md border-l-[4px] hover:border-l-[4px]
-                                                                                       hover:border-mst border-transparent hover:bg-[#F9F7E8]
-                                                                                       font-heading text-md font-semibold
-                                                                                       text-mst-gray transition duration-200 font-heading cursor-pointer" data-category="abu-dhabi">
+                             <button class="faq-cat-btn flex items-center gap-3 w-full text-left px-3 py-3 rounded-md border-l-[4px] hover:border-l-[4px] hover:border-mst border-transparent hover:bg-[#F9F7E8] font-heading text-md font-medium text-mst-gray transition duration-200 cursor-pointer" data-category="abu-dhabi">
                                  <img src="<?php echo e(asset('assets/images/icons/abu.svg')); ?>" class="w-8 h-8 object-contain" alt="Abu Dhabi Tours">
                                  <span>Abu Dhabi Tours</span>
                              </button>
                              <!-- Category Item 8 -->
-                             <button class="faq-cat-btn active flex items-center gap-3 w-full text-left px-3 py-3
-                                                                                       rounded-md border-l-[4px] hover:border-l-[4px]
-                                                                                       hover:border-mst border-transparent hover:bg-[#F9F7E8]
-                                                                                       font-heading text-md font-semibold
-                                                                                       text-mst-gray transition duration-200 font-heading cursor-pointer" data-category="uae-visa">
+                             <button class="faq-cat-btn flex items-center gap-3 w-full text-left px-3 py-3 rounded-md border-l-[4px] hover:border-l-[4px] hover:border-mst border-transparent hover:bg-[#F9F7E8] font-heading text-md font-medium text-mst-gray transition duration-200 cursor-pointer" data-category="uae-visa">
                                  <img src="<?php echo e(asset('assets/images/icons/visa.svg')); ?>" class="w-8 h-8 object-contain" alt="UAE Visa">
                                  <span>UAE Visa</span>
                              </button>
                              <!-- Category Item 9 -->
-                             <button class="faq-cat-btn active flex items-center gap-3 w-full text-left px-3 py-3
-                                                                                       rounded-md border-l-[4px] hover:border-l-[4px]
-                                                                                       hover:border-mst border-transparent hover:bg-[#F9F7E8]
-                                                                                       font-heading text-md font-semibold
-                                                                                       text-mst-gray transition duration-200 font-heading cursor-pointer" data-category="holiday-packages">
+                             <button class="faq-cat-btn flex items-center gap-3 w-full text-left px-3 py-3 rounded-md border-l-[4px] hover:border-l-[4px] hover:border-mst border-transparent hover:bg-[#F9F7E8] font-heading text-md font-medium text-mst-gray transition duration-200 cursor-pointer" data-category="holiday-packages">
                                  <img src="<?php echo e(asset('assets/images/icons/holiday.svg')); ?>" class="w-8 h-8 object-contain" alt="Holiday Packages">
                                  <span>Holiday Packages</span>
                              </button>
                              <!-- Category Item 10 -->
-                             <button class="faq-cat-btn active flex items-center gap-3 w-full text-left px-3 py-3
-                                                                                       rounded-md border-l-[4px] hover:border-l-[4px]
-                                                                                       hover:border-mst border-transparent hover:bg-[#F9F7E8]
-                                                                                       font-heading text-md font-semibold
-                                                                                       text-mst-gray transition duration-200 font-heading cursor-pointer" data-category="pricing-payment">
+                             <button class="faq-cat-btn flex items-center gap-3 w-full text-left px-3 py-3 rounded-md border-l-[4px] hover:border-l-[4px] hover:border-mst border-transparent hover:bg-[#F9F7E8] font-heading text-md font-medium text-mst-gray transition duration-200 cursor-pointer" data-category="pricing-payment">
                                  <img src="<?php echo e(asset('assets/images/icons/pricing.svg')); ?>" class="w-8 h-8 object-contain" alt="Pricing / Payment">
                                  <span>Pricing / Payment</span>
                              </button>
                              <!-- Category Item 11 -->
-                             <button class="faq-cat-btn active flex items-center gap-3 w-full text-left px-3 py-3
-                                                                                       rounded-md border-l-[4px] hover:border-l-[4px]
-                                                                                       hover:border-mst border-transparent hover:bg-[#F9F7E8]
-                                                                                       font-heading text-md font-semibold
-                                                                                       text-mst-gray transition duration-200 font-heading cursor-pointer" data-category="cancellation-refund">
+                             <button class="faq-cat-btn flex items-center gap-3 w-full text-left px-3 py-3 rounded-md border-l-[4px] hover:border-l-[4px] hover:border-mst border-transparent hover:bg-[#F9F7E8] font-heading text-md font-medium text-mst-gray transition duration-200 cursor-pointer" data-category="cancellation-refund">
                                  <img src="<?php echo e(asset('assets/images/icons/refund.svg')); ?>" class="w-8 h-8 object-contain" alt="Cancellation / Refund">
                                  <span>Cancellation / Refund</span>
                              </button>
                              <!-- Category Item 12 -->
-                             <button class="faq-cat-btn active flex items-center gap-3 w-full text-left px-3 py-3
-                                                                                       rounded-md border-l-[4px] hover:border-l-[4px]
-                                                                                       hover:border-mst border-transparent hover:bg-[#F9F7E8]
-                                                                                       font-heading text-md font-semibold
-                                                                                       text-mst-gray transition duration-200 font-heading cursor-pointer" data-category="booking">
+                             <button class="faq-cat-btn flex items-center gap-3 w-full text-left px-3 py-3 rounded-md border-l-[4px] hover:border-l-[4px] hover:border-mst border-transparent hover:bg-[#F9F7E8] font-heading text-md font-medium text-mst-gray transition duration-200 cursor-pointer" data-category="booking">
                                  <img src="<?php echo e(asset('assets/images/icons/booking.svg')); ?>" class="w-8 h-8 object-contain" alt="Booking">
                                  <span>Booking</span>
                              </button>
                              <!-- Category Item 13 -->
-                             <button class="faq-cat-btn flex items-center gap-3 w-full text-left px-3 py-3
-                                           rounded-md border-l-[4px] hover:border-l-[4px]
-                                           hover:border-mst border-transparent hover:bg-[#F9F7E8]
-                                           font-heading text-md font-semibold
-                                           text-mst-gray transition duration-200 font-heading cursor-pointer" data-category="support">
+                             <button class="faq-cat-btn flex items-center gap-3 w-full text-left px-3 py-3 rounded-md border-l-[4px] hover:border-l-[4px] hover:border-mst border-transparent hover:bg-[#F9F7E8] font-heading text-md font-medium text-mst-gray transition duration-200 cursor-pointer" data-category="support">
                                  <img src="<?php echo e(asset('assets/images/icons/support3.svg')); ?>" class="w-8 h-8 object-contain" alt="Support">
                                  <span>Support</span>
                              </button>
@@ -601,7 +553,11 @@
             });
         }
 
-        // Initial render
+        // Initial render: Set title to active category and render
+        const initialActiveBtn = document.querySelector('.faq-cat-btn.active');
+        if (initialActiveBtn) {
+            updateRightTitle(initialActiveBtn.querySelector('span').innerText);
+        }
         renderFAQs();
     });
 </script>

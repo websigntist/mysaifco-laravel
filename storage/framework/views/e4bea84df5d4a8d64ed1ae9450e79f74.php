@@ -76,74 +76,42 @@
                          <h2 class="font-heading font-bold text-mst-gray text-2xl mb-4 px-2">Categories</h2>
                          <div class="flex flex-col gap-1" id="faq-categories-list">
                              <!-- Category Item 1 -->
-                             <button class="faq-cat-btn active flex items-center gap-3 w-full text-left px-3 py-3
-                             rounded-md border-l-[4px] border-mst bg-[#F9F7E8] font-heading text-md font-semibold
-                             text-mst-gray transition duration-200 font-heading cursor-pointer" data-category="desert-safari">
-                                 <img src="<?php echo e(asset('assets/images/icons/kaba2.svg')); ?>"
-                                      class="w-8 h-8 object-contain"
-                                      alt="Umrah">
+                             <button class="faq-cat-btn active flex items-center gap-3 w-full text-left px-3 py-3 rounded-md border-l-[4px] border-mst bg-[#F9F7E8] font-heading text-md font-semibold text-mst-gray transition duration-200 cursor-pointer" data-category="umrah">
+                                 <img src="<?php echo e(asset('assets/images/icons/kaba2.svg')); ?>" class="w-8 h-8 object-contain" alt="Umrah">
                                  <span>Umrah</span>
                              </button>
                              <!-- Category Item 2 -->
-                             <button class="faq-cat-btn active flex items-center gap-3 w-full text-left px-3 py-3
-                                                          rounded-md border-l-[4px] hover:border-l-[4px]
-                                                          hover:border-mst border-transparent hover:bg-[#F9F7E8]
-                                                          font-heading text-md font-semibold
-                                                          text-mst-gray transition duration-200 font-heading cursor-pointer" data-category="general">
+                             <button class="faq-cat-btn flex items-center gap-3 w-full text-left px-3 py-3 rounded-md border-l-[4px] hover:border-l-[4px] hover:border-mst border-transparent hover:bg-[#F9F7E8] font-heading text-md font-semibold text-mst-gray transition duration-200 cursor-pointer" data-category="umrah-visa">
                                  <img src="<?php echo e(asset('assets/images/icons/visa1.svg')); ?>" class="w-8 h-8 object-contain" alt="Umrah Visa">
                                  <span>Umrah Visa</span>
                              </button>
                              <!-- Category Item 3 -->
-                             <button class="faq-cat-btn active flex items-center gap-3 w-full text-left px-3 py-3
-                                                                                       rounded-md border-l-[4px] hover:border-l-[4px]
-                                                                                       hover:border-mst border-transparent hover:bg-[#F9F7E8]
-                                                                                       font-heading text-md font-semibold
-                                                                                       text-mst-gray transition duration-200 font-heading cursor-pointer" data-category="dhow-cruises">
+                             <button class="faq-cat-btn flex items-center gap-3 w-full text-left px-3 py-3 rounded-md border-l-[4px] hover:border-l-[4px] hover:border-mst border-transparent hover:bg-[#F9F7E8] font-heading text-md font-semibold text-mst-gray transition duration-200 cursor-pointer" data-category="saudi-multiple-visa">
                                  <img src="<?php echo e(asset('assets/images/icons/vis1.svg')); ?>" class="w-8 h-8 object-contain" alt="Saudi Multiple Visa">
                                  <span>Saudi Multiple Visa</span>
                              </button>
                              <!-- Category Item 4 -->
-                             <button class="faq-cat-btn active flex items-center gap-3 w-full text-left px-3 py-3
-                                                                                       rounded-md border-l-[4px] hover:border-l-[4px]
-                                                                                       hover:border-mst border-transparent hover:bg-[#F9F7E8]
-                                                                                       font-heading text-md font-semibold
-                                                                                       text-mst-gray transition duration-200 font-heading cursor-pointer" data-category="yacht-charter">
+                             <button class="faq-cat-btn flex items-center gap-3 w-full text-left px-3 py-3 rounded-md border-l-[4px] hover:border-l-[4px] hover:border-mst border-transparent hover:bg-[#F9F7E8] font-heading text-md font-semibold text-mst-gray transition duration-200 cursor-pointer" data-category="ihram">
                                  <img src="<?php echo e(asset('assets/images/icons/ihram.svg')); ?>" class="w-8 h-8 object-contain" alt="Ihram">
                                  <span>Ihram</span>
                              </button>
                              <!-- Category Item 5 -->
-                             <button class="faq-cat-btn active flex items-center gap-3 w-full text-left px-3 py-3
-                                                                                       rounded-md border-l-[4px] hover:border-l-[4px]
-                                                                                       hover:border-mst border-transparent hover:bg-[#F9F7E8]
-                                                                                       font-heading text-md font-semibold
-                                                                                       text-mst-gray transition duration-200 font-heading cursor-pointer" data-category="umrah">
+                             <button class="faq-cat-btn flex items-center gap-3 w-full text-left px-3 py-3 rounded-md border-l-[4px] hover:border-l-[4px] hover:border-mst border-transparent hover:bg-[#F9F7E8] font-heading text-md font-semibold text-mst-gray transition duration-200 cursor-pointer" data-category="tawaf">
                                  <img src="<?php echo e(asset('assets/images/icons/tawaf.svg')); ?>" class="w-8 h-8 object-contain" alt="Tawaf">
                                  <span>Tawaf</span>
                              </button>
                              <!-- Category Item 6 -->
-                             <button class="faq-cat-btn active flex items-center gap-3 w-full text-left px-3 py-3
-                                                                                       rounded-md border-l-[4px] hover:border-l-[4px]
-                                                                                       hover:border-mst border-transparent hover:bg-[#F9F7E8]
-                                                                                       font-heading text-md font-semibold
-                                                                                       text-mst-gray transition duration-200 font-heading cursor-pointer" data-category="dubai-city">
+                             <button class="faq-cat-btn flex items-center gap-3 w-full text-left px-3 py-3 rounded-md border-l-[4px] hover:border-l-[4px] hover:border-mst border-transparent hover:bg-[#F9F7E8] font-heading text-md font-semibold text-mst-gray transition duration-200 cursor-pointer" data-category="saii">
                                  <img src="<?php echo e(asset('assets/images/icons/saii.svg')); ?>" class="w-8 h-8 object-contain" alt="Saii">
                                  <span>Saii</span>
                              </button>
                              <!-- Category Item 7 -->
-                             <button class="faq-cat-btn active flex items-center gap-3 w-full text-left px-3 py-3
-                                                                                       rounded-md border-l-[4px] hover:border-l-[4px]
-                                                                                       hover:border-mst border-transparent hover:bg-[#F9F7E8]
-                                                                                       font-heading text-md font-semibold
-                                                                                       text-mst-gray transition duration-200 font-heading cursor-pointer" data-category="abu-dhabi">
+                             <button class="faq-cat-btn flex items-center gap-3 w-full text-left px-3 py-3 rounded-md border-l-[4px] hover:border-l-[4px] hover:border-mst border-transparent hover:bg-[#F9F7E8] font-heading text-md font-semibold text-mst-gray transition duration-200 cursor-pointer" data-category="kaaba">
                                  <img src="<?php echo e(asset('assets/images/icons/kaba.svg')); ?>" class="w-8 h-8 object-contain" alt="Kaaba">
                                  <span>Kaaba</span>
                              </button>
                              <!-- Category Item 8 -->
-                             <button class="faq-cat-btn active flex items-center gap-3 w-full text-left px-3 py-3
-                                                                                       rounded-md border-l-[4px] hover:border-l-[4px]
-                                                                                       hover:border-mst border-transparent hover:bg-[#F9F7E8]
-                                                                                       font-heading text-md font-semibold
-                                                                                       text-mst-gray transition duration-200 font-heading cursor-pointer" data-category="uae-visa">
+                             <button class="faq-cat-btn flex items-center gap-3 w-full text-left px-3 py-3 rounded-md border-l-[4px] hover:border-l-[4px] hover:border-mst border-transparent hover:bg-[#F9F7E8] font-heading text-md font-semibold text-mst-gray transition duration-200 cursor-pointer" data-category="single-ladies">
                                  <img src="<?php echo e(asset('assets/images/icons/lady.svg')); ?>" class="w-8 h-8 object-contain" alt="Umrah for Single Ladies">
                                  <span>Umrah for Single Ladies</span>
                              </button>
@@ -349,19 +317,14 @@
     window.faqsData = <?php echo json_encode($allFaqs ?? [], 15, 512) ?>;
 
     const categoryMap = {
-        'desert-safari': { ids: [1], keywords: [] },
-        'general': { ids: [9, 10], keywords: [] },
-        'dhow-cruises': { ids: [5], keywords: [] },
-        'yacht-charter': { ids: [2], keywords: [] },
-        'umrah': { ids: [11, 14, 15], keywords: [] },
-        'dubai-city': { ids: [3], keywords: [] },
-        'abu-dhabi': { ids: [4], keywords: [] },
-        'uae-visa': { ids: [], keywords: ['visa', 'permit', 'entry'] },
-        'holiday-packages': { ids: [], keywords: ['holiday', 'package'] },
-        'pricing-payment': { ids: [], keywords: ['price', 'cost', 'pay', 'charge', 'pricing', 'aed', 'usd'] },
-        'cancellation-refund': { ids: [], keywords: ['cancel', 'refund', 'change', 'policy'] },
-        'booking': { ids: [], keywords: ['book', 'reserve', 'confirmation'] },
-        'support': { ids: [], keywords: ['support', 'contact', 'help', 'phone', 'email'] }
+        'umrah': { ids: [11], keywords: [] },
+        'umrah-visa': { ids: [11, 14, 15], keywords: ['visa', 'procedure'] },
+        'saudi-multiple-visa': { ids: [11, 14, 15], keywords: ['visa', 'multiple', 'entry'] },
+        'ihram': { ids: [11, 14, 15], keywords: ['ihram', 'dress', 'wear', 'perfume'] },
+        'tawaf': { ids: [11, 14, 15], keywords: ['tawaf', 'kaaba', 'circumambulation'] },
+        'saii': { ids: [11, 14, 15], keywords: ['saii', 'saee', 'safa', 'marwah'] },
+        'kaaba': { ids: [11, 14, 15], keywords: ['kaaba', 'mosque', 'haram'] },
+        'single-ladies': { ids: [15], keywords: ['lady', 'ladies', 'women', 'woman', 'single'] }
     };
 
     function renderFAQs() {
@@ -375,7 +338,7 @@
         const rule = categoryMap[cat] || { ids: [], keywords: [] };
 
         // Filter FAQs
-        const filtered = window.faqsData.filter(faq => {
+        let filtered = window.faqsData.filter(faq => {
             // Category filtering
             let matchCat = false;
             if (rule.ids.length > 0) {
@@ -401,6 +364,23 @@
 
             return matchCat && matchSearch;
         });
+
+        // Fallback to general Umrah FAQs if category is empty
+        if (filtered.length === 0 && cat !== 'umrah') {
+            const fallbackRule = categoryMap['umrah'];
+            const fallbackFiltered = window.faqsData.filter(faq => {
+                let matchSearch = true;
+                if (searchVal !== '') {
+                    const title = (faq.title || '').toLowerCase();
+                    const desc = (faq.description || '').toLowerCase();
+                    matchSearch = title.includes(searchVal) || desc.includes(searchVal);
+                }
+                return faq.tour_type_id && fallbackRule.ids.includes(parseInt(faq.tour_type_id)) && matchSearch;
+            });
+            if (fallbackFiltered.length > 0) {
+                filtered.push(...fallbackFiltered);
+            }
+        }
 
         // Render FAQs
         container.innerHTML = '';
@@ -555,11 +535,12 @@
             });
         }
 
-        // Initial render
+        // Initial render: Set title to active category and render
+        const initialActiveBtn = document.querySelector('.faq-cat-btn.active');
+        if (initialActiveBtn) {
+            updateRightTitle(initialActiveBtn.querySelector('span').innerText);
+        }
         renderFAQs();
     });
 </script>
-         </div>
-    </div>
-</section>
 <?php /**PATH D:\laragon\www\mysaifco-laravel\resources\views/frontend/pages/includes/umrah-faqs.blade.php ENDPATH**/ ?>
