@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 26, 2026 at 07:23 PM
+-- Generation Time: Jun 29, 2026 at 11:16 PM
 -- Server version: 8.4.2
 -- PHP Version: 8.4.21
 
@@ -1257,8 +1257,8 @@ CREATE TABLE `pages` (
 --
 
 INSERT INTO `pages` (`id`, `parent_id`, `menu_title`, `page_title`, `show_title`, `sub_title`, `friendly_url`, `description`, `status`, `image`, `image_alt`, `image_title`, `container_layout`, `show_in_menu`, `ordering`, `meta_title`, `meta_keywords`, `meta_description`, `created_by`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(3, 0, 'About Us', 'About Us', 1, NULL, 'about-us', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi earum molestiae praesentium repellendus? Ab, consequuntur esse iste iure iusto libero quidem sint ullam. Atque debitis hic nobis placeat repellendus. Beatae dolor eaque iure nisi quae! Accusamus aliquam cupiditate est ex, maiores molestiae mollitia officia perferendis quas quos sapiente temporibus unde.</p>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi earum molestiae praesentium repellendus? Ab, consequuntur esse iste iure iusto libero quidem sint ullam. Atque debitis hic nobis placeat repellendus. Beatae dolor eaque iure nisi quae! Accusamus aliquam cupiditate est ex, maiores molestiae mollitia officia perferendis quas quos sapiente temporibus unde.</p>\r\n<p>[include file=\"about_us\"]</p>', 'published', '1779911456_6a174b209e553_image.webp', 'about-us', 'About Us', 'Default', 'Yes', 2, 'About Us', 'about, about company', 'meta description', 1, '2025-04-15 18:30:13', '2026-05-27 15:21:37', NULL),
-(42, 0, 'Contact Us', 'Contact Us', 0, NULL, 'contact-us', '<p>[include file=\"contact_us\"]</p>', 'published', NULL, NULL, NULL, 'Default', 'Yes', 1, 'Contact Us', 'Et consequatur Cons', 'Modi officia qui min', 1, '2025-09-05 14:32:19', '2026-05-27 15:29:32', NULL),
+(3, 0, 'About Us', 'About Us', 0, NULL, 'about-us', '<p>[include file=\"about_us\"]</p>', 'published', '1782583577_6a40111912011_image.webp', 'about-us', 'About Us', 'Default', 'Yes', 2, 'About Us', 'about, about company', 'about company', 1, '2025-04-15 18:30:13', '2026-06-27 13:15:41', NULL),
+(42, 0, 'Contact Us', 'Contact Us', 0, NULL, 'contact-us', '<p>[include file=\"contact_us\"]</p>', 'published', '1782765765_6a42d8c5e0c42_image.webp', NULL, NULL, 'Default', 'Yes', 1, 'Contact Us', 'Et consequatur Cons', 'Modi officia qui min', 1, '2025-09-05 14:32:19', '2026-06-29 15:42:46', NULL),
 (45, 0, 'Desert Safari Tours', 'Desert Safari Tours', 1, NULL, 'desert-safari-tours', '<div class=\"w-6xl max-w-full mx-auto\">\r\n<p style=\"text-align: center;\">Experience the best Desert Safari Dubai with thrilling dune bashing, camel rides, sandboarding, and BBQ dinner under the stars. Choose from evening desert safari, morning safari, private desert safari, and VIP desert camp experiences. Enjoy live entertainment, including belly dance, Tanoura show, and fire show, while exploring the golden dunes of Dubai. These desert safari tours offer a perfect mix of adventure, culture, and relaxation, making them one of the top things to do in Dubai for tourists and families.</p>\r\n</div>\r\n<p style=\"text-align: center;\">[include file=\"all-tours-packages\"]</p>', 'published', '1779663128_6a138118563c8_image.webp', 'desert-safari-tours', 'Desert Safari Tours', 'Box Container', 'Yes', 2, 'Desert Safari Tours', NULL, NULL, 1, '2025-12-09 11:12:29', '2026-05-29 16:10:24', NULL),
 (46, 0, 'All Tour Categories', 'All Tour Categories', 0, NULL, 'all-tour-categories', '<p>[include file=\"all-categories\"]</p>', 'published', '1779663114_6a13810aa05d7_image.webp', 'About Image', 'Hello', 'Default', 'Yes', 2, 'All Tour Categories', 'tour, dubai, umrah, abu dhabi,', 'call us for more details.', 1, '2025-12-09 11:13:30', '2026-05-29 13:44:41', NULL),
 (47, 0, 'About Us (Copy)', 'About Us (Copy)', 1, 'Welcome to the Company', 'about-us-copy-tsildt', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi earum molestiae praesentium repellendus? Ab, consequuntur esse iste iure iusto libero quidem sint ullam. Atque debitis hic nobis placeat repellendus. Beatae dolor eaque iure nisi quae! Accusamus aliquam cupiditate est ex, maiores molestiae mollitia officia perferendis quas quos sapiente temporibus unde.</p>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi earum molestiae praesentium repellendus? Ab, consequuntur esse iste iure iusto libero quidem sint ullam. Atque debitis hic nobis placeat repellendus. Beatae dolor eaque iure nisi quae! Accusamus aliquam cupiditate est ex, maiores molestiae mollitia officia perferendis quas quos sapiente temporibus unde.</p>', 'published', 'dup_6a13688a4129f8.03666149.webp', NULL, NULL, 'Default', 'Yes', 2, 'About Us | Alpha Tech', 'about, about company', 'meta description', 1, '2026-05-24 16:07:22', '2026-05-27 15:29:08', '2026-05-27 15:29:08'),
@@ -1273,7 +1273,9 @@ INSERT INTO `pages` (`id`, `parent_id`, `menu_title`, `page_title`, `show_title`
 (57, 0, 'Umrah by Bus', 'Umrah By Bus', 0, NULL, 'umrah-by-bus', '<p>[include file=\"umrah-by-bus\"]</p>\r\n<p>[include file=\"all-tours-packages\"]</p>', 'published', '1780945337_6a2711b9a102b_image.webp', 'umrah-by-bus', 'Umrah By Bus', 'Box Container', 'Yes', 2, 'Umrah By Bus', NULL, NULL, 1, '2026-06-08 04:13:10', '2026-06-08 14:02:17', NULL),
 (58, 0, 'Umrah for Single Lady', 'Umrah For Single Lady', 0, NULL, 'umrah-for-single-lady', '<p>[include file=\"umrah-for-single-lady\"]</p>\r\n<p>[include file=\"all-tours-packages\"]</p>', 'published', NULL, 'umrah-for-single-lady', 'Umrah For Single Lady', 'Box Container', 'Yes', 2, 'Umrah For Single Lady', NULL, NULL, 1, '2026-06-12 05:40:35', '2026-06-12 05:41:06', NULL),
 (59, 0, 'FAQs', 'FAQs', 0, NULL, 'faqs', '<p>[include file=\"faqs\"]</p>', 'published', '1782415698_6a3d81521a2b6_image.webp', 'faqs', 'FAQs', 'Box Container', 'Yes', 2, 'FAQs', NULL, NULL, 1, '2026-06-25 14:12:00', '2026-06-25 14:28:18', NULL),
-(60, 0, 'Umrah FAQs', 'Umrah FAQs', 0, NULL, 'umrah-faqs', '<p>[include file=\"umrah-faqs\"]</p>', 'published', '1782498306_6a3ec402a59a4_image.webp', 'umrah-faqs', 'Umrah FAQs', 'Box Container', 'Yes', 2, 'Umrah FAQs', NULL, NULL, 1, '2026-06-26 10:01:48', '2026-06-26 13:25:06', NULL);
+(60, 0, 'Umrah FAQs', 'Umrah FAQs', 0, NULL, 'umrah-faqs', '<p>[include file=\"umrah-faqs\"]</p>', 'published', '1782498306_6a3ec402a59a4_image.webp', 'umrah-faqs', 'Umrah FAQs', 'Box Container', 'Yes', 2, 'Umrah FAQs', NULL, NULL, 1, '2026-06-26 10:01:48', '2026-06-26 13:25:06', NULL),
+(61, 0, 'Blogs', 'Blogs', 0, NULL, 'blogs', '<p>[include file=\"blogs\"]</p>', 'published', '1782556549_6a3fa7851bfc7_image.webp', 'blogs', 'Blogs', 'Box Container', 'Yes', 2, 'Blogs', NULL, NULL, 1, '2026-06-27 05:35:08', '2026-06-27 05:35:49', NULL),
+(62, 0, 'Testing', 'Testing', 0, NULL, 'testing', '<p>[include file=\"testing\"]</p>', 'published', 'dup_6a3ffc47de4d19.19875241.webp', 'testing', 'Testing', 'Box Container', 'Yes', 2, 'Testing', NULL, NULL, 1, '2026-06-27 11:37:27', '2026-06-27 11:43:17', '2026-06-27 11:43:17');
 
 -- --------------------------------------------------------
 
@@ -1676,7 +1678,12 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('viCK5d67AUGMyk12wnzI9Cf5feIlKYxdcBPzPqWe', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoia0ZKVVdVT1lBS1NrejgwYU1GOWhuY3dhNkxQcWRSdVUzT2RlUzBpcCI7czozOiJ1cmwiO2E6MTp7czo4OiJpbnRlbmRlZCI7czo0MToiaHR0cHM6Ly9teXNhaWZjby1sYXJhdmVsLnRlc3QvYWRtaW4vcGFnZXMiO31zOjk6Il9wcmV2aW91cyI7YToyOntzOjM6InVybCI7czo0MDoiaHR0cHM6Ly9teXNhaWZjby1sYXJhdmVsLnRlc3QvdW1yYWgtZmFxcyI7czo1OiJyb3V0ZSI7czoxMjoicGFnZS5kZWZhdWx0Ijt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1782501412);
+('LG2X59yi1huxiZsaC0lZgdzAxw5ISvdyfc7CqpJG', NULL, NULL, '', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiNVE3VklkM01YdXhabmhDYVdHblRCa01pWlNoa1FGa2NySmVuQmhKYyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6ODoiaHR0cDovLzoiO3M6NToicm91dGUiO3M6MToiLyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1782770356),
+('nVmqqPH02QxRAGC9qyX1pVXGEUiNxGWZZCAKswDS', NULL, NULL, '', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiMWtPTVVoOWYybTN3Q1hqNHFyVk5tdURmNzJOWmZJUTFRRFdqWFRDdSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6ODoiaHR0cDovLzoiO3M6NToicm91dGUiO3M6MToiLyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1782774251),
+('TeWPbKWy1Z0X7qeuqUuQ6b3q8ZKXGBJq0UjRJ9Us', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiTGk1RG11WUxsQWtHT080WFBQa2lzTlhvdjFBbGU5dHUyajhJc29uZiI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NDA6Imh0dHBzOi8vbXlzYWlmY28tbGFyYXZlbC50ZXN0L2NvbnRhY3QtdXMiO3M6NToicm91dGUiO3M6MTI6InBhZ2UuZGVmYXVsdCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7fQ==', 1782774800),
+('U5rDlOLcXI9QrudnfMYM02i2oKl4MuFy5j2Xopfs', NULL, NULL, '', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoienBkbFZvYjRlT1NycHRKMTBqOElCQ25ycFk5b0ZONFVnTEFBZUJKRCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6ODoiaHR0cDovLzoiO3M6NToicm91dGUiO3M6MToiLyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1782774607),
+('w2yuXZ9AiOanAlMowwhuunHdds6nfxtXll0Gp0ox', NULL, NULL, '', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoicDlMbXBhQ0JGM3NGdVdjRW81Z2ZBRjJzdjJScXdtS2JRTFFsSEN0NiI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6ODoiaHR0cDovLzoiO3M6NToicm91dGUiO3M6MToiLyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1782766776),
+('WANw2ODBztnRGBliSjCYKkTkx4Ap8zLWZy2w1AXW', NULL, NULL, '', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiVGxYVlVxVzJrUGxLWk9SM0lieGxyMDBXaDYwS3lWbHVqeWZsU05VMyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6ODoiaHR0cDovLzoiO3M6NToicm91dGUiO3M6MToiLyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1782772600);
 
 -- --------------------------------------------------------
 
@@ -2646,7 +2653,7 @@ ALTER TABLE `modules`
 -- AUTO_INCREMENT for table `pages`
 --
 ALTER TABLE `pages`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT for table `popular_searches`

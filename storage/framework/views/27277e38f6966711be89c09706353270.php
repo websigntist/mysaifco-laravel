@@ -1,4 +1,4 @@
-@php
+<?php
     $faqs = $faqs ?? collect();
     $tourType = $tourType ?? null;
 
@@ -18,8 +18,8 @@
         array_slice($faqItems, 0, $half),
         array_slice($faqItems, $half),
     ];
-@endphp
-@if(count($faqItems) > 0)
+?>
+<?php if(count($faqItems) > 0): ?>
     <section class="flex items-center justify-center pt-5 pb-18">
         <div class="container mx-auto px-4">
             <div class="mx-auto text-center">
@@ -27,60 +27,61 @@
                     <span>Frequently Asked  </span><span class="text-mst">Questions</span>
                 </h1>
                 <p class="mt-4 text-center mx-auto md:w-7/12">
-                    @if($tourType && filled($tourType->title))
+                    <?php if($tourType && filled($tourType->title)): ?>
                         Find answers to frequently asked questions about Dubai tours, desert safari, holiday packages, Umrah services, and global visa assistance to help you plan your journey with ease.
-                    @else
+                    <?php else: ?>
                         Find answers to frequently asked questions about Dubai tours, desert safari, holiday packages, Umrah services, and global visa assistance to help you plan your journey with ease.
-                    @endif
+                    <?php endif; ?>
                 </p>
             </div>
             <div id="accordion-card" class="faq-disert-safari mt-14" data-custom-accordion="collapse">
                 <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-x-10">
-                    @foreach ($faqColumns as $columnIndex => $columnItems)
-                        @if(count($columnItems) > 0)
+                    <?php $__currentLoopData = $faqColumns; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $columnIndex => $columnItems): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <?php if(count($columnItems) > 0): ?>
                             <div class="flex flex-col gap-4">
-                                @foreach ($columnItems as $itemIndex => $faq)
-                                    @php
+                                <?php $__currentLoopData = $columnItems; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $itemIndex => $faq): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <?php
                                         $faqNumber = ($columnIndex * $half) + $itemIndex + 1;
                                         $isOpen = $faq['open'];
-                                    @endphp
-                                    <div class="{{ $faqCardClass }}">
-                                        <h2 id="faq-{{ $faqNumber }}">
+                                    ?>
+                                    <div class="<?php echo e($faqCardClass); ?>">
+                                        <h2 id="faq-<?php echo e($faqNumber); ?>">
                                             <button type="button"
-                                                    class="{{ $faqBtnClass }}"
-                                                    data-custom-accordion-target="#faq-body-{{ $faqNumber }}"
-                                                    aria-expanded="{{ $isOpen ? 'true' : 'false' }}"
-                                                    aria-controls="faq-body-{{ $faqNumber }}">
-                                                <span>{{ $faq['question'] }}</span>
-                                                <svg data-accordion-icon class="h-5 w-5 shrink-0 transition-transform duration-300 {{ $isOpen ? 'rotate-180' : '' }}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                                    class="<?php echo e($faqBtnClass); ?>"
+                                                    data-custom-accordion-target="#faq-body-<?php echo e($faqNumber); ?>"
+                                                    aria-expanded="<?php echo e($isOpen ? 'true' : 'false'); ?>"
+                                                    aria-controls="faq-body-<?php echo e($faqNumber); ?>">
+                                                <span><?php echo e($faq['question']); ?></span>
+                                                <svg data-accordion-icon class="h-5 w-5 shrink-0 transition-transform duration-300 <?php echo e($isOpen ? 'rotate-180' : ''); ?>" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 15 7-7 7 7"/>
                                                 </svg>
                                             </button>
                                         </h2>
-                                        <div id="faq-body-{{ $faqNumber }}"
+                                        <div id="faq-body-<?php echo e($faqNumber); ?>"
                                              class="grid transition-all duration-300 ease-in-out"
-                                             style="grid-template-rows: {{ $isOpen ? '1fr' : '0fr' }};"
-                                             aria-labelledby="faq-{{ $faqNumber }}">
+                                             style="grid-template-rows: <?php echo e($isOpen ? '1fr' : '0fr'); ?>;"
+                                             aria-labelledby="faq-<?php echo e($faqNumber); ?>">
                                             <div class="overflow-hidden">
                                                 <div class="px-5 pb-5">
-                                                    <p class="font-body text-sm leading-relaxed text-white">{{ $faq['answer'] }}</p>
+                                                    <p class="font-body text-sm leading-relaxed text-white"><?php echo e($faq['answer']); ?></p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                @endforeach
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </div>
-                        @endif
-                    @endforeach
+                        <?php endif; ?>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
             </div>
             <a href="" class="flex items-center justify-center w-fit text-white text-lg px-6 pt-3 pb-3 rounded-full mx-auto
                                                         bg-gradient-to-r from-[#BA9B31] to-[#74611E]
                                                          hover:bg-gradient-to-r hover:from-[#74611E] hover:to-[#BA9B31]
                                                          transition duration-300 font-heading italic mt-8"> Explore all FAQs
-                <img src="{{asset('assets/images/icons/btn-arrow.svg')}}"
+                <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>"
                      class="w-5 ms-1"
                      alt="arrow"> </a>
         </div>
     </section>
-@endif
+<?php endif; ?>
+<?php /**PATH D:\laragon\www\mysaifco-laravel\resources\views/frontend/components/tour_faqs.blade.php ENDPATH**/ ?>

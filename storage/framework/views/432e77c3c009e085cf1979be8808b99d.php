@@ -2,9 +2,9 @@
     <div class="px-4 relative flex min-h-[400px] w-full
                     items-center justify-center overflow-hidden">
         <div class="absolute inset-0 scale-100 bg-cover bg-top bg-no-repeat"
-             style="background-image: url('{{ asset('assets/images/pages/1782583577_6a40111912011_image.webp') }}')"
+             style="background-image: url('<?php echo e(asset('assets/images/pages/1782583577_6a40111912011_image.webp')); ?>')"
              aria-hidden="true"></div>
-        {{--@dump($explore_uae)--}}
+        
         <div class="absolute inset-0 bg-gradient-to-r from-[#ffffff]/90 to-[#ffffff]/0" aria-hidden="true"></div>
         <div class="relative z-10 w-full py-14">
             <div class="container mx-auto">
@@ -22,7 +22,7 @@
                                             px-7 py-3 font-heading text-base italic text-white transition hover:from-mst-dark
                                              hover:to-mst md:text-lg"
                     > <img
-                            src="{{ asset('assets/images/icons/phone1.svg') }}"
+                            src="<?php echo e(asset('assets/images/icons/phone1.svg')); ?>"
                             class="ms-1 w-6 brightness-0 invert"
                             width="24"
                             height="24"
@@ -33,7 +33,7 @@
                                             px-7 py-3 font-heading text-base italic text-white transition hover:from-mst-dark
                                              hover:to-mst md:text-lg"
                     > <img
-                            src="{{ asset('assets/images/icons/whatsapp1.svg') }}"
+                            src="<?php echo e(asset('assets/images/icons/whatsapp1.svg')); ?>"
                             class="ms-1 w-6"
                             width="24"
                             height="24"
@@ -44,7 +44,7 @@
                          px-7 py-3 font-heading text-base italic text-white transition hover:from-mst-dark
                                              hover:to-mst md:text-lg"
                     > <img
-                            src="{{ asset('assets/images/icons/email1.svg') }}"
+                            src="<?php echo e(asset('assets/images/icons/email1.svg')); ?>"
                             class="ms-1 w-5 brightness-0 invert"
                             width="24"
                             height="24"
@@ -55,13 +55,13 @@
         </div>
     </div>
 </section>
-{{-- contact details --}}
+
 <section class="contactDetails pt-16">
     <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-0 divide-y lg:divide-y-0 lg:divide-x lg:divide-gray-200">
             <!-- Col 1: Our Office -->
             <div class="flex gap-4 first:pt-0">
-                <img src="{{ asset('assets/images/icons/pin1.svg') }}" class="w-10 h-10 flex-shrink-0 object-contain" alt="Our Office">
+                <img src="<?php echo e(asset('assets/images/icons/pin1.svg')); ?>" class="w-10 h-10 flex-shrink-0 object-contain" alt="Our Office">
                 <div class="space-y-2">
                     <h3 class="font-heading font-bold text-lg italic text-mst-gray leading-none">Our Office</h3>
                     <div class="font-body font-medium text-sm text-mst-gray leading-relaxed">
@@ -73,7 +73,7 @@
             </div>
             <!-- Col 2: Phone -->
             <div class="flex gap-4 lg:px-6 pt-6 lg:pt-0">
-                <img src="{{ asset('assets/images/icons/phone2.svg') }}" class="w-10 h-10 flex-shrink-0
+                <img src="<?php echo e(asset('assets/images/icons/phone2.svg')); ?>" class="w-10 h-10 flex-shrink-0
                 object-contain" alt="Phone">
                 <div class="space-y-2">
                     <h3 class="font-heading font-bold text-lg italic text-mst-gray leading-none">Phone</h3>
@@ -85,7 +85,7 @@
             </div>
             <!-- Col 3: WhatsApp -->
             <div class="flex gap-4 lg:px-6 pt-6 lg:pt-0">
-                <img src="{{ asset('assets/images/icons/whatsapp2.svg') }}" class="w-10 h-10 flex-shrink-0
+                <img src="<?php echo e(asset('assets/images/icons/whatsapp2.svg')); ?>" class="w-10 h-10 flex-shrink-0
                 object-contain" alt="WhatsApp">
                 <div class="space-y-2">
                     <h3 class="font-heading font-bold text-lg italic text-mst-gray leading-none">WhatsApp</h3>
@@ -98,7 +98,7 @@
             </div>
             <!-- Col 4: Email -->
             <div class="flex gap-4 lg:px-6 pt-6 lg:pt-0">
-                <img src="{{ asset('assets/images/icons/email2.svg') }}" class="w-10 h-10 flex-shrink-0 object-contain" alt="Email">
+                <img src="<?php echo e(asset('assets/images/icons/email2.svg')); ?>" class="w-10 h-10 flex-shrink-0 object-contain" alt="Email">
                 <div class="space-y-2">
                     <h3 class="font-heading font-bold text-lg italic text-mst-gray leading-none">Email</h3>
                     <div class="font-body font-medium text-sm text-mst-gray leading-relaxed">
@@ -109,7 +109,7 @@
             </div>
             <!-- Col 5: Working Hours -->
             <div class="flex gap-4 lg:px-6 pt-6 lg:pt-0">
-                <img src="{{ asset('assets/images/icons/clock2.svg') }}" class="w-10 h-10 flex-shrink-0
+                <img src="<?php echo e(asset('assets/images/icons/clock2.svg')); ?>" class="w-10 h-10 flex-shrink-0
                 object-contain" alt="Working Hours">
                 <div class="space-y-2">
                     <h3 class="font-heading font-bold text-lg italic text-mst-gray leading-none">Working Hours</h3>
@@ -123,7 +123,7 @@
         </div>
     </div>
 </section>
-{{-- contact form --}}
+
 <section class="contactForm py-16 bg-white">
     <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
@@ -144,42 +144,42 @@
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                         <!-- Dubai Tours -->
                         <div class="flex items-center gap-2">
-                            <img src="{{ asset('assets/images/icons/4324.svg') }}" class="w-6 h-6 object-contain" alt="Dubai Tours">
+                            <img src="<?php echo e(asset('assets/images/icons/4324.svg')); ?>" class="w-6 h-6 object-contain" alt="Dubai Tours">
                             <span class="font-heading font-bold text-xs text-mst-gray mt-2">Dubai Tours</span>
                         </div>
                         <!-- Desert Safari -->
                         <div class="flex items-center gap-2">
-                            <img src="{{ asset('assets/images/icons/jeep.svg') }}" class="w-7 h-7 object-contain" alt="Desert Safari">
+                            <img src="<?php echo e(asset('assets/images/icons/jeep.svg')); ?>" class="w-7 h-7 object-contain" alt="Desert Safari">
                             <span class="font-heading font-bold text-xs text-mst-gray mt-1">Desert Safari</span>
                         </div>
                         <!-- Umrah Packages -->
                         <div class="flex items-center gap-2">
-                            <img src="{{ asset('assets/images/icons/4234.svg') }}" class="w-6 h-6 object-contain" alt="Umrah Packages">
+                            <img src="<?php echo e(asset('assets/images/icons/4234.svg')); ?>" class="w-6 h-6 object-contain" alt="Umrah Packages">
                             <span class="font-heading font-bold text-xs text-mst-gray">Umrah Packages</span>
                         </div>
                         <!-- UAE Visa -->
                         <div class="flex items-center gap-2">
-                            <img src="{{ asset('assets/images/icons/234.svg') }}" class="w-6 h-6 object-contain" alt="UAE Visa">
+                            <img src="<?php echo e(asset('assets/images/icons/234.svg')); ?>" class="w-6 h-6 object-contain" alt="UAE Visa">
                             <span class="font-heading font-bold text-xs text-mst-gray">UAE Visa</span>
                         </div>
                         <!-- Hotel Booking -->
                         <div class="flex items-center gap-2">
-                            <img src="{{ asset('assets/images/icons/8789.svg') }}" class="w-6 h-6 object-contain" alt="Hotel Booking">
+                            <img src="<?php echo e(asset('assets/images/icons/8789.svg')); ?>" class="w-6 h-6 object-contain" alt="Hotel Booking">
                             <span class="font-heading font-bold text-xs text-mst-gray">Hotel Booking</span>
                         </div>
                         <!-- Airline Tickets -->
                         <div class="flex items-center gap-2">
-                            <img src="{{ asset('assets/images/icons/plan2.svg') }}" class="w-6 h-6 object-contain mt-1" alt="Airline Tickets">
+                            <img src="<?php echo e(asset('assets/images/icons/plan2.svg')); ?>" class="w-6 h-6 object-contain mt-1" alt="Airline Tickets">
                             <span class="font-heading font-bold text-xs text-mst-gray">Airline Tickets</span>
                         </div>
                         <!-- Yacht Rental -->
                         <div class="flex items-center gap-2">
-                            <img src="{{ asset('assets/images/icons/ship2.svg') }}" class="w-6 h-6 object-contain" alt="Yacht Rental">
+                            <img src="<?php echo e(asset('assets/images/icons/ship2.svg')); ?>" class="w-6 h-6 object-contain" alt="Yacht Rental">
                             <span class="font-heading font-bold text-xs text-mst-gray">Yacht Rental</span>
                         </div>
                         <!-- Holiday Packages -->
                         <div class="flex items-center gap-2">
-                            <img src="{{ asset('assets/images/icons/4533.svg') }}" class="w-6 h-6 object-contain" alt="Holiday Packages">
+                            <img src="<?php echo e(asset('assets/images/icons/4533.svg')); ?>" class="w-6 h-6 object-contain" alt="Holiday Packages">
                             <span class="font-heading font-bold text-xs text-mst-gray">Holiday Packages</span>
                         </div>
                     </div>
@@ -195,7 +195,7 @@
                 </p>
                 <!-- Laravel Form -->
                 <form action="#" method="POST" class="space-y-6">
-                    @csrf
+                    <?php echo csrf_field(); ?>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <!-- First Name -->
                         <div>
@@ -277,7 +277,7 @@
             <!-- Left Side: MD Photo & Message (lg:col-span-8) -->
             <div class="lg:col-span-8 flex flex-col md:flex-row gap-8 items-center md:items-start">
                 <!-- MD Photo -->
-                <img src="{{ asset('assets/images/asim2.png') }}" alt="Asim Rehman" class="w-80 h-auto object-cover">
+                <img src="<?php echo e(asset('assets/images/asim2.png')); ?>" alt="Asim Rehman" class="w-80 h-auto object-cover">
                 <!-- MD Message content -->
                 <div class="flex-1 space-y-4 text-center md:text-left">
                     <h2 class="font-heading font-bold text-xl normal-case italic text-mst-gray leading-tight">
@@ -305,7 +305,7 @@
                 <!-- Header of the credentials list -->
                 <div class="flex items-center gap-4 mb-2">
                     <!-- Icon Badge -->
-                    <img src="{{ asset('assets/images/icons/badge2.svg') }}" class="w-7 h-7 object-contain" alt="Licensed">
+                    <img src="<?php echo e(asset('assets/images/icons/badge2.svg')); ?>" class="w-7 h-7 object-contain" alt="Licensed">
                     <div>
                         <h3 class="font-heading text-white text-[16px] w-40 font-bold leading-6">Licensed Dubai Travel Company</h3>
                     </div>
@@ -314,32 +314,32 @@
                 <div class="space-y-1">
                     <!-- Item 1: Trade License -->
                     <div class="flex items-center gap-4">
-                        <img src="{{ asset('assets/images/icons/license.svg') }}" class="w-7 h-7 object-contain" alt="Licensed">
+                        <img src="<?php echo e(asset('assets/images/icons/license.svg')); ?>" class="w-7 h-7 object-contain" alt="Licensed">
                         <span class="font-body text-sm text-white">Trade License No. 1205447</span>
                     </div>
                     <!-- Item 2: Dubai Chamber Member -->
                     <div class="flex items-center gap-4">
-                        <img src="{{ asset('assets/images/icons/chamber.svg') }}" class="w-6 h-6 object-contain" alt="Licensed">
+                        <img src="<?php echo e(asset('assets/images/icons/chamber.svg')); ?>" class="w-6 h-6 object-contain" alt="Licensed">
                         <span class="font-body text-sm text-white">Dubai Chamber Member</span>
                     </div>
                     <!-- Item 3: Operating since 2008 -->
                     <div class="flex items-center gap-4">
-                        <img src="{{ asset('assets/images/icons/3dcalender.svg') }}" class="w-6 h-6 object-contain" alt="Licensed">
+                        <img src="<?php echo e(asset('assets/images/icons/3dcalender.svg')); ?>" class="w-6 h-6 object-contain" alt="Licensed">
                         <span class="font-body text-sm text-white">Operating since 2008</span>
                     </div>
                     <!-- Item 4: 50,000+ Happy Travelers -->
                     <div class="flex items-center gap-4">
-                        <img src="{{ asset('assets/images/icons/star.svg') }}" class="w-6 h-6 object-contain" alt="Licensed">
+                        <img src="<?php echo e(asset('assets/images/icons/star.svg')); ?>" class="w-6 h-6 object-contain" alt="Licensed">
                         <span class="font-body text-sm text-white">50,000+ Happy Travelers</span>
                     </div>
                     <!-- Item 5: 4.9 Google Rating -->
                     <div class="flex items-center gap-4">
-                        <img src="{{ asset('assets/images/icons/gicon.svg') }}" class="w-6 h-6 object-contain" alt="Licensed">
+                        <img src="<?php echo e(asset('assets/images/icons/gicon.svg')); ?>" class="w-6 h-6 object-contain" alt="Licensed">
                         <span class="font-body text-sm text-white">4.9 Google Rating</span>
                     </div>
                     <!-- Item 6: 24/7 Customer Support -->
                     <div class="flex items-center gap-4">
-                        <img src="{{ asset('assets/images/icons/ticket.svg') }}" class="w-6 h-6 object-contain" alt="Licensed">
+                        <img src="<?php echo e(asset('assets/images/icons/ticket.svg')); ?>" class="w-6 h-6 object-contain" alt="Licensed">
                         <span class="font-body text-sm text-white">24/7 Customer Support</span>
                     </div>
                 </div>
@@ -348,8 +348,8 @@
     </div>
 </section>
 
-{{-- FAQs section --}}
-@include('frontend.components.tour_faqs')
+
+<?php echo $__env->make('frontend.components.tour_faqs', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 
 <section class="relatedServices py-12 bg-white">
     <div class="container mx-auto">
@@ -361,66 +361,66 @@
         </div>
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5 mt-8">
             <!-- Card 1: Desert Safari -->
-            <a href="{{ url('/desert-safari-tours') }}" class="group flex flex-col items-center text-center p-4
+            <a href="<?php echo e(url('/desert-safari-tours')); ?>" class="group flex flex-col items-center text-center p-4
              bg-gray-50
             border border-gray-200 rounded-2xl transition-all duration-300">
                 <div class="w-16 h-16 flex items-center justify-center mb-3 transition-transform duration-300 group-hover:scale-110">
-                    <img src="{{ asset('assets/images/icons/desert.svg') }}" class="w-full h-full object-contain" alt="Desert Safari">
+                    <img src="<?php echo e(asset('assets/images/icons/desert.svg')); ?>" class="w-full h-full object-contain" alt="Desert Safari">
                 </div>
                 <h4 class="font-heading italic font-bold text-lg text-mst-gray group-hover:text-mst transition-colors
                                                 duration-200">Desert <span class="text-mst">Safari</span></h4>
                 <p class="font-body text-gray-700 text-sm mt-1 leading-snug">Experience thrilling desert adventure</p>
             </a>
             <!-- Card 2: Yacht Charter -->
-            <a href="{{ url('/yacht-charter-tours') }}" class="group flex flex-col items-center text-center p-4
+            <a href="<?php echo e(url('/yacht-charter-tours')); ?>" class="group flex flex-col items-center text-center p-4
                          bg-gray-50
                         border border-gray-200 rounded-2xl transition-all duration-300">
                 <div class="w-14 h-14 flex items-center justify-center mb-3 transition-transform duration-300 group-hover:scale-110">
-                    <img src="{{ asset('assets/images/icons/yacht.svg') }}" class="w-full h-full object-contain" alt="Yacht Charter">
+                    <img src="<?php echo e(asset('assets/images/icons/yacht.svg')); ?>" class="w-full h-full object-contain" alt="Yacht Charter">
                 </div>
                 <h4 class="font-heading italic font-bold text-lg text-mst-gray group-hover:text-mst transition-colors
                                 duration-200">Yacht <span class="text-mst">Charter</span></h4>
                 <p class="font-body text-gray-700 text-sm mt-1 leading-snug">Luxury yachts for unforgettable moments</p>
             </a>
             <!-- Card 3: Umrah Packages -->
-            <a href="{{ url('/umrah') }}" class="group flex flex-col items-center text-center p-4
+            <a href="<?php echo e(url('/umrah')); ?>" class="group flex flex-col items-center text-center p-4
                          bg-gray-50
                         border border-gray-200 rounded-2xl transition-all duration-300">
                 <div class="w-14 h-14 flex items-center justify-center mb-3 transition-transform duration-300 group-hover:scale-110">
-                    <img src="{{ asset('assets/images/icons/umrah.svg') }}" class="w-full h-full object-contain" alt="Umrah Packages">
+                    <img src="<?php echo e(asset('assets/images/icons/umrah.svg')); ?>" class="w-full h-full object-contain" alt="Umrah Packages">
                 </div>
                 <h4 class="font-heading italic font-bold text-lg text-mst-gray group-hover:text-mst transition-colors
                                 duration-200">Umrah <span class="text-mst">Packages</span></h4>
                 <p class="font-body text-gray-700 text-sm mt-1 leading-snug">Spiritual journeys made easy</p>
             </a>
             <!-- Card 4: UAE Visa -->
-            <a href="{{ url('/uae-visa') }}" class="group flex flex-col items-center text-center p-4
+            <a href="<?php echo e(url('/uae-visa')); ?>" class="group flex flex-col items-center text-center p-4
                          bg-gray-50
                         border border-gray-200 rounded-2xl transition-all duration-300">
                 <div class="w-14 h-14 flex items-center justify-center mb-3 transition-transform duration-300 group-hover:scale-110">
-                    <img src="{{ asset('assets/images/icons/visa.svg') }}" class="w-full h-full object-contain" alt="UAE Visa">
+                    <img src="<?php echo e(asset('assets/images/icons/visa.svg')); ?>" class="w-full h-full object-contain" alt="UAE Visa">
                 </div>
                 <h4 class="font-heading italic font-bold text-lg text-mst-gray group-hover:text-mst transition-colors
                                 duration-200">UAE <span class="text-mst">Visa</span></h4>
                 <p class="font-body text-gray-700 text-sm mt-1 leading-snug">Hassle-free visa support & processing</p>
             </a>
             <!-- Card 5: Abu Dhabi Tours -->
-            <a href="{{ url('/abu-dhabi-tours') }}" class="group flex flex-col items-center text-center p-4
+            <a href="<?php echo e(url('/abu-dhabi-tours')); ?>" class="group flex flex-col items-center text-center p-4
                          bg-gray-50
                         border border-gray-200 rounded-2xl transition-all duration-300">
                 <div class="w-14 h-14 flex items-center justify-center mb-3 transition-transform duration-300 group-hover:scale-110">
-                    <img src="{{ asset('assets/images/icons/abu.svg') }}" class="w-full h-full object-contain" alt="Abu Dhabi Tours">
+                    <img src="<?php echo e(asset('assets/images/icons/abu.svg')); ?>" class="w-full h-full object-contain" alt="Abu Dhabi Tours">
                 </div>
                 <h4 class="font-heading italic font-bold text-lg text-mst-gray group-hover:text-mst transition-colors
                                 duration-200">Abu Dhabi <span class="text-mst">Tours</span></h4>
                 <p class="font-body text-gray-700 text-sm mt-1 leading-snug">Explore Abu Dhabi's top attractions</p>
             </a>
             <!-- Card 6: Holiday Packages -->
-            <a href="{{ url('/holiday-packages') }}" class="group flex flex-col items-center text-center p-4
+            <a href="<?php echo e(url('/holiday-packages')); ?>" class="group flex flex-col items-center text-center p-4
                          bg-gray-50
                         border border-gray-200 rounded-2xl transition-all duration-300">
                 <div class="w-14 h-14 flex items-center justify-center mb-3 transition-transform duration-300 group-hover:scale-110">
-                    <img src="{{ asset('assets/images/icons/holiday.svg') }}" class="w-full h-full object-contain" alt="Holiday Packages">
+                    <img src="<?php echo e(asset('assets/images/icons/holiday.svg')); ?>" class="w-full h-full object-contain" alt="Holiday Packages">
                 </div>
                 <h4 class="font-heading italic font-bold text-lg text-mst-gray group-hover:text-mst transition-colors
                                 duration-200">Holiday <span class="text-mst">Packages</span></h4>
@@ -433,7 +433,7 @@
     <div class="container mx-auto">
         <div class="flex flex-col md:flex-row items-center gap-6 md:gap-8">
             <div class="w-16 h-16 md:w-20 md:h-20 flex-shrink-0 flex items-center justify-center">
-                <img src="{{ asset('assets/images/icons/glob.svg') }}" class="w-full h-full object-contain" alt="Globe">
+                <img src="<?php echo e(asset('assets/images/icons/glob.svg')); ?>" class="w-full h-full object-contain" alt="Globe">
             </div>
             <div class="flex-1 text-center md:text-left">
                 <p class="font-body text-gray-700 text-sm md:text-base leading-relaxed">
@@ -445,3 +445,4 @@
         </div>
     </div>
 </section>
+<?php /**PATH D:\laragon\www\mysaifco-laravel\resources\views/frontend/pages/includes/contact_us.blade.php ENDPATH**/ ?>

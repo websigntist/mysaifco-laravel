@@ -320,8 +320,9 @@ class MainController
             }
         }
 
-        if ($slug === 'faqs' || $includeFile === 'faqs' || $slug === 'umrah-faqs' || $includeFile === 'umrah-faqs') {
+        if ($slug === 'faqs' || $includeFile === 'faqs' || $slug === 'umrah-faqs' || $includeFile === 'umrah-faqs' || $slug === 'contact-us' || $includeFile === 'contact_us') {
             $viewData['allFaqs'] = Faq::where('status', 'Active')->orderBy('ordering')->orderByDesc('id')->get();
+            $viewData['faqs'] = Faq::where('status', 'Active')->orderBy('ordering')->limit(6)->get();
             $viewData = array_merge($viewData, $this->allCategoriesFaqsViewData());
         }
 
