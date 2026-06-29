@@ -2,7 +2,7 @@
     <div class="px-4 relative flex min-h-[400px] w-full
                     items-center justify-center overflow-hidden">
         <div class="absolute inset-0 scale-100 bg-cover bg-top bg-no-repeat"
-             style="background-image: url('{{ asset('assets/images/pages/1782583577_6a40111912011_image.webp') }}')"
+             style="background-image: url('{{ asset('assets/images/pages/1782765765_6a42d8c5e0c42_image.webp') }}')"
              aria-hidden="true"></div>
         {{--@dump($explore_uae)--}}
         <div class="absolute inset-0 bg-gradient-to-r from-[#ffffff]/90 to-[#ffffff]/0" aria-hidden="true"></div>
