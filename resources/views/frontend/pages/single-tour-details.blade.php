@@ -631,7 +631,7 @@
                                     <div class="items-start w-45">
                                         <div class="text-sm font-semibold text-mst-gray mb-3">Services</div>
                                         <div class="flex gap-2">
-                                            <input type="checkbox" class="addon-checkbox mt-1 w-4 h-4 rounded border-gray-300 text-mst focus:ring-mst cursor-pointer" data-id="1" data-price="100" checked>
+                                            <input type="checkbox" class="addon-checkbox mt-1 w-5 h-5 rounded-md border border-gray-300 bg-white checked:bg-[#282828] checked:border-[#282828] appearance-none cursor-pointer flex items-center justify-center flex-shrink-0 after:content-[''] after:hidden checked:after:block after:w-1.5 after:h-2.5 after:border-r-2 after:border-b-2 after:border-white after:rotate-45 after:-translate-y-[1px]" data-id="1" data-price="100" checked>
                                             <div>
                                                 <div class="text-xs text-mst-gray leading-tight">
                                                     Add 30 mins Quad Bike Ride (Inside the Fence)
@@ -706,7 +706,7 @@
                             <!-- Add-on 2 -->
                             <div class="border border-gray-200 rounded-2xl p-3 bg-white flex items-center justify-between gap-3 shadow-xs">
                                 <div class="flex items-start gap-2.5">
-                                    <input type="checkbox" class="addon-checkbox mt-1 w-4 h-4 rounded border-gray-300 text-mst focus:ring-mst cursor-pointer" data-id="2" data-price="150">
+                                    <input type="checkbox" class="addon-checkbox mt-1 w-5 h-5 rounded-md border border-gray-300 bg-white checked:bg-[#282828] checked:border-[#282828] appearance-none cursor-pointer flex items-center justify-center flex-shrink-0 after:content-[''] after:hidden checked:after:block after:w-1.5 after:h-2.5 after:border-r-2 after:border-b-2 after:border-white after:rotate-45 after:-translate-y-[1px]" data-id="2" data-price="150">
                                     <div>
                                         <div class="text-xs font-semibold text-gray-800 leading-tight">Add 30 mins Quad
                                                                                                        Bike Ride (Open
@@ -730,7 +730,7 @@
                             <!-- Add-on 3 -->
                             <div class="border border-gray-200 rounded-2xl p-3 bg-white flex items-center justify-between gap-3 shadow-xs">
                                 <div class="flex items-start gap-2.5">
-                                    <input type="checkbox" class="addon-checkbox mt-1 w-4 h-4 rounded border-gray-300 text-mst focus:ring-mst cursor-pointer" data-id="3" data-price="250">
+                                    <input type="checkbox" class="addon-checkbox mt-1 w-5 h-5 rounded-md border border-gray-300 bg-white checked:bg-[#282828] checked:border-[#282828] appearance-none cursor-pointer flex items-center justify-center flex-shrink-0 after:content-[''] after:hidden checked:after:block after:w-1.5 after:h-2.5 after:border-r-2 after:border-b-2 after:border-white after:rotate-45 after:-translate-y-[1px]" data-id="3" data-price="250">
                                     <div>
                                         <div class="text-xs font-semibold text-gray-800 leading-tight">Add 30 mins Buggy
                                                                                                        (2 Seater)
@@ -753,7 +753,7 @@
                             <!-- Add-on 4 -->
                             <div class="border border-gray-200 rounded-2xl p-3 bg-white flex items-center justify-between gap-3 shadow-xs">
                                 <div class="flex items-start gap-2.5">
-                                    <input type="checkbox" class="addon-checkbox mt-1 w-4 h-4 rounded border-gray-300 text-mst focus:ring-mst cursor-pointer" data-id="4" data-price="350">
+                                    <input type="checkbox" class="addon-checkbox mt-1 w-5 h-5 rounded-md border border-gray-300 bg-white checked:bg-[#282828] checked:border-[#282828] appearance-none cursor-pointer flex items-center justify-center flex-shrink-0 after:content-[''] after:hidden checked:after:block after:w-1.5 after:h-2.5 after:border-r-2 after:border-b-2 after:border-white after:rotate-45 after:-translate-y-[1px]" data-id="4" data-price="350">
                                     <div>
                                         <div class="text-xs font-semibold text-gray-800 leading-tight">Add 30 mins Buggy
                                                                                                        (4 Seater)
@@ -776,7 +776,7 @@
                             <!-- Add-on 5 -->
                             <div class="border border-gray-200 rounded-2xl p-3 bg-white flex items-center justify-between gap-3 shadow-xs">
                                 <div class="flex items-start gap-2.5">
-                                    <input type="checkbox" class="addon-checkbox mt-1 w-4 h-4 rounded border-gray-300 text-mst focus:ring-mst cursor-pointer" data-id="5" data-price="400">
+                                    <input type="checkbox" class="addon-checkbox mt-1 w-5 h-5 rounded-md border border-gray-300 bg-white checked:bg-[#282828] checked:border-[#282828] appearance-none cursor-pointer flex items-center justify-center flex-shrink-0 after:content-[''] after:hidden checked:after:block after:w-1.5 after:h-2.5 after:border-r-2 after:border-b-2 after:border-white after:rotate-45 after:-translate-y-[1px]" data-id="5" data-price="400">
                                     <div>
                                         <div class="text-xs font-semibold text-gray-800 leading-tight">Add 60 mins Buggy
                                                                                                        (2 Seater)
@@ -799,7 +799,7 @@
                             <!-- Add-on 6 -->
                             <div class="border border-gray-200 rounded-2xl p-3 bg-white flex items-center justify-between gap-3 shadow-xs">
                                 <div class="flex items-start gap-2.5">
-                                    <input type="checkbox" class="addon-checkbox mt-1 w-4 h-4 rounded border-gray-300 text-mst focus:ring-mst cursor-pointer" data-id="6" data-price="550">
+                                    <input type="checkbox" class="addon-checkbox mt-1 w-5 h-5 rounded-md border border-gray-300 bg-white checked:bg-[#282828] checked:border-[#282828] appearance-none cursor-pointer flex items-center justify-center flex-shrink-0 after:content-[''] after:hidden checked:after:block after:w-1.5 after:h-2.5 after:border-r-2 after:border-b-2 after:border-white after:rotate-45 after:-translate-y-[1px]" data-id="6" data-price="550">
                                     <div>
                                         <div class="text-xs font-semibold text-gray-800 leading-tight">Add 60 mins Buggy
                                                                                                        (4 Seater)
