@@ -120,7 +120,6 @@
 <section class="tour__details py-4">
     <div class="container">
         <div class="grid grid-cols-1 md:grid-cols-[8fr_4fr] gap-6">
-
             
             <div class="leftSide__column">
                 <!-- Breadcrumbs -->
@@ -259,28 +258,58 @@
                         </h3>
                         <ul class="space-y-4 text-sm">
                             <li class="flex items-start gap-3">
-                                <img src="<?php echo e(asset('assets/images/icons/checkcircle.svg')); ?>" alt="">
-                                100% refund for cancellations made 72 hours or more before the start time of the tour (excluding the 4% payment gateway fee).
+                                <img src="<?php echo e(asset('assets/images/icons/checkcircle.svg')); ?>" alt=""> 100% refund for
+                                                                                                      cancellations made
+                                                                                                      72 hours or more
+                                                                                                      before the start
+                                                                                                      time of the tour
+                                                                                                      (excluding the 4%
+                                                                                                      payment gateway
+                                                                                                      fee).
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <img src="<?php echo e(asset('assets/images/icons/checkcircle.svg')); ?>" alt=""> 50% refund for
+                                                                                                      cancellations made
+                                                                                                      between 48 to 72
+                                                                                                      hours before the
+                                                                                                      tour start time
+                                                                                                      (excluding the 4%
+                                                                                                      payment gateway
+                                                                                                      fee).
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <img src="<?php echo e(asset('assets/images/icons/checkcircle.svg')); ?>" alt=""> No refund for
+                                                                                                      cancellations made
+                                                                                                      less than 48 hours
+                                                                                                      before the tour,
+                                                                                                      or for no-shows.
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <img src="<?php echo e(asset('assets/images/icons/checkcircle.svg')); ?>" alt=""> Once a tour or
+                                                                                                      service has
+                                                                                                      started, or if any
+                                                                                                      part of a package
+                                                                                                      has been utilized,
+                                                                                                      no refunds will be
+                                                                                                      provided.
                             </li>
                             <li class="flex items-start gap-3">
                                 <img src="<?php echo e(asset('assets/images/icons/checkcircle.svg')); ?>" alt="">
-                                50% refund for cancellations made between 48 to 72 hours before the tour start time (excluding the 4% payment gateway fee).
+                                <strong class="text-gray-800 font-bold">Important Note:</strong> A 4% payment gateway
+                                                                                                 fee applies to all
+                                                                                                 online payments. This
+                                                                                                 fee is non-refundable
+                                                                                                 in all cases.
                             </li>
                             <li class="flex items-start gap-3">
                                 <img src="<?php echo e(asset('assets/images/icons/checkcircle.svg')); ?>" alt="">
-                                No refund for cancellations made less than 48 hours before the tour, or for no-shows.
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <img src="<?php echo e(asset('assets/images/icons/checkcircle.svg')); ?>" alt="">
-                                Once a tour or service has started, or if any part of a package has been utilized, no refunds will be provided.
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <img src="<?php echo e(asset('assets/images/icons/checkcircle.svg')); ?>" alt="">
-                                <strong class="text-gray-800 font-bold">Important Note:</strong> A 4% payment gateway fee applies to all online payments. This fee is non-refundable in all cases.
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <img src="<?php echo e(asset('assets/images/icons/checkcircle.svg')); ?>" alt="">
-                                <strong class="text-gray-800 font-bold">Process:</strong> Any eligible refunds will be processed within 7 working days from the date of cancellation. The final refunded amount will depend on the above terms, minus the non-refundable gateway fee.
+                                <strong class="text-gray-800 font-bold">Process:</strong> Any eligible refunds will be
+                                                                                          processed within 7 working
+                                                                                          days from the date of
+                                                                                          cancellation. The final
+                                                                                          refunded amount will depend on
+                                                                                          the above terms, minus the
+                                                                                          non-refundable gateway fee.
                             </li>
                         </ul>
                     </div>
@@ -445,7 +474,6 @@
                     </div>
                 </div>
             </div>
-
             
             <div class="rightSide__column bg-gray-50 py-6 px-6 rounded-3xl border border-gray-200 h-fit">
                 <form id="detailed-booking-form" class="space-y-6">
@@ -462,7 +490,7 @@
                             </div>
                             <div>
                                 <div class="text-xs font-medium text-mst leading-none">STEP 1</div>
-                                <div class="text-md font-heading font-bold text-mst-gray">Select Date</div>
+                                <div class="text-sm font-heading font-bold text-mst-gray">Select Date</div>
                             </div>
                         </div>
                         <div class="relative">
@@ -488,7 +516,7 @@
                             </div>
                             <div>
                                 <div class="text-xs font-medium text-mst leading-none">STEP 2</div>
-                                <div class="text-md font-heading font-bold text-mst-gray">Select Starting Time</div>
+                                <div class="text-sm font-heading font-bold text-mst-gray">Select Starting Time</div>
                             </div>
                         </div>
                         <div class="relative">
@@ -517,7 +545,7 @@
                             </div>
                             <div>
                                 <div class="text-xs font-medium text-mst leading-none">STEP 3</div>
-                                <div class="text-md font-heading font-bold text-mst-gray">Number of Guests</div>
+                                <div class="text-sm font-heading font-bold text-mst-gray">Number of Guests</div>
                             </div>
                         </div>
                         <div class="space-y-3 pl-1">
@@ -530,13 +558,13 @@
                                 </div>
                                 <div class="flex items-center gap-2.5 border border-gray-200 rounded-lg px-2 py-0.5 bg-white select-none">
                                     <button type="button" class="w-6 h-6 flex items-center justify-center
-                                    text-mst hover:text-mst-gray font-bold text-md" id="adult-dec">
+                                    text-mst hover:text-mst-gray text-md" id="adult-dec">
                                         -
                                     </button>
                                     <span class="w-5 text-center text-sm font-bold text-mst-gray"
                                           id="adult-qty">2</span>
                                     <button type="button" class="w-6 h-6 flex items-center justify-center
-                                                                        text-mst hover:text-mst-gray font-bold text-md" id="adult-inc">
+                                                                        text-mst hover:text-mst-gray text-md" id="adult-inc">
                                         +
                                     </button>
                                 </div>
@@ -549,12 +577,12 @@
                                 </div>
                                 <div class="flex items-center gap-2.5 border border-gray-200 rounded-lg px-2 py-0.5 bg-white select-none">
                                     <button type="button" class="w-6 h-6 flex items-center justify-center
-                                                                        text-mst hover:text-mst-gray font-bold text-md" id="child-dec">
+                                                                        text-mst hover:text-mst-gray text-md" id="child-dec">
                                         -
                                     </button>
                                     <span class="w-5 text-center text-sm font-bold text-mst-gray" id="child-qty">0</span>
                                     <button type="button" class="w-6 h-6 flex items-center justify-center
-                                                                        text-mst hover:text-mst-gray font-bold text-md" id="child-inc">
+                                                                        text-mst hover:text-mst-gray text-md" id="child-inc">
                                         +
                                     </button>
                                 </div>
@@ -567,12 +595,12 @@
                                 </div>
                                 <div class="flex items-center gap-2.5 border border-gray-200 rounded-lg px-2 py-0.5 bg-white select-none">
                                     <button type="button" class="w-6 h-6 flex items-center justify-center
-                                                                        text-mst hover:text-mst-gray font-bold text-md" id="infant-dec">
+                                                                        text-mst hover:text-mst-gray text-md" id="infant-dec">
                                         -
                                     </button>
                                     <span class="w-5 text-center text-sm font-bold text-mst-gray" id="infant-qty">0</span>
                                     <button type="button" class="w-6 h-6 flex items-center justify-center
-                                                                        text-mst hover:text-mst-gray font-bold text-md" id="infant-inc">
+                                                                        text-mst hover:text-mst-gray text-md" id="infant-inc">
                                         +
                                     </button>
                                 </div>
@@ -589,53 +617,89 @@
                             </div>
                             <div>
                                 <div class="text-xs font-medium text-mst leading-none">STEP 4</div>
-                                <div class="text-md font-heading font-bold text-mst-gray">Add On / Extra Services
+                                <div class="text-sm font-heading font-bold text-mst-gray">Add On / Extra Services
                                     <span class="text-xs text-gray-400 font-normal">(Optional)</span></div>
                             </div>
                         </div>
-                        <div class="text-sm texmst-t-gray pl-1 leading-tight select-none">Enhance your experiences
-                                                                                              by adding extra services
+                        <div class="text-xs texmst-t-gray ms-10 -mt-2 leading-tight select-none">
+                            Enhance your experiences by adding extra services
                         </div>
                         <div class="mt-4 space-y-3 pl-1">
                             <!-- Add-on 1 -->
-                            <div class="border border-gray-200 rounded-2xl p-3 bg-white space-y-3 shadow-xs">
-                                <div class="flex items-center justify-between gap-3">
-                                    <div class="flex items-start gap-2.5">
-                                        <input type="checkbox" class="addon-checkbox mt-1 w-4 h-4 rounded border-gray-300 text-mst focus:ring-mst cursor-pointer" data-id="1" data-price="100" checked>
-                                        <div>
-                                            <div class="text-xs font-semibold text-gray-800 leading-tight">Add 30 mins
-                                                                                                           Quad Bike
-                                                                                                           Ride (Inside
-                                                                                                           the Fence)
+                            <div class="border border-gray-200 rounded-xl p-4 space-y-3">
+                                <div class="flex justify-between gap-3 relative">
+                                    <div class="items-start w-45">
+                                        <div class="text-sm font-semibold text-mst-gray mb-3">Services</div>
+                                        <div class="flex gap-2">
+                                            <input type="checkbox" class="addon-checkbox mt-1 w-4 h-4 rounded border-gray-300 text-mst focus:ring-mst cursor-pointer" data-id="1" data-price="100" checked>
+                                            <div>
+                                                <div class="text-xs text-mst-gray leading-tight">
+                                                    Add 30 mins Quad Bike Ride (Inside the Fence)
+                                                </div>
                                             </div>
-                                            <div class="text-[10px] text-gray-500 mt-0.5">Price: AED 100</div>
                                         </div>
                                     </div>
-                                    <div class="flex items-center gap-2 border border-gray-200 rounded-lg px-1.5 py-0.5 bg-[#F9F9F9] select-none">
-                                        <button type="button" class="w-4 h-4 flex items-center justify-center text-gray-400 hover:text-mst font-bold text-[10px] addon-dec" data-id="1">
-                                            -
-                                        </button>
-                                        <span class="w-4 text-center text-xs font-bold text-gray-800 addon-qty" id="addon-1-qty">2</span>
-                                        <button type="button" class="w-4 h-4 flex items-center justify-center text-gray-400 hover:text-mst font-bold text-[10px] addon-inc" data-id="1">
-                                            +
-                                        </button>
+                                    <div class="w-20">
+                                        <div class="text-sm font-semibold text-mst-gray mb-3">Price (AED)</div>
+                                        <div class="text-xs text-mst mt-4 flex justify-center me-3">
+                                            100
+                                        </div>
                                     </div>
-                                    <div class="text-xs font-bold text-gray-800 text-right w-14 select-none">AED
-                                        <span id="addon-1-total">200</span></div>
+                                    <div class="w-20">
+                                        <div class="text-sm font-semibold text-mst-gray mb-3 ms-2">Quantity</div>
+                                        <div class="flex items-center gap-2 border border-gray-200 rounded-lg
+                                        px-1.5 py-0.5 select-none justify-between">
+                                            <button type="button" class="flex items-center justify-center text-mst text-md addon-dec" data-id="1">
+                                                -
+                                            </button>
+                                            <span class="w-4 text-center text-xs font-bold text-mst-gray addon-qty"
+                                                  id="addon-1-qty">2</span>
+                                            <button type="button" class="flex items-center justify-center text-mst text-md addon-inc" data-id="1">
+                                                +
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="w-10">
+                                        <div class="text-sm font-semibold text-mst-gray mb-3">Total</div>
+                                        <div class="text-xs text-mst mt-4 text-rightselect-none flex justify-center">
+                                            <span id="addon-1-total">200</span>
+                                        </div>
+                                    </div>
                                 </div>
                                 <!-- Nested Guests breakdown -->
-                                <div class="pl-6 pt-2 border-t border-gray-100 flex items-center gap-4 text-[10px] text-gray-600 select-none">
-                                    <div class="flex items-center gap-1">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-[#BA9B31]"></span> Adults:
-                                        <span class="font-bold text-gray-800" id="addon-1-adults">2</span>
+                                <div class="pt-3 border-t border-gray-200 items-center select-none space-y-3">
+                                    <!-- Adults -->
+                                    <div>
+                                        <div class="flex items-center justify-between gap-2.5">
+                                            <div class="flex item-center gap-3">
+                                                <img src="<?php echo e(asset('assets/images/icons/user2.svg')); ?>" class="object-contain" alt="">
+                                                <span class="text-sm font-semibold text-mst-gray mt-2">Adults</span>
+                                            </div>
+                                            <span class="font-bold text-[14px] text-gray-800 px-4 rounded-md border
+                                            border-gray-300" id="addon-1-adults">2</span>
+                                        </div>
                                     </div>
-                                    <div class="flex items-center gap-1">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-gray-300"></span> Children:
-                                        <span class="font-bold text-gray-800" id="addon-1-child">0</span>
+                                    <!-- Children -->
+                                    <div>
+                                        <div class="flex items-center justify-between gap-2.5">
+                                            <div class="flex item-center gap-3">
+                                                <img src="<?php echo e(asset('assets/images/icons/user2.svg')); ?>" class="object-contain" alt="">
+                                                <span class="text-sm font-semibold text-mst-gray mt-2">Children</span>
+                                            </div>
+                                            <span class="font-bold text-[14px] text-gray-800 px-4 rounded-md border
+                                                                                        border-gray-300" id="addon-1-adults">2</span>
+                                        </div>
                                     </div>
-                                    <div class="flex items-center gap-1">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-gray-300"></span> Infant:
-                                        <span class="font-bold text-gray-800" id="addon-1-infant">0</span>
+                                    <!-- Infant -->
+                                    <div>
+                                        <div class="flex items-center justify-between gap-2.5">
+                                            <div class="flex item-center gap-3">
+                                                <img src="<?php echo e(asset('assets/images/icons/user2.svg')); ?>" class="object-contain" alt="">
+                                                <span class="text-sm font-semibold text-mst-gray mt-2">Infant</span>
+                                            </div>
+                                            <span class="font-bold text-[14px] text-gray-800 px-4 rounded-md border
+                                                                                        border-gray-300" id="addon-1-adults">2</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -832,7 +896,6 @@
         </div>
     </div>
     <!-- Booking Form Interactive Calculations -->
-
 </section>
 
 <section class="justify-center items-center py-8">
@@ -850,8 +913,7 @@
                 <div class="flex shrink-0 md:pt-1">
                     <a href="#" class="inline-flex items-center justify-center gap-2 rounded-full
                     bg-gradient-to-r from-mst to-mst-dark transition hover:from-mst-dark hover:to-mst
-                    px-7 py-3.5 font-heading text-base italic text-white md:py-4 md:text-lg">
-                        View all
+                    px-7 py-3.5 font-heading text-base italic text-white md:py-4 md:text-lg"> View all
                         <img src="<?php echo e(asset('assets/images/icons/btn-arrow.svg')); ?>" class="ms-1 w-6" width="24" height="24" alt="">
                     </a>
                 </div>
