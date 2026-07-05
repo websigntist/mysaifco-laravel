@@ -913,75 +913,78 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="text-[10px] text-gray-400 pl-1 leading-tight flex items-center gap-1 mt-1.5 select-none">
-                            <span>ℹ</span> <span>You can add multiple quantities of the same service</span>
+                        <div class="text-xs text-mst-gray pl-1 leading-tight flex items-center gap-1 mt-1.5 select-none">
+                            <img src="<?php echo e(asset('assets/images/icons/alert2.svg')); ?>" alt="">
+                            <span>You can add multiple quantities of the same service</span>
                         </div>
                     </div>
                     <!-- PRICING SUMMARY -->
-                    <div class="mt-6 border-t border-gray-150 pt-5 space-y-2 select-none">
-                        <div class="flex items-center justify-between text-xs font-medium text-gray-500">
+                    <div class="mt-6 p-5 bg-mst/10 rounded-xl space-y-2 select-none font-heading">
+                        <div class="flex items-center justify-between text-sm font-medium text-mst-gray">
                             <span>Total Pricing (Base Price)</span>
-                            <span class="font-bold text-gray-800">AED <span id="base-price-display">600.00</span></span>
+                            <span class="font-bold text-mst-gray">AED <span id="base-price-display">600.00</span></span>
                         </div>
-                        <div class="flex items-center justify-between text-xs font-medium text-gray-500">
+                        <div class="flex items-center justify-between text-sm font-medium text-mst-gray">
                             <span>Add-ons Total</span>
-                            <span class="font-bold text-gray-800">AED <span id="addons-price-display">200.00</span></span>
+                            <span class="font-bold text-mst-gray">AED <span id="addons-price-display">200.00</span></span>
                         </div>
-                        <div class="flex items-center justify-between text-sm font-bold text-gray-800 pt-2 border-t border-gray-200">
+                        <div class="flex items-center justify-between text-md font-bold text-mst-gray pt-2 border-t
+                        border-gray-300">
                             <span>Grand Total</span>
                             <span class="text-lg text-mst font-extrabold">AED <span id="grand-price-display">800.00</span></span>
                         </div>
                     </div>
                     <!-- BOOK ACTIONS -->
                     <div class="space-y-3">
-                        <button type="submit" class="w-full flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-mst to-mst-dark hover:from-mst-dark hover:to-mst text-white font-heading font-bold italic text-sm py-3 shadow-md transition duration-300 select-none">
-                            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path>
-                            </svg>
+                        <button type="submit" class="w-full flex items-center justify-center gap-2 rounded-full
+                        bg-gradient-to-r from-mst to-mst-dark hover:from-mst-dark hover:to-mst text-white
+                        font-heading font-semibold italic text-md py-3 transition duration-300 select-none">
+                            <img src="<?php echo e(asset('assets/images/icons/lock.svg')); ?>" alt="">
                             Book Now
                         </button>
-                        <a href="https://wa.me/971505593840" target="_blank" class="w-full flex items-center justify-center gap-2 rounded-full bg-[#25D366] hover:bg-[#20BA5A] text-white font-heading font-bold italic text-sm py-3 shadow-md transition duration-300">
-                            <img src="<?php echo e(asset('assets/images/icons/whatsapp1.svg')); ?>" class="w-4 h-4 brightness-0 invert" alt="">
+                        <a href="#" target="_blank" class="w-full flex items-center justify-center gap-2 rounded-full
+                         bg-gradient-to-r from-[#2D9D3E] to-[#1E5E28] hover:from-[#1E5E28] hover:to-[#2D9D3E]
+                         text-white font-heading font-semibold italic text-md py-3
+                         shadow-md transition duration-300">
+                            <img src="<?php echo e(asset('assets/images/icons/whatsapp1.svg')); ?>" class="brightness-0 invert" alt="">
                             Book via WhatsApp </a>
                     </div>
                     <!-- NEED HELP -->
-                    <div class="bg-white border border-gray-150 rounded-2xl p-3 flex items-center justify-between gap-3 shadow-xs">
+                    <div class="p-5 bg-mst/10 rounded-xl flex items-center justify-between gap-3">
                         <div class="flex items-center gap-2">
-                            <div class="w-8 h-8 rounded-full bg-[#FFF9E6] flex items-center justify-center flex-shrink-0 select-none">
-                                <img src="<?php echo e(asset('assets/images/icons/support2.svg')); ?>" class="w-4 h-4 object-contain" alt="">
-                            </div>
+                            <img src="<?php echo e(asset('assets/images/icons/support6.svg')); ?>" class="object-contain" alt="">
                             <div>
-                                <div class="text-[11px] font-bold text-gray-800 leading-tight">Need Help?</div>
-                                <div class="text-[9px] text-gray-400 leading-none mt-0.5">We're here to help you</div>
+                                <div class="text-md font-heading font-bold text-mst italic leading-tight">Need Help?</div>
+                                <div class="text-sm text-gray-600 leading-none mt-1">We're here to help you</div>
                             </div>
                         </div>
-                        <div class="text-right space-y-0.5 leading-none">
-                            <a href="tel:+97142733888" class="block text-[11px] font-bold text-mst-gray hover:text-mst transition">+971
-                                                                                                                                   4
-                                                                                                                                   273
-                                                                                                                                   3888</a>
-                            <a href="https://wa.me/971505593840" target="_blank" class="block text-[10px] font-semibold text-green-600 hover:underline">+971
-                                                                                                                                                        50
-                                                                                                                                                        559
-                                                                                                                                                        3840</a>
+                        <div class="text-right space-y-1 leading-none font-heading">
+                            <div class="flex">
+                                <img src="<?php echo e(asset('assets/images/icons/phone9.svg')); ?>" class="me-1 object-contain" alt="">
+                                <a href="#" class="block text-sm font-bold text-mst-gray italic">+971 4 273 3888</a>
+                            </div>
+                            <div class="flex">
+                                <img src="<?php echo e(asset('assets/images/icons/wa5.svg')); ?>" class="me-1 object-contain" alt="">
+                                <a href="#" target="_blank" class="block text-sm font-bold italic">+971 50 559 3840</a>
+                            </div>
                         </div>
                     </div>
                     <!-- TRUST BADGES -->
-                    <div class="grid grid-cols-3 gap-1 pt-5 border-t border-gray-150 select-none">
+                    <div class="grid grid-cols-3 gap-1 font-heading select-none">
                         <div class="flex flex-col items-center text-center">
-                            <img src="<?php echo e(asset('assets/images/icons/trusted2.svg')); ?>" class="w-6 h-6 object-contain" alt="">
-                            <span class="text-[9px] font-bold text-gray-800 mt-1 leading-tight">Since 2008</span>
-                            <span class="text-[8px] text-gray-400 mt-0.5">Trusted Partner</span>
+                            <img src="<?php echo e(asset('assets/images/icons/4543534.svg')); ?>" class="object-contain" alt="">
+                            <span class="text-sm font-bold text-mst-gray mt-1 italic leading-tight">Since 2008</span>
+                            <span class="text-xs text-gray-500 mt-0.5">Trusted Partner</span>
                         </div>
                         <div class="flex flex-col items-center text-center">
-                            <img src="<?php echo e(asset('assets/images/icons/review.svg')); ?>" class="w-6 h-6 object-contain" alt="">
-                            <span class="text-[9px] font-bold text-gray-800 mt-1 leading-tight">50,000+</span>
-                            <span class="text-[8px] text-gray-400 mt-0.5">Happy Travelers</span>
+                            <img src="<?php echo e(asset('assets/images/icons/17years.svg')); ?>" class="object-contain" alt="">
+                            <span class="text-sm font-bold text-mst-gray mt-1 italic leading-tight">50,000+</span>
+                            <span class="text-xs text-gray-500 mt-0.5">Happy Travelers</span>
                         </div>
                         <div class="flex flex-col items-center text-center">
-                            <img src="<?php echo e(asset('assets/images/icons/badge1.svg')); ?>" class="w-6 h-6 object-contain" alt="">
-                            <span class="text-[9px] font-bold text-gray-800 mt-1 leading-tight">Licensed</span>
-                            <span class="text-[8px] text-gray-400 mt-0.5">UAE Tour Operator</span>
+                            <img src="<?php echo e(asset('assets/images/icons/badge1.svg')); ?>" class="object-contain" alt="">
+                            <span class="text-sm font-bold text-mst-gray mt-3 italic leading-tight">Licensed</span>
+                            <span class="text-xs text-gray-500 mt-0.5">UAE Tour Operator</span>
                         </div>
                     </div>
                 </form>
