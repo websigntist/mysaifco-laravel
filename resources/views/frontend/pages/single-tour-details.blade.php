@@ -704,120 +704,213 @@
                                 </div>
                             </div>
                             <!-- Add-on 2 -->
-                            <div class="border border-gray-200 rounded-2xl p-3 bg-white flex items-center justify-between gap-3 shadow-xs">
-                                <div class="flex items-start gap-2.5">
-                                    <input type="checkbox" class="addon-checkbox mt-1 w-5 h-5 rounded-md border border-gray-300 bg-white checked:bg-[#282828] checked:border-[#282828] appearance-none cursor-pointer flex items-center justify-center flex-shrink-0 after:content-[''] after:hidden checked:after:block after:w-1.5 after:h-2.5 after:border-r-2 after:border-b-2 after:border-white after:rotate-45 after:-translate-y-[1px]" data-id="2" data-price="150">
-                                    <div>
-                                        <div class="text-xs font-semibold text-gray-800 leading-tight">Add 30 mins Quad
-                                                                                                       Bike Ride (Open
-                                                                                                       Desert)
+                            <div class="border border-gray-200 rounded-xl p-4 space-y-3">
+                                <div class="flex justify-between gap-3 relative">
+                                    <div class="items-start w-45">
+                                        <div class="flex gap-2">
+                                            <input type="checkbox" class="addon-checkbox mt-1 w-5 h-5 rounded-md border border-gray-300 bg-white checked:bg-[#282828] checked:border-[#282828] appearance-none cursor-pointer flex items-center justify-center flex-shrink-0 after:content-[''] after:hidden checked:after:block after:w-1.5 after:h-2.5 after:border-r-2 after:border-b-2 after:border-white after:rotate-45 after:-translate-y-[1px]" data-id="2" data-price="150">
+                                            <div>
+                                                <div class="text-xs text-mst-gray leading-tight">
+                                                    Add 30 mins Quad Bike Ride (Open Desert)
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="text-[10px] text-gray-500 mt-0.5">Price: AED 150</div>
+                                    </div>
+                                    <div class="w-20">
+                                        <div class="text-xs text-mst mt-2 flex justify-center me-3">
+                                            150
+                                        </div>
+                                    </div>
+                                    <div class="w-20">
+                                        <div class="flex items-center gap-2 border border-gray-200 rounded-lg
+                                                                    px-1.5 py-0.5 select-none justify-between">
+                                            <button type="button" class="flex items-center justify-center text-mst
+                                            text-md addon-dec" data-id="2">
+                                                -
+                                            </button>
+                                            <span class="w-4 text-center text-xs font-bold text-mst-gray addon-qty"
+                                                  id="addon-2-qty">1</span>
+                                            <button type="button" class="flex items-center justify-center text-mst
+                                            text-md addon-inc" data-id="2">
+                                                +
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="w-10">
+                                        <div class="text-xs text-mst mt-2 text-rightselect-none flex justify-center">
+                                            <span id="addon-2-total">0</span>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="flex items-center gap-2 border border-gray-200 rounded-lg px-1.5 py-0.5 bg-[#F9F9F9] select-none">
-                                    <button type="button" class="w-4 h-4 flex items-center justify-center text-gray-400 hover:text-mst font-bold text-[10px] addon-dec" data-id="2">
-                                        -
-                                    </button>
-                                    <span class="w-4 text-center text-xs font-bold text-gray-800 addon-qty" id="addon-2-qty">0</span>
-                                    <button type="button" class="w-4 h-4 flex items-center justify-center text-gray-400 hover:text-mst font-bold text-[10px] addon-inc" data-id="2">
-                                        +
-                                    </button>
-                                </div>
-                                <div class="text-xs font-bold text-gray-800 text-right w-14 select-none">AED
-                                    <span id="addon-2-total">0</span></div>
                             </div>
                             <!-- Add-on 3 -->
-                            <div class="border border-gray-200 rounded-2xl p-3 bg-white flex items-center justify-between gap-3 shadow-xs">
-                                <div class="flex items-start gap-2.5">
-                                    <input type="checkbox" class="addon-checkbox mt-1 w-5 h-5 rounded-md border border-gray-300 bg-white checked:bg-[#282828] checked:border-[#282828] appearance-none cursor-pointer flex items-center justify-center flex-shrink-0 after:content-[''] after:hidden checked:after:block after:w-1.5 after:h-2.5 after:border-r-2 after:border-b-2 after:border-white after:rotate-45 after:-translate-y-[1px]" data-id="3" data-price="250">
-                                    <div>
-                                        <div class="text-xs font-semibold text-gray-800 leading-tight">Add 30 mins Buggy
-                                                                                                       (2 Seater)
+                            <div class="border border-gray-200 rounded-xl p-4 space-y-3">
+                                <div class="flex justify-between gap-3 relative">
+                                    <div class="items-start w-45">
+                                        <div class="flex gap-2">
+                                            <input type="checkbox" class="addon-checkbox mt-1 w-5 h-5 rounded-md
+                                            border border-gray-300 bg-white checked:bg-[#282828]
+                                            checked:border-[#282828] appearance-none cursor-pointer flex items-center justify-center flex-shrink-0 after:content-[''] after:hidden checked:after:block after:w-1.5 after:h-2.5 after:border-r-2 after:border-b-2 after:border-white after:rotate-45 after:-translate-y-[1px]" data-id="3" data-price="250">
+                                            <div>
+                                                <div class="text-xs text-mst-gray leading-tight">
+                                                    Add 30 mins Quad Bike Ride (Open Desert)
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="text-[10px] text-gray-500 mt-0.5">Price: AED 250</div>
+                                    </div>
+                                    <div class="w-20">
+                                        <div class="text-xs text-mst mt-2 flex justify-center me-3">
+                                            250
+                                        </div>
+                                    </div>
+                                    <div class="w-20">
+                                        <div class="flex items-center gap-2 border border-gray-200 rounded-lg
+                                                                                                px-1.5 py-0.5 select-none justify-between">
+                                            <button type="button" class="flex items-center justify-center text-mst
+                                                                        text-md addon-dec" data-id="3">
+                                                -
+                                            </button>
+                                            <span class="w-4 text-center text-xs font-bold text-mst-gray addon-qty"
+                                                  id="addon-3-qty">1</span>
+                                            <button type="button" class="flex items-center justify-center text-mst
+                                                                        text-md addon-inc" data-id="3">
+                                                +
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="w-10">
+                                        <div class="text-xs text-mst mt-2 text-rightselect-none flex justify-center">
+                                            <span id="addon-3-total">0</span>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="flex items-center gap-2 border border-gray-200 rounded-lg px-1.5 py-0.5 bg-[#F9F9F9] select-none">
-                                    <button type="button" class="w-4 h-4 flex items-center justify-center text-gray-400 hover:text-mst font-bold text-[10px] addon-dec" data-id="3">
-                                        -
-                                    </button>
-                                    <span class="w-4 text-center text-xs font-bold text-gray-800 addon-qty" id="addon-3-qty">0</span>
-                                    <button type="button" class="w-4 h-4 flex items-center justify-center text-gray-400 hover:text-mst font-bold text-[10px] addon-inc" data-id="3">
-                                        +
-                                    </button>
-                                </div>
-                                <div class="text-xs font-bold text-gray-800 text-right w-14 select-none">AED
-                                    <span id="addon-3-total">0</span></div>
                             </div>
                             <!-- Add-on 4 -->
-                            <div class="border border-gray-200 rounded-2xl p-3 bg-white flex items-center justify-between gap-3 shadow-xs">
-                                <div class="flex items-start gap-2.5">
-                                    <input type="checkbox" class="addon-checkbox mt-1 w-5 h-5 rounded-md border border-gray-300 bg-white checked:bg-[#282828] checked:border-[#282828] appearance-none cursor-pointer flex items-center justify-center flex-shrink-0 after:content-[''] after:hidden checked:after:block after:w-1.5 after:h-2.5 after:border-r-2 after:border-b-2 after:border-white after:rotate-45 after:-translate-y-[1px]" data-id="4" data-price="350">
-                                    <div>
-                                        <div class="text-xs font-semibold text-gray-800 leading-tight">Add 30 mins Buggy
-                                                                                                       (4 Seater)
+                            <div class="border border-gray-200 rounded-xl p-4 space-y-3">
+                                <div class="flex justify-between gap-3 relative">
+                                    <div class="items-start w-45">
+                                        <div class="flex gap-2">
+                                            <input type="checkbox" class="addon-checkbox mt-1 w-5 h-5 rounded-md
+                                                border border-gray-300 bg-white checked:bg-[#282828]
+                                                checked:border-[#282828] appearance-none
+                                                cursor-pointer flex items-center
+                                                justify-center flex-shrink-0 after:content-[''] after:hidden checked:after:block after:w-1.5 after:h-2.5 after:border-r-2 after:border-b-2 after:border-white after:rotate-45 after:-translate-y-[1px]" data-id="4" data-price="350">
+                                            <div>
+                                                <div class="text-xs text-mst-gray leading-tight">
+                                                    Add 30 mins Quad Bike Ride (Open Desert)
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="text-[10px] text-gray-500 mt-0.5">Price: AED 350</div>
+                                    </div>
+                                    <div class="w-20">
+                                        <div class="text-xs text-mst mt-2 flex justify-center me-3">
+                                            350
+                                        </div>
+                                    </div>
+                                    <div class="w-20">
+                                        <div class="flex items-center gap-2 border border-gray-200 rounded-lg px-1.5 py-0.5 select-none justify-between">
+                                            <button type="button" class="flex items-center justify-center text-mst text-md addon-dec" data-id="4">
+                                                -
+                                            </button>
+                                            <span class="w-4 text-center text-xs font-bold text-mst-gray addon-qty" id="addon-4-qty">1</span>
+                                            <button type="button" class="flex items-center justify-center text-mst text-md addon-inc" data-id="4">
+                                                +
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="w-10">
+                                        <div class="text-xs text-mst mt-2 text-rightselect-none flex justify-center">
+                                            <span id="addon-4-total">0</span>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="flex items-center gap-2 border border-gray-200 rounded-lg px-1.5 py-0.5 bg-[#F9F9F9] select-none">
-                                    <button type="button" class="w-4 h-4 flex items-center justify-center text-gray-400 hover:text-mst font-bold text-[10px] addon-dec" data-id="4">
-                                        -
-                                    </button>
-                                    <span class="w-4 text-center text-xs font-bold text-gray-800 addon-qty" id="addon-4-qty">0</span>
-                                    <button type="button" class="w-4 h-4 flex items-center justify-center text-gray-400 hover:text-mst font-bold text-[10px] addon-inc" data-id="4">
-                                        +
-                                    </button>
-                                </div>
-                                <div class="text-xs font-bold text-gray-800 text-right w-14 select-none">AED
-                                    <span id="addon-4-total">0</span></div>
                             </div>
                             <!-- Add-on 5 -->
-                            <div class="border border-gray-200 rounded-2xl p-3 bg-white flex items-center justify-between gap-3 shadow-xs">
-                                <div class="flex items-start gap-2.5">
-                                    <input type="checkbox" class="addon-checkbox mt-1 w-5 h-5 rounded-md border border-gray-300 bg-white checked:bg-[#282828] checked:border-[#282828] appearance-none cursor-pointer flex items-center justify-center flex-shrink-0 after:content-[''] after:hidden checked:after:block after:w-1.5 after:h-2.5 after:border-r-2 after:border-b-2 after:border-white after:rotate-45 after:-translate-y-[1px]" data-id="5" data-price="400">
-                                    <div>
-                                        <div class="text-xs font-semibold text-gray-800 leading-tight">Add 60 mins Buggy
-                                                                                                       (2 Seater)
+                            <div class="border border-gray-200 rounded-xl p-4 space-y-3">
+                                <div class="flex justify-between gap-3 relative">
+                                    <div class="items-start w-45">
+                                        <div class="flex gap-2">
+                                            <input type="checkbox" class="addon-checkbox mt-1 w-5 h-5 rounded-md
+                                                                            border border-gray-300 bg-white checked:bg-[#282828]
+                                                                            checked:border-[#282828] appearance-none
+                                                                            cursor-pointer flex items-center
+                                                                            justify-center flex-shrink-0
+                                                                            after:content-[''] after:hidden
+                                                                            checked:after:block after:w-1.5 after:h-2 .5 after:border-r-2 after:border-b-2 after:border-white after:rotate-45 after:-translate-y-[1px]" data-id="5" data-price="400">
+                                            <div>
+                                                <div class="text-xs text-mst-gray leading-tight">
+                                                    Add 30 mins Quad Bike Ride (Open Desert)
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="text-[10px] text-gray-500 mt-0.5">Price: AED 400</div>
+                                    </div>
+                                    <div class="w-20">
+                                        <div class="text-xs text-mst mt-2 flex justify-center me-3">
+                                            400
+                                        </div>
+                                    </div>
+                                    <div class="w-20">
+                                        <div class="flex items-center gap-2 border border-gray-200 rounded-lg px-1.5 py-0.5 select-none justify-between">
+                                            <button type="button" class="flex items-center justify-center text-mst
+                                            text-md addon-dec" data-id="5">
+                                                -
+                                            </button>
+                                            <span class="w-4 text-center text-xs font-bold text-mst-gray addon-qty"
+                                                  id="addon-5-qty">1</span>
+                                            <button type="button" class="flex items-center justify-center text-mst
+                                            text-md addon-inc" data-id="5">
+                                                +
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="w-10">
+                                        <div class="text-xs text-mst mt-2 text-rightselect-none flex justify-center">
+                                            <span id="addon-5-total">0</span>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="flex items-center gap-2 border border-gray-200 rounded-lg px-1.5 py-0.5 bg-[#F9F9F9] select-none">
-                                    <button type="button" class="w-4 h-4 flex items-center justify-center text-gray-400 hover:text-mst font-bold text-[10px] addon-dec" data-id="5">
-                                        -
-                                    </button>
-                                    <span class="w-4 text-center text-xs font-bold text-gray-800 addon-qty" id="addon-5-qty">0</span>
-                                    <button type="button" class="w-4 h-4 flex items-center justify-center text-gray-400 hover:text-mst font-bold text-[10px] addon-inc" data-id="5">
-                                        +
-                                    </button>
-                                </div>
-                                <div class="text-xs font-bold text-gray-800 text-right w-14 select-none">AED
-                                    <span id="addon-5-total">0</span></div>
                             </div>
                             <!-- Add-on 6 -->
-                            <div class="border border-gray-200 rounded-2xl p-3 bg-white flex items-center justify-between gap-3 shadow-xs">
-                                <div class="flex items-start gap-2.5">
-                                    <input type="checkbox" class="addon-checkbox mt-1 w-5 h-5 rounded-md border border-gray-300 bg-white checked:bg-[#282828] checked:border-[#282828] appearance-none cursor-pointer flex items-center justify-center flex-shrink-0 after:content-[''] after:hidden checked:after:block after:w-1.5 after:h-2.5 after:border-r-2 after:border-b-2 after:border-white after:rotate-45 after:-translate-y-[1px]" data-id="6" data-price="550">
-                                    <div>
-                                        <div class="text-xs font-semibold text-gray-800 leading-tight">Add 60 mins Buggy
-                                                                                                       (4 Seater)
+                            <div class="border border-gray-200 rounded-xl p-4 space-y-3">
+                                <div class="flex justify-between gap-3 relative">
+                                    <div class="items-start w-45">
+                                        <div class="flex gap-2">
+                                            <input type="checkbox" class="addon-checkbox mt-1 w-5 h-5 rounded-md
+                                                                        border border-gray-300 bg-white checked:bg-[#282828]
+                                                                        checked:border-[#282828] appearance-none
+                                                                        cursor-pointer flex items-center
+                                                                        justify-center flex-shrink-0
+                                                                        after:content-[''] after:hidden checked:after:block after:w-1.5 after:h-2.5 after:border-r-2 after:border-b-2 after:border-white after:rotate-45 after:-translate-y-[1px]" data-id="6" data-price="550">
+                                            <div>
+                                                <div class="text-xs text-mst-gray leading-tight">
+                                                    Add 30 mins Quad Bike Ride (Open Desert)
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="text-[10px] text-gray-500 mt-0.5">Price: AED 550</div>
+                                    </div>
+                                    <div class="w-20">
+                                        <div class="text-xs text-mst mt-2 flex justify-center me-3">
+                                            550
+                                        </div>
+                                    </div>
+                                    <div class="w-20">
+                                        <div class="flex items-center gap-2 border border-gray-200 rounded-lg
+                                                                                                                            px-1.5 py-0.5 select-none justify-between">
+                                            <button type="button" class="flex items-center justify-center text-mst text-md addon-dec" data-id="6">
+                                                -
+                                            </button>
+                                            <span class="w-4 text-center text-xs font-bold text-mst-gray addon-qty" id="addon-6-qty">1</span>
+                                            <button type="button" class="flex items-center justify-center text-mst text-md addon-inc" data-id="6">
+                                                +
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="w-10">
+                                        <div class="text-xs text-mst mt-2 text-rightselect-none flex justify-center">
+                                            <span id="addon-6-total">0</span>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="flex items-center gap-2 border border-gray-200 rounded-lg px-1.5 py-0.5 bg-[#F9F9F9] select-none">
-                                    <button type="button" class="w-4 h-4 flex items-center justify-center text-gray-400 hover:text-mst font-bold text-[10px] addon-dec" data-id="6">
-                                        -
-                                    </button>
-                                    <span class="w-4 text-center text-xs font-bold text-gray-800 addon-qty" id="addon-6-qty">0</span>
-                                    <button type="button" class="w-4 h-4 flex items-center justify-center text-gray-400 hover:text-mst font-bold text-[10px] addon-inc" data-id="6">
-                                        +
-                                    </button>
-                                </div>
-                                <div class="text-xs font-bold text-gray-800 text-right w-14 select-none">AED
-                                    <span id="addon-6-total">0</span></div>
                             </div>
                         </div>
                         <div class="text-[10px] text-gray-400 pl-1 leading-tight flex items-center gap-1 mt-1.5 select-none">
