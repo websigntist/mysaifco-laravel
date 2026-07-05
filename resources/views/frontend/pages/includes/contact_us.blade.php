@@ -27,7 +27,8 @@
                             width="24"
                             height="24"
                             alt=""
-                        > Contact Now </a> <a
+                        > Contact Now </a>
+                    <a
                         href="#"
                         class="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#2D9D3E] to-[#1E5E28]
                                             px-7 py-3 font-heading text-base italic text-white transition hover:from-mst-dark

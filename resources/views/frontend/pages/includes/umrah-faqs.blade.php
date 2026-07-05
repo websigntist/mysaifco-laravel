@@ -298,6 +298,132 @@
     </div>
 </section>
 
+{{-- seo tags --}}
+<section class="pb-14">
+    <div class="container mx-auto mt-10">
+        <h2 class="text-left font-heading text-2xl font-semibold italic leading-tight tracking-tight text-mst-gray">
+            <span>Popular  </span><span class="text-mst">Searches</span>
+        </h2>
+        <p class="text-left font-body mt-2">Quick access to what travelers explore most—making it easier to find the
+                                            right experience without the search</p>
+        <ul class="flex flex-wrap items-center justify-center gap-3 font-body text-sm
+                           bg-[#FAF7F2] mt-6 p-5 rounded-lg border border-[#BA9B31]/40">
+            <li class="bg-mst rounded-full py-2 px-4 text-white italic font-heading cursor-pointer
+                            hover:bg-gradient-to-r hover:from-[#BA9B31] to-[#74611E] transition duration-300">
+                Yacht in Dubai Marina
+            </li>
+            <li class="bg-mst rounded-full py-2 px-4 text-white italic font-heading cursor-pointer
+                            hover:bg-gradient-to-r hover:from-[#BA9B31] to-[#74611E] transition duration-300">
+                Yacht Rental Dubai
+            </li>
+            <li class="bg-mst rounded-full py-2 px-4 text-white italic font-heading cursor-pointer
+                            hover:bg-gradient-to-r hover:from-[#BA9B31] to-[#74611E] transition duration-300">
+                Dune Bashing Dubai
+            </li>
+            <li class="bg-mst rounded-full py-2 px-4 text-white italic font-heading cursor-pointer
+                            hover:bg-gradient-to-r hover:from-[#BA9B31] to-[#74611E] transition duration-300">
+                Quad Biking Dubai
+            </li>
+            <li class="bg-mst rounded-full py-2 px-4 text-white italic font-heading cursor-pointer
+                            hover:bg-gradient-to-r hover:from-[#BA9B31] to-[#74611E] transition duration-300">
+                VR5 Tasheel Locations
+            </li>
+            <li class="bg-mst rounded-full py-2 px-4 text-white italic font-heading cursor-pointer
+                            hover:bg-gradient-to-r hover:from-[#BA9B31] to-[#74611E] transition duration-300">
+                Desert Safari in Dubai
+            </li>
+            <li class="bg-mst rounded-full py-2 px-4 text-white italic font-heading cursor-pointer
+                            hover:bg-gradient-to-r hover:from-[#BA9B31] to-[#74611E] transition duration-300">
+                Ski Dubai Tickets Offer
+            </li>
+            <li class="bg-mst rounded-full py-2 px-4 text-white italic font-heading cursor-pointer
+                            hover:bg-gradient-to-r hover:from-[#BA9B31] to-[#74611E] transition duration-300">
+                Legoland Dubai Tickets
+            </li>
+            <li class="bg-mst rounded-full py-2 px-4 text-white italic font-heading cursor-pointer
+                            hover:bg-gradient-to-r hover:from-[#BA9B31] to-[#74611E] transition duration-300">
+                The Frame Dubai Tickets
+            </li>
+            <li class="bg-mst rounded-full py-2 px-4 text-white italic font-heading cursor-pointer
+                            hover:bg-gradient-to-r hover:from-[#BA9B31] to-[#74611E] transition duration-300">
+                Umrah By Bus
+            </li>
+            <li class="bg-mst rounded-full py-2 px-4 text-white italic font-heading cursor-pointer
+                            hover:bg-gradient-to-r hover:from-[#BA9B31] to-[#74611E] transition duration-300">
+                Umrah Services Dubai
+            </li>
+            <li class="bg-mst rounded-full py-2 px-4 text-white italic font-heading cursor-pointer
+                            hover:bg-gradient-to-r hover:from-[#BA9B31] to-[#74611E] transition duration-300">
+                Theme Park Tickets
+            </li>
+            <li class="bg-mst rounded-full py-2 px-4 text-white italic font-heading cursor-pointer
+                            hover:bg-gradient-to-r hover:from-[#BA9B31] to-[#74611E] transition duration-300">
+                Safari Tour Dubai
+            </li>
+            <li class="bg-mst rounded-full py-2 px-4 text-white italic font-heading cursor-pointer
+                            hover:bg-gradient-to-r hover:from-[#BA9B31] to-[#74611E] transition duration-300">
+                Speed Boat Tour
+            </li>
+            <li class="bg-mst rounded-full py-2 px-4 text-white italic font-heading cursor-pointer
+                            hover:bg-gradient-to-r hover:from-[#BA9B31] to-[#74611E] transition duration-300">
+                Yacht for Party
+            </li>
+            <li class="bg-mst rounded-full py-2 px-4 text-white italic font-heading cursor-pointer
+                            hover:bg-gradient-to-r hover:from-[#BA9B31] to-[#74611E] transition duration-300">
+                Online Travel Agency
+            </li>
+            <li class="bg-mst rounded-full py-2 px-4 text-white italic font-heading cursor-pointer
+                            hover:bg-gradient-to-r hover:from-[#BA9B31] to-[#74611E] transition duration-300">
+                Dinner Cruise Dubai
+            </li>
+            <li class="bg-mst rounded-full py-2 px-4 text-white italic font-heading cursor-pointer
+                            hover:bg-gradient-to-r hover:from-[#BA9B31] to-[#74611E] transition duration-300">
+                Abu Dhabi City Tour
+            </li>
+            <li class="bg-mst rounded-full py-2 px-4 text-white italic font-heading cursor-pointer
+                            hover:bg-gradient-to-r hover:from-[#BA9B31] to-[#74611E] transition duration-300">
+                Abu Dhabi Tour Packages
+            </li>
+            <li class="bg-mst rounded-full py-2 px-4 text-white italic font-heading cursor-pointer
+                            hover:bg-gradient-to-r hover:from-[#BA9B31] to-[#74611E] transition duration-300">
+                Umrah By Air
+            </li>
+            <li class="bg-mst rounded-full py-2 px-4 text-white italic font-heading cursor-pointer
+                            hover:bg-gradient-to-r hover:from-[#BA9B31] to-[#74611E] transition duration-300">
+                Deep Sea Fishing
+            </li>
+            <li class="bg-mst rounded-full py-2 px-4 text-white italic font-heading cursor-pointer
+                            hover:bg-gradient-to-r hover:from-[#BA9B31] to-[#74611E] transition duration-300">
+                Desert Safari Deals
+            </li>
+            <li class="bg-mst rounded-full py-2 px-4 text-white italic font-heading cursor-pointer
+                            hover:bg-gradient-to-r hover:from-[#BA9B31] to-[#74611E] transition duration-300">
+                Dibba Dhow Cruise
+            </li>
+            <li class="bg-mst rounded-full py-2 px-4 text-white italic font-heading cursor-pointer
+                            hover:bg-gradient-to-r hover:from-[#BA9B31] to-[#74611E] transition duration-300">
+                Tour Operator in Dubai
+            </li>
+            <li class="bg-mst rounded-full py-2 px-4 text-white italic font-heading cursor-pointer
+                            hover:bg-gradient-to-r hover:from-[#BA9B31] to-[#74611E] transition duration-300">
+                Umrah From Dubai
+            </li>
+            <li class="bg-mst rounded-full py-2 px-4 text-white italic font-heading cursor-pointer
+                            hover:bg-gradient-to-r hover:from-[#BA9B31] to-[#74611E] transition duration-300">
+                Umrah Travel Agency
+            </li>
+            <li class="bg-mst rounded-full py-2 px-4 text-white italic font-heading cursor-pointer
+                            hover:bg-gradient-to-r hover:from-[#BA9B31] to-[#74611E] transition duration-300">
+                Aquaventure Waterpark
+            </li>
+            <li class="bg-mst rounded-full py-2 px-4 text-white italic font-heading cursor-pointer
+                            hover:bg-gradient-to-r hover:from-[#BA9B31] to-[#74611E] transition duration-300">
+                Morning Desert Safari
+            </li>
+        </ul>
+    </div>
+</section>
+
 <section class="seoGlobe py-10 bg-white border-t border-[#F0F0F0]">
     <div class="container mx-auto">
         <div class="flex flex-col md:flex-row items-center gap-6 md:gap-8">

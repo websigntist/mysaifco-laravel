@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 29, 2026 at 11:16 PM
+-- Generation Time: Jul 05, 2026 at 06:04 PM
 -- Server version: 8.4.2
 -- PHP Version: 8.4.21
 
@@ -1275,7 +1275,10 @@ INSERT INTO `pages` (`id`, `parent_id`, `menu_title`, `page_title`, `show_title`
 (59, 0, 'FAQs', 'FAQs', 0, NULL, 'faqs', '<p>[include file=\"faqs\"]</p>', 'published', '1782415698_6a3d81521a2b6_image.webp', 'faqs', 'FAQs', 'Box Container', 'Yes', 2, 'FAQs', NULL, NULL, 1, '2026-06-25 14:12:00', '2026-06-25 14:28:18', NULL),
 (60, 0, 'Umrah FAQs', 'Umrah FAQs', 0, NULL, 'umrah-faqs', '<p>[include file=\"umrah-faqs\"]</p>', 'published', '1782498306_6a3ec402a59a4_image.webp', 'umrah-faqs', 'Umrah FAQs', 'Box Container', 'Yes', 2, 'Umrah FAQs', NULL, NULL, 1, '2026-06-26 10:01:48', '2026-06-26 13:25:06', NULL),
 (61, 0, 'Blogs', 'Blogs', 0, NULL, 'blogs', '<p>[include file=\"blogs\"]</p>', 'published', '1782556549_6a3fa7851bfc7_image.webp', 'blogs', 'Blogs', 'Box Container', 'Yes', 2, 'Blogs', NULL, NULL, 1, '2026-06-27 05:35:08', '2026-06-27 05:35:49', NULL),
-(62, 0, 'Testing', 'Testing', 0, NULL, 'testing', '<p>[include file=\"testing\"]</p>', 'published', 'dup_6a3ffc47de4d19.19875241.webp', 'testing', 'Testing', 'Box Container', 'Yes', 2, 'Testing', NULL, NULL, 1, '2026-06-27 11:37:27', '2026-06-27 11:43:17', '2026-06-27 11:43:17');
+(62, 0, 'Testing', 'Testing', 0, NULL, 'testing', '<p>[include file=\"testing\"]</p>', 'published', 'dup_6a3ffc47de4d19.19875241.webp', 'testing', 'Testing', 'Box Container', 'Yes', 2, 'Testing', NULL, NULL, 1, '2026-06-27 11:37:27', '2026-06-27 11:43:17', '2026-06-27 11:43:17'),
+(63, 0, 'Single Tour Details', 'Single Tour Details', 0, NULL, 'single-tour-details', '<p>[include file=\"single-tour-details\"]</p>', 'published', 'dup_6a4956f1df3a42.36912377.webp', 'single-tour-details', 'Single Tour Details', 'Box Container', 'Yes', 2, 'Single Tour Details', NULL, NULL, 1, '2026-07-04 13:54:41', '2026-07-04 14:49:11', NULL),
+(64, 0, 'Terms & Conditions', 'Terms Conditions', 0, NULL, 'terms-conditions', '<p>[include file=\"terms-condition\"]</p>', 'published', '1783263792_6a4a7230031f8_image.webp', 'terms-conditions', 'Terms Conditions', 'Box Container', 'Yes', 2, 'Terms and Conditions', NULL, NULL, 1, '2026-07-05 09:54:31', '2026-07-05 10:03:12', NULL),
+(65, 0, 'privacy-policy', 'Privacy Policy', 0, NULL, 'privacy-policy', '<p>[include file=\"privacy-policy\"]</p>', 'published', 'dup_6a4a9b763eaaf1.37545438.webp', 'privacy-policy', 'Privacy Policy', 'Box Container', 'Yes', 2, 'Privacy Policy', NULL, NULL, 1, '2026-07-05 12:59:18', '2026-07-05 12:59:42', NULL);
 
 -- --------------------------------------------------------
 
@@ -1678,12 +1681,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('LG2X59yi1huxiZsaC0lZgdzAxw5ISvdyfc7CqpJG', NULL, NULL, '', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiNVE3VklkM01YdXhabmhDYVdHblRCa01pWlNoa1FGa2NySmVuQmhKYyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6ODoiaHR0cDovLzoiO3M6NToicm91dGUiO3M6MToiLyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1782770356),
-('nVmqqPH02QxRAGC9qyX1pVXGEUiNxGWZZCAKswDS', NULL, NULL, '', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiMWtPTVVoOWYybTN3Q1hqNHFyVk5tdURmNzJOWmZJUTFRRFdqWFRDdSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6ODoiaHR0cDovLzoiO3M6NToicm91dGUiO3M6MToiLyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1782774251),
-('TeWPbKWy1Z0X7qeuqUuQ6b3q8ZKXGBJq0UjRJ9Us', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiTGk1RG11WUxsQWtHT080WFBQa2lzTlhvdjFBbGU5dHUyajhJc29uZiI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NDA6Imh0dHBzOi8vbXlzYWlmY28tbGFyYXZlbC50ZXN0L2NvbnRhY3QtdXMiO3M6NToicm91dGUiO3M6MTI6InBhZ2UuZGVmYXVsdCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7fQ==', 1782774800),
-('U5rDlOLcXI9QrudnfMYM02i2oKl4MuFy5j2Xopfs', NULL, NULL, '', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoienBkbFZvYjRlT1NycHRKMTBqOElCQ25ycFk5b0ZONFVnTEFBZUJKRCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6ODoiaHR0cDovLzoiO3M6NToicm91dGUiO3M6MToiLyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1782774607),
-('w2yuXZ9AiOanAlMowwhuunHdds6nfxtXll0Gp0ox', NULL, NULL, '', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoicDlMbXBhQ0JGM3NGdVdjRW81Z2ZBRjJzdjJScXdtS2JRTFFsSEN0NiI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6ODoiaHR0cDovLzoiO3M6NToicm91dGUiO3M6MToiLyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1782766776),
-('WANw2ODBztnRGBliSjCYKkTkx4Ap8zLWZy2w1AXW', NULL, NULL, '', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiVGxYVlVxVzJrUGxLWk9SM0lieGxyMDBXaDYwS3lWbHVqeWZsU05VMyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6ODoiaHR0cDovLzoiO3M6NToicm91dGUiO3M6MToiLyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1782772600);
+('9YdjLta2H3q3ITLsKJ79Z92baNsTJlHNclhXArEL', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiVHNac0d6aUZ2c2NoMXlqaXJPTXJ1cWg3emxtVG1EMjdYN0djWTByUyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NDQ6Imh0dHBzOi8vbXlzYWlmY28tbGFyYXZlbC50ZXN0L3ByaXZhY3ktcG9saWN5IjtzOjU6InJvdXRlIjtzOjEyOiJwYWdlLmRlZmF1bHQiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjM6InVybCI7YToxOntzOjg6ImludGVuZGVkIjtzOjU0OiJodHRwczovL215c2FpZmNvLWxhcmF2ZWwudGVzdC9hZG1pbi9wYWdlcy9kdXBsaWNhdGUvNjAiO31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO30=', 1783274678);
 
 -- --------------------------------------------------------
 
@@ -2653,7 +2651,7 @@ ALTER TABLE `modules`
 -- AUTO_INCREMENT for table `pages`
 --
 ALTER TABLE `pages`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT for table `popular_searches`

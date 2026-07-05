@@ -494,11 +494,10 @@
                             </div>
                         </div>
                         <div class="relative">
-                            <div class="w-full flex items-center justify-between border border-gray-200 rounded-xl px-4 py-3 text-mst-gray cursor-pointer">
+                            <div class="w-full flex items-center justify-between border border-gray-200 rounded-xl px-4 py-3 text-mst-gray cursor-pointer" onclick="const input = document.getElementById('booking-tour-date'); input.type='date'; try { input.showPicker(); } catch(e) { input.focus(); }">
                                 <div class="flex items-center gap-2.5 w-full">
                                     <img src="{{ asset('assets/images/icons/3dcalender.svg') }}" class="object-contain flex-shrink-0 pointer-events-none" alt="">
-                                    <input type="date" id="booking-tour-date" class="font-body text-sm font-medium
-                                    focus:outline-none bg-transparent w-full cursor-pointer text-mst-gray" required>
+                                    <input type="text" id="booking-tour-date" placeholder="Choose your tour date" onfocus="this.type='date'; try { this.showPicker(); } catch(e) {}" onblur="if(!this.value)this.type='text'" class="font-body text-sm font-medium focus:outline-none bg-transparent w-full cursor-pointer text-mst-gray" required>
                                 </div>
                                 <svg class="w-3.5 h-3.5 text-gray-400 flex-shrink-0 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
@@ -520,16 +519,13 @@
                             </div>
                         </div>
                         <div class="relative">
-                            <select id="booking-tour-time" class="w-full appearance-none border border-gray-200
-                            rounded-xl px-4 py-3 text-sm font-medium focus:outline-none focus:border-[#BA9B31]
-                            cursor-pointer text-mst-gray">
-                                <option value="">Please select the date first</option>
-                                <option value="09:00 AM">09:00 AM</option>
-                                <option value="10:00 AM">10:00 AM</option>
-                                <option value="02:00 PM">02:00 PM</option>
-                            </select>
-                            <div class="pointer-events-none absolute inset-y-0 right-4 flex items-center text-gray-400">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                            <div class="w-full flex items-center justify-between border border-gray-200 rounded-xl px-4 py-3 text-mst-gray cursor-pointer" onclick="const input = document.getElementById('booking-tour-time'); input.type='time'; try { input.showPicker(); } catch(e) { input.focus(); }">
+                                <div class="flex items-center gap-2.5 w-full">
+                                    <!-- Circular blue clock icon -->
+                                    <img src="{{ asset('assets/images/icons/3dclock.svg') }}" class="object-contain flex-shrink-0 pointer-events-none" alt="">
+                                    <input type="text" id="booking-tour-time" placeholder="Please select the date first" onfocus="this.type='time'; try { this.showPicker(); } catch(e) {}" onblur="if(!this.value)this.type='text'" class="font-body text-sm font-medium focus:outline-none bg-transparent w-full cursor-pointer text-mst-gray" required>
+                                </div>
+                                <svg class="w-3.5 h-3.5 text-gray-400 flex-shrink-0 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
                                 </svg>
                             </div>

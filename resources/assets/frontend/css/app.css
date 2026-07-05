@@ -40,8 +40,12 @@
         @apply font-heading text-mst-gray text-4xl italic capitalize font-semibold;
     }
 
-    h3, h4, h5, h6 {
+    h3 {
         @apply font-heading text-mst-gray capitalize font-semibold text-lg italic;
+    }
+
+    h4, h5, h6 {
+        @apply font-heading text-mst-gray capitalize;
     }
 
     img:not([class*="holiday-card__img"]):not([class*="object-cover"]),

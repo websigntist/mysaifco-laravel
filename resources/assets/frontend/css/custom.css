@@ -811,3 +811,12 @@
         background-size: 180px auto, cover !important;
     }
 }
+#booking-tour-time::-webkit-calendar-picker-indicator {
+                                   display: none !important;
+                                   -webkit-appearance: none !important;
+                               }
+/* Hide native date picker calendar icon */
+                                #booking-tour-date::-webkit-calendar-picker-indicator {
+                                    display: none !important;
+                                    -webkit-appearance: none !important;
+                                }
