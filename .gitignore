@@ -27,3 +27,4 @@ yarn-error.log
 .resources/assets/backend/js/app-logistics-fleet.js
 resources/assets/backend/js/app-logistics-fleet.js
 /.github
+/.htaccess
