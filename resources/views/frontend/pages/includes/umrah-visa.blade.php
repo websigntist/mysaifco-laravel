@@ -196,7 +196,7 @@
 <section class="pt-12">
     <div class="container mx-auto">
         <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 md:p-10">
-            <h2 class="font-heading italic font-bold text-3xl md:text-4xl text-mst-gray text-center mb-10">How to <span class="text-mst">Apply?</span></h2>
+            <h2 class="font-heading italic font-bold text-3xl text-mst-gray text-center mb-10">How to <span class="text-mst">Apply?</span></h2>
             <div class="grid grid-cols-1 sm:grid-cols-5 gap-8 sm:gap-2">
                 @foreach($applySteps as $i => $step)
                     <div class="relative flex flex-col items-center text-center">
@@ -253,7 +253,7 @@
 
 @include('frontend.components.testimonials');
 {{-- FAQs --}}
-<section class="flex items-center justify-center pt-10 pb-0">
+<section class="flex items-center justify-center pb-0">
     <div class="container mx-auto px-4">
         <div class="mx-auto text-center">
             <h1 class="text-3xl md:text-4xl">

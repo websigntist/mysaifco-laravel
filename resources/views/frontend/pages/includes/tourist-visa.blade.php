@@ -140,7 +140,7 @@
             {{-- Visa Overview --}}
             <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 md:p-8">
                 <h2 class="font-heading italic font-bold text-2xl text-mst-gray mb-4">Visa <span class="text-mst">Overview</span></h2>
-                <p class="font-body text-mst-gray leading-7 mb-6">
+                <p class="font-body text-mst-gray leading-7 mb-6 text-[16px]">
                     The 30 Days UAE Tourist Visa is perfect for travelers who want to explore Dubai and the Emirates for
                     tourism, family visits, or short business meetings. This visa is valid for 30 days from the date of entry.
                 </p>
@@ -271,7 +271,8 @@
 <section class="pt-16 pb-4">
     <div class="container mx-auto">
         <div class="flex items-center justify-center gap-4 mb-2">
-            <h2 class="font-heading italic font-bold text-3xl md:text-4xl text-mst-gray text-center">Application <span class="text-mst">Process</span></h2>
+            <h2 class="font-heading italic font-bold text-4xl text-mst-gray text-center">Application
+                <span class="text-mst">Process</span></h2>
         </div>
         <p class="font-body text-mst-gray text-center max-w-2xl mx-auto mt-3 text-[16px]">
             We offer fast, reliable and hasle-free UAE tourist visa and mutiple entry visa services</p>

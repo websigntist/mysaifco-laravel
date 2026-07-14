@@ -112,7 +112,7 @@
 <section>
     <div class="container mx-auto">
         <div class="flex items-center justify-center gap-4 mb-2">
-            <h2 class="font-heading italic font-bold text-3xl md:text-4xl text-mst-gray text-center">
+            <h2 class="font-heading italic font-bold text-3xl text-mst-gray text-center">
                 UAE Tourist & Multiple <span class="text-mst">Entry Visa Service</span></h2>
         </div>
         <p class="font-body text-mst-gray text-center max-w-2xl mx-auto mt-3 text-[16px]">
@@ -142,7 +142,7 @@
 <section class="mt-10">
     <div class="container mx-auto">
         <div class="flex items-center justify-center gap-4 mb-2">
-            <h2 class="font-heading italic font-bold text-3xl md:text-4xl text-mst-gray text-center">
+            <h2 class="font-heading italic font-bold text-3xl text-mst-gray text-center">
                 Saudi & Umrah  <span class="text-mst">Visa Service</span></h2>
         </div>
         <p class="font-body text-mst-gray text-center max-w-2xl mx-auto mt-3 text-[16px]">
@@ -172,7 +172,7 @@
 <section class="mt-10">
     <div class="container mx-auto">
         <div class="flex items-center justify-center gap-4 mb-2">
-            <h2 class="font-heading italic font-bold text-3xl md:text-4xl text-mst-gray text-center">
+            <h2 class="font-heading italic font-bold text-3xl text-mst-gray text-center">
                 Popular Travel  <span class="text-mst">Destinations</span></h2>
         </div>
         <p class="font-body text-mst-gray text-center max-w-2xl mx-auto mt-3 text-[16px]">
@@ -202,7 +202,7 @@
 <section class="mt-10">
     <div class="container mx-auto">
         <div class="flex items-center justify-center gap-4 mb-2">
-            <h2 class="font-heading italic font-bold text-3xl md:text-4xl text-mst-gray text-center">
+            <h2 class="font-heading italic font-bold text-3xl text-mst-gray text-center">
                 African Safari  <span class="text-mst">Destinations</span></h2>
         </div>
         <p class="font-body text-mst-gray text-center max-w-2xl mx-auto mt-3 text-[16px]">
@@ -231,7 +231,7 @@
 {{-- ===== Visa Application Process ===== --}}
 <section class="pt-16 pb-4">
     <div class="container mx-auto">
-        <h2 class="font-heading italic font-bold text-3xl md:text-4xl text-mst-gray text-center">Visa Application
+        <h2 class="font-heading italic font-bold text-3xl text-mst-gray text-center">Visa Application
             <span class="text-mst">Process</span></h2>
         <p class="font-body text-mst-gray text-center max-w-2xl mx-auto mt-3 text-[16px]">
             We offer fast, reliable and hasle-free UAE tourist visa and mutiple entry visa services</p>
