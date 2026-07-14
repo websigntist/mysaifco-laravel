@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 13, 2026 at 11:08 PM
+-- Generation Time: Jul 14, 2026 at 11:33 AM
 -- Server version: 8.4.2
 -- PHP Version: 8.4.21
 
@@ -1280,7 +1280,9 @@ INSERT INTO `pages` (`id`, `parent_id`, `menu_title`, `page_title`, `show_title`
 (64, 0, 'Terms & Conditions', 'Terms Conditions', 0, NULL, 'terms-conditions', '<p>[include file=\"terms-condition\"]</p>', 'published', '1783263792_6a4a7230031f8_image.webp', 'terms-conditions', 'Terms Conditions', 'Box Container', 'Yes', 2, 'Terms and Conditions', NULL, NULL, 1, '2026-07-05 09:54:31', '2026-07-05 10:03:12', NULL),
 (65, 0, 'privacy-policy', 'Privacy Policy', 0, NULL, 'privacy-policy', '<p>[include file=\"privacy-policy\"]</p>', 'published', 'dup_6a4a9b763eaaf1.37545438.webp', 'privacy-policy', 'Privacy Policy', 'Box Container', 'Yes', 2, 'Privacy Policy', NULL, NULL, 1, '2026-07-05 12:59:18', '2026-07-05 12:59:42', NULL),
 (66, 0, 'Umrah Vaccination', 'Umrah Vaccination', 0, NULL, 'umrah-vaccination', '<p>[include file=\"umrah-vaccination\"]</p>', 'published', '1783933746_6a54ab320b54e_image.webp', 'umrah-vaccination', 'Umrah Vaccination', 'Box Container', 'Yes', 2, 'Umrah Vaccination', NULL, NULL, 1, '2026-07-13 03:29:03', '2026-07-13 04:09:06', NULL),
-(67, 0, 'VTF Tasheel', 'VTF Tasheel', 0, NULL, 'vtf-tasheel', '<p>[include file=\"vtf-tasheel\"]</p>', 'published', '1783979506_6a555df24b1af_image.webp', 'vtf-tasheel', 'VTF Tasheel', 'Box Container', 'Yes', 2, 'VTF Tasheel', NULL, NULL, 1, '2026-07-13 16:50:21', '2026-07-13 16:51:46', NULL);
+(67, 0, 'VTF Tasheel', 'VTF Tasheel', 0, NULL, 'vtf-tasheel', '<p>[include file=\"vtf-tasheel\"]</p>', 'published', '1783979506_6a555df24b1af_image.webp', 'vtf-tasheel', 'VTF Tasheel', 'Box Container', 'Yes', 2, 'VTF Tasheel', NULL, NULL, 1, '2026-07-13 16:50:21', '2026-07-13 16:51:46', NULL),
+(68, 0, 'Holiday Packages', 'Holiday Packages', 0, NULL, 'holiday-packages', '<p>[include file=\"holiday-packages\"]</p>', 'published', '1784011979_6a55dccb9d9fb_image.webp', 'holiday-packages', 'Holiday Packages', 'Box Container', 'Yes', 2, 'Holiday Packages', NULL, NULL, 1, '2026-07-14 01:52:26', '2026-07-14 01:52:59', NULL),
+(69, 0, 'Single Holiday Tour Details', 'Single Holiday Tour Details', 0, NULL, 'single-holiday-tour-details', '<p>[include file=\"single-holiday-tour-details\"]</p>', 'published', 'dup_6a55e209eaa897.57233959.webp', 'single-holiday-tour-details', 'Single Holiday Tour Details', 'Box Container', 'Yes', 2, 'Single Holiday Tour Details', NULL, NULL, 1, '2026-07-14 02:15:21', '2026-07-14 02:16:22', NULL);
 
 -- --------------------------------------------------------
 
@@ -1683,7 +1685,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('6huKdq6tRJAfRjBrjFARSOLZaAnwgP5jABfNXFI7', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il9mbGFzaCI7YToyOntzOjM6Im5ldyI7YTowOnt9czozOiJvbGQiO2E6MDp7fX1zOjk6Il9wcmV2aW91cyI7YToyOntzOjM6InVybCI7czo0MToiaHR0cHM6Ly9teXNhaWZjby1sYXJhdmVsLnRlc3QvdnRmLXRhc2hlZWwiO3M6NToicm91dGUiO3M6MTI6InBhZ2UuZGVmYXVsdCI7fXM6NjoiX3Rva2VuIjtzOjQwOiI2VUE2cnUzV3Z0a0pSUDdoTndIajBKaEdyNkg3NThMRkdLbFJQUklFIjtzOjM6InVybCI7YToxOntzOjg6ImludGVuZGVkIjtzOjQxOiJodHRwczovL215c2FpZmNvLWxhcmF2ZWwudGVzdC9hZG1pbi9wYWdlcyI7fX0=', 1783984104);
+('5YdhLQlW0h6cFBnXIIeBinK4blVb1R9OpGDRr7gz', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il9mbGFzaCI7YToyOntzOjM6Im5ldyI7YTowOnt9czozOiJvbGQiO2E6MDp7fX1zOjk6Il9wcmV2aW91cyI7YToyOntzOjM6InVybCI7czo0NjoiaHR0cHM6Ly9teXNhaWZjby1sYXJhdmVsLnRlc3QvaG9saWRheS1wYWNrYWdlcyI7czo1OiJyb3V0ZSI7czoxMjoicGFnZS5kZWZhdWx0Ijt9czo2OiJfdG9rZW4iO3M6NDA6ImZsdHl0SFhSeTJuMkN3ZW85OVhrQ3l2dFZMU1h6TmlwVjYxQjlrcVEiO3M6MzoidXJsIjthOjE6e3M6ODoiaW50ZW5kZWQiO3M6NDE6Imh0dHBzOi8vbXlzYWlmY28tbGFyYXZlbC50ZXN0L2FkbWluL3BhZ2VzIjt9fQ==', 1784028706);
 
 -- --------------------------------------------------------
 
@@ -2094,7 +2096,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `user_type_id`, `first_name`, `last_name`, `email`, `image`, `email_verified_at`, `mobile_no`, `landline_no`, `dob`, `city`, `zipcode`, `state`, `address`, `country`, `password`, `status`, `gender`, `remember_token`, `created_by`, `ordering`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 1, 'adnan', 'khan', 'websigntist@gmail.com', '1757108294_image_oXKwiH8xDJ.png', NULL, '+92300-9876542', '+922131234567', '1984-10-19', 'Karachi', '75160', 'Sindh', 'Home 123', 'Australia', '$2y$12$jah8qDomb5SR2UMtbeqoh.ZYZ41cFUbRNRtKeXUJAqdqsD5V1gVG6', 'Active', 'Male', '61FzeQaKievWga1pcmvgiceuEAE6qY2MHMDMbbKM8JBA46NfWN5mIyneS1Eu', 1, 1, '2025-01-22 10:05:55', '2026-03-11 12:57:37', NULL),
+(1, 1, 'adnan', 'khan', 'websigntist@gmail.com', '1757108294_image_oXKwiH8xDJ.png', NULL, '+92300-9876542', '+922131234567', '1984-10-19', 'Karachi', '75160', 'Sindh', 'Home 123', 'Australia', '$2y$12$jah8qDomb5SR2UMtbeqoh.ZYZ41cFUbRNRtKeXUJAqdqsD5V1gVG6', 'Active', 'Male', '70b7sSbmkz95vqwiPXEeNu6KHfG6kdU6K5NzIcu20kDoWPF85cDTdH8HrKFm', 1, 1, '2025-01-22 10:05:55', '2026-03-11 12:57:37', NULL),
 (2, 18, 'Sophia', 'Jan', 'adnan1@gmail.com', '1774467703_69c43a7720ee4_image.webp', NULL, '+92300-9876542', '+922131234567', '2025-11-15', 'Pariatur Aliquip et', '78583', 'Ducimus et totam al', 'Reiciendis at minim', 'Pakistan', '$2y$12$a5btXjxflcR0wbh6dGeccOPFILwT7dsKGp4odi5eAxWz2b5361muy', 'Active', 'Other', NULL, 1, 92, '2025-01-22 10:15:04', '2026-03-25 14:41:43', NULL),
 (58, 10, 'Allan', 'Johson', 'adnan1+copy.elpyiq@gmail.com', 'dup_69c2e691c3f143.17426739.webp', NULL, '+92300-9876542', '+922131234567', '2025-11-15', 'Pariatur Aliquip et', '78583', 'Ducimus et totam al', 'Reiciendis at minim', 'Pakistan', '$2y$12$uD5KIBEp7aWr.PDIQCNuuOTF8B4wdlUqkDXmf6.m1pL4Llb/opKdG', 'Active', 'Other', NULL, 1, 92, '2026-03-24 14:31:30', '2026-03-24 14:31:59', '2026-03-24 14:31:59'),
 (59, 18, 'Bevis', 'Howe', 'mycemu@mailinator.com', '1774468612_69c43e04b3a30_image.webp', NULL, '+1 (257) 545-3108', '+1 (418) 826-9222', '2026-02-12', NULL, NULL, NULL, 'Est vel sunt do in', 'United Arab Erimates', '$2y$12$g.f25KBh2xXr9HrkKtdKEObsNCjAxzsx45zpmoAGPgZCwh4GWd4Ou', 'Active', 'Male', NULL, 1, 65, '2026-03-25 14:56:53', '2026-03-25 14:56:53', NULL);
@@ -2653,7 +2655,7 @@ ALTER TABLE `modules`
 -- AUTO_INCREMENT for table `pages`
 --
 ALTER TABLE `pages`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT for table `popular_searches`
