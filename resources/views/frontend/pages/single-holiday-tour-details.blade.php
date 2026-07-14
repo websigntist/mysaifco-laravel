@@ -408,11 +408,15 @@
                             </div>
                         </div>
                         <div class="relative">
-                            <div class="w-full flex items-center justify-between border border-gray-200 rounded-xl px-4 py-3 text-mst-gray cursor-pointer" onclick="const input = document.getElementById('booking-tour-date'); input.type='date'; try { input.showPicker(); } catch(e) { input.focus(); }">
-                                <div class="flex items-center gap-2.5 w-full">
-                                    <img src="{{ asset('assets/images/icons/222.svg') }}" class="object-contain flex-shrink-0 pointer-events-none" alt="">
-                                    <input type="text" id="booking-tour-date" placeholder="Select room type" onfocus="this.type='date'; try { this.showPicker(); } catch(e) {}" onblur="if(!this.value)this.type='text'" class="font-body text-sm font-medium focus:outline-none bg-transparent w-full cursor-pointer text-mst-gray" required>
-                                </div>
+                            <div class="w-full flex items-center gap-2.5 border border-gray-200 rounded-xl px-4 py-3 text-mst-gray">
+                                <img src="{{ asset('assets/images/icons/222.svg') }}" class="object-contain flex-shrink-0 pointer-events-none" alt="">
+                                <select id="booking-room-type" class="appearance-none font-body text-sm font-medium focus:outline-none bg-transparent w-full cursor-pointer text-mst-gray" required>
+                                    <option value="">Select room type</option>
+                                    <option>Standard Room</option>
+                                    <option>Deluxe Room</option>
+                                    <option>Suite</option>
+                                    <option>Family Room</option>
+                                </select>
                                 <svg class="w-3.5 h-3.5 text-gray-400 flex-shrink-0 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
                                 </svg>
@@ -433,11 +437,13 @@
                             </div>
                         </div>
                         <div class="relative">
-                            <div class="w-full flex items-center justify-between border border-gray-200 rounded-xl px-4 py-3 text-mst-gray cursor-pointer" onclick="const input = document.getElementById('booking-tour-date'); input.type='date'; try { input.showPicker(); } catch(e) { input.focus(); }">
-                                <div class="flex items-center gap-2.5 w-full">
-                                    <img src="{{ asset('assets/images/icons/988.svg') }}" class="object-contain flex-shrink-0 pointer-events-none" alt="">
-                                    <input type="text" id="booking-tour-date" placeholder="4 Star hotel" onfocus="this .type='date'; try { this.showPicker(); } catch(e) {}" onblur="if(!this.value)this.type='text'" class="font-body text-sm font-medium focus:outline-none bg-transparent w-full cursor-pointer text-mst-gray" required>
-                                </div>
+                            <div class="w-full flex items-center gap-2.5 border border-gray-200 rounded-xl px-4 py-3 text-mst-gray">
+                                <img src="{{ asset('assets/images/icons/988.svg') }}" class="object-contain flex-shrink-0 pointer-events-none" alt="">
+                                <select id="booking-hotel-category" class="appearance-none font-body text-sm font-medium focus:outline-none bg-transparent w-full cursor-pointer text-mst-gray" required>
+                                    <option>4 Star hotel</option>
+                                    <option>3 Star hotel</option>
+                                    <option>5 Star hotel</option>
+                                </select>
                                 <svg class="w-3.5 h-3.5 text-gray-400 flex-shrink-0 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
                                 </svg>
