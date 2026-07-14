@@ -22,7 +22,7 @@
                             @endif
                         </a>
                         <div class="flex flex-1 flex-col p-4">
-                            <h2 class="line-clamp-2">
+                            <h2 class="line-clamp-2 text-xl">
                                 <a href="{{ $tour->frontendUrl() }}"
                                    class="hover:text-mst transition ease-in-out duration-500 line-clamp-1 mb-4">
                                     {{ $tour->title }}

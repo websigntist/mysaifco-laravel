@@ -1,6 +1,6 @@
 <section class="">
     <div class="px-4 relative flex w-full items-start justify-center overflow-hidden">
-        <div class="absolute inset-0 scale-100 bg-cover bg-top bg-no-repeat" style="background-image: url('{{ asset('assets/images/pages/1783979506_6a555df24b1af_image.webp') }}')" aria-hidden="true"></div>
+        <div class="absolute inset-0 scale-100 bg-cover bg-top bg-no-repeat" style="background-image: url('{{ asset('assets/images/pages/1784058432_6a5692407991b_image.webp') }}')" aria-hidden="true"></div>
         {{--@dump($explore_uae)--}}
         <div class="absolute inset-0 bg-gradient-to-r from-black/90 from-30% to-black/05 to-90%"
              aria-hidden="true"></div>
@@ -11,14 +11,14 @@
                     <svg class="w-4 h-4 text-mst" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="m9 5 7 7-7 7"/>
                     </svg>
-                    <span class="text-mst">VTF Tasheel</span>
+                    <span class="text-mst">Tourist Visa</span>
                 </nav>
                 <h1 class="text-5xl w-4xl mt-6 font-body font-bold not-italic leading-16 text-white">
-                    VFS Global vs. Taseer <br> (VFS TasHeel) in the UAE
+                    30 Days Dubai <br> Tourist Visa
                 </h1>
-                <p class="text-lg mt-5 w-6/12 text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                                          Alias distinctio eos magnam minima nulla officia placeat quam
-                                                          vel, veniam voluptatem.</p>
+                <p class="text-lg mt-5 w-6/12 text-white">Explore Dubai and the UAE for up to 30 days. We provide fast,
+                                                          reliable and professional visa assistance for a hassle-free
+                                                          journey.</p>
                 <div class="flex mt-8 mb-15 gap-6">
                     <a
                         href="#"
@@ -88,258 +88,216 @@
         </div>
     </div>
 </section>
+
+
+
+
 @php
-    $vfsGlobalOffices = [
-        ['city' => 'Dubai',     'address' => 'Wafi Mall, First Floor, Phase 5 - Hours,<br>Umm Hurair 2, Dubai - UAE',                                             'centre' => 'Visa Application Centre', 'hours' => 'Operating Hours: Mon - Fri, 09:00 AM - 05:00 PM', 'map' => '#'],
-        ['city' => 'Abu Dhabi', 'address' => 'Level B2 (Lower Ground), The Mall,<br>World Trade Center, Khalifa Bin Zayed, The 1st Street, Abu Dhabi UAE.',       'centre' => 'Visa Application Centre', 'hours' => 'Operating Hours: Mon - Fri, 09:00 AM - 05:00 PM', 'map' => '#'],
+    $overviewPoints = [
+        'Stay in the UAE for up to 30 days',
+        'Visit Dubai, Abu Dhabi, Sharjah and all Emirates',
+        'Perfect for tourism, family or short business trips',
+        'Simple process with minimum documentation',
+        'Reliable and professional visa support',
     ];
 
-    $tasheerOffices = [
-        ['city' => 'Dubai',     'address' => 'Wafi Mall, First Floor, Phase 5 - Hours,<br>Umm Hurair 2, Dubai - UAE',                                             'centre' => 'Visa Application Centre', 'hours' => 'Operating Hours: Mon - Fri, 09:00 AM - 05:00 PM', 'map' => '#'],
-        ['city' => 'Abu Dhabi', 'address' => 'Level B2 (Lower Ground), The Mall,<br>World Trade Center, Khalifa Bin Zayed, The 1st Street, Abu Dhabi UAE.',       'centre' => 'Visa Application Centre', 'hours' => 'Operating Hours: Mon - Fri, 09:00 AM - 05:00 PM', 'map' => '#'],
+    $trustItems = [
+        ['title' => 'Since 2008',             'sub' => 'Years of Experience', 'icon'  => 'w989.svg'],
+        ['title' => 'Dubai Licensed Company',  'sub' => 'Trusted and Registered', 'icon'  => 'a999.svg'],
+        ['title' => '50,000+ Travelers',       'sub' => 'Served Worldwide', 'icon'  => '17years.svg'],
+        ['title' => 'Processing Time',         'sub' => 'Quick &amp; Reliable', 'icon'  => 'c98.svg'],
+        ['title' => 'WhatsApp Support',        'sub' => 'We are here to help you', 'icon'  => 'w89.svg'],
+    ];
+
+    $requiredDocs = [
+        'Passport copy (clear colored copy)',
+        'Passport size photograph with white background',
+        'Confirmed return ticket or onward ticket',
+        'Hotel booking or accommodation details (if applicable)',
+        'Additional documents may be required based on nationality',
+    ];
+
+    $visaFor = [
+        ['text' => 'Tourism and Holiday trips',                  'icon' => 'p98.svg'],
+        ['text' => 'Family visits and vacation',                 'icon' => '130.svg'],
+        ['text' => 'Short business meetings and conferences',    'icon' => 't89.svg'],
+        ['text' => 'Leisure activities and events',              'icon' => 'e656.svg'],
+        ['text' => 'Exploring Dubai and other Emirates',         'icon' => 'd989.svg'],
+    ];
+
+    $processSteps = [
+        ['title' => 'Submit Inquiry',   'desc' => 'Fill out the inquiry form or contact our team'],
+        ['title' => 'Submit Documents', 'desc' => 'Share your documents via email or WhatsApp'],
+        ['title' => 'Visa Processnig',  'desc' => 'We process your visa application'],
+        ['title' => 'Receive Visa',     'desc' => 'Get your visa via email and enjoy your trip'],
     ];
 @endphp
-{{-- ===== Important Note bar ===== --}}
-<section class="pt-0">
-    <div class="container mx-auto">
-        <div class="bg-gray-50 border border-gray-200 rounded-2xl p-4 md:p-6 flex flex-col lg:flex-row items-start
-        lg:items-center justify-between gap-6">
-            <div class="flex items-start gap-4">
-                <img src="{{ asset('assets/images/icons/785.svg') }}" alt="">
-                <div>
-                    <h3 class="font-heading italic font-semibold text-xl text-[#EB001B] -mt-1 mb-3">Important Note</h3>
-                    <p class="font-body text-sm text-mst-gray font-medium leading-6">
-                        Appointments are mandatory at all VFS Global / VFS TasHeel centers.<br> Walk-in applications are
-                        not accepted.
-                    </p>
-                </div>
-            </div>
-            <a href="#" class="inline-flex items-center justify-center gap-2 flex-shrink-0 rounded-lg px-6 py-2
-                      font-heading italic text-base md:text-lg text-white
-                      bg-mst transition duration-300">
-                <img src="{{ asset('assets/images/icons/3656.svg') }}" class="brightness-0 invert" alt=""> Book an
-                                                                                                           Appointment
-            </a>
-        </div>
-    </div>
-</section>
-{{-- ===== Intro + Quick Links ===== --}}
-<section class="pt-12">
-    <div class="container mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-[1fr_0.3fr] gap-10 items-center">
-            <div>
-                <h2 class="font-heading italic font-bold text-xl md:text-2xl text-mst-gray leading-snug">
-                    VFS Global vs. Tasheer (VFS TasHeel) in the
-                    <span class="text-mst">UAE: What's the Difference?</span>
-                </h2>
-                <p class="font-body text-mst-gray leading-7 mt-4 text-[16px]">
-                    If you are planning to apply for an international visa from Dubai or Abu Dhabi, you will most likely
-                    need to process your application through a third-party service center. Two of the most common names
-                    you will encounter are VFS Global and Tasheer (formerly known as VFS TasHeel). While both companies
-                    operate under the same corporate umbrella, they serve entirely different travel destinations.
-                    Choosing the wrong center can result in missed appointments and costly application delays.
-                </p>
-            </div>
-            <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 h-fit">
-                <h3 class="font-heading italic font-bold text-xl text-mst-gray mb-4">Quick Links</h3>
-                <ul class="space-y-2">
-                    @php
-                        $quickLinks = [
-                            ['label' => 'About Us',       'url' => url('/about-us'), 'icon' => '900.svg'],
-                            ['label' => 'UAE Tours',      'url' => url('/uae-tours'), 'icon' => '9014.svg'],
-                            ['label' => 'Umrah Packages', 'url' => url('/umrah'), 'icon' => '065.svg'],
-                            ['label' => 'FAQs',           'url' => url('/faqs'), 'icon' => '0656.svg'],
-                            ['label' => 'Contact Us',     'url' => url('/contact-us'), 'icon' => '8605.svg'],
-                        ];
-                    @endphp
 
-                    @foreach ($quickLinks as $link)
-                        <li>
-                            <a href="{{ $link['url'] }}"
-                               class="group flex items-center gap-3 text-mst-gray hover:text-mst transition">
-                                <img src="{{ asset('assets/images/icons/' . $link['icon']) }}"
-                                     alt="{{ $link['label'] }}">
-                                <span class="font-heading text-sm font-semibold">{{ $link['label'] }}</span> </a>
-                        </li>
-                    @endforeach
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-{{-- ===== VFS Global (International Visas) ===== --}}
-<section class="pt-14">
-    <div class="container mx-auto">
-        <div class="flex items-center gap-3 mb-3">
-            <img src="{{ asset('assets/images/icons/099.svg') }}" alt="">
-            <h2 class="font-heading italic font-bold text-2xl text-mst-gray">
-                VFS Global <span class="text-mst">(International Visas)</span>
-            </h2>
-        </div>
-        <p class="font-body text-mst-gray leading-7 mb-8 text-[16px]">
-            VFS Global is the official outsourced partner for the majority of international governments. You must book
-            an appointment with them if you are traveling from the UAE to destinations like Europe (Schengen visas), the
-            United Kingdom, Canada, Australia, or various countries across Asia and Africa.
-        </p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            @foreach($vfsGlobalOffices as $office)
-                @include('frontend.pages.includes.partials.vfs-office-card', $office)
-            @endforeach
-        </div>
-    </div>
-</section>
-{{-- ===== Tasheer (Saudi Arabia Visas) ===== --}}
-<section class="pt-14">
-    <div class="container mx-auto">
-        <div class="flex items-center gap-3 mb-3">
-            <img src="{{ asset('assets/images/icons/099.svg') }}" alt="">
-                        <h2 class="font-heading italic font-bold text-2xl text-mst-gray">
-                Tasheer <span class="text-mst">(Saudi Arabia Visas)</span>
-            </h2>
-        </div>
-        <p class="font-body text-mst-gray leading-7 mb-8 text-[16px]">
-            Tasheer is the official visa service provider for the Kingdom of Saudi Arabia in the UAE. Applicants
-            traveling for Umrah, tourism, business, family visits, and other Saudi visa categories are required to
-            complete their biometric enrollment and visa processing through Tasheer centers.
-        </p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            @foreach($tasheerOffices as $office)
-                @include('frontend.pages.includes.partials.vfs-office-card', $office)
-            @endforeach
-        </div>
-    </div>
-</section>
-{{-- ===== How the Process Works + Important Notes ===== --}}
-<section class="pt-14">
-    <div class="container mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-6">
-            {{-- Process --}}
-            <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 md:p-8">
-                <div class="flex items-center gap-3 mb-8">
-                    <img src="{{ asset('assets/images/icons/1235.svg') }}" class="w-7" alt="">
-                    <h3 class="font-heading italic font-bold text-xl text-mst-gray -mt-1">How the Process
-                        <span class="text-mst">Works</span></h3>
-                </div>
-                @php
-                    $steps = [
-                        ['title' => 'Book<br>Appointment',    'desc' => 'Schedule your application online in advance', 'icon'  => '3656.svg'],
-                        ['title' => 'Submit<br>Documents',    'desc' => 'Visit the center with the required documents', 'icon'  => '265.svg'],
-                        ['title' => 'Complete<br>Biometrics',  'desc' => 'Biometrics enrolment and data captures', 'icon'  => '123.svg'],
-                        ['title' => 'Track<br>Application',    'desc' => 'Track your application status data capture', 'icon'  => '78.svg'],
-                        ['title' => 'Receive<br>Passport',     'desc' => 'Collect passport from the center or via courier', 'icon'  => '125.svg'],
-                    ];
-                @endphp
-                <div class="grid grid-cols-1 sm:grid-cols-5 gap-6 sm:gap-2">
-                    @foreach($steps as $i => $step)
-                        <div class="relative flex flex-col items-center text-center">
-                            @if(!$loop->last)
-                                <span class="hidden sm:block absolute top-19 left-1/2 w-full border-t-2 border-dashed
-                                 border-gray-300" aria-hidden="true"></span>
-                            @endif
-                            <div class="w-7 h-7 rounded-full bg-gradient-to-r from-[#BA9B31] to-[#74611E]
-                            text-white font-heading italic text-sm flex items-center justify-center mb-3 relative z-10">
-                                {{ $i + 1 }}
-                            </div>
-                            <div class="w-14 h-14 rounded-full bg-white border border-gray-200 shadow-sm flex
-                            items-center justify-center mt-1 mb-3 relative z-10">
-                                <img src="{{ asset('assets/images/icons/' . $step['icon']) }}" alt="">
-                            </div>
-                            <h4 class="font-heading font-bold text-sm text-mst-gray leading-tight mb-1 mt-2">{!!
-                            $step['title'] !!}</h4>
-                            <p class="font-body text-xs text-gray-600 leading-snug">{{ $step['desc'] }}</p>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-            {{-- Important Notes --}}
-            <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 md:p-8">
-                <div class="flex items-center gap-3 mb-6">
-                    <img src="{{ asset('assets/images/icons/785.svg') }}" alt="">
-                    <h3 class="font-heading italic -mt-1 font-bold text-xl text-mst-gray">Important Notes</h3>
-                </div>
-                @php
-                    $notes = [
-                        'Appointment is mandatory for most visa services.',
-                        'Please arrive at least 15 minutes before your scheduled appointment.',
-                        'Bring original documents and photocopies as required.',
-                        'Mobile phones and electronic devices may be restricted inside the application center',
-                        'Service fees and biometric charges are non-refundable.',
-                        'Visa approval is solely at the discretion of the respective embassy or government authority.',
-                        'Cookies & Tracking Technologies',
-                    ];
-                @endphp
-                <ul class="space-y-3">
-                    @foreach($notes as $note)
-                        <li class="flex items-start gap-3">
-                            <img src="{{ asset('assets/images/icons/006.svg') }}" alt="">
-                            <span class="font-body text-sm text-mst-gray leading-6 -m-1">{{ $note }}</span>
-                        </li>
-                    @endforeach
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-{{-- ===== Services Available + Why Travelers Choose ===== --}}
-<section class="pt-14">
+{{-- ===== Visa Overview + Inquiry Form ===== --}}
+<section class="pt-5">
     <div class="container mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {{-- Services Available --}}
-            <div class="bg-gray-50 border border-gray-200 rounded-2xl p-4">
-                <div class="flex items-center gap-3 mb-6">
-                    <img src="{{ asset('assets/images/icons/5326.svg') }}" alt="">
-                    <h3 class="font-heading italic font-bold text-xl text-mst-gray">Services Available at
-                        <span class="text-mst">VFS Global &amp; Tasheer</span></h3>
-                </div>
-                @php
-                    $services = [
-                        ['label' => 'Visa Application Submission', 'icon' => '36.svg'],
-                        ['label' => 'Biometric Enrollment',       'icon' => '236.svg'],
-                        ['label' => 'Document Verification',       'icon' => '156.svg'],
-                        ['label' => 'Passport Collection &amp; Return', 'icon' => '65.svg'],
-                        ['label' => 'Application Tracking',        'icon' => '951.svg'],
-                        ['label' => 'SMS &amp; Notification Service',   'icon' => '650.svg'],
-                        ['label' => 'Premium Lounge (Selected Countries)', 'icon' => '480.svg'],
-                        ['label' => 'Courier &amp; Passport Delivery',  'icon' => '898.svg'],
-                    ];
-                @endphp
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-y-6">
-                    @foreach($services as $service)
-                        <div class="flex items-start gap-1">
-                            <img src="{{ asset('assets/images/icons/' . $service['icon']) }}" alt="{{ $service['label'] }}">
-                            <span class="font-heading font-semibold text-xs text-mst-gray">{!! $service['label'] !!}</span>
-                        </div>
-                    @endforeach
+            {{-- Visa Overview --}}
+            <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 md:p-8">
+                <h2 class="font-heading italic font-bold text-2xl text-mst-gray mb-4">Visa <span class="text-mst">Overview</span></h2>
+                <p class="font-body text-mst-gray leading-7 mb-6">
+                    The 30 Days UAE Tourist Visa is perfect for travelers who want to explore Dubai and the Emirates for
+                    tourism, family visits, or short business meetings. This visa is valid for 30 days from the date of entry.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-5">
+                    <img src="{{ asset('assets/images/packages/w9w989.webp') }}" alt="30 Days UAE Tourist Visa"
+                         class="w-full sm:w-40 h-48 sm:h-auto object-cover rounded-xl flex-shrink-0">
+                    <div class="bg-gray-50 border border-gray-200 rounded-xl p-5 flex-1">
+                        <ul class="space-y-4">
+                            @foreach($overviewPoints as $point)
+                                <li class="flex items-start gap-3">
+                                    <img src="{{ asset('assets/images/icons/check-bullet.svg') }}" alt="">
+                                    <span class="font-body text-sm text-mst-gray">{{ $point }}</span>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
                 </div>
             </div>
-            {{-- Why Travelers Choose --}}
-            <div class="bg-gray-50 border border-gray-200 rounded-2xl p-4">
-                <div class="flex items-center gap-3 mb-4">
-                    <img src="{{ asset('assets/images/icons/598.svg') }}" alt="">
-                    <h3 class="font-heading italic font-bold text-xl text-mst-gray">Why Travelers Choose VFS
-                        <span class="text-mst">Global &amp; Tasheel</span></h3>
-                </div>
-                @php
-                    $reasons = [
-                        ['label' => 'Official Government-Authorized Centers', 'icon' => '156.svg'],
-                        ['label' => 'Multiple International Visa Services',   'icon' => '032.svg'],
-                        ['label' => 'Biometric Collection Facilities',       'icon' => '987.svg'],
-                        ['label' => 'Secure Documents Handling',             'icon' => '236.svg'],
-                        ['label' => 'Convenient Locations Across UAE',       'icon' => '456.svg'],
-                    ];
-                @endphp
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-4">
-                    @foreach($reasons as $reason)
-                        <div class="flex items-center gap-2">
-                            <img src="{{ asset('assets/images/icons/' . $reason['icon']) }}" alt="{{ $reason['label'] }}">
-                            <span class="font-body text-sm text-mst-gray leading-tight">{{ $reason['label'] }}</span>
+            {{-- Inquiry Form --}}
+            <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 md:p-8">
+                <h2 class="font-heading italic font-bold text-2xl text-mst-gray mb-6">Apply for 30 Days <span class="text-mst">Dubai Tourist Visa</span></h2>
+                <form action="#" method="POST">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                        <input type="text" name="full_name" placeholder="Enter your full name"
+                               class="w-full bg-gray-100 border border-gray-200 rounded-lg px-4 py-3 text-sm text-mst-gray focus:outline-none focus:border-mst">
+                        <input type="tel" name="phone" placeholder="Phone number here"
+                               class="w-full bg-gray-100 border border-gray-200 rounded-lg px-4 py-3 text-sm text-mst-gray focus:outline-none focus:border-mst">
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                        <div class="relative">
+                            <select name="nationality" class="appearance-none w-full bg-gray-100 border
+                            border-gray-200 rounded-lg px-4 py-3 text-sm text-mst-gray focus:outline-none
+                            focus:border-mst cursor-pointer">
+                                <option value="">Select Nationality</option>
+                                <option>United Arab Emirates</option>
+                                <option>Pakistan</option>
+                                <option>India</option>
+                                <option>Bangladesh</option>
+                                <option>Philippines</option>
+                                <option>Egypt</option>
+                                <option>Other</option>
+                            </select>
+                            <svg class="w-3.5 h-3.5 text-gray-400 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
                         </div>
-                    @endforeach
-                </div>
+                        <input type="text" name="travel_date" placeholder="Travel Date"
+                               onfocus="this.type='date'; try { this.showPicker(); } catch(e) {}"
+                               onblur="if(!this.value)this.type='text'"
+                               class="w-full bg-gray-100 border border-gray-200 rounded-lg px-4 py-3 text-sm text-mst-gray focus:outline-none focus:border-mst">
+                    </div>
+                    <textarea name="message" rows="4" placeholder="Message (Optional)&#10;Type you message here...."
+                              class="w-full bg-gray-100 border border-gray-200 rounded-lg px-4 py-3 text-sm
+                              text-mst-gray focus:outline-none focus:border-mst resize-none mb-5"></textarea>
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                        <button type="submit"
+                                class="inline-flex items-center justify-center gap-2 rounded-full px-8 py-3 font-heading italic text-base text-white
+                                       bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300">
+                            Submit Inquiry
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="m9 5 7 7-7 7"/></svg>
+                        </button>
+                        <span class="inline-flex items-center gap-2 bg-[#FAF7F2] border border-[#BA9B31]/30 rounded-full px-4 py-3 text-xs text-mst-gray">
+                            <img src="{{ asset('assets/images/icons/lock565.svg') }}" alt="">
+                            Your Information is secure and will not be shared
+                        </span>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 </section>
+
+{{-- ===== Trust strip ===== --}}
+<section class="pt-12">
+    <div class="container mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4">
+            @foreach($trustItems as $item)
+                <div class="flex items-start gap-3">
+                    <img src="{{ asset('assets/images/icons/' . $item['icon']) }}" alt="">
+                    <div>
+                        <h4 class="font-heading italic font-bold text-mst-gray">{{ $item['title'] }}</h4>
+                        <p class="font-body text-xs text-gray-600 mt-0.5">{!! $item['sub'] !!}</p>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+
+{{-- ===== Required Documents + What This Visa is For ===== --}}
+<section class="pt-12">
+    <div class="container mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {{-- Required Documents --}}
+            <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 md:p-8 flex flex-col">
+                <h3 class="font-heading font-bold text-xl text-mst-gray mb-6">Required Documents</h3>
+                <ul class="space-y-4">
+                    @foreach($requiredDocs as $doc)
+                        <li class="flex items-start gap-3">
+                            <img src="{{ asset('assets/images/icons/check-bullet.svg') }}" alt="">
+                            <span class="font-body text-sm text-mst-gray">{{ $doc }}</span>
+                        </li>
+                    @endforeach
+                </ul>
+                <div class="bg-[#FAF7F2] border border-[#BA9B31]/30 rounded-xl p-4 mt-6 flex items-start gap-3">
+                    <img src="{{ asset('assets/images/icons/i565.svg') }}" alt="">
+                    <span class="font-body text-sm text-mst-gray"><span class="font-bold">Note</span>: Documents requirements may vary depending on nationality. Our Team will guide you after inquiry.</span>
+                </div>
+            </div>
+            {{-- What This Visa is For --}}
+            <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 md:p-8">
+                <h3 class="font-heading font-bold text-xl text-mst-gray mb-3">What This Visa is For?</h3>
+                <p class="font-body text-sm text-mst-gray mb-6">This visa ideal for Travelers visiting the UAE for:</p>
+                <ul class="space-y-4">
+                    @foreach($visaFor as $item)
+                        <li class="flex items-center gap-4">
+                            <span class="w-9 h-9 flex-shrink-0 rounded-lg bg-[#EAF2FB] flex items-center justify-center">
+                                <img src="{{ asset('assets/images/icons/' . $item['icon']) }}" alt="">
+                            </span>
+                            <span class="font-body text-sm text-mst-gray">{{ $item['text'] }}</span>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{-- ===== Application Process ===== --}}
+<section class="pt-16 pb-4">
+    <div class="container mx-auto">
+        <div class="flex items-center justify-center gap-4 mb-2">
+            <h2 class="font-heading italic font-bold text-3xl md:text-4xl text-mst-gray text-center">Application <span class="text-mst">Process</span></h2>
+        </div>
+        <p class="font-body text-mst-gray text-center max-w-2xl mx-auto mt-3 text-[16px]">
+            We offer fast, reliable and hasle-free UAE tourist visa and mutiple entry visa services</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mt-10">
+            @foreach($processSteps as $i => $step)
+                <div class="relative flex items-start gap-6">
+                    @if(!$loop->last)
+                        <span class="hidden md:flex absolute top-2 -right-5 text-mst" aria-hidden="true">
+                            <img src="{{ asset('assets/images/icons/arrowl.svg') }}" alt="">
+                        </span>
+                    @endif
+                    <span class="w-9 h-9 pt-1 pb-2 flex-shrink-0 rounded-full bg-gradient-to-r from-[#BA9B31]
+                    to-[#74611E] text-white font-heading italic flex items-center justify-center">
+                        {{ $i + 1 }}
+                    </span>
+                    <div>
+                        <h4 class="font-heading italic font-bold text-lg text-mst-gray">{{ $step['title'] }}</h4>
+                        <p class="font-body text-sm text-mst-gray w-60 mt-1 leading-snug">{{ $step['desc'] }}</p>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+
 @include('frontend.components.testimonials');
 {{-- FAQs --}}
 <section class="flex items-center justify-center pt-10 pb-0">

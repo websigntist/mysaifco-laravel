@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 14, 2026 at 11:33 AM
+-- Generation Time: Jul 14, 2026 at 08:45 PM
 -- Server version: 8.4.2
 -- PHP Version: 8.4.21
 
@@ -1282,7 +1282,10 @@ INSERT INTO `pages` (`id`, `parent_id`, `menu_title`, `page_title`, `show_title`
 (66, 0, 'Umrah Vaccination', 'Umrah Vaccination', 0, NULL, 'umrah-vaccination', '<p>[include file=\"umrah-vaccination\"]</p>', 'published', '1783933746_6a54ab320b54e_image.webp', 'umrah-vaccination', 'Umrah Vaccination', 'Box Container', 'Yes', 2, 'Umrah Vaccination', NULL, NULL, 1, '2026-07-13 03:29:03', '2026-07-13 04:09:06', NULL),
 (67, 0, 'VTF Tasheel', 'VTF Tasheel', 0, NULL, 'vtf-tasheel', '<p>[include file=\"vtf-tasheel\"]</p>', 'published', '1783979506_6a555df24b1af_image.webp', 'vtf-tasheel', 'VTF Tasheel', 'Box Container', 'Yes', 2, 'VTF Tasheel', NULL, NULL, 1, '2026-07-13 16:50:21', '2026-07-13 16:51:46', NULL),
 (68, 0, 'Holiday Packages', 'Holiday Packages', 0, NULL, 'holiday-packages', '<p>[include file=\"holiday-packages\"]</p>', 'published', '1784011979_6a55dccb9d9fb_image.webp', 'holiday-packages', 'Holiday Packages', 'Box Container', 'Yes', 2, 'Holiday Packages', NULL, NULL, 1, '2026-07-14 01:52:26', '2026-07-14 01:52:59', NULL),
-(69, 0, 'Single Holiday Tour Details', 'Single Holiday Tour Details', 0, NULL, 'single-holiday-tour-details', '<p>[include file=\"single-holiday-tour-details\"]</p>', 'published', 'dup_6a55e209eaa897.57233959.webp', 'single-holiday-tour-details', 'Single Holiday Tour Details', 'Box Container', 'Yes', 2, 'Single Holiday Tour Details', NULL, NULL, 1, '2026-07-14 02:15:21', '2026-07-14 02:16:22', NULL);
+(69, 0, 'Single Holiday Tour Details', 'Single Holiday Tour Details', 0, NULL, 'single-holiday-tour-details', '<p>[include file=\"single-holiday-tour-details\"]</p>', 'published', 'dup_6a55e209eaa897.57233959.webp', 'single-holiday-tour-details', 'Single Holiday Tour Details', 'Box Container', 'Yes', 2, 'Single Holiday Tour Details', NULL, NULL, 1, '2026-07-14 02:15:21', '2026-07-14 02:16:22', NULL),
+(70, 0, 'Visa Services', 'Visa Services', 0, NULL, 'visa-services', '<p>[include file=\"visa-services\"]</p>', 'published', '1784050069_6a56719591239_image.webp', 'visa-services', 'Visa Services', 'Box Container', 'Yes', 2, 'Visa Services', NULL, NULL, 1, '2026-07-14 12:27:28', '2026-07-14 12:27:49', NULL),
+(71, 0, 'Umrah Visa', 'Umrah Visa', 0, NULL, 'umrah-visa', '<p>[include file=\"umrah-visa\"]</p>', 'published', '1784051680_6a5677e0b253d_image.webp', 'umrah-visa', 'Umrah Visa', 'Box Container', 'Yes', 2, 'Umrah Visa', NULL, NULL, 1, '2026-07-14 12:54:20', '2026-07-14 12:54:40', NULL),
+(72, 0, 'Tourist Visa', 'Tourist Visa', 0, NULL, 'tourist-visa', '<p>[include file=\"tourist-visa\"]</p>', 'published', '1784058432_6a5692407991b_image.webp', 'tourist-visa', 'Tourist Visa', 'Box Container', 'Yes', 2, 'Tourist Visa', NULL, NULL, 1, '2026-07-14 14:46:51', '2026-07-14 14:47:12', NULL);
 
 -- --------------------------------------------------------
 
@@ -1685,7 +1688,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('5YdhLQlW0h6cFBnXIIeBinK4blVb1R9OpGDRr7gz', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il9mbGFzaCI7YToyOntzOjM6Im5ldyI7YTowOnt9czozOiJvbGQiO2E6MDp7fX1zOjk6Il9wcmV2aW91cyI7YToyOntzOjM6InVybCI7czo0NjoiaHR0cHM6Ly9teXNhaWZjby1sYXJhdmVsLnRlc3QvaG9saWRheS1wYWNrYWdlcyI7czo1OiJyb3V0ZSI7czoxMjoicGFnZS5kZWZhdWx0Ijt9czo2OiJfdG9rZW4iO3M6NDA6ImZsdHl0SFhSeTJuMkN3ZW85OVhrQ3l2dFZMU1h6TmlwVjYxQjlrcVEiO3M6MzoidXJsIjthOjE6e3M6ODoiaW50ZW5kZWQiO3M6NDE6Imh0dHBzOi8vbXlzYWlmY28tbGFyYXZlbC50ZXN0L2FkbWluL3BhZ2VzIjt9fQ==', 1784028706);
+('wSDiUqp9JMhdO7J4QG12GrIXUL3dSsdgvbJiLAoR', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiN25uOXVVdWJoU3llRjdCRlhuaUM5aTA0Z2JFb01ZT3J1aExrNURoNyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NDI6Imh0dHBzOi8vbXlzYWlmY28tbGFyYXZlbC50ZXN0L3RvdXJpc3QtdmlzYSI7czo1OiJyb3V0ZSI7czoxMjoicGFnZS5kZWZhdWx0Ijt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1784061875);
 
 -- --------------------------------------------------------
 
@@ -2655,7 +2658,7 @@ ALTER TABLE `modules`
 -- AUTO_INCREMENT for table `pages`
 --
 ALTER TABLE `pages`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 
 --
 -- AUTO_INCREMENT for table `popular_searches`

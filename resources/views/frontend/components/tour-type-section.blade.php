@@ -12,13 +12,13 @@
             <div class="our-popular-inner">
                 <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between md:gap-8">
                     <div class="min-w-0 flex-1">
-                        <h1 class="text-left">
+                        <h2 class="text-left text-3xl">
                             @if($mainText !== '')
                                 <span>{{ $mainText }} </span><span class="text-mst">{{ $accentText }}</span>
                             @else
                                 <span class="text-mst">{{ $accentText }}</span>
                             @endif
-                        </h1>
+                        </h2>
                         @if(filled($tourType->short_description))
                             <p class="text-left mt-4 pe-20">{{ $tourType->short_description }}</p>
                         @endif

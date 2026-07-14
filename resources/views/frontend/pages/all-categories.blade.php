@@ -30,7 +30,7 @@
                 <h1>
                     <span>Explore the Best </span><span class="text-mst">Dubai Tours, Activities</span>
                 </h1>
-                <p class="mt-4">
+                <p class="mt-4 text-[16px]">
                     Explore the best Dubai tours and activities with a trusted local tour operator. Find top experiences
                     including Dubai desert safari, Dubai city tours, Dubai Marina yacht tours, dhow cruise dinner, and
                     full-day Abu Dhabi city tours with Ferrari World and Louvre Museum. Choose from popular Dubai water
