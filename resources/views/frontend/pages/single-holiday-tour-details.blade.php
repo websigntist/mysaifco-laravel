@@ -1,3 +1,12 @@
+<style>
+    .mst-dd-menu { max-height: 260px; overflow-y: auto; }
+    .mst-dd-option:hover,
+    .mst-dd-option.is-active {
+        background: linear-gradient(to right, #BA9B31, #74611E);
+        color: #ffffff;
+    }
+    .mst-dd.is-open .mst-dd-caret { transform: rotate(180deg); }
+</style>
 @php
     // Prepare gallery list
         $galleryImages = [];
@@ -407,20 +416,21 @@
                                 <div class="text-sm font-heading font-bold text-mst-gray">Room Type</div>
                             </div>
                         </div>
-                        <div class="relative">
-                            <div class="w-full flex items-center gap-2.5 border border-gray-200 rounded-xl px-4 py-3 text-mst-gray">
+                        <div class="mst-dd relative" data-dd>
+                            <div class="mst-dd-trigger w-full flex items-center gap-2.5 border border-gray-200 rounded-xl px-4 py-3 text-mst-gray cursor-pointer">
                                 <img src="{{ asset('assets/images/icons/222.svg') }}" class="object-contain flex-shrink-0 pointer-events-none" alt="">
-                                <select id="booking-room-type" class="appearance-none font-body text-sm font-medium focus:outline-none bg-transparent w-full cursor-pointer text-mst-gray" required>
-                                    <option value="">Select room type</option>
-                                    <option>Standard Room</option>
-                                    <option>Deluxe Room</option>
-                                    <option>Suite</option>
-                                    <option>Family Room</option>
-                                </select>
-                                <svg class="w-3.5 h-3.5 text-gray-400 flex-shrink-0 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <span class="mst-dd-label font-body text-sm font-medium w-full text-gray-400" data-placeholder="Select room type">Select room type</span>
+                                <svg class="mst-dd-caret w-3.5 h-3.5 text-gray-400 flex-shrink-0 pointer-events-none transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
                                 </svg>
                             </div>
+                            <ul class="mst-dd-menu hidden absolute z-30 left-0 right-0 mt-2 bg-white border border-gray-200 rounded-xl shadow-lg py-1">
+                                <li class="mst-dd-option px-4 py-2.5 text-sm font-medium text-mst-gray cursor-pointer transition" data-value="Standard Room">Standard Room</li>
+                                <li class="mst-dd-option px-4 py-2.5 text-sm font-medium text-mst-gray cursor-pointer transition" data-value="Deluxe Room">Deluxe Room</li>
+                                <li class="mst-dd-option px-4 py-2.5 text-sm font-medium text-mst-gray cursor-pointer transition" data-value="Suite">Suite</li>
+                                <li class="mst-dd-option px-4 py-2.5 text-sm font-medium text-mst-gray cursor-pointer transition" data-value="Family Room">Family Room</li>
+                            </ul>
+                            <input type="hidden" name="room_type" value="">
                         </div>
                     </div>
                     <!-- STEP 4 -->
@@ -436,18 +446,20 @@
                                 <div class="text-sm font-heading font-bold text-mst-gray">Hotel Category</div>
                             </div>
                         </div>
-                        <div class="relative">
-                            <div class="w-full flex items-center gap-2.5 border border-gray-200 rounded-xl px-4 py-3 text-mst-gray">
+                        <div class="mst-dd relative" data-dd>
+                            <div class="mst-dd-trigger w-full flex items-center gap-2.5 border border-gray-200 rounded-xl px-4 py-3 text-mst-gray cursor-pointer">
                                 <img src="{{ asset('assets/images/icons/988.svg') }}" class="object-contain flex-shrink-0 pointer-events-none" alt="">
-                                <select id="booking-hotel-category" class="appearance-none font-body text-sm font-medium focus:outline-none bg-transparent w-full cursor-pointer text-mst-gray" required>
-                                    <option>4 Star hotel</option>
-                                    <option>3 Star hotel</option>
-                                    <option>5 Star hotel</option>
-                                </select>
-                                <svg class="w-3.5 h-3.5 text-gray-400 flex-shrink-0 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <span class="mst-dd-label font-body text-sm font-medium w-full text-mst-gray" data-placeholder="Select hotel category">4 Star hotel</span>
+                                <svg class="mst-dd-caret w-3.5 h-3.5 text-gray-400 flex-shrink-0 pointer-events-none transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
                                 </svg>
                             </div>
+                            <ul class="mst-dd-menu hidden absolute z-30 left-0 right-0 mt-2 bg-white border border-gray-200 rounded-xl shadow-lg py-1">
+                                <li class="mst-dd-option is-active px-4 py-2.5 text-sm font-medium text-mst-gray cursor-pointer transition" data-value="4 Star hotel">4 Star hotel</li>
+                                <li class="mst-dd-option px-4 py-2.5 text-sm font-medium text-mst-gray cursor-pointer transition" data-value="3 Star hotel">3 Star hotel</li>
+                                <li class="mst-dd-option px-4 py-2.5 text-sm font-medium text-mst-gray cursor-pointer transition" data-value="5 Star hotel">5 Star hotel</li>
+                            </ul>
+                            <input type="hidden" name="hotel_category" value="4 Star hotel">
                         </div>
                     </div>
 
@@ -666,6 +678,45 @@
                 var val = parseInt(input.value, 10) || 0;
                 val = btn.classList.contains('guest-plus') ? val + 1 : Math.max(0, val - 1);
                 input.value = val;
+            });
+        });
+        // Custom dropdowns
+        var dropdowns = document.querySelectorAll('[data-dd]');
+        dropdowns.forEach(function (dd) {
+            var trigger = dd.querySelector('.mst-dd-trigger');
+            var menu = dd.querySelector('.mst-dd-menu');
+            var label = dd.querySelector('.mst-dd-label');
+            var hidden = dd.querySelector('input[type="hidden"]');
+            trigger.addEventListener('click', function (e) {
+                e.stopPropagation();
+                var isOpen = !menu.classList.contains('hidden');
+                dropdowns.forEach(function (other) {
+                    other.querySelector('.mst-dd-menu').classList.add('hidden');
+                    other.classList.remove('is-open');
+                });
+                if (isOpen) { return; }
+                menu.classList.remove('hidden');
+                dd.classList.add('is-open');
+            });
+            dd.querySelectorAll('.mst-dd-option').forEach(function (opt) {
+                opt.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    var val = opt.getAttribute('data-value');
+                    label.textContent = val;
+                    label.classList.remove('text-gray-400');
+                    label.classList.add('text-mst-gray');
+                    if (hidden) { hidden.value = val; }
+                    dd.querySelectorAll('.mst-dd-option').forEach(function (o) { o.classList.remove('is-active'); });
+                    opt.classList.add('is-active');
+                    menu.classList.add('hidden');
+                    dd.classList.remove('is-open');
+                });
+            });
+        });
+        document.addEventListener('click', function () {
+            dropdowns.forEach(function (dd) {
+                dd.querySelector('.mst-dd-menu').classList.add('hidden');
+                dd.classList.remove('is-open');
             });
         });
     });
