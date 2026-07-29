@@ -1,7 +1,7 @@
+@if($blog)
 <section class="">
     <div class="px-4 relative flex w-full items-start justify-center overflow-hidden">
-        <div class="absolute inset-0 scale-100 bg-cover bg-top bg-no-repeat" style="background-image: url('{{ asset('assets/images/pages/1784392804_6a5bac646bb10_image.webp') }}')" aria-hidden="true"></div>
-        {{--@dump($explore_uae)--}}
+        <div class="absolute inset-0 scale-100 bg-cover bg-top bg-no-repeat" style="background-image: url('{{ $blog->imageUrl() }}')" aria-hidden="true"></div>
         <div class="absolute inset-0 bg-gradient-to-r from-black/90 from-30% to-black/05 to-90%"
              aria-hidden="true"></div>
         <div class="relative z-10 w-full py-14">
@@ -11,16 +11,16 @@
                     <svg class="w-4 h-4 text-mst" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="m9 5 7 7-7 7"/>
                     </svg>
-                    <a href="{{ url('/') }}" class="text-white hover:text-mst transition">Blogs</a>
+                    <a href="{{ url('/blogs') }}" class="text-white hover:text-mst transition">Blogs</a>
                     <svg class="w-4 h-4 text-mst" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="m9 5 7 7-7 7"/>
                     </svg>
-                    <span class="text-mst capitalize">Umrah Guide 2026</span>
+                    <span class="text-mst capitalize">{{ $blog->title }}</span>
                 </nav>
                 <h1 class="text-5xl w-4xl mt-6 font-body font-bold not-italic leading-16 text-white">
-                    Complete Umrah Guide <br> <span class="text-mst">2026</span>
+                    {{ $blog->title }}
                 </h1>
-                <p class="text-lg mt-5 w-6/12 text-white">Everything You need to know before your Spiritual Journey </p>
+                <p class="text-lg mt-5 w-6/12 text-white">{{ $blog->excerpt(160) }}</p>
                 <div class="flex mt-8 mb-15 gap-6">
                     <a
                         href="#"
@@ -91,153 +91,42 @@
     </div>
 </section>
 
-@php
-    $tableOfContent = [
-        'What is Umrah',
-        'Difference between Umrah and Hajj',
-        'Best time to Perform Umrah',
-        'Umrah Visa Requirements',
-        'Documents Required',
-        'Step-by-Step Umrah Rituals',
-        'What to Pack',
-        'Health & Vaccination',
-        'Estimated Cost',
-        'Helpful Travel Tips',
-        'Frequently Asked Questions',
-    ];
-
-    $comparisonRows = [
-        ['Can be performed all year', 'Performed only during Dhull Hajjah'],
-        ['Takes only a few hours',    'Losts around 5-6 days'],
-        ['Fewer Rituals',             'More comprehensive rituals'],
-        ['Optional',                  'Mandatory for financially and physically able Muslims'],
-    ];
-
-    $bestTimes = [
-        ['title' => 'Ramadan',            'icon' => 'r656.svg',
-         'desc'  => 'One of the most spiritually rewarding times to perform Umrah. However, it is also the busiest season with larger crowds and higher travel costs.'],
-        ['title' => 'Winter (Nov - Feb)', 'icon' => 't5656.svg',
-         'desc'  => 'Pleasant weather makes walking between holy sites much more comfortable.'],
-        ['title' => 'Off-Peak Months',    'icon' => 'f565.svg',
-         'desc'  => 'Ideal for families and elderly travelers seeking fewer crowds and better hotel availability.'],
-    ];
-
-    $blogCategories = [
-        ['label' => 'Umrah Guide',      'icon' => 'h989.svg'],
-        ['label' => 'Visa Information', 'icon' => 'h989.svg'],
-        ['label' => 'Holiday Packages', 'icon' => 'holiday.svg'],
-        ['label' => 'Travel Tips',      'icon' => 'tips.svg'],
-        ['label' => 'Saudi Arabia',     'icon' => 'r5656.svg'],
-        ['label' => 'Dubai Tours',      'icon' => 'dubai.svg'],
-    ];
-
-    $recentPosts = [
-        ['title' => 'Complete Umrah Guide from Dubai',              'read' => '8 mins read', 'image' => 'b1-original.webp'],
-        ['title' => 'Desert Safari Guide - Everything You must Know','read' => '6 mins read', 'image' => 'b2-original.webp'],
-        ['title' => 'UAE Visa Guide for Tourists',                  'read' => '5 mins read', 'image' => 'b3-original.webp'],
-        ['title' => 'Abu Dhabi Travel Guide - Top places to Visit', 'read' => '5 mins read', 'image' => 'b4-original.webp'],
-        ['title' => 'How to plan a Budget trip to Dubai',           'read' => '5 mins read', 'image' => 'b5-original.webp'],
-    ];
-
-    $popularTags = ['Umrah', 'Saudi Arabia', 'Visa', 'Makhah', 'Madinah', 'Pilgrimage', 'Dubai', 'Travel', 'Flights', 'Umrah', 'Hoildays'];
-
-    $blogFilters = ['All', 'UAE Travel', 'Umrah Guide', 'Desert Safari', 'Yacht Charter', 'UAE Visa', 'Abu Dhabi Tours', 'Holiday', 'Dubai Tours'];
-
-    $relatedBlogs = [
-        ['title' => 'Desert Safari in Dubai - Types, Price & what to Exp...', 'image' => '56dfd-original.webp',
-         'date'  => 'May 10, 2026', 'read' => '8 min read',
-         'desc'  => 'Explore the thrill of Dubai desert safari, learn about different safari types, prices, inclusions  and tips for an amazing.'],
-        ['title' => 'Yacht Charter in Dubai - A Luxury Experience on Water', 'image' => '627727e24441f5e0b9c98e7e7155c6b8e41b28cb-original.webp',
-         'date'  => 'May 10, 2026', 'read' => '8 min read',
-         'desc'  => 'Book a private yacht charter n Dubai and enjoy luxury, comfort and breathing views. Perfect for celebration & special'],
-        ['title' => 'Best Time to Visit Dubai - Weather, Events & Travel T...', 'image' => 'packages/holiday-package-6.webp',
-         'date'  => 'May 10, 2026', 'read' => '8 min read',
-         'desc'  => 'Planing a trp to Dubai?Discover the best time to vis it Dubai wth details on weather top events and travel tips to make you..'],
-    ];
-@endphp
-
 {{-- ===== Article + Sidebar ===== --}}
 <section class="pt-4 pb-6">
     <div class="container mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-8">
             {{-- LEFT: article --}}
             <div>
-                <img src="{{ asset('assets/images/65660.webp') }}"
-                     alt="Umrah Guide"
+                <img src="{{ $blog->imageUrl() }}"
+                     alt="{{ $blog->title }}"
                      class="w-full h-72 md:h-96 object-cover rounded-2xl">
                 <p class="font-body text-mst-gray leading-7 mt-5">
-                    Planning your first Umrah? This comprehensive guide covers visas, costs, preparation, rituals, packing
-                    essentials, and expert travel tips to help you perform a smooth and meaningful pilgrimage.
+                    {{ $blog->excerpt(220) }}
                 </p>
 
-                {{-- Table of Content --}}
-                <div class="bg-gray-50 border border-gray-200 rounded-2xl px-6 py-5 mt-6">
-                    <h3 class="font-heading font-bold text-xl text-mst-gray mb-5">Table of Content</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2">
-                        @foreach($tableOfContent as $toc)
-                            <div class="flex items-center gap-3">
-                                <img src="{{ asset('assets/images/icons/check-bullet.svg') }}" alt="">
-                                <span class="font-body text-sm text-mst-gray">{{ $toc }}</span>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-
-                {{-- 1. What is Umrah --}}
-                <h2 class="font-heading italic font-bold text-2xl md:text-2xl text-mst-gray mt-5 mb-4">1. What is <span class="text-mst">Umrah</span></h2>
-                <p class="font-body text-mst-gray leading-7 text-[16px]">
-                    Umrah is an Islamic pilgrimage to Makkah that can be performed throughout the year. Unlike Hajj. which
-                    is compulsory once in a lifetime for eligible Muslims and takes place during specific Islamic dates,
-                    Umrah is a voluntary act of worship that offers immense spiritual rewards. Every year, millions of
-                    Muslims travel from around the world to perform Umrah &amp; seek forgiveness, peace, &amp; closeness to Allah.
-                </p>
-
-                {{-- 2. Difference table --}}
-                <h2 class="font-heading italic font-bold text-2xl md:text-2xl text-mst-gray mt-5 mb-5">2. Difference between <span class="text-mst">Umrah &amp; Hajj</span></h2>
-                <div class="overflow-x-auto rounded-xl border border-gray-200">
-                    <table class="w-full text-center font-body text-sm text-mst-gray">
-                        <thead>
-                            <tr class="font-heading text-base text-white">
-                                <th class="bg-gradient-to-r from-[#BA9B31] to-[#a68a2c] py-4 px-4 w-1/2">Umrah</th>
-                                <th class="bg-[#282828] py-4 px-4 w-1/2">Hajj</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-200 bg-white">
-                            @foreach($comparisonRows as $row)
-                                <tr class="divide-x divide-gray-200">
-                                    <td class="py-3 px-4">{{ $row[0] }}</td>
-                                    <td class="py-3 px-4">{{ $row[1] }}</td>
-                                </tr>
+                @if(count($tableOfContent))
+                    {{-- Table of Content --}}
+                    <div class="bg-gray-50 border border-gray-200 rounded-2xl px-6 py-5 mt-6">
+                        <h3 class="font-heading font-bold text-xl text-mst-gray mb-5">Table of Content</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2">
+                            @foreach($tableOfContent as $toc)
+                                <div class="flex items-center gap-3">
+                                    <img src="{{ asset('assets/images/icons/check-bullet.svg') }}" alt="">
+                                    <span class="font-body text-sm text-mst-gray">{{ $toc }}</span>
+                                </div>
                             @endforeach
-                        </tbody>
-                    </table>
-                </div>
-
-                {{-- 3. Best Time --}}
-                <h2 class="font-heading italic font-bold text-2xl md:text-2xl text-mst-gray mt-5 mb-4">3. Best Time to <span class="text-mst">Perform Umrah</span></h2>
-                <p class="font-body text-mst-gray leading-7 mb-6 text-[16px]">
-                    While Umrah is available throughout the year, choosing the right season can greatly improve your experience.
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-3 md:divide-x divide-gray-200">
-                    @foreach($bestTimes as $time)
-                        <div class="flex items-start gap-3 px-0 md:px-5 first:pl-0 last:pr-0 py-3 md:py-0">
-                            <img src="{{ asset('assets/images/icons/' . $time['icon']) }}" class="w-8 flex-shrink-0" alt="">
-                            <div>
-                                <h4 class="font-heading italic font-bold text-base text-mst-gray">{{ $time['title'] }}</h4>
-                                <p class="font-body text-sm text-mst-gray mt-1 leading-snug">{{ $time['desc'] }}</p>
-                            </div>
                         </div>
-                    @endforeach
+                    </div>
+                @endif
+
+                {{-- Article body --}}
+                <div class="font-body text-mst-gray leading-7 mt-6">
+                    {!! $blog->description !!}
                 </div>
 
                 {{-- Buttons --}}
                 <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-6">
-                    <a href="#" class="inline-flex items-center gap-2 rounded-full px-7 py-3 font-heading italic text-white
-                            bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300">
-                        Load Full Guide
-                        <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}" class="w-4" alt="">
-                    </a>
-                    <a href="#" class="inline-flex items-center gap-2 rounded-full px-7 py-3 font-heading italic text-white
+                    <a href="{{ url('/blogs') }}" class="inline-flex items-center gap-2 rounded-full px-7 py-3 font-heading italic text-white
                             bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300">
                         View all Blogs
                         <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}" class="w-4" alt="">
@@ -260,11 +149,11 @@
                 <div class="bg-gray-50 border border-gray-200 rounded-2xl px-6 py-6">
                     <h3 class="font-heading font-bold text-xl text-mst-gray mb-5">Categories</h3>
                     <ul class="space-y-4">
-                        @foreach($blogCategories as $category)
+                        @foreach($categories as $category)
                             <li>
-                                <a href="#" class="flex items-center gap-3 group">
-                                    <img src="{{ asset('assets/images/icons/' . $category['icon']) }}" class="w-6 flex-shrink-0" alt="">
-                                    <span class="font-heading font-bold text-mst-gray group-hover:text-mst transition">{{ $category['label'] }}</span>
+                                <a href="{{ url('/blogs') }}?category={{ $category->friendly_url }}" class="flex items-center gap-3 group">
+                                    <img src="{{ filled($category->image) ? asset('assets/images/blog-category/'.$category->image) : asset('assets/images/icons/dubai.svg') }}" class="w-6 flex-shrink-0" alt="">
+                                    <span class="font-heading font-bold text-mst-gray group-hover:text-mst transition">{{ $category->title }}</span>
                                 </a>
                             </li>
                         @endforeach
@@ -277,13 +166,13 @@
                     <ul class="space-y-6">
                         @foreach($recentPosts as $post)
                             <li>
-                                <a href="#" class="flex items-start gap-3 group">
-                                    <img src="{{ asset('assets/images/' . $post['image']) }}" class="w-16 h-14 rounded-lg object-cover flex-shrink-0" alt="">
+                                <a href="{{ $post->frontendUrl() }}" class="flex items-start gap-3 group">
+                                    <img src="{{ $post->imageUrl() }}" class="w-16 h-14 rounded-lg object-cover flex-shrink-0" alt="{{ $post->title }}">
                                     <div>
-                                        <h4 class="font-heading font-bold text-sm text-mst-gray leading-snug group-hover:text-mst transition">{{ $post['title'] }}</h4>
+                                        <h4 class="font-heading font-bold text-sm text-mst-gray leading-snug group-hover:text-mst transition">{{ $post->title }}</h4>
                                         <span class="flex items-center gap-1.5 mt-1.5 font-body text-xs text-mst-gray">
                                             <img src="{{ asset('assets/images/icons/c563.svg') }}" class="w-3.5" alt="">
-                                            {{ $post['read'] }}
+                                            {{ $post->readingTimeMinutes() }} mins read
                                         </span>
                                     </div>
                                 </a>
@@ -292,16 +181,18 @@
                     </ul>
                 </div>
 
-                {{-- Popular Tags --}}
-                <div class="bg-gray-50 border border-gray-200 rounded-2xl px-6 py-8">
-                    <h3 class="font-heading font-bold text-xl text-mst-gray mb-5">Popular Tags</h3>
-                    <div class="flex flex-wrap gap-2.5">
-                        @foreach($popularTags as $tag)
-                            <a href="#" class="bg-mst rounded-full py-1.5 px-4 text-white text-sm italic font-heading
-                                    hover:bg-gradient-to-r hover:from-[#BA9B31] hover:to-[#74611E] transition duration-300">{{ $tag }}</a>
-                        @endforeach
+                @if($popularTags->isNotEmpty())
+                    {{-- Popular Tags --}}
+                    <div class="bg-gray-50 border border-gray-200 rounded-2xl px-6 py-8">
+                        <h3 class="font-heading font-bold text-xl text-mst-gray mb-5">Popular Tags</h3>
+                        <div class="flex flex-wrap gap-2.5">
+                            @foreach($popularTags as $tag)
+                                <a href="{{ url('/blogs') }}" class="bg-mst rounded-full py-1.5 px-4 text-white text-sm italic font-heading
+                                        hover:bg-gradient-to-r hover:from-[#BA9B31] hover:to-[#74611E] transition duration-300">{{ $tag->title }}</a>
+                            @endforeach
+                        </div>
                     </div>
-                </div>
+                @endif
 
                 {{-- CTA banner --}}
                 <div class="relative rounded-2xl overflow-hidden">
@@ -321,47 +212,18 @@
     </div>
 </section>
 
-{{-- ===== Related Blogs ===== --}}
-<section class="pt-8 pb-6">
-    <div class="container mx-auto">
-        <h2 class="font-heading italic font-bold text-3xl md:text-3xl text-mst-gray">Related <span class="text-mst">Blogs</span></h2>
+@if($relatedBlogs->isNotEmpty())
+    {{-- ===== Related Blogs ===== --}}
+    <section class="pt-8 pb-6">
+        <div class="container mx-auto">
+            <h2 class="font-heading italic font-bold text-3xl md:text-3xl text-mst-gray">Related <span class="text-mst">Blogs</span></h2>
 
-        <div class="flex flex-wrap gap-3 mt-6">
-            @foreach($blogFilters as $i => $filter)
-                <a href="#" class="rounded-full py-1.5 px-5 text-sm italic font-heading transition duration-300
-                        {{ $i === 0
-                            ? 'bg-gradient-to-r from-[#BA9B31] to-[#74611E] text-white'
-                            : 'bg-white border border-gray-300 text-mst-gray hover:border-mst hover:text-mst' }}">{{ $filter }}</a>
-            @endforeach
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                @include('frontend.pages.includes.partials.blog-card', ['blogs' => $relatedBlogs])
+            </div>
         </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-            @foreach($relatedBlogs as $blog)
-                <article class="bg-white border border-gray-500 rounded-2xl overflow-hidden flex flex-col">
-                    <img src="{{ asset('assets/images/' . $blog['image']) }}" alt="{{ $blog['title'] }}" class="w-full h-44 object-cover" loading="lazy">
-                    <div class="p-5 flex flex-col flex-1">
-                        <h3 class="font-heading font-bold text-lg text-mst-gray leading-snug line-clamp-2">{{ $blog['title'] }}</h3>
-                        <div class="flex items-center gap-4 mt-2.5 font-body text-xs text-mst-gray">
-                            <span class="flex items-center gap-1.5">
-                                <img src="{{ asset('assets/images/icons/c563.svg') }}" class="w-3.5" alt="">
-                                {{ $blog['date'] }}
-                            </span>
-                            <span class="flex items-center gap-1.5">
-                                <img src="{{ asset('assets/images/icons/c563.svg') }}" class="w-3.5" alt="">
-                                {{ $blog['read'] }}
-                            </span>
-                        </div>
-                        <p class="font-body text-sm text-mst-gray mt-3 leading-snug">{{ $blog['desc'] }}</p>
-                        <a href="#" class="inline-flex items-center gap-2 mt-4 font-heading italic font-bold text-sm text-mst hover:text-[#74611E] transition">
-                            Read more
-                            <img src="{{ asset('assets/images/icons/gb898.svg') }}" class="w-3.5" alt="">
-                        </a>
-                    </div>
-                </article>
-            @endforeach
-        </div>
-    </div>
-</section>
+    </section>
+@endif
 
 {{-- contact bar --}}
 <section class="contactBar pb-5 pt-14 bg-white">
@@ -403,3 +265,4 @@
         </div>
     </div>
 </section>
+@endif

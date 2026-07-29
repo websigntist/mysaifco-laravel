@@ -23,7 +23,7 @@
 @endif
 
 {{--===== main heading ======--}}
-<section class="flex justify-center items-center py-8 px-4 md:py-10">
+{{--<section class="flex justify-center items-center py-8 px-4 md:py-10">
     <div class="container mx-auto">
         <div class="testimonials-section-inner mx-auto max-w-6xl">
             <div class="mx-auto text-center">
@@ -41,7 +41,7 @@
             </div>
         </div>
     </div>
-</section>
+</section>--}}
 
 @foreach($tourSections ?? [] as $section)
     @include('frontend.components.tour-type-section', ['section' => $section])

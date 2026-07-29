@@ -1,21 +1,3 @@
-<section class="flex justify-center items-center border-b-1 border-gray-200">
-    <div class="px-4 relative flex min-h-[400px] w-full
-                    items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 scale-100 bg-cover bg-top bg-no-repeat"
-             style="background-image: url('{{ asset('assets/images/pages/1782556549_6a3fa7851bfc7_image.webp') }}')"
-             aria-hidden="true"></div>
-        {{--@dump($explore_uae)--}}
-        <div class="absolute inset-0 bg-gradient-to-r from-[#000000]/90 to-[#000000]/0" aria-hidden="true"></div>
-        <div class="relative z-10 w-full py-14">
-            <div class="container mx-auto">
-                <h1 class="text-white text-[54px] font-body not-italic w-7/12 leading-16">Travel Tips, Guides &
-                                                                                          Inspiration</h1>
-                <p class="text-white text-lg w-6/12 mt-5">Find answers to common Umrah-related questions to help you
-                                                          prepare for a smooth and spiritually fulfilling journey.</p>
-            </div>
-        </div>
-    </div>
-</section>
 {{-- explore --}}
 <section class="blog-explore py-12">
     <div class="container mx-auto px-4 lg:px-0">
@@ -90,95 +72,45 @@
                     and services for your needs.
                 </p>
             </div>
+            @if($categories->count() > 8)
             <div class="flex-shrink-0">
-                <a
-                    href="#"
+                <button
+                    type="button"
+                    id="viewAllBigCategoriesBtn"
                     class="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-mst
                                         to-mst-dark px-5 py-2 font-heading text-base italic text-white transition
                                         hover:from-mst-dark hover:to-mst md:text-lg"
-                > View all Categories <img
+                > <span>View all Categories</span> <img
                         src="{{ asset('assets/images/icons/btn-arrow.svg') }}"
-                        class="ms-1 w-5"
+                        class="ms-1 w-5 transition-transform duration-200"
                         width="24"
                         height="24"
                         alt=""
-                    > </a>
+                    > </button>
             </div>
+            @endif
         </div>
         <!-- Categories Grid -->
-        <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-5">
-            <!-- UAE Travel -->
-            <a href="#" class="group flex flex-col items-center text-center p-5 bg-white border border-gray-200 rounded-2xl transition-all duration-300 hover:shadow-md hover:border-mst shadow-[0_8px_30px_rgb(0,0,0,0.015)] cursor-pointer">
-                <div class="w-16 h-16 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110">
-                    <img src="{{ asset('assets/images/icons/dubai.svg') }}" alt="UAE Travel" class="w-full h-full object-contain">
-                </div>
-                <h4 class="font-heading italic font-bold text-[18px] leading-tight">
-                    <span class="text-mst-gray">UAE</span><br> <span class="text-mst">Travel</span>
-                </h4>
-                <span class="font-body text-gray-500 text-xs md:text-sm mt-3">15 Posts</span> </a>
-            <!-- Umrah Guide -->
-            <a href="#" class="group flex flex-col items-center text-center p-5 bg-white border border-gray-200 rounded-2xl transition-all duration-300 hover:shadow-md hover:border-mst shadow-[0_8px_30px_rgb(0,0,0,0.015)] cursor-pointer">
-                <div class="w-16 h-16 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110">
-                    <img src="{{ asset('assets/images/icons/kaba.svg') }}" alt="Umrah Guide" class="w-full h-full object-contain">
-                </div>
-                <h4 class="font-heading italic font-bold text-[18px] leading-tight">
-                    <span class="text-mst-gray">Umrah</span><br> <span class="text-mst">Guide</span>
-                </h4>
-                <span class="font-body text-gray-500 text-xs md:text-sm mt-3">12 Posts</span> </a>
-            <!-- Desert Safari -->
-            <a href="#" class="group flex flex-col items-center text-center p-5 bg-white border border-gray-200 rounded-2xl transition-all duration-300 hover:shadow-md hover:border-mst shadow-[0_8px_30px_rgb(0,0,0,0.015)] cursor-pointer">
-                <div class="w-16 h-16 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110">
-                    <img src="{{ asset('assets/images/icons/desert.svg') }}" alt="Desert Safari" class="w-full h-full object-contain">
-                </div>
-                <h4 class="font-heading italic font-bold text-[18px] leading-tight">
-                    <span class="text-mst-gray">Desert</span><br> <span class="text-mst">Safari</span>
-                </h4>
-                <span class="font-body text-gray-500 text-xs md:text-sm mt-3">10 Posts</span> </a>
-            <!-- Yacht Charter -->
-            <a href="#" class="group flex flex-col items-center text-center p-5 bg-white border border-gray-200 rounded-2xl transition-all duration-300 hover:shadow-md hover:border-mst shadow-[0_8px_30px_rgb(0,0,0,0.015)] cursor-pointer">
-                <div class="w-16 h-16 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110">
-                    <img src="{{ asset('assets/images/icons/yacht.svg') }}" alt="Yacht Charter" class="w-full h-full object-contain">
-                </div>
-                <h4 class="font-heading italic font-bold text-[18px] leading-tight">
-                    <span class="text-mst-gray">Yacht</span><br> <span class="text-mst">Charter</span>
-                </h4>
-                <span class="font-body text-gray-500 text-xs md:text-sm mt-3">8 Posts</span> </a>
-            <!-- UAE Visa -->
-            <a href="#" class="group flex flex-col items-center text-center p-5 bg-white border border-gray-200 rounded-2xl transition-all duration-300 hover:shadow-md hover:border-mst shadow-[0_8px_30px_rgb(0,0,0,0.015)] cursor-pointer">
-                <div class="w-16 h-16 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110">
-                    <img src="{{ asset('assets/images/icons/visa1.svg') }}" alt="UAE Visa" class="w-full h-full object-contain">
-                </div>
-                <h4 class="font-heading italic font-bold text-[18px] leading-tight">
-                    <span class="text-mst-gray">UAE</span><br> <span class="text-mst">Visa</span>
-                </h4>
-                <span class="font-body text-gray-500 text-xs md:text-sm mt-3">7 Posts</span> </a>
-            <!-- Abu Dhabi Tours -->
-            <a href="#" class="group flex flex-col items-center text-center p-5 bg-white border border-gray-200 rounded-2xl transition-all duration-300 hover:shadow-md hover:border-mst shadow-[0_8px_30px_rgb(0,0,0,0.015)] cursor-pointer">
-                <div class="w-16 h-16 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110">
-                    <img src="{{ asset('assets/images/icons/dubai.svg') }}" alt="Abu Dhabi Tours" class="w-full h-full object-contain">
-                </div>
-                <h4 class="font-heading italic font-bold text-[18px] leading-tight">
-                    <span class="text-mst-gray">Abu Dhabi</span><br> <span class="text-mst">Tours</span>
-                </h4>
-                <span class="font-body text-gray-500 text-xs md:text-sm mt-3">15 Posts</span> </a>
-            <!-- Holiday Packages -->
-            <a href="#" class="group flex flex-col items-center text-center p-5 bg-white border border-gray-200 rounded-2xl transition-all duration-300 hover:shadow-md hover:border-mst shadow-[0_8px_30px_rgb(0,0,0,0.015)] cursor-pointer">
-                <div class="w-16 h-16 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110">
-                    <img src="{{ asset('assets/images/icons/holiday.svg') }}" alt="Holiday Packages" class="w-full h-full object-contain">
-                </div>
-                <h4 class="font-heading italic font-bold text-[18px] leading-tight">
-                    <span class="text-mst-gray">Holiday</span><br> <span class="text-mst">Packages</span>
-                </h4>
-                <span class="font-body text-gray-500 text-xs md:text-sm mt-3">11 Posts</span> </a>
-            <!-- Travel Tips -->
-            <a href="#" class="group flex flex-col items-center text-center p-5 bg-white border border-gray-200 rounded-2xl transition-all duration-300 hover:shadow-md hover:border-mst shadow-[0_8px_30px_rgb(0,0,0,0.015)] cursor-pointer">
-                <div class="w-16 h-16 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110">
-                    <img src="{{ asset('assets/images/icons/tips.svg') }}" alt="Travel Tips" class="w-full h-full object-contain">
-                </div>
-                <h4 class="font-heading italic font-bold text-[18px] leading-tight">
-                    <span class="text-mst-gray">Travel</span><br> <span class="text-mst">Tips</span>
-                </h4>
-                <span class="font-body text-gray-500 text-xs md:text-sm mt-3">11 Posts</span> </a>
+        <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-5" id="bigCategoriesGrid">
+            @foreach($categories as $index => $category)
+                @php
+                    $categoryTitleWords = explode(' ', $category->title);
+                    $categoryTitleLastWord = array_pop($categoryTitleWords);
+                    $categoryTitleFirstPart = implode(' ', $categoryTitleWords);
+                @endphp
+                <a href="{{ url('/blogs') }}?category={{ $category->friendly_url }}" class="group flex flex-col items-center text-center p-5 bg-white border border-gray-200 rounded-2xl transition-all duration-300 hover:shadow-md hover:border-mst shadow-[0_8px_30px_rgb(0,0,0,0.015)] cursor-pointer {{ $index >= 8 ? 'extra-big-category hidden' : '' }}">
+                    <div class="w-16 h-16 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110">
+                        <img src="{{ filled($category->image) ? asset('assets/images/blog-category/'.$category->image) : asset('assets/images/icons/dubai.svg') }}" alt="{{ $category->title }}" class="w-full h-full object-contain">
+                    </div>
+                    <h4 class="font-heading italic font-bold text-[18px] leading-tight">
+                        @if($categoryTitleFirstPart)
+                            <span class="text-mst-gray">{{ $categoryTitleFirstPart }}</span><br>
+                        @endif
+                        <span class="text-mst">{{ $categoryTitleLastWord }}</span>
+                    </h4>
+                    <span class="font-body text-gray-500 text-xs md:text-sm mt-3">{{ $category->posts_count }} Posts</span>
+                </a>
+            @endforeach
         </div>
     </div>
 </section>
@@ -187,10 +119,11 @@
     <div class="container mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-[9fr_3fr] gap-6">
             <div class="blogRight min-w-0">
+                @if($featuredBlog)
                 <div class="cover-blog bg-gray-50 border border-gray-200 p-5 rounded-2xl flex flex-col md:flex-row gap-6">
                     <!-- Left: Image with Badge -->
                     <div class="relative w-full md:w-[45%] h-[260px] md:h-[300px] flex-shrink-0 rounded-2xl overflow-hidden">
-                        <img src="{{ asset('assets/images/91d9ed0181f54a5e5eef312d07045557fc90311b-original.webp') }}" alt="Complete Umrah Guide" class="w-full h-full object-cover">
+                        <img src="{{ $featuredBlog->imageUrl() }}" alt="{{ $featuredBlog->title }}" class="w-full h-full object-cover">
                         <span class="absolute top-4 left-4 bg-[#BA9B31] text-white text-xs md:text-sm font-heading italic font-bold px-4 py-1.5 rounded-full shadow-sm">
                                         Featured
                                     </span>
@@ -198,11 +131,11 @@
                     <!-- Right: Content -->
                     <div class="flex flex-col justify-center flex-1 py-2">
                     <span class="text-[#F76401] font-heading font-bold tracking-wider text-xl mb-2 uppercase">
-                        Umrah Guide
+                        {{ $featuredBlog->blogCategories->first()->title ?? '' }}
                     </span>
                         <h2 class="font-heading font-bold text-3xl text-mst-gray leading-tight mb-3 hover:text-mst
                         transition-colors duration-200">
-                            <a href="#">Complete Umrah Guide 2026 - Step by Step for First Timers</a>
+                            <a href="{{ $featuredBlog->frontendUrl() }}">{{ $featuredBlog->title }}</a>
                         </h2>
                         <!-- Meta Details -->
                         <div class="flex flex-wrap items-center gap-4 text-gray-700 text-xs md:text-sm mb-4">
@@ -211,29 +144,28 @@
                                      viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
                                 </svg>
-                                <span>May 10, 2026</span>
+                                <span>{{ $featuredBlog->created_at?->format('M d, Y') }}</span>
                             </div>
                             <div class="flex items-center gap-1.5">
                                 <svg class="w-4 h-4 text-gray-700" fill="none" stroke="currentColor" stroke-width="2"
                                      viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"></path>
                                 </svg>
-                                <span>Saifco Team</span>
+                                <span>{{ $featuredBlog->creator->first_name ?? 'Saifco Team' }}</span>
                             </div>
                             <div class="flex items-center gap-1.5">
                                 <svg class="w-4 h-4 text-gray-700" fill="none" stroke="currentColor" stroke-width="2"
                                      viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
                                 </svg>
-                                <span>8 min read</span>
+                                <span>{{ $featuredBlog->readingTimeMinutes() }} min read</span>
                             </div>
                         </div>
                         <p class="font-body text-gray-700 text-sm leading-relaxed mb-5">
-                            Everything you need to know about Umrah in 2026. From visa requirements, step-by-step
-                            process, packing list to important tips for a smooth and spiritual journey.
+                            {{ $featuredBlog->excerpt(180) }}
                         </p>
                         <div>
-                            <a href="#" class="inline-flex items-center gap-1.5 font-heading italic font-bold
+                            <a href="{{ $featuredBlog->frontendUrl() }}" class="inline-flex items-center gap-1.5 font-heading italic font-bold
                             text-mst text-xl transition-colors duration-200"> <span>Read more</span>
                                 <svg class="w-5 h-5 text-mst mt-1" fill="none" stroke="currentColor" stroke-width="2.5"
                                      viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -243,273 +175,39 @@
                         </div>
                     </div>
                 </div>
+                @endif
                 {{-- all categories --}}
                 <div class="cat-list flex items-center gap-3 overflow-x-auto whitespace-nowrap py-6 cursor-grab
-                select-none"><a href="#" class="px-6 py-2.5 bg-[#BA9B31] text-white rounded-full font-heading italic font-bold text-md select-none">All</a><a href="#" class="px-6 py-2.5 bg-white border border-gray-200 text-mst-gray hover:border-mst hover:text-mst rounded-full font-heading italic font-bold text-md transition-all duration-200 select-none">UAE Travel</a><a href="#" class="px-6 py-2.5 bg-white border border-gray-200 text-mst-gray hover:border-mst hover:text-mst rounded-full font-heading italic font-bold text-md transition-all duration-200 select-none">Umrah Guide</a><a href="#" class="px-6 py-2.5 bg-white border border-gray-200 text-mst-gray hover:border-mst hover:text-mst rounded-full font-heading italic font-bold text-md transition-all duration-200 select-none">Desert Safari</a><a href="#" class="px-6 py-2.5 bg-white border border-gray-200 text-mst-gray hover:border-mst hover:text-mst rounded-full font-heading italic font-bold text-md transition-all duration-200 select-none">Yacht Charter</a><a href="#" class="px-6 py-2.5 bg-white border border-gray-200 text-mst-gray hover:border-mst hover:text-mst rounded-full font-heading italic font-bold text-md transition-all duration-200 select-none">UAE Visa</a><a href="#" class="px-6 py-2.5 bg-white border border-gray-200 text-mst-gray hover:border-mst hover:text-mst rounded-full font-heading italic font-bold text-md transition-all duration-200 select-none">Abu Dhabi Tours</a><a href="#" class="px-6 py-2.5 bg-white border border-gray-200 text-mst-gray hover:border-mst hover:text-mst rounded-full font-heading italic font-bold text-md transition-all duration-200 select-none">Holiday Packages</a><a href="#" class="px-6 py-2.5 bg-white border border-gray-200 text-mst-gray hover:border-mst hover:text-mst rounded-full font-heading italic font-bold text-md transition-all duration-200 select-none">Travel Tips</a></div>
+                select-none">
+                    <a href="{{ url('/blogs') }}" class="px-6 py-2.5 rounded-full font-heading italic font-bold text-md select-none transition-all duration-200 {{ !$activeCategory ? 'bg-[#BA9B31] text-white' : 'bg-white border border-gray-200 text-mst-gray hover:border-mst hover:text-mst' }}">All</a>
+                    @foreach($categories as $category)
+                        <a href="{{ url('/blogs') }}?category={{ $category->friendly_url }}" class="px-6 py-2.5 rounded-full font-heading italic font-bold text-md select-none transition-all duration-200 {{ $activeCategory && $activeCategory->id === $category->id ? 'bg-[#BA9B31] text-white' : 'bg-white border border-gray-200 text-mst-gray hover:border-mst hover:text-mst' }}">{{ $category->title }}</a>
+                    @endforeach
+                </div>
                 <div class="blogAllListing">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <!-- Card 1 -->
-                        <div class="border border-gray-200 rounded-2xl overflow-hidden flex flex-col h-full">
-                            <div class="relative w-full h-[200px] overflow-hidden">
-                                <img src="{{ asset('assets/images/f27fd1a41f4b718bfd6da3cb787ece5195bab2ca-original.webp') }}" alt="Desert Safari" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                            </div>
-                            <div class="p-3 flex flex-col flex-1">
-                                <h3 class="font-heading font-bold text-xl text-mst-gray mb-3 leading-snug
-                                hover:text-mst transition-colors duration-200 line-clamp-2">
-                                    <a href="#">Desert Safari in Dubai - Types, Price & what to Exp...</a>
-                                </h3>
-                                <div class="flex items-center gap-4 text-gray-700 text-sm mb-3">
-                                    <div class="flex items-center gap-1">
-                                        <svg class="w-4 h-4 text-gray-700" fill="none" stroke="currentColor"
-                                             stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
-                                        </svg>
-                                        <span>May 10, 2026</span>
-                                    </div>
-                                    <div class="flex items-center gap-1">
-                                        <svg class="w-4 h-4 text-gray-700" fill="none" stroke="currentColor"
-                                             stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
-                                        </svg>
-                                        <span>8 min read</span>
-                                    </div>
-                                </div>
-                                <p class="font-body text-gray-700 text-sm leading-relaxed mb-2 flex-1">
-                                    Explore the thrill of Dubai desert safari, learn about different safari types,
-                                    prices, inclusions and tips for an amazing.
-                                </p>
-                                <div class="mt-auto">
-                                    <a href="#" class="inline-flex items-center gap-1 font-heading italic font-bold text-mst text-sm transition-colors duration-200">
-                                        <span>Read more</span>
-                                        <svg class="w-3.5 h-3.5 text-mst" fill="none" stroke="currentColor"
-                                             stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Card 2 -->
-                        <div class="border border-gray-200 rounded-2xl overflow-hidden flex flex-col h-full">
-                            <div class="relative w-full h-[200px] overflow-hidden">
-                                <img src="{{ asset('assets/images/627727e24441f5e0b9c98e7e7155c6b8e41b28cb-original.webp') }}" alt="Desert Safari" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                            </div>
-                            <div class="p-3 flex flex-col flex-1">
-                                <h3 class="font-heading font-bold text-xl text-mst-gray mb-3 leading-snug
-                                                        hover:text-mst transition-colors duration-200 line-clamp-2">
-                                    <a href="#">Desert Safari in Dubai - Types, Price & what to Exp...</a>
-                                </h3>
-                                <div class="flex items-center gap-4 text-gray-700 text-sm mb-3">
-                                    <div class="flex items-center gap-1">
-                                        <svg class="w-4 h-4 text-gray-700" fill="none" stroke="currentColor"
-                                             stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
-                                        </svg>
-                                        <span>May 10, 2026</span>
-                                    </div>
-                                    <div class="flex items-center gap-1">
-                                        <svg class="w-4 h-4 text-gray-700" fill="none" stroke="currentColor"
-                                             stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
-                                        </svg>
-                                        <span>8 min read</span>
-                                    </div>
-                                </div>
-                                <p class="font-body text-gray-700 text-sm leading-relaxed mb-2 flex-1">
-                                    Explore the thrill of Dubai desert safari, learn about different safari types,
-                                    prices, inclusions and tips for an amazing.
-                                </p>
-                                <div class="mt-auto">
-                                    <a href="#" class="inline-flex items-center gap-1 font-heading italic font-bold text-mst text-sm transition-colors duration-200">
-                                        <span>Read more</span>
-                                        <svg class="w-3.5 h-3.5 text-mst" fill="none" stroke="currentColor"
-                                             stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Card 3 -->
-                        <div class="border border-gray-200 rounded-2xl overflow-hidden flex flex-col h-full">
-                            <div class="relative w-full h-[200px] overflow-hidden">
-                                <img src="{{ asset('assets/images/3754530afa51e91aebdd8958304807da623d7c68-original.webp') }}" alt="Desert Safari" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                            </div>
-                            <div class="p-3 flex flex-col flex-1">
-                                <h3 class="font-heading font-bold text-xl text-mst-gray mb-3 leading-snug
-                                                        hover:text-mst transition-colors duration-200 line-clamp-2">
-                                    <a href="#">Desert Safari in Dubai - Types, Price & what to Exp...</a>
-                                </h3>
-                                <div class="flex items-center gap-4 text-gray-700 text-sm mb-3">
-                                    <div class="flex items-center gap-1">
-                                        <svg class="w-4 h-4 text-gray-700" fill="none" stroke="currentColor"
-                                             stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
-                                        </svg>
-                                        <span>May 10, 2026</span>
-                                    </div>
-                                    <div class="flex items-center gap-1">
-                                        <svg class="w-4 h-4 text-gray-700" fill="none" stroke="currentColor"
-                                             stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
-                                        </svg>
-                                        <span>8 min read</span>
-                                    </div>
-                                </div>
-                                <p class="font-body text-gray-700 text-sm leading-relaxed mb-2 flex-1">
-                                    Explore the thrill of Dubai desert safari, learn about different safari types,
-                                    prices, inclusions and tips for an amazing.
-                                </p>
-                                <div class="mt-auto">
-                                    <a href="#" class="inline-flex items-center gap-1 font-heading italic font-bold text-mst text-sm transition-colors duration-200">
-                                        <span>Read more</span>
-                                        <svg class="w-3.5 h-3.5 text-mst" fill="none" stroke="currentColor"
-                                             stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Card 4 -->
-                        <div class="border border-gray-200 rounded-2xl overflow-hidden flex flex-col h-full">
-                            <div class="relative w-full h-[200px] overflow-hidden">
-                                <img src="{{ asset('assets/images/f27fd1a41f4b718bfd6da3cb787ece5195bab2ca-original.webp') }}" alt="Desert Safari" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                            </div>
-                            <div class="p-3 flex flex-col flex-1">
-                                <h3 class="font-heading font-bold text-xl text-mst-gray mb-3 leading-snug
-                                                        hover:text-mst transition-colors duration-200 line-clamp-2">
-                                    <a href="#">Desert Safari in Dubai - Types, Price & what to Exp...</a>
-                                </h3>
-                                <div class="flex items-center gap-4 text-gray-700 text-sm mb-3">
-                                    <div class="flex items-center gap-1">
-                                        <svg class="w-4 h-4 text-gray-700" fill="none" stroke="currentColor"
-                                             stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
-                                        </svg>
-                                        <span>May 10, 2026</span>
-                                    </div>
-                                    <div class="flex items-center gap-1">
-                                        <svg class="w-4 h-4 text-gray-700" fill="none" stroke="currentColor"
-                                             stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
-                                        </svg>
-                                        <span>8 min read</span>
-                                    </div>
-                                </div>
-                                <p class="font-body text-gray-700 text-sm leading-relaxed mb-2 flex-1">
-                                    Explore the thrill of Dubai desert safari, learn about different safari types,
-                                    prices, inclusions and tips for an amazing.
-                                </p>
-                                <div class="mt-auto">
-                                    <a href="#" class="inline-flex items-center gap-1 font-heading italic font-bold text-mst text-sm transition-colors duration-200">
-                                        <span>Read more</span>
-                                        <svg class="w-3.5 h-3.5 text-mst" fill="none" stroke="currentColor"
-                                             stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Card 5 -->
-                        <div class="border border-gray-200 rounded-2xl overflow-hidden flex flex-col h-full">
-                            <div class="relative w-full h-[200px] overflow-hidden">
-                                <img src="{{ asset('assets/images/627727e24441f5e0b9c98e7e7155c6b8e41b28cb-original.webp') }}" alt="Desert Safari" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                            </div>
-                            <div class="p-3 flex flex-col flex-1">
-                                <h3 class="font-heading font-bold text-xl text-mst-gray mb-3 leading-snug
-                                                                                hover:text-mst transition-colors duration-200 line-clamp-2">
-                                    <a href="#">Desert Safari in Dubai - Types, Price & what to Exp...</a>
-                                </h3>
-                                <div class="flex items-center gap-4 text-gray-700 text-sm mb-3">
-                                    <div class="flex items-center gap-1">
-                                        <svg class="w-4 h-4 text-gray-700" fill="none" stroke="currentColor"
-                                             stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
-                                        </svg>
-                                        <span>May 10, 2026</span>
-                                    </div>
-                                    <div class="flex items-center gap-1">
-                                        <svg class="w-4 h-4 text-gray-700" fill="none" stroke="currentColor"
-                                             stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
-                                        </svg>
-                                        <span>8 min read</span>
-                                    </div>
-                                </div>
-                                <p class="font-body text-gray-700 text-sm leading-relaxed mb-2 flex-1">
-                                    Explore the thrill of Dubai desert safari, learn about different safari types,
-                                    prices, inclusions and tips for an amazing.
-                                </p>
-                                <div class="mt-auto">
-                                    <a href="#" class="inline-flex items-center gap-1 font-heading italic font-bold text-mst text-sm transition-colors duration-200">
-                                        <span>Read more</span>
-                                        <svg class="w-3.5 h-3.5 text-mst" fill="none" stroke="currentColor"
-                                             stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Card 6 -->
-                        <div class="border border-gray-200 rounded-2xl overflow-hidden flex flex-col h-full">
-                            <div class="relative w-full h-[200px] overflow-hidden">
-                                <img src="{{ asset('assets/images/3754530afa51e91aebdd8958304807da623d7c68-original.webp') }}" alt="Desert Safari" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                            </div>
-                            <div class="p-3 flex flex-col flex-1">
-                                <h3 class="font-heading font-bold text-xl text-mst-gray mb-3 leading-snug
-                                                                                hover:text-mst transition-colors duration-200 line-clamp-2">
-                                    <a href="#">Desert Safari in Dubai - Types, Price & what to Exp...</a>
-                                </h3>
-                                <div class="flex items-center gap-4 text-gray-700 text-sm mb-3">
-                                    <div class="flex items-center gap-1">
-                                        <svg class="w-4 h-4 text-gray-700" fill="none" stroke="currentColor"
-                                             stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
-                                        </svg>
-                                        <span>May 10, 2026</span>
-                                    </div>
-                                    <div class="flex items-center gap-1">
-                                        <svg class="w-4 h-4 text-gray-700" fill="none" stroke="currentColor"
-                                             stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
-                                        </svg>
-                                        <span>8 min read</span>
-                                    </div>
-                                </div>
-                                <p class="font-body text-gray-700 text-sm leading-relaxed mb-2 flex-1">
-                                    Explore the thrill of Dubai desert safari, learn about different safari types,
-                                    prices, inclusions and tips for an amazing.
-                                </p>
-                                <div class="mt-auto">
-                                    <a href="#" class="inline-flex items-center gap-1 font-heading italic font-bold text-mst text-sm transition-colors duration-200">
-                                        <span>Read more</span>
-                                        <svg class="w-3.5 h-3.5 text-mst" fill="none" stroke="currentColor"
-                                             stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="blogCardsGrid">
+                        @include('frontend.pages.includes.partials.blog-card', ['blogs' => $blogs])
                     </div>
-                    <!-- Load More Button -->
-                    <div class="flex justify-center mt-10">
-                        <a
-                            href="#"
-                            class="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-mst
-                                                                    to-mst-dark px-7 py-3 font-heading text-base italic text-white transition hover:from-mst-dark
-                                                                     hover:to-mst md:text-lg"
-                        > Load More Articles <img
-                                src="{{ asset('assets/images/icons/btn-arrow.svg') }}"
-                                class="ms-1 w-6"
-                                width="24"
-                                height="24"
-                                alt=""
-                            > </a>
-                    </div>
+                    @if($hasMoreBlogs)
+                        <!-- Load More Button -->
+                        <div class="flex justify-center mt-10">
+                            <button
+                                type="button"
+                                id="loadMoreBlogsBtn"
+                                data-offset="{{ $blogsOffset }}"
+                                data-category="{{ $activeCategory->friendly_url ?? '' }}"
+                                class="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-mst
+                                                                        to-mst-dark px-7 py-3 font-heading text-base italic text-white transition hover:from-mst-dark
+                                                                         hover:to-mst md:text-lg"
+                            > Load More Articles <img
+                                    src="{{ asset('assets/images/icons/btn-arrow.svg') }}"
+                                    class="ms-1 w-6"
+                                    width="24"
+                                    height="24"
+                                    alt=""
+                                > </button>
+                        </div>
+                    @endif
                 </div>
             </div>
             <div class="blogLeft space-y-6">
@@ -527,162 +225,49 @@
                 <!-- Categories -->
                 <div class="blogSideCategories bg-gray-50 border border-gray-200 p-6 rounded-2xl">
                     <h3 class="font-heading font-bold text-lg text-mst-gray mb-4">Categories</h3>
-                    <div class="flex flex-col">
-                        <!-- UAE Tours -->
-                        <a href="#" class="flex items-center justify-between py-3 hover:text-mst transition-colors duration-200">
-                            <div class="flex items-center gap-3">
-                                <img src="{{ asset('assets/images/icons/dubai.svg') }}" alt="UAE Tours" class="w-6 h-6 object-contain">
-                                <span class="font-heading font-bold text-[15px] text-mst-gray hover:text-mst transition-colors">UAE Tours</span>
-                            </div>
-                            <span class="text-sm font-semibold text-gray-500 border border-gray-200 rounded px-2 py-1 w-8 text-center">15</span>
-                        </a>
-                        <!-- Umrah Guide -->
-                        <a href="#" class="flex items-center justify-between py-3 hover:text-mst transition-colors duration-200">
-                            <div class="flex items-center gap-3">
-                                <img src="{{ asset('assets/images/icons/kaba.svg') }}" alt="Umrah Guide" class="w-6 h-6 object-contain">
-                                <span class="font-heading font-bold text-[15px] text-mst-gray hover:text-mst transition-colors">Umrah Guide</span>
-                            </div>
-                            <span class="text-sm font-semibold text-gray-500 border border-gray-200 rounded px-2 py-1 w-8 text-center">12</span>
-                        </a>
-                        <!-- Desert Safari -->
-                        <a href="#" class="flex items-center justify-between py-3 hover:text-mst transition-colors duration-200">
-                            <div class="flex items-center gap-3">
-                                <img src="{{ asset('assets/images/icons/desert.svg') }}" alt="Desert Safari" class="w-6 h-6 object-contain">
-                                <span class="font-heading font-bold text-[15px] text-mst-gray hover:text-mst transition-colors">Desert Safari</span>
-                            </div>
-                            <span class="text-sm font-semibold text-gray-500 border border-gray-200 rounded px-2 py-1 w-8 text-center">10</span>
-                        </a>
-                        <!-- Yacht Charter -->
-                        <a href="#" class="flex items-center justify-between py-3 hover:text-mst transition-colors duration-200">
-                            <div class="flex items-center gap-3">
-                                <img src="{{ asset('assets/images/icons/yacht.svg') }}" alt="Yacht Charter" class="w-6 h-6 object-contain">
-                                <span class="font-heading font-bold text-[15px] text-mst-gray hover:text-mst transition-colors">Yacht Charter</span>
-                            </div>
-                            <span class="text-sm font-semibold text-gray-500 border border-gray-200 rounded px-2 py-1 w-8 text-center">8</span>
-                        </a>
-                        <!-- UAE Visa -->
-                        <a href="#" class="flex items-center justify-between py-3 hover:text-mst transition-colors duration-200">
-                            <div class="flex items-center gap-3">
-                                <img src="{{ asset('assets/images/icons/visa1.svg') }}" alt="UAE Visa" class="w-6 h-6 object-contain">
-                                <span class="font-heading font-bold text-[15px] text-mst-gray hover:text-mst transition-colors">UAE Visa</span>
-                            </div>
-                            <span class="text-sm font-semibold text-gray-500 border border-gray-200 rounded px-2 py-1 w-8 text-center">7</span>
-                        </a>
-                        <!-- Abu Dhabi Tours -->
-                        <a href="#" class="flex items-center justify-between py-3 hover:text-mst transition-colors duration-200">
-                            <div class="flex items-center gap-3">
-                                <img src="{{ asset('assets/images/icons/abu.svg') }}" alt="Abu Dhabi Tours" class="w-6 h-6 object-contain">
-                                <span class="font-heading font-bold text-[15px] text-mst-gray hover:text-mst transition-colors">Abu Dhabi Tours</span>
-                            </div>
-                            <span class="text-sm font-semibold text-gray-500 border border-gray-200 rounded px-2 py-1 w-8 text-center">6</span>
-                        </a>
-                        <!-- Holiday Packages -->
-                        <a href="#" class="flex items-center justify-between py-3 hover:text-mst transition-colors duration-200">
-                            <div class="flex items-center gap-3">
-                                <img src="{{ asset('assets/images/icons/holiday.svg') }}" alt="Holiday Packages" class="w-6 h-6 object-contain">
-                                <span class="font-heading font-bold text-[15px] text-mst-gray hover:text-mst transition-colors">Holiday Packages</span>
-                            </div>
-                            <span class="text-sm font-semibold text-gray-500 border border-gray-200 rounded px-2 py-1 w-8 text-center">11</span>
-                        </a>
-                        <!-- Tips -->
-                        <a href="#" class="flex items-center justify-between py-3 hover:text-mst transition-colors duration-200">
-                            <div class="flex items-center gap-3">
-                                <img src="{{ asset('assets/images/icons/tips.svg') }}" alt="Tips" class="w-6 h-6 object-contain">
-                                <span class="font-heading font-bold text-[15px] text-mst-gray hover:text-mst transition-colors">Tips</span>
-                            </div>
-                            <span class="text-sm font-semibold text-gray-500 border border-gray-200 rounded px-2 py-1 w-8 text-center">9</span>
-                        </a>
+                    <div class="flex flex-col" id="sideCategoriesList">
+                        @foreach($categories as $index => $category)
+                            <a href="{{ url('/blogs') }}?category={{ $category->friendly_url }}" class="flex items-center justify-between py-3 transition-colors duration-200 {{ $index >= 8 ? 'extra-category hidden' : '' }} {{ $activeCategory && $activeCategory->id === $category->id ? 'text-mst' : 'hover:text-mst' }}">
+                                <div class="flex items-center gap-3">
+                                    <img src="{{ filled($category->image) ? asset('assets/images/blog-category/'.$category->image) : asset('assets/images/icons/dubai.svg') }}" alt="{{ $category->title }}" class="w-6 h-6 object-contain">
+                                    <span class="font-heading font-bold text-[15px] text-mst-gray hover:text-mst transition-colors">{{ $category->title }}</span>
+                                </div>
+                                <span class="text-sm font-semibold text-gray-500 border border-gray-200 rounded px-2 py-1 w-8 text-center">{{ $category->posts_count }}</span>
+                            </a>
+                        @endforeach
                     </div>
+                    @if($categories->count() > 8)
                     <div class="mt-4">
-                        <a href="#" class="inline-flex items-center gap-1.5 font-heading italic font-bold
+                        <button type="button" id="viewAllCategoriesBtn" class="inline-flex items-center gap-1.5 font-heading italic font-bold
                         text-mst text-sm transition-colors duration-200"> <span>View All Categories</span>
-                            <svg class="w-4 h-4 text-mst" fill="none" stroke="currentColor" stroke-width="2.5"
+                            <svg class="w-4 h-4 text-mst transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5"
                                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
                             </svg>
-                        </a>
+                        </button>
                     </div>
+                    @endif
                 </div>
                 <!-- Popular Guides -->
                 <div class="popular-guide bg-gray-50 border border-gray-200 p-6 rounded-2xl">
                     <h3 class="font-heading font-bold text-lg text-mst-gray mb-4">Popular Guides</h3>
                     <div class="flex flex-col">
-                        <!-- Guide 1 -->
-                        <a href="#" class="flex gap-3 py-2 group">
-                            <img src="{{ asset('assets/images/b1-original.webp') }}" alt="Complete Umrah Guide" class="w-14 h-14 rounded-lg object-cover flex-shrink-0">
-                            <div class="flex-1 flex flex-col justify-center">
-                                <h4 class="font-heading font-bold text-sm text-mst-gray leading-tight">
-                                    Complete Umrah Guide from Dubai
-                                </h4>
-                                <div class="flex items-center gap-1 text-xs text-gray-700">
-                                    <svg class="w-3 h-3 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
-                                    </svg>
-                                    <span>8 mins read</span>
+                        @foreach($popularGuides as $guide)
+                            <a href="{{ $guide->frontendUrl() }}" class="flex gap-3 py-2 group">
+                                <img src="{{ $guide->imageUrl() }}" alt="{{ $guide->title }}" class="w-14 h-14 rounded-lg object-cover flex-shrink-0">
+                                <div class="flex-1 flex flex-col justify-center">
+                                    <h4 class="font-heading font-bold text-sm text-mst-gray leading-tight">
+                                        {{ $guide->title }}
+                                    </h4>
+                                    <div class="flex items-center gap-1 text-xs text-gray-700">
+                                        <svg class="w-3 h-3 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
+                                        </svg>
+                                        <span>{{ $guide->readingTimeMinutes() }} mins read</span>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                        <!-- Guide 2 -->
-                        <a href="#" class="flex gap-3 py-2 group">
-                            <img src="{{ asset('assets/images/b2-original.webp') }}" alt="Desert Safari Guide" class="w-14 h-14 rounded-lg object-cover flex-shrink-0">
-                            <div class="flex-1 flex flex-col justify-center">
-                                <h4 class="font-heading font-bold text-sm text-mst-gray leading-tight">
-                                    Desert Safari Guide - Everything You must Know
-                                </h4>
-                                <div class="flex items-center gap-1 text-xs text-gray-700">
-                                    <svg class="w-3 h-3 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
-                                    </svg>
-                                    <span>6 mins read</span>
-                                </div>
-                            </div>
-                        </a>
-                        <!-- Guide 3 -->
-                        <a href="#" class="flex gap-3 py-2 group">
-                            <img src="{{ asset('assets/images/b3-original.webp') }}" alt="UAE Visa Guide" class="w-14 h-14 rounded-lg object-cover flex-shrink-0">
-                            <div class="flex-1 flex flex-col justify-center">
-                                <h4 class="font-heading font-bold text-sm text-mst-gray leading-tight">
-                                    UAE Visa Guide for Tourists
-                                </h4>
-                                <div class="flex items-center gap-1 text-[11px] text-gray-700">
-                                    <svg class="w-3 h-3 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
-                                    </svg>
-                                    <span>5 mins read</span>
-                                </div>
-                            </div>
-                        </a>
-                        <!-- Guide 4 -->
-                        <a href="#" class="flex gap-3 py-2 group">
-                            <img src="{{ asset('assets/images/b4-original.webp') }}" alt="Abu Dhabi Travel Guide" class="w-14 h-14 rounded-lg object-cover flex-shrink-0">
-                            <div class="flex-1 flex flex-col justify-center">
-                                <h4 class="font-heading font-bold text-sm text-mst-gray leading-tight">
-                                    Abu Dhabi Travel Guide - Top places to Visit
-                                </h4>
-                                <div class="flex items-center gap-1 text-[11px] text-gray-700">
-                                    <svg class="w-3 h-3 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
-                                    </svg>
-                                    <span>5 mins read</span>
-                                </div>
-                            </div>
-                        </a>
-                        <!-- Guide 5 -->
-                        <a href="#" class="flex gap-3 py-2 group">
-                            <img src="{{ asset('assets/images/b5-original.webp') }}" alt="Budget trip to Dubai" class="w-14 h-14 rounded-lg object-cover flex-shrink-0">
-                            <div class="flex-1 flex flex-col justify-center">
-                                <h4 class="font-heading font-bold text-sm text-mst-gray leading-tight">
-                                    How to plan a Budget trip to Dubai
-                                </h4>
-                                <div class="flex items-center gap-1 text-xs text-gray-700">
-                                    <svg class="w-3 h-3 text-gray-700" fill="none" stroke="currentColor"
-                                         stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
-                                    </svg>
-                                    <span>5 mins read</span>
-                                </div>
-                            </div>
-                        </a>
+                            </a>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -880,6 +465,75 @@
                     e.preventDefault();
                 }
             });
+        });
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const btn = document.getElementById('loadMoreBlogsBtn');
+        if (!btn) return;
+        const grid = document.getElementById('blogCardsGrid');
+
+        btn.addEventListener('click', async (e) => {
+            e.preventDefault();
+            const offset = btn.dataset.offset;
+            const category = btn.dataset.category || '';
+            btn.disabled = true;
+
+            try {
+                const url = `{{ url('/blogs/load-more') }}?offset=${encodeURIComponent(offset)}&category=${encodeURIComponent(category)}`;
+                const res = await fetch(url, { headers: { 'X-Requested-With': 'XMLHttpRequest' } });
+                const data = await res.json();
+
+                grid.insertAdjacentHTML('beforeend', data.html);
+                btn.dataset.offset = data.offset;
+
+                if (!data.hasMore) {
+                    btn.closest('div').style.display = 'none';
+                }
+            } catch (err) {
+                console.error('Failed to load more blogs', err);
+            } finally {
+                btn.disabled = false;
+            }
+        });
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const viewAllBtn = document.getElementById('viewAllCategoriesBtn');
+        if (!viewAllBtn) return;
+        const list = document.getElementById('sideCategoriesList');
+        const label = viewAllBtn.querySelector('span');
+        const icon = viewAllBtn.querySelector('svg');
+        let expanded = false;
+
+        viewAllBtn.addEventListener('click', () => {
+            expanded = !expanded;
+            list.querySelectorAll('.extra-category').forEach(el => {
+                el.classList.toggle('hidden', !expanded);
+            });
+            label.textContent = expanded ? 'View Less Categories' : 'View All Categories';
+            icon.style.transform = expanded ? 'rotate(90deg)' : '';
+        });
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const viewAllBigBtn = document.getElementById('viewAllBigCategoriesBtn');
+        if (!viewAllBigBtn) return;
+        const grid = document.getElementById('bigCategoriesGrid');
+        const label = viewAllBigBtn.querySelector('span');
+        const icon = viewAllBigBtn.querySelector('img');
+        let expanded = false;
+
+        viewAllBigBtn.addEventListener('click', () => {
+            expanded = !expanded;
+            grid.querySelectorAll('.extra-big-category').forEach(el => {
+                el.classList.toggle('hidden', !expanded);
+            });
+            label.textContent = expanded ? 'View Less Categories' : 'View all Categories';
+            icon.style.transform = expanded ? 'rotate(90deg)' : '';
         });
     });
 </script>

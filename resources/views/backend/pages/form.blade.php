@@ -94,20 +94,31 @@
                                           placeholder="Enter {{_label('sub_title')}}...">
                                </div>
                                <div class="col-md-12">
-                                  <label class="form-label text-capitalize" for="friendly_url">
-                                      <span>{{_label('friendly_url')}}</span>
-                                  </label>
-                                  <div class="input-group">
-                                     <span class="input-group-text" id="friendlyUrl">{{url('/')}}</span>
-                                     <input type="text"
-                                            class="form-control"
-                                            id="friendly_url"
-                                            name="friendly_url"
-                                            value="{{ old('friendly_url') }}"
-                                            placeholder="Enter {{_label('friendly_url')}}" required>
-                                  </div>
-                                   {!! error_label('friendly_url') !!}
-                               </div>
+                                   <label class="form-label text-capitalize" for="friendly_url">
+                                       <span>{{_label('friendly_url')}}</span>
+                                   </label>
+                                   <div class="input-group">
+                                      <span class="input-group-text" id="friendlyUrl">{{url('/')}}</span>
+                                      <input type="text"
+                                             class="form-control"
+                                             id="friendly_url"
+                                             name="friendly_url"
+                                             value="{{ old('friendly_url') }}"
+                                             placeholder="Enter {{_label('friendly_url')}}" required>
+                                   </div>
+                                    {!! error_label('friendly_url') !!}
+                                </div>
+                                <div class="col-md-12">
+                                   <label class="form-label text-capitalize" for="short_details">
+                                       <span>{{_label('short_details')}}</span>
+                                   </label>
+                                   <textarea class="form-control"
+                                             id="short_details"
+                                             name="short_details"
+                                             rows="3"
+                                             placeholder="Enter {{_label('short_details')}}...">{{ old('short_details') }}</textarea>
+                                   {!! error_label('short_details') !!}
+                                </div>
                                <div class="col-md-12">
                                   <textarea name="description" class="form-control" id="editor"></textarea>
                                   <p class="text-muted small mt-2 mb-0">
@@ -220,6 +231,26 @@
                       <div class="collapse show">
                          <div class="card-body">
                             <div class="row g-6 pt-5">
+                                <div class="col-md-12">
+                                    <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="show_contact_us" id="show_contact_us" value="1" {{ old('show_contact_us', '1') == '1' ? 'checked' : '' }}>
+                                            <label class="form-check-label text-capitalize" for="show_contact_us">Contact Us</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="show_whatsapp" id="show_whatsapp" value="1" {{ old('show_whatsapp', '1') == '1' ? 'checked' : '' }}>
+                                            <label class="form-check-label text-capitalize" for="show_whatsapp">WhatsApp</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="show_email_us" id="show_email_us" value="1" {{ old('show_email_us', '1') == '1' ? 'checked' : '' }}>
+                                            <label class="form-check-label text-capitalize" for="show_email_us">Email Us</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="show_trust_bar" id="show_trust_bar" value="1" {{ old('show_trust_bar', '1') == '1' ? 'checked' : '' }}>
+                                            <label class="form-check-label text-capitalize" for="show_trust_bar">Trust Bar (Show/Hide)</label>
+                                        </div>
+                                    </div>
+                                </div>
                                <div class="col-md-12">
                                   <label class="form-label text-capitalize" for="status">
                                       <span>{{_label('status')}}</span>
@@ -298,7 +329,7 @@
                 var menu_title = $(this).val();
                 $('#friendly_url').val(friendly_URL(menu_title));
                 $('#meta_title').val(meta_title(menu_title));
-                $('#page_title').val(page_title(menu_title));
+                // $('#page_title').val(page_title(menu_title));
                 $('#image_title').val(image_title(menu_title));
                 $('#image_alt').val(image_alt(menu_title));
                 $('#title').val(meta_title(menu_title));

@@ -100,10 +100,24 @@
                                                            value="{{ $data->ordering }}"
                                                            class="ordering form-control">
                                                 @elseif($col === 'status')
-                                                    <span id="statusLabel-{{ $data->id }}"
-                                                          class="badge {{ $data->status === 'Active' ? 'bg-label-success' : 'bg-label-danger' }}">
-                                                                {{ ucfirst($data->status) }}
-                                                            </span>
+                                                    @if(hasPermission($module, 'status'))
+                                                        <div class="form-check form-switch d-flex justify-content-center mb-0">
+                                                            <input type="checkbox"
+                                                                   class="form-check-input statusSwitchBtn"
+                                                                   id="statusSwitch-{{ $data->id }}"
+                                                                   data-id="{{ $data->id }}"
+                                                                   data-current-status="{{ $data->status }}"
+                                                                   data-bs-toggle="tooltip"
+                                                                   data-bs-placement="top"
+                                                                   title="{{ $data->status === 'Active' ? 'Active' : 'Inactive' }}"
+                                                                   {{ $data->status === 'Active' ? 'checked' : '' }}>
+                                                        </div>
+                                                    @else
+                                                        <span id="statusLabel-{{ $data->id }}"
+                                                              class="badge {{ $data->status === 'Active' ? 'bg-label-success' : 'bg-label-danger' }}">
+                                                            {{ ucfirst($data->status) }}
+                                                        </span>
+                                                    @endif
                                                 @elseif($col === 'created_at')
                                                     {{ $data->created_at?->format('M d, Y') ?? '-' }}
                                                 @elseif($col === 'created_by')
@@ -122,7 +136,6 @@
                                                     <div class="dropdown-menu">
                                                         {!! actionButton2($module, 'delete', route($module.'.delete', $data->id), 'Delete', $data->id, 'Delete', 'tabler-trash', 'dropdown-item waves-effect delete-record deleteBtn') !!}
                                                         {!! actionButton2($module, 'duplicate', route($module.'.duplicate', $data->id), 'Duplicate') !!}
-                                                        {!! actionButton2($module, 'status', null, $data->status, $data->id, 'Change Status') !!}
                                                     </div>
                                                 </div>
                                             </div>
@@ -427,15 +440,13 @@
     </script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            document.querySelectorAll(".toggleStatusBtn").forEach(btn => {
-                btn.addEventListener("click", function (e) {
-                    e.preventDefault();
-
+            document.querySelectorAll(".statusSwitchBtn").forEach(function (switchEl) {
+                switchEl.addEventListener("change", function () {
                     const dataId = this.getAttribute("data-id");
                     const currentStatus = this.getAttribute("data-current-status");
                     const url = `/admin/{{$module}}/${dataId}/status`;
+                    const switchInput = this;
 
-                    // Optional: show loading indicator
                     Notiflix.Loading.circle('Updating status...');
 
                     fetch(url, {
@@ -449,31 +460,25 @@
                     })
                         .then(res => res.json())
                         .then(data => {
-                            Notiflix.Loading.remove(); // remove loading
+                            Notiflix.Loading.remove();
 
                             if (data.success) {
-                                // Update label
-                                const statusLabel = document.getElementById("statusLabel-" + dataId);
-                                if (statusLabel) {
-                                    statusLabel.textContent = data.status.charAt(0).toUpperCase() + data.status.slice(1);
-                                    statusLabel.className =
-                                        data.status === 'Active'
-                                            ? "badge bg-label-success"
-                                            : "badge bg-label-danger";
-                                }
+                                switchInput.setAttribute("data-current-status", data.status);
+                                switchInput.checked = data.status === 'Active';
+                                switchInput.setAttribute("title", data.status === 'Active' ? 'Active' : 'Inactive');
 
-                                // Update button attribute
-                                this.setAttribute("data-current-status", data.status);
-
-                                // Success notification
                                 Notiflix.Notify.success(data.message || "Status updated successfully");
                             } else {
+                                // Revert switch on failure
+                                switchInput.checked = currentStatus === 'Active';
                                 Notiflix.Notify.failure(data.message || "Failed to update status");
                             }
                         })
                         .catch(err => {
                             console.error("Status update error:", err);
                             Notiflix.Loading.remove();
+                            // Revert switch on error
+                            switchInput.checked = currentStatus === 'Active';
                             Notiflix.Notify.failure("Error updating status. Please try again.");
                         });
                 });

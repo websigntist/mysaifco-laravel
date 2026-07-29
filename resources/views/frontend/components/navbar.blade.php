@@ -6,8 +6,7 @@
                 type="button"
                 class="site-navbar__toggle inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg p-2 text-mst-gray hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-mst md:hidden"
                 aria-controls="navbar-multi-level-dropdown"
-                aria-expanded="false"
-            >
+                aria-expanded="false">
                 <span class="sr-only">Open main menu</span>
                 <svg class="h-6 w-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/>

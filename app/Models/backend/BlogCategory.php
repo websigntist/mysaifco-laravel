@@ -48,4 +48,19 @@ class BlogCategory extends Model
         return $this->belongsTo(User::class, 'created_by');
     }
 
+    public function publishedBlogs()
+    {
+        return $this->belongsToMany(
+            Blog::class,
+            'blog_category_rel',
+            'blog_category_id',
+            'blog_id'
+        )->where('blogs.status', 'published')->whereNull('blogs.deleted_at');
+    }
+
+    public function scopeActive($query)
+    {
+        return $query->where('status', 'Active');
+    }
+
 }

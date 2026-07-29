@@ -1,51 +1,4 @@
-<section class="">
-    <div class="px-4 relative flex w-full items-start justify-center overflow-hidden">
-        <div class="absolute inset-0 scale-100 bg-cover bg-top bg-no-repeat" style="background-image: url('{{ asset('assets/images/pages/1784392804_6a5bac646bb10_image.webp') }}')" aria-hidden="true"></div>
-        {{--@dump($explore_uae)--}}
-        <div class="absolute inset-0 bg-gradient-to-r from-black/90 from-30% to-black/05 to-90%"
-             aria-hidden="true"></div>
-        <div class="relative z-10 w-full py-14">
-            <div class="container mx-auto">
-                <nav class="breadcrumb flex items-center gap-1 text-md font-heading" aria-label="Breadcrumb">
-                    <a href="{{ url('/') }}" class="text-white hover:text-mst transition">Home</a>
-                    <svg class="w-4 h-4 text-mst" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="m9 5 7 7-7 7"/>
-                    </svg>
-                    <span class="text-mst capitalize">Umrah by Air</span>
-                </nav>
-                <h1 class="text-5xl w-4xl mt-6 font-body font-bold not-italic leading-16 text-white">
-                    Umrah by <br> <span class="text-mst">Air</span>
-                </h1>
-                <p class="text-lg mt-5 w-6/12 text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum,
-                                                          eos.</p>
-                <div class="flex mt-8 mb-15 gap-6">
-                    <a
-                        href="#"
-                        class="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#2D9D3E] to-[#1E5E28]
-                        hover:from-[#1E5E28] hover:to-[#2D9D3E]
-                        px-7 py-3 font-heading text-base italic text-white transition md:text-lg"
-                    > <img
-                            src="{{ asset('assets/images/icons/whatsapp1.svg') }}"
-                            class="ms-1 w-6"
-                            width="24"
-                            height="24"
-                            alt=""
-                        > WhatsApp Us </a> <a
-                        href="#"
-                        class="inline-flex items-center justify-center gap-2 rounded-full bg-[#03174C]
-                                             px-7 py-3 font-heading text-base italic text-white transition hover:from-mst-dark
-                                                                 hover:to-mst md:text-lg"
-                    > <img
-                            src="{{ asset('assets/images/icons/support6.svg') }}"
-                            class="ms-1 w-7 brightness-0 invert"
-                            alt=""
-                        > Contact Support </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="trust-bar py-12 -mt-26 relative z-1">
+{{--<section class="trust-bar py-12 -mt-26 relative z-1">
     <div class="container mx-auto">
         <div class="bg-gray-50 border border-gray-300 rounded-3xl grid grid-cols-1 md:grid-cols-4 py-8 px-4 md:px-8">
             <!-- Card 1: Experience -->
@@ -86,7 +39,7 @@
             </div>
         </div>
     </div>
-</section>
+</section>--}}
 @php
     $airPackages = [
         [

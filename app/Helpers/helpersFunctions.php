@@ -459,6 +459,21 @@ if (!function_exists('imageNotFound')) {
     }
 }
 
+if (!function_exists('blog_reading_time')) {
+    function blog_reading_time(string $html): int
+    {
+        return max(1, (int) ceil(str_word_count(strip_tags($html)) / 200));
+    }
+}
+
+if (!function_exists('blog_extract_headings')) {
+    function blog_extract_headings(string $html): array
+    {
+        preg_match_all('/<h[23][^>]*>(.*?)<\/h[23]>/is', $html, $matches);
+        return array_map(fn($h) => trim(strip_tags($h)), $matches[1] ?? []);
+    }
+}
+
 // user permission module function
 /*if (!function_exists('buildModuleCheckBox')) {
     function buildModuleCheckBox($parent, $menu, $assignedModules, $selectedActions)
@@ -617,8 +632,7 @@ if (!function_exists('hasPermission')) {
         $userType = strtolower(optional($user->userType)->user_type);
 
         if (in_array($userType, $adminRoles)) {
-            $content = $label ?? ucfirst($action);
-            return '<a href="' . $url . '" class="' . $class . '">' . $content . '</a>';
+            return true;
         }
         // only 'admin', 'super admin', 'administrator' allow full access
 

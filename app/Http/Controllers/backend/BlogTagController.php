@@ -112,9 +112,9 @@ class BlogTagController
                 $blogTag->blogtags()->sync($request->blog_tags);
 
                 if ($action === 'save_new') {
-                    return to_route($this->module . '.create')->with('success', $this->notify_title . ' created successfully.');
+                    return to_route('blog-tag.create')->with('success', $this->notify_title . ' created successfully.');
                 } elseif ($action === 'save_stay') {
-                    return to_route($this->module . '.edit', $blogCat->id)->with('success', $this->notify_title . ' created successfully.');
+                    return to_route('blog-tag.edit', $blogCat->id)->with('success', $this->notify_title . ' created successfully.');
                 } else {
                     return redirect()->route($this->module)->with('success', $this->notify_title . ' created successfully.');
                 }
@@ -177,9 +177,9 @@ class BlogTagController
             $blogTag->update($dataToUpdate);
 
             if ($action === 'save_new') {
-                return to_route($this->module . '.create')->with('success', $this->notify_title . ' updated successfully.');
+                return to_route('blog-tag.create')->with('success', $this->notify_title . ' updated successfully.');
             } elseif ($action === 'save_stay') {
-                return to_route($this->module . '.edit', $blogCat->id)->with('success', $this->notify_title . ' updated successfully.');
+                return to_route('blog-tag.edit', $blogCat->id)->with('success', $this->notify_title . ' updated successfully.');
             } else {
                 return redirect()->route($this->module)->with('success', $this->notify_title . ' updated successfully.');
             }

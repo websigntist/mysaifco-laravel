@@ -199,7 +199,7 @@
                                         </div>
                                         <div class="col-md-12">
                                             <label class="form-label text-capitalize" for="blog_tags">
-                                                {{_label('parent_id')}}
+                                                {{_label('blog_tags')}}
                                             </label>
                                             <select id="blog_tags" name="blog_tags[]" class="form-select select2" multiple>
                                                 <option value="">/Parent</option>

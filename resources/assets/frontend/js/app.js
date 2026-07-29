@@ -454,14 +454,6 @@ function initWhyChooseLogosSwiper() {
  * Narrow / touch-primary viewports: tap toggles .is-open on the parent li.
  */
 function initNavbarDropdowns() {
-    const mqMobile = window.matchMedia('(max-width: 767.98px)');
-    const mqCoarseTouch = window.matchMedia('(hover: none) and (pointer: coarse)');
-
-    /** Narrow viewports or touch-primary devices (tablets) where hover menus do not work. */
-    function useClickForNavDropdowns() {
-        return mqMobile.matches || mqCoarseTouch.matches;
-    }
-
     function closeAllNavDropdowns() {
         document.querySelectorAll('.nav-dropdown.is-open, .nav-submenu.is-open').forEach((el) => {
             el.classList.remove('is-open');
@@ -476,10 +468,8 @@ function initNavbarDropdowns() {
         trigger.dataset.navDropdownBound = '1';
 
         trigger.addEventListener('click', (e) => {
-            if (!useClickForNavDropdowns()) {
-                return;
-            }
             e.preventDefault();
+            e.stopPropagation();
             const willOpen = !rootLi.classList.contains('is-open');
             document.querySelectorAll('.nav-dropdown.is-open').forEach((other) => {
                 if (other !== rootLi) {
@@ -502,9 +492,6 @@ function initNavbarDropdowns() {
         trigger.dataset.navSubmenuBound = '1';
 
         trigger.addEventListener('click', (e) => {
-            if (!useClickForNavDropdowns()) {
-                return;
-            }
             e.preventDefault();
             e.stopPropagation();
             subLi.classList.toggle('is-open');
@@ -512,19 +499,9 @@ function initNavbarDropdowns() {
     });
 
     document.addEventListener('click', (e) => {
-        if (!useClickForNavDropdowns()) {
-            return;
-        }
         if (!e.target.closest('.nav-dropdown')) {
             closeAllNavDropdowns();
         }
-    });
-
-    mqMobile.addEventListener('change', () => {
-        closeAllNavDropdowns();
-    });
-    mqCoarseTouch.addEventListener('change', () => {
-        closeAllNavDropdowns();
     });
 }
 

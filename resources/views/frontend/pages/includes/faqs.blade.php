@@ -1,23 +1,4 @@
-<section class="flex justify-center items-center border-b-1 border-gray-200">
-    <div class="px-4 relative flex min-h-[400px] w-full
-                    items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 scale-100 bg-cover bg-top bg-no-repeat"
-             style="background-image: url('{{ asset('assets/images/pages/1782415698_6a3d81521a2b6_image.webp') }}')"
-             aria-hidden="true"></div>
-        {{--@dump($explore_uae)--}}
-        <div class="absolute inset-0 bg-gradient-to-r from-[#000000]/90 to-[#000000]/0" aria-hidden="true"></div>
-        <div class="relative z-10 w-full py-14">
-            <div class="container mx-auto">
-                <h1 class="text-white text-[54px] font-body not-italic w-7/12 leading-16">Travel Help & Frequently Asked
-                                                                            Questions</h1>
-                <p class="text-white text-lg w-6/12 mt-5">
-                    Quick answers to the most common questions about Dubai tours, desert safaris, Umrah packages, UAE visas and holiday bookings.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="trust-bar py-12">
+{{--<section class="trust-bar py-12">
     <div class="container mx-auto">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <!-- Card 1 -->
@@ -65,7 +46,7 @@
             </div>
         </div>
     </div>
-</section>
+</section>--}}
 
 {{-- faqs listing--}}
 <section class="faqs-listing">

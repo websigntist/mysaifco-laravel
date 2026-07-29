@@ -1,115 +1,181 @@
 @extends('frontend.layouts.master')
 @section('content')
     @php
-        $topTitileBaner = ! empty($pageImageUrl)
+        $topTitleBanner = !empty($pageImageUrl)
             ? $pageImageUrl
-            : asset('assets/images/sliders/560650.webp');
+            : asset('assets/images/pages/1782765765_6a42d8c5e0c42_image.webp');
     @endphp
-    {{--===== top banner ======--}}
-    @php $slug = request()->segment(1); @endphp
-    @if(!in_array($slug, ['umrah-for-single-lady','faqs','umrah-faqs','blogs','about-us','contact-us',
-    'single-tour-details','terms-conditions','privacy-policy','umrah-vaccination','vtf-tasheel','holiday-packages',
-    'single-holiday-tour-details','visa-services','umrah-visa','multiple-entry','single-blog','umrah-by-air']))
-        <section class="flex justify-center items-center border-b-1 border-gray-200">
-            <div class="px-4 relative flex min-h-[400px] w-full
-                    items-center justify-center overflow-hidden">
-                <div class="absolute inset-0 scale-105 bg-cover bg-top bg-no-repeat"
-                     style="background-image: url('{{ $topTitileBaner }}')"
-                     aria-hidden="true"></div>
-                {{--@dump($explore_uae)--}}
-                <div class="absolute inset-0 bg-gray-950/25" aria-hidden="true"></div>
-                <div class="relative z-10 w-full py-14">
-                    <div class="container mx-auto">
-                        <div class="grid grid-cols-1 md:grid-cols-[0.7fr_1fr] gap-6">
-                            <div class="flex flex-col justify-center">
-                                <ul class="flex items-center justify-start gap-5">
-                                    <li class="bg-mst px-4 pt-3 pb-4 w-full rounded-lg space-y-1">
-                                        <div class="text-white text-xl font-medium text-center italic font-heading">
-                                            {{ $explore_uae[0]->title1 }}
-                                        </div>
-                                        <div class="text-white text-xs text-center">{{ $explore_uae[0]->sub_title1 }}</div>
-                                    </li>
-                                    <li class="bg-mst px-4 pt-3 pb-4 w-full rounded-lg space-y-1">
-                                        <div class="text-white text-xl font-medium text-center italic font-heading">
-                                            {{ $explore_uae[0]->title2 }}
-                                        </div>
-                                        <div class="text-white text-xs text-center">{{ $explore_uae[0]->sub_title2 }}</div>
-                                    </li>
-                                    <li class="bg-mst px-4 pt-3 pb-4 w-full rounded-lg space-y-1">
-                                        <div class="text-white text-xl font-medium text-center italic font-heading">
-                                            {{ $explore_uae[0]->title3 }}
-                                        </div>
-                                        <div class="text-white text-xs text-center">{{ $explore_uae[0]->sub_title3 }}</div>
-                                    </li>
-                                </ul>
-                                <ul class="flex items-center justify-start gap-5 mt-5">
-                                    <li class="bg-mst px-4 pt-3 pb-4 w-full rounded-lg space-y-1">
-                                        <div class="text-white text-xl font-medium text-center italic font-heading">
-                                            {{ $explore_uae[0]->title5 }}
-                                        </div>
-                                        <div class="text-white text-xs text-center">{{ $explore_uae[0]->sub_title5 }}</div>
-                                    </li>
-                                    <li class="bg-mst px-4 pt-3 pb-4 w-full rounded-lg space-y-1">
-                                        <div class="text-white text-xl font-medium text-center italic font-heading">
-                                            {{ $explore_uae[0]->sub_title4 }}
-                                        </div>
-                                        <div class="text-white text-xs text-center">{{ $explore_uae[0]->sub_title4 }}</div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="flex items-center justify-end">
-                                <div class="bg-gray-50 rounded-xl pt-3 pb-4 px-4 border border-gray-200 space-y-4 w-96 h-40">
-                                    <div class="font-heading font-bold italic text-xl capitalize mb-3">
-                                        Contact with <span class="text-mst">Us</span>
-                                    </div>
-                                    <div class="bg-gray-50 rounded-xl p-4 border gap-3 border-gray-200 flex item-center justify-start">
-                                        <img src="{{asset('assets/images/icons/whatsapp.svg')}}" class="w36" alt="whatsapp">
-                                        <a href="tel:https://wa.me/{{ get_setting('tour_inquiry_whatsapp') }}?text=Hello%2C%20I%20am%20interested">
-                                            <div class="font-heading font-bold italic text-mst text-xl">Tour Inquires
-                                                <br>
-                                                <span class="text-mst-gray">{{ get_setting('tour_inquiry_whatsapp') }}</span>
-                                            </div>
-                                        </a>
-                                        <img src="{{asset('assets/images/icons/line-arrow.svg')}}" class="w36 ml-auto" alt="arrow">
-                                    </div>
-                                </div>
-                            </div>
+
+    {{-- ===== CMS Page Top Banner Start ===== --}}
+    <section class="flex justify-center items-center">
+        <div class="px-4 relative flex min-h-[400px] w-full items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 scale-100 bg-cover bg-top bg-no-repeat"
+                 style="background-image: url('{{ $topTitleBanner }}')"
+                 aria-hidden="true"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-[#000000]/95 from-20% to-[#000000]/0 to-80%"
+                 aria-hidden="true"></div>
+            <div class="relative z-10 w-full pt-12 {{ ($page->show_trust_bar ?? 1) ? 'pb-30' : 'pb-12' }}">
+                <div class="container mx-auto">
+                    {{-- 1. Breadcrumbs --}}
+                    <nav class="breadcrumb flex items-center gap-1.5 text-sm font-heading font-medium capitalize
+                    text-mst tracking-wider mb-2" aria-label="Breadcrumb">
+                        <a href="{{ url('/') }}" class="hover:underline text-white">Home</a>
+                        <svg class="w-4 h-4 text-mst" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m9 5 7 7-7 7"/>
+                        </svg>
+                        <span>{{ $page->menu_title ?? $page->p_title ?? 'Page' }}</span>
+                    </nav>
+                    {{-- 2. Title (Two Colors) --}}
+                    {{--@php
+                        $words     = explode(' ', $page->menu_title);
+                        $mainText  = implode(' ', array_slice($words, 0, -2));
+                        $spanText  = implode(' ', array_slice($words, -2));
+                    @endphp
+                    <h1>
+                        <span class="text-white">{{ $mainText }}  </span><span class="text-mst">{{ $spanText }}</span>
+                    </h1>--}}
+
+                    @php
+                        $titleRaw = $page->menu_title ?? $page->menu_title ?? '';
+                        if (str_contains($titleRaw, '<span')) {
+                            $formattedTitle = $titleRaw;
+                        } else {
+                            $words = explode(' ', trim($titleRaw));
+                            $count = count($words);
+                            if ($count >= 5) {
+                                $t1 = implode(' ', array_slice($words, 0, $count - 4));
+                                $t2 = implode(' ', array_slice($words, $count - 4, 2));
+                                $t3 = implode(' ', array_slice($words, $count - 2));
+                                $formattedTitle = e($t1) . ' <br class="hidden md:block"> <span class="text-mst">' . e($t2) . '</span> ' . e($t3);
+                            } elseif ($count >= 3) {
+                                $t1 = implode(' ', array_slice($words, 0, $count - 2));
+                                $t2 = implode(' ', array_slice($words, $count - 2));
+                                $formattedTitle = e($t1) . ' <br class="hidden -md:block"> <span class="text-mst">' .
+                                 e($t2) . '</span>';
+                            } elseif ($count == 2) {
+                                $formattedTitle = e($words[0]) . ' <span class="text-mst">' . e($words[1]) . '</span>';
+                            } else {
+                                $formattedTitle = e($titleRaw);
+                            }
+                        }
+                    @endphp
+                    <h1 class="text-3xl md:text-[44px] w-full md:w-7/12 font-semibold leading-tight
+                    md:leading-16 text-white my-5 font-heading">
+                        {!! $formattedTitle !!}
+                    </h1>
+                    {{-- 3. Short Content --}}
+                    @php
+                        $shortContent = filled($page->short_details ?? null)
+                            ? $page->short_details
+                            : (filled($page->sub_title ?? null) ? $page->sub_title : '');
+                    @endphp
+                    @if(filled($shortContent))
+                        <p class="text-base md:text-md w-full md:w-6/12  text-white leading-relaxed">
+                            {{ $shortContent }}
+                        </p>
+                    @endif
+
+                    {{-- 4. 3 Buttons --}}
+                    @if(($page->show_contact_us ?? 1) || ($page->show_whatsapp ?? 1) || ($page->show_email_us ?? 1))
+                        <div class="flex flex-wrap items-center mt-10 gap-4 md:gap-6">
+                            @if($page->show_contact_us ?? 1)
+                                <a href="{{ url('/contact-us') }}"
+                                   class="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#BA9B31] to-[#74611E] px-7 py-3 font-heading text-base italic text-white transition hover:from-mst-dark hover:to-mst md:text-lg">
+                                    <img src="{{ asset('assets/images/icons/phone1.svg') }}" class="ms-1 w-6 brightness-0 invert" width="24" height="24" alt="contact">
+                                    <span>Contact Now</span> </a>
+                            @endif
+
+                            @if($page->show_whatsapp ?? 1)
+                                @php
+                                    $waNumber = preg_replace('/[^0-9]/', '', get_setting('tour_inquiry_whatsapp') ?? get_setting('mobile_number') ?? '');
+                                @endphp
+                                <a href="https://wa.me/{{ $waNumber }}?text={{ urlencode('Hello, I am interested in ' . ($page->page_title ?? 'your services')) }}"
+                                   target="_blank"
+                                   class="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#2D9D3E] to-[#1E5E28] px-7 py-3 font-heading text-base italic text-white transition hover:from-mst-dark hover:to-mst md:text-lg">
+                                    <img src="{{ asset('assets/images/icons/whatsapp1.svg') }}" class="ms-1 w-6" width="24" height="24" alt="whatsapp">
+                                    <span>WhatsApp</span> </a>
+                            @endif
+
+                            @if($page->show_email_us ?? 1)
+                                <a href="mailto:{{ get_setting('email') }}"
+                                   class="inline-flex items-center justify-center gap-2 rounded-full bg-[#03174C] px-7 py-3 font-heading text-base italic text-white transition hover:from-mst-dark hover:to-mst md:text-lg">
+                                    <img src="{{ asset('assets/images/icons/email1.svg') }}" class="ms-1 w-5 brightness-0 invert" width="24" height="24" alt="email">
+                                    <span>Email Us</span> </a>
+                            @endif
+                        </div>
+                    @endif
+                </div>
+            </div>
+        </div>
+    </section>
+    {{-- ===== CMS Page Top Banner End ===== --}}
+    {{-- ===== Trust Bar Start ===== --}}
+    @if($page->show_trust_bar ?? 1)
+        <section class="trust-bar py-12 -mt-28 relative z-1">
+            <div class="container mx-auto">
+                <div class="bg-white border border-gray-300 rounded-3xl grid grid-cols-1 md:grid-cols-4 py-8 px-4 md:px-8">
+                    <!-- Card 1: Experience -->
+                    <div class="flex items-center gap-4 justify-center py-4 md:py-2 border-b md:border-b-0 md:border-r border-gray-300 last:border-b-0 last:border-r-0">
+                        <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center">
+                            <img src="{{ asset('assets/images/icons/starbadge.svg') }}" alt="Experience Icon" class="w-full h-full object-contain">
+                        </div>
+                        <div class="font-heading italic font-bold text-mst-gray text-center leading-tight">
+                            17+ Years<br>Experience
+                        </div>
+                    </div>
+                    <!-- Card 2: Travelers Served -->
+                    <div class="flex items-center gap-4 justify-center py-4 md:py-2 border-b md:border-b-0 md:border-r border-gray-300 last:border-b-0 last:border-r-0">
+                        <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center">
+                            <img src="{{ asset('assets/images/icons/17years.svg') }}" alt="Travelers Icon" class="w-full h-full object-contain">
+                        </div>
+                        <div class="font-heading italic font-bold text-mst-gray text-center leading-tight">
+                            50,000+ Travelers<br>Served
+                        </div>
+                    </div>
+                    <!-- Card 3: Customer Support -->
+                    <div class="flex items-center gap-4 justify-center py-4 md:py-2 border-b md:border-b-0 md:border-r border-gray-300 last:border-b-0 last:border-r-0">
+                        <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center">
+                            <img src="{{ asset('assets/images/icons/support2.svg') }}" alt="Support Icon" class="w-full h-full object-contain">
+                        </div>
+                        <div class="font-heading italic font-bold text-mst-gray text-center leading-tight">
+                            24/7 Customer<br>Support
+                        </div>
+                    </div>
+                    <!-- Card 4: Best Price Guaranteed -->
+                    <div class="flex items-center gap-4 justify-center py-4 md:py-2 border-b md:border-b-0 md:border-r border-gray-300 last:border-b-0 last:border-r-0">
+                        <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center">
+                            <img src="{{ asset('assets/images/icons/dbadge.svg') }}" alt="Best Price Icon" class="w-full h-full object-contain">
+                        </div>
+                        <div class="font-heading italic font-bold text-mst-gray text-center leading-tight">
+                            Best Price<br>Guaranted
                         </div>
                     </div>
                 </div>
             </div>
         </section>
     @endif
+    {{-- ===== Trust Bar End ===== --}}
 
 
-    {{--===== page content ======--}}
-    <div class="cms-page">
+
+    {{-- ===== Page Main Content ===== --}}
+    <div class="cms-page py-10">
         @if($page->show_title == '1' && filled($page->page_title))
             <section class="flex justify-center py-8">
-                <div class="container mx-auto">
-                    @if($page && ($page->show_title ?? '0') == '1' && filled($page->page_title))
-                        @php
-                            $words    = explode(' ', $page->page_title);
-                            $count    = count($words);
-                            $spanN    = $count >= 3 ? 2 : 1;  // 3+ words = last 2, 2 words = last 1
-                            $mainText = implode(' ', array_slice($words, 0, -$spanN));
-                            $spanText = implode(' ', array_slice($words, -$spanN));
-                        @endphp
-
-                        <h1 class="text-center">
-                            <span>{{ $mainText }} </span><span class="text-mst">{{ $spanText }}</span>
-                        </h1>
-                    @endif
-
-                    @if(filled($page->sub_title))
-                        <p class="mt-3 text-lg text-center">{{ $page->sub_title }}</p>
-                    @endif
+                <div class="container mx-auto text-center">
+                    @php
+                        $words     = explode(' ', $page->page_title);
+                        $mainText  = implode(' ', array_slice($words, 0, -2));
+                        $spanText  = implode(' ', array_slice($words, -2));
+                    @endphp
+                    <h2>
+                        <span>{{ $mainText }}  </span><span class="text-mst">{{ $spanText }}</span>
+                    </h2>
                 </div>
             </section>
         @endif
-
         @if(filled($pageContent ?? null))
-            <div class="-container mx-auto">
+            <div class="mx-auto">
                 {!! $pageContent !!}
             </div>
         @endif

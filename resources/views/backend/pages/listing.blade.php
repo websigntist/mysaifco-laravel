@@ -367,6 +367,7 @@
                             <tr><th>Menu Title</th><td>${data.menu_title ?? '-'}</td></tr>
                             <tr><th>Page Title</th><td>${data.page_title ?? '-'}</td></tr>
                             <tr><th>Friendly URL</th><td>${data.friendly_url ?? '-'}</td></tr>
+                            <tr><th>Short Details</th><td>${data.short_details ?? '-'}</td></tr>
                             <tr><th>Description</th><td>${data.description ?? '-'}</td></tr>
                             <tr>
                                 <th>Status</th>

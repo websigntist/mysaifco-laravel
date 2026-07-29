@@ -46,9 +46,8 @@ class BlogController
         $columns = [
             'image',
             'title',
-            'status',
             'categories',
-            'tags',
+            'status',
             'ordering',
             'created_by',
         ];
@@ -58,6 +57,7 @@ class BlogController
             'created_by',
             'menu_title',
             'ordering',
+            'tags',
         ];
 
         return view('backend.' . $this->module . '.listing', [
@@ -263,7 +263,7 @@ class BlogController
             'description'     => 'required|string',
             'meta_title'      => 'required|string|max:255',
             'blog_categories' => 'required|array',
-            'blog_tags'       => 'required|array',
+            'blog_tags'       => 'nullable|array',
             'image'           => 'nullable|image|mimes:webp,jpeg,png,jpg|max:2048',
         ]);
 
@@ -278,12 +278,11 @@ class BlogController
                 'friendly_url'     => $request->friendly_url,
                 'description'      => $request->description,
                 'status'           => $request->status,
-                'show_in_menu'     => (int)($request->show_in_menu ?? 0),
+                'show_in_menu'     => $request->show_in_menu ?: 'Yes',
                 'ordering'         => $request->ordering ?? 0,
                 'meta_title'       => $request->meta_title,
                 'meta_keywords'    => $request->meta_keywords,
                 'meta_description' => $request->meta_description,
-                'created_by'       => currentUserId(),
             ];
 
             // Handle image if uploaded
@@ -457,6 +456,7 @@ class BlogController
     public function deleteAll(Request $request)
     {
         $selectedIds = $request->ids; // array of IDs
+        $trashed = $request->trashed;
 
         if (is_array($selectedIds) && count($selectedIds)) {
 

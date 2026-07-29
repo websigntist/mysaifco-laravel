@@ -10,6 +10,10 @@ use App\Models\backend\Faq;
 use App\Models\backend\PopularSearch;
 use App\Models\backend\Slider;
 use App\Models\backend\ExploreUae;
+use App\Models\backend\Blog;
+use App\Models\backend\BlogCategory;
+use App\Models\backend\BlogTag;
+use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class MainController
@@ -242,6 +246,63 @@ class MainController
         return array_merge($this->faqsForTourTypeViewData($this->allCategoriesTourTypeId(), 8), ['faqImage' => 'Intersect.webp']);
     }
 
+    /**
+     * Base query for the blog listing/load-more: published blogs, excluding the
+     * site-wide featured (latest) blog, optionally filtered to one category.
+     */
+    protected function blogsBaseQuery(?Blog $featuredBlog, ?BlogCategory $activeCategory)
+    {
+        return Blog::query()
+            ->published()
+            ->when($featuredBlog, fn($q) => $q->where('id', '!=', $featuredBlog->id))
+            ->when($activeCategory, fn($q) => $q->whereHas(
+                'blogCategories',
+                fn($cq) => $cq->where('blog_categories.id', $activeCategory->id)
+            ))
+            ->orderByDesc('created_at');
+    }
+
+    /** Blog listing page data: featured blog, categories with post counts, first page of blogs. */
+    protected function blogsListingViewData(?string $categorySlug): array
+    {
+        $perPage = 6;
+
+        $featuredBlog = Blog::published()->orderByDesc('created_at')->orderByDesc('id')->first();
+
+        $activeCategory = null;
+        if (filled($categorySlug)) {
+            $activeCategory = BlogCategory::active()->where('friendly_url', $categorySlug)->first();
+        }
+
+        $displayFeaturedBlog = $activeCategory ? null : $featuredBlog;
+
+        $baseQuery = $this->blogsBaseQuery($featuredBlog, $activeCategory);
+
+        $blogs = (clone $baseQuery)->limit($perPage)->get();
+        $hasMoreBlogs = (clone $baseQuery)->skip($perPage)->limit(1)->exists();
+
+        $categories = BlogCategory::active()
+            ->withCount(['publishedBlogs as posts_count'])
+            ->orderByDesc('id')
+            ->get();
+
+        $popularGuides = Blog::published()
+            ->when($featuredBlog, fn($q) => $q->where('id', '!=', $featuredBlog->id))
+            ->orderByDesc('created_at')
+            ->limit(5)
+            ->get();
+
+        return [
+            'featuredBlog'   => $displayFeaturedBlog,
+            'categories'     => $categories,
+            'blogs'          => $blogs,
+            'hasMoreBlogs'   => $hasMoreBlogs,
+            'blogsOffset'    => $perPage,
+            'activeCategory' => $activeCategory,
+            'popularGuides'  => $popularGuides,
+        ];
+    }
+
     protected function pageDescriptionIncludesFile(?string $description, string $file): bool
     {
         $file = preg_replace('/[^a-zA-Z0-9_-]/', '', $file);
@@ -278,6 +339,12 @@ class MainController
             if ($tour) {
                 return $this->showTour($tour);
             }
+
+            $blog = Blog::query()->where('friendly_url', $slug)->published()->first();
+            if ($blog) {
+                return $this->showBlog($blog);
+            }
+
             throw new NotFoundHttpException();
         }
 
@@ -324,6 +391,23 @@ class MainController
             $viewData['allFaqs'] = Faq::where('status', 'Active')->orderBy('ordering')->orderByDesc('id')->get();
             $viewData['faqs'] = Faq::where('status', 'Active')->orderBy('ordering')->limit(6)->get();
             $viewData = array_merge($viewData, $this->allCategoriesFaqsViewData());
+        }
+
+        if ($includeFile === 'blogs') {
+            $viewData = array_merge($viewData, $this->blogsListingViewData(request()->query('category')));
+        }
+
+        if ($includeFile === 'single-blog') {
+            $demoBlog = Blog::published()->orderByDesc('created_at')->first();
+            $viewData = array_merge($viewData, $demoBlog ? $this->blogDetailViewData($demoBlog) : [
+                'blog'           => null,
+                'relatedBlogs'   => collect(),
+                'recentPosts'    => collect(),
+                'categories'     => collect(),
+                'popularTags'    => collect(),
+                'tableOfContent' => [],
+                'readingTime'    => 0,
+            ]);
         }
 
         $pageContent = do_shortcode($description, $viewData);
@@ -396,6 +480,101 @@ class MainController
             'meta_keywords'    => (string)($tour->meta_keywords ?? 'keyword mention here'),
             'meta_description' => (string)($tour->meta_description ?? 'Lorem ipsum dolor sit amet.'),
         ], $this->exploreAndPopularSearchViewData($this->allCategoriesTourTypeId()), $this->allCategoriesFaqsViewData()));
+    }
+
+    /** Related posts, recent posts, categories, TOC for a single blog detail view. */
+    protected function blogDetailViewData(Blog $blog): array
+    {
+        $relatedLimit = 3;
+        $categoryIds = $blog->blogCategories->pluck('id');
+
+        $relatedBlogs = Blog::published()
+            ->where('id', '!=', $blog->id)
+            ->when($categoryIds->isNotEmpty(), fn($q) => $q->whereHas(
+                'blogCategories',
+                fn($cq) => $cq->whereIn('blog_categories.id', $categoryIds)
+            ))
+            ->orderByDesc('created_at')
+            ->limit($relatedLimit)
+            ->get();
+
+        if ($relatedBlogs->count() < $relatedLimit) {
+            $fillerBlogs = Blog::published()
+                ->where('id', '!=', $blog->id)
+                ->whereNotIn('id', $relatedBlogs->pluck('id'))
+                ->orderByDesc('created_at')
+                ->limit($relatedLimit - $relatedBlogs->count())
+                ->get();
+
+            $relatedBlogs = $relatedBlogs->concat($fillerBlogs);
+        }
+
+        $recentPosts = Blog::published()
+            ->where('id', '!=', $blog->id)
+            ->orderByDesc('created_at')
+            ->limit(5)
+            ->get();
+
+        $categories = BlogCategory::active()
+            ->withCount(['publishedBlogs as posts_count'])
+            ->orderByDesc('id')
+            ->limit(6)
+            ->get();
+
+        $popularTags = BlogTag::where('status', 'Active')
+            ->withCount('blogTags')
+            ->orderByDesc('blog_tags_count')
+            ->orderByDesc('id')
+            ->limit(15)
+            ->get();
+
+        return [
+            'blog'           => $blog,
+            'relatedBlogs'   => $relatedBlogs,
+            'recentPosts'    => $recentPosts,
+            'categories'     => $categories,
+            'popularTags'    => $popularTags,
+            'tableOfContent' => blog_extract_headings((string)$blog->description),
+            'readingTime'    => $blog->readingTimeMinutes(),
+        ];
+    }
+
+    public function showBlog(Blog $blog)
+    {
+        $explore_uae = ExploreUae::query()->where('status', 'Active')->orderBy('ordering', 'asc')->get();
+
+        return view('frontend.pages.blog-details', array_merge($this->blogDetailViewData($blog), [
+            'explore_uae'      => $explore_uae,
+            'meta_title'       => filled($blog->meta_title) ? $blog->meta_title : ($blog->title . ' | Saifco Travel'),
+            'meta_keywords'    => (string)($blog->meta_keywords ?? ''),
+            'meta_description' => (string)($blog->meta_description ?? $blog->excerpt(160)),
+        ]));
+    }
+
+    public function loadMoreBlogs(Request $request)
+    {
+        $perPage = 6;
+        $offset = max(0, (int)$request->query('offset', 0));
+        $categorySlug = $request->query('category');
+
+        $featuredBlog = Blog::published()->orderByDesc('created_at')->orderByDesc('id')->first();
+
+        $activeCategory = filled($categorySlug)
+            ? BlogCategory::active()->where('friendly_url', $categorySlug)->first()
+            : null;
+
+        $baseQuery = $this->blogsBaseQuery($featuredBlog, $activeCategory);
+
+        $blogs = (clone $baseQuery)->skip($offset)->limit($perPage)->get();
+        $hasMore = (clone $baseQuery)->skip($offset + $perPage)->limit(1)->exists();
+
+        $html = view('frontend.pages.includes.partials.blog-card', ['blogs' => $blogs])->render();
+
+        return response()->json([
+            'html'    => $html,
+            'hasMore' => $hasMore,
+            'offset'  => $offset + $blogs->count(),
+        ]);
     }
 
 }

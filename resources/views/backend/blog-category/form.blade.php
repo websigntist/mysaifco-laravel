@@ -177,7 +177,6 @@
                                         <label class="form-label text-capitalize" for="status">
                                             <span>{{_label('status')}}</span> </label>
                                         <select id="status" name="status" class="form-select select2" required>
-                                            <option value="">-Select option-</option>
                                             @foreach($getStatus as $status)
                                                 <option value="{{ old($status, $status) }}">{{ ucfirst($status) }}</option>
                                             @endforeach

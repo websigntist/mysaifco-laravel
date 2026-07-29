@@ -98,6 +98,58 @@ class BlogCategoryController
         ]);
     }
 
+    public function duplicate($id)
+    {
+        $source = ($this->table)::withTrashed()->findOrFail($id);
+
+        $baseUrl = $source->friendly_url ?: 'blog-category';
+        $candidateUrl = '';
+        for ($i = 0; $i < 50; $i++) {
+            $candidateUrl = $baseUrl . '-copy-' . Str::lower(Str::random(6));
+            if (strlen($candidateUrl) > 255) {
+                $candidateUrl = Str::limit($baseUrl, 220, '') . '-' . Str::lower(Str::random(6));
+            }
+            if (!($this->table)::where('friendly_url', $candidateUrl)->exists()) {
+                break;
+            }
+        }
+
+        if (($this->table)::where('friendly_url', $candidateUrl)->exists()) {
+            return redirect()->route('blog-categories')->with('error', 'Could not generate a unique URL for the duplicate.');
+        }
+
+        $newImage = null;
+        if (!empty($source->image)) {
+            $dir = public_path('assets/images/' . $this->module);
+            $srcPath = $dir . DIRECTORY_SEPARATOR . $source->image;
+            if (File::exists($srcPath)) {
+                $ext = pathinfo($source->image, PATHINFO_EXTENSION);
+                $newImage = uniqid('dup_', true) . ($ext !== '' ? '.' . $ext : '');
+                File::copy($srcPath, $dir . DIRECTORY_SEPARATOR . $newImage);
+            }
+        }
+
+        $blogCategory = ($this->table)::create([
+            'title'            => $source->title . ' (Copy)',
+            'parent_id'        => $source->parent_id,
+            'friendly_url'     => $candidateUrl,
+            'image'            => $newImage,
+            'description'      => $source->description,
+            'ordering'         => $source->ordering,
+            'status'           => $source->status,
+            'show_title'       => $source->show_title,
+            'show_in_menu'     => $source->show_in_menu,
+            'meta_title'       => $source->meta_title,
+            'meta_keywords'    => $source->meta_keywords,
+            'meta_description' => $source->meta_description,
+            'created_by'       => currentUserId(),
+        ]);
+
+        return redirect()
+            ->route('blog-category.edit', $blogCategory->id)
+            ->with('success', $this->notify_title . ' duplicated. Adjust title or URL if needed.');
+    }
+
     public function store(Request $request)
     {
         $action = $request->submitBtn;
@@ -108,7 +160,7 @@ class BlogCategoryController
             // Validate input
             $validated = $request->validate([
                 'title'        => 'required|string|max:255',
-                'friendly_url' => 'required|string|unique:blogs,friendly_url|max:255',
+                'friendly_url' => 'required|string|unique:blog_categories,friendly_url|max:255',
                 'meta_title'   => 'required|string|max:255',
             ]);
 
@@ -129,11 +181,11 @@ class BlogCategoryController
                 'image'            => $uploadImage,
             ];
 
-            $blogCat = ($this->table)::create($dataToStore);
-
-            if (!$blogCat) {
-                Log::error('Failed to create', $dataToStore);
-                return back()->with('error', 'Failed to create.');
+            try {
+                $blogCat = ($this->table)::create($dataToStore);
+            } catch (\Exception $e) {
+                Log::error('Failed to create: ' . $e->getMessage());
+                return back()->withInput()->with('error', 'Failed to create: ' . $e->getMessage());
             }
 
             if ($action === 'save_new') {
@@ -141,7 +193,7 @@ class BlogCategoryController
             } elseif ($action === 'save_stay') {
                 return to_route($this->module . '.edit', $blogCat->id)->with('success', $this->notify_title . ' created successfully.');
             } else {
-                return redirect()->route($this->module)->with('success', $this->notify_title . ' created successfully.');
+                return redirect()->route('blog-categories')->with('success', $this->notify_title . ' created successfully.');
             }
         }
 
@@ -184,7 +236,7 @@ class BlogCategoryController
         // Validate input
         $request->validate([
             'title'        => 'required|string|max:255',
-            'friendly_url' => 'required|string|max:255|unique:blogs,friendly_url,' . $id,
+            'friendly_url' => 'required|string|max:255|unique:blog_categories,friendly_url,' . $id,
             'meta_title'   => 'required|string|max:255',
         ]);
 
@@ -199,13 +251,12 @@ class BlogCategoryController
                 'description'      => $request->description,
                 'parent_id'        => $request->parent_id,
                 'status'           => $request->status,
-                'show_title'       => $request->show_title,
-                'show_in_menu'     => $request->show_in_menu,
+                'show_title'       => $request->show_title ?? '0',
+                'show_in_menu'     => $request->show_in_menu ?: 'Yes',
                 'ordering'         => $request->ordering ?? 0,
                 'meta_title'       => $request->meta_title,
                 'meta_keywords'    => $request->meta_keywords,
                 'meta_description' => $request->meta_description,
-                'created_by'       => currentUserId(),
             ];
 
             // Handle image update or deletion
@@ -224,7 +275,7 @@ class BlogCategoryController
             } elseif ($action === 'save_stay') {
                 return to_route($this->module.'.edit', $blogCat->id)->with('success', $this->notify_title . ' updated successfully.');
             } else {
-                return redirect()->route($this->module)->with('success', $this->notify_title . ' updated successfully.');
+                return redirect()->route('blog-categories')->with('success', $this->notify_title . ' updated successfully.');
             }
 
         } catch (\Exception $e) {
@@ -242,7 +293,7 @@ class BlogCategoryController
 
         $blogCat->update(['status' => $newStatus]);
 
-        return redirect()->route($this->module)->with('success', $this->notify_title . ' status updated to ' . ucfirst($newStatus) . '.');
+        return redirect()->route('blog-categories')->with('success', $this->notify_title . ' status updated to ' . ucfirst($newStatus) . '.');
     }
 
     public function updateStatusAjax(Request $request, $id)
@@ -328,7 +379,7 @@ class BlogCategoryController
             $blogCat = ($this->table)::findOrFail($id);
             $blogCat->delete();
 
-            return redirect()->route($this->module)->with('success', $this->notify_title . ' deleted successfully.');
+            return redirect()->route('blog-categories')->with('success', $this->notify_title . ' deleted successfully.');
         } catch (\Exception $e) {
             return back()->with('error', 'Error: ' . $e->getMessage());
         }
@@ -343,14 +394,14 @@ class BlogCategoryController
 
             if ($trashed === 'trashed') {
                 ($this->table)::withTrashed()->whereIn('id', $request->ids)->forceDelete();
-                return redirect()->route($this->module)->with('success', 'Selected ' . $this->notify_title . ' permanently deleted!');
+                return redirect()->route('blog-categories')->with('success', 'Selected ' . $this->notify_title . ' permanently deleted!');
             }
 
             ($this->table)::whereIn('id', $selectedIds)->delete();
-            return redirect()->route($this->module)->with('success', 'Selected ' . $this->notify_title . ' deleted successfully.');
+            return redirect()->route('blog-categories')->with('success', 'Selected ' . $this->notify_title . ' deleted successfully.');
         }
 
-        return redirect()->route($this->module)->with('error', $this->notify_title . ' not selected.');
+        return redirect()->route('blog-categories')->with('error', $this->notify_title . ' not selected.');
     }
 
     public function export()
@@ -477,7 +528,7 @@ class BlogCategoryController
             fclose($handle);
         }
 
-        return redirect()->route($this->module)->with('success', $this->notify_title . ' imported successfully.');
+        return redirect()->route('blog-categories')->with('success', $this->notify_title . ' imported successfully.');
     }
 
     public function trashed(Request $request)
@@ -523,7 +574,7 @@ class BlogCategoryController
         $restore = ($this->table)::withTrashed()->findOrFail($id);
         $restore->restore();
 
-        return redirect()->route('blog-category')->with('success', $this->notify_title . ' restored successfully!');
+        return redirect()->route('blog-categories')->with('success', $this->notify_title . ' restored successfully!');
     }
 
     public function forceDelete($id)
@@ -531,7 +582,7 @@ class BlogCategoryController
         $forcedelete = ($this->table)::withTrashed()->findOrFail($id);
         $forcedelete->forceDelete();
 
-        return redirect()->route('blog-category')->with('success', $this->notify_title . ' permanently deleted!');
+        return redirect()->route('blog-categories')->with('success', $this->notify_title . ' permanently deleted!');
     }
 
     private function uniqueBlogCategoryFriendlyUrl(string $base): string

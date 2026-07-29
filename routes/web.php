@@ -306,6 +306,9 @@ Route::prefix('admin')->group(function () {
         Route::get('/blog-category/edit/{id}', [backend\BlogCategoryController::class, 'editForm'])->name('blog-category.edit');
 
         Route::post('/blog-category/store', [backend\BlogCategoryController::class, 'store'])->name('blog-category.store');
+        Route::get('/blog-category/store', function () {
+            return redirect()->route('blog-category.create');
+        });
         Route::put('/blog-category/update/{id}', [backend\BlogCategoryController::class, 'update'])->name('blog-category.update');
 
         //Route::get('/blog-category/delete/{id}', [backend\BlogCategoryController::class, 'delete'])->name
@@ -706,6 +709,7 @@ Route::middleware(['frontend', 'maintenance'])->group(function () {
     /* direct page routes */
     Route::get('/', [frontend\MainController::class, 'index'])->name('/');
     Route::get('/tour-details', [frontend\MainController::class, 'tourDetails'])->name('tour-details');
+    Route::get('/blogs/load-more', [frontend\MainController::class, 'loadMoreBlogs'])->name('blogs.load-more');
 
     Route::match(['get', 'post'], '/send', [frontend\InquiriesController::class, 'index'])->name('send');
     /* all dynamic CMS pages */

@@ -51,4 +51,31 @@ class Blog extends Model
         return $this->belongsTo(User::class, 'created_by');
     }
 
+    public function scopePublished($query)
+    {
+        return $query->where('status', 'published');
+    }
+
+    public function imageUrl(): string
+    {
+        return filled($this->image)
+            ? asset('assets/images/blogs/' . ltrim($this->image, '/'))
+            : imageNotFound();
+    }
+
+    public function frontendUrl(): string
+    {
+        return filled($this->friendly_url) ? url('/' . $this->friendly_url) : '#';
+    }
+
+    public function excerpt(int $limit = 140): string
+    {
+        return \Illuminate\Support\Str::limit(trim(strip_tags((string)$this->description)), $limit);
+    }
+
+    public function readingTimeMinutes(): int
+    {
+        return blog_reading_time((string)$this->description);
+    }
+
 }
