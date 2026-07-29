@@ -61,9 +61,6 @@
                     <a href="{{route('page.default','multiple-entry')}}" class="block px-3 hover:text-mst transition duration-200">Saudi Arabia Multi Entry Visa </a>
                 </li>
                 <li>
-                    <a href="{{route('page.default','#')}}" class="block px-3 hover:text-mst transition duration-200">Umrah Packages </a>
-                </li>
-                <li>
                     <a href="{{route('page.default','umrah-by-bus')}}" class="block px-3 hover:text-mst transition duration-200">umrah by bus</a>
                 </li>
                 <li>
