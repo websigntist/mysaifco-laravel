@@ -13,7 +13,7 @@
         <!-- Dropdown 1 Level 1-->
         <div class="nav-dropdown-menu hidden group-hover:block group-[.is-open]:block w-full md:w-50 bg-white
         rounded-md shadow-xl border-y-3 border-mst mt-1 md:absolute md:top-full md:left-0 md:z-50 text-mst-gray">
-            <ul class="flex flex-col gap-1 text-sm font-medium space-y-2 px-2 pt-3 pb-4">
+            <ul class="flex flex-col gap-1 text-sm font-medium space-y-2 px-2 pt-3 pb-4 capitalize">
                 <li>
                     <a href="{{route('page.default','#')}}" class="block px-3 hover:text-mst transition duration-200">Abu Dhabi Tours</a>
                 </li>
@@ -56,7 +56,7 @@
         <!-- Dropdown 1 Level 1-->
         <div class="nav-dropdown-menu hidden group-hover:block group-[.is-open]:block w-full md:w-60 bg-white
                 rounded-md shadow-xl border-y-3 border-mst mt-1 md:absolute md:top-full md:left-0 md:z-50 text-mst-gray">
-            <ul class="flex flex-col gap-1 text-sm font-medium space-y-2 px-2 pt-3 pb-4">
+            <ul class="flex flex-col gap-1 text-sm font-medium space-y-2 px-2 pt-3 pb-4 capitalize">
                 <li>
                     <a href="{{route('page.default','multiple-entry')}}" class="block px-3 hover:text-mst transition duration-200">Saudi Arabia Multi Entry Visa </a>
                 </li>
@@ -108,13 +108,12 @@
         <!-- Level 1-->
         <div class="nav-dropdown-menu hidden group-hover:block group-[.is-open]:block w-full md:w-58 bg-white
                         rounded-md shadow-xl border-y-3 border-mst mt-1 md:absolute md:top-full md:left-0 md:z-50 text-mst-gray">
-            <ul class="flex flex-col gap-1 text-sm font-medium">
+            <ul class="flex flex-col gap-1 text-sm font-medium capitalize">
                 <li>
-                    <a href="{{route('page.default','all-tour-categories')}}" class="block px-3 py-2 rounded-lg hover:text-mst transition duration-200">
-                        UAE Visa </a>
+                    <a href="{{route('page.default','#')}}" class="block px-3 py-2 rounded-lg hover:text-mst transition duration-200">UAE Visa </a>
                 </li>
                 <li>
-                    <a href="{{route('page.default','all-tour-categories')}}" class="block px-3 py-2 rounded-lg hover:text-mst transition duration-200">
+                    <a href="{{route('page.default','multiple-entry')}}" class="block px-3 py-2 rounded-lg hover:text-mst transition duration-200">
                         Saudi Arabia Multi Entry Visa </a>
                 </li>
             </ul>
