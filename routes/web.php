@@ -182,6 +182,7 @@ Route::prefix('admin')->group(function () {
         Route::post('/pages/update-title', [backend\PageController::class, 'updateTitleAjax'])->middleware('check.permission:pages,update-title')->name('pages.update-title');
         Route::get('/pages/modal-view/{id}', [backend\PageController::class, 'modalView'])->middleware('check.permission:pages,modal-view')->name('pages.modal-view');
         Route::post('/pages/update-ordering', [backend\PageController::class, 'updateOrderingAjax'])->middleware('check.permission:pages,update-ordering')->name('pages.update-ordering');
+        Route::post('/pages/delete-section-image', [backend\PageController::class, 'deleteSectionImageAjax'])->name('pages.delete-section-image');
         Route::delete('/pages/delete/{id}', [backend\PageController::class, 'deleteAjax'])->middleware('check.permission:pages,delete')->name('pages.delete');
         Route::post('/pages/{id}/status', [backend\PageController::class, 'updateStatusAjax'])->middleware('check.permission:pages,status')->name('pages.status');
         // PAGES ROUTES END

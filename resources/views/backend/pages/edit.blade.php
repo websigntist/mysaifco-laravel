@@ -14,7 +14,15 @@
                         <div class="d-flex flex-column justify-content-center">
                             {!! heading_breadcrumbs('Update '. $title, $title.' form') !!}
                         </div>
-                        <div class="card-header-elements ms-auto d-flex align-content-between">
+                        <div class="card-header-elements ms-auto d-flex align-items-center flex-wrap gap-2">
+                            @if(!empty($data->friendly_url))
+                                <a href="{{ url($data->friendly_url) }}" target="_blank" class="btn btn-sm btn-info waves-effect waves-light me-1 d-none d-lg-inline-flex align-items-center" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="View Page">
+                                    <span class="icon-base ti tabler-eye icon-20px me-1"></span>View Page
+                                </a>
+                                <a href="{{ url($data->friendly_url) }}" target="_blank" class="btn btn-icon btn-sm btn-info waves-effect waves-light me-1 d-inline-flex d-lg-none align-items-center justify-content-center" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="View Page">
+                                    <span class="icon-base ti tabler-eye icon-20px"></span>
+                                </a>
+                            @endif
                             {!! goBack($module,'Update') !!}
                         </div>
                     </div>
@@ -124,53 +132,9 @@
                             </div>
                         </div>
                     </div>
-                    <!-- meta title -->
-                    <div class="card card-action border-top-bottom mt-5">
-                        <div class="card-header border-bottom py-3 d-flex justify-content-between align-items-center">
-                            <h6 class="mb-0 text-capitalize">
-                                <span class="icon-sm icon-base ti tabler-world-www iconmrgn me-1"></span> SEO Meta
-                                                                                                          Description
-                            </h6>
-                            {!! card_action_element() !!}
-                        </div>
-                        <div class="collapse show">
-                            <div class="card-body">
-                                <div class="row g-6 pt-5">
-                                    <div class="col-md-12">
-                                        <label class="form-label text-capitalize" for="meta_title">
-                                            <span>{{_label('meta_title')}}</span> </label> <input type="text"
-                                                                                                  id="meta_title"
-                                                                                                  name="meta_title"
-                                                                                                  value="{{ old('meta_title', $data->meta_title) }}"
-                                                                                                  class="form-control"
-                                                                                                  placeholder="Enter {{_label('meta_title')}}..." required>
-                                        {!! error_label('meta_title') !!}
-                                    </div>
-                                    <div class="col-md-12">
-                                        <label class="form-label text-capitalize" for="meta_keywords">
-                                            {{_label('meta_keywords')}}
-                                        </label> <input type="text"
-                                                        id="meta_keywords"
-                                                        name="meta_keywords"
-                                                        value="{{ old('meta_keywords', $data->meta_keywords) }}"
-                                                        class="form-control"
-                                                        placeholder="Enter {{_label('meta_keywords')}}...">
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-password-toggle">
-                                            <label class="form-label text-capitalize" for="meta_description">
-                                                {{_label('meta_description')}}
-                                            </label> <textarea class="form-control"
-                                                               id="meta_description"
-                                                               name="meta_description"
-                                                               placeholder="Write {{_label('meta_description')}}" rows="3">{{ old('meta_description', $data->meta_description) }}</textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <!-- section repeater -->
+                    @include('backend.components.page-sections-repeater', ['data' => $data])
                     </div>
-                </div>
                 <!-- right column ===================================-->
                 <!-- ================================================-->
                 <div class="col-sm-12 col-xl-4">
@@ -236,6 +200,19 @@
                                         </div>
                                     </div>
                                     <div class="col-md-12">
+                                        <label class="form-label text-capitalize" for="tour_type_id">
+                                            <span>Tour Category</span>
+                                        </label>
+                                        <select id="tour_type_id" name="tour_type_id" class="form-select select2">
+                                            <option value="">- Select Tour Category -</option>
+                                            @foreach($tourTypes as $tourType)
+                                                <option value="{{ $tourType->id }}" {{ old('tour_type_id', $data->tour_type_id) == $tourType->id ? 'selected' : '' }}>
+                                                    {{ $tourType->title }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12">
                                         <label class="form-label text-capitalize" for="status">
                                             <span>{{_label('status')}}</span> </label>
                                         <select id="status" name="status" class="form-select select2" required>
@@ -296,12 +273,58 @@
                             </div>
                         </div>
                     </div>
+                    <!-- meta title -->
+                    <div class="card card-action border-top-bottom mt-5">
+                        <div class="card-header border-bottom py-3 d-flex justify-content-between align-items-center">
+                            <h6 class="mb-0 text-capitalize">
+                                <span class="icon-sm icon-base ti tabler-world-www iconmrgn me-1"></span> SEO Meta
+                                                                                                          Description
+                            </h6>
+                            {!! card_action_element() !!}
+                        </div>
+                        <div class="collapse show">
+                            <div class="card-body">
+                                <div class="row g-6 pt-5">
+                                    <div class="col-md-12">
+                                        <label class="form-label text-capitalize" for="meta_title">
+                                            <span>{{_label('meta_title')}}</span> </label> <input type="text"
+                                                                                                  id="meta_title"
+                                                                                                  name="meta_title"
+                                                                                                  value="{{ old('meta_title', $data->meta_title) }}"
+                                                                                                  class="form-control"
+                                                                                                  placeholder="Enter {{_label('meta_title')}}..." required>
+                                        {!! error_label('meta_title') !!}
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label class="form-label text-capitalize" for="meta_keywords">
+                                            {{_label('meta_keywords')}}
+                                        </label> <input type="text"
+                                                        id="meta_keywords"
+                                                        name="meta_keywords"
+                                                        value="{{ old('meta_keywords', $data->meta_keywords) }}"
+                                                        class="form-control"
+                                                        placeholder="Enter {{_label('meta_keywords')}}...">
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-password-toggle">
+                                            <label class="form-label text-capitalize" for="meta_description">
+                                                {{_label('meta_description')}}
+                                            </label> <textarea class="form-control"
+                                                               id="meta_description"
+                                                               name="meta_description"
+                                                               placeholder="Write {{_label('meta_description')}}" rows="3">{{ old('meta_description', $data->meta_description) }}</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <!-- maintenance mode -->
                     {{--@include('backend.components.page_maintenance_option')--}}
                     <!-- action buttons -->
-                    <div class="card border-top-bottom mt-5 py-3">
+                    <div class="card border-top-bottom mt-5 py-3 sticky-action-card" style="position: sticky; top: 90px; z-index: 99; background: var(--bs-card-bg, #ffffff);">
                         <div class="row">
-                            {!! form_action_buttons('Update Now', 'Update & New', 'Update & Stay') !!}
+                            {!! form_action_buttons('Update & Stay', 'Update & New', 'Update & Exit') !!}
                         </div>
                     </div>
                 </div>
@@ -384,12 +407,17 @@
     <script src="{{ asset('assets/backend/js/select2.js') }}"></script>
     <script src="{{ asset('assets/backend/js/form-layouts.js') }}"></script>
     <script src="{{ asset('assets/backend/js/form-validation.js') }}"></script>
+    <script src="{{ asset('assets/backend/js/jquery-repeater.js') }}"></script>
     <script src="{{ asset('assets/backend/js/tinymce/tinymce.min.js') }}"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        function initTinyMCEForElement(elementId) {
+            if (typeof tinymce === 'undefined') return;
+            if (tinymce.get(elementId)) {
+                tinymce.remove('#' + elementId);
+            }
             tinymce.init({
-                selector: '#editor',
-                license_key: 'gpl', // Required for free version
+                selector: '#' + elementId,
+                license_key: 'gpl',
                 plugins: 'code lists link image table anchor searchreplace visualblocks fullscreen insertdatetime table wordcount',
 
                 toolbar: [
@@ -410,6 +438,197 @@
                     'Verdana=verdana,geneva,sans-serif;',
 
                 font_size_formats: '8px 10px 12px 14px 16px 18px 20px 24px 28px 32px 36px',
+                setup: function (editor) {
+                    editor.on('change blur keyup', function () {
+                        editor.save();
+                    });
+                }
+            });
+        }
+
+        function initAllSectionEditors() {
+            $('.section-editor').each(function (idx) {
+                var id = $(this).attr('id');
+                if (!id) {
+                    id = 'sec_desc_' + idx + '_' + new Date().getTime();
+                    $(this).attr('id', id);
+                }
+                initTinyMCEForElement(id);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            tinymce.init({
+                selector: '#editor',
+                license_key: 'gpl',
+                plugins: 'code lists link image table anchor searchreplace visualblocks fullscreen insertdatetime table wordcount',
+
+                toolbar: [
+                    'undo redo | fontfamily fontsize | bold italic underline forecolor backcolor | strikethrough numlist ' +
+                    'bullist checklist alignleft aligncenter alignright alignjustify |',
+                    'link image table | subscript superscript removeformat | fullscreen code'
+                ].join(' '),
+
+                menubar: false,
+                branding: false,
+                toolbar_mode: 'wrap',
+
+                font_family_formats:
+                    'Poppins=poppins, sans-serif;' +
+                    'Arial=arial,helvetica,sans-serif;' +
+                    'Georgia=georgia,serif;' +
+                    'Times New Roman=times new roman,times;' +
+                    'Verdana=verdana,geneva,sans-serif;',
+
+                font_size_formats: '8px 10px 12px 14px 16px 18px 20px 24px 28px 32px 36px',
+            });
+
+            initAllSectionEditors();
+        });
+
+        $(document).ready(function () {
+            var savedScroll = sessionStorage.getItem('cms_page_scroll_pos');
+            if (savedScroll !== null) {
+                sessionStorage.removeItem('cms_page_scroll_pos');
+                setTimeout(function () {
+                    window.scrollTo({
+                        top: parseInt(savedScroll),
+                        behavior: 'instant'
+                    });
+                }, 80);
+            }
+
+            var chevronSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="mx-1 text-secondary"><path d="m9 18 6-6-6-6"/></svg>';
+
+            function updateSectionNumbers() {
+                $('#page-sections-repeater [data-repeater-item]').each(function (index) {
+                    $(this).find('.section-number').text(index + 1);
+                    var headingVal = $(this).find('input[name*="section_heading"]').val();
+                    if (headingVal && headingVal.trim().length > 0) {
+                        var safeText = $('<div>').text(headingVal.trim()).html();
+                        $(this).find('.section-heading-display').html(chevronSvg + '<span class="section-heading-text" style="color: #000000 !important;">' + safeText + '</span>');
+                    } else {
+                        $(this).find('.section-heading-display').html('');
+                    }
+                });
+            }
+
+            $(document).on('input keyup change', 'input[name*="section_heading"]', function () {
+                var val = $(this).val().trim();
+                var $display = $(this).closest('[data-repeater-item]').find('.section-heading-display');
+                if (val.length > 0) {
+                    var safeText = $('<div>').text(val).html();
+                    $display.html(chevronSvg + '<span class="section-heading-text" style="color: #000000 !important;">' + safeText + '</span>');
+                } else {
+                    $display.html('');
+                }
+            });
+
+            $('#page-sections-repeater').repeater({
+                show: function () {
+                    var $item = $(this);
+                    $item.slideDown();
+
+                    // Clean up cloned TinyMCE markup
+                    $item.find('.tox-tinymce').remove();
+                    var $textarea = $item.find('.section-editor');
+                    $textarea.show();
+
+                    var newId = 'sec_desc_' + new Date().getTime() + '_' + Math.floor(Math.random() * 1000);
+                    $textarea.attr('id', newId);
+
+                    setTimeout(function () {
+                        initTinyMCEForElement(newId);
+                    }, 50);
+
+                    $item.find('.section-id-input').val('');
+                    $item.find('.section-heading-display').text('');
+                    $item.find('.section-img-preview-wrapper').hide();
+                    $item.find('.section-img-preview').attr('src', '');
+                    $item.find('.section-img-link').attr('href', '');
+                    updateSectionNumbers();
+                },
+                hide: function (deleteElement) {
+                    if (confirm('Are you sure you want to delete this section?')) {
+                        var editorId = $(this).find('.section-editor').attr('id');
+                        if (editorId && typeof tinymce !== 'undefined' && tinymce.get(editorId)) {
+                            tinymce.remove('#' + editorId);
+                        }
+                        $(this).slideUp(deleteElement, function () {
+                            $(this).remove();
+                            updateSectionNumbers();
+                        });
+                    }
+                },
+                isFirstItemUndeletable: false
+            });
+
+            updateSectionNumbers();
+
+            $('form').on('submit', function () {
+                if (typeof tinymce !== 'undefined') {
+                    tinymce.triggerSave();
+                }
+                var currentPos = window.scrollY || document.documentElement.scrollTop;
+                sessionStorage.setItem('cms_page_scroll_pos', currentPos);
+            });
+
+            $(document).on('click', '.del_section_img', function (e) {
+                e.preventDefault();
+                var btn = $(this);
+                var sectionId = btn.attr('data-id');
+                var wrapper = btn.closest('.section-img-preview-wrapper');
+                var container = btn.closest('[data-repeater-item]');
+
+                if (!confirm('Are you sure you want to remove this section image?')) {
+                    return;
+                }
+
+                if (sectionId) {
+                    $.ajax({
+                        url: '{{ route("pages.delete-section-image") }}',
+                        type: 'POST',
+                        data: {
+                            _token: '{{ csrf_token() }}',
+                            id: sectionId
+                        },
+                        success: function (res) {
+                            if (res.success) {
+                                wrapper.fadeOut(function() { $(this).hide(); });
+                                container.find('.section-image-input').val('');
+                                if (typeof Notiflix !== 'undefined' && Notiflix.Notify) {
+                                    Notiflix.Notify.success(res.message);
+                                }
+                            } else {
+                                alert(res.message || 'Failed to remove image');
+                            }
+                        },
+                        error: function () {
+                            alert('Error removing image');
+                        }
+                    });
+                } else {
+                    wrapper.fadeOut(function() { $(this).hide(); });
+                    container.find('.section-image-input').val('');
+                }
+            });
+
+            $(document).on('change', '.section-image-input', function () {
+                var input = this;
+                var container = $(input).closest('[data-repeater-item]');
+                var wrapper = container.find('.section-img-preview-wrapper');
+                var imgPreview = container.find('.section-img-preview');
+                var imgLink = container.find('.section-img-link');
+
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        imgPreview.attr('src', e.target.result);
+                        imgLink.attr('href', e.target.result);
+                        wrapper.fadeIn();
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
             });
         });
     </script>

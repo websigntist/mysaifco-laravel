@@ -36,7 +36,8 @@ class Page extends Model
         'deleted_at',
         'meta_title',
         'meta_keywords',
-        'meta_description'
+        'meta_description',
+        'tour_type_id'
     ];
 
     public function maintenanceMode()
@@ -51,6 +52,16 @@ class Page extends Model
     public function parentPage()
     {
         return $this->belongsTo(Page::class, 'parent_id');
+    }
+
+    public function tourType()
+    {
+        return $this->belongsTo(TourType::class, 'tour_type_id');
+    }
+
+    public function sections()
+    {
+        return $this->hasMany(PageSection::class, 'page_id')->orderBy('ordering', 'asc');
     }
 
 }

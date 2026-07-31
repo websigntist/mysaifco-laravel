@@ -4,6 +4,8 @@ namespace App\Http\Controllers\backend;
 
 use App\Models\backend\Module;
 use App\Models\backend\Page;
+use App\Models\backend\PageSection;
+use App\Models\backend\TourType;
 use App\Models\backend\MaintenanceMode;
 use App\Models\backend\User;
 use Illuminate\Http\Request;
@@ -83,6 +85,7 @@ class pageController
         $getStatus = getEnumValues($this->module, 'status');
         $getlayout = getEnumValues($this->module, 'container_layout');
         $getShowinmenu = getEnumValues($this->module, 'show_in_menu');
+        $tourTypes = TourType::orderBy('title')->get();
 
         return view('backend.' . $this->module . '.form', [
             'title'            => $moduleTitle,
@@ -91,6 +94,7 @@ class pageController
             'getStatus'        => $getStatus,
             'getlayout'        => $getlayout,
             'getShowinmenu'    => $getShowinmenu,
+            'tourTypes'        => $tourTypes,
             'meta_title'       => "Create New | Admin Panel",
             'meta_keywords'    => '',
             'meta_description' => ''
@@ -142,12 +146,39 @@ class pageController
                 'image'            => $uploadImage,
                 'image_alt'        => $request->image_alt,
                 'image_title'      => $request->image_title,
+                'tour_type_id'     => $request->tour_type_id ?: null,
             ];
 
             $page = ($this->table)::create($dataToStore);
             if (!$page) {
                 Log::error('Failed to create', $dataToStore);
                 return back()->with('error', 'Failed to create.');
+            }
+
+            // Save sections repeater data
+            if ($request->has('sections') && is_array($request->sections)) {
+                foreach ($request->sections as $index => $secData) {
+                    if (empty($secData['section_heading']) && empty($secData['section_description'])) {
+                        continue;
+                    }
+                    $secImage = null;
+                    if ($request->hasFile("sections.{$index}.section_image")) {
+                        $file = $request->file("sections.{$index}.section_image");
+                        $secImage = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+                        $file->move(public_path('assets/images/pages/sections'), $secImage);
+                    }
+                    PageSection::create([
+                        'page_id'             => $page->id,
+                        'section_heading'     => $secData['section_heading'] ?? null,
+                        'section_sub_heading' => $secData['section_sub_heading'] ?? null,
+                        'section_description' => $secData['section_description'] ?? null,
+                        'button_status'       => !empty($secData['button_status']) ? 1 : 0,
+                        'button_title'        => $secData['button_title'] ?? null,
+                        'button_url'          => $secData['button_url'] ?? null,
+                        'section_image'       => $secImage,
+                        'ordering'            => $index + 1,
+                    ]);
+                }
             }
 
             // Handle maintenance mode image upload
@@ -268,7 +299,7 @@ class pageController
 
     public function editForm($id, Request $request)
     {
-        $page = ($this->table)::findOrFail($id);
+        $page = ($this->table)::with('sections')->findOrFail($id);
 
         $segments = $request->segments();
         $moduleName = $segments[count($segments) - 3] ?? null;
@@ -281,6 +312,7 @@ class pageController
         $getStatus = getEnumValues($this->module, 'status');
         $getlayout = getEnumValues($this->module, 'container_layout');
         $getShowinmenu = getEnumValues($this->module, 'show_in_menu');
+        $tourTypes = TourType::orderBy('title')->get();
 
         return view('backend.' . $this->module . '.edit', [
             'data'             => $page,
@@ -291,6 +323,7 @@ class pageController
             'getStatus'        => $getStatus,
             'getlayout'        => $getlayout,
             'getShowinmenu'    => $getShowinmenu,
+            'tourTypes'        => $tourTypes,
             'meta_title'       => "Edit | Admin Panel",
             'meta_keywords'    => '',
             'meta_description' => ''
@@ -310,7 +343,7 @@ class pageController
         ]);
 
         try {
-            // Find the
+            // Find the page
             $page = ($this->table)::findOrFail($id);
 
             // Initialize data to update
@@ -337,13 +370,70 @@ class pageController
                 'meta_description' => $request->meta_description,
                 'image_alt'        => $request->image_alt,
                 'image_title'      => $request->image_title,
+                'tour_type_id'     => $request->tour_type_id ?: null,
             ];
 
             // Handle image update or deletion
             $dataToUpdate['image'] = imageHandling($request, $page, 'image', $this->module);
 
-            // Update
+            // Update page
             $page->update($dataToUpdate);
+
+            // Sync sections repeater data
+            $keptIds = [];
+            if ($request->has('sections') && is_array($request->sections)) {
+                foreach ($request->sections as $index => $secData) {
+                    $secId = $secData['id'] ?? null;
+                    $existingSec = $secId ? PageSection::where('page_id', $page->id)->find($secId) : null;
+                    
+                    $secImage = $existingSec ? $existingSec->section_image : null;
+                    if ($request->hasFile("sections.{$index}.section_image")) {
+                        $file = $request->file("sections.{$index}.section_image");
+                        $newImage = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+                        $file->move(public_path('assets/images/pages/sections'), $newImage);
+                        if ($secImage && File::exists(public_path('assets/images/pages/sections/' . $secImage))) {
+                            File::delete(public_path('assets/images/pages/sections/' . $secImage));
+                        }
+                        $secImage = $newImage;
+                    }
+
+                    if ($existingSec) {
+                        $existingSec->update([
+                            'section_heading'     => $secData['section_heading'] ?? null,
+                            'section_sub_heading' => $secData['section_sub_heading'] ?? null,
+                            'section_description' => $secData['section_description'] ?? null,
+                            'button_status'       => !empty($secData['button_status']) ? 1 : 0,
+                            'button_title'        => $secData['button_title'] ?? null,
+                            'button_url'          => $secData['button_url'] ?? null,
+                            'section_image'       => $secImage,
+                            'ordering'            => $index + 1,
+                        ]);
+                        $keptIds[] = $existingSec->id;
+                    } else {
+                        $newSec = PageSection::create([
+                            'page_id'             => $page->id,
+                            'section_heading'     => $secData['section_heading'] ?? null,
+                            'section_sub_heading' => $secData['section_sub_heading'] ?? null,
+                            'section_description' => $secData['section_description'] ?? null,
+                            'button_status'       => !empty($secData['button_status']) ? 1 : 0,
+                            'button_title'        => $secData['button_title'] ?? null,
+                            'button_url'          => $secData['button_url'] ?? null,
+                            'section_image'       => $secImage,
+                            'ordering'            => $index + 1,
+                        ]);
+                        $keptIds[] = $newSec->id;
+                    }
+                }
+            }
+
+            // Delete removed sections
+            $deletedSecs = PageSection::where('page_id', $page->id)->whereNotIn('id', $keptIds)->get();
+            foreach ($deletedSecs as $delSec) {
+                if ($delSec->section_image && File::exists(public_path('assets/images/pages/sections/' . $delSec->section_image))) {
+                    File::delete(public_path('assets/images/pages/sections/' . $delSec->section_image));
+                }
+                $delSec->delete();
+            }
 
             // Handle Maintenance Mode
             if ($request->filled('maintenance_title') || $request->filled('mode') || $request->hasFile('maintenance_image')) {
@@ -358,7 +448,7 @@ class pageController
 
             if ($action === 'save_new') {
                 return to_route('pages.create')->with('success', $this->notify_title . ' Updated! Ready to add another.');
-            } elseif ($action === 'save_stay') {
+            } elseif ($action === 'save_stay' || $action === 'default') {
                 return to_route('pages.edit', $page->id)->with('success', $this->notify_title . ' Updated! You can continue editing.');
             } else {
                 return redirect()->route($this->module)->with('success', $this->notify_title . ' updated successfully.');
@@ -720,6 +810,34 @@ class pageController
         $forcedelete->forceDelete();
 
         return redirect()->route($this->module)->with('success', $this->notify_title . ' permanently deleted!');
+    }
+
+    public function deleteSectionImageAjax(Request $request)
+    {
+        try {
+            $secId = $request->id;
+            if ($secId) {
+                $section = PageSection::find($secId);
+                if ($section && $section->section_image) {
+                    $path = public_path('assets/images/pages/sections/' . $section->section_image);
+                    if (File::exists($path)) {
+                        File::delete($path);
+                    }
+                    $section->section_image = null;
+                    $section->save();
+                }
+            }
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Section image removed successfully.'
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Failed to delete section image: ' . $e->getMessage()
+            ], 500);
+        }
     }
 
 }
