@@ -2,10 +2,7 @@
     $cmsPage = page_body_content('umrah');
     $sections = ($cmsPage && $cmsPage->sections) ? $cmsPage->sections : collect([]);
 
-    //$sec0 = $sections->get(0);
-
     $sec = [];
-
     for ($i = 0; $i < 50; $i++) {
         $sec[$i] = $sections->get($i);
     }
@@ -247,20 +244,56 @@
         <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
             <div class="space-y-7">
                 <div class="py-4 px-6 rounded-xl border border-gray-200 bg-white text-center md:text-left">
-                    <h3 class="italic">{!! format_two_color_heading($clearTitle) !!}</h3>
-                    <p class="text-[14px] mt-2">{!! $clearDesc !!}</p>
+                    <div class="flex items-center">
+                        <div class="me-3">
+                            <img src="{{ asset('assets/images/icons/scan.svg') }}" alt="">
+                        </div>
+                        <div class="">
+                            <h3 class="italic">
+                                {!! format_two_color_heading($clearTitle) !!}
+                            </h3>
+                            <p class="text-[14px] mt-2">{!! $clearDesc !!}</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="py-4 px-6 rounded-xl border border-gray-200 bg-white text-center md:text-left">
-                    <h3 class="italic">{!! format_two_color_heading($passTitle) !!}</h3>
-                    <p class="text-[14px] mt-2">{!! $passDesc !!}</p>
+                    <div class="flex items-center">
+                        <div class="me-3">
+                            <img src="{{ asset('assets/images/icons/photo.svg') }}" alt="">
+                        </div>
+                        <div class="">
+                            <h3 class="italic">
+                                {!! format_two_color_heading($passTitle) !!}
+                            </h3>
+                            <p class="text-[14px] mt-2">{!! $passDesc !!}</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="py-4 px-6 rounded-xl border border-gray-200 bg-white text-center md:text-left">
-                    <h3 class="italic">{!! format_two_color_heading($nationalTitle) !!}</h3>
-                    <p class="text-[14px] mt-2">{!! $nationalDesc !!}</p>
+                    <div class="flex items-center">
+                        <div class="me-3">
+                            <img src="{{ asset('assets/images/icons/idcard.svg') }}" alt="">
+                        </div>
+                        <div class="">
+                            <h3 class="italic">
+                                {!! format_two_color_heading($nationalTitle) !!}
+                            </h3>
+                            <p class="text-[14px] mt-2">{!! $nationalDesc !!}</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="py-4 px-6 rounded-xl border border-gray-200 bg-white text-center md:text-left">
-                    <h3 class="italic">{!! format_two_color_heading($processTitle) !!}</h3>
-                    <p class="text-[14px] mt-2">{!! $processDesc !!}</p>
+                    <div class="flex items-center">
+                        <div class="me-3">
+                            <img src="{{ asset('assets/images/icons/timer.svg') }}" alt="">
+                        </div>
+                        <div class="">
+                            <h3 class="italic">
+                                {!! format_two_color_heading($processTitle) !!}
+                            </h3>
+                            <p class="text-[14px] mt-2">{!! $processDesc !!}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="flex items-center justify-end">
@@ -356,8 +389,6 @@
 
     $vaccineTitle = $sec[23]->section_heading ?? '';
     $vaccineDesc = $sec[23]->section_description ?? '';
-
-
 @endphp
 <section class="pb-12">
     <div class="container">

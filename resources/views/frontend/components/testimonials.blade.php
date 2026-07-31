@@ -14,7 +14,7 @@
                     $heading = $headings[$slug] ?? 'Customer';
                 @endphp
                 <h1>
-                    <span>{{ $heading }} Customer </span><span class="text-mst">Reviews</span>
+                    <span>{{ $heading }} </span><span class="text-mst">Reviews</span>
                 </h1>
                 <p class="mt-5">
                     Trusted by thousands of travelers for Dubai tours &amp; Umrah packages, delivering reliable service,

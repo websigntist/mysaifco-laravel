@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 29, 2026 at 11:20 PM
+-- Generation Time: Jul 31, 2026 at 11:33 PM
 -- Server version: 8.4.2
 -- PHP Version: 8.4.21
 
@@ -720,8 +720,8 @@ INSERT INTO `explores` (`id`, `title`, `description`, `tour_type_id`, `status`, 
 (8, 'Theme Park Tickets Tour', '<p>Theme park tours in Dubai</p>\r\n<p>Are you arranging a family trip to Dubai and want to spend some time at the city&rsquo;s most adventures places and now not sure where to buy theme park ticket? There is a wide variety of entertainment, from conventional amusement parks to cafes specializing in virtual gaming. Dubai is well known for its theme parks. In the city, there are between 35 and 40 theme parks. In Dubai, every theme park is an amusement park with a central theme. Theme parks in Dubai are fancier than city parks and playgrounds, with activities for all ages. Themes are a significant feature of theme parks that center around a subject or group of issues. Whether you&rsquo;re looking for family entertainment or heart-pounding thrills, Dubai has a theme park for you.</p>', 8, 'Active', 0, 1, NULL, '2026-05-25 15:15:57', '2026-05-25 15:15:57'),
 (9, 'Cruise Dinner Dubai Tour', '<p>Dubai is famous for being an excellent holiday destination. Tourists frequently visit Dubai because of the beautiful skyscrapers, dunes, shopping malls, cruise dinner dubai and all-inclusive accommodation options. However, people like to enjoy sunsets and dining outside at such times. If you are visiting&nbsp;Dubai&nbsp;or are already a local, we suggest you avail cruise dinner options in Dubai. Why do you always have to eat at restaurants with your partner or family? How about we give you a wonderful idea for dinner with your partner?<br>Here we bring you dinner in the ocean of beautiful Dubai. We guarantee it will be one of the best dinners you have ever had in your life. What else could be more beautiful than eating on the water under the mesmerizing skyline of Dubai?</p>', 5, 'Active', 0, 1, NULL, '2026-05-25 15:16:36', '2026-05-25 15:16:36'),
 (10, 'Tours in UAE', '<p>Dubai Combo Tours &ndash; Experience More &amp; Save More with Saifco Travel &amp; Tourism</p>\r\n<p>Dubai is a city of unmatched beauty and adventure, offering an extraordinary mix of modern marvels, cultural heritage, thrilling experiences, and luxury getaways. Instead of booking individual tours, why not combine multiple attractions into one seamless package? With Saifco Travel &amp; Tourism&rsquo;s Dubai Combo Tours, you can explore Dubai&rsquo;s top attractions, experience thrilling adventures, and enjoy luxurious getaways&mdash;all while saving time and money. Our combo tour packages are designed to provide a hassle-free and cost-effective way to enjoy the best Dubai has to offer.</p>', 6, 'Active', 0, 1, NULL, '2026-05-25 15:17:18', '2026-05-25 15:17:18'),
-(11, 'Umrah Travel Agency', '<p>Avail Umrah packages from one of the best umrah travel agency,&nbsp;Saifco Travel &amp; Tourism? Our Umrah travel agency UAE or UK should be your first choice if you are looking for a reliable option. What&rsquo;s more, we are not limited to a specific country as we are offering services from UAE and UK. We are also providing&nbsp;Umrah visa services&nbsp;from Pakistan as well. With our Umrah travel agency Pakistan, you can travel for Umrah from different cities in the country.<br>Finding a travel agency that offers affordable and customized packages is not easy. But we are here for you. Since we make every process easier for our customers, you will love to travel with us. It&rsquo;s simple to get a passport, visa, return tickets, and accommodation in a hotel of your choice.</p>', 11, 'Active', 0, 1, NULL, '2026-05-25 15:17:50', '2026-05-27 08:41:24'),
-(12, 'Everything You Need to Know About Umrah by Bus from Dubai 2025', '<p>It&rsquo;s a dream of every Muslim to perform Umrah at least once in their lifetime. Although it is not compulsory for every Muslim in Islam, those who can afford to travel must complete it with all of their heart and soul. Umrah is a way to seek forgiveness for all past sins and reward man with a more purposeful life. One Umrah can be performed within a few hours, but it is necessary to perform Four essential rituals which are wearing Ihram, Do Neyat, tawaf, and Sai.<br>Every year, thousands of pilgrims from around the world come to Saudi Arabia to perform the Holy Umrah. Therefore, Mecca is always crowded, and you need a well-organized trip to stay focused on your Ibadah rather than worrying about visa, residence, commute, and other basic amenities. Although these amenities are necessary to have an enjoyable time in the Holy City, they should never be an obstruction in the way of your concentration towards Allah Almighty. Therefore, we are responsible for making you feel comfortable and stress-free during your stay at Umrah.</p>', 14, 'Active', 0, 1, NULL, '2026-06-08 04:14:18', '2026-06-08 04:14:54'),
+(11, 'Umrah Travel Agency', 'Avail Umrah packages from one of the best umrah travel agency,&nbsp;Saifco Travel &amp; Tourism? Our Umrah travel agency UAE or UK should be your first choice if you are looking for a reliable option. What&rsquo;s more, we are not limited to a specific country as we are offering services from UAE and UK. We are also providing&nbsp;Umrah visa services&nbsp;from Pakistan as well. With our Umrah travel agency Pakistan, you can travel for Umrah from different cities in the country.<br>Finding a travel agency that offers affordable and customized packages is not easy. But we are here for you. Since we make every process easier for our customers, you will love to travel with us. It&rsquo;s simple to get a passport, visa, return tickets, and accommodation in a hotel of your choice.', 11, 'Active', 0, 1, NULL, '2026-05-25 15:17:50', '2026-07-31 13:32:19'),
+(12, 'Everything You Need to Know About Umrah by Bus from Dubai 2025', 'It’s a dream of every Muslim to perform Umrah at least once in their lifetime. Although it is not compulsory for every Muslim in Islam, those who can afford to travel must complete it with all of their heart and soul. Umrah is a way to seek forgiveness for all past sins and reward man with a more purposeful life. One Umrah can be performed within a few hours, but it is necessary to perform Four essential rituals which are wearing Ihram, Do Neyat, tawaf, and Sai.\r\nEvery year, thousands of pilgrims from around the world come to Saudi Arabia to perform the Holy Umrah. Therefore, Mecca is always crowded, and you need a well-organized trip to stay focused on your Ibadah rather than worrying about visa, residence, commute, and other basic amenities. Although these amenities are necessary to have an enjoyable time in the Holy City, they should never be an obstruction in the way of your concentration towards Allah Almighty. Therefore, we are responsible for making you feel comfortable and stress-free during your stay at Umrah.', 14, 'Active', 0, 1, NULL, '2026-06-08 04:14:18', '2026-07-31 18:29:17'),
 (13, 'Everything You Need to Know About Umrah by Bus from Dubai 2025', '<p>It&rsquo;s a dream of every Muslim to perform Umrah at least once in their lifetime. Although it is not compulsory for every Muslim in Islam, those who can afford to travel must complete it with all of their heart and soul. Umrah is a way to seek forgiveness for all past sins and reward man with a more purposeful life. One Umrah can be performed within a few hours, but it is necessary to perform Four essential rituals which are wearing Ihram, Do Neyat, tawaf, and Sai.<br>Every year, thousands of pilgrims from around the world come to Saudi Arabia to perform the Holy Umrah. Therefore, Mecca is always crowded, and you need a well-organized trip to stay focused on your Ibadah rather than worrying about visa, residence, commute, and other basic amenities. Although these amenities are necessary to have an enjoyable time in the Holy City, they should never be an obstruction in the way of your concentration towards Allah Almighty. Therefore, we are responsible for making you feel comfortable and stress-free during your stay at Umrah.</p>', 15, 'Active', 0, 1, NULL, '2026-06-12 12:09:00', '2026-06-12 12:09:21');
 
 -- --------------------------------------------------------
@@ -1155,7 +1155,14 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (94, '2026_05_26_130000_change_faqs_description_to_text', 67),
 (95, '2026_06_13_171859_create_explore_uaes_table', 68),
 (96, '2026_07_27_000001_add_short_details_and_buttons_to_pages_table', 69),
-(97, '2026_07_30_000001_add_show_trust_bar_to_pages_table', 70);
+(97, '2026_07_30_000001_add_show_trust_bar_to_pages_table', 70),
+(98, '2026_07_31_000001_create_page_sections_and_add_tour_type_to_pages', 71),
+(99, '2026_08_01_000001_create_umrah_packages_table', 72),
+(100, '2026_08_01_000002_add_umrah_packages_module_to_modules_table', 73),
+(101, '2026_08_01_000003_create_umrah_bus_schedules_table', 74),
+(102, '2026_08_01_000004_add_umrah_bus_schedules_module_to_modules_table', 75),
+(103, '2026_08_01_000005_create_ramadan_packages_table', 76),
+(104, '2026_08_01_000006_add_ramadan_packages_module_to_modules_table', 77);
 
 -- --------------------------------------------------------
 
@@ -1242,7 +1249,12 @@ INSERT INTO `modules` (`id`, `parent_id`, `module_title`, `module_slug`, `action
 (60, 40, 'Red Tags', 'red-tags', 'add | edit | view | status | delete | delete all | more | duplicate | store | update | trashed | restore | forcedelete | modal-view', 'Yes', 23, 'Active', 'circle', 1, '2026-05-24 15:07:19', '2026-06-13 13:32:33', NULL),
 (61, 40, 'Explore', 'explore', 'add | edit | view | status | delete | delete all | more | duplicate | store | update | trashed | restore | forcedelete | modal-view', 'Yes', 23, 'Active', 'circle', 1, '2026-05-25 14:23:59', '2026-06-13 13:32:37', NULL),
 (62, 40, 'Popular Searches', 'popular-searches', 'add | edit | view | status | delete | delete all | more | duplicate | store | update | trashed | restore | forcedelete | modal-view', 'Yes', 23, 'Active', 'circle', 1, '2026-05-25 14:24:39', '2026-06-13 13:32:40', NULL),
-(63, 0, 'Explore UAE', 'explore-uae', 'add | edit | view | status | delete | deleteall | More | duplicate', 'Yes', 15, 'Active', 'code', 1, '2026-06-13 12:05:14', '2026-06-13 12:05:14', NULL);
+(63, 0, 'Explore UAE', 'explore-uae', 'add | edit | view | status | delete | deleteall | More | duplicate', 'Yes', 15, 'Active', 'code', 1, '2026-06-13 12:05:14', '2026-06-13 12:05:14', NULL),
+(64, 0, 'Umrah Services', 'umrah-services', 'nil', 'Yes', 16, 'Active', 'brand-rumble', 1, '2026-07-31 15:35:41', '2026-07-31 15:38:01', NULL),
+(65, 64, 'Umrah Packages', 'umrah-packages', 'add | edit | view | status | delete | deleteall | More | duplicate', 'Yes', 16, 'Active', 'circle', 1, '2026-07-31 15:38:58', '2026-07-31 15:41:17', NULL),
+(66, 64, 'Ramadan Packages', 'ramadan-packages', 'add | edit | view | status | delete | deleteall | More | duplicate', 'Yes', 16, 'Active', 'circle', 1, '2026-07-31 15:39:55', '2026-07-31 15:41:20', NULL),
+(67, 64, 'Umrah Bus Schedules', 'umrah-bus-schedules', 'add | edit | view | status | delete | deleteall | More | duplicate', 'Yes', 16, 'Active', 'circle', 1, '2026-07-31 15:40:21', '2026-07-31 16:44:21', NULL),
+(68, 0, 'Umrah Bus Schedule', 'umrah-bus-schedules', NULL, 'Yes', 259, 'Active', 'tabler-calendar-event', 1, '2026-07-31 16:39:31', '2026-07-31 16:44:13', '2026-07-31 16:44:13');
 
 -- --------------------------------------------------------
 
@@ -1265,6 +1277,7 @@ CREATE TABLE `pages` (
   `show_email_us` tinyint(1) NOT NULL DEFAULT '1',
   `show_trust_bar` tinyint(1) NOT NULL DEFAULT '1',
   `status` enum('published','unpublish') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'published',
+  `tour_type_id` bigint UNSIGNED DEFAULT NULL,
   `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `image_alt` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `image_title` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -1284,39 +1297,115 @@ CREATE TABLE `pages` (
 -- Dumping data for table `pages`
 --
 
-INSERT INTO `pages` (`id`, `parent_id`, `menu_title`, `page_title`, `show_title`, `sub_title`, `friendly_url`, `short_details`, `description`, `show_contact_us`, `show_whatsapp`, `show_email_us`, `show_trust_bar`, `status`, `image`, `image_alt`, `image_title`, `container_layout`, `show_in_menu`, `ordering`, `meta_title`, `meta_keywords`, `meta_description`, `created_by`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(3, 0, 'About Us', 'About Us', 0, NULL, 'about-us', NULL, '<p>[include file=\"about_us\"]</p>', 1, 1, 1, 1, 'published', '1782583577_6a40111912011_image.webp', 'about-us', 'About Us', 'Default', 'Yes', 2, 'About Us', 'about, about company', 'about company', 1, '2025-04-15 18:30:13', '2026-06-27 13:15:41', NULL),
-(42, 0, 'Contact Us', 'Plan Your Perfect Dubai Journey With Us', 0, NULL, 'contact-us', 'Have a question or need help planning your trip? Our travel experts are ready to assist you with the best travel solutions in Dubai and beyond.', '<p>[include file=\"contact_us\"]</p>', 1, 1, 1, 0, 'published', '1782765765_6a42d8c5e0c42_image.webp', NULL, NULL, 'Default', 'Yes', 1, 'Contact Us', NULL, NULL, 1, '2025-09-05 14:32:19', '2026-07-29 17:46:22', NULL),
-(45, 0, 'Desert Safari Tours', 'Desert Safari Tours', 1, NULL, 'desert-safari-tours', 'Experience the best Desert Safari Dubai with thrilling dune bashing, camel rides, sandboarding, and BBQ dinner under the stars.', '<div class=\"w-6xl max-w-full mx-auto\">\r\n<p style=\"text-align: center;\">Experience the best Desert Safari Dubai with thrilling dune bashing, camel rides, sandboarding, and BBQ dinner under the stars. Choose from evening desert safari, morning safari, private desert safari, and VIP desert camp experiences. Enjoy live entertainment, including belly dance, Tanoura show, and fire show, while exploring the golden dunes of Dubai. These desert safari tours offer a perfect mix of adventure, culture, and relaxation, making them one of the top things to do in Dubai for tourists and families.</p>\r\n</div>\r\n<p style=\"text-align: center;\">[include file=\"all-tours-packages\"]</p>', 1, 1, 1, 1, 'published', '1779663128_6a138118563c8_image.webp', 'desert-safari-tours', 'Desert Safari Tours', 'Box Container', 'Yes', 2, 'Desert Safari Tours', NULL, NULL, 1, '2025-12-09 11:12:29', '2026-07-29 16:04:23', NULL),
-(46, 0, 'All Tour Categories', 'Explore the Best Dubai Tours, Activities', 1, NULL, 'all-tour-categories', 'Explore the best Dubai tours and activities with a trusted local tour operator. Find top experiences including Dubai desert safari, Dubai city tours.', '<div class=\"w-6xl max-w-full mx-auto\" style=\"text-align: center;\">Explore the best Dubai tours and activities with a trusted local tour operator. Find top experiences including Dubai desert safari, Dubai city tours, Dubai Marina yacht tours, dhow cruise dinner, and full-day Abu Dhabi city tours with Ferrari World and Louvre Museum. Choose from popular Dubai water activities, theme park tickets, and value Dubai combo tours with hotel pickup and drop-off, best price guarantee, and 24/7 support. All tours are designed for easy booking, flexible options, and a smooth travel experience.</div>\r\n<p style=\"text-align: center;\">[include file=\"all-categories\"]</p>', 1, 1, 1, 1, 'published', '1779663114_6a13810aa05d7_image.webp', 'all-tour-categories', 'All Tour Categories', 'Default', 'Yes', 2, 'All Tour Categories', 'tour, dubai, umrah, abu dhabi,', 'call us for more details.', 1, '2025-12-09 11:13:30', '2026-07-29 16:50:43', NULL),
-(47, 0, 'About Us (Copy)', 'About Us (Copy)', 1, 'Welcome to the Company', 'about-us-copy-tsildt', NULL, '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi earum molestiae praesentium repellendus? Ab, consequuntur esse iste iure iusto libero quidem sint ullam. Atque debitis hic nobis placeat repellendus. Beatae dolor eaque iure nisi quae! Accusamus aliquam cupiditate est ex, maiores molestiae mollitia officia perferendis quas quos sapiente temporibus unde.</p>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi earum molestiae praesentium repellendus? Ab, consequuntur esse iste iure iusto libero quidem sint ullam. Atque debitis hic nobis placeat repellendus. Beatae dolor eaque iure nisi quae! Accusamus aliquam cupiditate est ex, maiores molestiae mollitia officia perferendis quas quos sapiente temporibus unde.</p>', 1, 1, 1, 1, 'published', 'dup_6a13688a4129f8.03666149.webp', NULL, NULL, 'Default', 'Yes', 2, 'About Us | Alpha Tech', 'about, about company', 'meta description', 1, '2026-05-24 16:07:22', '2026-05-27 15:29:08', '2026-05-27 15:29:08'),
-(48, 0, 'Abu Dhabi Tours', 'Abu Dhabi Tours', 1, NULL, 'abu-dhabi-tours', NULL, '<div class=\"w-6xl max-w-full mx-auto\">\r\n<p style=\"text-align: center;\">Explore Abu Dhabi tours from Dubai and discover the UAE&rsquo;s capital with guided sightseeing experiences. Visit Sheikh Zayed Grand Mosque, Louvre Abu Dhabi, Emirates Palace, and Ferrari World Abu Dhabi. These full-day tours offer comfortable transport, expert guides, and a well-planned itinerary. Abu Dhabi tours are perfect for travellers looking to explore culture, architecture, and world-class attractions in one unforgettable day trip.</p>\r\n</div>\r\n<p style=\"text-align: center;\">[include file=\"all-tours-packages\"]</p>', 1, 1, 1, 1, 'published', '1779663072_6a1380e0b3ea9_image.webp', 'abu-dhabi-tours', 'Abu Dhabi Tours', 'Box Container', 'Yes', 2, 'Abu Dhabi Tours', NULL, NULL, 1, '2026-05-24 17:14:35', '2026-05-29 16:41:50', NULL),
-(49, 0, 'Dubai City Tours', 'Dubai City Tours', 1, NULL, 'dubai-city-tours', NULL, '<div class=\"w-6xl max-w-full mx-auto\">\r\n<p style=\"text-align: center;\">Discover Dubai city tours covering iconic attractions like Burj Khalifa views, Dubai Frame, Jumeirah Mosque, Palm Jumeirah, and Dubai Marina. These guided tours offer a complete overview of modern and old Dubai with comfortable transport and expert insights. Ideal for first-time visitors, Dubai city tours provide a convenient way to explore city&rsquo;s highlights in short time.</p>\r\n</div>\r\n<p style=\"text-align: center;\">[include file=\"all-tours-packages\"]</p>', 1, 1, 1, 1, 'published', '1779663795_6a1383b3e6b7c_image.webp', 'dubai-city-tours', 'Dubai City Tours', 'Box Container', 'Yes', 2, 'Dubai City Tours', NULL, NULL, 1, '2026-05-24 18:00:46', '2026-05-29 16:41:15', NULL),
-(50, 0, 'Yacht Charter Tours', 'Yacht Charter Tours', 1, NULL, 'yacht-charter-tours', NULL, '<div class=\"w-6xl max-w-full mx-auto\">\r\n<p style=\"text-align: center;\">Enjoy luxury yacht charter Dubai with private yacht rental in Dubai Marina and Palm Jumeirah. Cruise past iconic landmarks like Atlantis, Burj Al Arab, and JBR while enjoying a premium experience with professional crew and modern facilities. Perfect for parties, family trips, and corporate events.</p>\r\n</div>\r\n<p style=\"text-align: center;\">[include file=\"all-tours-packages\"]</p>', 1, 1, 1, 1, 'published', '1779663833_6a1383d9865b4_image.webp', 'yacht-charter-tours', 'Yacht Charter Tours', 'Box Container', 'Yes', 2, 'Yacht Charter Tours', NULL, NULL, 1, '2026-05-24 18:03:27', '2026-05-29 16:41:03', NULL),
-(51, 0, 'Water Activities', 'Water Activities', 1, NULL, 'water-activities', NULL, '<div class=\"w-6xl max-w-full mx-auto\">\r\n<p style=\"text-align: center;\">EExplore the best Dubai water activities including jet ski, parasailing, flyboarding, banana boat rides, and speed boat tours along the city&rsquo;s stunning coastline. These exciting water sports are perfect for thrill seekers, families, and tourists looking for adventure in Dubai. Operated by certified professionals with safety equipment, Dubai water activities offer a fun, safe, and unforgettable experience at popular locations like JBR Beach and Dubai Marina.</p>\r\n</div>\r\n<p style=\"text-align: center;\">[include file=\"all-tours-packages\"]</p>', 1, 1, 1, 1, 'published', '1779663865_6a1383f99d779_image.webp', NULL, NULL, 'Box Container', 'Yes', 2, 'Water Activities', NULL, NULL, 1, '2026-05-24 18:03:59', '2026-05-29 16:40:50', NULL),
-(52, 0, 'Theme Park Tickets', 'Theme Park Tickets', 1, NULL, 'theme-park-tickets', NULL, '<div class=\"w-6xl max-w-full mx-auto\">\r\n<p style=\"text-align: center;\">Enjoy a relaxing dhow cruise Dubai experience with dinner, live entertainment, and stunning views of Dubai Marina or Dubai Creek. Cruise on a traditional wooden dhow while enjoying an international buffet dinner, Tanoura dance, and cultural performances. Dhow cruise tours are perfect for couples, families, and tourists looking for a peaceful and memorable evening in Dubai.</p>\r\n</div>\r\n<p style=\"text-align: center;\">[include file=\"all-tours-packages\"]</p>', 1, 1, 1, 1, 'published', '1779663891_6a1384138df93_image.webp', NULL, NULL, 'Box Container', 'Yes', 2, 'Theme Park Tickets', NULL, NULL, 1, '2026-05-24 18:04:28', '2026-05-29 16:40:38', NULL),
-(53, 0, 'Dhow Cruise Tours', 'Dhow Cruise Tours', 1, NULL, 'dhow-cruise-tours', NULL, '<div class=\"w-6xl max-w-full mx-auto\">\r\n<p style=\"text-align: center;\">Enjoy a relaxing dhow cruise Dubai experience with dinner, live entertainment, and stunning views of Dubai Marina or Dubai Creek. Cruise on a traditional wooden dhow while enjoying an international buffet dinner, Tanoura dance, and cultural performances. Dhow cruise tours are perfect for couples, families, and tourists looking for a peaceful and memorable evening in Dubai.</p>\r\n</div>\r\n<p style=\"text-align: center;\">[include file=\"all-tours-packages\"]</p>', 1, 1, 1, 1, 'published', '1779663919_6a13842fdb5f1_image.webp', 'dhow-cruise-tours', 'Dhow Cruise Tours', 'Box Container', 'Yes', 2, 'Dhow Cruise Tours', NULL, NULL, 1, '2026-05-24 18:04:54', '2026-05-29 16:38:56', NULL),
-(54, 0, 'Dubai Combo Tours', 'Dubai Combo Tours', 1, NULL, 'dubai-combo-tours', NULL, '<div class=\"w-6xl max-w-full mx-auto\">\r\n<p style=\"text-align: center;\">Experience camel race Dubai tours and discover a unique part of Emirati culture. Visit camel racing tracks like Al Marmoom, watch live races, and learn about this traditional sport. These tours offer an authentic desert experience away from modern city attractions and are perfect for cultural exploration.</p>\r\n</div>\r\n<p style=\"text-align: center;\">[include file=\"all-tours-packages\"]</p>', 1, 1, 1, 1, 'published', '1779663945_6a1384498a220_image.webp', 'dubai-combo-tours', 'Dubai Combo Tours', 'Box Container', 'Yes', 2, 'Dubai Combo Tours', NULL, NULL, 1, '2026-05-24 18:05:22', '2026-05-29 16:38:30', NULL),
-(55, 0, 'Umrah', 'Umrah', 0, NULL, 'umrah', NULL, '<p>[include file=\"umrah\"]</p>\r\n<p>[include file=\"all-tours-packages\"]</p>', 1, 1, 1, 1, 'published', '1779909275_6a17429bd44ee_image.webp', 'umrah', 'Umrah', 'Box Container', 'Yes', 2, 'Umrah', NULL, NULL, 1, '2026-05-27 03:02:27', '2026-06-08 04:12:40', NULL),
-(57, 0, 'Umrah by Bus', 'Umrah By Bus', 0, NULL, 'umrah-by-bus', NULL, '<p>[include file=\"umrah-by-bus\"]</p>\r\n<p>[include file=\"all-tours-packages\"]</p>', 1, 1, 1, 1, 'published', '1780945337_6a2711b9a102b_image.webp', 'umrah-by-bus', 'Umrah By Bus', 'Box Container', 'Yes', 2, 'Umrah By Bus', NULL, NULL, 1, '2026-06-08 04:13:10', '2026-06-08 14:02:17', NULL),
-(58, 0, 'Umrah for Single Lady', 'Umrah For Single Lady', 0, NULL, 'umrah-for-single-lady', NULL, '<p>[include file=\"umrah-for-single-lady\"]</p>\r\n<p>[include file=\"all-tours-packages\"]</p>', 1, 1, 1, 0, 'published', NULL, 'umrah-for-single-lady', 'Umrah For Single Lady', 'Box Container', 'Yes', 2, 'Umrah For Single Lady', NULL, NULL, 1, '2026-06-12 05:40:35', '2026-07-29 18:14:08', NULL),
-(59, 0, 'Frequently Asked Questions', 'Travel Help & Frequently Asked Questions', 0, NULL, 'faqs', 'Quick answers to the most common questions about Dubai tours, desert safaris, Umrah packages, UAE visas and holiday bookings.', '<p>[include file=\"faqs\"]</p>', 1, 1, 1, 1, 'published', '1782415698_6a3d81521a2b6_image.webp', 'frequently-asked-questions', 'Frequently Asked Questions', 'Box Container', 'Yes', 2, 'Frequently Asked Questions', NULL, NULL, 1, '2026-06-25 14:12:00', '2026-07-29 17:52:20', NULL),
-(60, 0, 'How can we assist your Umrah Journey?', 'Umrah FAQs', 0, NULL, 'umrah-faqs', 'Find answers to common Umrah-related questions to help you prepare for a smooth and spiritually fulfilling journey.', '<p>[include file=\"umrah-faqs\"]</p>', 0, 0, 0, 0, 'published', '1782498306_6a3ec402a59a4_image.webp', 'how-can-we-assist-your-umrah-journey-', 'How Can We Assist Your Umrah Journey', 'Box Container', 'Yes', 2, 'How Can We Assist Your Umrah Journey', NULL, NULL, 1, '2026-06-26 10:01:48', '2026-07-29 18:18:17', NULL),
-(61, 0, 'Blogs', 'Travel Tips, Guides & Inspiration', 0, NULL, 'blogs', 'Find answers to common Umrah-related questions to help you prepare for a smooth and spiritually fulfilling journey.', '<p>[include file=\"blogs\"]</p>', 1, 1, 1, 1, 'published', '1782556549_6a3fa7851bfc7_image.webp', 'blogs', 'Blogs', 'Box Container', 'Yes', 2, 'Blogs', NULL, NULL, 1, '2026-06-27 05:35:08', '2026-07-29 17:29:57', NULL),
-(62, 0, 'Testing', 'Testing', 0, NULL, 'testing', NULL, '<p>[include file=\"testing\"]</p>', 1, 1, 1, 1, 'published', 'dup_6a3ffc47de4d19.19875241.webp', 'testing', 'Testing', 'Box Container', 'Yes', 2, 'Testing', NULL, NULL, 1, '2026-06-27 11:37:27', '2026-06-27 11:43:17', '2026-06-27 11:43:17'),
-(63, 0, 'Single Tour Details', 'Single Tour Details', 0, NULL, 'single-tour-details', NULL, '<p>[include file=\"single-tour-details\"]</p>', 1, 1, 1, 1, 'published', 'dup_6a4956f1df3a42.36912377.webp', 'single-tour-details', 'Single Tour Details', 'Box Container', 'Yes', 2, 'Single Tour Details', NULL, NULL, 1, '2026-07-04 13:54:41', '2026-07-04 14:49:11', NULL),
-(64, 0, 'Terms & Conditions', 'Terms Conditions', 0, NULL, 'terms-conditions', NULL, '<p>[include file=\"terms-condition\"]</p>', 1, 1, 1, 1, 'published', '1783263792_6a4a7230031f8_image.webp', 'terms-conditions', 'Terms Conditions', 'Box Container', 'Yes', 2, 'Terms and Conditions', NULL, NULL, 1, '2026-07-05 09:54:31', '2026-07-05 10:03:12', NULL),
-(65, 0, 'privacy-policy', 'Privacy Policy', 0, NULL, 'privacy-policy', NULL, '<p>[include file=\"privacy-policy\"]</p>', 1, 1, 1, 1, 'published', 'dup_6a4a9b763eaaf1.37545438.webp', 'privacy-policy', 'Privacy Policy', 'Box Container', 'Yes', 2, 'Privacy Policy', NULL, NULL, 1, '2026-07-05 12:59:18', '2026-07-05 12:59:42', NULL),
-(66, 0, 'Umrah Vaccination', 'Umrah Vaccination', 0, NULL, 'umrah-vaccination', 'Preparing for Umrah involves more than booking flights and accommodation. Pilgrims should also stay updated with the latest vaccination.', '<p>[include file=\"umrah-vaccination\"]</p>', 1, 1, 1, 1, 'published', '1783933746_6a54ab320b54e_image.webp', 'umrah-vaccination', 'Umrah Vaccination', 'Box Container', 'Yes', 2, 'Umrah Vaccination', NULL, NULL, 1, '2026-07-13 03:29:03', '2026-07-29 18:14:48', NULL),
-(67, 0, 'VFS Global vs. Taseer (VFS TasHeel) in the UAE', 'VTF Tasheel', 0, NULL, 'vtf-tasheel', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias distinctio eos magnam minima nulla officia placeat quam vel, veniam voluptatem.', '<p>[include file=\"vtf-tasheel\"]</p>', 1, 1, 1, 1, 'published', '1783979506_6a555df24b1af_image.webp', 'vfs-global-vs-taseer-vfs-tasheel-in-the-uae', 'VFS Global Vs Taseer VFS TasHeel In The UAE', 'Box Container', 'Yes', 2, 'VFS Global Vs Taseer VFS TasHeel In The UAE', NULL, NULL, 1, '2026-07-13 16:50:21', '2026-07-29 18:17:12', NULL),
-(68, 0, 'Holiday Packages', 'Holiday Packages', 0, NULL, 'holiday-packages', 'Discover carefully curated holiday packages from Dubai and Pakistan to the world’s exciting destinations', '<p>[include file=\"holiday-packages\"]</p>', 1, 1, 1, 1, 'published', '1784011979_6a55dccb9d9fb_image.webp', 'holiday-packages', 'Holiday Packages', 'Box Container', 'Yes', 2, 'Holiday Packages', NULL, NULL, 1, '2026-07-14 01:52:26', '2026-07-29 17:32:05', NULL),
-(69, 0, 'Single Holiday Tour Details', 'Single Holiday Tour Details', 0, NULL, 'single-holiday-tour-details', NULL, '<p>[include file=\"single-holiday-tour-details\"]</p>', 1, 1, 1, 1, 'published', 'dup_6a55e209eaa897.57233959.webp', 'single-holiday-tour-details', 'Single Holiday Tour Details', 'Box Container', 'Yes', 2, 'Single Holiday Tour Details', NULL, NULL, 1, '2026-07-14 02:15:21', '2026-07-14 02:16:22', NULL),
-(70, 0, 'Visa Services', 'Visa Services', 0, NULL, 'visa-services', NULL, '<p>[include file=\"visa-services\"]</p>', 1, 1, 1, 1, 'published', '1784050069_6a56719591239_image.webp', 'visa-services', 'Visa Services', 'Box Container', 'Yes', 2, 'Visa Services', NULL, NULL, 1, '2026-07-14 12:27:28', '2026-07-14 12:27:49', NULL),
-(71, 0, 'Umrah Visa Services From Dubai, UAE', 'Umrah Visa', 0, NULL, 'umrah-visa', 'Apply for Saudi Umrah Visa with Saifco Travel and Tourism. Simple proces, document guidance, and complete support from all Emirates in UAE', '<p>[include file=\"umrah-visa\"]</p>', 1, 1, 1, 1, 'published', '1784051680_6a5677e0b253d_image.webp', 'umrah-visa-services-from-dubai-uae', 'Umrah Visa Services From Dubai UAE', 'Box Container', 'Yes', 2, 'Umrah Visa Services From Dubai UAE', NULL, NULL, 1, '2026-07-14 12:54:20', '2026-07-29 18:13:23', NULL),
-(72, 0, 'Tourist Visa', 'Tourist Visa', 0, NULL, 'tourist-visa', NULL, '<p>[include file=\"tourist-visa\"]</p>', 1, 1, 1, 1, 'published', '1784058432_6a5692407991b_image.webp', 'tourist-visa', 'Tourist Visa', 'Box Container', 'Yes', 2, 'Tourist Visa', NULL, NULL, 1, '2026-07-14 14:46:51', '2026-07-14 14:47:12', NULL),
-(73, 0, 'Saudi Arabia One Year Multiple Entry Visa', 'Multiple Entry', 0, NULL, 'multiple-entry', 'Apply for Saudi Umrah Visa with Saifco Travel and Tourism. Simple proces, document guidance, and complete support from all Emirates in UAE.', '<p>[include file=\"multiple-entry\"]</p>', 1, 1, 1, 1, 'published', '1784392686_6a5babee8fe61_image.webp', 'saudi-arabia-one-year-multiple-entry-visa-', 'Saudi Arabia One Year Multiple Entry Visa', 'Box Container', 'Yes', 2, 'Saudi Arabia One Year Multiple Entry Visa', NULL, NULL, 1, '2026-07-18 11:37:25', '2026-07-29 18:10:55', NULL),
-(74, 0, 'Single Blog', 'Single Blog', 0, NULL, 'single-blog', NULL, '<p>[include file=\"single-blog\"]</p>', 1, 1, 1, 1, 'published', '1784392767_6a5bac3fe7812_image.webp', 'single-blog', 'Single Blog', 'Box Container', 'Yes', 2, 'Single Blog', NULL, NULL, 1, '2026-07-18 11:38:10', '2026-07-18 11:39:28', NULL),
-(75, 0, 'Umrah by Air', 'Umrah By Air', 0, NULL, 'umrah-by-air', 'Get everything on a single call with Umrah travel agency. Every Muslim wishes to visit Makkah and Madina at least once in his/her life to perform Umrah.', '<p>[include file=\"umrah-by-air\"]</p>', 1, 1, 1, 1, 'published', '1784392804_6a5bac646bb10_image.webp', 'umrah-by-air', 'Umrah By Air', 'Box Container', 'Yes', 2, 'Umrah By Air', NULL, NULL, 1, '2026-07-18 11:39:32', '2026-07-29 17:53:34', NULL);
+INSERT INTO `pages` (`id`, `parent_id`, `menu_title`, `page_title`, `show_title`, `sub_title`, `friendly_url`, `short_details`, `description`, `show_contact_us`, `show_whatsapp`, `show_email_us`, `show_trust_bar`, `status`, `tour_type_id`, `image`, `image_alt`, `image_title`, `container_layout`, `show_in_menu`, `ordering`, `meta_title`, `meta_keywords`, `meta_description`, `created_by`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(3, 0, 'About Us', 'About Us', 0, NULL, 'about-us', NULL, '<p>[include file=\"about_us\"]</p>', 1, 1, 1, 1, 'published', NULL, '1782583577_6a40111912011_image.webp', 'about-us', 'About Us', 'Default', 'Yes', 2, 'About Us', 'about, about company', 'about company', 1, '2025-04-15 18:30:13', '2026-06-27 13:15:41', NULL),
+(42, 0, 'Contact Us', 'Plan Your Perfect Dubai Journey With Us', 0, NULL, 'contact-us', 'Have a question or need help planning your trip? Our travel experts are ready to assist you with the best travel solutions in Dubai and beyond.', '<p>[include file=\"contact_us\"]</p>', 1, 1, 1, 0, 'published', NULL, '1782765765_6a42d8c5e0c42_image.webp', NULL, NULL, 'Default', 'Yes', 1, 'Contact Us', NULL, NULL, 1, '2025-09-05 14:32:19', '2026-07-29 17:46:22', NULL),
+(45, 0, 'Desert Safari Tours', 'Desert Safari Tours', 1, NULL, 'desert-safari-tours', 'Experience the best Desert Safari Dubai with thrilling dune bashing, camel rides, sandboarding, and BBQ dinner under the stars.', '<div class=\"w-6xl max-w-full mx-auto\">\r\n<p style=\"text-align: center;\">Experience the best Desert Safari Dubai with thrilling dune bashing, camel rides, sandboarding, and BBQ dinner under the stars. Choose from evening desert safari, morning safari, private desert safari, and VIP desert camp experiences. Enjoy live entertainment, including belly dance, Tanoura show, and fire show, while exploring the golden dunes of Dubai. These desert safari tours offer a perfect mix of adventure, culture, and relaxation, making them one of the top things to do in Dubai for tourists and families.</p>\r\n</div>\r\n<p style=\"text-align: center;\">[include file=\"all-tours-packages\"]</p>', 1, 1, 1, 1, 'published', NULL, '1779663128_6a138118563c8_image.webp', 'desert-safari-tours', 'Desert Safari Tours', 'Box Container', 'Yes', 2, 'Desert Safari Tours', NULL, NULL, 1, '2025-12-09 11:12:29', '2026-07-29 16:04:23', NULL),
+(46, 0, 'All Tour Categories', 'Explore the Best Dubai Tours, Activities', 1, NULL, 'all-tour-categories', 'Explore the best Dubai tours and activities with a trusted local tour operator. Find top experiences including Dubai desert safari, Dubai city tours.', '<div class=\"w-6xl max-w-full mx-auto\" style=\"text-align: center;\">Explore the best Dubai tours and activities with a trusted local tour operator. Find top experiences including Dubai desert safari, Dubai city tours, Dubai Marina yacht tours, dhow cruise dinner, and full-day Abu Dhabi city tours with Ferrari World and Louvre Museum. Choose from popular Dubai water activities, theme park tickets, and value Dubai combo tours with hotel pickup and drop-off, best price guarantee, and 24/7 support. All tours are designed for easy booking, flexible options, and a smooth travel experience.</div>\r\n<p style=\"text-align: center;\">[include file=\"all-categories\"]</p>', 1, 1, 1, 1, 'published', NULL, '1779663114_6a13810aa05d7_image.webp', 'all-tour-categories', 'All Tour Categories', 'Default', 'Yes', 2, 'All Tour Categories', 'tour, dubai, umrah, abu dhabi,', 'call us for more details.', 1, '2025-12-09 11:13:30', '2026-07-29 16:50:43', NULL),
+(47, 0, 'About Us (Copy)', 'About Us (Copy)', 1, 'Welcome to the Company', 'about-us-copy-tsildt', NULL, '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi earum molestiae praesentium repellendus? Ab, consequuntur esse iste iure iusto libero quidem sint ullam. Atque debitis hic nobis placeat repellendus. Beatae dolor eaque iure nisi quae! Accusamus aliquam cupiditate est ex, maiores molestiae mollitia officia perferendis quas quos sapiente temporibus unde.</p>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi earum molestiae praesentium repellendus? Ab, consequuntur esse iste iure iusto libero quidem sint ullam. Atque debitis hic nobis placeat repellendus. Beatae dolor eaque iure nisi quae! Accusamus aliquam cupiditate est ex, maiores molestiae mollitia officia perferendis quas quos sapiente temporibus unde.</p>', 1, 1, 1, 1, 'published', NULL, 'dup_6a13688a4129f8.03666149.webp', NULL, NULL, 'Default', 'Yes', 2, 'About Us | Alpha Tech', 'about, about company', 'meta description', 1, '2026-05-24 16:07:22', '2026-05-27 15:29:08', '2026-05-27 15:29:08'),
+(48, 0, 'Abu Dhabi Tours', 'Abu Dhabi Tours', 1, NULL, 'abu-dhabi-tours', NULL, '<div class=\"w-6xl max-w-full mx-auto\">\r\n<p style=\"text-align: center;\">Explore Abu Dhabi tours from Dubai and discover the UAE&rsquo;s capital with guided sightseeing experiences. Visit Sheikh Zayed Grand Mosque, Louvre Abu Dhabi, Emirates Palace, and Ferrari World Abu Dhabi. These full-day tours offer comfortable transport, expert guides, and a well-planned itinerary. Abu Dhabi tours are perfect for travellers looking to explore culture, architecture, and world-class attractions in one unforgettable day trip.</p>\r\n</div>\r\n<p style=\"text-align: center;\">[include file=\"all-tours-packages\"]</p>', 1, 1, 1, 1, 'published', NULL, '1779663072_6a1380e0b3ea9_image.webp', 'abu-dhabi-tours', 'Abu Dhabi Tours', 'Box Container', 'Yes', 2, 'Abu Dhabi Tours', NULL, NULL, 1, '2026-05-24 17:14:35', '2026-05-29 16:41:50', NULL),
+(49, 0, 'Dubai City Tours', 'Dubai City Tours', 1, NULL, 'dubai-city-tours', NULL, '<div class=\"w-6xl max-w-full mx-auto\">\r\n<p style=\"text-align: center;\">Discover Dubai city tours covering iconic attractions like Burj Khalifa views, Dubai Frame, Jumeirah Mosque, Palm Jumeirah, and Dubai Marina. These guided tours offer a complete overview of modern and old Dubai with comfortable transport and expert insights. Ideal for first-time visitors, Dubai city tours provide a convenient way to explore city&rsquo;s highlights in short time.</p>\r\n</div>\r\n<p style=\"text-align: center;\">[include file=\"all-tours-packages\"]</p>', 1, 1, 1, 1, 'published', NULL, '1779663795_6a1383b3e6b7c_image.webp', 'dubai-city-tours', 'Dubai City Tours', 'Box Container', 'Yes', 2, 'Dubai City Tours', NULL, NULL, 1, '2026-05-24 18:00:46', '2026-05-29 16:41:15', NULL),
+(50, 0, 'Yacht Charter Tours', 'Yacht Charter Tours', 1, NULL, 'yacht-charter-tours', NULL, '<div class=\"w-6xl max-w-full mx-auto\">\r\n<p style=\"text-align: center;\">Enjoy luxury yacht charter Dubai with private yacht rental in Dubai Marina and Palm Jumeirah. Cruise past iconic landmarks like Atlantis, Burj Al Arab, and JBR while enjoying a premium experience with professional crew and modern facilities. Perfect for parties, family trips, and corporate events.</p>\r\n</div>\r\n<p style=\"text-align: center;\">[include file=\"all-tours-packages\"]</p>', 1, 1, 1, 1, 'published', NULL, '1779663833_6a1383d9865b4_image.webp', 'yacht-charter-tours', 'Yacht Charter Tours', 'Box Container', 'Yes', 2, 'Yacht Charter Tours', NULL, NULL, 1, '2026-05-24 18:03:27', '2026-05-29 16:41:03', NULL),
+(51, 0, 'Water Activities', 'Water Activities', 1, NULL, 'water-activities', NULL, '<div class=\"w-6xl max-w-full mx-auto\">\r\n<p style=\"text-align: center;\">EExplore the best Dubai water activities including jet ski, parasailing, flyboarding, banana boat rides, and speed boat tours along the city&rsquo;s stunning coastline. These exciting water sports are perfect for thrill seekers, families, and tourists looking for adventure in Dubai. Operated by certified professionals with safety equipment, Dubai water activities offer a fun, safe, and unforgettable experience at popular locations like JBR Beach and Dubai Marina.</p>\r\n</div>\r\n<p style=\"text-align: center;\">[include file=\"all-tours-packages\"]</p>', 1, 1, 1, 1, 'published', NULL, '1779663865_6a1383f99d779_image.webp', NULL, NULL, 'Box Container', 'Yes', 2, 'Water Activities', NULL, NULL, 1, '2026-05-24 18:03:59', '2026-05-29 16:40:50', NULL),
+(52, 0, 'Theme Park Tickets', 'Theme Park Tickets', 1, NULL, 'theme-park-tickets', NULL, '<div class=\"w-6xl max-w-full mx-auto\">\r\n<p style=\"text-align: center;\">Enjoy a relaxing dhow cruise Dubai experience with dinner, live entertainment, and stunning views of Dubai Marina or Dubai Creek. Cruise on a traditional wooden dhow while enjoying an international buffet dinner, Tanoura dance, and cultural performances. Dhow cruise tours are perfect for couples, families, and tourists looking for a peaceful and memorable evening in Dubai.</p>\r\n</div>\r\n<p style=\"text-align: center;\">[include file=\"all-tours-packages\"]</p>', 1, 1, 1, 1, 'published', NULL, '1779663891_6a1384138df93_image.webp', NULL, NULL, 'Box Container', 'Yes', 2, 'Theme Park Tickets', NULL, NULL, 1, '2026-05-24 18:04:28', '2026-05-29 16:40:38', NULL),
+(53, 0, 'Dhow Cruise Tours', 'Dhow Cruise Tours', 1, NULL, 'dhow-cruise-tours', NULL, '<div class=\"w-6xl max-w-full mx-auto\">\r\n<p style=\"text-align: center;\">Enjoy a relaxing dhow cruise Dubai experience with dinner, live entertainment, and stunning views of Dubai Marina or Dubai Creek. Cruise on a traditional wooden dhow while enjoying an international buffet dinner, Tanoura dance, and cultural performances. Dhow cruise tours are perfect for couples, families, and tourists looking for a peaceful and memorable evening in Dubai.</p>\r\n</div>\r\n<p style=\"text-align: center;\">[include file=\"all-tours-packages\"]</p>', 1, 1, 1, 1, 'published', NULL, '1779663919_6a13842fdb5f1_image.webp', 'dhow-cruise-tours', 'Dhow Cruise Tours', 'Box Container', 'Yes', 2, 'Dhow Cruise Tours', NULL, NULL, 1, '2026-05-24 18:04:54', '2026-05-29 16:38:56', NULL),
+(54, 0, 'Dubai Combo Tours', 'Dubai Combo Tours', 1, NULL, 'dubai-combo-tours', NULL, '<div class=\"w-6xl max-w-full mx-auto\">\r\n<p style=\"text-align: center;\">Experience camel race Dubai tours and discover a unique part of Emirati culture. Visit camel racing tracks like Al Marmoom, watch live races, and learn about this traditional sport. These tours offer an authentic desert experience away from modern city attractions and are perfect for cultural exploration.</p>\r\n</div>\r\n<p style=\"text-align: center;\">[include file=\"all-tours-packages\"]</p>', 1, 1, 1, 1, 'published', NULL, '1779663945_6a1384498a220_image.webp', 'dubai-combo-tours', 'Dubai Combo Tours', 'Box Container', 'Yes', 2, 'Dubai Combo Tours', NULL, NULL, 1, '2026-05-24 18:05:22', '2026-05-29 16:38:30', NULL),
+(55, 0, 'Umrah', 'Umrah', 0, NULL, 'umrah', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aut dicta, impedit maiores molestias perspiciatis quaerat. Aspernatur delectus.', '<p>[include file=\"umrah\"]</p>', 1, 1, 1, 1, 'published', 11, '1779909275_6a17429bd44ee_image.webp', 'umrah', 'Umrah', 'Box Container', 'Yes', 2, 'Umrah', NULL, NULL, 1, '2026-05-27 03:02:27', '2026-07-31 15:23:05', NULL),
+(57, 0, 'Umrah by Bus', 'Umrah By Bus', 0, NULL, 'umrah-by-bus', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aut dicta, impedit maiores molestias perspiciatis quaerat. Aspernatur delectus.', '<p>[include file=\"umrah-by-bus\"]</p>', 1, 1, 1, 1, 'published', NULL, '1780945337_6a2711b9a102b_image.webp', 'umrah-by-bus', 'Umrah By Bus', 'Box Container', 'Yes', 2, 'Umrah By Bus', NULL, NULL, 1, '2026-06-08 04:13:10', '2026-07-31 17:27:56', NULL),
+(58, 0, 'Umrah for Single Lady', 'Umrah For Single Lady', 0, NULL, 'umrah-for-single-lady', NULL, '<p>[include file=\"umrah-for-single-lady\"]</p>\r\n<p>[include file=\"all-tours-packages\"]</p>', 1, 1, 1, 0, 'published', NULL, NULL, 'umrah-for-single-lady', 'Umrah For Single Lady', 'Box Container', 'Yes', 2, 'Umrah For Single Lady', NULL, NULL, 1, '2026-06-12 05:40:35', '2026-07-29 18:14:08', NULL),
+(59, 0, 'Frequently Asked Questions', 'Travel Help & Frequently Asked Questions', 0, NULL, 'faqs', 'Quick answers to the most common questions about Dubai tours, desert safaris, Umrah packages, UAE visas and holiday bookings.', '<p>[include file=\"faqs\"]</p>', 1, 1, 1, 1, 'published', NULL, '1782415698_6a3d81521a2b6_image.webp', 'frequently-asked-questions', 'Frequently Asked Questions', 'Box Container', 'Yes', 2, 'Frequently Asked Questions', NULL, NULL, 1, '2026-06-25 14:12:00', '2026-07-29 17:52:20', NULL),
+(60, 0, 'How can we assist your Umrah Journey?', 'Umrah FAQs', 0, NULL, 'umrah-faqs', 'Find answers to common Umrah-related questions to help you prepare for a smooth and spiritually fulfilling journey.', '<p>[include file=\"umrah-faqs\"]</p>', 0, 0, 0, 0, 'published', NULL, '1782498306_6a3ec402a59a4_image.webp', 'how-can-we-assist-your-umrah-journey-', 'How Can We Assist Your Umrah Journey', 'Box Container', 'Yes', 2, 'How Can We Assist Your Umrah Journey', NULL, NULL, 1, '2026-06-26 10:01:48', '2026-07-29 18:18:17', NULL),
+(61, 0, 'Blogs', 'Travel Tips, Guides & Inspiration', 0, NULL, 'blogs', 'Find answers to common Umrah-related questions to help you prepare for a smooth and spiritually fulfilling journey.', '<p>[include file=\"blogs\"]</p>', 1, 1, 1, 1, 'published', NULL, '1782556549_6a3fa7851bfc7_image.webp', 'blogs', 'Blogs', 'Box Container', 'Yes', 2, 'Blogs', NULL, NULL, 1, '2026-06-27 05:35:08', '2026-07-29 17:29:57', NULL),
+(62, 0, 'Testing', 'Testing', 0, NULL, 'testing', NULL, '<p>[include file=\"testing\"]</p>', 1, 1, 1, 1, 'published', NULL, 'dup_6a3ffc47de4d19.19875241.webp', 'testing', 'Testing', 'Box Container', 'Yes', 2, 'Testing', NULL, NULL, 1, '2026-06-27 11:37:27', '2026-06-27 11:43:17', '2026-06-27 11:43:17'),
+(63, 0, 'Single Tour Details', 'Single Tour Details', 0, NULL, 'single-tour-details', NULL, '<p>[include file=\"single-tour-details\"]</p>', 1, 1, 1, 1, 'published', NULL, 'dup_6a4956f1df3a42.36912377.webp', 'single-tour-details', 'Single Tour Details', 'Box Container', 'Yes', 2, 'Single Tour Details', NULL, NULL, 1, '2026-07-04 13:54:41', '2026-07-04 14:49:11', NULL),
+(64, 0, 'Terms & Conditions', 'Terms Conditions', 0, NULL, 'terms-conditions', NULL, '<p>[include file=\"terms-condition\"]</p>', 1, 1, 1, 1, 'published', NULL, '1783263792_6a4a7230031f8_image.webp', 'terms-conditions', 'Terms Conditions', 'Box Container', 'Yes', 2, 'Terms and Conditions', NULL, NULL, 1, '2026-07-05 09:54:31', '2026-07-05 10:03:12', NULL),
+(65, 0, 'privacy-policy', 'Privacy Policy', 0, NULL, 'privacy-policy', NULL, '<p>[include file=\"privacy-policy\"]</p>', 1, 1, 1, 1, 'published', NULL, 'dup_6a4a9b763eaaf1.37545438.webp', 'privacy-policy', 'Privacy Policy', 'Box Container', 'Yes', 2, 'Privacy Policy', NULL, NULL, 1, '2026-07-05 12:59:18', '2026-07-05 12:59:42', NULL),
+(66, 0, 'Umrah Vaccination', 'Umrah Vaccination', 0, NULL, 'umrah-vaccination', 'Preparing for Umrah involves more than booking flights and accommodation. Pilgrims should also stay updated with the latest vaccination.', '<p>[include file=\"umrah-vaccination\"]</p>', 1, 1, 1, 1, 'published', NULL, '1783933746_6a54ab320b54e_image.webp', 'umrah-vaccination', 'Umrah Vaccination', 'Box Container', 'Yes', 2, 'Umrah Vaccination', NULL, NULL, 1, '2026-07-13 03:29:03', '2026-07-29 18:14:48', NULL),
+(67, 0, 'VFS Global vs. Taseer (VFS TasHeel) in the UAE', 'VTF Tasheel', 0, NULL, 'vtf-tasheel', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias distinctio eos magnam minima nulla officia placeat quam vel, veniam voluptatem.', '<p>[include file=\"vtf-tasheel\"]</p>', 1, 1, 1, 1, 'published', NULL, '1783979506_6a555df24b1af_image.webp', 'vfs-global-vs-taseer-vfs-tasheel-in-the-uae', 'VFS Global Vs Taseer VFS TasHeel In The UAE', 'Box Container', 'Yes', 2, 'VFS Global Vs Taseer VFS TasHeel In The UAE', NULL, NULL, 1, '2026-07-13 16:50:21', '2026-07-29 18:17:12', NULL),
+(68, 0, 'Holiday Packages', 'Holiday Packages', 0, NULL, 'holiday-packages', 'Discover carefully curated holiday packages from Dubai and Pakistan to the world’s exciting destinations', '<p>[include file=\"holiday-packages\"]</p>', 1, 1, 1, 1, 'published', NULL, '1784011979_6a55dccb9d9fb_image.webp', 'holiday-packages', 'Holiday Packages', 'Box Container', 'Yes', 2, 'Holiday Packages', NULL, NULL, 1, '2026-07-14 01:52:26', '2026-07-29 17:32:05', NULL),
+(69, 0, 'Single Holiday Tour Details', 'Single Holiday Tour Details', 0, NULL, 'single-holiday-tour-details', NULL, '<p>[include file=\"single-holiday-tour-details\"]</p>', 1, 1, 1, 1, 'published', NULL, 'dup_6a55e209eaa897.57233959.webp', 'single-holiday-tour-details', 'Single Holiday Tour Details', 'Box Container', 'Yes', 2, 'Single Holiday Tour Details', NULL, NULL, 1, '2026-07-14 02:15:21', '2026-07-14 02:16:22', NULL),
+(70, 0, 'Visa Services', 'Visa Services', 0, NULL, 'visa-services', NULL, '<p>[include file=\"visa-services\"]</p>', 1, 1, 1, 1, 'published', NULL, '1784050069_6a56719591239_image.webp', 'visa-services', 'Visa Services', 'Box Container', 'Yes', 2, 'Visa Services', NULL, NULL, 1, '2026-07-14 12:27:28', '2026-07-14 12:27:49', NULL),
+(71, 0, 'Umrah Visa Services From Dubai, UAE', 'Umrah Visa', 0, NULL, 'umrah-visa', 'Apply for Saudi Umrah Visa with Saifco Travel and Tourism. Simple proces, document guidance, and complete support from all Emirates in UAE', '<p>[include file=\"umrah-visa\"]</p>', 1, 1, 1, 1, 'published', NULL, '1784051680_6a5677e0b253d_image.webp', 'umrah-visa-services-from-dubai-uae', 'Umrah Visa Services From Dubai UAE', 'Box Container', 'Yes', 2, 'Umrah Visa Services From Dubai UAE', NULL, NULL, 1, '2026-07-14 12:54:20', '2026-07-29 18:13:23', NULL),
+(72, 0, 'Tourist Visa', 'Tourist Visa', 0, NULL, 'tourist-visa', NULL, '<p>[include file=\"tourist-visa\"]</p>', 1, 1, 1, 1, 'published', NULL, '1784058432_6a5692407991b_image.webp', 'tourist-visa', 'Tourist Visa', 'Box Container', 'Yes', 2, 'Tourist Visa', NULL, NULL, 1, '2026-07-14 14:46:51', '2026-07-14 14:47:12', NULL),
+(73, 0, 'Saudi Arabia One Year Multiple Entry Visa', 'Multiple Entry', 0, NULL, 'multiple-entry', 'Apply for Saudi Umrah Visa with Saifco Travel and Tourism. Simple proces, document guidance, and complete support from all Emirates in UAE.', '<p>[include file=\"multiple-entry\"]</p>', 1, 1, 1, 1, 'published', NULL, '1784392686_6a5babee8fe61_image.webp', 'saudi-arabia-one-year-multiple-entry-visa-', 'Saudi Arabia One Year Multiple Entry Visa', 'Box Container', 'Yes', 2, 'Saudi Arabia One Year Multiple Entry Visa', NULL, NULL, 1, '2026-07-18 11:37:25', '2026-07-29 18:10:55', NULL),
+(74, 0, 'Single Blog', 'Single Blog', 0, NULL, 'single-blog', NULL, '<p>[include file=\"single-blog\"]</p>', 1, 1, 1, 1, 'published', NULL, '1784392767_6a5bac3fe7812_image.webp', 'single-blog', 'Single Blog', 'Box Container', 'Yes', 2, 'Single Blog', NULL, NULL, 1, '2026-07-18 11:38:10', '2026-07-18 11:39:28', NULL),
+(75, 0, 'Umrah by Air', 'Umrah By Air', 0, NULL, 'umrah-by-air', 'Get everything on a single call with Umrah travel agency. Every Muslim wishes to visit Makkah and Madina at least once in his/her life to perform Umrah.', '<p>[include file=\"umrah-by-air\"]</p>', 1, 1, 1, 1, 'published', NULL, '1784392804_6a5bac646bb10_image.webp', 'umrah-by-air', 'Umrah By Air', 'Box Container', 'Yes', 2, 'Umrah By Air', NULL, NULL, 1, '2026-07-18 11:39:32', '2026-07-29 17:53:34', NULL),
+(76, 72, 'Testing Page', 'Voluptas omnis quod', 0, 'Dolore non eiusmod a', 'testing-page', 'Eos non in quia aper', '<p>test</p>', 1, 1, 1, 1, 'published', 11, '1785441394_6a6bac721c8e4_image.webp', 'testing-page', 'Testing Page', 'Full Container', 'Yes', 29, 'Testing Page', 'Soluta dolores fugia', 'Cupidatat qui qui om', 1, '2026-07-30 14:56:12', '2026-07-31 00:13:55', '2026-07-31 00:13:55');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `page_sections`
+--
+
+CREATE TABLE `page_sections` (
+  `id` bigint UNSIGNED NOT NULL,
+  `page_id` bigint UNSIGNED NOT NULL,
+  `section_heading` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `section_sub_heading` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `section_description` text COLLATE utf8mb4_unicode_ci,
+  `button_status` tinyint(1) NOT NULL DEFAULT '0',
+  `button_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `button_url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `section_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ordering` int NOT NULL DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `page_sections`
+--
+
+INSERT INTO `page_sections` (`id`, `page_id`, `section_heading`, `section_sub_heading`, `section_description`, `button_status`, `button_title`, `button_url`, `section_image`, `ordering`, `created_at`, `updated_at`) VALUES
+(2, 76, 'Sit quia incididunt', 'Accusamus exercitati', '<p>tesfds.com</p>', 1, 'Read More', 'tesfds.com', '1785441372_6a6bac5cbc729.jpg', 2, '2026-07-30 14:56:12', '2026-07-30 14:56:12'),
+(3, 55, 'Umrah Travel Agency', NULL, '<p>Get everything on a single call with Umrah travel agency. Every Muslim wishes to visit Makkah and Madina at least once in his/her life to perform Umrah. Keeping this in view, Our main goal is to assist each and every pilgrim to have a comfortable, safe, and trouble-free journey to perform Umrah from UAE and UK.</p>', 0, NULL, NULL, '1785474968_6a6c2f985ffbc.webp', 1, '2026-07-31 00:16:08', '2026-07-31 00:16:08'),
+(4, 55, 'Umrah Offered By', NULL, '<p>Begin your sacred journey with comfort, trust, and complete guidance. We believe in reliability, quality customer service, willingness and dedication to serving you the best umrah packages from Dubai, Abu Dhabi &amp; Sharjah.</p>', 0, NULL, NULL, NULL, 2, '2026-07-31 00:18:28', '2026-07-31 00:18:28'),
+(5, 55, 'Umrah by Bus', NULL, '<p>Affordable Umrah by Bus from Dubai and UAE with visa assistance, transport, and hotel options. Explore budget-friendly Umrah packages designed for individuals, families, and groups seeking a comfortable spiritual journey to Makkah and Madinah.</p>', 0, NULL, NULL, '1785475108_6a6c3024bea16.webp', 3, '2026-07-31 00:18:28', '2026-07-31 00:18:28'),
+(6, 55, 'Umrah by Air', NULL, '<p>Travel with convenience through our Umrah by Air packages from UAE, including visa support, flights, accommodation, and complete travel assistance. Choose flexible Umrah options with trusted guidance for a smooth pilgrimage experience.</p>', 0, NULL, NULL, '1785475108_6a6c3024bf9b5.webp', 4, '2026-07-31 00:18:28', '2026-07-31 00:18:28'),
+(7, 55, 'Umrah Visa', NULL, '<p>Get fast and reliable Umrah visa assistance from UAE with updated requirements, documentation guidance, and support throughout the application process. Learn about eligibility, processing times, and required documents.</p>', 0, NULL, NULL, '1785475108_6a6c3024c08fb.webp', 5, '2026-07-31 00:18:28', '2026-07-31 00:18:28'),
+(8, 55, 'Saudi Multiple Entry Visa', NULL, '<p>Apply for Saudi multiple entry visa options suitable for Umrah, family visits, and business travel to Saudi Arabia. Understand visa validity, eligibility criteria, and how multiple-entry visas can provide flexible travel opportunities.</p>', 0, NULL, NULL, '1785475108_6a6c3024c228c.webp', 6, '2026-07-31 00:18:28', '2026-07-31 00:18:28'),
+(9, 55, 'World Wide Umrah Services', NULL, '<p>Our travel agency got 5 star ratings globally for umrah services. We offer competitive pricing with best customer support available 24/7 over Whatsapp.</p>', 0, NULL, NULL, NULL, 7, '2026-07-31 00:18:28', '2026-07-31 00:18:28'),
+(10, 55, 'Visa Services', NULL, '<p style=\"text-align: center;\">Avail umrah visa with just a 3 step online process and get an approval in the next 48 hours.</p>', 0, NULL, NULL, '1785484838_6a6c5626e64af.webp', 8, '2026-07-31 00:27:49', '2026-07-31 03:19:47'),
+(11, 55, 'Flights Reservations', NULL, '<p style=\"text-align: center;\">Booking flights is easy with Saifco Travel &ndash; we always have the best prices for Umrah Flights.</p>', 0, NULL, NULL, '1785484880_6a6c5650525b4.webp', 9, '2026-07-31 00:41:23', '2026-07-31 03:19:47'),
+(12, 55, 'Transportation', NULL, '<p style=\"text-align: center;\">Our agency offers different VIP transportation facility from Makkah to Madina and vise versa.</p>', 0, NULL, NULL, '1785484880_6a6c565054e7e.webp', 10, '2026-07-31 00:41:23', '2026-07-31 03:19:47'),
+(13, 55, 'Hotel Booking', NULL, '<p style=\"text-align: center;\">Book luxury hotel in best prices as we are in collaboration with top hotels in Saudi Arabia.</p>', 0, NULL, NULL, '1785484880_6a6c565056d20.webp', 11, '2026-07-31 00:41:23', '2026-07-31 03:19:47'),
+(14, 55, 'Required Documents for Umrah Visa', NULL, '<p>Begin your sacred journey with comfort, trust, and complete guidance. We believe in reliability, quality customer service, willingness and dedication to serving you the best umrah packages from Dubai, Abu Dhabi &amp; Sharjah.</p>', 0, NULL, NULL, '1785476551_6a6c35c7794ee.webp', 12, '2026-07-31 00:42:31', '2026-07-31 00:42:31'),
+(15, 55, 'Clear Scans of Passport Copy', NULL, '<p>Passport should be valid for 6 months and Visa should be valid for months .</p>', 0, NULL, NULL, NULL, 13, '2026-07-31 00:48:30', '2026-07-31 00:48:30'),
+(16, 55, '1 Passport Size Photo', NULL, '<p>Passport should be valid for 6 months and Visa should be valid for months.</p>', 0, NULL, NULL, NULL, 14, '2026-07-31 00:48:30', '2026-07-31 00:48:30'),
+(17, 55, 'National ID Card Copy', NULL, '<p>National ID Card copy (Front &amp; Back)</p>', 0, NULL, NULL, NULL, 15, '2026-07-31 00:48:30', '2026-07-31 00:48:30'),
+(18, 55, 'Processing Time', NULL, '<p>Umrah Visa Processing will take approximately 2-3 working days.</p>', 0, NULL, NULL, NULL, 16, '2026-07-31 00:48:30', '2026-07-31 00:48:30'),
+(19, 55, 'Umrah for Single Ladies', NULL, '<p style=\"text-align: center;\">Yes, We make this possible for all single ladies to perform umrah without mahram. Contact us and avail different type of umrah packages offered from UAE and UK. Our umrah agency make it convenient for single ladies to visit the Holy Kabba without any hustle.</p>', 0, NULL, NULL, NULL, 17, '2026-07-31 12:54:44', '2026-07-31 12:54:44'),
+(20, 55, 'How to perform Umrah?', NULL, '<p>Learn the step-by-step process of performing Umrah, from the journey to Mecca to completing the rituals with devotion and reverence.</p>', 0, NULL, NULL, NULL, 18, '2026-07-31 12:54:44', '2026-07-31 12:54:44'),
+(21, 55, 'We Offer Umrah from', NULL, '<p style=\"text-align: center;\">Begin your sacred journey with comfort, trust, and complete guidance. We believe in reliability, quality customer service, willingness and dedication to serving you the best umrah packages from Dubai, Abu Dhabi &amp; Sharjah.</p>', 0, NULL, NULL, NULL, 19, '2026-07-31 12:54:44', '2026-07-31 12:54:44'),
+(22, 55, 'Umrah from Dubai', NULL, '<p style=\"text-align: center;\">Saifco Travel is a Dubai-based specialist Umrah Travel Agency providing luxury Umrah packages</p>', 0, NULL, NULL, '1785520484_6a6ce164e4fdf.webp', 20, '2026-07-31 12:54:44', '2026-07-31 12:54:44'),
+(23, 55, 'Umrah from Abu Dhabi', NULL, '<p style=\"text-align: center;\">Avail best Umrah by bus and air packages from Abu Dhabi. Visa services included in all of the</p>', 0, NULL, NULL, '1785520484_6a6ce164e651c.webp', 21, '2026-07-31 12:54:44', '2026-07-31 12:54:44'),
+(24, 55, 'Umrah from Sharjah', NULL, '<p class=\"text-sm leading-6 my-4 line-clamp-2\" style=\"text-align: center;\">Our experienced and highest quality services range from just Umrah Visa to a complete</p>', 0, NULL, NULL, '1785520484_6a6ce164e76a5.webp', 22, '2026-07-31 12:54:44', '2026-07-31 12:54:44'),
+(25, 55, 'VFS Tasheel Locations', NULL, '<p style=\"text-align: center;\">VFS Tasheel International processes visas for the Kingdom of Saudi Arabia. Visas are processed at VFS Tasheel Visa Services Center as mandated by the Ministry of Foreign Affairs, Kingdom of Saudi Arabia.</p>', 0, NULL, NULL, '1785520484_6a6ce164e8583.webp', 23, '2026-07-31 12:54:44', '2026-07-31 12:54:44'),
+(26, 55, 'Umrah Vaccination Center', NULL, '<p style=\"text-align: center;\">Every year, millions of Muslims are traveling to Mecca to perform Hajj and Umrah. They are coming from different regions with different age groups. As a result, different health problems may occur if they don&rsquo;t take preventative.</p>', 0, NULL, NULL, NULL, 24, '2026-07-31 12:54:44', '2026-07-31 12:54:44'),
+(27, 57, 'Umrah by Bus from Dubai – Affordable Packages with Visa & Transport', NULL, '<p>Our 10-days Umrah by Bus packages from Dubai and UAE offer an affordable and convenient way to perform Umrah. Each package includes essential travel arrangements to ensure a smooth and spiritually rewarding journey.</p>', 0, NULL, NULL, '1785537032_6a6d2208df010.webp', 1, '2026-07-31 17:30:32', '2026-07-31 17:30:32'),
+(28, 57, 'Umrah by Bus Packages', NULL, '<p>Compare our Umrah by Bus packages and select the accommodation option that matches your travel needs and budget. From economical sharing arrangements to more private room options, we have packages suitable for every pilgrim.</p>', 0, NULL, NULL, NULL, 2, '2026-07-31 17:31:28', '2026-07-31 17:31:28'),
+(29, 57, 'Packages Include', NULL, '<p>Our comprehensive Umrah packages include visa processing, accommodation, transportation, and guided services for a seamless pilgrimage experience</p>', 0, NULL, NULL, NULL, 3, '2026-07-31 17:31:28', '2026-07-31 17:31:28'),
+(30, 57, 'Luxury Bus', NULL, '<p style=\"text-align: center;\">Comfortable air-conditioned bus travel from UAE to Saudi Arabia .</p>', 0, NULL, NULL, '1785537207_6a6d22b7b819e.svg', 4, '2026-07-31 17:33:27', '2026-07-31 17:33:27'),
+(31, 57, 'Umrah Visa', NULL, '<p style=\"text-align: center;\">Fast and reliable Umrah visa processing included.</p>', 0, NULL, NULL, '1785537207_6a6d22b7ba33f.svg', 5, '2026-07-31 17:33:27', '2026-07-31 17:33:27'),
+(32, 57, 'Hotel Stay', NULL, '<p style=\"text-align: center;\">Quality accommodation in Makkah and Madinah.</p>', 0, NULL, NULL, '1785537207_6a6d22b7bbb84.svg', 6, '2026-07-31 17:33:27', '2026-07-31 17:33:27'),
+(33, 57, 'Visit to Holy Sites (Ziyarat)', NULL, '<p style=\"text-align: center;\">Guided visits to renowned Islamic landmarks.</p>', 0, NULL, NULL, '1785537207_6a6d22b7bce4d.svg', 7, '2026-07-31 17:33:27', '2026-07-31 17:33:27'),
+(34, 57, 'Licensed & Trusted', NULL, '<p>UAE Licensed Travel Agency</p>', 0, NULL, NULL, '1785540476_6a6d2f7c01a11.svg', 8, '2026-07-31 17:36:41', '2026-07-31 18:27:56'),
+(35, 57, '18+ Years Experience', NULL, '<p>Serving Pilgrims Since 2008</p>', 0, NULL, NULL, '1785540476_6a6d2f7c04504.svg', 9, '2026-07-31 17:36:41', '2026-07-31 18:27:56'),
+(36, 57, 'Best Price Guaranteed', NULL, '<p>Quality service at Affordable Price</p>', 0, NULL, NULL, '1785540476_6a6d2f7c05c04.svg', 10, '2026-07-31 17:36:41', '2026-07-31 18:27:56'),
+(37, 57, '24/7 Support', NULL, '<p>We are here to help you anytime</p>', 0, NULL, NULL, '1785540476_6a6d2f7c0d1b4.svg', 11, '2026-07-31 17:36:41', '2026-07-31 18:27:56'),
+(38, 57, 'Ramadan Umrah by Bus Packages 2026', NULL, '<p>Travel comfortably this Ramadan with our specially arranged Umrah by Bus packages. Affordable fares, reliable service, and a spiritually enriching journey.</p>', 0, NULL, NULL, NULL, 12, '2026-07-31 17:36:41', '2026-07-31 17:36:41'),
+(39, 57, 'Umrah Bus Schedule', NULL, '<p style=\"text-align: center;\">Explore upcoming Umrah by Bus schedules from Dubai, Sharjah, and UAE. Find affordable Umrah packages with visa processing, luxury bus travel, hotel accommodation in Makkah and Madinah, and guided Ziyarat tours.</p>', 0, NULL, NULL, NULL, 13, '2026-07-31 17:36:41', '2026-07-31 17:36:41'),
+(40, 57, 'We Offer Umrah from', NULL, '<p style=\"text-align: center;\">Find the perfect umrah packages as per your family needs, we got a wide range of luxury, VIP, 5 Star, 4 Star and 3 Star packages to perfrom umrah by bus and air from all emirates in UAE.</p>', 0, NULL, NULL, NULL, 14, '2026-07-31 17:36:41', '2026-07-31 17:36:41'),
+(41, 57, 'Umrah from Dubai', NULL, '<p style=\"text-align: center;\">Saifco Travel is a Dubai Based Specialist Umrah Travel Agency providing luxury Umrah packages</p>', 0, NULL, NULL, '1785537401_6a6d23794b40b.webp', 15, '2026-07-31 17:36:41', '2026-07-31 17:36:41'),
+(42, 57, 'Umrah from Abu Dhabi', NULL, '<p style=\"text-align: center;\">Avail best Umrah by bus and air packages from Abu Dhabi. Visa services included in all of the</p>', 0, NULL, NULL, '1785537401_6a6d23794c4e2.webp', 16, '2026-07-31 17:36:41', '2026-07-31 17:36:41'),
+(43, 57, 'Umrah from Sharjah', NULL, '<p style=\"text-align: center;\">Our experienced and highest quality services range from just Umrah Visa to a complete</p>', 0, NULL, NULL, '1785537401_6a6d23794d5a8.webp', 17, '2026-07-31 17:36:41', '2026-07-31 17:36:41'),
+(44, 57, 'Required Documents for Umrah Visa', NULL, '<p style=\"text-align: center;\">Please ensure all documents are clear, valid and up to date.</p>', 0, NULL, NULL, '1785537503_6a6d23dfddc17.webp', 18, '2026-07-31 17:38:23', '2026-07-31 17:38:23'),
+(45, 57, 'Clear Scans of Passport Copy', NULL, '<p>Passport should be valid for 6 months and Visa should be valid for months .</p>', 0, NULL, NULL, NULL, 19, '2026-07-31 17:38:23', '2026-07-31 17:38:23'),
+(46, 57, '1 Passport Size Photo', NULL, '<p>Passport should be valid for 6 months and Visa should be valid for months.</p>', 0, NULL, NULL, NULL, 20, '2026-07-31 17:38:23', '2026-07-31 17:38:23'),
+(47, 57, 'National ID Card Copy', NULL, '<p>National ID Card copy (Front &amp; Back)</p>', 0, NULL, NULL, NULL, 21, '2026-07-31 17:38:23', '2026-07-31 17:38:23'),
+(48, 57, 'Processing Time', NULL, '<p>Umrah Visa Processing will take approximately 2-3 working days.</p>', 0, NULL, NULL, NULL, 22, '2026-07-31 17:38:23', '2026-07-31 17:38:23'),
+(49, 57, 'How to perform Umrah?', NULL, '<p>Learn the step-by-step process of performing Umrah, from the journey to Mecca to completing the rituals with devotion and reverence.</p>', 0, NULL, NULL, NULL, 23, '2026-07-31 17:38:23', '2026-07-31 17:38:23');
 
 -- --------------------------------------------------------
 
@@ -1643,6 +1732,38 @@ INSERT INTO `quotation_items` (`id`, `quotation_id`, `item_name`, `description`,
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `ramadan_packages`
+--
+
+CREATE TABLE `ramadan_packages` (
+  `id` bigint UNSIGNED NOT NULL,
+  `tour_type_id` bigint UNSIGNED DEFAULT NULL,
+  `month` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `departure_day` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `departure_dates` text COLLATE utf8mb4_unicode_ci,
+  `arrival_day` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `arrival_dates` text COLLATE utf8mb4_unicode_ci,
+  `status` enum('Active','Inactive') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Active',
+  `ordering` int NOT NULL DEFAULT '0',
+  `created_by` bigint UNSIGNED DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `ramadan_packages`
+--
+
+INSERT INTO `ramadan_packages` (`id`, `tour_type_id`, `month`, `departure_day`, `departure_dates`, `arrival_day`, `arrival_dates`, `status`, `ordering`, `created_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
+(1, 14, 'July 2026', 'Wednesday', '09/07/2026\r\n16/07/2026\r\n23/07/2026\r\n30/07/2026', 'Saturday', '09/07/2026\r\n16/07/2026\r\n23/07/2026\r\n30/07/2026', 'Active', 1, 1, NULL, '2026-07-31 17:07:03', '2026-07-31 17:07:30'),
+(2, 14, 'Aug 2026', 'Wednesday', '09/07/2026\r\n16/07/2026\r\n23/07/2026\r\n30/07/2026', 'Saturday', '09/07/2026\r\n16/07/2026\r\n23/07/2026\r\n30/07/2026', 'Active', 2, 1, NULL, '2026-07-31 17:08:01', '2026-07-31 17:08:01'),
+(3, 14, 'Sep 2026', 'Wednesday', '09/07/2026\r\n16/07/2026\r\n23/07/2026\r\n30/07/2026', 'Saturday', '09/07/2026\r\n16/07/2026\r\n23/07/2026\r\n30/07/2026', 'Active', 3, 1, NULL, '2026-07-31 17:08:21', '2026-07-31 17:08:21'),
+(4, 14, 'Oct 2026', 'Wednesday', '09/07/2026\r\n16/07/2026\r\n23/07/2026\r\n30/07/2026', 'Saturday', '09/07/2026\r\n16/07/2026\r\n23/07/2026\r\n30/07/2026', 'Active', 4, 1, NULL, '2026-07-31 17:08:34', '2026-07-31 17:08:34');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `red_tags`
 --
 
@@ -1720,7 +1841,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('BqJEZ3PadEzaDt8SlN21EKENYhtD1X0rHimcdrGS', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiQ2sxdGhFRDFQQ0F1TVl6eGhIa2w1WnRzQ1ZKZXB3YnMxR0NOMGh2ayI7czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTtzOjY6Il9mbGFzaCI7YToyOntzOjM6Im5ldyI7YTowOnt9czozOiJvbGQiO2E6MDp7fX1zOjk6Il9wcmV2aW91cyI7YToyOntzOjM6InVybCI7czo0NjoiaHR0cHM6Ly9teXNhaWZjby1sYXJhdmVsLnRlc3QvaG9saWRheS1wYWNrYWdlcyI7czo1OiJyb3V0ZSI7czoxMjoicGFnZS5kZWZhdWx0Ijt9fQ==', 1785367167);
+('dBRlrU1eaIfdKqHRGjPzcf9p6VVV0NEo260aYUSn', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiNHZ3dHhSVlNNUFNWMHdpekFGS0poQm5kaVJFN2gzaUM0VkwxS3ZTNSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzU6Imh0dHBzOi8vbXlzYWlmY28tbGFyYXZlbC50ZXN0L3VtcmFoIjtzOjU6InJvdXRlIjtzOjEyOiJwYWdlLmRlZmF1bHQiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjM6InVybCI7YToxOntzOjg6ImludGVuZGVkIjtzOjQ5OiJodHRwczovL215c2FpZmNvLWxhcmF2ZWwudGVzdC9hZG1pbi9wYWdlcy9lZGl0LzU1Ijt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1785540779);
 
 -- --------------------------------------------------------
 
@@ -2097,6 +2218,74 @@ INSERT INTO `tour_types` (`id`, `title`, `friendly_url`, `short_description`, `d
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `umrah_bus_schedules`
+--
+
+CREATE TABLE `umrah_bus_schedules` (
+  `id` bigint UNSIGNED NOT NULL,
+  `tour_type_id` bigint UNSIGNED DEFAULT NULL,
+  `departure_date` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sharing_4_5_beds` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `sharing_3_beds` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `sharing_2_beds` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` enum('Active','Inactive') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Active',
+  `ordering` int NOT NULL DEFAULT '0',
+  `created_by` bigint UNSIGNED DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `umrah_bus_schedules`
+--
+
+INSERT INTO `umrah_bus_schedules` (`id`, `tour_type_id`, `departure_date`, `sharing_4_5_beds`, `sharing_3_beds`, `sharing_2_beds`, `status`, `ordering`, `created_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
+(1, 14, '05 March 2026', '2200/-', '2400/-', '2750/-', 'Active', 1, 1, NULL, '2026-07-31 16:45:12', '2026-07-31 16:46:54'),
+(2, 14, '12 March 2026', '2200/-', '2400/-', '2750/-', 'Active', 2, 1, NULL, '2026-07-31 16:45:39', '2026-07-31 16:45:39'),
+(3, 14, '19 March 2026', '2600/-', '2400/-', '3100/-', 'Active', 3, 1, NULL, '2026-07-31 16:46:08', '2026-07-31 16:46:08'),
+(4, 14, '26 March 2026', '3200/-', '2400/-', '4000/-', 'Active', 4, 1, NULL, '2026-07-31 16:46:35', '2026-07-31 16:46:35');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `umrah_packages`
+--
+
+CREATE TABLE `umrah_packages` (
+  `id` bigint UNSIGNED NOT NULL,
+  `tour_type_id` bigint UNSIGNED DEFAULT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `subtitle` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'Starting from',
+  `price` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `currency` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'AED',
+  `badge` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `header_color` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT '#0096a6',
+  `features` text COLLATE utf8mb4_unicode_ci,
+  `button_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'WhatsApp Now',
+  `button_url` text COLLATE utf8mb4_unicode_ci,
+  `status` enum('Active','Inactive') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Active',
+  `ordering` int NOT NULL DEFAULT '0',
+  `created_by` bigint UNSIGNED DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `umrah_packages`
+--
+
+INSERT INTO `umrah_packages` (`id`, `tour_type_id`, `title`, `subtitle`, `price`, `currency`, `badge`, `header_color`, `features`, `button_title`, `button_url`, `status`, `ordering`, `created_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
+(1, 14, 'Sharing 5 Beds', 'Sharing 5 Beds', '1150', 'AED', NULL, '#0096a6', 'Umrah Visa\r\nMakkah Hotel\r\nMadinah Hotel\r\nTransportation\r\nBorder Fee', 'WhatsApp Now', '#', 'Active', 1, 1, '2026-07-31 16:26:25', '2026-07-31 16:18:36', '2026-07-31 16:26:25'),
+(2, 14, 'Sharing 3 Beds', 'Sharing 5 Beds', '1150', 'AED', NULL, '#e69100', 'Umrah Visa\r\nMakkah Hotel\r\nMadinah Hotel\r\nTransportation\r\nBorder Fee', 'WhatsApp Now', '#', 'Active', 3, 1, NULL, '2026-07-31 16:19:12', '2026-07-31 16:30:45'),
+(3, 14, 'Sharing 5 Beds', 'Starting from', '1150', 'AED', NULL, '#d50032', 'Umrah Visa\r\nMakkah Hotel\r\nMadinah Hotel\r\nTransportation\r\nBorder Fee', 'WhatsApp Now', '#', 'Active', 4, 1, NULL, '2026-07-31 16:20:11', '2026-07-31 16:30:26'),
+(4, 14, 'Sharing 4 Beds', 'Sharing 5 Beds', '1150', 'AED', 'Most <br> Popular', '#2e7d32', 'Umrah Visa\r\nMakkah Hotel\r\nMadinah Hotel\r\nTransportation\r\nBorder Fee', 'WhatsApp Now', '#', 'Active', 2, 1, NULL, '2026-07-31 16:24:48', '2026-07-31 16:52:30'),
+(5, 14, 'Sharing 5 Beds', 'Sharing 5 Beds', '1150', 'AED', NULL, '#0096a6', 'Umrah Visa\r\nMakkah Hotel\r\nMadinah Hotel\r\nTransportation\r\nBorder Fee', 'WhatsApp Now', '#', 'Active', 1, 1, NULL, '2026-07-31 16:25:57', '2026-07-31 16:25:57');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -2202,7 +2391,13 @@ INSERT INTO `user_type_modules_rel` (`id`, `user_type_id`, `module_id`, `actions
 (120, 1, 7, NULL, '2025-11-07 14:44:01', '2025-11-07 14:44:01'),
 (127, 10, 2, NULL, '2026-02-25 11:25:50', '2026-02-25 11:25:50'),
 (128, 10, 21, 'add', '2026-02-25 11:25:50', '2026-02-25 11:25:50'),
-(129, 10, 20, NULL, '2026-02-25 11:25:50', '2026-02-25 11:25:50');
+(129, 10, 20, NULL, '2026-02-25 11:25:50', '2026-02-25 11:25:50'),
+(130, 1, 68, NULL, '2026-07-31 16:39:31', '2026-07-31 16:39:31'),
+(131, 3, 68, NULL, '2026-07-31 16:39:31', '2026-07-31 16:39:31'),
+(132, 9, 68, NULL, '2026-07-31 16:39:31', '2026-07-31 16:39:31'),
+(133, 10, 68, NULL, '2026-07-31 16:39:31', '2026-07-31 16:39:31'),
+(134, 17, 68, NULL, '2026-07-31 16:39:31', '2026-07-31 16:39:31'),
+(135, 18, 68, NULL, '2026-07-31 16:39:31', '2026-07-31 16:39:31');
 
 --
 -- Indexes for dumped tables
@@ -2386,6 +2581,13 @@ ALTER TABLE `pages`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `page_sections`
+--
+ALTER TABLE `page_sections`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `page_sections_page_id_foreign` (`page_id`);
+
+--
 -- Indexes for table `password_reset_tokens`
 --
 ALTER TABLE `password_reset_tokens`
@@ -2448,6 +2650,14 @@ ALTER TABLE `product_type_options`
 ALTER TABLE `quotation_items`
   ADD PRIMARY KEY (`id`),
   ADD KEY `quotation_items_quotation_id_foreign` (`quotation_id`);
+
+--
+-- Indexes for table `ramadan_packages`
+--
+ALTER TABLE `ramadan_packages`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `ramadan_packages_tour_type_id_foreign` (`tour_type_id`),
+  ADD KEY `ramadan_packages_created_by_foreign` (`created_by`);
 
 --
 -- Indexes for table `red_tags`
@@ -2529,6 +2739,22 @@ ALTER TABLE `tour_review`
 ALTER TABLE `tour_types`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `tour_types_friendly_url_unique` (`friendly_url`);
+
+--
+-- Indexes for table `umrah_bus_schedules`
+--
+ALTER TABLE `umrah_bus_schedules`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `umrah_bus_schedules_tour_type_id_foreign` (`tour_type_id`),
+  ADD KEY `umrah_bus_schedules_created_by_foreign` (`created_by`);
+
+--
+-- Indexes for table `umrah_packages`
+--
+ALTER TABLE `umrah_packages`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `umrah_packages_tour_type_id_foreign` (`tour_type_id`),
+  ADD KEY `umrah_packages_created_by_foreign` (`created_by`);
 
 --
 -- Indexes for table `users`
@@ -2679,19 +2905,25 @@ ALTER TABLE `maintenance_modes`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
 
 --
 -- AUTO_INCREMENT for table `modules`
 --
 ALTER TABLE `modules`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT for table `pages`
 --
 ALTER TABLE `pages`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+
+--
+-- AUTO_INCREMENT for table `page_sections`
+--
+ALTER TABLE `page_sections`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `popular_searches`
@@ -2740,6 +2972,12 @@ ALTER TABLE `product_type_options`
 --
 ALTER TABLE `quotation_items`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `ramadan_packages`
+--
+ALTER TABLE `ramadan_packages`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `red_tags`
@@ -2808,6 +3046,18 @@ ALTER TABLE `tour_types`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
+-- AUTO_INCREMENT for table `umrah_bus_schedules`
+--
+ALTER TABLE `umrah_bus_schedules`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `umrah_packages`
+--
+ALTER TABLE `umrah_packages`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
@@ -2823,7 +3073,7 @@ ALTER TABLE `user_types`
 -- AUTO_INCREMENT for table `user_type_modules_rel`
 --
 ALTER TABLE `user_type_modules_rel`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=130;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=136;
 
 --
 -- Constraints for dumped tables
@@ -2868,6 +3118,12 @@ ALTER TABLE `invoice_items`
   ADD CONSTRAINT `invoice_items_invoice_id_foreign` FOREIGN KEY (`invoice_id`) REFERENCES `customer_invoices` (`id`) ON DELETE CASCADE;
 
 --
+-- Constraints for table `page_sections`
+--
+ALTER TABLE `page_sections`
+  ADD CONSTRAINT `page_sections_page_id_foreign` FOREIGN KEY (`page_id`) REFERENCES `pages` (`id`) ON DELETE CASCADE;
+
+--
 -- Constraints for table `popular_searches`
 --
 ALTER TABLE `popular_searches`
@@ -2904,6 +3160,13 @@ ALTER TABLE `quotation_items`
   ADD CONSTRAINT `quotation_items_quotation_id_foreign` FOREIGN KEY (`quotation_id`) REFERENCES `customer_quotations` (`id`) ON DELETE CASCADE;
 
 --
+-- Constraints for table `ramadan_packages`
+--
+ALTER TABLE `ramadan_packages`
+  ADD CONSTRAINT `ramadan_packages_created_by_foreign` FOREIGN KEY (`created_by`) REFERENCES `users` (`id`) ON DELETE SET NULL,
+  ADD CONSTRAINT `ramadan_packages_tour_type_id_foreign` FOREIGN KEY (`tour_type_id`) REFERENCES `tour_types` (`id`) ON DELETE SET NULL;
+
+--
 -- Constraints for table `tour_faq`
 --
 ALTER TABLE `tour_faq`
@@ -2916,6 +3179,20 @@ ALTER TABLE `tour_faq`
 ALTER TABLE `tour_gallery`
   ADD CONSTRAINT `tour_gallery_gallery_id_foreign` FOREIGN KEY (`gallery_id`) REFERENCES `galleries` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `tour_gallery_tour_id_foreign` FOREIGN KEY (`tour_id`) REFERENCES `tours` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `umrah_bus_schedules`
+--
+ALTER TABLE `umrah_bus_schedules`
+  ADD CONSTRAINT `umrah_bus_schedules_created_by_foreign` FOREIGN KEY (`created_by`) REFERENCES `users` (`id`) ON DELETE SET NULL,
+  ADD CONSTRAINT `umrah_bus_schedules_tour_type_id_foreign` FOREIGN KEY (`tour_type_id`) REFERENCES `tour_types` (`id`) ON DELETE SET NULL;
+
+--
+-- Constraints for table `umrah_packages`
+--
+ALTER TABLE `umrah_packages`
+  ADD CONSTRAINT `umrah_packages_created_by_foreign` FOREIGN KEY (`created_by`) REFERENCES `users` (`id`) ON DELETE SET NULL,
+  ADD CONSTRAINT `umrah_packages_tour_type_id_foreign` FOREIGN KEY (`tour_type_id`) REFERENCES `tour_types` (`id`) ON DELETE SET NULL;
 
 --
 -- Constraints for table `user_type_modules_rel`
