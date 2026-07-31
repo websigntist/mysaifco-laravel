@@ -504,7 +504,7 @@
 
         function updateSectionNumbers() {
             $('#page-sections-repeater [data-repeater-item]').each(function (index) {
-                $(this).find('.section-number').text(index + 1);
+                $(this).find('.section-number').text(index);
                 var headingVal = $(this).find('input[name*="section_heading"]').val();
                 if (headingVal && headingVal.trim().length > 0) {
                     var safeText = $('<div>').text(headingVal.trim()).html();

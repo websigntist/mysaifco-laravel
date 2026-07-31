@@ -58,7 +58,7 @@
                 rounded-md shadow-xl border-y-3 border-mst mt-1 md:absolute md:top-full md:left-0 md:z-50 text-mst-gray">
             <ul class="flex flex-col gap-1 text-sm font-medium space-y-2 px-2 pt-3 pb-4 capitalize">
                 <li>
-                    <a href="{{route('page.default','multiple-entry')}}" class="block px-3 hover:text-mst transition duration-200">Saudi Arabia Multi Entry Visa </a>
+                    <a href="{{route('page.default','umrah')}}" class="block px-3 hover:text-mst transition duration-200">umrah</a>
                 </li>
                 <li>
                     <a href="{{route('page.default','umrah-by-bus')}}" class="block px-3 hover:text-mst transition duration-200">umrah by bus</a>
@@ -78,6 +78,9 @@
                 <li>
                     <a href="{{route('page.default','#')}}" class="block px-3 hover:text-mst transition duration-200">umrah packages abu dhabi</a>
                 </li>--}}
+                <li>
+                    <a href="{{route('page.default','multiple-entry')}}" class="block px-3 hover:text-mst transition duration-200">Saudi Arabia Multi Entry Visa </a>
+                </li>
                 <li>
                     <a href="{{route('page.default','umrah-vaccination')}}" class="block px-3 hover:text-mst transition duration-200">umrah vaccination</a>
                 </li>

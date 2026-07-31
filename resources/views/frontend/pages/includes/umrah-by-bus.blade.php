@@ -1,5 +1,5 @@
 {{-- umrah by bus --}}
-<section class="flex justify-between items-center py-12">
+<section class="flex justify-between items-center pb-12 -mt-10">
     <div class="container">
         <div class="grid grid-cols-1 md:grid-cols-[2fr_1fr] items-center gap-8">
             <div>
@@ -231,30 +231,20 @@
                     </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-200 text-md text-mst-gray font-semibold">
-                    <tr>
-                        <td class="py-5 px-6 border-r border-gray-100">05 March 2025</td>
-                        <td class="py-5 px-6 border-r border-gray-100">2200/-</td>
-                        <td class="py-5 px-6 border-r border-gray-100">2400/-</td>
-                        <td class="py-5 px-6">2750/-</td>
-                    </tr>
-                    <tr>
-                        <td class="py-5 px-6 border-r border-gray-100">12 March 2025</td>
-                        <td class="py-5 px-6 border-r border-gray-100">2200/-</td>
-                        <td class="py-5 px-6 border-r border-gray-100 ">2400/-</td>
-                        <td class="py-5 px-6">2750/-</td>
-                    </tr>
-                    <tr>
-                        <td class="py-5 px-6 border-r border-gray-100">19 March 2025</td>
-                        <td class="py-5 px-6 border-r border-gray-100">2600/-</td>
-                        <td class="py-5 px-6 border-r border-gray-100">2400/-</td>
-                        <td class="py-5 px-6">3100/-</td>
-                    </tr>
-                    <tr>
-                        <td class="py-5 px-6 border-r border-gray-100">26 March 2025</td>
-                        <td class="py-5 px-6 border-r border-gray-100">3200/-</td>
-                        <td class="py-5 px-6 border-r border-gray-100">2400/-</td>
-                        <td class="py-5 px-6">4000/-</td>
-                    </tr>
+                    @php
+                        $dbSchedules = \App\Models\backend\UmrahBusSchedule::where('status', 'Active')
+                            ->orderBy('ordering', 'asc')
+                            ->orderBy('id', 'asc')
+                            ->get();
+                    @endphp
+                    @foreach($dbSchedules as $sched)
+                        <tr>
+                            <td class="py-5 px-6 border-r border-gray-100">{{ $sched->departure_date }}</td>
+                            <td class="py-5 px-6 border-r border-gray-100">{{ $sched->sharing_4_5_beds }}</td>
+                            <td class="py-5 px-6 border-r border-gray-100">{{ $sched->sharing_3_beds }}</td>
+                            <td class="py-5 px-6">{{ $sched->sharing_2_beds }}</td>
+                        </tr>
+                    @endforeach
                     </tbody>
                 </table>
             </div>
@@ -318,186 +308,56 @@
                     </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-300 font-body text-md sm:text-mst-gray">
-                    <!-- Row 1: July 2026 -->
-                    <tr>
-                        <!-- Column 1: Month -->
-                        <td class="py-6 px-4 border-r border-gray-300 align-middle">
-                            <div class="flex flex-col items-center justify-center text-center w-full">
-                                <img src="{{ asset('assets/images/icons/calender-circle.svg') }}" alt="Calendar" class="w-12 h-12 mb-2">
-                                <span class="font-semibold">July 2026</span>
-                            </div>
-                        </td>
-                        <!-- Column 2: Departure Day -->
-                        <td class="py-6 px-4 border-r border-gray-300 align-middle font-semibold">
-                            Wednesday
-                        </td>
-                        <!-- Column 3: Departure Date -->
-                        <td class="py-6 px-4 border-r border-gray-300 align-middle text-left">
-                            <div class="space-y-2 mx-auto">
-                                @foreach([['1', '09/07/2025'], ['2', '16/07/2025'], ['3', '23/07/2025'], ['4', '30/07/2025']] as $date)
-                                    <div class="flex items-center gap-3 bg-gray-50 rounded-xl px-3 py-2">
-                                            <span class="w-6 h-6 flex items-center justify-center border border-gray-300
-                                            rounded-md text-xs font-semibold">{{ $date[0] }}</span>
-                                        <span class="font-medium text-sm mx-auto">{{ $date[1] }}</span>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </td>
-                        <!-- Column 4: Arrival Day -->
-                        <td class="py-6 px-4 border-r border-gray-300 align-middle">
-                            <div class="flex flex-col items-center justify-center text-center">
-                                <img src="{{ asset('assets/images/icons/calender-circle.svg') }}" alt="Calendar" class="w-12 h-12 mb-2">
-                                <span class="font-semibold">Saturday</span>
-                            </div>
-                        </td>
-                        <!-- Column 5: Arrival Day (Dates) -->
-                        <td class="py-6 px-4 align-middle text-left">
-                            <div class="space-y-2 mx-auto">
-                                @foreach([['1', '09/07/2025'], ['2', '16/07/2025'], ['3', '23/07/2025'], ['4', '30/07/2025']] as $date)
-                                    <div class="flex items-center gap-3 bg-gray-50 rounded-xl px-3 py-2">
-                                                                                    <span class="w-6 h-6 flex items-center justify-center border border-gray-300
-                                                                                    rounded-md text-xs font-semibold">{{ $date[0] }}</span>
-                                        <span class="font-medium text-sm mx-auto">{{ $date[1] }}</span>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </td>
-                    </tr>
-                    <!-- Row 2: Aug 2026 -->
-                    <tr>
-                        <!-- Column 1: Month -->
-                        <td class="py-6 px-4 border-r border-gray-300 align-middle">
-                            <div class="flex flex-col items-center justify-center text-center">
-                                <img src="{{ asset('assets/images/icons/calender-circle.svg') }}" alt="Calendar" class="w-12 h-12 mb-2">
-                                <span class="font-semibold">Aug 2026</span>
-                            </div>
-                        </td>
-                        <!-- Column 2: Departure Day -->
-                        <td class="py-6 px-4 border-r border-gray-300 align-middle font-semibold">
-                            Wednesday
-                        </td>
-                        <!-- Column 3: Departure Date -->
-                        <td class="py-6 px-4 border-r border-gray-300 align-middle text-left">
-                            <div class="space-y-2 mx-auto">
-                                @foreach([['1', '09/07/2025'], ['2', '16/07/2025'], ['3', '23/07/2025'], ['4', '30/07/2025']] as $date)
-                                    <div class="flex items-center gap-3 bg-gray-50 rounded-xl px-3 py-2">
-                                            <span class="w-6 h-6 flex items-center justify-center border border-gray-300
-                                            rounded-md text-xs font-semibold">{{ $date[0] }}</span>
-                                        <span class="font-medium text-sm mx-auto">{{ $date[1] }}</span>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </td>
-                        <!-- Column 4: Arrival Day -->
-                        <td class="py-6 px-4 border-r border-gray-300 align-middle">
-                            <div class="flex flex-col items-center justify-center text-center">
-                                <img src="{{ asset('assets/images/icons/calender-circle.svg') }}" alt="Calendar" class="w-12 h-12 mb-2">
-                                <span class="font-semibold">Saturday</span>
-                            </div>
-                        </td>
-                        <!-- Column 5: Arrival Day (Dates) -->
-                        <td class="py-6 px-4 align-middle text-left">
-                            <div class="space-y-2 mx-auto">
-                                @foreach([['1', '09/07/2025'], ['2', '16/07/2025'], ['3', '23/07/2025'], ['4', '30/07/2025']] as $date)
-                                    <div class="flex items-center gap-3 bg-gray-50 rounded-xl px-3 py-2">
-                                                                                    <span class="w-6 h-6 flex items-center justify-center border border-gray-300
-                                                                                    rounded-md text-xs font-semibold">{{ $date[0] }}</span>
-                                        <span class="font-medium text-sm mx-auto">{{ $date[1] }}</span>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </td>
-                    </tr>
-                    <!-- Row 3: Sep 2026 -->
-                    <tr>
-                        <!-- Column 1: Month -->
-                        <td class="py-6 px-4 border-r border-gray-300 align-middle">
-                            <div class="flex flex-col items-center justify-center text-center">
-                                <img src="{{ asset('assets/images/icons/calender-circle.svg') }}" alt="Calendar" class="w-12 h-12 mb-2">
-                                <span class="font-semibold">Sep 2026</span>
-                            </div>
-                        </td>
-                        <!-- Column 2: Departure Day -->
-                        <td class="py-6 px-4 border-r border-gray-300 align-middle font-semibold">
-                            Wednesday
-                        </td>
-                        <!-- Column 3: Departure Date -->
-                        <td class="py-6 px-4 border-r border-gray-300 align-middle text-left">
-                            <div class="space-y-2 mx-auto">
-                                @foreach([['1', '06/08/2025'], ['2', '13/08/2025'], ['3', '20/08/2025'], ['4', '27/08/2025']] as $date)
-                                    <div class="flex items-center gap-3 bg-gray-50 rounded-xl px-3 py-2">
-                                                                                    <span class="w-6 h-6 flex items-center justify-center border border-gray-300
-                                                                                    rounded-md text-xs font-semibold">{{ $date[0] }}</span>
-                                        <span class="font-medium text-sm mx-auto">{{ $date[1] }}</span>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </td>
-                        <!-- Column 4: Arrival Day -->
-                        <td class="py-6 px-4 border-r border-gray-300 align-middle">
-                            <div class="flex flex-col items-center justify-center text-center">
-                                <img src="{{ asset('assets/images/icons/calender-circle.svg') }}" alt="Calendar" class="w-12 h-12 mb-2">
-                                <span class="font-semibold">Saturday</span>
-                            </div>
-                        </td>
-                        <!-- Column 5: Arrival Day (Dates) -->
-                        <td class="py-6 px-4 align-middle text-left">
-                            <div class="space-y-2 mx-auto">
-                                @foreach([['1', '06/08/2025'], ['2', '13/08/2025'], ['3', '20/08/2025'], ['4', '27/08/2025']] as $date)
-                                    <div class="flex items-center gap-3 bg-gray-50 rounded-xl px-3 py-2">
-                                                                                    <span class="w-6 h-6 flex items-center justify-center border border-gray-300
-                                                                                    rounded-md text-xs font-semibold">{{ $date[0] }}</span>
-                                        <span class="font-medium text-sm mx-auto">{{ $date[1] }}</span>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </td>
-                    </tr>
-                    <!-- Row 4: Oct 2026 -->
-                    <tr>
-                        <!-- Column 1: Month -->
-                        <td class="py-6 px-4 border-r border-gray-300 align-middle">
-                            <div class="flex flex-col items-center justify-center text-center">
-                                <img src="{{ asset('assets/images/icons/calender-circle.svg') }}" alt="Calendar" class="w-12 h-12 mb-2">
-                                <span class="font-semibold">Oct 2026</span>
-                            </div>
-                        </td>
-                        <!-- Column 2: Departure Day -->
-                        <td class="py-6 px-4 border-r border-gray-300 align-middle font-semibold">
-                            Wednesday
-                        </td>
-                        <!-- Column 3: Departure Date -->
-                        <td class="py-6 px-4 border-r border-gray-300 align-middle text-left">
-                            <div class="space-y-2 mx-auto">
-                                @foreach([['1', '06/08/2025'], ['2', '13/08/2025'], ['3', '20/08/2025'], ['4', '27/08/2025']] as $date)
-                                    <div class="flex items-center gap-3 bg-gray-50 rounded-xl px-3 py-2">
-                                                                                    <span class="w-6 h-6 flex items-center justify-center border border-gray-300
-                                                                                    rounded-md text-xs font-semibold">{{ $date[0] }}</span>
-                                        <span class="font-medium text-sm mx-auto">{{ $date[1] }}</span>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </td>
-                        <!-- Column 4: Arrival Day -->
-                        <td class="py-6 px-4 border-r border-gray-300 align-middle">
-                            <div class="flex flex-col items-center justify-center text-center">
-                                <img src="{{ asset('assets/images/icons/calender-circle.svg') }}" alt="Calendar" class="w-12 h-12 mb-2">
-                                <span class="font-semibold">Saturday</span>
-                            </div>
-                        </td>
-                        <!-- Column 5: Arrival Day (Dates) -->
-                        <td class="py-6 px-4 align-middle text-left">
-                            <div class="space-y-2 mx-auto">
-                                @foreach([['1', '06/08/2025'], ['2', '13/08/2025'], ['3', '20/08/2025'], ['4', '27/08/2025']] as $date)
-                                    <div class="flex items-center gap-3 bg-gray-50 rounded-xl px-3 py-2">
-                                                                                    <span class="w-6 h-6 flex items-center justify-center border border-gray-300
-                                                                                    rounded-md text-xs font-semibold">{{ $date[0] }}</span>
-                                        <span class="font-medium text-sm mx-auto">{{ $date[1] }}</span>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </td>
-                    </tr>
+                    @php
+                        $dbRamadanPkgs = \App\Models\backend\RamadanPackage::where('status', 'Active')
+                            ->orderBy('ordering', 'asc')
+                            ->orderBy('id', 'asc')
+                            ->get();
+                    @endphp
+                    @foreach($dbRamadanPkgs as $item)
+                                                <tr>
+                                                    <!-- Column 1: Month -->
+                                                    <td class="py-6 px-4 border-r border-gray-300 align-middle">
+                                                        <div class="flex flex-col items-center justify-center text-center w-full">
+                                                            <img src="{{ asset('assets/images/icons/calender-circle.svg') }}" alt="Calendar" class="w-12 h-12 mb-2">
+                                                            <span class="font-semibold">{{ $item->month }}</span>
+                                                        </div>
+                                                    </td>
+                                                    <!-- Column 2: Departure Day -->
+                                                    <td class="py-6 px-4 border-r border-gray-300 align-middle font-semibold">
+                                                        {{ $item->departure_day ?? 'Wednesday' }}
+                                                    </td>
+                                                    <!-- Column 3: Departure Date -->
+                                                    <td class="py-6 px-4 border-r border-gray-300 align-middle text-left">
+                                                        <div class="space-y-2 mx-auto">
+                                                            @foreach($item->departure_dates_list as $idx => $date)
+                                                                <div class="flex items-center gap-3 bg-gray-50 rounded-xl px-3 py-2">
+                                                                    <span class="w-6 h-6 flex items-center justify-center border border-gray-300 rounded-md text-xs font-semibold">{{ $idx + 1 }}</span>
+                                                                    <span class="font-medium text-sm mx-auto">{{ $date }}</span>
+                                                                </div>
+                                                            @endforeach
+                                                        </div>
+                                                    </td>
+                                                    <!-- Column 4: Arrival Day -->
+                                                    <td class="py-6 px-4 border-r border-gray-300 align-middle">
+                                                        <div class="flex flex-col items-center justify-center text-center">
+                                                            <img src="{{ asset('assets/images/icons/calender-circle.svg') }}" alt="Calendar" class="w-12 h-12 mb-2">
+                                                            <span class="font-semibold">{{ $item->arrival_day ?? 'Saturday' }}</span>
+                                                        </div>
+                                                    </td>
+                                                    <!-- Column 5: Arrival Dates -->
+                                                    <td class="py-6 px-4 align-middle text-left">
+                                                        <div class="space-y-2 mx-auto">
+                                                            @foreach($item->arrival_dates_list as $idx => $date)
+                                                                <div class="flex items-center gap-3 bg-gray-50 rounded-xl px-3 py-2">
+                                                                    <span class="w-6 h-6 flex items-center justify-center border border-gray-300 rounded-md text-xs font-semibold">{{ $idx + 1 }}</span>
+                                                                    <span class="font-medium text-sm mx-auto">{{ $date }}</span>
+                                                                </div>
+                                                            @endforeach
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
                     </tbody>
                 </table>
             </div>
@@ -666,26 +526,5 @@
     </div>
 </section>
 @include('frontend.components.tour_faqs')
+@include('frontend.components.footerContactBar');
 @include('frontend.components.explore_dubai')
-{{-- how to perform --}}
-<section class="flex justify-between items-center py-8 bg-gray-50 -mb-8">
-    <div class="container">
-        <div class="text-center">
-            <h1 class="">
-                <span>Need more </span><span class="text-mst">Information?</span>
-            </h1>
-            <p class="text-[16px] my-6">Click below to open inquiry form and our team will get back to you within 24
-                                        hours.</p>
-        </div>
-        <div class="flex items-center justify-end">
-            <a href="" class="flex items-center mx-auto justify-center w-fit text-white text-lg px-7 pt-3 pb-3
-            rounded-full
-                                    bg-gradient-to-r from-[#BA9B31] to-[#74611E]
-                                     hover:bg-gradient-to-r hover:from-[#74611E] hover:to-[#BA9B31]
-                                     transition duration-300 font-heading italic"> Send Inquiry
-                <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}"
-                     class="w-5 ms-2"
-                     alt="arrow"> </a>
-        </div>
-    </div>
-</section>

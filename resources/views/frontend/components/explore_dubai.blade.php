@@ -3,7 +3,7 @@
     $popularSearch = $popularSearch ?? null;
     $popularSearchItems = $popularSearchItems ?? [];
 @endphp
-<section class="py-14">
+<section>
 
     @if($explore && (filled($explore->title) || filled($explore->description)))
         <div class="container mx-auto">
@@ -19,8 +19,8 @@
                 </h2>
             @endif
             @if(filled($explore->description))
-                <div class="font-body text-center md:text-left text-sm bg-[#FAF7F2] mt-6 p-5 rounded-lg border border-[#BA9B31]/40
-                -overflow-y-scroll ddscroll">
+                <div class="font-body text-center md:text-left !text-sm bg-[#FAF7F2] mt-6 p-5 rounded-lg border
+                border-[#BA9B31]/40 leading-relaxed overflow-y-scroll ddscroll">
                     {!! $explore->description !!}
                 </div>
             @endif

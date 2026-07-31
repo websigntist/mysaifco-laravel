@@ -16,10 +16,10 @@
         <span>{{ _label('description') }}</span>
     </label>
     <textarea class="form-control"
-              id="editor"
+              id="-editor"
               name="description"
               placeholder="Write {{ _label('description') }}..."
-              rows="5">{{ old('description', $data->description ?? '') }}</textarea>
+              rows="10">{{ old('description', $data->description ?? '') }}</textarea>
 </div>
 <div class="col-md-4">
     <label class="form-label text-capitalize" for="status">

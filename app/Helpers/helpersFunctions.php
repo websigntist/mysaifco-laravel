@@ -102,7 +102,8 @@ if (!function_exists('getEnumValues')) {
      */
     function getEnumValues(string $table, string $column): array
     {
-        $result = DB::select("SHOW COLUMNS FROM {$table} WHERE Field = '{$column}'");
+        $table = str_replace('-', '_', $table);
+        $result = DB::select("SHOW COLUMNS FROM `{$table}` WHERE Field = '{$column}'");
 
         if (empty($result)) {
             return [];
@@ -113,6 +114,22 @@ if (!function_exists('getEnumValues')) {
         preg_match("/^enum\('(.*)'\)$/", $type, $matches);
 
         return isset($matches[1]) ? explode("','", $matches[1]) : [];
+    }
+}
+
+if (!function_exists('add_user_activity')) {
+    function add_user_activity($activity = null)
+    {
+        if ($activity) {
+            \Illuminate\Support\Facades\Log::info('User Activity: ' . $activity);
+        }
+    }
+}
+
+if (!function_exists('notify_toastr')) {
+    function notify_toastr($type = 'success', $message = '', $title = '')
+    {
+        session()->flash($type, $message);
     }
 }
 
@@ -1619,3 +1636,117 @@ if (!function_exists('vite_safe')) {
     }
 }
 
+if (!function_exists('format_two_color_heading')) {
+    /**
+     * Formats a heading string into two font colors with <span> tags.
+     * Uses explicit '|' separator if present, otherwise splits automatically.
+     *
+     * @param string|null $title
+     * @param string $spanClass
+     * @return string
+     */
+    function format_two_color_heading($title = '', $spanClass = 'text-mst')
+    {
+        if (empty($title)) {
+            return '';
+        }
+
+        $title = trim($title);
+
+        if (str_contains($title, '|')) {
+            $parts = explode('|', $title, 2);
+            return '<span>' . e(trim($parts[0])) . ' </span><span class="' . e($spanClass) . '">' . e(trim($parts[1])) . '</span>';
+        }
+
+        $words = preg_split('/\s+/', $title);
+        $count = count($words);
+
+        if ($count <= 1) {
+            return '<span>' . e($title) . '</span>';
+        }
+
+        $spanN = $count >= 3 ? 2 : 1;
+        $mainText = implode(' ', array_slice($words, 0, -$spanN));
+        $spanText = implode(' ', array_slice($words, -$spanN));
+
+        return '<span>' . e($mainText) . ' </span><span class="' . e($spanClass) . '">' . e($spanText) . '</span>';
+    }
+}
+
+if (!function_exists('page_body_content')) {
+    /**
+     * Fetches a CMS Page and its ordered sections by ID, slug, friendly URL, or tour_type.
+     *
+     * @param string|int|null $identifier
+     * @return \App\Models\backend\Page|null
+     */
+    function page_body_content($identifier = null)
+    {
+        if (empty($identifier)) {
+            return null;
+        }
+
+        $query = \App\Models\backend\Page::with(['sections' => function ($q) {
+            $q->orderBy('ordering', 'asc');
+        }]);
+
+        if (is_numeric($identifier)) {
+            $page = $query->where(function ($q) use ($identifier) {
+                $q->where('tour_type_id', $identifier)
+                  ->orWhere('id', $identifier);
+            })->first();
+        } else {
+            $slug = strtolower(trim($identifier));
+            $page = $query->where(function ($q) use ($slug) {
+                $q->whereRaw('LOWER(friendly_url) = ?', [$slug])
+                  ->orWhereRaw('LOWER(menu_title) = ?', [$slug])
+                  ->orWhereRaw('LOWER(page_title) = ?', [$slug])
+                  ->orWhereHas('tourType', function ($tq) use ($slug) {
+                      $tq->whereRaw('LOWER(title) = ?', [$slug])
+                         ->orWhereRaw('LOWER(friendly_url) = ?', [$slug]);
+                  });
+            })->first();
+        }
+
+        return $page;
+    }
+}
+
+
+if (!function_exists('umrah_whatsapp_url')) {
+    /**
+     * Generate WhatsApp URL.
+     *
+     * @param string|null $message
+     * @param string|null $number
+     * @return string
+     */
+    function umrah_whatsapp_url($message = 'Hello, how can I help you?', $number = null)
+    {
+        $number = $number ?? get_setting('umrah_inquiry_whatsapp');
+
+        // Remove all non-numeric characters
+        $number = preg_replace('/\D/', '', $number);
+
+        return 'https://wa.me/' . $number . '?text=' . urlencode($message);
+    }
+}
+
+if (!function_exists('tour_whatsapp_url')) {
+    /**
+     * Generate WhatsApp URL.
+     *
+     * @param string|null $message
+     * @param string|null $number
+     * @return string
+     */
+    function tour_whatsapp_url($message = 'Hello, how can I help you?', $number = null)
+    {
+        $number = $number ?? get_setting('tour_inquiry_whatsapp');
+
+        // Remove all non-numeric characters
+        $number = preg_replace('/\D/', '', $number);
+
+        return 'https://wa.me/' . $number . '?text=' . urlencode($message);
+    }
+}

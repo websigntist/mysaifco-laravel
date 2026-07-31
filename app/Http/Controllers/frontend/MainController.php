@@ -128,12 +128,21 @@ class MainController
     }
 
     /**
-     * Resolve which tour_type_id drives Explore / Popular Searches for a CMS page slug.
+     * Resolve which tour_type_id drives Explore / Popular Searches / FAQs for a CMS page slug.
      */
     protected function exploreTourTypeIdForPage(string $slug, Page $page): ?int
     {
+        if (!empty($page->tour_type_id)) {
+            return (int)$page->tour_type_id;
+        }
+
         if ($this->isAllCategoriesPageSlug($slug)) {
             return $this->allCategoriesTourTypeId();
+        }
+
+        $tourType = TourType::findActiveBySlug($slug);
+        if ($tourType) {
+            return (int)$tourType->id;
         }
 
         if (cms_page_description_has_include($page->description)) {
@@ -143,10 +152,10 @@ class MainController
                 return $this->allCategoriesTourTypeId();
             }
 
-            if ($includeFile === 'all-tours-packages') {
-                $tourType = TourType::findActiveBySlug($slug);
+            if ($includeFile === 'all-tours-packages' || $includeFile === 'umrah') {
+                $tt = TourType::findActiveBySlug($slug) ?? TourType::query()->where('status', 'Active')->whereRaw('LOWER(title) LIKE ?', ['%umrah%'])->first();
 
-                return $tourType ? (int)$tourType->id : null;
+                return $tt ? (int)$tt->id : null;
             }
         }
 
@@ -348,7 +357,12 @@ class MainController
             throw new NotFoundHttpException();
         }
 
-        $viewData = array_merge(cms_page_view_data($page), $this->exploreAndPopularSearchViewData($this->exploreTourTypeIdForPage($slug, $page)));
+        $resolvedTourTypeId = $this->exploreTourTypeIdForPage($slug, $page);
+        $viewData = array_merge(
+            cms_page_view_data($page),
+            $this->exploreAndPopularSearchViewData($resolvedTourTypeId),
+            $resolvedTourTypeId ? $this->faqsForTourTypeViewData($resolvedTourTypeId) : []
+        );
 
         $description = (string)($page->description ?? '');
         $includeFile = cms_page_first_include_file($description);

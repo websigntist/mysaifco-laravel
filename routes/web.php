@@ -555,6 +555,66 @@ Route::prefix('admin')->group(function () {
         Route::post('/faqs/{id}/status', [backend\FaqController::class, 'updateStatusAjax'])->middleware('check.permission:faqs,status')->name('faqs.status');
         // faqs ROUTES END
 
+        // umrah-packages ROUTES START
+        Route::get('/umrah-packages', [backend\UmrahPackageController::class, 'index'])->name('umrah-packages');
+        Route::get('/umrah-packages/create', [backend\UmrahPackageController::class, 'create'])->middleware('check.permission:umrah-packages,add')->name('umrah-packages.create');
+        Route::get('/umrah-packages/duplicate/{id}', [backend\UmrahPackageController::class, 'duplicate'])->middleware('check.permission:umrah-packages,duplicate')->name('umrah-packages.duplicate');
+        Route::get('/umrah-packages/edit/{id}', [backend\UmrahPackageController::class, 'editForm'])->middleware('check.permission:umrah-packages,edit')->name('umrah-packages.edit');
+
+        Route::put('/umrah-packages/update/{id}', [backend\UmrahPackageController::class, 'update'])->middleware('check.permission:umrah-packages,update')->name('umrah-packages.update');
+        Route::post('/umrah-packages/store', [backend\UmrahPackageController::class, 'store'])->middleware('check.permission:umrah-packages,store')->name('umrah-packages.store');
+
+        Route::post('/umrah-packages/delete-all', [backend\UmrahPackageController::class, 'deleteAll'])->middleware('check.permission:umrah-packages,delete-all')->name('umrah-packages.delete-all');
+        Route::get('/umrah-packages/trashed', [backend\UmrahPackageController::class, 'trashed'])->middleware('check.permission:umrah-packages,trashed')->name('umrah-packages.trashed');
+        Route::get('/umrah-packages/restore/{id}', [backend\UmrahPackageController::class, 'restore'])->middleware('check.permission:umrah-packages,restore')->name('umrah-packages.restore');
+        Route::get('/umrah-packages/forcedelete/{id}', [backend\UmrahPackageController::class, 'forceDelete'])->middleware('check.permission:umrah-packages,forcedelete')->name('umrah-packages.forcedelete');
+
+        /* Ajax */
+        Route::get('/umrah-packages/modal-view/{id}', [backend\UmrahPackageController::class, 'modalView'])->middleware('check.permission:umrah-packages,modal-view')->name('umrah-packages.modal-view');
+        Route::delete('/umrah-packages/delete/{id}', [backend\UmrahPackageController::class, 'deleteAjax'])->middleware('check.permission:umrah-packages,status')->name('umrah-packages.delete');
+        Route::post('/umrah-packages/{id}/status', [backend\UmrahPackageController::class, 'updateStatusAjax'])->middleware('check.permission:umrah-packages,status')->name('umrah-packages.status');
+        // umrah-packages ROUTES END
+
+        // umrah-bus-schedules ROUTES START
+        Route::get('/umrah-bus-schedules', [backend\UmrahBusScheduleController::class, 'index'])->name('umrah-bus-schedules');
+        Route::get('/umrah-bus-schedules/create', [backend\UmrahBusScheduleController::class, 'create'])->middleware('check.permission:umrah-bus-schedules,add')->name('umrah-bus-schedules.create');
+        Route::get('/umrah-bus-schedules/duplicate/{id}', [backend\UmrahBusScheduleController::class, 'duplicate'])->middleware('check.permission:umrah-bus-schedules,duplicate')->name('umrah-bus-schedules.duplicate');
+        Route::get('/umrah-bus-schedules/edit/{id}', [backend\UmrahBusScheduleController::class, 'editForm'])->middleware('check.permission:umrah-bus-schedules,edit')->name('umrah-bus-schedules.edit');
+
+        Route::put('/umrah-bus-schedules/update/{id}', [backend\UmrahBusScheduleController::class, 'update'])->middleware('check.permission:umrah-bus-schedules,update')->name('umrah-bus-schedules.update');
+        Route::post('/umrah-bus-schedules/store', [backend\UmrahBusScheduleController::class, 'store'])->middleware('check.permission:umrah-bus-schedules,store')->name('umrah-bus-schedules.store');
+
+        Route::post('/umrah-bus-schedules/delete-all', [backend\UmrahBusScheduleController::class, 'deleteAll'])->middleware('check.permission:umrah-bus-schedules,delete-all')->name('umrah-bus-schedules.delete-all');
+        Route::get('/umrah-bus-schedules/trashed', [backend\UmrahBusScheduleController::class, 'trashed'])->middleware('check.permission:umrah-bus-schedules,trashed')->name('umrah-bus-schedules.trashed');
+        Route::get('/umrah-bus-schedules/restore/{id}', [backend\UmrahBusScheduleController::class, 'restore'])->middleware('check.permission:umrah-bus-schedules,restore')->name('umrah-bus-schedules.restore');
+        Route::get('/umrah-bus-schedules/forcedelete/{id}', [backend\UmrahBusScheduleController::class, 'forceDelete'])->middleware('check.permission:umrah-bus-schedules,forcedelete')->name('umrah-bus-schedules.forcedelete');
+
+        /* Ajax */
+        Route::get('/umrah-bus-schedules/modal-view/{id}', [backend\UmrahBusScheduleController::class, 'modalView'])->middleware('check.permission:umrah-bus-schedules,modal-view')->name('umrah-bus-schedules.modal-view');
+        Route::delete('/umrah-bus-schedules/delete/{id}', [backend\UmrahBusScheduleController::class, 'deleteAjax'])->middleware('check.permission:umrah-bus-schedules,status')->name('umrah-bus-schedules.delete');
+        Route::post('/umrah-bus-schedules/{id}/status', [backend\UmrahBusScheduleController::class, 'updateStatusAjax'])->middleware('check.permission:umrah-bus-schedules,status')->name('umrah-bus-schedules.status');
+        // umrah-bus-schedules ROUTES END
+
+        // ramadan-packages ROUTES START
+        Route::get('/ramadan-packages', [backend\RamadanPackageController::class, 'index'])->name('ramadan-packages');
+        Route::get('/ramadan-packages/create', [backend\RamadanPackageController::class, 'create'])->middleware('check.permission:ramadan-packages,add')->name('ramadan-packages.create');
+        Route::get('/ramadan-packages/duplicate/{id}', [backend\RamadanPackageController::class, 'duplicate'])->middleware('check.permission:ramadan-packages,duplicate')->name('ramadan-packages.duplicate');
+        Route::get('/ramadan-packages/edit/{id}', [backend\RamadanPackageController::class, 'editForm'])->middleware('check.permission:ramadan-packages,edit')->name('ramadan-packages.edit');
+
+        Route::put('/ramadan-packages/update/{id}', [backend\RamadanPackageController::class, 'update'])->middleware('check.permission:ramadan-packages,update')->name('ramadan-packages.update');
+        Route::post('/ramadan-packages/store', [backend\RamadanPackageController::class, 'store'])->middleware('check.permission:ramadan-packages,store')->name('ramadan-packages.store');
+
+        Route::post('/ramadan-packages/delete-all', [backend\RamadanPackageController::class, 'deleteAll'])->middleware('check.permission:ramadan-packages,delete-all')->name('ramadan-packages.delete-all');
+        Route::get('/ramadan-packages/trashed', [backend\RamadanPackageController::class, 'trashed'])->middleware('check.permission:ramadan-packages,trashed')->name('ramadan-packages.trashed');
+        Route::get('/ramadan-packages/restore/{id}', [backend\RamadanPackageController::class, 'restore'])->middleware('check.permission:ramadan-packages,restore')->name('ramadan-packages.restore');
+        Route::get('/ramadan-packages/forcedelete/{id}', [backend\RamadanPackageController::class, 'forceDelete'])->middleware('check.permission:ramadan-packages,forcedelete')->name('ramadan-packages.forcedelete');
+
+        /* Ajax */
+        Route::get('/ramadan-packages/modal-view/{id}', [backend\RamadanPackageController::class, 'modalView'])->middleware('check.permission:ramadan-packages,modal-view')->name('ramadan-packages.modal-view');
+        Route::delete('/ramadan-packages/delete/{id}', [backend\RamadanPackageController::class, 'deleteAjax'])->middleware('check.permission:ramadan-packages,status')->name('ramadan-packages.delete');
+        Route::post('/ramadan-packages/{id}/status', [backend\RamadanPackageController::class, 'updateStatusAjax'])->middleware('check.permission:ramadan-packages,status')->name('ramadan-packages.status');
+        // ramadan-packages ROUTES END
+
         // attributes ROUTES START
         Route::get('/attributes', [backend\AttributeController::class, 'index'])->name('attributes');
         Route::get('/attributes/create', [backend\AttributeController::class, 'create'])->middleware('check.permission:attributes,add')->name('attributes.create');

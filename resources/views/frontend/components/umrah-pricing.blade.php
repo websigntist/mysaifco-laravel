@@ -1,37 +1,71 @@
 @php
-    $packages = [
-        [
-            'title' => 'Sharing 5 Beds',
-            'bg_color' => 'bg-[#038FA6]',
-            'price' => '1150',
-            'features' => ['Umrah Visa', 'Makkah Hotel', 'Madinah Hotel', 'Transportation', 'Border Fee'],
-            'popular' => false,
-        ],
-        [
-            'title' => 'Sharing 4 Beds',
-            'bg_color' => 'bg-[#118F37]',
-            'price' => '1150',
-            'features' => ['Umrah Visa', 'Makkah Hotel', 'Madinah Hotel', 'Transportation', 'Border Fee'],
-            'popular' => true,
-        ],
-        [
-            'title' => 'Sharing 3 Beds',
-            'bg_color' => 'bg-[#EE9B02]',
-            'price' => '1300',
-            'features' => ['Umrah Visa', 'Makkah Hotel', 'Madinah Hotel', 'Transportation', 'Border Fee'],
-            'popular' => false,
-        ],
-        [
-            'title' => 'Sharing 2 Beds',
-            'bg_color' => 'bg-[#EC0937]',
-            'price' => '1450',
-            'features' => ['Umrah Visa', 'Makkah Hotel', 'Madinah Hotel', 'Transportation', 'Border Fee'],
-            'popular' => false,
-        ],
-    ];
+    $dbPackages = \App\Models\backend\UmrahPackage::where('status', 'Active')
+        ->orderBy('ordering', 'asc')
+        ->orderBy('id', 'asc')
+        ->get();
 
-    $whatsapp_raw = get_setting('umrah_inquiry_whatsapp') ?? '+971 55 663 7710';
-    $whatsapp_clean = preg_replace('/[^0-9]/', '', $whatsapp_raw);
+    if ($dbPackages->count() > 0) {
+        $packages = $dbPackages->map(function ($pkg) {
+            return [
+                'title'        => $pkg->title,
+                'subtitle'     => $pkg->subtitle ?? 'Starting from',
+                'bg_color'     => $pkg->header_color ? $pkg->header_color : '#0096a6',
+                'price'        => $pkg->price,
+                'currency'     => $pkg->currency ?? 'AED',
+                'features'     => $pkg->features_list,
+                'badge'        => $pkg->badge,
+                'button_title' => $pkg->button_title ?? 'WhatsApp Now',
+                'button_url'   => $pkg->button_url ?? (function_exists('umrah_whatsapp_url') ? umrah_whatsapp_url() : '#'),
+            ];
+        });
+    } else {
+        $packages = [
+            [
+                'title'        => 'Sharing 5 Beds',
+                'subtitle'     => 'Starting from',
+                'bg_color'     => '#0096a6',
+                'price'        => '1150',
+                'currency'     => 'AED',
+                'features'     => ['Umrah Visa', 'Makkah Hotel', 'Madinah Hotel', 'Transportation', 'Border Fee'],
+                'badge'        => null,
+                'button_title' => 'WhatsApp Now',
+                'button_url'   => function_exists('umrah_whatsapp_url') ? umrah_whatsapp_url() : '#',
+            ],
+            [
+                'title'        => 'Sharing 4 Beds',
+                'subtitle'     => 'Starting from',
+                'bg_color'     => '#2e7d32',
+                'price'        => '1150',
+                'currency'     => 'AED',
+                'features'     => ['Umrah Visa', 'Makkah Hotel', 'Madinah Hotel', 'Transportation', 'Border Fee'],
+                'badge'        => 'MOST POPULAR',
+                'button_title' => 'WhatsApp Now',
+                'button_url'   => function_exists('umrah_whatsapp_url') ? umrah_whatsapp_url() : '#',
+            ],
+            [
+                'title'        => 'Sharing 3 Beds',
+                'subtitle'     => 'Starting from',
+                'bg_color'     => '#e69100',
+                'price'        => '1300',
+                'currency'     => 'AED',
+                'features'     => ['Umrah Visa', 'Makkah Hotel', 'Madinah Hotel', 'Transportation', 'Border Fee'],
+                'badge'        => null,
+                'button_title' => 'WhatsApp Now',
+                'button_url'   => function_exists('umrah_whatsapp_url') ? umrah_whatsapp_url() : '#',
+            ],
+            [
+                'title'        => 'Sharing 2 Beds',
+                'subtitle'     => 'Starting from',
+                'bg_color'     => '#d50032',
+                'price'        => '1450',
+                'currency'     => 'AED',
+                'features'     => ['Umrah Visa', 'Makkah Hotel', 'Madinah Hotel', 'Transportation', 'Border Fee'],
+                'badge'        => null,
+                'button_title' => 'WhatsApp Now',
+                'button_url'   => function_exists('umrah_whatsapp_url') ? umrah_whatsapp_url() : '#',
+            ],
+        ];
+    }
 @endphp
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 pt-4 pb-12">
@@ -40,23 +74,22 @@
         transition-all duration-300 ease-out overflow-hidden h-full">
 
             {{-- Popular ribbon on top right --}}
-            @if($package['popular'])
+            @if(!empty($package['badge']))
                 <div class="absolute top-0 right-0 w-28 h-28 overflow-hidden pointer-events-none z-10">
-                        <div class="absolute top-4 -right-12 w-40 bg-[#EE9B02] text-white text-xs font-semibold
+                    <div class="absolute top-4 -right-12 w-40 bg-[#EE9B02] text-white text-xs font-semibold
                     text-center py-1 rotate-45 uppercase tracking-wider font-heading">
-                        Most <br> Popular
+                        {!! $package['badge'] !!}
                     </div>
                 </div>
             @endif
 
             {{-- Card Header --}}
-            <div class="{{ $package['bg_color'] }} pt-8 pb-7 px-4 flex flex-col items-center justify-center text-center">
+            <div class="pt-8 pb-7 px-4 flex flex-col items-center justify-center text-center text-white"
+                 style="background-color: {{ str_starts_with($package['bg_color'], '#') ? $package['bg_color'] : '#0096a6' }};">
                 {{-- User Icon Circle --}}
                 <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-4 shadow-sm">
                     <svg class="w-8 h-8 text-[#5390F5]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Head -->
                         <circle cx="12" cy="7" r="4.25" stroke="#7BA6E6" stroke-width="1.5" fill="#EBF3FC"/>
-                        <!-- Shoulder outline -->
                         <path d="M4 21C4 16.8 7.35 14.5 12 14.5C16.65 14.5 20 16.8 20 21" stroke="#7BA6E6" stroke-width="1.5" fill="#EBF3FC"/>
                     </svg>
                 </div>
@@ -73,10 +106,10 @@
                 {{-- Starting Price Section --}}
                 <div class="text-center mb-6">
                     <p class="font-heading text-lg text-black">
-                        Starting from
+                        {{ $package['subtitle'] ?? 'Starting from' }}
                     </p>
                     <p class="font-heading text-black text-4xl font-extrabold leading-tight tracking-tight">
-                        AED {{ $package['price'] }}
+                        {{ $package['currency'] ?? 'AED' }} {{ $package['price'] }}
                     </p>
                 </div>
 
@@ -84,7 +117,6 @@
                 <ul class="space-y-3 mb-8 text-left">
                     @foreach($package['features'] as $feature)
                         <li class="flex gap-3 text-black text-sm font-medium">
-                            {{-- Checkmark Icon --}}
                             <img src="{{ asset('assets/images/icons/check-bullet.svg') }}"
                                  title="check"
                                  class="w-4"
@@ -96,14 +128,14 @@
 
                 {{-- CTA Button --}}
                 <div class="flex justify-center mt-auto">
-                    <a href="" class="flex items-center justify-center text-white text-xs px-3 py-2
+                    <a href="{{ !empty($package['button_url']) ? $package['button_url'] : (function_exists('umrah_whatsapp_url') ? umrah_whatsapp_url() : '#') }}" class="flex items-center justify-center text-white text-xs px-3 py-2
                     rounded-full
                                                 bg-gradient-to-r from-[#2D9D3E] to-[#1E5E28]
                                                  hover:bg-gradient-to-r hover:from-[#1E5E28] hover:to-[#2D9D3E]
                                                  transition duration-300 font-heading
                                                  italic">
                         <img src="{{ asset('assets/images/icons/wa.svg') }}" class="me-2" alt="wa">
-                        WhatsApp Now <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}"
+                        {{ $package['button_title'] ?? 'WhatsApp Now' }} <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}"
                                                                                  class="w-4 ms-1"
                                                                                  alt="arrow"> </a>
                 </div>

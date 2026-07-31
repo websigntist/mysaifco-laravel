@@ -12,12 +12,6 @@
             'open'     => $index === 0,
         ];
     })->all();
-
-    $half = (int) ceil(count($faqItems) / 2);
-    $faqColumns = [
-        array_slice($faqItems, 0, $half),
-        array_slice($faqItems, $half),
-    ];
 @endphp
 @if(count($faqItems) > 0)
     <section class="flex items-center justify-center pt-5 pb-18">
@@ -34,47 +28,41 @@
                     @endif
                 </p>
             </div>
-            <div id="accordion-card" class="faq-disert-safari mt-14" data-custom-accordion="collapse">
-                <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-x-10">
-                    @foreach ($faqColumns as $columnIndex => $columnItems)
-                        @if(count($columnItems) > 0)
-                            <div class="flex flex-col gap-4">
-                                @foreach ($columnItems as $itemIndex => $faq)
-                                    @php
-                                        $faqNumber = ($columnIndex * $half) + $itemIndex + 1;
-                                        $isOpen = $faq['open'];
-                                    @endphp
-                                    <div class="{{ $faqCardClass }}">
-                                        <h2 id="faq-{{ $faqNumber }}">
-                                            <button type="button"
-                                                    class="{{ $faqBtnClass }}"
-                                                    data-custom-accordion-target="#faq-body-{{ $faqNumber }}"
-                                                    aria-expanded="{{ $isOpen ? 'true' : 'false' }}"
-                                                    aria-controls="faq-body-{{ $faqNumber }}">
-                                                <span>{{ $faq['question'] }}</span>
-                                                <svg data-accordion-icon class="h-5 w-5 shrink-0 transition-transform duration-300 {{ $isOpen ? 'rotate-180' : '' }}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 15 7-7 7 7"/>
-                                                </svg>
-                                            </button>
-                                        </h2>
-                                        <div id="faq-body-{{ $faqNumber }}"
-                                             class="grid transition-all duration-300 ease-in-out"
-                                             style="grid-template-rows: {{ $isOpen ? '1fr' : '0fr' }};"
-                                             aria-labelledby="faq-{{ $faqNumber }}">
-                                            <div class="overflow-hidden">
-                                                <div class="px-5 pb-5">
-                                                    <p class="font-body text-sm leading-relaxed text-white">{{ $faq['answer'] }}</p>
-                                                </div>
-                                            </div>
-                                        </div>
+            <div id="accordion-card" class="faq-disert-safari mt-14 mx-auto" data-custom-accordion="collapse">
+                <div class="flex flex-col gap-4">
+                    @foreach ($faqItems as $index => $faq)
+                        @php
+                            $faqNumber = $index + 1;
+                            $isOpen = $faq['open'];
+                        @endphp
+                        <div class="{{ $faqCardClass }}">
+                            <h2 id="faq-{{ $faqNumber }}">
+                                <button type="button"
+                                        class="{{ $faqBtnClass }}"
+                                        data-custom-accordion-target="#faq-body-{{ $faqNumber }}"
+                                        aria-expanded="{{ $isOpen ? 'true' : 'false' }}"
+                                        aria-controls="faq-body-{{ $faqNumber }}">
+                                    <span>{{ $faq['question'] }}</span>
+                                    <svg data-accordion-icon class="h-5 w-5 shrink-0 transition-transform duration-300 {{ $isOpen ? 'rotate-180' : '' }}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 15 7-7 7 7"/>
+                                    </svg>
+                                </button>
+                            </h2>
+                            <div id="faq-body-{{ $faqNumber }}"
+                                 class="grid transition-all duration-300 ease-in-out"
+                                 style="grid-template-rows: {{ $isOpen ? '1fr' : '0fr' }};"
+                                 aria-labelledby="faq-{{ $faqNumber }}">
+                                <div class="overflow-hidden">
+                                    <div class="px-5 pb-5">
+                                        <p class="font-body text-sm leading-relaxed text-white">{{ $faq['answer'] }}</p>
                                     </div>
-                                @endforeach
+                                </div>
                             </div>
-                        @endif
+                        </div>
                     @endforeach
                 </div>
             </div>
-            <a href="" class="flex items-center justify-center w-fit text-white text-lg px-6 pt-3 pb-3 rounded-full mx-auto
+            <a href="#" class="flex items-center justify-center w-fit text-white text-lg px-6 pt-3 pb-3 rounded-full mx-auto
                                                         bg-gradient-to-r from-[#BA9B31] to-[#74611E]
                                                          hover:bg-gradient-to-r hover:from-[#74611E] hover:to-[#BA9B31]
                                                          transition duration-300 font-heading italic mt-8"> Explore all FAQs
