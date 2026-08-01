@@ -4,23 +4,38 @@
 
     /*
     |--------------------------------------------------------------------------
-    | Tour Type Configurations (Limit, Position, Grid Columns, Learn More Button, Image Size)
+    | Tour Type & Item ID Configurations (Limit, Position, Grid Columns, Learn More Button, Image Size, Item IDs)
     |--------------------------------------------------------------------------
     | Options per tour_type (by slug or ID):
+    |   - ids / item_ids: array [1,2,3], string '1,2,3', or single int 1
     |   - limit: (int) number of items to show
     |   - position: 'first' or 'last'
-    |   - cols / grid_cols: 3, 4, or custom grid classes string
+    |   - cols / grid_cols: 1, 2, 3, 4, 5, 6, or custom grid classes string
     |   - show_button / show_learn_more: true or false
-    |   - img_size / image_size: '64px' (default), '100px', '120px', or Tailwind class 'w-24 h-24'
+    |   - img_size / image_size: '64px' (default), '100px', '150px', or Tailwind class 'w-24 h-24'
     |
     | Examples:
-    |   'umrah-visa'          => ['limit' => 3, 'position' => 'last', 'cols' => 3, 'show_button' => true, 'img_size' => '100px'],
-    |   'desert-safari-tours' => ['limit' => 4, 'position' => 'first', 'cols' => 4, 'show_button' => false, 'img_size' => '64px'],
+    |   @include('frontend.components.related_services', ['ids' => [1, 2, 3, 4, 5, 6], 'cols' => 6, 'show_button' => true, 'img_size' => '150px'])
+    |   @include('frontend.components.related_services', ['ids' => '1,2,3', 'limit' => 3, 'position' => 'last', 'cols' => 3, 'show_button' => true, 'img_size' => '150px'])
     |
     */
     $tourTypeConfig = [
         // 'umrah-visa' => ['limit' => 3, 'position' => 'last', 'cols' => 3, 'show_button' => true, 'img_size' => '100px'],
     ];
+
+    // Parse specified item IDs if passed (support array [1,2,3], string '1,2,3', or integer 1)
+    $specifiedIds = $ids ?? $item_ids ?? $id ?? $items ?? null;
+    $targetIds = [];
+
+    if (!empty($specifiedIds)) {
+        if (is_array($specifiedIds)) {
+            $targetIds = array_values(array_filter(array_map('intval', $specifiedIds)));
+        } elseif (is_string($specifiedIds)) {
+            $targetIds = array_values(array_filter(array_map('intval', explode(',', $specifiedIds))));
+        } elseif (is_numeric($specifiedIds)) {
+            $targetIds = [(int) $specifiedIds];
+        }
+    }
 
     $currentTourTypeId = $tour_type_id ?? $tourTypeId ?? null;
     $currentTourTypeSlug = null;
@@ -71,6 +86,9 @@
             $effectiveCols = $effectiveCols ?? ($cfg['grid_cols'] ?? $cfg['cols'] ?? null);
             $effectiveShowButton = $effectiveShowButton ?? ($cfg['show_button'] ?? $cfg['show_learn_more'] ?? null);
             $effectiveImgSize = $effectiveImgSize ?? ($cfg['img_size'] ?? $cfg['image_size'] ?? null);
+            if (empty($targetIds) && !empty($cfg['ids'])) {
+                $targetIds = is_array($cfg['ids']) ? array_map('intval', $cfg['ids']) : array_map('intval', explode(',', $cfg['ids']));
+            }
         } elseif (is_numeric($cfg)) {
             $effectiveLimit = $effectiveLimit ?? (int) $cfg;
         }
@@ -82,6 +100,9 @@
             $effectiveCols = $effectiveCols ?? ($cfg['grid_cols'] ?? $cfg['cols'] ?? null);
             $effectiveShowButton = $effectiveShowButton ?? ($cfg['show_button'] ?? $cfg['show_learn_more'] ?? null);
             $effectiveImgSize = $effectiveImgSize ?? ($cfg['img_size'] ?? $cfg['image_size'] ?? null);
+            if (empty($targetIds) && !empty($cfg['ids'])) {
+                $targetIds = is_array($cfg['ids']) ? array_map('intval', $cfg['ids']) : array_map('intval', explode(',', $cfg['ids']));
+            }
         } elseif (is_numeric($cfg)) {
             $effectiveLimit = $effectiveLimit ?? (int) $cfg;
         }
@@ -104,10 +125,17 @@
 
     // Resolve grid classes based on cols setting
     if (is_numeric($effectiveCols)) {
-        if ((int)$effectiveCols === 3) {
+        $colVal = (int) $effectiveCols;
+        if ($colVal === 6) {
+            $gridClass = 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6';
+        } elseif ($colVal === 5) {
+            $gridClass = 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5';
+        } elseif ($colVal === 3) {
             $gridClass = 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3';
-        } elseif ((int)$effectiveCols === 2) {
+        } elseif ($colVal === 2) {
             $gridClass = 'grid-cols-1 sm:grid-cols-2';
+        } elseif ($colVal === 1) {
+            $gridClass = 'grid-cols-1';
         } else {
             $gridClass = 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4';
         }
@@ -119,15 +147,22 @@
 
     $query = RelatedService::where('status', 'Active');
 
-    if ($currentTourTypeId) {
+    if (!empty($targetIds)) {
+        $query->whereIn('id', $targetIds);
+        if (count($targetIds) > 1) {
+            $query->orderByRaw('FIELD(id, ' . implode(',', $targetIds) . ')');
+        }
+    } elseif ($currentTourTypeId) {
         $query->where(function($q) use ($currentTourTypeId) {
             $q->whereJsonContains('tour_type_ids', (int) $currentTourTypeId)
               ->orWhereJsonContains('tour_type_ids', (string) $currentTourTypeId)
               ->orWhere('tour_type_ids', 'LIKE', '%"' . $currentTourTypeId . '"%');
-        });
+        })->orderBy('ordering', 'asc')->orderBy('id', 'asc');
+    } else {
+        $query->orderBy('ordering', 'asc')->orderBy('id', 'asc');
     }
 
-    $allServices = $query->orderBy('ordering', 'asc')->orderBy('id', 'asc')->get();
+    $allServices = $query->get();
 
     // Apply limit and position ('first' vs 'last')
     if ($effectiveLimit && $allServices->count() > $effectiveLimit) {
@@ -151,7 +186,7 @@
                         $linkUrl = $hasLink ? $service->page_link : 'javascript:void(0);';
                         $cardTag = $hasLink ? 'a' : 'div';
                     @endphp
-                    <{{ $cardTag }} @if($hasLink) href="{{ $linkUrl }}" @endif class="group bg-gray-50 p-6 rounded-2xl border border-gray-200 space-y-4 hover:shadow-md transition-all duration-300 flex flex-col justify-between text-decoration-none block">
+                    <{{ $cardTag }} @if($hasLink) href="{{ $linkUrl }}" @endif class="group bg-gray-50 py-6 px-3 rounded-2xl border border-gray-200 space-y-4 hover:shadow-md transition-all duration-300 flex flex-col justify-between text-decoration-none block">
                         <div>
                             @if($service->image)
                                 @php
@@ -167,7 +202,6 @@
 
                             <h5 class="font-heading text-lg font-semibold text-center text-mst-gray mb-2 group-hover:text-mst transition-colors">
                                 {{ $service->title }}
-                                {{--{!! format_two_color_heading($service->title) !!}--}}
                             </h5>
 
                             @if($service->description)

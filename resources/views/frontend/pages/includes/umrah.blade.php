@@ -337,21 +337,6 @@
 @php
     $offerTitle = $sec[14]->section_heading ?? '';
     $offerDesc = $sec[14]->section_description ?? '';
-
-    $dubaiTitle = $sec[15]->section_heading ?? '';
-    $dubaiDesc = $sec[15]->section_description ?? '';
-
-    $abudhabiTitle = $sec[16]->section_heading ?? '';
-    $abudhabiDesc = $sec[16]->section_description ?? '';
-
-    $sharjahTitle = $sec[17]->section_heading ?? '';
-    $sharjahDesc = $sec[17]->section_description ?? '';
-
-    $vfsTitle = $sec[18]->section_heading ?? '';
-    $vfsDesc = $sec[18]->section_description ?? '';
-
-    $vaccineTitle = $sec[19]->section_heading ?? '';
-    $vaccineDesc = $sec[19]->section_description ?? '';
 @endphp
 <section class="pb-12">
     <div class="container">
@@ -364,31 +349,21 @@
             </div>
         </div>
         @include('frontend.components.related_services', ['limit' => 3, 'position' => 'last', 'cols' => 3, 'show_button' => true, 'img_size' => '150px'])
-        {{--<div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
-            <div class="flex items-center justify-between bg-gray-50 border border-gray-200 px-8 pt-5 pb-8 rounded-3xl">
-                <div class="text-center">
-                    <img src="{{ asset('assets/images/umrah/umrah-10.webp') }}" class="mx-auto mb-4" alt="">
-                    <h3 class="text-xl">{{$vfsTitle}}</h3>
-                    <p class="text-sm leading-6 my-4 line-clamp-3">{!! $vfsDesc !!}</p>
-                    <a href="#" class="flex items-center justify-center w-fit mx-auto text-white text-sm mt-5 px-4 pt-1 pb-2 rounded-full bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                        Learn more
-                        <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}" class="w-4 mt-1 ms-1" alt=""> </a>
-                </div>
-            </div>
-            <div class="flex items-center justify-between bg-gray-50 border border-gray-200 px-8 pt-5 pb-8 rounded-3xl">
-                <div class="text-center">
-                    <img src="{{ asset('assets/images/umrah/umrah-11.webp') }}" class="mx-auto mb-4" alt="">
-                    <h3 class="text-xl">{{$vaccineTitle}}</h3>
-                    <p class="text-sm leading-6 my-4 line-clamp-3">{!! $vaccineDesc !!}</p>
-                    <a href="#" class="flex items-center justify-center w-fit mx-auto text-white text-sm mt-5 px-4 pt-1 pb-2 rounded-full bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                        Learn more
-                        <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}" class="w-4 mt-1 ms-1" alt=""> </a>
-                </div>
-            </div>
-        </div>--}}
     </div>
 </section>
+{{-- FAQs --}}
+@php
+    $faq_title = $sec[15]->section_heading ?? '';
+    $faq_desc = $sec[15]->section_description ?? '';
+@endphp
+<div class="container mx-auto">
+    <div class="md:w-8/12 mx-auto text-center">
+        <h1 class="text-3xl md:text-4xl">
+            {!! format_two_color_heading($faq_title) !!}
+        </h1>
+        <p class="mt-4 mx-auto">{!! $faq_desc !!}</p>
+    </div>
+</div>
 @include('frontend.components.tour_faqs')
 @include('frontend.components.footerContactBar');
 @include('frontend.components.explore_dubai')
-

@@ -61,14 +61,16 @@
     </div>
 </section>
 {{--===== alert ======--}}
+@php
+    $alertMsg = $sec[12]->section_description ?? '';
+@endphp
 <section class="py-5 flex items-center justify-center bg-[#EB001B26]">
     <div class="md:flex sm:mx-auto px-2">
         <img src="{{ asset('assets/images/icons/alert.svg') }}"
              class="md:me-2 mb-2 md:mb-0 mx-auto md:mx-0"
              title="alert"
              alt="alert">
-        <p class="text-center">The Below Rates are not valid for RAMADAN. Rates for the Umrah by Bus Ramadan package can
-                               be discussed on the phone.</p>
+        <p class="text-center">{!! $alertMsg !!}</p>
     </div>
 </section>
 {{-- umrah packages --}}
@@ -528,6 +530,19 @@
         </div>
     </div>
 </section>
+{{-- FAQs --}}
+@php
+    $faq_title = $sec[13]->section_heading ?? '';
+    $faq_desc = $sec[13]->section_description ?? '';
+@endphp
+<div class="container mx-auto">
+    <div class="md:w-8/12 mx-auto text-center">
+        <h1 class="text-3xl md:text-4xl">
+            {!! format_two_color_heading($faq_title) !!}
+        </h1>
+        <p class="mt-4 mx-auto">{!! $faq_desc !!}</p>
+    </div>
+</div>
 @include('frontend.components.tour_faqs')
 @include('frontend.components.footerContactBar');
 @include('frontend.components.explore_dubai')

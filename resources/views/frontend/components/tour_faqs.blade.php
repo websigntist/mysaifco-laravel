@@ -14,9 +14,9 @@
     })->all();
 @endphp
 @if(count($faqItems) > 0)
-    <section class="flex items-center justify-center pt-5 pb-18">
+    <section class="flex items-center justify-center pb-18">
         <div class="container mx-auto px-4">
-            <div class="mx-auto text-center">
+            {{--<div class="mx-auto text-center">
                 <h1 class="text-3xl md:text-4xl">
                     <span>Frequently Asked  </span><span class="text-mst">Questions</span>
                 </h1>
@@ -27,7 +27,7 @@
                         Find answers to frequently asked questions about Dubai tours, desert safari, holiday packages, Umrah services, and global visa assistance to help you plan your journey with ease.
                     @endif
                 </p>
-            </div>
+            </div>--}}
             <div id="accordion-card" class="faq-disert-safari mt-14 mx-auto" data-custom-accordion="collapse">
                 <div class="flex flex-col gap-4">
                     @foreach ($faqItems as $index => $faq)

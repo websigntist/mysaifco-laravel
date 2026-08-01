@@ -595,6 +595,26 @@ Route::prefix('admin')->group(function () {
         Route::post('/umrah-bus-schedules/{id}/status', [backend\UmrahBusScheduleController::class, 'updateStatusAjax'])->middleware('check.permission:umrah-bus-schedules,status')->name('umrah-bus-schedules.status');
         // umrah-bus-schedules ROUTES END
 
+        // umrah-air-packages ROUTES START
+        Route::get('/umrah-air-packages', [backend\UmrahAirPackageController::class, 'index'])->name('umrah-air-packages');
+        Route::get('/umrah-air-packages/create', [backend\UmrahAirPackageController::class, 'create'])->middleware('check.permission:umrah-air-packages,add')->name('umrah-air-packages.create');
+        Route::get('/umrah-air-packages/duplicate/{id}', [backend\UmrahAirPackageController::class, 'duplicate'])->middleware('check.permission:umrah-air-packages,duplicate')->name('umrah-air-packages.duplicate');
+        Route::get('/umrah-air-packages/edit/{id}', [backend\UmrahAirPackageController::class, 'editForm'])->middleware('check.permission:umrah-air-packages,edit')->name('umrah-air-packages.edit');
+
+        Route::put('/umrah-air-packages/update/{id}', [backend\UmrahAirPackageController::class, 'update'])->middleware('check.permission:umrah-air-packages,update')->name('umrah-air-packages.update');
+        Route::post('/umrah-air-packages/store', [backend\UmrahAirPackageController::class, 'store'])->middleware('check.permission:umrah-air-packages,store')->name('umrah-air-packages.store');
+
+        Route::post('/umrah-air-packages/delete-all', [backend\UmrahAirPackageController::class, 'deleteAll'])->middleware('check.permission:umrah-air-packages,delete-all')->name('umrah-air-packages.delete-all');
+        Route::get('/umrah-air-packages/trashed', [backend\UmrahAirPackageController::class, 'trashed'])->middleware('check.permission:umrah-air-packages,trashed')->name('umrah-air-packages.trashed');
+        Route::get('/umrah-air-packages/restore/{id}', [backend\UmrahAirPackageController::class, 'restore'])->middleware('check.permission:umrah-air-packages,restore')->name('umrah-air-packages.restore');
+        Route::get('/umrah-air-packages/forcedelete/{id}', [backend\UmrahAirPackageController::class, 'forceDelete'])->middleware('check.permission:umrah-air-packages,forcedelete')->name('umrah-air-packages.forcedelete');
+
+        /* Ajax */
+        Route::get('/umrah-air-packages/modal-view/{id}', [backend\UmrahAirPackageController::class, 'modalView'])->middleware('check.permission:umrah-air-packages,modal-view')->name('umrah-air-packages.modal-view');
+        Route::delete('/umrah-air-packages/delete/{id}', [backend\UmrahAirPackageController::class, 'deleteAjax'])->middleware('check.permission:umrah-air-packages,status')->name('umrah-air-packages.delete');
+        Route::post('/umrah-air-packages/{id}/status', [backend\UmrahAirPackageController::class, 'updateStatusAjax'])->middleware('check.permission:umrah-air-packages,status')->name('umrah-air-packages.status');
+        // umrah-air-packages ROUTES END
+
         // ramadan-packages ROUTES START
         Route::get('/ramadan-packages', [backend\RamadanPackageController::class, 'index'])->name('ramadan-packages');
         Route::get('/ramadan-packages/create', [backend\RamadanPackageController::class, 'create'])->middleware('check.permission:ramadan-packages,add')->name('ramadan-packages.create');
