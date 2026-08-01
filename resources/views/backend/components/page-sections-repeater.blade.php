@@ -1,8 +1,9 @@
 @php
     $sectionsData = old('sections');
-    if ($sectionsData === null && isset($data) && isset($data->sections)) {
+    if ($sectionsData === null && isset($data) && isset($data->sections) && count($data->sections) > 0) {
         $sectionsData = $data->sections->toArray();
     }
+    $isInitEmpty = false;
     if (!is_array($sectionsData) || count($sectionsData) === 0) {
         $sectionsData = [[
             'id' => '',
@@ -14,6 +15,7 @@
             'button_url' => '',
             'section_image' => ''
         ]];
+        $isInitEmpty = true;
     }
 @endphp
 
@@ -34,6 +36,8 @@
     }
 </style>
 @endpush
+
+<input type="hidden" id="repeater-init-empty" value="{{ $isInitEmpty ? '1' : '0' }}">
 
 <div class="card card-action border-top-bottom mt-5">
     <div class="card-header border-bottom py-3 d-flex justify-content-between align-items-center">

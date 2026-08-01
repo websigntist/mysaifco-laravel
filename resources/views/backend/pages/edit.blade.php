@@ -193,7 +193,7 @@
                                                 <label class="form-check-label text-capitalize" for="show_email_us">Email Us</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="show_trust_bar" id="show_trust_bar" value="1" {{ old('show_trust_bar', $data->show_trust_bar ?? 1) == 1 ? 'checked' : '' }}>
+                                                <input class="form-check-input" type="checkbox" name="show_trust_bar" id="show_trust_bar" value="1" {{ old('show_trust_bar', $data->show_trust_bar ?? 0) == 1 ? 'checked' : '' }}>
                                                 <label class="form-check-label text-capitalize"
                                                        for="show_trust_bar">Trust Bar (Show/Hide)</label>
                                             </div>
@@ -524,7 +524,10 @@
                 }
             });
 
+            var isInitEmpty = $('#repeater-init-empty').val() === '1';
+
             $('#page-sections-repeater').repeater({
+                initEmpty: isInitEmpty,
                 show: function () {
                     var $item = $(this);
                     $item.slideDown();

@@ -90,15 +90,6 @@
                                                         class="form-control"
                                                         placeholder="Enter 1 to 99...">
                                     </div>
-                                    {{--<div class="col-md-12">
-                                        <label class="form-label text-capitalize" for="image">
-                                            <span>{{_label('image')}}</span>
-                                        </label>
-                                        <input class="form-control"
-                                                 type="file"
-                                                 name="image"
-                                                 id="image">
-                                    </div>--}}
                                     <div class="col-md-12">
                                         {!! form_action_buttons('Submit Now', 'Save & New', 'Save & Stay') !!}
                                     </div>

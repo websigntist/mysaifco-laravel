@@ -163,7 +163,7 @@
     $worldwide_title = $sec[6]->section_heading ?? '';
     $worldwide_desc = $sec[6]->section_description ?? '';
 
-    $visa_title = $sec[7]->section_heading ?? '';
+    /*$visa_title = $sec[7]->section_heading ?? '';
     $visa_desc = $sec[7]->section_description ?? '';
     $visa_img = $sec[7]->section_image ?? '';
 
@@ -177,7 +177,7 @@
 
     $hotel_title = $sec[10]->section_heading ?? '';
     $hotel_desc = $sec[10]->section_description ?? '';
-    $hotel_img = $sec[10]->section_image ?? '';
+    $hotel_img = $sec[10]->section_image ?? '';*/
 @endphp
 <section class="flec item-center justify-center pt-14 pb-18">
     <div class="container">
@@ -189,7 +189,8 @@
                 {!! $worldwide_desc !!}
             </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mt-14">
+        @include('frontend.components.related_services')
+        {{--<div class="grid grid-cols-1 md:grid-cols-4 gap-10 mt-14">
             <div class="bg-gray-50 p-8 rounded-xl border-1 border-gray-200 space-y-4">
                 <img src="{{asset('assets/images/pages/sections/' . $visa_img)}}" class="mx-auto" alt="img">
                 <h5 class="font-heading text-md font-semibold text-center mb-1">{{$visa_title}}</h5>
@@ -210,7 +211,7 @@
                 <h5 class="font-heading text-md font-semibold text-center mb-1">{{$hotel_title}}</h5>
                 <p class="font-body text-xs text-center">{!! $hotel_desc !!}</p>
             </div>
-        </div>
+        </div>--}}
     </div>
 </section>
 {{-- required documents --}}

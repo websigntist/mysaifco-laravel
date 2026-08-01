@@ -615,6 +615,26 @@ Route::prefix('admin')->group(function () {
         Route::post('/ramadan-packages/{id}/status', [backend\RamadanPackageController::class, 'updateStatusAjax'])->middleware('check.permission:ramadan-packages,status')->name('ramadan-packages.status');
         // ramadan-packages ROUTES END
 
+        // related-services ROUTES START
+        Route::get('/related-services', [backend\RelatedServiceController::class, 'index'])->name('related-services');
+        Route::get('/related-services/create', [backend\RelatedServiceController::class, 'create'])->middleware('check.permission:related-services,add')->name('related-services.create');
+        Route::get('/related-services/duplicate/{id}', [backend\RelatedServiceController::class, 'duplicate'])->middleware('check.permission:related-services,duplicate')->name('related-services.duplicate');
+        Route::get('/related-services/edit/{id}', [backend\RelatedServiceController::class, 'editForm'])->middleware('check.permission:related-services,edit')->name('related-services.edit');
+
+        Route::put('/related-services/update/{id}', [backend\RelatedServiceController::class, 'update'])->middleware('check.permission:related-services,update')->name('related-services.update');
+        Route::post('/related-services/store', [backend\RelatedServiceController::class, 'store'])->middleware('check.permission:related-services,store')->name('related-services.store');
+
+        Route::post('/related-services/delete-all', [backend\RelatedServiceController::class, 'deleteAll'])->middleware('check.permission:related-services,delete-all')->name('related-services.delete-all');
+        Route::get('/related-services/trashed', [backend\RelatedServiceController::class, 'trashed'])->middleware('check.permission:related-services,trashed')->name('related-services.trashed');
+        Route::get('/related-services/restore/{id}', [backend\RelatedServiceController::class, 'restore'])->middleware('check.permission:related-services,restore')->name('related-services.restore');
+        Route::get('/related-services/forcedelete/{id}', [backend\RelatedServiceController::class, 'forceDelete'])->middleware('check.permission:related-services,forcedelete')->name('related-services.forcedelete');
+
+        /* Ajax */
+        Route::get('/related-services/modal-view/{id}', [backend\RelatedServiceController::class, 'modalView'])->middleware('check.permission:related-services,modal-view')->name('related-services.modal-view');
+        Route::delete('/related-services/delete/{id}', [backend\RelatedServiceController::class, 'deleteAjax'])->middleware('check.permission:related-services,status')->name('related-services.delete');
+        Route::post('/related-services/{id}/status', [backend\RelatedServiceController::class, 'updateStatusAjax'])->middleware('check.permission:related-services,status')->name('related-services.status');
+        // related-services ROUTES END
+
         // attributes ROUTES START
         Route::get('/attributes', [backend\AttributeController::class, 'index'])->name('attributes');
         Route::get('/attributes/create', [backend\AttributeController::class, 'create'])->middleware('check.permission:attributes,add')->name('attributes.create');

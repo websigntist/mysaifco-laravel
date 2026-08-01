@@ -84,7 +84,7 @@
                         </div>
                     </div>
 
-                    <div class="card card-action border-top-bottom mt-5">
+                    {{--<div class="card card-action border-top-bottom mt-5">
                         <div class="card-header border-bottom py-3 d-flex justify-content-between align-items-center">
                             <h6 class="mb-0 text-capitalize">
                                 <span class="icon-sm icon-base ti tabler-world-www iconmrgn me-1"></span>
@@ -131,7 +131,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>--}}
                 </div>
 
                 <div class="col-sm-12 col-xl-4">
@@ -148,7 +148,7 @@
                                     <div class="col-md-12">
                                         {!! image_input_option($data->image ? asset('assets/images/'.$module .'/' . $data->image) : imageNotFound(), 'image') !!}
                                     </div>
-                                    <div class="col-md-12">
+                                    {{--<div class="col-md-12">
                                         <label class="form-label text-capitalize" for="image_alt">{{ _label('image_alt') }}</label>
                                         <input type="text" id="image_alt" name="image_alt" value="{{ old('image_alt', $data->image_alt) }}" class="form-control" placeholder="Enter {{ _label('image_alt') }}...">
                                         {!! error_label('image_alt') !!}
@@ -157,7 +157,7 @@
                                         <label class="form-label text-capitalize" for="image_title">{{ _label('image_title') }}</label>
                                         <input type="text" id="image_title" name="image_title" value="{{ old('image_title', $data->image_title) }}" class="form-control" placeholder="Enter {{ _label('image_title') }}...">
                                         {!! error_label('image_title') !!}
-                                    </div>
+                                    </div>--}}
                                 </div>
                             </div>
                         </div>

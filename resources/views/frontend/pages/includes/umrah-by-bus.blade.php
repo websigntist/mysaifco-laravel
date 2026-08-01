@@ -92,7 +92,7 @@
     $pkginc_title = $sec[2]->section_heading ?? '';
     $pkginc_desc = $sec[2]->section_description ?? '';
 
-    $bus_img = $sec[3]->section_image ?? '';
+    /*$bus_img = $sec[3]->section_image ?? '';
     $bus_title = $sec[3]->section_heading ?? '';
     $bus_desc = $sec[3]->section_description ?? '';
 
@@ -106,7 +106,7 @@
 
     $ziyarat_img = $sec[6]->section_image ?? '';
     $ziyarat_title = $sec[6]->section_heading ?? '';
-    $ziyarat_desc = $sec[6]->section_description ?? '';
+    $ziyarat_desc = $sec[6]->section_description ?? '';*/
 
     $license_img = $sec[7]->section_image ?? '';
     $license_title = $sec[7]->section_heading ?? '';
@@ -134,7 +134,8 @@
         </div>
         <div class="pkg-include">
             <!-- Service Cards Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            @include('frontend.components.related_services')
+            {{--<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Card 1: Luxury Bus -->
                 <div id="pkg-include-bus-card" class="flex flex-col items-center justify-center text-center px-4 py-10
                 rounded-3xl border border-gray-200 bg-gray-50 transition
@@ -175,7 +176,7 @@
                     <h3 class="font-heading font-semibold text-lg text-mst-gray mb-3">{{$ziyarat_title}}</h3>
                     <p class="text-sm font-body font-medium text-gray-700">{!! $ziyarat_desc !!}</p>
                 </div>
-            </div>
+            </div>--}}
             <!-- Bottom Features Bar -->
             <div class="mt-8 p-6 lg:p-8 rounded-3xl border border-gray-200 bg-gray-50">
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x

@@ -3,7 +3,7 @@
     $required = (bool) ($required ?? false);
     $tourTypes = $tourTypes ?? collect();
     $fieldId = $id ?? ($multiple ? 'tour_type' : 'tour_type_id');
-    $fieldName = $multiple ? 'tour_type[]' : 'tour_type_id';
+    $fieldName = $name ?? ($multiple ? 'tour_type[]' : 'tour_type_id');
     $selectedValues = (array) ($selected ?? []);
 @endphp
 <label class="form-label text-capitalize" for="{{ $fieldId }}">{{ _label('tour_type') }}</label>
