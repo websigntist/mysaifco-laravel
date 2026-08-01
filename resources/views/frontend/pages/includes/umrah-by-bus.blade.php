@@ -154,7 +154,7 @@
                     <!-- Feature 1: Licensed & Trusted -->
                     <div id="pkg-feature-licensed" class="flex items-center gap-4 lg:pr-6">
                         <div class="w-14 h-14 flex-shrink-0 transition-transform duration-300 hover:scale-105">
-                            <img src="{{ asset('assets/images/pages/sections/1785540476_6a6d2f7c01a11.svg') }}" alt="Licensed & Trusted" class="w-full h-full object-contain">
+                            <img src="{{ asset('assets/images/icons/trusted2.svg') }}" alt="Licensed & Trusted" class="w-full h-full object-contain">
                         </div>
                         <div>
                             <h4 class="font-heading font-semibold text-[15px] sm:text-base text-mst-gray mb-0.5 leading-snug">
@@ -166,7 +166,7 @@
                     <!-- Feature 2: 18+ Years Experience -->
                     <div id="pkg-feature-experience" class="flex items-center gap-4 lg:px-6">
                         <div class="w-14 h-14 flex-shrink-0 transition-transform duration-300 hover:scale-105">
-                            <img src="{{ asset('assets/images/pages/sections/1785540476_6a6d2f7c04504.svg') }}" alt="18+ Years Experience" class="w-full h-full object-contain">
+                            <img src="{{ asset('assets/images/icons/18exp.svg') }}" alt="18+ Years Experience" class="w-full h-full object-contain">
                         </div>
                         <div>
                             <h4 class="font-heading font-semibold text-[15px] sm:text-base text-mst-gray mb-0.5 leading-snug">
@@ -177,7 +177,7 @@
                     <!-- Feature 3: Best Price Guaranteed -->
                     <div id="pkg-feature-price" class="flex items-center gap-4 lg:px-6">
                         <div class="w-14 h-14 flex-shrink-0 transition-transform duration-300 hover:scale-105">
-                            <img src="{{ asset('assets/images/pages/sections/1785540476_6a6d2f7c05c04.svg') }}" alt="Best Price Guaranteed" class="w-full h-full object-contain">
+                            <img src="{{ asset('assets/images/icons/thumbs.svg') }}" alt="Best Price Guaranteed" class="w-full h-full object-contain">
                         </div>
                         <div>
                             <h4 class="font-heading font-semibold text-[15px] sm:text-base text-mst-gray mb-0.5 leading-snug">
@@ -188,7 +188,7 @@
                     <!-- Feature 4: 24/7 Support -->
                     <div id="pkg-feature-support" class="flex items-center gap-4 lg:pl-6">
                         <div class="w-14 h-14 flex-shrink-0 transition-transform duration-300 hover:scale-105">
-                            <img src="{{ asset('assets/images/pages/sections/1785540476_6a6d2f7c0d1b4.svg') }}" alt="24/7 Support" class="w-full h-full object-contain">
+                            <img src="{{ asset('assets/images/icons/support.svg') }}" alt="24/7 Support" class="w-full h-full object-contain">
                         </div>
                         <div>
                             <h4 class="font-heading font-semibold text-[15px] sm:text-base text-mst-gray mb-0.5 leading-snug">

@@ -3,8 +3,7 @@
     $popularSearch = $popularSearch ?? null;
     $popularSearchItems = $popularSearchItems ?? [];
 @endphp
-<section>
-
+<section class="mb-10">
     @if($explore && (filled($explore->title) || filled($explore->description)))
         <div class="container mx-auto">
             @if(filled($explore->title))
