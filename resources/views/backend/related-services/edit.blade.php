@@ -1,6 +1,25 @@
 @extends('backend.layouts.master')
 @push('style')
     <link rel="stylesheet" href="{{ asset('assets/backend/css/select2.css') }}">
+    <style>
+        /* Let the multi-select box grow and wrap all selected tags instead of clipping them */
+        .select2-container .select2-selection--multiple {
+            height: auto !important;
+            min-height: var(--bs-select-height, 38px);
+            overflow: visible;
+        }
+        .select2-container .select2-selection--multiple .select2-selection__rendered {
+            display: flex !important;
+            flex-wrap: wrap;
+            align-items: center;
+            row-gap: 2px;
+            width: 100%;
+            height: auto;
+            white-space: normal !important;
+            overflow: visible !important;
+            text-overflow: unset !important;
+        }
+    </style>
 @endpush
 @section('content')
     <div class="container-xxl flex-grow-1 mt-3 -container-p-y">

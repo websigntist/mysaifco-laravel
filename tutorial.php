@@ -83,3 +83,7 @@ public function show(Request $request)
         'last'        => $last,
     ]);
 }
+
+
+{{-- Show LAST 3 items for this page --}}
+@include('frontend.components.related_services', ['limit' => 3, 'position' => 'last', 'cols' => 3, 'show_button' => true, 'img_size' => '150px'])

@@ -74,50 +74,57 @@
                                   </div>
                                    {!! error_label('friendly_url') !!}
                                </div>
-                               <div class="col-md-3">
-                                  <label class="form-label text-capitalize" for="tour_duration">
-                                      {{_label('tour_duration')}}
-                                  </label>
-                                   <input type="text"
-                                          id="tour_duration"
-                                          name="tour_duration"
-                                          value="{{ old('tour_duration') }}"
-                                          class="form-control"
-                                          placeholder="Enter {{_label('tour_duration')}}...">
-                               </div>
-                               <div class="col-md-3">
-                                  <label class="form-label text-capitalize" for="max_persons">
-                                      {{_label('max_persons')}}
-                                  </label>
-                                   <input type="text"
-                                          id="max_persons"
-                                          name="max_persons"
-                                          value="{{ old('max_persons') }}"
-                                          class="form-control"
-                                          placeholder="Enter {{_label('max_persons')}}...">
-                               </div>
-                               <div class="col-md-3">
-                                  <label class="form-label text-capitalize" for="min_age">
-                                      {{_label('min_age')}}
-                                  </label>
-                                   <input type="text"
-                                          id="min_age"
-                                          name="min_age"
-                                          value="{{ old('min_age') }}"
-                                          class="form-control"
-                                          placeholder="Enter {{_label('min_age')}}...">
-                               </div>
-                                <div class="col-md-3">
-                                  <label class="form-label text-capitalize" for="price">
-                                      {{_label('tour_price')}}
-                                  </label>
-                                   <input type="text"
-                                          id="price"
-                                          name="price"
-                                          value="{{ old('price') }}"
-                                          class="form-control"
-                                          placeholder="Enter {{_label('price')}}...">
-                               </div>
+                                <div class="col">
+                                    <label class="form-label text-capitalize" for="price">
+                                        {{_label('tour_price')}}
+                                    </label> <input type="text"
+                                                    id="price"
+                                                    name="price"
+                                                    value="{{ old('price') }}"
+                                                    class="form-control"
+                                                    placeholder="Enter {{_label('price')}}...">
+                                </div>
+
+                                <div class="col">
+                                    <label class="form-label text-capitalize" for="tour_location">
+                                        {{_label('tour_location')}}
+                                    </label> <input type="text"
+                                                    id="tour_location"
+                                                    name="tour_location"
+                                                    value="{{ old('tour_location') }}"
+                                                    class="form-control"
+                                                    placeholder="Enter {{_label('tour_location')}}...">
+                                </div>
+                                <div class="col">
+                                    <label class="form-label text-capitalize" for="tour_duration">
+                                        {{_label('tour_duration')}}
+                                    </label> <input type="text"
+                                                    id="tour_duration"
+                                                    name="tour_duration"
+                                                    value="{{ old('tour_duration') }}"
+                                                    class="form-control"
+                                                    placeholder="Enter {{_label('tour_duration')}}...">
+                                </div>
+                                <div class="col">
+                                    <label class="form-label text-capitalize" for="max_persons">
+                                        {{_label('max_persons')}}
+                                    </label> <input type="text"
+                                                    id="max_persons"
+                                                    name="max_persons"
+                                                    value="{{ old('max_persons') }}"
+                                                    class="form-control"
+                                                    placeholder="Enter {{_label('max_persons')}}...">
+                                </div>
+                                <div class="col">
+                                    <label class="form-label text-capitalize" for="min_age">
+                                        {{_label('min_age')}}
+                                    </label> <input type="text"
+                                                    id="min_age"
+                                                    name="min_age"
+                                                    value="{{ old('min_age') }}"
+                                                    class="form-control"
+                                                    placeholder="Enter {{_label('min_age')}}...">
+                                </div>
                                 <div class="col-md-12">
                                     <label class="form-label text-capitalize" for="description">{{_label('description')}}</label>
                                     <textarea name="description" class="form-control" id="editor"></textarea>

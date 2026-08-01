@@ -162,26 +162,10 @@
 @php
     $worldwide_title = $sec[6]->section_heading ?? '';
     $worldwide_desc = $sec[6]->section_description ?? '';
-
-    /*$visa_title = $sec[7]->section_heading ?? '';
-    $visa_desc = $sec[7]->section_description ?? '';
-    $visa_img = $sec[7]->section_image ?? '';
-
-    $flights_title = $sec[8]->section_heading ?? '';
-    $flights_desc = $sec[8]->section_description ?? '';
-    $flights_img = $sec[8]->section_image ?? '';
-
-    $trans_title = $sec[9]->section_heading ?? '';
-    $trans_desc = $sec[9]->section_description ?? '';
-    $trans_img = $sec[9]->section_image ?? '';
-
-    $hotel_title = $sec[10]->section_heading ?? '';
-    $hotel_desc = $sec[10]->section_description ?? '';
-    $hotel_img = $sec[10]->section_image ?? '';*/
 @endphp
 <section class="flec item-center justify-center pt-14 pb-18">
     <div class="container">
-        <div class="mx-auto text-center">
+        <div class="mx-auto text-center mb-16">
             <h1>
                 {!! format_two_color_heading($worldwide_title) !!}
             </h1>
@@ -189,48 +173,26 @@
                 {!! $worldwide_desc !!}
             </div>
         </div>
-        @include('frontend.components.related_services')
-        {{--<div class="grid grid-cols-1 md:grid-cols-4 gap-10 mt-14">
-            <div class="bg-gray-50 p-8 rounded-xl border-1 border-gray-200 space-y-4">
-                <img src="{{asset('assets/images/pages/sections/' . $visa_img)}}" class="mx-auto" alt="img">
-                <h5 class="font-heading text-md font-semibold text-center mb-1">{{$visa_title}}</h5>
-                <p class="font-body text-xs text-center">{!! $visa_desc !!}</p>
-            </div>
-            <div class="bg-gray-50 p-8 rounded-xl border-1 border-gray-200 space-y-4">
-                <img src="{{asset('assets/images/pages/sections/' . $flights_img)}}" class="mx-auto" alt="img">
-                <h5 class="font-heading text-md font-semibold text-center mb-1">{{$flights_title}}</h5>
-                <p class="font-body text-xs text-center">{!! $flights_desc !!}</p>
-            </div>
-            <div class="bg-gray-50 p-8 rounded-xl border-1 border-gray-200 space-y-4">
-                <img src="{{asset('assets/images/pages/sections/' . $trans_img)}}" class="mx-auto" alt="img">
-                <h5 class="font-heading text-md font-semibold text-center mb-1">{{$trans_title}}</h5>
-                <p class="font-body text-xs text-center">{!! $trans_desc !!}</p>
-            </div>
-            <div class="bg-gray-50 p-8 rounded-xl border-1 border-gray-200 space-y-4">
-                <img src="{{asset('assets/images/pages/sections/' . $hotel_img)}}" class="mx-auto" alt="img">
-                <h5 class="font-heading text-md font-semibold text-center mb-1">{{$hotel_title}}</h5>
-                <p class="font-body text-xs text-center">{!! $hotel_desc !!}</p>
-            </div>
-        </div>--}}
+        @include('frontend.components.related_services', ['limit' => 4, 'position' => 'first'])
     </div>
 </section>
 {{-- required documents --}}
 @php
-    $docTitle = $sec[11]->section_heading ?? '';
-    $docDesc = $sec[11]->section_description ?? '';
-    $docImg = $sec[11]->section_image ?? '';
+    $docTitle = $sec[7]->section_heading ?? '';
+    $docDesc = $sec[7]->section_description ?? '';
+    $docImg = $sec[7]->section_image ?? '';
 
-    $clearTitle = $sec[12]->section_heading ?? '';
-    $clearDesc = $sec[12]->section_description ?? '';
+    $clearTitle = $sec[8]->section_heading ?? '';
+    $clearDesc = $sec[8]->section_description ?? '';
 
-    $passTitle = $sec[13]->section_heading ?? '';
-    $passDesc = $sec[13]->section_description ?? '';
+    $passTitle = $sec[9]->section_heading ?? '';
+    $passDesc = $sec[9]->section_description ?? '';
 
-    $nationalTitle = $sec[14]->section_heading ?? '';
-    $nationalDesc = $sec[14]->section_description ?? '';
+    $nationalTitle = $sec[10]->section_heading ?? '';
+    $nationalDesc = $sec[10]->section_description ?? '';
 
-    $processTitle = $sec[15]->section_heading ?? '';
-    $processDesc = $sec[15]->section_description ?? '';
+    $processTitle = $sec[11]->section_heading ?? '';
+    $processDesc = $sec[11]->section_description ?? '';
 @endphp
 <section class="pt-10 pb-30 bg-gray-50">
     <div class="container">
@@ -311,8 +273,8 @@
 @include('frontend.components.testimonials')
 {{--===== umrah for single ======--}}
 @php
-    $singleTitle = $sec[16]->section_heading ?? '';
-    $singleDesc = $sec[16]->section_description ?? '';
+    $singleTitle = $sec[12]->section_heading ?? '';
+    $singleDesc = $sec[12]->section_description ?? '';
 @endphp
 <section class="flex justify-center items-center">
     <div class="px-4 relative flex md:min-h-[850px] min-h-[650px] w-full bg-[-250px] md:bg-center bg-cover bg-no-repeat umrah-hero-section"
@@ -344,8 +306,8 @@
 </section>
 {{-- how to perform --}}
 @php
-    $howTitle = $sec[17]->section_heading ?? '';
-    $howDesc = $sec[17]->section_description ?? '';
+    $howTitle = $sec[13]->section_heading ?? '';
+    $howDesc = $sec[13]->section_description ?? '';
 @endphp
 <section class="flex justify-between items-center py-12 bg-gray-50">
     <div class="container">
@@ -373,23 +335,23 @@
 </section>
 {{-- umrah offer --}}
 @php
-    $offerTitle = $sec[18]->section_heading ?? '';
-    $offerDesc = $sec[18]->section_description ?? '';
+    $offerTitle = $sec[14]->section_heading ?? '';
+    $offerDesc = $sec[14]->section_description ?? '';
 
-    $dubaiTitle = $sec[19]->section_heading ?? '';
-    $dubaiDesc = $sec[19]->section_description ?? '';
+    $dubaiTitle = $sec[15]->section_heading ?? '';
+    $dubaiDesc = $sec[15]->section_description ?? '';
 
-    $abudhabiTitle = $sec[20]->section_heading ?? '';
-    $abudhabiDesc = $sec[20]->section_description ?? '';
+    $abudhabiTitle = $sec[16]->section_heading ?? '';
+    $abudhabiDesc = $sec[16]->section_description ?? '';
 
-    $sharjahTitle = $sec[21]->section_heading ?? '';
-    $sharjahDesc = $sec[21]->section_description ?? '';
+    $sharjahTitle = $sec[17]->section_heading ?? '';
+    $sharjahDesc = $sec[17]->section_description ?? '';
 
-    $vfsTitle = $sec[22]->section_heading ?? '';
-    $vfsDesc = $sec[22]->section_description ?? '';
+    $vfsTitle = $sec[18]->section_heading ?? '';
+    $vfsDesc = $sec[18]->section_description ?? '';
 
-    $vaccineTitle = $sec[23]->section_heading ?? '';
-    $vaccineDesc = $sec[23]->section_description ?? '';
+    $vaccineTitle = $sec[19]->section_heading ?? '';
+    $vaccineDesc = $sec[19]->section_description ?? '';
 @endphp
 <section class="pb-12">
     <div class="container">
@@ -401,39 +363,8 @@
                 {!! $offerDesc !!}
             </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-            <div class="flex items-center justify-between bg-gray-50 border border-gray-200 px-8 pt-5 pb-8 rounded-3xl">
-                <div class="text-center">
-                    <img src="{{ asset('assets/images/umrah/umrah-7.webp') }}" class="mx-auto mb-4" alt="">
-                    <h3 class="text-xl">{{$dubaiTitle}}</h3>
-                    <p class="text-sm leading-6 my-4 line-clamp-2">{!! $dubaiDesc !!}</p>
-                    <a href="#" class="flex items-center justify-center w-fit mx-auto text-white text-sm mt-5 px-4 pt-1 pb-2 rounded-full bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                        Learn more
-                        <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}" class="w-4 mt-1 ms-1" alt=""> </a>
-                </div>
-            </div>
-            <div class="flex items-center justify-between bg-gray-50 border border-gray-200 px-8 pt-5 pb-8 rounded-3xl">
-                <div class="text-center">
-                    <img src="{{ asset('assets/images/umrah/umrah-8.webp') }}" class="mx-auto mb-4" alt="">
-                    <h3 class="text-xl">{{$abudhabiTitle}}</h3>
-                    <p class="text-sm leading-6 my-4 line-clamp-2">{!! $abudhabiDesc !!}</p>
-                    <a href="#" class="flex items-center justify-center w-fit mx-auto text-white text-sm mt-5 px-4 pt-1 pb-2 rounded-full bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                        Learn more
-                        <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}" class="w-4 mt-1 ms-1" alt=""> </a>
-                </div>
-            </div>
-            <div class="flex items-center justify-between bg-gray-50 border border-gray-200 px-8 pt-5 pb-8 rounded-3xl">
-                <div class="text-center">
-                    <img src="{{ asset('assets/images/umrah/umrah-9.webp') }}" class="mx-auto mb-4" alt="">
-                    <h3 class="text-xl">{{$sharjahTitle}}</h3>
-                    <p class="text-sm leading-6 my-4 line-clamp-2">{!! $sharjahDesc !!}</p>
-                    <a href="#" class="flex items-center justify-center w-fit mx-auto text-white text-sm mt-5 px-4 pt-1 pb-2 rounded-full bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                        Learn more
-                        <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}" class="w-4 mt-1 ms-1" alt=""> </a>
-                </div>
-            </div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
+        @include('frontend.components.related_services', ['limit' => 3, 'position' => 'last', 'cols' => 3, 'show_button' => true, 'img_size' => '150px'])
+        {{--<div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
             <div class="flex items-center justify-between bg-gray-50 border border-gray-200 px-8 pt-5 pb-8 rounded-3xl">
                 <div class="text-center">
                     <img src="{{ asset('assets/images/umrah/umrah-10.webp') }}" class="mx-auto mb-4" alt="">
@@ -454,7 +385,7 @@
                         <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}" class="w-4 mt-1 ms-1" alt=""> </a>
                 </div>
             </div>
-        </div>
+        </div>--}}
     </div>
 </section>
 @include('frontend.components.tour_faqs')

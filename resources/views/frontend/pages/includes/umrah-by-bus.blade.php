@@ -13,7 +13,7 @@
     $umrah_img = $sec[0]->section_image ?? '';
 @endphp
 {{-- umrah by bus --}}
-<section class="flex justify-between items-center pb-12 -mt-10">
+<section class="flex justify-between items-center pb-12 -mt-2">
     <div class="container">
         <div class="grid grid-cols-1 md:grid-cols-[2fr_1fr] items-center gap-8">
             <div>
@@ -91,38 +91,6 @@
 @php
     $pkginc_title = $sec[2]->section_heading ?? '';
     $pkginc_desc = $sec[2]->section_description ?? '';
-
-    /*$bus_img = $sec[3]->section_image ?? '';
-    $bus_title = $sec[3]->section_heading ?? '';
-    $bus_desc = $sec[3]->section_description ?? '';
-
-    $visa_img = $sec[4]->section_image ?? '';
-    $visa_title = $sec[4]->section_heading ?? '';
-    $visa_desc = $sec[4]->section_description ?? '';
-
-    $hotel_img = $sec[5]->section_image ?? '';
-    $hotel_title = $sec[5]->section_heading ?? '';
-    $hotel_desc = $sec[5]->section_description ?? '';
-
-    $ziyarat_img = $sec[6]->section_image ?? '';
-    $ziyarat_title = $sec[6]->section_heading ?? '';
-    $ziyarat_desc = $sec[6]->section_description ?? '';*/
-
-    $license_img = $sec[7]->section_image ?? '';
-    $license_title = $sec[7]->section_heading ?? '';
-    $license_desc = $sec[7]->section_description ?? '';
-
-    $years_img = $sec[8]->section_image ?? '';
-    $years_title = $sec[8]->section_heading ?? '';
-    $years_desc = $sec[8]->section_description ?? '';
-
-    $best_img = $sec[9]->section_image ?? '';
-    $best_title = $sec[9]->section_heading ?? '';
-    $best_desc = $sec[9]->section_description ?? '';
-
-    $support_img = $sec[10]->section_image ?? '';
-    $support_title = $sec[10]->section_heading ?? '';
-    $support_desc = $sec[10]->section_description ?? '';
 @endphp
 <section class="">
     <div class="container">
@@ -134,7 +102,7 @@
         </div>
         <div class="pkg-include">
             <!-- Service Cards Grid -->
-            @include('frontend.components.related_services')
+            @include('frontend.components.related_services', ['limit' => 4, 'position' => 'first'])
             {{--<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Card 1: Luxury Bus -->
                 <div id="pkg-include-bus-card" class="flex flex-col items-center justify-center text-center px-4 py-10
@@ -184,46 +152,46 @@
                     <!-- Feature 1: Licensed & Trusted -->
                     <div id="pkg-feature-licensed" class="flex items-center gap-4 lg:pr-6">
                         <div class="w-14 h-14 flex-shrink-0 transition-transform duration-300 hover:scale-105">
-                            <img src="{{ asset('assets/images/pages/sections/' . $license_img) }}" alt="Licensed & Trusted" class="w-full h-full object-contain">
+                            <img src="{{ asset('assets/images/pages/sections/1785540476_6a6d2f7c01a11.svg') }}" alt="Licensed & Trusted" class="w-full h-full object-contain">
                         </div>
                         <div>
                             <h4 class="font-heading font-semibold text-[15px] sm:text-base text-mst-gray mb-0.5 leading-snug">
-                                {{$license_title}}
+                                Licensed & Trusted
                             </h4>
-                            <p class="text-xs text-gray-900 font-body leading-normal">{!! $license_desc !!}</p>
+                            <p class="text-xs text-gray-900 font-body leading-normal">Licensed & Trusted</p>
                         </div>
                     </div>
                     <!-- Feature 2: 18+ Years Experience -->
                     <div id="pkg-feature-experience" class="flex items-center gap-4 lg:px-6">
                         <div class="w-14 h-14 flex-shrink-0 transition-transform duration-300 hover:scale-105">
-                            <img src="{{ asset('assets/images/pages/sections/' . $years_img) }}" alt="18+ Years Experience" class="w-full h-full object-contain">
+                            <img src="{{ asset('assets/images/pages/sections/1785540476_6a6d2f7c04504.svg') }}" alt="18+ Years Experience" class="w-full h-full object-contain">
                         </div>
                         <div>
                             <h4 class="font-heading font-semibold text-[15px] sm:text-base text-mst-gray mb-0.5 leading-snug">
-                            {{$years_title}}</h4>
-                            <p class="text-xs text-gray-900 font-body leading-normal">{!! $years_desc !!}</p>
+                                18+ Years Experience</h4>
+                            <p class="text-xs text-gray-900 font-body leading-normal">Serving Pilgrims Since 2008</p>
                         </div>
                     </div>
                     <!-- Feature 3: Best Price Guaranteed -->
                     <div id="pkg-feature-price" class="flex items-center gap-4 lg:px-6">
                         <div class="w-14 h-14 flex-shrink-0 transition-transform duration-300 hover:scale-105">
-                            <img src="{{ asset('assets/images/pages/sections/' . $best_img) }}" alt="Best Price Guaranteed" class="w-full h-full object-contain">
+                            <img src="{{ asset('assets/images/pages/sections/1785540476_6a6d2f7c05c04.svg') }}" alt="Best Price Guaranteed" class="w-full h-full object-contain">
                         </div>
                         <div>
                             <h4 class="font-heading font-semibold text-[15px] sm:text-base text-mst-gray mb-0.5 leading-snug">
-                                {{$best_title}}</h4>
-                            <p class="text-xs text-gray-900 font-body leading-normal">{!! $best_desc !!}</p>
+                                Best Price Guaranteed</h4>
+                            <p class="text-xs text-gray-900 font-body leading-normal">Quality service at Affordable Price</p>
                         </div>
                     </div>
                     <!-- Feature 4: 24/7 Support -->
                     <div id="pkg-feature-support" class="flex items-center gap-4 lg:pl-6">
                         <div class="w-14 h-14 flex-shrink-0 transition-transform duration-300 hover:scale-105">
-                            <img src="{{ asset('assets/images/pages/sections/' . $support_img) }}" alt="24/7 Support" class="w-full h-full object-contain">
+                            <img src="{{ asset('assets/images/pages/sections/1785540476_6a6d2f7c0d1b4.svg') }}" alt="24/7 Support" class="w-full h-full object-contain">
                         </div>
                         <div>
                             <h4 class="font-heading font-semibold text-[15px] sm:text-base text-mst-gray mb-0.5 leading-snug">
-                                {{$support_title}}</h4>
-                            <p class="text-xs text-gray-900 font-body leading-normal">{!! $support_desc !!}</p>
+                                24/7 Support</h4>
+                            <p class="text-xs text-gray-900 font-body leading-normal">We are here to help you anytime</p>
                         </div>
                     </div>
                 </div>
@@ -233,8 +201,8 @@
 </section>
 {{-- bus packages --}}
 @php
-    $ramadan_title = $sec[11]->section_heading ?? '';
-    $ramadan_desc = $sec[11]->section_description ?? '';
+    $ramadan_title = $sec[3]->section_heading ?? '';
+    $ramadan_desc = $sec[3]->section_description ?? '';
 @endphp
 <section class="">
     <div class="container">
@@ -300,8 +268,8 @@
 @include('frontend.components.testimonials')
 {{-- bus Schedule --}}
 @php
-    $schedule_title = $sec[12]->section_heading ?? '';
-    $schedule_desc = $sec[12]->section_description ?? '';
+    $schedule_title = $sec[4]->section_heading ?? '';
+    $schedule_desc = $sec[4]->section_description ?? '';
 @endphp
 <section class="pb-12">
     <div class="container">
@@ -423,17 +391,8 @@
 </section>
 {{-- umrah offer  --}}
 @php
-    $offerTitle = $sec[13]->section_heading ?? '';
-    $offerDesc = $sec[13]->section_description ?? '';
-
-    $dubaiTitle = $sec[14]->section_heading ?? '';
-    $dubaiDesc = $sec[14]->section_description ?? '';
-
-    $abudhabiTitle = $sec[15]->section_heading ?? '';
-    $abudhabiDesc = $sec[15]->section_description ?? '';
-
-    $sharjahTitle = $sec[16]->section_heading ?? '';
-    $sharjahDesc = $sec[16]->section_description ?? '';
+    $offerTitle = $sec[5]->section_heading ?? '';
+    $offerDesc = $sec[5]->section_description ?? '';
 @endphp
 <section class="pb-12">
     <div class="container">
@@ -445,57 +404,26 @@
                 {!! $offerDesc !!}
             </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-            <div class="flex items-center justify-between bg-gray-50 border border-gray-200 px-8 pt-5 pb-8 rounded-3xl">
-                <div class="text-center">
-                    <img src="{{ asset('assets/images/umrah/umrah-7.webp') }}" class="mx-auto mb-4" alt="">
-                    <h3 class="text-xl">{{$dubaiTitle}}</h3>
-                    <p class="text-sm leading-6 my-4 line-clamp-2">{!! $dubaiDesc !!}</p>
-                    <a href="#" class="flex items-center justify-center w-fit mx-auto text-white text-sm mt-5 px-4 pt-1 pb-2 rounded-full bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                        Learn more
-                        <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}" class="w-4 mt-1 ms-1" alt=""> </a>
-                </div>
-            </div>
-            <div class="flex items-center justify-between bg-gray-50 border border-gray-200 px-8 pt-5 pb-8 rounded-3xl">
-                <div class="text-center">
-                    <img src="{{ asset('assets/images/umrah/umrah-8.webp') }}" class="mx-auto mb-4" alt="">
-                    <h3 class="text-xl">{{$abudhabiTitle}}</h3>
-                    <p class="text-sm leading-6 my-4 line-clamp-2">{!! $abudhabiDesc !!}</p>
-                    <a href="#" class="flex items-center justify-center w-fit mx-auto text-white text-sm mt-5 px-4 pt-1 pb-2 rounded-full bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                        Learn more
-                        <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}" class="w-4 mt-1 ms-1" alt=""> </a>
-                </div>
-            </div>
-            <div class="flex items-center justify-between bg-gray-50 border border-gray-200 px-8 pt-5 pb-8 rounded-3xl">
-                <div class="text-center">
-                    <img src="{{ asset('assets/images/umrah/umrah-9.webp') }}" class="mx-auto mb-4" alt="">
-                    <h3 class="text-xl">{{$sharjahTitle}}</h3>
-                    <p class="text-sm leading-6 my-4 line-clamp-2">{!! $sharjahDesc !!}</p>
-                    <a href="#" class="flex items-center justify-center w-fit mx-auto text-white text-sm mt-5 px-4 pt-1 pb-2 rounded-full bg-gradient-to-r from-[#BA9B31] to-[#74611E] hover:from-[#74611E] hover:to-[#BA9B31] transition duration-300 font-heading italic">
-                        Learn more
-                        <img src="{{ asset('assets/images/icons/btn-arrow.svg') }}" class="w-4 mt-1 ms-1" alt=""> </a>
-                </div>
-            </div>
-        </div>
+        @include('frontend.components.related_services', ['limit' => 3, 'position' => 'last', 'cols' => 3, 'show_button' => true, 'img_size' => '150px'])
     </div>
 </section>
 {{--required documents --}}
 @php
-    $docTitle = $sec[17]->section_heading ?? '';
-    $docDesc = $sec[17]->section_description ?? '';
-    $docImg = $sec[17]->section_image ?? '';
+    $docTitle = $sec[6]->section_heading ?? '';
+    $docDesc = $sec[6]->section_description ?? '';
+    $docImg = $sec[6]->section_image ?? '';
 
-    $clearTitle = $sec[18]->section_heading ?? '';
-    $clearDesc = $sec[18]->section_description ?? '';
+    $clearTitle = $sec[7]->section_heading ?? '';
+    $clearDesc = $sec[7]->section_description ?? '';
 
-    $passTitle = $sec[19]->section_heading ?? '';
-    $passDesc = $sec[19]->section_description ?? '';
+    $passTitle = $sec[8]->section_heading ?? '';
+    $passDesc = $sec[8]->section_description ?? '';
 
-    $nationalTitle = $sec[20]->section_heading ?? '';
-    $nationalDesc = $sec[20]->section_description ?? '';
+    $nationalTitle = $sec[9]->section_heading ?? '';
+    $nationalDesc = $sec[9]->section_description ?? '';
 
-    $processTitle = $sec[21]->section_heading ?? '';
-    $processDesc = $sec[21]->section_description ?? '';
+    $processTitle = $sec[10]->section_heading ?? '';
+    $processDesc = $sec[10]->section_description ?? '';
 @endphp
 <section class="pt-10 pb-30 bg-gray-50">
     <div class="container">
@@ -574,16 +502,18 @@
     </div>
 </section>
 {{-- how to perform --}}
-<section class="flex justify-between items-center py-12 bg-gray-100">
+@php
+    $howTitle = $sec[11]->section_heading ?? '';
+    $howDesc = $sec[11]->section_description ?? '';
+@endphp
+<section class="flex justify-between items-center py-12 bg-gray-100 mb-10">
     <div class="container">
         <div class="grid grid-cols-1 md:grid-cols-[2fr_1fr] items-center gap-8">
             <div>
                 <h1 class="md:text-left text-center">
-                    <span>How to perform </span><span class="text-mst">Umrah?</span>
+                    {!! format_two_color_heading($howTitle) !!}
                 </h1>
-                <p class="text-[16px] mt-4 md:text-left text-center">Learn the step-by-step process of performing Umrah,
-                                                                     from the journey to Mecca to completing the rituals
-                                                                     with devotion and reverence.</p>
+                <p class="text-[16px] mt-4 md:text-left text-center">{!! $howDesc !!}</p>
             </div>
             <div class="flex items-center justify-center md:justify-end">
                 <a href="" class="flex items-center justify-center w-fit text-white text-lg px-7 pt-3 pb-3
