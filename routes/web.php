@@ -535,6 +535,26 @@ Route::prefix('admin')->group(function () {
         Route::post('/reviews/{id}/status', [backend\ReviewController::class, 'updateStatusAjax'])->middleware('check.permission:reviews,status')->name('reviews.status');
         // reviews ROUTES END
 
+        // FAQ CATEGORIES ROUTES START
+        Route::get('/faq-categories', [backend\FaqCategoryController::class, 'index'])->name('faq-categories');
+        Route::get('/faq-categories/create', [backend\FaqCategoryController::class, 'create'])->middleware('check.permission:faq-categories,add')->name('faq-categories.create');
+        Route::get('/faq-categories/duplicate/{id}', [backend\FaqCategoryController::class, 'duplicate'])->middleware('check.permission:faq-categories,duplicate')->name('faq-categories.duplicate');
+        Route::get('/faq-categories/edit/{id}', [backend\FaqCategoryController::class, 'editForm'])->middleware('check.permission:faq-categories,edit')->name('faq-categories.edit');
+
+        Route::put('/faq-categories/update/{id}', [backend\FaqCategoryController::class, 'update'])->middleware('check.permission:faq-categories,update')->name('faq-categories.update');
+        Route::post('/faq-categories/store', [backend\FaqCategoryController::class, 'store'])->middleware('check.permission:faq-categories,store')->name('faq-categories.store');
+
+        Route::post('/faq-categories/delete-all', [backend\FaqCategoryController::class, 'deleteAll'])->middleware('check.permission:faq-categories,delete-all')->name('faq-categories.delete-all');
+        Route::get('/faq-categories/trashed', [backend\FaqCategoryController::class, 'trashed'])->middleware('check.permission:faq-categories,trashed')->name('faq-categories.trashed');
+        Route::get('/faq-categories/restore/{id}', [backend\FaqCategoryController::class, 'restore'])->middleware('check.permission:faq-categories,restore')->name('faq-categories.restore');
+        Route::get('/faq-categories/forcedelete/{id}', [backend\FaqCategoryController::class, 'forceDelete'])->middleware('check.permission:faq-categories,forcedelete')->name('faq-categories.forcedelete');
+
+        /* Ajax */
+        Route::get('/faq-categories/modal-view/{id}', [backend\FaqCategoryController::class, 'modalView'])->middleware('check.permission:faq-categories,modal-view')->name('faq-categories.modal-view');
+        Route::delete('/faq-categories/delete/{id}', [backend\FaqCategoryController::class, 'deleteAjax'])->middleware('check.permission:faq-categories,status')->name('faq-categories.delete');
+        Route::post('/faq-categories/{id}/status', [backend\FaqCategoryController::class, 'updateStatusAjax'])->middleware('check.permission:faq-categories,status')->name('faq-categories.status');
+        // FAQ CATEGORIES ROUTES END
+
         // faqs ROUTES START
         Route::get('/faqs', [backend\FaqController::class, 'index'])->name('faqs');
         Route::get('/faqs/create', [backend\FaqController::class, 'create'])->middleware('check.permission:faqs,add')->name('faqs.create');
@@ -801,6 +821,46 @@ Route::prefix('admin')->group(function () {
         Route::delete('/galleries/images/delete/{id}', [backend\GalleryController::class, 'deleteImageAjax'])->name('galleries.images.delete');
         Route::post('/galleries/images/{id}/status', [backend\GalleryController::class, 'updateImageStatusAjax'])->name('galleries.images.status');
         // GALLERIES ROUTES END
+
+        // REQUIRED DOCUMENTS ROUTES START
+        Route::get('/required-documents', [backend\RequiredDocumentController::class, 'index'])->name('required-documents');
+        Route::get('/required-documents/create', [backend\RequiredDocumentController::class, 'create'])->middleware('check.permission:required-documents,add')->name('required-documents.create');
+        Route::get('/required-documents/duplicate/{id}', [backend\RequiredDocumentController::class, 'duplicate'])->middleware('check.permission:required-documents,duplicate')->name('required-documents.duplicate');
+        Route::get('/required-documents/edit/{id}', [backend\RequiredDocumentController::class, 'editForm'])->middleware('check.permission:required-documents,edit')->name('required-documents.edit');
+
+        Route::put('/required-documents/update/{id}', [backend\RequiredDocumentController::class, 'update'])->middleware('check.permission:required-documents,update')->name('required-documents.update');
+        Route::post('/required-documents/store', [backend\RequiredDocumentController::class, 'store'])->middleware('check.permission:required-documents,store')->name('required-documents.store');
+
+        Route::post('/required-documents/delete-all', [backend\RequiredDocumentController::class, 'deleteAll'])->middleware('check.permission:required-documents,delete-all')->name('required-documents.delete-all');
+        Route::get('/required-documents/trashed', [backend\RequiredDocumentController::class, 'trashed'])->middleware('check.permission:required-documents,trashed')->name('required-documents.trashed');
+        Route::get('/required-documents/restore/{id}', [backend\RequiredDocumentController::class, 'restore'])->middleware('check.permission:required-documents,restore')->name('required-documents.restore');
+        Route::get('/required-documents/forcedelete/{id}', [backend\RequiredDocumentController::class, 'forceDelete'])->middleware('check.permission:required-documents,forcedelete')->name('required-documents.forcedelete');
+
+        /* Ajax */
+        Route::get('/required-documents/modal-view/{id}', [backend\RequiredDocumentController::class, 'modalView'])->middleware('check.permission:required-documents,modal-view')->name('required-documents.modal-view');
+        Route::delete('/required-documents/delete/{id}', [backend\RequiredDocumentController::class, 'deleteAjax'])->middleware('check.permission:required-documents,status')->name('required-documents.delete');
+        Route::post('/required-documents/{id}/status', [backend\RequiredDocumentController::class, 'updateStatusAjax'])->middleware('check.permission:required-documents,status')->name('required-documents.status');
+        // REQUIRED DOCUMENTS ROUTES END
+
+        // VACCINATION CENTERS ROUTES START
+        Route::get('/vaccination-centers', [backend\VaccinationCenterController::class, 'index'])->name('vaccination-centers');
+        Route::get('/vaccination-centers/create', [backend\VaccinationCenterController::class, 'create'])->middleware('check.permission:vaccination-centers,add')->name('vaccination-centers.create');
+        Route::get('/vaccination-centers/duplicate/{id}', [backend\VaccinationCenterController::class, 'duplicate'])->middleware('check.permission:vaccination-centers,duplicate')->name('vaccination-centers.duplicate');
+        Route::get('/vaccination-centers/edit/{id}', [backend\VaccinationCenterController::class, 'editForm'])->middleware('check.permission:vaccination-centers,edit')->name('vaccination-centers.edit');
+
+        Route::put('/vaccination-centers/update/{id}', [backend\VaccinationCenterController::class, 'update'])->middleware('check.permission:vaccination-centers,update')->name('vaccination-centers.update');
+        Route::post('/vaccination-centers/store', [backend\VaccinationCenterController::class, 'store'])->middleware('check.permission:vaccination-centers,store')->name('vaccination-centers.store');
+
+        Route::post('/vaccination-centers/delete-all', [backend\VaccinationCenterController::class, 'deleteAll'])->middleware('check.permission:vaccination-centers,delete-all')->name('vaccination-centers.delete-all');
+        Route::get('/vaccination-centers/trashed', [backend\VaccinationCenterController::class, 'trashed'])->middleware('check.permission:vaccination-centers,trashed')->name('vaccination-centers.trashed');
+        Route::get('/vaccination-centers/restore/{id}', [backend\VaccinationCenterController::class, 'restore'])->middleware('check.permission:vaccination-centers,restore')->name('vaccination-centers.restore');
+        Route::get('/vaccination-centers/forcedelete/{id}', [backend\VaccinationCenterController::class, 'forceDelete'])->middleware('check.permission:vaccination-centers,forcedelete')->name('vaccination-centers.forcedelete');
+
+        /* Ajax */
+        Route::get('/vaccination-centers/modal-view/{id}', [backend\VaccinationCenterController::class, 'modalView'])->middleware('check.permission:vaccination-centers,modal-view')->name('vaccination-centers.modal-view');
+        Route::delete('/vaccination-centers/delete/{id}', [backend\VaccinationCenterController::class, 'deleteAjax'])->middleware('check.permission:vaccination-centers,status')->name('vaccination-centers.delete');
+        Route::post('/vaccination-centers/{id}/status', [backend\VaccinationCenterController::class, 'updateStatusAjax'])->middleware('check.permission:vaccination-centers,status')->name('vaccination-centers.status');
+        // VACCINATION CENTERS ROUTES END
 
     });
 });

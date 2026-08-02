@@ -66,33 +66,48 @@
                                                      name="description"
                                                      placeholder="Write {{_label('description')}}" rows="3">{{ old ('description', $data->description) }}</textarea>
                                         </div>
-                                        <div class="col-md-4">
-                                            <label class="form-label text-capitalize" for="status">
-                                                <span>{{_label('status')}}</span> </label>
-                                            <select id="status" name="status" class="form-select select2" required>
-                                                @foreach($getStatus as $status)
-                                                    <option value="{{ old($status, $status) }}" {{ $data->status == $status ? 'selected' : '' }}>
-                                                        {{ ucfirst($status) }}
-                                                    </option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        <div class="col-md-4">
-                                            @include('backend.components.tour-type-select', [
-                                                'tourTypes' => $tourTypes ?? collect(),
-                                                'selected' => old('tour_type_id', $data->tour_type_id) ? [(int) old('tour_type_id', $data->tour_type_id)] : [],
-                                            ])
-                                        </div>
-                                        <div class="col-md-4">
-                                            <label class="form-label text-capitalize" for="ordering">
-                                                {{_label('ordering')}}
-                                            </label> <input type="number"
-                                                            id="ordering"
-                                                            name="ordering"
-                                                            value="{{ old('ordering', $data->ordering) }}"
-                                                            class="form-control"
-                                                            placeholder="Enter 1 to 99...">
-                                        </div>
+                                         <div class="col-md-3">
+                                             <label class="form-label text-capitalize" for="status">
+                                                 <span>{{_label('status')}}</span> </label>
+                                             <select id="status" name="status" class="form-select select2" required>
+                                                 @foreach($getStatus as $status)
+                                                     <option value="{{ old($status, $status) }}" {{ $data->status == $status ? 'selected' : '' }}>
+                                                         {{ ucfirst($status) }}
+                                                     </option>
+                                                 @endforeach
+                                             </select>
+                                         </div>
+                                         <div class="col-md-3">
+                                             <label class="form-label text-capitalize" for="faq_category_id">
+                                                 <span>{{_label('faq_category')}}</span>
+                                             </label>
+                                             <select id="faq_category_id" name="faq_category_id" class="form-select select2">
+                                                 <option value="">-- Select FAQ Category --</option>
+                                                 @if(isset($faqCategories))
+                                                     @foreach($faqCategories as $catId => $catTitle)
+                                                         <option value="{{ $catId }}" {{ old('faq_category_id', $data->faq_category_id) == $catId ? 'selected' : '' }}>
+                                                             {{ $catTitle }}
+                                                         </option>
+                                                     @endforeach
+                                                 @endif
+                                             </select>
+                                         </div>
+                                         <div class="col-md-3">
+                                             @include('backend.components.tour-type-select', [
+                                                 'tourTypes' => $tourTypes ?? collect(),
+                                                 'selected' => old('tour_type_id', $data->tour_type_id) ? [(int) old('tour_type_id', $data->tour_type_id)] : [],
+                                             ])
+                                         </div>
+                                         <div class="col-md-3">
+                                             <label class="form-label text-capitalize" for="ordering">
+                                                 {{_label('ordering')}}
+                                             </label> <input type="number"
+                                                             id="ordering"
+                                                             name="ordering"
+                                                             value="{{ old('ordering', $data->ordering) }}"
+                                                             class="form-control"
+                                                             placeholder="Enter 1 to 99...">
+                                         </div>
                                         {{--<div class="col-md-12">
                                             <label class="form-label text-capitalize" for="image">
                                                 <span>{{_label ('slider_image')}}</span>

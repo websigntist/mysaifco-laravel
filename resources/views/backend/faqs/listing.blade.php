@@ -49,6 +49,7 @@
                                     @php
                                         $renameMap = [
                                             'title' => 'Question & Answer',
+                                            'faq_category' => 'Category',
                                             'tour_type' => 'Tour Type',
                                             'created_at' => 'Created',
                                         ];
@@ -80,6 +81,8 @@
                                                             <small>{{ Str::words(strip_tags($data->description), 15, '...') }}</small>
                                                         </div>
                                                     </div>
+                                                @elseif($col === 'faq_category')
+                                                    {{ $data->faqCategory?->title ?? ($faqCategoryMap[$data->faq_category_id] ?? '—') }}
                                                 @elseif($col === 'tour_type')
                                                     {{ $data->tourType?->title ?? ($tourTypeMap[$data->tour_type_id] ?? '—') }}
                                                 @elseif($col === 'ordering')

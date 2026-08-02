@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\backend;
 
 use App\Models\backend\Faq;
+use App\Models\backend\FaqCategory;
 use App\Models\backend\TourType;
 use App\Models\backend\User;
 use Illuminate\Http\Request;
@@ -35,10 +36,11 @@ class FaqController
         $moduleName = collect($segments)->last();
         $moduleTitle = Str::singular($moduleName);
 
-        $getData = ($this->table)::with('tourType')->latest()->get();
+        $getData = ($this->table)::with(['tourType', 'faqCategory'])->latest()->get();
         $columns = [
             'image',
             'title',
+            'faq_category',
             'description',
             'tour_type',
             'status',
@@ -62,6 +64,7 @@ class FaqController
             'columns'          => $columns,
             'hiddenColumns'    => $hiddenColumns,
             'tourTypeMap'      => TourType::pluck('title', 'id'),
+            'faqCategoryMap'   => FaqCategory::pluck('title', 'id'),
             'meta_title'       => "Listing | Admin Panel",
             'meta_keywords'    => '',
             'meta_description' => ''
@@ -75,12 +78,14 @@ class FaqController
         $moduleTitle = Str::singular($moduleName);
 
         $getStatus = getEnumValues($this->module, 'status');
+        $faqCategories = FaqCategory::where('status', 'Active')->orderBy('ordering', 'asc')->pluck('title', 'id');
 
         return view('backend.' . $this->module . '.form', [
             'title'            => $moduleName,
             'module'           => $moduleName,
             'getStatus'        => $getStatus,
             'tourTypes'        => TourType::activeList(),
+            'faqCategories'    => $faqCategories,
             'meta_title'       => "Create | Admin Panel",
             'meta_keywords'    => '',
             'meta_description' => ''
@@ -105,16 +110,18 @@ class FaqController
 
             // Insert into pages table
             $tourTypeId = $request->tour_type_id ?: null;
+            $faqCategoryId = $request->faq_category_id ?: null;
 
             $dataToStore = [
-                'title'         => $request->title,
-                'description'   => $request->description,
-                'type'          => $tourTypeId ? 'Tour' : 'Default',
-                'tour_type_id'  => $tourTypeId,
-                'status'        => $request->status,
-                'ordering'      => $request->ordering ?? 0,
-                'created_by'    => currentUserId(),
-                'image'         => $uploadImage,
+                'title'           => $request->title,
+                'description'     => $request->description,
+                'type'            => $tourTypeId ? 'Tour' : 'Default',
+                'tour_type_id'    => $tourTypeId,
+                'faq_category_id' => $faqCategoryId,
+                'status'          => $request->status,
+                'ordering'        => $request->ordering ?? 0,
+                'created_by'      => currentUserId(),
+                'image'           => $uploadImage,
             ];
 
             $dbdata = ($this->table)::create($dataToStore);
@@ -150,14 +157,15 @@ class FaqController
         }
 
         $dbdata = ($this->table)::create([
-            'title'         => $source->title . ' (Copy)',
-            'description'   => $source->description,
-            'type'          => $source->type,
-            'tour_type_id'  => $source->tour_type_id,
-            'status'        => $source->status,
-            'ordering'      => $source->ordering,
-            'created_by'    => currentUserId(),
-            'image'         => $newImage,
+            'title'           => $source->title . ' (Copy)',
+            'description'     => $source->description,
+            'type'            => $source->type,
+            'tour_type_id'    => $source->tour_type_id,
+            'faq_category_id' => $source->faq_category_id,
+            'status'          => $source->status,
+            'ordering'        => $source->ordering,
+            'created_by'      => currentUserId(),
+            'image'           => $newImage,
         ]);
 
         return redirect()
@@ -174,6 +182,7 @@ class FaqController
         $moduleTitle = Str::singular($moduleName);
 
         $getStatus = getEnumValues($this->module, 'status');
+        $faqCategories = FaqCategory::where('status', 'Active')->orderBy('ordering', 'asc')->pluck('title', 'id');
 
         return view('backend.' . $this->module . '.edit', [
             'data'             => $dbdata,
@@ -181,6 +190,7 @@ class FaqController
             'module'           => $moduleName,
             'getStatus'        => $getStatus,
             'tourTypes'        => TourType::activeList(),
+            'faqCategories'    => $faqCategories,
             'meta_title'       => "Edit | Admin Panel",
             'meta_keywords'    => '',
             'meta_description' => ''
@@ -201,17 +211,17 @@ class FaqController
 
             // Initialize data to update
             $tourTypeId = $request->tour_type_id ?: null;
+            $faqCategoryId = $request->faq_category_id ?: null;
 
             $dataToUpdate = [
-                'title'         => $request->title,
-                'description'   => $request->description,
-                'company'       => $request->company,
-                'review'        => $request->review,
-                'type'          => $tourTypeId ? 'Tour' : 'Default',
-                'tour_type_id'  => $tourTypeId,
-                'status'        => $request->status,
-                'ordering'      => $request->ordering ?? 0,
-                'created_by'    => currentUserId(),
+                'title'           => $request->title,
+                'description'     => $request->description,
+                'type'            => $tourTypeId ? 'Tour' : 'Default',
+                'tour_type_id'    => $tourTypeId,
+                'faq_category_id' => $faqCategoryId,
+                'status'          => $request->status,
+                'ordering'        => $request->ordering ?? 0,
+                'created_by'      => currentUserId(),
             ];
 
             // Handle image update or deletion

@@ -324,7 +324,7 @@
                     <!-- action buttons -->
                     <div class="card border-top-bottom mt-5 py-3 sticky-action-card" style="position: sticky; top: 90px; z-index: 99; background: var(--bs-card-bg, #ffffff);">
                         <div class="row">
-                            {!! form_action_buttons('Update & Stay', 'Update & New', 'Update & Exit') !!}
+                            {!! form_action_buttons('Update & Stay', 'Update & New', 'Update & Exit', $module) !!}
                         </div>
                     </div>
                 </div>

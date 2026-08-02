@@ -45,6 +45,7 @@
         </div>
     </div>
 </section>
+{{-- umrah offered --}}
 @php
     // umrah offered data
     $umrahOffered_title = $sec[1]->section_heading ?? '';
@@ -66,7 +67,6 @@
     $umrahMultiEntry_desc = $sec[5]->section_description ?? '';
     $umrahMultiEntry_img = $sec[5]->section_image ?? '';
 @endphp
-{{-- umrah offered --}}
 <section class="pb-12">
     <div class="container">
         <div class="mx-auto max-w-5xl text-center pt-12 pb-10">
@@ -177,104 +177,12 @@
     </div>
 </section>
 {{-- required documents --}}
-@php
-    $docTitle = $sec[7]->section_heading ?? '';
-    $docDesc = $sec[7]->section_description ?? '';
-    $docImg = $sec[7]->section_image ?? '';
-
-    $clearTitle = $sec[8]->section_heading ?? '';
-    $clearDesc = $sec[8]->section_description ?? '';
-
-    $passTitle = $sec[9]->section_heading ?? '';
-    $passDesc = $sec[9]->section_description ?? '';
-
-    $nationalTitle = $sec[10]->section_heading ?? '';
-    $nationalDesc = $sec[10]->section_description ?? '';
-
-    $processTitle = $sec[11]->section_heading ?? '';
-    $processDesc = $sec[11]->section_description ?? '';
-@endphp
-<section class="pt-10 pb-30 bg-gray-50">
-    <div class="container">
-        <div class="mx-auto max-w-5xl text-center pt-12 pb-10">
-            <h1>
-                {!! format_two_color_heading($docTitle) !!}
-            </h1>
-            <div class="mt-5">
-                {!! $docDesc !!}
-            </div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
-            <div class="space-y-7">
-                <div class="py-4 px-6 rounded-xl border border-gray-200 bg-white text-center md:text-left">
-                    <div class="flex items-center">
-                        <div class="me-3">
-                            <img src="{{ asset('assets/images/icons/scan.svg') }}" alt="">
-                        </div>
-                        <div class="">
-                            <h3 class="italic">
-                                {!! format_two_color_heading($clearTitle) !!}
-                            </h3>
-                            <p class="text-[14px] mt-2">{!! $clearDesc !!}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="py-4 px-6 rounded-xl border border-gray-200 bg-white text-center md:text-left">
-                    <div class="flex items-center">
-                        <div class="me-3">
-                            <img src="{{ asset('assets/images/icons/photo.svg') }}" alt="">
-                        </div>
-                        <div class="">
-                            <h3 class="italic">
-                                {!! format_two_color_heading($passTitle) !!}
-                            </h3>
-                            <p class="text-[14px] mt-2">{!! $passDesc !!}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="py-4 px-6 rounded-xl border border-gray-200 bg-white text-center md:text-left">
-                    <div class="flex items-center">
-                        <div class="me-3">
-                            <img src="{{ asset('assets/images/icons/idcard.svg') }}" alt="">
-                        </div>
-                        <div class="">
-                            <h3 class="italic">
-                                {!! format_two_color_heading($nationalTitle) !!}
-                            </h3>
-                            <p class="text-[14px] mt-2">{!! $nationalDesc !!}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="py-4 px-6 rounded-xl border border-gray-200 bg-white text-center md:text-left">
-                    <div class="flex items-center">
-                        <div class="me-3">
-                            <img src="{{ asset('assets/images/icons/timer.svg') }}" alt="">
-                        </div>
-                        <div class="">
-                            <h3 class="italic">
-                                {!! format_two_color_heading($processTitle) !!}
-                            </h3>
-                            <p class="text-[14px] mt-2">{!! $processDesc !!}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="flex items-center justify-end">
-                <img src="{{ asset('assets/images/pages/sections/' . $docImg) }}"
-                     width="643"
-                     height="479"
-                     title="{{$docImg}}"
-                     alt="{{$docImg}}"
-                     class="w-full object-cover rounded-xl">
-            </div>
-        </div>
-    </div>
-</section>
+@include('frontend.components.required_documents');
 @include('frontend.components.testimonials')
 {{--===== umrah for single ======--}}
 @php
-    $singleTitle = $sec[12]->section_heading ?? '';
-    $singleDesc = $sec[12]->section_description ?? '';
+    $singleTitle = $sec[7]->section_heading ?? '';
+    $singleDesc = $sec[7]->section_description ?? '';
 @endphp
 <section class="flex justify-center items-center">
     <div class="px-4 relative flex md:min-h-[850px] min-h-[650px] w-full bg-[-250px] md:bg-center bg-cover bg-no-repeat umrah-hero-section"
@@ -306,8 +214,8 @@
 </section>
 {{-- how to perform --}}
 @php
-    $howTitle = $sec[13]->section_heading ?? '';
-    $howDesc = $sec[13]->section_description ?? '';
+    $howTitle = $sec[8]->section_heading ?? '';
+    $howDesc = $sec[8]->section_description ?? '';
 @endphp
 <section class="flex justify-between items-center py-12 bg-gray-50">
     <div class="container">
@@ -335,8 +243,8 @@
 </section>
 {{-- umrah offer --}}
 @php
-    $offerTitle = $sec[14]->section_heading ?? '';
-    $offerDesc = $sec[14]->section_description ?? '';
+    $offerTitle = $sec[9]->section_heading ?? '';
+    $offerDesc = $sec[9]->section_description ?? '';
 @endphp
 <section class="pb-12">
     <div class="container">
@@ -353,8 +261,8 @@
 </section>
 {{-- FAQs --}}
 @php
-    $faq_title = $sec[15]->section_heading ?? '';
-    $faq_desc = $sec[15]->section_description ?? '';
+    $faq_title = $sec[10]->section_heading ?? '';
+    $faq_desc = $sec[10]->section_description ?? '';
 @endphp
 <div class="container mx-auto">
     <div class="md:w-8/12 mx-auto text-center">

@@ -18,6 +18,7 @@ class Faq extends Model
         'status',
         'type',
         'tour_type_id',
+        'faq_category_id',
         'ordering',
         'created_by',
         'deleted_at',
@@ -26,6 +27,11 @@ class Faq extends Model
     public function creator()
     {
         return $this->belongsTo(User::class, 'created_by');
+    }
+
+    public function faqCategory()
+    {
+        return $this->belongsTo(FaqCategory::class, 'faq_category_id');
     }
 
     /**

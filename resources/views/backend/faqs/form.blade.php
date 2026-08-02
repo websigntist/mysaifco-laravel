@@ -65,7 +65,7 @@
                                                    name="description"
                                                    placeholder="Write {{_label('description')}}" rows="5">{{ old('description') }}</textarea>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <label class="form-label text-capitalize" for="status">
                                             <span>{{_label('status')}}</span> </label>
                                         <select id="status" name="status" class="form-select select2" required>
@@ -74,13 +74,28 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
+                                        <label class="form-label text-capitalize" for="faq_category_id">
+                                            <span>{{_label('faq_category')}}</span>
+                                        </label>
+                                        <select id="faq_category_id" name="faq_category_id" class="form-select select2">
+                                            <option value="">-- Select FAQ Category --</option>
+                                            @if(isset($faqCategories))
+                                                @foreach($faqCategories as $catId => $catTitle)
+                                                    <option value="{{ $catId }}" {{ old('faq_category_id') == $catId ? 'selected' : '' }}>
+                                                        {{ $catTitle }}
+                                                    </option>
+                                                @endforeach
+                                            @endif
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
                                         @include('backend.components.tour-type-select', [
                                             'tourTypes' => $tourTypes ?? collect(),
                                             'selected' => old('tour_type_id') ? [(int) old('tour_type_id')] : [],
                                         ])
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <label class="form-label text-capitalize" for="ordering">
                                             {{_label('ordering')}}
                                         </label> <input type="number"

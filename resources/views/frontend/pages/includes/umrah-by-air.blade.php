@@ -70,103 +70,11 @@
     </div>
 </section>
 {{-- ===== Required Documents for Umrah Visa ===== --}}
-@php
-    $docTitle = $sec[3]->section_heading ?? '';
-    $docDesc = $sec[3]->section_description ?? '';
-    $docImg = $sec[3]->section_image ?? '';
-
-    $clearTitle = $sec[4]->section_heading ?? '';
-    $clearDesc = $sec[4]->section_description ?? '';
-
-    $passTitle = $sec[5]->section_heading ?? '';
-    $passDesc = $sec[5]->section_description ?? '';
-
-    $nationalTitle = $sec[6]->section_heading ?? '';
-    $nationalDesc = $sec[6]->section_description ?? '';
-
-    $processTitle = $sec[7]->section_heading ?? '';
-    $processDesc = $sec[7]->section_description ?? '';
-@endphp
-<section class="pt-10 pb-30 bg-gray-50">
-    <div class="container">
-        <div class="mx-auto max-w-5xl text-center pt-12 pb-10">
-            <h1>
-                {!! format_two_color_heading($docTitle) !!}
-            </h1>
-            <div class="mt-5">
-                {!! $docDesc !!}
-            </div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
-            <div class="space-y-7">
-                <div class="py-4 px-6 rounded-xl border border-gray-200 bg-white text-center md:text-left">
-                    <div class="flex items-center">
-                        <div class="me-3">
-                            <img src="{{ asset('assets/images/icons/scan.svg') }}" alt="">
-                        </div>
-                        <div class="">
-                            <h3 class="italic">
-                                {!! format_two_color_heading($clearTitle) !!}
-                            </h3>
-                            <p class="text-[14px] mt-2">{!! $clearDesc !!}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="py-4 px-6 rounded-xl border border-gray-200 bg-white text-center md:text-left">
-                    <div class="flex items-center">
-                        <div class="me-3">
-                            <img src="{{ asset('assets/images/icons/photo.svg') }}" alt="">
-                        </div>
-                        <div class="">
-                            <h3 class="italic">
-                                {!! format_two_color_heading($passTitle) !!}
-                            </h3>
-                            <p class="text-[14px] mt-2">{!! $passDesc !!}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="py-4 px-6 rounded-xl border border-gray-200 bg-white text-center md:text-left">
-                    <div class="flex items-center">
-                        <div class="me-3">
-                            <img src="{{ asset('assets/images/icons/idcard.svg') }}" alt="">
-                        </div>
-                        <div class="">
-                            <h3 class="italic">
-                                {!! format_two_color_heading($nationalTitle) !!}
-                            </h3>
-                            <p class="text-[14px] mt-2">{!! $nationalDesc !!}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="py-4 px-6 rounded-xl border border-gray-200 bg-white text-center md:text-left">
-                    <div class="flex items-center">
-                        <div class="me-3">
-                            <img src="{{ asset('assets/images/icons/timer.svg') }}" alt="">
-                        </div>
-                        <div class="">
-                            <h3 class="italic">
-                                {!! format_two_color_heading($processTitle) !!}
-                            </h3>
-                            <p class="text-[14px] mt-2">{!! $processDesc !!}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="flex items-center justify-end">
-                <img src="{{ asset('assets/images/pages/sections/' . $docImg) }}"
-                     width="643"
-                     height="479"
-                     title="{{$docImg}}"
-                     alt="{{$docImg}}"
-                     class="w-full object-cover rounded-xl">
-            </div>
-        </div>
-    </div>
-</section>
+@include('frontend.components.required_documents');
 {{-- ===== We Offer Umrah from ===== --}}
 @php
-    $weoffer_title = $sec[8]->section_heading ?? '';
-    $weoffer_desc = $sec[8]->section_description ?? '';
+    $weoffer_title = $sec[3]->section_heading ?? '';
+    $weoffer_desc = $sec[3]->section_description ?? '';
 @endphp
 <section class="pb-12">
     <div class="container">
@@ -182,8 +90,8 @@
 @include('frontend.components.testimonials')
 {{-- ===== World Wide Umrah Services ===== --}}
 @php
-    $ww_title = $sec[9]->section_heading ?? '';
-    $ww_desc = $sec[9]->section_description ?? '';
+    $ww_title = $sec[4]->section_heading ?? '';
+    $ww_desc = $sec[4]->section_description ?? '';
 @endphp
 <section class="pt-6 pb-14">
     <div class="container mx-auto">
@@ -198,8 +106,8 @@
 </section>
 {{-- ===== How to perform Umrah? ===== --}}
 @php
-    $how_title = $sec[10]->section_heading ?? '';
-    $how_desc = $sec[10]->section_description ?? '';
+    $how_title = $sec[5]->section_heading ?? '';
+    $how_desc = $sec[5]->section_description ?? '';
 @endphp
 <section class="flex justify-between items-center py-12 mb-16 bg-gray-100">
     <div class="container">
@@ -225,8 +133,8 @@
 </section>
 {{-- FAQs --}}
 @php
-    $faq_title = $sec[11]->section_heading ?? '';
-    $faq_desc = $sec[11]->section_description ?? '';
+    $faq_title = $sec[6]->section_heading ?? '';
+    $faq_desc = $sec[6]->section_description ?? '';
 @endphp
 <div class="container mx-auto">
     <div class="md:w-8/12 mx-auto text-center">

@@ -776,10 +776,29 @@ if (!function_exists('hasPermission')) {
 }
 
 if (!function_exists('form_action_buttons')) {
-    function form_action_buttons($default = 'Submit Now', $save_new = 'Save & New', $save_stay = 'Save & Stay')
+    function form_action_buttons($default = 'Submit Now', $save_new = 'Save & New', $save_stay = 'Save & Stay', $goBack_url = null)
     {
+        $backHtml = '';
+        if ($goBack_url) {
+            $targetUrl = '#';
+            if (\Illuminate\Support\Facades\Route::has($goBack_url)) {
+                $targetUrl = route($goBack_url);
+            } elseif (\Illuminate\Support\Str::startsWith($goBack_url, 'http') || \Illuminate\Support\Str::startsWith($goBack_url, '/')) {
+                $targetUrl = $goBack_url;
+            } else {
+                $targetUrl = url($goBack_url);
+            }
+
+            $backHtml = '
+            <a href="' . $targetUrl . '" class="btn btn-dark waves-effect waves-light d-flex align-items-center ms-2"
+               data-bs-toggle="tooltip" data-bs-placement="top" title="Go Back">
+                <span class="icon-base ti tabler-arrow-back-up-double icon-22px me-1 me-md-2"></span>
+                <span>Back</span>
+            </a>';
+        }
+
         $html = <<<HTML
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center align-items-center flex-wrap gap-2">
             <div class="btn-group me-1">
                 <button type="submit" class="btn btn-primary waves-effect waves-light" name="submitBtn" value="default">
                     <span class="icon-xs icon-base ti tabler-database-plus me-2"></span> {$default}
@@ -801,6 +820,7 @@ if (!function_exists('form_action_buttons')) {
                     </li>
                 </ul>
             </div>
+            {$backHtml}
         </div>
         HTML;
 

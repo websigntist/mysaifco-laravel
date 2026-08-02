@@ -85,7 +85,7 @@
                     <a href="{{route('page.default','umrah-vaccination')}}" class="block px-3 hover:text-mst transition duration-200">umrah vaccination</a>
                 </li>
                 <li>
-                    <a href="{{route('page.default','vtf-tasheel')}}" class="block px-3 hover:text-mst transition duration-200">VFS Tasheel Location – UAE</a>
+                    <a href="{{route('page.default','vfs-tasheer')}}" class="block px-3 hover:text-mst transition duration-200">VFS Tasheer Location – UAE</a>
                 </li>
                 <li>
                     <a href="{{route('page.default','umrah-faqs')}}" class="block px-3 hover:text-mst transition duration-200">Umrah FAQs</a>
