@@ -7,6 +7,7 @@ use App\Models\backend\Tour;
 use App\Models\backend\TourType;
 use App\Models\backend\Explore;
 use App\Models\backend\Faq;
+use App\Models\backend\FaqCategory;
 use App\Models\backend\PopularSearch;
 use App\Models\backend\Slider;
 use App\Models\backend\ExploreUae;
@@ -402,8 +403,21 @@ class MainController
         }
 
         if ($slug === 'faqs' || $includeFile === 'faqs' || $slug === 'umrah-faqs' || $includeFile === 'umrah-faqs' || $slug === 'contact-us' || $includeFile === 'contact_us') {
-            $viewData['allFaqs'] = Faq::where('status', 'Active')->orderBy('ordering')->orderByDesc('id')->get();
-            $viewData['faqs'] = Faq::where('status', 'Active')->orderBy('ordering')->limit(6)->get();
+            $viewData['faqCategories'] = FaqCategory::where('status', 'Active')->orderBy('id', 'asc')->get();
+
+            if ($slug === 'umrah-faqs' || $includeFile === 'umrah-faqs') {
+                $umrahTourTypeId = TourType::where('friendly_url', 'umrah-faqs')->orWhere('title', 'Umrah FAQs')->value('id') ?? 18;
+                $viewData['allFaqs'] = Faq::where('status', 'Active')
+                    ->where('tour_type_id', $umrahTourTypeId)
+                    ->with('faqCategory')
+                    ->orderBy('ordering', 'asc')
+                    ->orderByDesc('id')
+                    ->get();
+            } else {
+                $viewData['allFaqs'] = Faq::where('status', 'Active')->with('faqCategory')->orderBy('ordering', 'asc')->orderByDesc('id')->get();
+            }
+
+            $viewData['faqs'] = Faq::where('status', 'Active')->with('faqCategory')->orderBy('ordering', 'asc')->limit(6)->get();
             $viewData = array_merge($viewData, $this->allCategoriesFaqsViewData());
         }
 
