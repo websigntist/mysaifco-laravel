@@ -11,44 +11,10 @@ $(function () {
         }
     });
 
-    // Open all nodes by default
-    $tree.jstree("open_all");
+    // Collapse all nodes on page load by default
+    $tree.jstree("close_all");
 
-    // Click handler for jstree node links/labels
-    $tree.on("click", ".jstree-anchor", function (e) {
-        e.preventDefault();
-        var $li = $(this).closest("li");
-        var primaryCheckbox = $li.children("input[type='checkbox']").first();
-        var isChecked = !primaryCheckbox.prop("checked");
-
-        // Toggle module checkbox and all action/nested checkboxes inside this module
-        $li.find("input[type='checkbox']").prop("checked", isChecked);
-
-        // If checking, also check parent module checkboxes up the tree
-        if (isChecked) {
-            $li.parents("li").children("input[type='checkbox']").prop("checked", true);
-        }
-        updateSelectedMessage();
-    });
-
-    // Direct checkbox toggle handler
-    $tree.on("change", "input[type='checkbox']", function () {
-        var isChecked = $(this).prop("checked");
-        var $li = $(this).closest("li");
-
-        // If module checkbox is toggled, toggle all action/nested checkboxes under it
-        if ($(this).attr("name") === "modules[]") {
-            $li.find("input[type='checkbox']").prop("checked", isChecked);
-        }
-
-        // If an action or nested module is checked, check parent module checkboxes
-        if (isChecked) {
-            $li.parents("li").children("input[type='checkbox']").prop("checked", true);
-        }
-        updateSelectedMessage();
-    });
-
-    // Helper message update
+    // Helper: Update selected count message if container exists
     function updateSelectedMessage() {
         if ($("#form_message").length) {
             var count = $tree.find("input[type='checkbox']:checked").length;
@@ -56,15 +22,88 @@ $(function () {
         }
     }
 
-    // CRITICAL: Prevent lost checkboxes on submit (even if collapsed by jstree)
+    // 1. Direct checkbox change handler (Handles native checkbox clicks)
+    $tree.on("change", "input[type='checkbox']", function (e) {
+        e.stopPropagation();
+
+        var isChecked = $(this).prop("checked");
+        var $li = $(this).closest("li");
+        var isModule = $(this).attr("name") === "modules[]";
+
+        if (isModule) {
+            // Module checkbox toggled -> open node so children exist in DOM, set all child checkboxes
+            $tree.jstree("open_node", $li);
+            $li.find("input[type='checkbox']").prop("checked", isChecked);
+
+            // If checking, ensure parent module checkboxes up the tree are checked
+            if (isChecked) {
+                $li.parents("li").children("input[name='modules[]']").prop("checked", true);
+            }
+        } else {
+            // Action checkbox toggled
+            if (isChecked) {
+                // Ensure parent module checkbox & ancestors are checked
+                $li.parents("li").children("input[name='modules[]']").prop("checked", true);
+            } else {
+                // If action unchecked, check if any remaining actions under this module are checked
+                var $moduleLi = $li.closest("li[id^='node-']").not($li);
+                if ($moduleLi.length) {
+                    var hasCheckedActions = $moduleLi.find("input[name^='actions[']:checked").length > 0;
+                    if (!hasCheckedActions) {
+                        $moduleLi.children("input[name='modules[]']").prop("checked", false);
+                    }
+                }
+            }
+        }
+        updateSelectedMessage();
+    });
+
+    // 2. Click handler on text label -> trigger change on its checkbox
+    $tree.on("click", "label", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        var $checkbox = $(this).siblings("input[type='checkbox']").first();
+        if (!$checkbox.length) {
+            $checkbox = $(this).closest("li").children("input[type='checkbox']").first();
+        }
+
+        if ($checkbox.length) {
+            var newState = !$checkbox.prop("checked");
+            $checkbox.prop("checked", newState).trigger("change");
+        }
+    });
+
+    // 3. Click handler on jstree anchor -> delegate to label/checkbox (ignore tree arrow .jstree-ocl)
+    $tree.on("click", ".jstree-anchor", function (e) {
+        if ($(e.target).hasClass("jstree-ocl") || $(e.target).closest(".jstree-ocl").length) {
+            return; // Tree arrow collapse/expand only
+        }
+
+        e.preventDefault();
+        e.stopPropagation();
+
+        var $label = $(this).find("label").first();
+        if ($label.length) {
+            $label.trigger("click");
+        } else {
+            var $checkbox = $(this).siblings("input[type='checkbox']").first();
+            if ($checkbox.length) {
+                var newState = !$checkbox.prop("checked");
+                $checkbox.prop("checked", newState).trigger("change");
+            }
+        }
+    });
+
+    // 4. On form submission: expand tree & clone all checked checkboxes into hidden inputs
     $(document).on("submit", "form", function () {
         var $formTree = $(this).find("#jstree-checkbox");
         if (!$formTree.length) return;
 
-        // Open all nodes in jstree so DOM elements exist
+        // Open all nodes so all DOM elements exist for cloning
         $formTree.jstree("open_all");
 
-        // Remove any previous hidden clones
+        // Remove previous hidden submit clones
         $(this).find(".jstree-hidden-submit-input").remove();
 
         var $form = $(this);
