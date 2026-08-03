@@ -1,60 +1,86 @@
 $(function () {
+    var $tree = $("#jstree-checkbox");
+    if (!$tree.length) return;
+
     var theme = $("html").attr("data-bs-theme") === "dark" ? "default-dark" : "default";
-    $("#jstree-checkbox").jstree({
+
+    // Initialize jstree
+    $tree.jstree({
         core: {
-            themes: {name: theme}
-        },
+            themes: { name: theme }
+        }
     });
 
-    // Toggle checkbox when clicking anywhere within jstree-anchor
-    $("#jstree-checkbox").on("click", ".jstree-anchor", function (e) {
-        e.preventDefault(); // Prevent default jstree behavior
-        var nodeId = $(this).parent().attr("id");
-        var checkbox = $(`#${nodeId}`).find(".jstree-checkbox").first();
-        var isChecked = !checkbox.prop("checked");
-        checkbox.prop("checked", isChecked);
-        updateSelectedMessage();
+    // Open all nodes by default
+    $tree.jstree("open_all");
 
-        // Cascade check/uncheck children when parent anchor is clicked
-        var node = $("#jstree-checkbox").jstree(true).get_node(nodeId);
-        if (node.children.length) {
-            function checkDescendants(nodeId, checked) {
-                var node = $("#jstree-checkbox").jstree(true).get_node(nodeId);
-                node.children.forEach(function (childId) {
-                    $(`input[value="${childId}"]`).prop("checked", checked);
-                    checkDescendants(childId, checked);
-                });
-            }
+    // Click handler for jstree node links/labels
+    $tree.on("click", ".jstree-anchor", function (e) {
+        e.preventDefault();
+        var $li = $(this).closest("li");
+        var primaryCheckbox = $li.children("input[type='checkbox']").first();
+        var isChecked = !primaryCheckbox.prop("checked");
 
-            checkDescendants(nodeId, isChecked);
-            updateSelectedMessage();
-        }
+        // Toggle module checkbox and all action/nested checkboxes inside this module
+        $li.find("input[type='checkbox']").prop("checked", isChecked);
 
-        // Open all ancestor nodes if any checkbox is checked
+        // If checking, also check parent module checkboxes up the tree
         if (isChecked) {
-            var currentNode = node;
-            while (currentNode.parent !== "#") {
-                currentNode = $("#jstree-checkbox").jstree(true).get_node(currentNode.parent);
-                $("#jstree-checkbox").jstree(true).open_node(currentNode);
-            }
+            $li.parents("li").children("input[type='checkbox']").prop("checked", true);
         }
+        updateSelectedMessage();
     });
 
-    // Update selected nodes message
+    // Direct checkbox toggle handler
+    $tree.on("change", "input[type='checkbox']", function () {
+        var isChecked = $(this).prop("checked");
+        var $li = $(this).closest("li");
+
+        // If module checkbox is toggled, toggle all action/nested checkboxes under it
+        if ($(this).attr("name") === "modules[]") {
+            $li.find("input[type='checkbox']").prop("checked", isChecked);
+        }
+
+        // If an action or nested module is checked, check parent module checkboxes
+        if (isChecked) {
+            $li.parents("li").children("input[type='checkbox']").prop("checked", true);
+        }
+        updateSelectedMessage();
+    });
+
+    // Helper message update
     function updateSelectedMessage() {
-        var checked = $("input.jstree-checkbox:checked").map(function () {
-            return $(this).val();
-        }).get();
-        $("#form_message").text("Selected: " + (checked.length ? checked.join(", ") : "None"));
+        if ($("#form_message").length) {
+            var count = $tree.find("input[type='checkbox']:checked").length;
+            $("#form_message").text("Selected permissions count: " + count);
+        }
     }
 
-    // Form validation
-    $("#jstree_form").on("submit", function (e) {
-        var checked = $("input.jstree-checkbox:checked");
-        if (checked.length === 0) {
-            e.preventDefault();
-            $("#form_message").text("Please select at least one node.");
-            return false;
-        }
+    // CRITICAL: Prevent lost checkboxes on submit (even if collapsed by jstree)
+    $(document).on("submit", "form", function () {
+        var $formTree = $(this).find("#jstree-checkbox");
+        if (!$formTree.length) return;
+
+        // Open all nodes in jstree so DOM elements exist
+        $formTree.jstree("open_all");
+
+        // Remove any previous hidden clones
+        $(this).find(".jstree-hidden-submit-input").remove();
+
+        var $form = $(this);
+
+        // Clone all checked checkboxes as hidden inputs attached directly to the form
+        $formTree.find("input[type='checkbox']:checked").each(function () {
+            var name = $(this).attr("name");
+            var val = $(this).val();
+            if (name && val !== undefined) {
+                $("<input>", {
+                    type: "hidden",
+                    class: "jstree-hidden-submit-input",
+                    name: name,
+                    value: val
+                }).appendTo($form);
+            }
+        });
     });
 });

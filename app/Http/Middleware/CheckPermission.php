@@ -16,11 +16,8 @@ class CheckPermission
             return redirect()->route('admin.login')->with('error', 'Please login first.');
         }
 
-        // Super admins bypass all checks
-        $userType = strtolower(optional($user->userType)->user_type);
-        $adminRoles = ['admin', 'super admin', 'administrator'];
-
-        if (in_array($userType, $adminRoles)) {
+        // Only Super Admins bypass all checks
+        if (function_exists('isSuperAdmin') && isSuperAdmin($user)) {
             return $next($request);
         }
 
@@ -38,9 +35,27 @@ class CheckPermission
 
         $hasPermission = false;
 
-        if ($record && !empty($record->actions)) {
-            $allowedActions = array_map('trim', explode('|', strtolower($record->actions)));
-            $hasPermission = in_array(strtolower($action), $allowedActions);
+        if ($record) {
+            $reqAction = strtolower(trim($action));
+
+            // Normalized action mapping
+            $normalizedAction = match ($reqAction) {
+                'index', 'listing', 'modal-view', 'modalview' => 'view',
+                'create', 'store' => 'add',
+                'editform', 'edit-form', 'update', 'update-title', 'update-ordering', 'status' => 'edit',
+                default => $reqAction
+            };
+
+            if (empty($record->actions)) {
+                if ($normalizedAction === 'view' || $reqAction === 'view') {
+                    $hasPermission = true;
+                }
+            } else {
+                $allowedActions = array_map(fn($a) => strtolower(trim($a)), explode('|', $record->actions));
+                if ($normalizedAction === 'view' || in_array($normalizedAction, $allowedActions) || in_array($reqAction, $allowedActions)) {
+                    $hasPermission = true;
+                }
+            }
         }
 
         if (!$hasPermission) {
@@ -48,7 +63,11 @@ class CheckPermission
                 return response()->json(['error' => 'You don’t have permission for this action.'], 403);
             }
 
-            return redirect()->back()->with('error', 'You don’t have permission for this action.');
+            if ($request->header('referer') && str_contains($request->header('referer'), $request->getHost())) {
+                return redirect()->back()->with('error', 'You don’t have permission to access this module or action.');
+            }
+
+            return redirect()->route('admin.dashboard')->with('error', 'You don’t have permission to access this module or action.');
         }
 
         return $next($request);

@@ -40,7 +40,11 @@ class UserTypeController extends Controller
         $moduleName = collect($segments)->last();
         $moduleTitle = Str::singular($moduleName);
 
-        $getData = ($this->table)::latest()->get();
+        $query = ($this->table)::latest();
+        if (function_exists('isSuperAdmin') && !isSuperAdmin()) {
+            $query->where('user_type', '!=', 'Super Admin')->where('id', '!=', 1);
+        }
+        $getData = $query->get();
 
         $columns = [
             'user_type',
@@ -140,18 +144,32 @@ class UserTypeController extends Controller
             }
 
             // Save permissions into user_type_modules_rel
-            $modules = $request->input('modules', []);   // selected modules
-            $actions = $request->input('actions', []);   // actions by module
+            $modules = (array) $request->input('modules', []);   // selected modules
+            $actions = (array) $request->input('actions', []);   // actions by module
+            $allModuleIds = array_unique(array_merge(array_map('intval', $modules), array_map('intval', array_keys($actions))));
 
-            foreach ($modules as $moduleId) {
-                \DB::table('user_type_modules_rel')->insert([
-                    'user_type_id' => $userType->id,
-                    'module_id'    => $moduleId,
-                    // Save actions joined with "|" instead of ","
-                    'actions'      => isset($actions[$moduleId]) ? implode('|', $actions[$moduleId]) : null,
-                    'created_at'   => now(),
-                    'updated_at'   => now(),
-                ]);
+            foreach ($allModuleIds as $moduleId) {
+                if ($moduleId <= 0) continue;
+                $actList = [];
+                if (isset($actions[$moduleId])) {
+                    if (is_array($actions[$moduleId])) {
+                        $actList = array_values(array_unique(array_filter(array_map('trim', $actions[$moduleId]))));
+                    } elseif (is_string($actions[$moduleId]) && trim($actions[$moduleId]) !== '') {
+                        $actList = array_values(array_unique(array_filter(array_map('trim', preg_split('/[|,]/', $actions[$moduleId])))));
+                    }
+                }
+                if (empty($actList) && in_array($moduleId, array_map('intval', $modules))) {
+                    $actList = ['view'];
+                }
+                if (!empty($actList)) {
+                    \DB::table('user_type_modules_rel')->insert([
+                        'user_type_id' => $userType->id,
+                        'module_id'    => $moduleId,
+                        'actions'      => implode('|', $actList),
+                        'created_at'   => now(),
+                        'updated_at'   => now(),
+                    ]);
+                }
             }
 
             if ($action === 'save_new') {
@@ -213,6 +231,10 @@ class UserTypeController extends Controller
     {
         $userType = ($this->table)::findOrFail($id);
 
+        if (($userType->id == 1 || strtolower($userType->user_type) === 'super admin') && function_exists('isSuperAdmin') && !isSuperAdmin()) {
+            return redirect()->route($this->module)->with('error', 'Only Super Admin can edit the Super Admin role.');
+        }
+
         $segments = $request->segments();
         $moduleName = $segments[count($segments) - 3] ?? null;
         $moduleTitle = Str::singular($moduleName);
@@ -243,9 +265,9 @@ class UserTypeController extends Controller
         $selectedActions = [];
         foreach ($records as $record) {
             if (!empty($record->actions)) {
-                // Currently you’re storing "add|edit|delete" as a string
-                // Need to explode it into an array
                 $selectedActions[$record->module_id] = array_map('trim', preg_split('/\||,/', $record->actions));
+            } else {
+                $selectedActions[$record->module_id] = ['view'];
             }
         }
 
@@ -282,6 +304,10 @@ class UserTypeController extends Controller
             // Find user type
             $userType = ($this->table)::findOrFail($id);
 
+            if (($userType->id == 1 || strtolower($userType->user_type) === 'super admin') && function_exists('isSuperAdmin') && !isSuperAdmin()) {
+                return redirect()->route($this->module)->with('error', 'Only Super Admin can update the Super Admin role.');
+            }
+
             // Update table
             $userType->update([
                 'user_type'  => $request->user_type,
@@ -289,22 +315,36 @@ class UserTypeController extends Controller
             ]);
 
             // Handle modules + actions
-            $modules = $request->input('modules', []);
-            $actions = $request->input('actions', []);
+            $modules = (array) $request->input('modules', []);
+            $actions = (array) $request->input('actions', []);
+            $allModuleIds = array_unique(array_merge(array_map('intval', $modules), array_map('intval', array_keys($actions))));
 
             // Remove old permissions
             \DB::table('user_type_modules_rel')->where('user_type_id', $id)->delete();
 
             // Insert new permissions
-            foreach ($modules as $moduleId) {
-                \DB::table('user_type_modules_rel')->insert([
-                    'user_type_id' => $id,
-                    'module_id'    => $moduleId,
-                    // Save actions separated by "|" instead of ","
-                    'actions'      => isset($actions[$moduleId]) ? implode('|', $actions[$moduleId]) : null,
-                    'created_at'   => now(),
-                    'updated_at'   => now(),
-                ]);
+            foreach ($allModuleIds as $moduleId) {
+                if ($moduleId <= 0) continue;
+                $actList = [];
+                if (isset($actions[$moduleId])) {
+                    if (is_array($actions[$moduleId])) {
+                        $actList = array_values(array_unique(array_filter(array_map('trim', $actions[$moduleId]))));
+                    } elseif (is_string($actions[$moduleId]) && trim($actions[$moduleId]) !== '') {
+                        $actList = array_values(array_unique(array_filter(array_map('trim', preg_split('/[|,]/', $actions[$moduleId])))));
+                    }
+                }
+                if (empty($actList) && in_array($moduleId, array_map('intval', $modules))) {
+                    $actList = ['view'];
+                }
+                if (!empty($actList)) {
+                    \DB::table('user_type_modules_rel')->insert([
+                        'user_type_id' => $id,
+                        'module_id'    => $moduleId,
+                        'actions'      => implode('|', $actList),
+                        'created_at'   => now(),
+                        'updated_at'   => now(),
+                    ]);
+                }
             }
 
             if ($action === 'save_new') {
@@ -325,8 +365,11 @@ class UserTypeController extends Controller
     public function delete($id)
     {
         try {
-            $page = ($this->table)::findOrFail($id);      // Find the page
-            $page->delete();                              // Delete it
+            $userType = ($this->table)::findOrFail($id);
+            if (($userType->id == 1 || strtolower($userType->user_type) === 'super admin') && function_exists('isSuperAdmin') && !isSuperAdmin()) {
+                return redirect()->route($this->module)->with('error', 'Only Super Admin can delete the Super Admin role.');
+            }
+            $userType->delete();
 
             return redirect()->route($this->module)->with('success', $this->notify_title . ' deleted successfully.');
         } catch (\Exception $e) {

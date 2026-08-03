@@ -110,6 +110,9 @@ class UserController extends Controller
     protected function activeUserTypesForForm()
     {
         $q = UserType::query()->where('status', 'Active')->orderBy('user_type');
+        if (function_exists('isSuperAdmin') && !isSuperAdmin()) {
+            $q->where('user_type', '!=', 'Super Admin')->where('id', '!=', 1);
+        }
         if ($this->restrictToUserTypeIds !== null) {
             if ($this->restrictToUserTypeIds === []) {
                 return collect();
@@ -123,6 +126,9 @@ class UserController extends Controller
     protected function activeLoginTypesForForm()
     {
         $q = UserType::query()->where('status', 'Active');
+        if (function_exists('isSuperAdmin') && !isSuperAdmin()) {
+            $q->where('user_type', '!=', 'Super Admin')->where('id', '!=', 1);
+        }
         if ($this->restrictToUserTypeIds !== null) {
             if ($this->restrictToUserTypeIds === []) {
                 return collect();
@@ -136,6 +142,9 @@ class UserController extends Controller
     protected function userTypesPluckForEdit()
     {
         $q = UserType::query()->orderBy('user_type');
+        if (function_exists('isSuperAdmin') && !isSuperAdmin()) {
+            $q->where('user_type', '!=', 'Super Admin')->where('id', '!=', 1);
+        }
         if ($this->restrictToUserTypeIds !== null) {
             if ($this->restrictToUserTypeIds === []) {
                 return collect();

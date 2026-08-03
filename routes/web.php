@@ -62,51 +62,47 @@ Route::prefix('admin')->group(function () {
         Route::post('/upload/dropzone', [backend\DropzoneController::class, 'upload'])->name('dropzone.upload');
 
         // USER TYPES ROUTES START
-        Route::get('/user-types', [backend\UserTypeController::class, 'index'])->name('user-types');
-        Route::get('/user-types/create', [backend\UserTypeController::class, 'create'])->name('user-types.create');
-        Route::post('/user-types', [backend\UserTypeController::class, 'store'])->name('user-types.store');
-        Route::get('/user-types/duplicate/{id}', [backend\UserTypeController::class, 'duplicate'])->name('user-types.duplicate');
+        Route::get('/user-types', [backend\UserTypeController::class, 'index'])->middleware('check.permission:user-types,view')->name('user-types');
+        Route::get('/user-types/create', [backend\UserTypeController::class, 'create'])->middleware('check.permission:user-types,add')->name('user-types.create');
+        Route::post('/user-types', [backend\UserTypeController::class, 'store'])->middleware('check.permission:user-types,add')->name('user-types.store');
+        Route::get('/user-types/duplicate/{id}', [backend\UserTypeController::class, 'duplicate'])->middleware('check.permission:user-types,duplicate')->name('user-types.duplicate');
 
-        Route::get('/user-types/edit/{id}', [backend\UserTypeController::class, 'edit'])->name('user-types.edit');
-        Route::put('/user-types/update/{id}', [backend\UserTypeController::class, 'update'])->name('user-types.update');
+        Route::get('/user-types/edit/{id}', [backend\UserTypeController::class, 'edit'])->middleware('check.permission:user-types,edit')->name('user-types.edit');
+        Route::put('/user-types/update/{id}', [backend\UserTypeController::class, 'update'])->middleware('check.permission:user-types,edit')->name('user-types.update');
 
-        //Route::get('/user-types/delete/{id}', [backend\UserTypeController::class, 'delete'])->name('user-types
-        //.delete');
-        Route::post('/user-types/delete-all', [backend\UserTypeController::class, 'deleteAll'])->name('user-types.delete-all');
+        Route::post('/user-types/delete-all', [backend\UserTypeController::class, 'deleteAll'])->middleware('check.permission:user-types,delete-all')->name('user-types.delete-all');
 
         /* Ajax */
-        Route::delete('/user-types/delete/{id}', [backend\UserTypeController::class, 'deleteAjax'])->name('user-types.delete');
-        Route::post('/user-types/{id}/status', [backend\UserTypeController::class, 'updateStatusAjax'])->name('user-types.status');
+        Route::delete('/user-types/delete/{id}', [backend\UserTypeController::class, 'deleteAjax'])->middleware('check.permission:user-types,delete')->name('user-types.delete');
+        Route::post('/user-types/{id}/status', [backend\UserTypeController::class, 'updateStatusAjax'])->middleware('check.permission:user-types,status')->name('user-types.status');
 
-        Route::get('/user-types/trashed', [backend\UserTypeController::class, 'trashed'])->name('user-types.trashed');
-        Route::get('/user-types/restore/{id}', [backend\UserTypeController::class, 'restore'])->name('user-types.restore');
-        Route::get('/user-types/forcedelete/{id}', [backend\UserTypeController::class, 'forceDelete'])->name('user-types.forcedelete');
+        Route::get('/user-types/trashed', [backend\UserTypeController::class, 'trashed'])->middleware('check.permission:user-types,trashed')->name('user-types.trashed');
+        Route::get('/user-types/restore/{id}', [backend\UserTypeController::class, 'restore'])->middleware('check.permission:user-types,restore')->name('user-types.restore');
+        Route::get('/user-types/forcedelete/{id}', [backend\UserTypeController::class, 'forceDelete'])->middleware('check.permission:user-types,forcedelete')->name('user-types.forcedelete');
         // USER TYPES ROUTES END
 
         // USERS ROUTES START
-        Route::get('/users', [backend\UserController::class, 'index'])->name('users');
-        Route::get('/users/create', [backend\UserController::class, 'create'])->name('users.create');
-        Route::post('/users', [backend\UserController::class, 'store'])->name('users.store');
-        Route::get('/users/duplicate/{id}', [backend\UserController::class, 'duplicate'])->name('users.duplicate');
+        Route::get('/users', [backend\UserController::class, 'index'])->middleware('check.permission:users,view')->name('users');
+        Route::get('/users/create', [backend\UserController::class, 'create'])->middleware('check.permission:users,add')->name('users.create');
+        Route::post('/users', [backend\UserController::class, 'store'])->middleware('check.permission:users,add')->name('users.store');
+        Route::get('/users/duplicate/{id}', [backend\UserController::class, 'duplicate'])->middleware('check.permission:users,duplicate')->name('users.duplicate');
 
-        Route::get('/users/edit/{id}', [backend\UserController::class, 'editForm'])->name('users.edit');
-        Route::match(['post', 'put'], '/users/update/{id}', [backend\UserController::class, 'update'])->name('users.update');
-        Route::get('/users/view/{id}', [backend\UserController::class, 'view'])->name('users.view');
+        Route::get('/users/edit/{id}', [backend\UserController::class, 'editForm'])->middleware('check.permission:users,edit')->name('users.edit');
+        Route::match(['post', 'put'], '/users/update/{id}', [backend\UserController::class, 'update'])->middleware('check.permission:users,edit')->name('users.update');
+        Route::get('/users/view/{id}', [backend\UserController::class, 'view'])->middleware('check.permission:users,view')->name('users.view');
 
-        //Route::get('/users/{id}/status', [backend\UserController::class, 'status'])->name('users.status');
         Route::match(['post', 'get'], '/profile', [backend\UserController::class, 'updateProfile'])->name('profile');
 
-        //Route::get('/users/delete/{id}', [backend\UserController::class, 'delete'])->name('users.delete');
-        Route::post('/users/delete-all', [backend\UserController::class, 'deleteAll'])->name('users.delete-all');
+        Route::post('/users/delete-all', [backend\UserController::class, 'deleteAll'])->middleware('check.permission:users,delete-all')->name('users.delete-all');
 
         /* Ajax */
-        Route::get('/users/modal-view/{id}', [backend\UserController::class, 'modalView'])->name('users.modal-view');
-        Route::delete('/users/delete/{id}', [backend\UserController::class, 'deleteAjax'])->name('users.delete');
-        Route::post('/users/{id}/status', [backend\UserController::class, 'updateStatusAjax'])->name('users.status');
+        Route::get('/users/modal-view/{id}', [backend\UserController::class, 'modalView'])->middleware('check.permission:users,modal-view')->name('users.modal-view');
+        Route::delete('/users/delete/{id}', [backend\UserController::class, 'deleteAjax'])->middleware('check.permission:users,delete')->name('users.delete');
+        Route::post('/users/{id}/status', [backend\UserController::class, 'updateStatusAjax'])->middleware('check.permission:users,status')->name('users.status');
 
-        Route::get('/users/trashed', [backend\UserController::class, 'trashed'])->name('users.trashed');
-        Route::get('/users/restore/{id}', [backend\UserController::class, 'restore'])->name('users.restore');
-        Route::get('/users/forcedelete/{id}', [backend\UserController::class, 'forceDelete'])->name('users.forcedelete');
+        Route::get('/users/trashed', [backend\UserController::class, 'trashed'])->middleware('check.permission:users,trashed')->name('users.trashed');
+        Route::get('/users/restore/{id}', [backend\UserController::class, 'restore'])->middleware('check.permission:users,restore')->name('users.restore');
+        Route::get('/users/forcedelete/{id}', [backend\UserController::class, 'forceDelete'])->middleware('check.permission:users,forcedelete')->name('users.forcedelete');
         // USERS ROUTES END
 
         // CUSTOMERS (same User model / users table) ROUTES START
@@ -156,7 +152,7 @@ Route::prefix('admin')->group(function () {
         // MODULES ROUTES END
 
         // PAGES ROUTES START
-        Route::get('/pages', [backend\PageController::class, 'index'])->name('pages');
+        Route::get('/pages', [backend\PageController::class, 'index'])->middleware('check.permission:pages,view')->name('pages');
         Route::get('/pages/create', [backend\PageController::class, 'create'])->middleware('check.permission:pages,add')->name('pages.create');
         Route::get('/pages/duplicate/{id}', [backend\PageController::class, 'duplicate'])->middleware('check.permission:pages,duplicate')->name('pages.duplicate');
         Route::get('/pages/edit/{id}', [backend\PageController::class, 'editForm'])->middleware('check.permission:pages,edit')->name('pages.edit');
@@ -164,12 +160,8 @@ Route::prefix('admin')->group(function () {
         Route::put('/pages/update/{id}', [backend\PageController::class, 'update'])->middleware('check.permission:pages,update')->name('pages.update');
         Route::post('/pages/store', [backend\PageController::class, 'store'])->middleware('check.permission:pages,store')->name('pages.store');
 
-        //Route::get('/pages/delete/{id}', [backend\PageController::class, 'delete'])->middleware('check
-        //.permission:pages,delete')->name('pages.delete');
         Route::post('/pages/delete-all', [backend\PageController::class, 'deleteAll'])->middleware('check.permission:pages,delete-all')->name('pages.delete-all');
         Route::get('/pages/view/{id}', [backend\PageController::class, 'view'])->middleware('check.permission:pages,view')->name('pages.view');
-        //Route::get('/pages/{id}/status', [backend\PageController::class, 'status'])->middleware('check
-        //.permission:pages,status')->name('pages.status');
 
         Route::get('/pages/trashed', [backend\PageController::class, 'trashed'])->middleware('check.permission:pages,trashed')->name('pages.trashed');
         Route::get('/pages/restore/{id}', [backend\PageController::class, 'restore'])->middleware('check.permission:pages,restore')->name('pages.restore');
@@ -188,7 +180,7 @@ Route::prefix('admin')->group(function () {
         // PAGES ROUTES END
 
         // TOURS ROUTES START
-        Route::get('/tours', [backend\TourController::class, 'index'])->name('tours');
+        Route::get('/tours', [backend\TourController::class, 'index'])->middleware('check.permission:tours,view')->name('tours');
         Route::get('/tours/create', [backend\TourController::class, 'create'])->middleware('check.permission:tours,add')->name('tours.create');
         Route::get('/tours/duplicate/{id}', [backend\TourController::class, 'duplicate'])->middleware('check.permission:tours,duplicate')->name('tours.duplicate');
         Route::get('/tours/edit/{id}', [backend\TourController::class, 'editForm'])->middleware('check.permission:tours,edit')->name('tours.edit');
@@ -196,12 +188,8 @@ Route::prefix('admin')->group(function () {
         Route::put('/tours/update/{id}', [backend\TourController::class, 'update'])->middleware('check.permission:tours,update')->name('tours.update');
         Route::post('/tours/store', [backend\TourController::class, 'store'])->middleware('check.permission:tours,store')->name('tours.store');
 
-        //Route::get('/tours/delete/{id}', [backend\TourController::class, 'delete'])->middleware('check
-        //.permission:tours,delete')->name('tours.delete');
         Route::post('/tours/delete-all', [backend\TourController::class, 'deleteAll'])->middleware('check.permission:tours,delete-all')->name('tours.delete-all');
         Route::get('/tours/view/{id}', [backend\TourController::class, 'view'])->middleware('check.permission:tours,view')->name('tours.view');
-        //Route::get('/tours/{id}/status', [backend\TourController::class, 'status'])->middleware('check
-        //.permission:tours,status')->name('tours.status');
 
         Route::get('/tours/trashed', [backend\TourController::class, 'trashed'])->middleware('check.permission:tours,trashed')->name('tours.trashed');
         Route::get('/tours/restore/{id}', [backend\TourController::class, 'restore'])->middleware('check.permission:tours,restore')->name('tours.restore');
@@ -219,7 +207,7 @@ Route::prefix('admin')->group(function () {
         // TOURS ROUTES END
 
         // TOUR TYPES ROUTES START
-        Route::get('/tour-types', [backend\TourTypeController::class, 'index'])->name('tour-types');
+        Route::get('/tour-types', [backend\TourTypeController::class, 'index'])->middleware('check.permission:tour-types,view')->name('tour-types');
         Route::get('/tour-types/create', [backend\TourTypeController::class, 'create'])->middleware('check.permission:tour-types,add')->name('tour-types.create');
         Route::get('/tour-types/duplicate/{id}', [backend\TourTypeController::class, 'duplicate'])->middleware('check.permission:tour-types,duplicate')->name('tour-types.duplicate');
         Route::get('/tour-types/edit/{id}', [backend\TourTypeController::class, 'editForm'])->middleware('check.permission:tour-types,edit')->name('tour-types.edit');
@@ -238,7 +226,7 @@ Route::prefix('admin')->group(function () {
         // TOUR TYPES ROUTES END
 
         // RED TAGS ROUTES START
-        Route::get('/red-tags', [backend\RedTagController::class, 'index'])->name('red-tags');
+        Route::get('/red-tags', [backend\RedTagController::class, 'index'])->middleware('check.permission:red-tags,view')->name('red-tags');
         Route::get('/red-tags/create', [backend\RedTagController::class, 'create'])->middleware('check.permission:red-tags,add')->name('red-tags.create');
         Route::get('/red-tags/duplicate/{id}', [backend\RedTagController::class, 'duplicate'])->middleware('check.permission:red-tags,duplicate')->name('red-tags.duplicate');
         Route::get('/red-tags/edit/{id}', [backend\RedTagController::class, 'editForm'])->middleware('check.permission:red-tags,edit')->name('red-tags.edit');
@@ -254,7 +242,7 @@ Route::prefix('admin')->group(function () {
         // RED TAGS ROUTES END
 
         // EXPLORE ROUTES START
-        Route::get('/explore', [backend\ExploreController::class, 'index'])->name('explore');
+        Route::get('/explore', [backend\ExploreController::class, 'index'])->middleware('check.permission:explore,view')->name('explore');
         Route::get('/explore/create', [backend\ExploreController::class, 'create'])->middleware('check.permission:explore,add')->name('explore.create');
         Route::get('/explore/duplicate/{id}', [backend\ExploreController::class, 'duplicate'])->middleware('check.permission:explore,duplicate')->name('explore.duplicate');
         Route::get('/explore/edit/{id}', [backend\ExploreController::class, 'editForm'])->middleware('check.permission:explore,edit')->name('explore.edit');
@@ -270,7 +258,7 @@ Route::prefix('admin')->group(function () {
         // EXPLORE ROUTES END
 
         // EXPLORE UAE ROUTES START
-        Route::get('/explore-uae', [backend\ExploreUaeController::class, 'index'])->name('explore-uae');
+        Route::get('/explore-uae', [backend\ExploreUaeController::class, 'index'])->middleware('check.permission:explore-uae,view')->name('explore-uae');
         Route::get('/explore-uae/create', [backend\ExploreUaeController::class, 'create'])->middleware('check.permission:explore-uae,add')->name('explore-uae.create');
         Route::get('/explore-uae/duplicate/{id}', [backend\ExploreUaeController::class, 'duplicate'])->middleware('check.permission:explore-uae,duplicate')->name('explore-uae.duplicate');
         Route::get('/explore-uae/edit/{id}', [backend\ExploreUaeController::class, 'editForm'])->middleware('check.permission:explore-uae,edit')->name('explore-uae.edit');
@@ -286,7 +274,7 @@ Route::prefix('admin')->group(function () {
         // EXPLORE UAE ROUTES END
 
         // POPULAR SEARCHES ROUTES START
-        Route::get('/popular-searches', [backend\PopularSearchController::class, 'index'])->name('popular-searches');
+        Route::get('/popular-searches', [backend\PopularSearchController::class, 'index'])->middleware('check.permission:popular-searches,view')->name('popular-searches');
         Route::get('/popular-searches/create', [backend\PopularSearchController::class, 'create'])->middleware('check.permission:popular-searches,add')->name('popular-searches.create');
         Route::get('/popular-searches/duplicate/{id}', [backend\PopularSearchController::class, 'duplicate'])->middleware('check.permission:popular-searches,duplicate')->name('popular-searches.duplicate');
         Route::get('/popular-searches/edit/{id}', [backend\PopularSearchController::class, 'editForm'])->middleware('check.permission:popular-searches,edit')->name('popular-searches.edit');
@@ -301,7 +289,7 @@ Route::prefix('admin')->group(function () {
         // POPULAR SEARCHES ROUTES END
 
         // BLOGS CATEGORIES ROUTES START
-        Route::get('/blog-categories', [backend\BlogCategoryController::class, 'index'])->name('blog-categories');
+        Route::get('/blog-categories', [backend\BlogCategoryController::class, 'index'])->middleware('check.permission:blog-categories,view')->name('blog-categories');
         Route::get('/blog-category/create', [backend\BlogCategoryController::class, 'create'])->name('blog-category.create');
         Route::get('/blog-category/duplicate/{id}', [backend\BlogCategoryController::class, 'duplicate'])->name('blog-category.duplicate');
         Route::get('/blog-category/edit/{id}', [backend\BlogCategoryController::class, 'editForm'])->name('blog-category.edit');
@@ -312,11 +300,7 @@ Route::prefix('admin')->group(function () {
         });
         Route::put('/blog-category/update/{id}', [backend\BlogCategoryController::class, 'update'])->name('blog-category.update');
 
-        //Route::get('/blog-category/delete/{id}', [backend\BlogCategoryController::class, 'delete'])->name
-        //('blog-category.delete');
         Route::post('/blog-category/delete-all', [backend\BlogCategoryController::class, 'deleteAll'])->name('blog-category.delete-all');
-        //Route::get('/blog-category/{id}/status', [backend\BlogCategoryController::class, 'status'])->name
-        //('blog-category.status');
 
         /* Ajax */
         Route::get('/blog-category/import', [backend\BlogCategoryController::class, 'importForm'])->name('blog-category.import-form');
@@ -333,7 +317,7 @@ Route::prefix('admin')->group(function () {
         // BLOG CATEGORIES ROUTES END
 
         // PRODUCT CATEGORIES ROUTES START
-        Route::get('/product-categories', [backend\ProductCategoryController::class, 'index'])->name('product-categories');
+        Route::get('/product-categories', [backend\ProductCategoryController::class, 'index'])->middleware('check.permission:product-categories,view')->name('product-categories');
         Route::get('/product-category/create', [backend\ProductCategoryController::class, 'create'])->name('product-category.create');
         Route::get('/product-category/duplicate/{id}', [backend\ProductCategoryController::class, 'duplicate'])->name('product-category.duplicate');
         Route::get('/product-category/edit/{id}', [backend\ProductCategoryController::class, 'editForm'])->name('product-category.edit');
@@ -357,7 +341,7 @@ Route::prefix('admin')->group(function () {
         // PRODUCT CATEGORIES ROUTES END
 
         // PRODUCTS ROUTES START
-        Route::get('/products', [backend\ProductController::class, 'index'])->name('products');
+        Route::get('/products', [backend\ProductController::class, 'index'])->middleware('check.permission:products,view')->name('products');
         Route::get('/product/create', [backend\ProductController::class, 'create'])->name('product.create');
         Route::get('/product/duplicate/{id}', [backend\ProductController::class, 'duplicate'])->name('product.duplicate');
         Route::get('/product/edit/{id}', [backend\ProductController::class, 'editForm'])->name('product.edit');
@@ -381,7 +365,7 @@ Route::prefix('admin')->group(function () {
         // PRODUCTS ROUTES END
 
         // BLOGS TAGS ROUTES START
-        Route::get('/blog-tags', [backend\BlogTagController::class, 'index'])->name('blog-tags');
+        Route::get('/blog-tags', [backend\BlogTagController::class, 'index'])->middleware('check.permission:blog-tags,view')->name('blog-tags');
         Route::get('/blog-tag/create', [backend\BlogTagController::class, 'create'])->name('blog-tag.create');
         Route::get('/blog-tag/edit/{id}', [backend\BlogTagController::class, 'editForm'])->name('blog-tag.edit');
 
@@ -399,36 +383,34 @@ Route::prefix('admin')->group(function () {
         // BLOG TAGS ROUTES END
 
         // BLOGS ROUTES START
-        Route::get('/blogs', [backend\BlogController::class, 'index'])->name('blogs');
-        Route::get('/blogs/create', [backend\BlogController::class, 'create'])->name('blogs.create');
-        Route::get('/blogs/duplicate/{id}', [backend\BlogController::class, 'duplicate'])->name('blogs.duplicate');
-        Route::get('/blogs/edit/{id}', [backend\BlogController::class, 'editForm'])->name('blogs.edit');
+        Route::get('/blogs', [backend\BlogController::class, 'index'])->middleware('check.permission:blogs,view')->name('blogs');
+        Route::get('/blogs/create', [backend\BlogController::class, 'create'])->middleware('check.permission:blogs,add')->name('blogs.create');
+        Route::get('/blogs/duplicate/{id}', [backend\BlogController::class, 'duplicate'])->middleware('check.permission:blogs,duplicate')->name('blogs.duplicate');
+        Route::get('/blogs/edit/{id}', [backend\BlogController::class, 'editForm'])->middleware('check.permission:blogs,edit')->name('blogs.edit');
 
-        Route::post('/blogs/store', [backend\BlogController::class, 'store'])->name('blogs.store');
-        Route::put('/blogs/update/{id}', [backend\BlogController::class, 'update'])->name('blogs.update');
+        Route::post('/blogs/store', [backend\BlogController::class, 'store'])->middleware('check.permission:blogs,store')->name('blogs.store');
+        Route::put('/blogs/update/{id}', [backend\BlogController::class, 'update'])->middleware('check.permission:blogs,update')->name('blogs.update');
 
-        //Route::get('/blogs/delete/{id}', [backend\BlogController::class, 'delete'])->name('blogs.delete');
-        Route::post('/blogs/delete-all', [backend\BlogController::class, 'deleteAll'])->name('blogs.delete-all');
-        Route::get('/blogs/view/{id}', [backend\BlogController::class, 'view'])->name('blogs.view');
-        //Route::get('/blogs/{id}/status', [backend\BlogController::class, 'status'])->name('blogs.status');
+        Route::post('/blogs/delete-all', [backend\BlogController::class, 'deleteAll'])->middleware('check.permission:blogs,delete-all')->name('blogs.delete-all');
+        Route::get('/blogs/view/{id}', [backend\BlogController::class, 'view'])->middleware('check.permission:blogs,view')->name('blogs.view');
 
         /* Ajax */
-        Route::get('/blogs/import', [backend\BlogController::class, 'importForm'])->name('blogs.import-form');
-        Route::post('/blogs/import', [backend\BlogController::class, 'import'])->name('blogs.import');
-        Route::get('/blogs/export', [backend\BlogController::class, 'export'])->name('blogs.export');
-        Route::post('/blogs/update-title', [backend\BlogController::class, 'updateTitleAjax'])->name('blogs.update-title');
-        Route::get('/blogs/modal-view/{id}', [backend\BlogController::class, 'modalView'])->name('blogs.modal-view');
-        Route::post('/blogs/update-ordering', [backend\BlogController::class, 'updateOrderingAjax'])->name('blogs.update-ordering');
-        Route::delete('/blogs/delete/{id}', [backend\BlogController::class, 'deleteAjax'])->name('blogs.delete');
-        Route::post('/blogs/{id}/status', [backend\BlogController::class, 'updateStatusAjax'])->name('blogs.status');
+        Route::get('/blogs/import', [backend\BlogController::class, 'importForm'])->middleware('check.permission:blogs,import-form')->name('blogs.import-form');
+        Route::post('/blogs/import', [backend\BlogController::class, 'import'])->middleware('check.permission:blogs,import')->name('blogs.import');
+        Route::get('/blogs/export', [backend\BlogController::class, 'export'])->middleware('check.permission:blogs,export')->name('blogs.export');
+        Route::post('/blogs/update-title', [backend\BlogController::class, 'updateTitleAjax'])->middleware('check.permission:blogs,update-title')->name('blogs.update-title');
+        Route::get('/blogs/modal-view/{id}', [backend\BlogController::class, 'modalView'])->middleware('check.permission:blogs,modal-view')->name('blogs.modal-view');
+        Route::post('/blogs/update-ordering', [backend\BlogController::class, 'updateOrderingAjax'])->middleware('check.permission:blogs,update-ordering')->name('blogs.update-ordering');
+        Route::delete('/blogs/delete/{id}', [backend\BlogController::class, 'deleteAjax'])->middleware('check.permission:blogs,delete')->name('blogs.delete');
+        Route::post('/blogs/{id}/status', [backend\BlogController::class, 'updateStatusAjax'])->middleware('check.permission:blogs,status')->name('blogs.status');
 
-        Route::get('/blogs/trashed', [backend\BlogController::class, 'trashed'])->name('blogs.trashed');
-        Route::get('/blogs/restore/{id}', [backend\BlogController::class, 'restore'])->name('blogs.restore');
-        Route::get('/blogs/forcedelete/{id}', [backend\BlogController::class, 'forceDelete'])->name('blogs.forcedelete');
+        Route::get('/blogs/trashed', [backend\BlogController::class, 'trashed'])->middleware('check.permission:blogs,trashed')->name('blogs.trashed');
+        Route::get('/blogs/restore/{id}', [backend\BlogController::class, 'restore'])->middleware('check.permission:blogs,restore')->name('blogs.restore');
+        Route::get('/blogs/forcedelete/{id}', [backend\BlogController::class, 'forceDelete'])->middleware('check.permission:blogs,forcedelete')->name('blogs.forcedelete');
         // BLOGS ROUTES END
 
         // STATIC BLOCKS ROUTES START
-        Route::get('/static-blocks', [backend\StaticBlocksController::class, 'index'])->name('static-blocks');
+        Route::get('/static-blocks', [backend\StaticBlocksController::class, 'index'])->middleware('check.permission:static-blocks,view')->name('static-blocks');
         Route::get('/static-blocks/create', [backend\StaticBlocksController::class, 'create'])->name('static-blocks.create');
         Route::get('/static-blocks/edit/{id}', [backend\StaticBlocksController::class, 'editForm'])->name('static-blocks.edit');
 
@@ -452,7 +434,7 @@ Route::prefix('admin')->group(function () {
         // STATIC BLOCKS ROUTES END
 
         // sliders ROUTES START
-        Route::get('/sliders', [backend\SliderController::class, 'index'])->name('sliders');
+        Route::get('/sliders', [backend\SliderController::class, 'index'])->middleware('check.permission:sliders,view')->name('sliders');
         Route::get('/sliders/create', [backend\SliderController::class, 'create'])->middleware('check.permission:sliders,add')->name('sliders.create');
         Route::get('/sliders/duplicate/{id}', [backend\SliderController::class, 'duplicate'])->middleware('check.permission:sliders,duplicate')->name('sliders.duplicate');
         Route::get('/sliders/edit/{id}', [backend\SliderController::class, 'editForm'])->middleware('check.permission:sliders,edit')->name('sliders.edit');
@@ -472,12 +454,12 @@ Route::prefix('admin')->group(function () {
         // sliders ROUTES END
 
         // SETTING ROUTES START
-        Route::get('/settings', [backend\SettingController::class, 'index'])->name('settings');
+        Route::get('/settings', [backend\SettingController::class, 'index'])->middleware('check.permission:settings,view')->name('settings');
         Route::put('/setting/update-form', [backend\SettingController::class, 'update'])->name('setting.update-form');
         // SETTING ROUTES END
 
         // testimonials ROUTES START
-        Route::get('/testimonials', [backend\TestimonialController::class, 'index'])->name('testimonials');
+        Route::get('/testimonials', [backend\TestimonialController::class, 'index'])->middleware('check.permission:testimonials,view')->name('testimonials');
         Route::get('/testimonials/create', [backend\TestimonialController::class, 'create'])->middleware('check.permission:testimonials,add')->name('testimonials.create');
         Route::get('/testimonials/duplicate/{id}', [backend\TestimonialController::class, 'duplicate'])->middleware('check.permission:testimonials,duplicate')->name('testimonials.duplicate');
         Route::get('/testimonials/edit/{id}', [backend\TestimonialController::class, 'editForm'])->middleware('check.permission:testimonials,edit')->name('testimonials.edit');
@@ -497,7 +479,7 @@ Route::prefix('admin')->group(function () {
         // testimonials ROUTES END
 
         // coupons ROUTES START
-        Route::get('/coupons', [backend\CouponsController::class, 'index'])->name('coupons');
+        Route::get('/coupons', [backend\CouponsController::class, 'index'])->middleware('check.permission:coupons,view')->name('coupons');
         Route::get('/coupons/create', [backend\CouponsController::class, 'create'])->middleware('check.permission:coupons,add')->name('coupons.create');
         Route::get('/coupons/duplicate/{id}', [backend\CouponsController::class, 'duplicate'])->middleware('check.permission:coupons,duplicate')->name('coupons.duplicate');
         Route::get('/coupons/edit/{id}', [backend\CouponsController::class, 'editForm'])->middleware('check.permission:coupons,edit')->name('coupons.edit');
@@ -517,7 +499,7 @@ Route::prefix('admin')->group(function () {
         // coupons ROUTES END
 
         // reviews ROUTES START
-        Route::get('/reviews', [backend\ReviewController::class, 'index'])->name('reviews');
+        Route::get('/reviews', [backend\ReviewController::class, 'index'])->middleware('check.permission:reviews,view')->name('reviews');
         Route::get('/reviews/create', [backend\ReviewController::class, 'create'])->middleware('check.permission:reviews,add')->name('reviews.create');
         Route::get('/reviews/edit/{id}', [backend\ReviewController::class, 'editForm'])->middleware('check.permission:reviews,edit')->name('reviews.edit');
 
@@ -536,7 +518,7 @@ Route::prefix('admin')->group(function () {
         // reviews ROUTES END
 
         // FAQ CATEGORIES ROUTES START
-        Route::get('/faq-categories', [backend\FaqCategoryController::class, 'index'])->name('faq-categories');
+        Route::get('/faq-categories', [backend\FaqCategoryController::class, 'index'])->middleware('check.permission:faq-categories,view')->name('faq-categories');
         Route::get('/faq-categories/create', [backend\FaqCategoryController::class, 'create'])->middleware('check.permission:faq-categories,add')->name('faq-categories.create');
         Route::get('/faq-categories/duplicate/{id}', [backend\FaqCategoryController::class, 'duplicate'])->middleware('check.permission:faq-categories,duplicate')->name('faq-categories.duplicate');
         Route::get('/faq-categories/edit/{id}', [backend\FaqCategoryController::class, 'editForm'])->middleware('check.permission:faq-categories,edit')->name('faq-categories.edit');
@@ -556,7 +538,7 @@ Route::prefix('admin')->group(function () {
         // FAQ CATEGORIES ROUTES END
 
         // faqs ROUTES START
-        Route::get('/faqs', [backend\FaqController::class, 'index'])->name('faqs');
+        Route::get('/faqs', [backend\FaqController::class, 'index'])->middleware('check.permission:faqs,view')->name('faqs');
         Route::get('/faqs/create', [backend\FaqController::class, 'create'])->middleware('check.permission:faqs,add')->name('faqs.create');
         Route::get('/faqs/duplicate/{id}', [backend\FaqController::class, 'duplicate'])->middleware('check.permission:faqs,duplicate')->name('faqs.duplicate');
         Route::get('/faqs/edit/{id}', [backend\FaqController::class, 'editForm'])->middleware('check.permission:faqs,edit')->name('faqs.edit');
@@ -576,7 +558,7 @@ Route::prefix('admin')->group(function () {
         // faqs ROUTES END
 
         // umrah-packages ROUTES START
-        Route::get('/umrah-packages', [backend\UmrahPackageController::class, 'index'])->name('umrah-packages');
+        Route::get('/umrah-packages', [backend\UmrahPackageController::class, 'index'])->middleware('check.permission:umrah-packages,view')->name('umrah-packages');
         Route::get('/umrah-packages/create', [backend\UmrahPackageController::class, 'create'])->middleware('check.permission:umrah-packages,add')->name('umrah-packages.create');
         Route::get('/umrah-packages/duplicate/{id}', [backend\UmrahPackageController::class, 'duplicate'])->middleware('check.permission:umrah-packages,duplicate')->name('umrah-packages.duplicate');
         Route::get('/umrah-packages/edit/{id}', [backend\UmrahPackageController::class, 'editForm'])->middleware('check.permission:umrah-packages,edit')->name('umrah-packages.edit');
@@ -596,7 +578,7 @@ Route::prefix('admin')->group(function () {
         // umrah-packages ROUTES END
 
         // umrah-bus-schedules ROUTES START
-        Route::get('/umrah-bus-schedules', [backend\UmrahBusScheduleController::class, 'index'])->name('umrah-bus-schedules');
+        Route::get('/umrah-bus-schedules', [backend\UmrahBusScheduleController::class, 'index'])->middleware('check.permission:umrah-bus-schedules,view')->name('umrah-bus-schedules');
         Route::get('/umrah-bus-schedules/create', [backend\UmrahBusScheduleController::class, 'create'])->middleware('check.permission:umrah-bus-schedules,add')->name('umrah-bus-schedules.create');
         Route::get('/umrah-bus-schedules/duplicate/{id}', [backend\UmrahBusScheduleController::class, 'duplicate'])->middleware('check.permission:umrah-bus-schedules,duplicate')->name('umrah-bus-schedules.duplicate');
         Route::get('/umrah-bus-schedules/edit/{id}', [backend\UmrahBusScheduleController::class, 'editForm'])->middleware('check.permission:umrah-bus-schedules,edit')->name('umrah-bus-schedules.edit');
@@ -616,7 +598,7 @@ Route::prefix('admin')->group(function () {
         // umrah-bus-schedules ROUTES END
 
         // umrah-air-packages ROUTES START
-        Route::get('/umrah-air-packages', [backend\UmrahAirPackageController::class, 'index'])->name('umrah-air-packages');
+        Route::get('/umrah-air-packages', [backend\UmrahAirPackageController::class, 'index'])->middleware('check.permission:umrah-air-packages,view')->name('umrah-air-packages');
         Route::get('/umrah-air-packages/create', [backend\UmrahAirPackageController::class, 'create'])->middleware('check.permission:umrah-air-packages,add')->name('umrah-air-packages.create');
         Route::get('/umrah-air-packages/duplicate/{id}', [backend\UmrahAirPackageController::class, 'duplicate'])->middleware('check.permission:umrah-air-packages,duplicate')->name('umrah-air-packages.duplicate');
         Route::get('/umrah-air-packages/edit/{id}', [backend\UmrahAirPackageController::class, 'editForm'])->middleware('check.permission:umrah-air-packages,edit')->name('umrah-air-packages.edit');
@@ -636,7 +618,7 @@ Route::prefix('admin')->group(function () {
         // umrah-air-packages ROUTES END
 
         // ramadan-packages ROUTES START
-        Route::get('/ramadan-packages', [backend\RamadanPackageController::class, 'index'])->name('ramadan-packages');
+        Route::get('/ramadan-packages', [backend\RamadanPackageController::class, 'index'])->middleware('check.permission:ramadan-packages,view')->name('ramadan-packages');
         Route::get('/ramadan-packages/create', [backend\RamadanPackageController::class, 'create'])->middleware('check.permission:ramadan-packages,add')->name('ramadan-packages.create');
         Route::get('/ramadan-packages/duplicate/{id}', [backend\RamadanPackageController::class, 'duplicate'])->middleware('check.permission:ramadan-packages,duplicate')->name('ramadan-packages.duplicate');
         Route::get('/ramadan-packages/edit/{id}', [backend\RamadanPackageController::class, 'editForm'])->middleware('check.permission:ramadan-packages,edit')->name('ramadan-packages.edit');
@@ -656,7 +638,7 @@ Route::prefix('admin')->group(function () {
         // ramadan-packages ROUTES END
 
         // related-services ROUTES START
-        Route::get('/related-services', [backend\RelatedServiceController::class, 'index'])->name('related-services');
+        Route::get('/related-services', [backend\RelatedServiceController::class, 'index'])->middleware('check.permission:related-services,view')->name('related-services');
         Route::get('/related-services/create', [backend\RelatedServiceController::class, 'create'])->middleware('check.permission:related-services,add')->name('related-services.create');
         Route::get('/related-services/duplicate/{id}', [backend\RelatedServiceController::class, 'duplicate'])->middleware('check.permission:related-services,duplicate')->name('related-services.duplicate');
         Route::get('/related-services/edit/{id}', [backend\RelatedServiceController::class, 'editForm'])->middleware('check.permission:related-services,edit')->name('related-services.edit');
@@ -676,7 +658,7 @@ Route::prefix('admin')->group(function () {
         // related-services ROUTES END
 
         // attributes ROUTES START
-        Route::get('/attributes', [backend\AttributeController::class, 'index'])->name('attributes');
+        Route::get('/attributes', [backend\AttributeController::class, 'index'])->middleware('check.permission:attributes,view')->name('attributes');
         Route::get('/attributes/create', [backend\AttributeController::class, 'create'])->middleware('check.permission:attributes,add')->name('attributes.create');
         Route::get('/attributes/duplicate/{id}', [backend\AttributeController::class, 'duplicate'])->middleware('check.permission:attributes,duplicate')->name('attributes.duplicate');
         Route::get('/attributes/edit/{id}', [backend\AttributeController::class, 'editForm'])->middleware('check.permission:attributes,edit')->name('attributes.edit');
@@ -696,7 +678,7 @@ Route::prefix('admin')->group(function () {
         // attributes ROUTES END
 
         // brands ROUTES START
-        Route::get('/brands', [backend\BrandController::class, 'index'])->name('brands');
+        Route::get('/brands', [backend\BrandController::class, 'index'])->middleware('check.permission:brands,view')->name('brands');
         Route::get('/brands/create', [backend\BrandController::class, 'create'])->name('brands.create');
         Route::get('/brands/duplicate/{id}', [backend\BrandController::class, 'duplicate'])->name('brands.duplicate');
         Route::get('/brands/edit/{id}', [backend\BrandController::class, 'editForm'])->name('brands.edit');
@@ -716,7 +698,7 @@ Route::prefix('admin')->group(function () {
         // brands ROUTES END
 
         // inquiries ROUTES START
-        Route::get('/inquiries', [backend\InquiriesController::class, 'index'])->name('inquiries');
+        Route::get('/inquiries', [backend\InquiriesController::class, 'index'])->middleware('check.permission:inquiries,view')->name('inquiries');
         Route::get('/inquiries/create', [backend\InquiriesController::class, 'create'])->middleware('check.permission:inquiries,add')->name('inquiries.create');
         Route::get('/inquiries/edit/{id}', [backend\InquiriesController::class, 'editForm'])->middleware('check.permission:inquiries,edit')->name('inquiries.edit');
 
@@ -735,7 +717,7 @@ Route::prefix('admin')->group(function () {
         // inquiries ROUTES END
 
         // email-templates ROUTES START
-        Route::get('/email-templates', [backend\EmailTemplateController::class, 'index'])->name('email-templates');
+        Route::get('/email-templates', [backend\EmailTemplateController::class, 'index'])->middleware('check.permission:email-templates,view')->name('email-templates');
         Route::get('/email-templates/create', [backend\EmailTemplateController::class, 'create'])->middleware('check.permission:email-templates,add')->name('email-templates.create');
         Route::get('/email-templates/duplicate/{id}', [backend\EmailTemplateController::class, 'duplicate'])->middleware('check.permission:email-templates,duplicate')->name('email-templates.duplicate');
         Route::get('/email-templates/edit/{id}', [backend\EmailTemplateController::class, 'editForm'])->middleware('check.permission:email-templates,edit')->name('email-templates.edit');
@@ -755,7 +737,7 @@ Route::prefix('admin')->group(function () {
         // email-templates ROUTES END
 
         // IMS (Invoice Management System) ROUTES START
-        Route::get('/invoices', [backend\CustomerInvoiceController::class, 'index'])->name('invoices');
+        Route::get('/invoices', [backend\CustomerInvoiceController::class, 'index'])->middleware('check.permission:invoices,view')->name('invoices');
         Route::get('/invoices/create', [backend\CustomerInvoiceController::class, 'create'])->name('invoices.create');
         Route::get('/invoices/duplicate/{id}', [backend\CustomerInvoiceController::class, 'duplicate'])->name('invoices.duplicate');
         Route::get('/invoices/edit/{id}', [backend\CustomerInvoiceController::class, 'editForm'])->name('invoices.edit');
@@ -777,7 +759,7 @@ Route::prefix('admin')->group(function () {
         // IMS (Invoice Management System) ROUTES END
 
         // QMS (Quotation Management System) ROUTES START
-        Route::get('/quotations', [backend\CustomerQuotationController::class, 'index'])->name('quotations');
+        Route::get('/quotations', [backend\CustomerQuotationController::class, 'index'])->middleware('check.permission:quotations,view')->name('quotations');
         Route::get('/quotations/create', [backend\CustomerQuotationController::class, 'create'])->name('quotations.create');
         Route::get('/quotations/duplicate/{id}', [backend\CustomerQuotationController::class, 'duplicate'])->name('quotations.duplicate');
         Route::get('/quotations/edit/{id}', [backend\CustomerQuotationController::class, 'editForm'])->name('quotations.edit');
@@ -799,7 +781,7 @@ Route::prefix('admin')->group(function () {
         // QMS (Quotation Management System) ROUTES END
 
         // GALLERIES ROUTES START
-        Route::get('/galleries', [backend\GalleryController::class, 'index'])->name('galleries');
+        Route::get('/galleries', [backend\GalleryController::class, 'index'])->middleware('check.permission:galleries,view')->name('galleries');
         Route::get('/galleries/create', [backend\GalleryController::class, 'create'])->name('galleries.create');
         Route::get('/galleries/edit/{id}', [backend\GalleryController::class, 'editForm'])->name('galleries.edit');
         Route::put('/galleries/update/{id}', [backend\GalleryController::class, 'update'])->name('galleries.update');
@@ -823,7 +805,7 @@ Route::prefix('admin')->group(function () {
         // GALLERIES ROUTES END
 
         // REQUIRED DOCUMENTS ROUTES START
-        Route::get('/required-documents', [backend\RequiredDocumentController::class, 'index'])->name('required-documents');
+        Route::get('/required-documents', [backend\RequiredDocumentController::class, 'index'])->middleware('check.permission:required-documents,view')->name('required-documents');
         Route::get('/required-documents/create', [backend\RequiredDocumentController::class, 'create'])->middleware('check.permission:required-documents,add')->name('required-documents.create');
         Route::get('/required-documents/duplicate/{id}', [backend\RequiredDocumentController::class, 'duplicate'])->middleware('check.permission:required-documents,duplicate')->name('required-documents.duplicate');
         Route::get('/required-documents/edit/{id}', [backend\RequiredDocumentController::class, 'editForm'])->middleware('check.permission:required-documents,edit')->name('required-documents.edit');
@@ -843,7 +825,7 @@ Route::prefix('admin')->group(function () {
         // REQUIRED DOCUMENTS ROUTES END
 
         // VACCINATION CENTERS ROUTES START
-        Route::get('/vaccination-centers', [backend\VaccinationCenterController::class, 'index'])->name('vaccination-centers');
+        Route::get('/vaccination-centers', [backend\VaccinationCenterController::class, 'index'])->middleware('check.permission:vaccination-centers,view')->name('vaccination-centers');
         Route::get('/vaccination-centers/create', [backend\VaccinationCenterController::class, 'create'])->middleware('check.permission:vaccination-centers,add')->name('vaccination-centers.create');
         Route::get('/vaccination-centers/duplicate/{id}', [backend\VaccinationCenterController::class, 'duplicate'])->middleware('check.permission:vaccination-centers,duplicate')->name('vaccination-centers.duplicate');
         Route::get('/vaccination-centers/edit/{id}', [backend\VaccinationCenterController::class, 'editForm'])->middleware('check.permission:vaccination-centers,edit')->name('vaccination-centers.edit');

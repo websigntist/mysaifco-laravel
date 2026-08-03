@@ -596,10 +596,13 @@ if (!function_exists('buildModuleCheckBox')) {
                         $slug = strtolower(preg_replace('/\s+/', '-', $act));
 
                         // Check if already selected
-                        $isActChecked = (
-                            !empty($selectedActions[$itemId]) &&
-                            in_array($slug, array_map(fn($a) => strtolower(preg_replace('/\s+/', '-', $a)), $selectedActions[$itemId]))
-                        ) ? 'checked' : '';
+                        $normSlug = strtolower(trim(preg_replace('/[\s\_]+/', '-', $slug)));
+                        $normAct = strtolower(trim(preg_replace('/[\s\_]+/', '-', $act)));
+                        $normSelected = !empty($selectedActions[$itemId])
+                            ? array_map(fn($a) => strtolower(trim(preg_replace('/[\s\_]+/', '-', $a))), $selectedActions[$itemId])
+                            : [];
+
+                        $isActChecked = (in_array($normSlug, $normSelected) || in_array($normAct, $normSelected)) ? 'checked' : '';
 
                         // Pick an icon
                         $iconSvg = $icons[$slug] ?? '<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dot" width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1" /></svg>';
@@ -632,6 +635,21 @@ if (!function_exists('buildModuleCheckBox')) {
 // apply permission on buttons method #1
 // use
 // @if(hasPermission('pages', 'edit')) define button code  @endif
+if (!function_exists('isSuperAdmin')) {
+    function isSuperAdmin($user = null): bool
+    {
+        $user = $user ?: Auth::user();
+        if (!$user) {
+            return false;
+        }
+        $userTypeName = strtolower(trim(optional($user->userType)->user_type ?? ''));
+        return ((int)$user->user_type_id === 1 || $userTypeName === 'super admin');
+    }
+}
+
+// apply permission on buttons method #1
+// use
+// @if(hasPermission('pages', 'edit')) define button code  @endif
 if (!function_exists('hasPermission')) {
     function hasPermission($moduleSlug, $action)
     {
@@ -640,18 +658,9 @@ if (!function_exists('hasPermission')) {
             return false;
         }
 
-        // only 'admin', 'super admin', 'administrator' allow full access
-        $adminRoles = [
-            'admin',
-            'super admin',
-            'administrator'
-        ];
-        $userType = strtolower(optional($user->userType)->user_type);
-
-        if (in_array($userType, $adminRoles)) {
+        if (isSuperAdmin($user)) {
             return true;
         }
-        // only 'admin', 'super admin', 'administrator' allow full access
 
         // get user_type_id
         $userTypeId = $user->user_type_id;
@@ -665,11 +674,19 @@ if (!function_exists('hasPermission')) {
         // get permissions
         $record = DB::table('user_type_modules_rel')->where('user_type_id', $userTypeId)->where('module_id', $module->id)->first();
 
-        if (!$record || empty($record->actions)) {
+        if (!$record) {
             return false;
         }
 
-        $allowedActions = array_map('trim', explode('|', $record->actions));
+        if (empty($record->actions)) {
+            return in_array(strtolower($action), ['view', 'listing', 'index', 'show']);
+        }
+
+        $allowedActions = array_map('trim', explode('|', strtolower($record->actions)));
+
+        if (in_array(strtolower($action), ['view', 'listing', 'index', 'show'])) {
+            return true;
+        }
 
         return in_array(strtolower($action), array_map('strtolower', $allowedActions));
     }
@@ -960,11 +977,9 @@ if (!function_exists('actionButton')) {
         $tooltipText = $tooltip ?? ucfirst($label ?? str_replace('_', ' ', $action));
 
         // Permission check
-        $userType = strtolower(optional($user->userType)->user_type);
-        $adminRoles = ['admin', 'super admin', 'administrator'];
         $hasPermission = false;
 
-        if (in_array($userType, $adminRoles)) {
+        if (isSuperAdmin($user)) {
             $hasPermission = true;
         } else {
             $userTypeId = $user->user_type_id;
@@ -976,9 +991,17 @@ if (!function_exists('actionButton')) {
                     ->where('module_id', $module->id)
                     ->first();
 
-                if ($record && !empty($record->actions)) {
-                    $allowedActions = array_map('trim', explode('|', strtolower($record->actions)));
-                    $hasPermission = in_array(strtolower($action), $allowedActions);
+                if ($record) {
+                    if (empty($record->actions)) {
+                        $hasPermission = in_array(strtolower($action), ['view', 'listing', 'index', 'show']);
+                    } else {
+                        $allowedActions = array_map('trim', explode('|', strtolower($record->actions)));
+                        if (in_array(strtolower($action), ['view', 'listing', 'index', 'show'])) {
+                            $hasPermission = true;
+                        } else {
+                            $hasPermission = in_array(strtolower($action), $allowedActions);
+                        }
+                    }
                 }
             }
         }
@@ -1083,11 +1106,9 @@ if (!function_exists('actionButton2')) {
         $tooltipText = $tooltip ?? ucfirst($label ?? str_replace('_', ' ', $action));
 
         // 🔹 Permission check
-        $userType = strtolower(optional($user->userType)->user_type);
-        $adminRoles = ['admin', 'super admin', 'administrator'];
         $hasPermission = false;
 
-        if (in_array($userType, $adminRoles)) {
+        if (isSuperAdmin($user)) {
             $hasPermission = true;
         } else {
             $userTypeId = $user->user_type_id;
@@ -1099,9 +1120,17 @@ if (!function_exists('actionButton2')) {
                     ->where('module_id', $module->id)
                     ->first();
 
-                if ($record && !empty($record->actions)) {
-                    $allowedActions = array_map('trim', explode('|', strtolower($record->actions)));
-                    $hasPermission = in_array(strtolower($action), $allowedActions);
+                if ($record) {
+                    if (empty($record->actions)) {
+                        $hasPermission = in_array(strtolower($action), ['view', 'listing', 'index', 'show']);
+                    } else {
+                        $allowedActions = array_map('trim', explode('|', strtolower($record->actions)));
+                        if (in_array(strtolower($action), ['view', 'listing', 'index', 'show'])) {
+                            $hasPermission = true;
+                        } else {
+                            $hasPermission = in_array(strtolower($action), $allowedActions);
+                        }
+                    }
                 }
             }
         }
@@ -1307,20 +1336,28 @@ if (!function_exists('getUserMenus')) {
             return [];
         }
 
-        $alwaysAllowed = [
-            'admin',
-            'super admin',
-            'administrator'
-        ];
-
-        // If super role → get ALL modules
-        if (in_array(strtolower($user->userType->user_type ?? ''), $alwaysAllowed)) {
+        // If super role → get ALL active modules
+        if (isSuperAdmin($user)) {
             $modules = Module::where('status', 'Active')->orderBy('ordering')->get();
         } else {
             // Normal role → only assigned modules
-            $allowedModules = DB::table('user_type_modules_rel')->where('user_type_id', $user->user_type_id)->pluck('module_id')->toArray();
+            $assignedModules = DB::table('user_type_modules_rel')
+                ->where('user_type_id', $user->user_type_id)
+                ->whereNotNull('actions')
+                ->where('actions', '!=', '')
+                ->pluck('module_id')
+                ->toArray();
 
-            $modules = Module::whereIn('id', $allowedModules)->where('status', 'Active')->orderBy('ordering')->get();
+            $allModuleIds = $assignedModules;
+            if (!empty($assignedModules)) {
+                $parents = Module::whereIn('id', $assignedModules)->where('parent_id', '>', 0)->pluck('parent_id')->unique()->toArray();
+                while (!empty($parents)) {
+                    $allModuleIds = array_unique(array_merge($allModuleIds, $parents));
+                    $parents = Module::whereIn('id', $parents)->where('parent_id', '>', 0)->pluck('parent_id')->unique()->toArray();
+                }
+            }
+
+            $modules = Module::whereIn('id', $allModuleIds)->where('status', 'Active')->orderBy('ordering')->get();
         }
 
         $menu = [
@@ -1347,18 +1384,17 @@ if (!function_exists('getUserDashboardModules')) {
         // Get all active modules
         $modules = DB::table('modules')->where('status', 'Active')->orderBy('ordering')->get();
 
-        // Admins always see all modules
-        $adminTypes = [
-            'admin',
-            'super admin',
-            'administrator'
-        ];
-        if (in_array(strtolower($user->user_type), $adminTypes)) {
+        if (isSuperAdmin($user)) {
             return $modules;
         }
 
         // Otherwise filter by assigned modules
-        $userModules = DB::table('user_type_modules_rel')->where('user_type_id', $user->user_type_id)->pluck('module_id')->toArray();
+        $userModules = DB::table('user_type_modules_rel')
+            ->where('user_type_id', $user->user_type_id)
+            ->whereNotNull('actions')
+            ->where('actions', '!=', '')
+            ->pluck('module_id')
+            ->toArray();
 
         return $modules->filter(fn($m) => in_array($m->id, $userModules));
     }
